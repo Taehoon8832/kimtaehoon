@@ -1268,48 +1268,52 @@
 
     @media (max-width: 720px) {
       .nav {
-        grid-template-columns: 1fr;
-        gap: 8px;
-        padding: 8px 10px 10px;
-      }
-
-      .nav-brand,
-      .nav-actions {
-        justify-self: center;
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+          "brand actions"
+          "links links";
+        gap: 10px 8px;
+        padding: 8px 12px 10px;
+        align-items: center;
       }
 
       .nav-brand {
-        order: 1;
+        grid-area: brand;
+        justify-self: start;
+        order: unset;
       }
 
       .brand-name {
         display: block;
       }
 
+      .nav-actions {
+        grid-area: actions;
+        justify-self: end;
+        order: unset;
+      }
+
       .nav-links {
-        order: 2;
+        grid-area: links;
+        order: unset;
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 12px 6px;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 10px 4px;
         max-width: 100%;
         width: 100%;
-        padding: 4px 2px 2px;
+        padding: 4px 0 2px;
       }
 
       .nav-sep {
         display: none;
       }
 
-      .nav-actions {
-        order: 3;
-      }
-
       .nav-item {
         width: 100%;
         max-width: none;
         flex: none;
-        padding: 6px 4px 4px;
-        gap: 6px;
+        padding: 4px 2px 2px;
+        gap: 5px;
       }
 
       .nav-item em {
@@ -1317,33 +1321,33 @@
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
-        font-size: 10px;
-        line-height: 1.25;
+        font-size: 8.5px;
+        line-height: 1.2;
         font-weight: 700;
         color: var(--text-primary);
-        min-height: 2.5em;
+        min-height: 2.4em;
       }
 
       .nav-item .ic {
-        width: 32px;
-        height: 32px;
-        border-radius: 9px;
+        width: 28px;
+        height: 28px;
+        border-radius: 8px;
       }
 
       .nav-item .ic svg {
-        width: 17px;
-        height: 17px;
+        width: 15px;
+        height: 15px;
       }
 
       .nav-item.card-a .ic-aura {
-        width: 36px;
-        height: 36px;
+        width: 32px;
+        height: 32px;
       }
 
       .nav-item.card-a .ic-aura::before {
         inset: -2px;
-        filter: blur(5px);
-        opacity: 0.4;
+        filter: blur(4px);
+        opacity: 0.38;
       }
 
       .chat-shell {
@@ -1387,27 +1391,32 @@
 
     @media (max-width: 420px) {
       .nav-links {
-        gap: 10px 4px;
+        gap: 8px 2px;
       }
 
       .nav-item {
-        padding: 4px 2px;
+        padding: 3px 1px;
       }
 
       .nav-item em {
-        font-size: 9px;
+        font-size: 8px;
         min-height: 2.4em;
       }
 
       .nav-item .ic {
-        width: 30px;
-        height: 30px;
-        border-radius: 9px;
+        width: 26px;
+        height: 26px;
+        border-radius: 8px;
+      }
+
+      .nav-item .ic svg {
+        width: 14px;
+        height: 14px;
       }
 
       .nav-item.card-a .ic-aura {
-        width: 34px;
-        height: 34px;
+        width: 30px;
+        height: 30px;
       }
 
       .board-panel {
