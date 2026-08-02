@@ -1,0 +1,1761 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="format-detection" content="telephone=no">
+  <base target="_top">
+  <title>자유 게시판</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto&#43;Sans&#43;KR:wght@400;500;700&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Noto&#43;Sans&#43;KR:wght@400;500;700&amp;display=swap" rel="stylesheet"></noscript>
+  <style>
+    :root {
+       
+      --kakao-yellow: #FEE500;
+      --kakao-yellow-hover: #FFEA51;
+      --kakao-yellow-soft: rgba(254, 229, 0, 0.12);
+      --kakao-brown: #4A2D17;
+      --chat-bg: #B2C7DA;
+      --bg-base: #FFFFFF;
+      --bg-subtle: #F5F5F5;
+      --text-primary: #191919;
+      --text-secondary: #555555;
+      --text-tertiary: #888888;
+      --border-default: #F0F0F0;
+      --border-strong: #D9D9D9;
+      --error-bg: #FFE5E5;
+      --error-fg: #FF3838;
+      --info-fg: #2563EB;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans KR", -apple-system, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      background: var(--chat-bg);
+      line-height: 1.5;
+    }
+    .board-wrap {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 8px max(8px, env(safe-area-inset-right)) 16px max(8px, env(safe-area-inset-left));
+    }
+    .board-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 6px;
+      padding: 6px 10px;
+      background: var(--bg-base);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+    .board-head h1 {
+      margin: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      color: var(--text-primary);
+    }
+    .board-head h1::before {
+      content: 'TALK';
+      display: inline-grid;
+      place-items: center;
+      height: 22px;
+      padding: 0 7px;
+      border-radius: 7px;
+      background: var(--kakao-yellow);
+      color: var(--kakao-brown);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.01em;
+    }
+    .btn-new {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 12px;
+      border: none;
+      border-radius: var(--radius-md);
+      background: var(--kakao-yellow);
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      cursor: pointer;
+      transition: background 100ms ease;
+    }
+    .btn-new:hover { background: var(--kakao-yellow-hover); }
+    .btn-new:active { transform: scale(0.98); }
+    .btn-new svg { flex-shrink: 0; }
+    button, .btn, .btn-new, .btn-ghost { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+    .btn-ghost {
+      padding: 6px 10px;
+      border: none;
+      border-radius: var(--radius-md);
+      background: var(--bg-subtle);
+      color: var(--text-secondary);
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 400;
+      cursor: pointer;
+      transition: background 100ms ease;
+    }
+    .btn-ghost:hover { background: #ECECEC; }
+    .table-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
+      background: var(--bg-base);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+    table.board-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 640px;
+      table-layout: auto;
+    }
+    .board-table thead th {
+      background: var(--bg-base);
+      color: var(--text-tertiary);
+      font-weight: 500;
+      font-size: 12px;
+      padding: 6px 6px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-default);
+      white-space: nowrap;
+    }
+    .board-table tbody td {
+      padding: 6px 6px;
+      border-bottom: 1px solid var(--border-default);
+      vertical-align: middle;
+    }
+    .board-table tbody tr:last-child td { border-bottom: none; }
+    .board-table tbody tr { cursor: pointer; transition: background 100ms ease; }
+    .board-table tbody tr:hover { background: var(--bg-subtle); }
+    .board-table tbody tr.is-notice { background: var(--kakao-yellow-soft); }
+    .board-table tbody tr.is-notice:hover { background: rgba(254, 229, 0, 0.22); }
+    .col-num { width: 40px; max-width: 44px; padding-left: 4px !important; padding-right: 4px !important; text-align: center; white-space: nowrap; color: var(--text-tertiary); font-size: 12px; font-weight: 400; }
+    .col-title { min-width: 200px; font-weight: 500; color: var(--text-primary); }
+    .title-cmt {
+      font-weight: 400;
+      color: var(--text-tertiary);
+      font-size: 0.9em;
+      font-variant-numeric: tabular-nums;
+    }
+    .col-author { min-width: 100px; max-width: 200px; color: var(--text-secondary); white-space: normal; word-break: keep-all; }
+    .author-cell {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      max-width: 100%;
+    }
+    .author-ic {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      border-radius: 8px;
+      object-fit: cover;
+      background: var(--bg-subtle);
+      vertical-align: middle;
+    }
+    .author-name { min-width: 0; font-weight: 400; }
+    .author-cell--admin .author-name {
+      font-weight: 700;
+      color: var(--kakao-brown);
+      letter-spacing: -0.02em;
+    }
+    .author-cell--admin .author-ic {
+      box-shadow: 0 0 0 2px var(--kakao-yellow);
+    }
+    .col-date { width: 76px; color: var(--text-tertiary); white-space: nowrap; font-size: 12px; }
+    .col-view { width: 1%; text-align: right; white-space: nowrap; vertical-align: middle; padding-right: 14px !important; }
+    .view-subtle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 5px;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      font-weight: 400;
+      font-variant-numeric: tabular-nums;
+    }
+    .view-ic { flex-shrink: 0; opacity: 0.55; color: var(--text-tertiary); }
+    .view-num { color: var(--text-tertiary); }
+    .badge-notice {
+      display: inline-block;
+      margin-right: 6px;
+      padding: 2px 9px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--kakao-brown);
+      background: var(--kakao-yellow);
+      border-radius: 9999px;
+      vertical-align: middle;
+      letter-spacing: -0.01em;
+    }
+    .tag-secret { color: var(--kakao-brown); font-weight: 500; margin-right: 4px; }
+     
+    .badge-private {
+      display: inline-block;
+      margin-right: 6px;
+      padding: 2px 9px;
+      font-size: 11px;
+      font-weight: 700;
+      color: #fff;
+      background: var(--kakao-brown);
+      border-radius: 9999px;
+      vertical-align: middle;
+      letter-spacing: -0.01em;
+    }
+    .board-table tbody tr.is-private {
+      background: #FBF7F3;
+    }
+    .board-table tbody tr.is-private:hover { background: #F5EEE7; }
+    .board-table tbody tr.is-notice.is-private {
+      background: linear-gradient(90deg, #FBF7F3 0%, var(--kakao-yellow-soft) 72%);
+    }
+    .board-table tbody tr.is-notice.is-private:hover {
+      background: linear-gradient(90deg, #F5EEE7 0%, rgba(254, 229, 0, 0.22) 72%);
+    }
+    .list-empty {
+      padding: 48px 16px;
+      text-align: center;
+      color: var(--text-tertiary);
+      font-weight: 400;
+      background: var(--bg-base);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+    #detailScreen { margin-top: 8px; }
+    .detail-card {
+      background: var(--bg-base);
+      border: none;
+      border-radius: var(--radius-lg);
+      padding: 0;
+      margin-top: 8px;
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+    .detail-header {
+      padding: 22px 22px 18px;
+      background: var(--bg-base);
+      border-bottom: 1px solid var(--border-default);
+    }
+    .detail-title {
+      margin: 0 0 14px;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.35;
+      letter-spacing: -0.015em;
+      word-break: break-word;
+    }
+    .detail-meta { font-size: 13px; color: var(--text-tertiary); margin-bottom: 0; }
+    .detail-meta__line { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-bottom: 12px; }
+    .detail-meta__line:last-of-type { margin-bottom: 0; }
+    .detail-sep { color: var(--border-strong); user-select: none; }
+    .detail-meta__chips { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+    .meta-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 400;
+      border: none;
+      background: var(--bg-subtle);
+      color: var(--text-tertiary);
+    }
+    .meta-chip strong { font-size: 14px; font-weight: 700; color: var(--text-primary); font-variant-numeric: tabular-nums; }
+    .meta-chip--view .meta-ic, .meta-chip--cmt .meta-ic { opacity: 0.55; margin-right: 2px; }
+    .detail-content {
+      padding: 20px 22px 22px;
+      background: var(--bg-base);
+    }
+     
+    .detail-body {
+      font-family: inherit;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      font-size: 16px;
+      line-height: 1.8;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      padding: 20px 22px;
+      background: var(--bg-subtle);
+      border: none;
+      border-radius: var(--radius-lg);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    .detail-body p { margin: 0 0 1em; line-height: inherit; }
+    .detail-body p:last-child { margin-bottom: 0; }
+    .detail-body strong,
+    .detail-body b {
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .detail-body em,
+    .detail-body i {
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+    .detail-body h1,
+    .detail-body h2,
+    .detail-body h3,
+    .detail-body h4 {
+      margin: 1.35em 0 0.55em;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+    }
+    .detail-body h1:first-child,
+    .detail-body h2:first-child,
+    .detail-body h3:first-child,
+    .detail-body h4:first-child {
+      margin-top: 0;
+    }
+    .detail-body ul,
+    .detail-body ol {
+      margin: 0 0 1em;
+      padding-left: 1.35em;
+    }
+    .detail-body li {
+      margin: 0.4em 0;
+      line-height: inherit;
+    }
+    .detail-body blockquote {
+      margin: 1em 0;
+      padding: 12px 16px;
+      border-left: 4px solid var(--kakao-yellow);
+      background: var(--bg-base);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      color: var(--text-secondary);
+      font-size: 0.97em;
+    }
+    .detail-body code,
+    .detail-body pre {
+      font-family: ui-monospace, "Cascadia Code", "Malgun Gothic", monospace;
+      font-size: 0.92em;
+    }
+    .detail-body pre {
+      margin: 1em 0;
+      padding: 14px 16px;
+      overflow-x: auto;
+      background: var(--bg-base);
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-sm);
+      color: var(--text-primary);
+    }
+    .detail-body img {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-default);
+      box-shadow: var(--shadow-sm);
+    }
+    .detail-body a {
+      color: var(--info-fg);
+      font-weight: 400;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    .detail-body a:hover {
+      color: #1e40af;
+    }
+    .toolbar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+    .btn {
+      padding: 10px 16px;
+      border-radius: var(--radius-md);
+      border: none;
+      background: var(--bg-base);
+      color: var(--text-primary);
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      box-shadow: var(--shadow-sm);
+      transition: background 100ms ease;
+    }
+    .btn:hover { background: var(--bg-subtle); }
+    .btn-primary { background: var(--kakao-yellow); color: var(--text-primary); }
+    .btn-primary:hover { background: var(--kakao-yellow-hover); }
+    .btn-danger { background: var(--bg-base); color: var(--error-fg); }
+    .btn-danger:hover { background: var(--error-bg); }
+     
+    .comments {
+      margin-top: 0;
+      padding: 18px 16px 20px;
+      border-top: none;
+      background: var(--chat-bg);
+    }
+    .comments__head {
+      margin: 0 0 12px;
+      padding-bottom: 0;
+      border-bottom: none;
+      text-align: center;
+    }
+    .comments__title {
+      display: inline-block;
+      margin: 0;
+      padding: 5px 14px;
+      border-radius: 9999px;
+      background: rgba(0, 0, 0, 0.10);
+      font-size: 12px;
+      font-weight: 400;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+      line-height: 1.4;
+    }
+    .comment {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 0;
+      margin-bottom: 8px;
+      font-size: 14px;
+      line-height: 1.55;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      animation: commentIn 0.38s ease-out both;
+    }
+    .comments > .comment:nth-child(2) { animation-delay: 0s; }
+    .comments > .comment:nth-child(3) { animation-delay: 0.05s; }
+    .comments > .comment:nth-child(4) { animation-delay: 0.1s; }
+    .comments > .comment:nth-child(5) { animation-delay: 0.15s; }
+    .comments > .comment:nth-child(n+6) { animation-delay: 0.2s; }
+    @keyframes commentIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+     
+    .comment__inner {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 0;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      box-shadow: none;
+      position: relative;
+      overflow: visible;
+    }
+    .comment__avatar-wrap {
+      flex-shrink: 0;
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      padding: 0;
+      background: var(--bg-base);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+    }
+    .comment__avatar-wrap--admin {
+      background: var(--kakao-yellow);
+      box-shadow: 0 0 0 2px var(--kakao-yellow), var(--shadow-sm);
+    }
+    .comment__avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 14px;
+      object-fit: cover;
+      background: var(--bg-base);
+      display: block;
+      padding: 5px;
+    }
+    .comment__head-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px 10px;
+      flex-wrap: wrap;
+      min-width: 0;
+    }
+    .comment__head-row .comment__avatar-wrap {
+      margin: 0;
+    }
+    .comment__name {
+      flex: 1;
+      min-width: 0;
+      align-self: center;
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.4;
+      letter-spacing: -0.015em;
+      color: var(--text-secondary);
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+      -webkit-font-smoothing: antialiased;
+    }
+    .comment--admin .comment__name {
+      color: var(--kakao-brown);
+      font-weight: 700;
+    }
+    .comment__meta {
+      flex-shrink: 0;
+      margin-left: auto;
+      align-self: center;
+      font-size: 11px;
+      font-weight: 400;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.01em;
+      color: var(--text-secondary);
+      padding: 0;
+      border-radius: 0;
+      background: transparent;
+      border: none;
+      white-space: nowrap;
+    }
+    .comment__body-box {
+      margin-left: 48px;
+      padding: 9px 14px;
+      border-radius: 4px 14px 14px 14px;
+      background: var(--bg-base);
+      border: none;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      max-width: calc(100% - 48px);
+      width: fit-content;
+    }
+     
+    .comment--admin .comment__body-box {
+      background: var(--kakao-yellow);
+    }
+    .comment__text {
+      margin: 0;
+      font-family: inherit;
+      color: var(--text-primary);
+      white-space: pre-wrap;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      font-size: 15px;
+      line-height: 1.55;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      position: relative;
+      z-index: 1;
+    }
+    .comment--admin .comment__text {
+      color: var(--text-primary);
+    }
+    .comment__text a {
+      color: var(--info-fg);
+      font-weight: 400;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+     
+    .comments .field {
+      margin-top: 16px;
+      margin-bottom: 0;
+      padding: 12px 14px 14px;
+      border-top: none;
+      background: var(--bg-base);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+    }
+    .comments .field > label:first-child {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+    }
+    .comments .field > label:first-child::before {
+      content: '💬';
+      font-size: 1.05rem;
+    }
+    .btn-comment-del {
+      flex-shrink: 0;
+      padding: 5px 10px;
+      font-size: 11px;
+      font-weight: 400;
+      border-radius: 9999px;
+      border: none;
+      background: rgba(0, 0, 0, 0.10);
+      color: #fff;
+      align-self: flex-start;
+      margin-top: 2px;
+      box-shadow: none;
+    }
+    .btn-comment-del:hover {
+      background: var(--error-fg);
+      color: #fff;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: none;
+      border-radius: var(--radius-md);
+      background: var(--bg-subtle);
+      font-family: inherit;
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+    input::placeholder, textarea::placeholder { color: var(--text-tertiary); }
+    input:focus, textarea:focus {
+      outline: 2px solid var(--kakao-yellow);
+      outline-offset: -2px;
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    .compose-title {
+      margin: 0 0 16px;
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.015em;
+    }
+    .compose-hint {
+      margin: 6px 0 0;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      line-height: 1.45;
+    }
+    .compose-hint strong { color: var(--text-secondary); }
+    .editor-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 0;
+      padding: 8px 10px;
+      background: var(--bg-subtle);
+      border: none;
+      border-radius: var(--radius-md) var(--radius-md) 0 0;
+    }
+    .editor-toolbar .tb-btn {
+      padding: 6px 11px;
+      border: none;
+      border-radius: var(--radius-sm);
+      background: var(--bg-base);
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      cursor: pointer;
+      line-height: 1.2;
+      box-shadow: var(--shadow-sm);
+      transition: background 100ms ease;
+    }
+    .editor-toolbar .tb-btn:hover { background: var(--kakao-yellow-soft); }
+    .editor-toolbar .tb-btn:active { transform: scale(0.98); }
+    .editor-toolbar .tb-sep {
+      width: 1px;
+      height: 22px;
+      background: var(--border-strong);
+      margin: 0 2px;
+      flex-shrink: 0;
+    }
+    .editor-toolbar label.tb-color {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin: 0;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      cursor: pointer;
+    }
+    .editor-toolbar input[type="color"] {
+      width: 32px;
+      height: 28px;
+      padding: 0;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      background: var(--bg-base);
+    }
+    .rich-editor {
+      min-height: 220px;
+      max-height: min(55vh, 520px);
+      overflow-y: auto;
+      padding: 14px 16px;
+      border: none;
+      border-radius: 0 0 var(--radius-md) var(--radius-md);
+      background: var(--bg-subtle);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: var(--text-primary);
+      outline: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .rich-editor:empty:before {
+      content: attr(data-placeholder);
+      color: var(--text-tertiary);
+      pointer-events: none;
+    }
+    .rich-editor:focus { outline: 2px solid var(--kakao-yellow); outline-offset: -2px; }
+    .file-input-hidden { position: absolute; width: 0; height: 0; opacity: 0; pointer-events: none; }
+    label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 400; color: var(--text-secondary); }
+    .field { margin-bottom: 14px; }
+    .row2 { display: flex; gap: 8px; flex-wrap: wrap; }
+    .row2 input { flex: 1; min-width: 100px; }
+    .modal-backdrop {
+      position: fixed; inset: 0; background: rgba(25,25,25,.50);
+      display: none; align-items: center; justify-content: center; z-index: 1000; padding: 16px;
+    }
+    .modal-backdrop.show { display: flex; }
+    .modal {
+      background: var(--bg-base); border-radius: var(--radius-lg); padding: 22px; width: 100%; max-width: 420px;
+      box-shadow: var(--shadow-lg);
+    }
+    .modal.modal--wide {
+      max-width: min(96vw, 760px);
+      max-height: min(92vh, 900px);
+      overflow-y: auto;
+    }
+    .modal.modal--wide .rich-editor {
+      max-height: min(38vh, 340px);
+    }
+    .modal h2 { margin: 0 0 10px; font-size: 17px; font-weight: 700; letter-spacing: -0.015em; }
+    .modal p.hint { margin: 0 0 12px; font-size: 13px; color: var(--text-tertiary); line-height: 1.5; }
+    .err { color: var(--error-fg); font-size: 13px; font-weight: 400; margin-top: 8px; }
+    .hidden { display: none !important; }
+
+     
+    .board-cards { display: none; }
+    .board-card {
+      background: var(--bg-base);
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 8px 10px 7px;
+      margin-bottom: 6px;
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+      -webkit-tap-highlight-color: rgba(254,229,0,.28);
+      transition: background 100ms ease;
+    }
+    .board-card:active { background: var(--bg-subtle); }
+    .board-card.is-notice { background: linear-gradient(180deg, var(--kakao-yellow-soft) 0%, var(--bg-base) 60%); }
+    .board-card.is-private {
+      background: linear-gradient(180deg, #FBF7F3 0%, var(--bg-base) 55%);
+      box-shadow: inset 3px 0 0 var(--kakao-brown), var(--shadow-sm);
+    }
+    .board-card.is-private:active { background: #F5EEE7; }
+    .board-card.is-notice.is-private {
+      background: linear-gradient(135deg, #FBF7F3 0%, var(--kakao-yellow-soft) 55%, var(--bg-base) 100%);
+      box-shadow: inset 3px 0 0 var(--kakao-brown), var(--shadow-sm);
+    }
+    .board-card__row1 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 7px;
+    }
+    .board-card__num { font-size: 11px; font-weight: 400; color: var(--text-tertiary); flex-shrink: 0; }
+    .board-card__title { font-weight: 500; color: var(--text-primary); font-size: 14px; line-height: 1.35; margin-bottom: 6px; word-break: break-word; letter-spacing: -0.01em; }
+    .board-card__foot {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      padding-top: 8px;
+      border-top: 1px solid var(--border-default);
+    }
+    .board-card__author { font-weight: 400; color: var(--text-secondary); max-width: 70%; word-break: break-word; }
+    .board-card__author .author-cell { align-items: flex-start; }
+    .board-card__date { flex-shrink: 0; }
+
+    @media (max-width: 768px) {
+      .board-head h1 { font-size: 15px; }
+      .board-head > div { width: 100%; justify-content: stretch; }
+      .board-head > div .btn-ghost { flex: 0 0 auto; min-height: 32px; padding: 0 10px; }
+      .board-head > div .btn-new { flex: 1; min-height: 34px; justify-content: center; padding: 6px 12px; }
+      .table-scroll.board-table-wrap { display: none; }
+      .board-cards { display: block; }
+      .modal { max-height: min(90vh, 100%); overflow-y: auto; }
+      .detail-header { padding: 16px 16px 14px; }
+      .detail-title { font-size: 18px; margin-bottom: 12px; }
+      .detail-content { padding: 14px; }
+      .detail-body {
+        padding: 16px;
+        font-size: 15px;
+        line-height: 1.8;
+      }
+      .comments { padding: 14px 12px 16px; }
+      .comment__avatar-wrap { width: 36px; height: 36px; }
+      .comment__body-box { margin-left: 46px; max-width: calc(100% - 46px); padding: 8px 12px; }
+      .comment__text { font-size: 14px; line-height: 1.55; }
+      #detailScreen .toolbar .btn { min-height: 44px; padding: 10px 16px; font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="board-wrap">
+    <div id="listScreen">
+      <div class="board-head">
+        <h1>자유 게시판</h1>
+        <div style="display:flex;gap:8px;align-items:center">
+          <button type="button" class="btn-ghost" id="btnRefresh">새로고침</button>
+          <button type="button" class="btn-new" id="btnNewPost">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+            새 글 작성
+          </button>
+        </div>
+      </div>
+      <div class="table-scroll board-table-wrap">
+        <table class="board-table" aria-label="게시글 목록">
+          <thead>
+            <tr>
+              <th class="col-num">번호</th>
+              <th class="col-title">제목</th>
+              <th class="col-author">작성자</th>
+              <th class="col-date">날짜</th>
+              <th class="col-view">조회수</th>
+            </tr>
+          </thead>
+          <tbody id="postListBody"></tbody>
+        </table>
+      </div>
+      <div id="boardCards" class="board-cards" aria-label="게시글 카드 목록"></div>
+      <div id="listEmpty" class="list-empty hidden">등록된 글이 없습니다.</div>
+    </div>
+
+    <div id="composeScreen" class="hidden">
+      <div class="toolbar">
+        <button type="button" class="btn" id="btnComposeBack">← 목록</button>
+      </div>
+      <div class="detail-card compose-card">
+        <div class="detail-content" style="padding-top: 20px;">
+          <h2 class="compose-title">새 글 작성</h2>
+          <div class="field"><label for="cUser">이름</label><input type="text" id="cUser" autocomplete="name"></div>
+          <p class="compose-hint hidden" id="cAdminNoticeHint">작성자 이름이 <strong>관리자</strong>이면 글이 자동으로 <strong>공지</strong>로 올라갑니다.</p>
+          <div class="field"><label for="cTitle">제목</label><input type="text" id="cTitle"></div>
+          <div class="field">
+            <label for="cBodyRich">내용</label>
+            <div class="editor-toolbar" role="toolbar" aria-label="서식">
+              <button type="button" class="tb-btn" id="tbBold" title="굵게"><b>B</b></button>
+              <button type="button" class="tb-btn" id="tbItalic" title="기울임"><i>I</i></button>
+              <button type="button" class="tb-btn" id="tbUnderline" title="밑줄"><u>U</u></button>
+              <span class="tb-sep" aria-hidden="true"></span>
+              <button type="button" class="tb-btn" id="tbBr" title="줄바꿈">줄바꿈</button>
+              <button type="button" class="tb-btn" id="tbNbsp" title="넓은 띄어쓰기(공백)">띄어쓰기</button>
+              <span class="tb-sep" aria-hidden="true"></span>
+              <label class="tb-color" title="글자 색"><span>색</span><input type="color" id="tbFg" value="#1e293b" aria-label="글자 색"></label>
+              <span class="tb-sep" aria-hidden="true"></span>
+              <button type="button" class="tb-btn" id="tbAttach" title="파일·이미지 첨부">파일 첨부</button>
+              <input type="file" id="cFile" class="file-input-hidden" multiple>
+            </div>
+            <div id="cBodyRich" class="rich-editor" contenteditable="true" data-placeholder="내용을 입력하세요. 줄바꿈·색·이미지·파일 링크를 사용할 수 있습니다." spellcheck="true"></div>
+          </div>
+          <p class="compose-hint">첨부는 가능하면 <strong>게시판</strong> 폴더에 저장되고, 폴더에 접근할 수 없을 때는 같은 계정 <strong>내 드라이브</strong>에 저장됩니다. Drive 권한이 없으면 작은 파일(약 28KB 이하)만 본문에 넣습니다.</p>
+          <div class="field"><label><input type="checkbox" id="cPrivate"> 비밀글</label></div>
+          <div class="field hidden" id="cPwWrap">
+            <label for="cPw">비밀글 패스워드</label>
+            <input type="password" id="cPw" autocomplete="new-password" placeholder="열람·수정·삭제 시 사용">
+          </div>
+          <div class="toolbar" style="margin-top:14px">
+            <button type="button" class="btn btn-primary" id="cSubmit">등록</button>
+            <button type="button" class="btn" id="cCancel">취소</button>
+          </div>
+          <div class="err hidden" id="cErr"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="detailScreen" class="hidden">
+      <div class="toolbar">
+        <button type="button" class="btn" id="btnBack">← 목록</button>
+        <button type="button" class="btn btn-primary" id="btnEdit">수정</button>
+        <button type="button" class="btn btn-danger" id="btnDelete">삭제</button>
+      </div>
+      <div class="detail-card" id="detailBox"></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="modalUnlock" aria-hidden="true">
+    <div class="modal" role="dialog">
+      <h2>비밀글</h2>
+      <div class="field">
+        <label for="uPw">패스워드</label>
+        <input type="password" id="uPw" autocomplete="off">
+      </div>
+      <div class="toolbar">
+        <button type="button" class="btn btn-primary" id="uOk">확인</button>
+        <button type="button" class="btn" id="uCancel">취소</button>
+      </div>
+      <div class="err hidden" id="uErr"></div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="modalEdit" aria-hidden="true">
+    <div class="modal modal--wide" role="dialog" aria-labelledby="modalEditTitle">
+      <h2 id="modalEditTitle">글 수정</h2>
+      <p class="hint">확인용 패스워드: 작성 시 비밀번호 또는 관리자 비밀번호</p>
+      <div class="field"><label for="eAuth">확인용 패스워드</label><input type="password" id="eAuth" autocomplete="off"></div>
+      <div class="field"><label for="eUser">이름</label><input type="text" id="eUser"></div>
+      <div class="field"><label for="eTitle">제목</label><input type="text" id="eTitle"></div>
+      <div class="field">
+        <label for="eBodyRich">내용</label>
+        <div class="editor-toolbar" role="toolbar" aria-label="서식">
+          <button type="button" class="tb-btn" id="etbBold" title="굵게"><b>B</b></button>
+          <button type="button" class="tb-btn" id="etbItalic" title="기울임"><i>I</i></button>
+          <button type="button" class="tb-btn" id="etbUnderline" title="밑줄"><u>U</u></button>
+          <span class="tb-sep" aria-hidden="true"></span>
+          <button type="button" class="tb-btn" id="etbBr" title="줄바꿈">줄바꿈</button>
+          <button type="button" class="tb-btn" id="etbNbsp" title="넓은 띄어쓰기(공백)">띄어쓰기</button>
+          <span class="tb-sep" aria-hidden="true"></span>
+          <label class="tb-color" title="글자 색"><span>색</span><input type="color" id="etbFg" value="#1e293b" aria-label="글자 색"></label>
+          <span class="tb-sep" aria-hidden="true"></span>
+          <button type="button" class="tb-btn" id="etbAttach" title="파일·이미지 첨부">파일 첨부</button>
+          <input type="file" id="eFile" class="file-input-hidden" multiple>
+        </div>
+        <div id="eBodyRich" class="rich-editor" contenteditable="true" data-placeholder="내용을 입력하세요." spellcheck="true"></div>
+      </div>
+      <p class="compose-hint">첨부는 Drive 폴더(게시판)에 저장됩니다. 실패 시 작은 파일만 본문에 넣을 수 있습니다.</p>
+      <div class="field"><label><input type="checkbox" id="ePrivate"> 비밀글</label></div>
+      <div class="field hidden" id="ePwWrap">
+        <label for="ePostPw">비밀글로 저장할 패스워드</label>
+        <input type="password" id="ePostPw" placeholder="변경할 때만 입력">
+      </div>
+      <div class="toolbar">
+        <button type="button" class="btn btn-primary" id="eSubmit">저장</button>
+        <button type="button" class="btn" id="eCancel">취소</button>
+      </div>
+      <div class="err hidden" id="eErr"></div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var STORAGE_PREFIX = 'boardUnlock_';
+
+      function getStoredUnlock(postId) {
+        try { return sessionStorage.getItem(STORAGE_PREFIX + postId) || ''; } catch (e) { return ''; }
+      }
+      function setStoredUnlock(postId, pw) {
+        try { if (pw) sessionStorage.setItem(STORAGE_PREFIX + postId, pw); } catch (e) {}
+      }
+
+      function esc(s) {
+        return String(s == null ? '' : s)
+          .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+       
+      function linkifyUrlsInElement(root) {
+        if (!root) return;
+        var urlRe = /https?:\/\/[^\\s<>"')\\]]+/gi;
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
+        var nodes = [];
+        var tn;
+        while ((tn = walker.nextNode())) nodes.push(tn);
+        nodes.forEach(function (textNode) {
+          var text = textNode.textContent;
+          if (!/https?:\/\//i.test(text)) return;
+          var pe = textNode.parentElement;
+          if (!pe || pe.tagName === 'A' || (pe.closest && pe.closest('a'))) return;
+          if (pe.closest && pe.closest('pre, code, script, style, textarea')) return;
+          urlRe.lastIndex = 0;
+          var last = 0;
+          var m;
+          var frag = document.createDocumentFragment();
+          var any = false;
+          while ((m = urlRe.exec(text)) !== null) {
+            any = true;
+            if (m.index > last) frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+            var raw = m[0];
+            var u = raw.replace(/[.,;:!?)'"\\]]+$/g, '');
+            try {
+              var a = document.createElement('a');
+              a.href = u;
+              a.target = '_blank';
+              a.rel = 'noopener noreferrer';
+              a.textContent = u;
+              frag.appendChild(a);
+            } catch (e1) {
+              frag.appendChild(document.createTextNode(raw));
+            }
+            last = m.index + raw.length;
+          }
+          if (!any) return;
+          if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+          textNode.parentNode.replaceChild(frag, textNode);
+        });
+      }
+
+      var META_IC_EYE = '<svg class="meta-ic" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/></svg>';
+      var META_IC_MSG = '<svg class="meta-ic" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+      var listScreen = document.getElementById('listScreen');
+      var composeScreen = document.getElementById('composeScreen');
+      var detailScreen = document.getElementById('detailScreen');
+      var postListBody = document.getElementById('postListBody');
+      var boardCards = document.getElementById('boardCards');
+      var listEmpty = document.getElementById('listEmpty');
+      var detailBox = document.getElementById('detailBox');
+
+      var currentPostId = null;
+      var currentUnlock = '';
+      var listCache = [];
+      try {
+        var storedListCache = JSON.parse(localStorage.getItem('boardListCacheV2') || '[]');
+        if (Array.isArray(storedListCache)) listCache = storedListCache;
+      } catch (e) {}
+      var detailCache = Object.create(null);
+      var detailPrefetching = Object.create(null);
+      var detailRequestSeq = 0;
+      var currentDetailData = null;
+      var editWasPrivate = false;
+
+      var modalUnlock = document.getElementById('modalUnlock');
+      var modalEdit = document.getElementById('modalEdit');
+
+      function showModal(el, show) {
+        el.classList.toggle('show', !!show);
+        el.setAttribute('aria-hidden', show ? 'false' : 'true');
+      }
+
+      document.getElementById('cPrivate').addEventListener('change', function () {
+        document.getElementById('cPwWrap').classList.toggle('hidden', !this.checked);
+      });
+      document.getElementById('ePrivate').addEventListener('change', function () {
+        document.getElementById('ePwWrap').classList.toggle('hidden', !this.checked);
+      });
+
+      function findCachedPost(id) {
+        var n = Number(id);
+        var i;
+        for (i = 0; i < listCache.length; i++) {
+          if (Number(listCache[i].id) === n) return listCache[i];
+        }
+        return null;
+      }
+
+       
+      function loadList() {
+        if (listCache.length) {
+          renderTable(listCache);
+        }
+        google.script.run
+          .withSuccessHandler(function (items) {
+            var previousCounts = {};
+            for (var i = 0; i < listCache.length; i++) {
+              previousCounts[String(listCache[i].id)] = Number(listCache[i].commentCount) || 0;
+            }
+            listCache = Array.isArray(items) ? items : [];
+            for (var j = 0; j < listCache.length; j++) {
+              var key = String(listCache[j].id);
+              if (Object.prototype.hasOwnProperty.call(previousCounts, key)) {
+                listCache[j].commentCount = previousCounts[key];
+              }
+            }
+            try { localStorage.setItem('boardListCacheV2', JSON.stringify(listCache)); } catch (e) {}
+            renderTable(listCache);
+            loadCommentCounts();
+            setTimeout(function () { prefetchPublicDetails(listCache); }, 200);
+          })
+          .withFailureHandler(function () {
+            postListBody.innerHTML = '';
+            if (boardCards) boardCards.innerHTML = '';
+            listEmpty.classList.remove('hidden');
+            listEmpty.textContent = '목록을 불러오지 못했습니다.';
+          })
+          .getList();
+      }
+
+       
+      function loadCommentCounts() {
+        google.script.run
+          .withSuccessHandler(function (text) {
+            var map = typeof text === 'string' ? JSON.parse(text) : text;
+            map = map || {};
+            for (var i = 0; i < listCache.length; i++) {
+              listCache[i].commentCount = Number(map[String(listCache[i].id)] || 0);
+            }
+            try { localStorage.setItem('boardListCacheV2', JSON.stringify(listCache)); } catch (e) {}
+            if (!listScreen.classList.contains('hidden')) renderTable(listCache);
+          })
+          .getCommentCountsMapJson();
+      }
+
+      
+
+      function prefetchPublicDetails(items) {
+        var ids = [];
+        for (var i = 0; i < items.length; i++) {
+          var it = items[i];
+          var key = String(Number(it.id));
+          if (it.isPrivate || detailCache[key] || detailPrefetching[key]) continue;
+          ids.push(Number(it.id));
+          detailPrefetching[key] = true;
+        }
+        if (!ids.length) return;
+        google.script.run
+          .withSuccessHandler(function (text) {
+            var rows = typeof text === 'string' ? JSON.parse(text) : text;
+            (Array.isArray(rows) ? rows : []).forEach(function (data) {
+              if (data && data.post) detailCache[String(Number(data.post.id))] = data;
+            });
+            ids.forEach(function (id) { delete detailPrefetching[String(id)]; });
+          })
+          .withFailureHandler(function () {
+            ids.forEach(function (id) { delete detailPrefetching[String(id)]; });
+          })
+          .getPublicPostDetailsText(JSON.stringify({ ids: ids }));
+      }
+
+      function commentSuffix(cCount) {
+        var c = Number(cCount) || 0;
+        return ' <span class="title-cmt">(' + c + ')</span>';
+      }
+
+      function listTitlePlain(it) {
+        var t = String(it.title || '');
+        if (it.isPrivate && t.indexOf('[비밀]') === 0) {
+          t = t.replace(/^\\[비밀\\]\\s*/, '').trim();
+        }
+        return t;
+      }
+
+      function buildTitleHtml(it) {
+        var cmt = commentSuffix(it.commentCount);
+        var lock = it.isPrivate
+          ? '<span class="badge-private" title="비밀글">비밀</span> '
+          : '';
+        if (it.isNotice) {
+          return lock + '<span class="badge-notice">공지</span> ' + esc(it.title || '') + cmt;
+        }
+        return lock + esc(listTitlePlain(it)) + cmt;
+      }
+
+       
+      var AVATAR_ANIMAL_HEX = [
+        '1f436', '1f431', '1f430', '1f42d', '1f439', '1f984', '1f428', '1f42f',
+        '1f981', '1f42e', '1f437', '1f438', '1f414', '1f426', '1f427', '1f989',
+        '1f9a5', '1f99c', '1f993', '1f992', '1f998', '1f99a', '1f422', '1f40e'
+      ];
+       
+      var TWEMOJI_CLOVER_HEX = '1f340';
+      function twemojiPngUrl(hex) {
+        return 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/' + hex + '.png';
+      }
+      function isAdminDisplayName(name) {
+        var t = String(name || '').replace(/\\s+/g, ' ').trim();
+        return t === '관리자' || t === '꽌리자';
+      }
+      function avatarUrlForPost(postId, name) {
+        if (isAdminDisplayName(name)) {
+          return twemojiPngUrl(TWEMOJI_CLOVER_HEX);
+        }
+        var n = Number(postId) || 0;
+        var i = ((n * 7919) % AVATAR_ANIMAL_HEX.length + AVATAR_ANIMAL_HEX.length) % AVATAR_ANIMAL_HEX.length;
+        var hex = AVATAR_ANIMAL_HEX[i];
+        return twemojiPngUrl(hex);
+      }
+      function avatarUrlForComment(user, rowKey) {
+        if (isAdminDisplayName(user)) {
+          return twemojiPngUrl(TWEMOJI_CLOVER_HEX);
+        }
+        var s = String(user || '') + '|' + String(rowKey == null ? '' : rowKey);
+        var h = 5381;
+        for (var i = 0; i < s.length; i++) h = ((h << 5) + h) + s.charCodeAt(i) | 0;
+        var idx = (Math.abs(h) % AVATAR_ANIMAL_HEX.length + AVATAR_ANIMAL_HEX.length) % AVATAR_ANIMAL_HEX.length;
+        var hex = AVATAR_ANIMAL_HEX[idx];
+        return twemojiPngUrl(hex);
+      }
+      function authorCellHtml(name, postId) {
+        var src = esc(avatarUrlForPost(postId, name));
+        var adm = isAdminDisplayName(name) ? ' author-cell--admin' : '';
+        return '<span class="author-cell' + adm + '">' +
+          '<img class="author-ic" src="' + src + '" width="22" height="22" alt="" loading="lazy" decoding="async">' +
+          '<span class="author-name">' + esc(name || '') + '</span></span>';
+      }
+
+      function viewCellHtml(v) {
+        var n = Number(v) || 0;
+        return '<span class="view-subtle" title="조회수">' +
+          '<svg class="view-ic" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/></svg>' +
+          '<span class="view-num">' + n + '</span></span>';
+      }
+
+      function renderTable(items) {
+        if (!items.length) {
+          postListBody.innerHTML = '';
+          if (boardCards) boardCards.innerHTML = '';
+          listEmpty.classList.remove('hidden');
+          return;
+        }
+        listEmpty.classList.add('hidden');
+        var parts = [];
+        var cardParts = [];
+        var normalSeq = 0;
+        var i, it, numCell, rowClass;
+        var vCount;
+        for (i = 0; i < items.length; i++) {
+          it = items[i];
+          vCount = Number(it.views) || 0;
+          if (it.isNotice) {
+            numCell = '공지';
+            rowClass = 'is-notice';
+          } else {
+            normalSeq++;
+            numCell = String(normalSeq);
+            rowClass = '';
+          }
+          if (it.isPrivate) rowClass = (rowClass ? rowClass + ' ' : '') + 'is-private';
+          parts.push('<tr class="' + rowClass + '" data-id="' + it.id + '" data-private="' + (it.isPrivate ? '1' : '0') + '">');
+          parts.push('<td class="col-num">' + numCell + '</td>');
+          parts.push('<td class="col-title">' + buildTitleHtml(it) + '</td>');
+          parts.push('<td class="col-author">' + authorCellHtml(it.user, it.id) + '</td>');
+          parts.push('<td class="col-date">' + esc(it.date || '') + '</td>');
+          parts.push('<td class="col-view">' + viewCellHtml(vCount) + '</td>');
+          parts.push('</tr>');
+
+          cardParts.push('<article class="board-card ' + rowClass + '" tabindex="0" data-id="' + it.id + '" data-private="' + (it.isPrivate ? '1' : '0') + '"' + (it.isPrivate ? ' aria-label="비밀글"' : '') + '>');
+          cardParts.push('<div class="board-card__row1"><span class="board-card__num">' + esc(numCell) + '</span>' + viewCellHtml(vCount) + '</div>');
+          cardParts.push('<div class="board-card__title">' + buildTitleHtml(it) + '</div>');
+          cardParts.push('<div class="board-card__foot"><span class="board-card__author">' + authorCellHtml(it.user, it.id) + '</span>');
+          cardParts.push('<span class="board-card__date">' + esc(it.date || '') + '</span></div></article>');
+        }
+        postListBody.innerHTML = parts.join('');
+        if (boardCards) boardCards.innerHTML = cardParts.join('');
+      }
+
+      function onCardClick(e) {
+        var el = e.currentTarget;
+        var id = Number(el.getAttribute('data-id'));
+        var isPrivate = el.getAttribute('data-private') === '1';
+        openPost(id, isPrivate);
+      }
+
+      function onRowClick(e) {
+        var tr = e.currentTarget;
+        var id = Number(tr.getAttribute('data-id'));
+        var isPrivate = tr.getAttribute('data-private') === '1';
+        openPost(id, isPrivate);
+      }
+
+      function openPost(id, isPrivate) {
+        currentPostId = id;
+        currentUnlock = '';
+        if (isPrivate) {
+          var cached = getStoredUnlock(id);
+          if (cached) { tryDetail(id, cached); return; }
+          document.getElementById('uPw').value = '';
+          document.getElementById('uErr').classList.add('hidden');
+          showModal(modalUnlock, true);
+          setTimeout(function () { document.getElementById('uPw').focus(); }, 30);
+        } else {
+          tryDetail(id, '');
+        }
+      }
+
+      
+
+      function tryDetail(id, unlock, opt) {
+        opt = opt || {};
+        var bumpRead = opt.bumpRead !== false;
+        var cacheKey = String(Number(id));
+        var requestSeq = ++detailRequestSeq;
+        var prefetched = !opt.force && detailCache[cacheKey];
+        if (prefetched) {
+          if (bumpRead) {
+            prefetched.post.views = (Number(prefetched.post.views) || 0) + 1;
+            var listItem = findCachedPost(id);
+            if (listItem) {
+              listItem.views = prefetched.post.views;
+              renderTable(listCache);
+            }
+            google.script.run.addView(id);
+          }
+          currentUnlock = unlock;
+          showDetail(prefetched);
+          return;
+        }
+        
+
+        var payload = JSON.stringify({ id: id, bumpViews: bumpRead ? 1 : 0, unlockPw: unlock, pw: unlock, adminPw: unlock });
+        google.script.run
+          .withSuccessHandler(function (text) {
+            if (requestSeq !== detailRequestSeq) return;
+            var data = typeof text === 'string' ? JSON.parse(text) : text;
+            if (data.error) {
+              try { sessionStorage.removeItem(STORAGE_PREFIX + id); } catch (e) {}
+              if (document.getElementById('modalUnlock').classList.contains('show')) {
+                document.getElementById('uErr').textContent = data.error;
+                document.getElementById('uErr').classList.remove('hidden');
+              } else {
+                document.getElementById('uPw').value = '';
+                document.getElementById('uErr').textContent = data.error;
+                document.getElementById('uErr').classList.remove('hidden');
+                showModal(modalUnlock, true);
+              }
+              return;
+            }
+            setStoredUnlock(id, unlock);
+            currentUnlock = unlock;
+            showModal(modalUnlock, false);
+            if (data && data.post && !data.post.isPrivate) detailCache[cacheKey] = data;
+            showDetail(data);
+          })
+          .withFailureHandler(function (err) {
+            if (requestSeq !== detailRequestSeq) return;
+            alert('오류: ' + (err && err.message ? err.message : err));
+          })
+          .getPostDetailText(payload);
+      }
+
+      function showDetail(data) {
+        listScreen.classList.add('hidden');
+        composeScreen.classList.add('hidden');
+        detailScreen.classList.remove('hidden');
+        currentDetailData = data;
+        var p = data.post;
+        var html = '';
+        var cachedListItem = findCachedPost(p.id);
+        if (cachedListItem) {
+          cachedListItem.views = Number(p.views) || 0;
+          cachedListItem.commentCount = (data.comments && data.comments.length) ? data.comments.length : 0;
+        }
+        html += '<header class="detail-header">';
+        html += '<h2 class="detail-title">' + esc(p.title || '') + '</h2>';
+        var vc = Number(p.views) || 0;
+        var cc = (data.comments && data.comments.length) ? data.comments.length : 0;
+        html += '<div class="detail-meta">';
+        html += '<div class="detail-meta__line">' + authorCellHtml(p.user, p.id) + ' <span class="detail-sep">·</span> <span>' + esc(p.date || '') + '</span></div>';
+        html += '<div class="detail-meta__chips">';
+        html += '<span class="meta-chip meta-chip--view">' + META_IC_EYE + '조회 <strong>' + vc + '</strong></span>';
+        html += '<span class="meta-chip meta-chip--cmt">' + META_IC_MSG + '댓글 <strong>' + cc + '</strong></span>';
+        html += '</div></div>';
+        html += '</header>';
+        html += '<div class="detail-content"><div class="detail-body">' + (p.content || '') + '</div></div>';
+        html += '<section class="comments" aria-label="댓글">';
+        html += '<div class="comments__head"><span class="comments__title">댓글 ' + cc + '</span></div>';
+        (data.comments || []).forEach(function (c, cIdx) {
+          var cr = c.row != null ? String(Number(c.row)) : '';
+          var avSrc = esc(avatarUrlForComment(c.user, cr || String(cIdx)));
+          var isAdm = isAdminDisplayName(c.user);
+          var accentClass = isAdm ? ' comment--admin' : (' comment--a' + (cIdx % 4));
+          html += '<div class="comment' + accentClass + '">';
+          html += '<div class="comment__inner">';
+          html += '<div class="comment__head-row">';
+          html += '<div class="comment__avatar-wrap' + (isAdm ? ' comment__avatar-wrap--admin' : '') + '"><img class="comment__avatar" src="' + avSrc + '" width="38" height="38" alt="" loading="lazy" decoding="async"></div>';
+          html += '<span class="comment__name">' + esc(c.user || '') + '</span>';
+          html += '<time class="comment__meta">' + esc(c.date || '') + '</time>';
+          html += '</div>';
+          html += '<div class="comment__body-box"><div class="comment__text">' + esc(c.content || '') + '</div></div>';
+          html += '</div>';
+          if (cr) {
+            html += '<button type="button" class="btn btn-comment-del" data-crow="' + esc(cr) + '">🗑 삭제</button>';
+          }
+          html += '</div>';
+        });
+        html += '<div class="field"><label>댓글 달기</label>';
+        html += '<div class="row2"><input type="text" id="ncUser" placeholder="닉네임 · 이름"><input type="password" id="ncPw" placeholder="패스워드(선택)"></div>';
+        html += '<textarea id="ncBody" placeholder="하고 싶은 말을 편하게 적어 주세요 📝" style="margin-top:8px;min-height:64px"></textarea>';
+        html += '<button type="button" class="btn btn-primary" id="ncSend" style="margin-top:8px">댓글 등록</button></div></section>';
+        detailBox.innerHTML = html;
+        var bodyEl = detailBox.querySelector('.detail-body');
+        if (bodyEl) linkifyUrlsInElement(bodyEl);
+        detailBox.querySelectorAll('.comment__text').forEach(function (cel) {
+          linkifyUrlsInElement(cel);
+        });
+        detailBox.querySelectorAll('.btn-comment-del').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var row = Number(btn.getAttribute('data-crow'));
+            if (!row || !currentPostId) return;
+            var pw = window.prompt('댓글 삭제를 위해 해당 댓글 작성 시 입력한 비밀번호를 입력해 주세요.\
+(비밀번호 없이 작성한 댓글은 관리자 비밀번호로 삭제할 수 있습니다.)');
+            if (pw === null) return;
+            google.script.run
+              .withSuccessHandler(function (text) {
+                var r = typeof text === 'string' ? JSON.parse(text) : text;
+                if (!r.ok) {
+                  alert(r.error || '삭제에 실패했습니다.');
+                  return;
+                }
+                tryDetail(currentPostId, currentUnlock, { bumpRead: false, force: true });
+              })
+              .withFailureHandler(function (e) { alert(e && e.message ? e.message : String(e)); })
+              .deleteCommentText(JSON.stringify({ id: currentPostId, commentRow: row, pw: pw.trim() }));
+          });
+        });
+        document.getElementById('ncSend').addEventListener('click', function () {
+          var u = (document.getElementById('ncUser').value || '').trim();
+          var c = (document.getElementById('ncBody').value || '').trim();
+          var pw = (document.getElementById('ncPw').value || '').trim();
+          if (!u || !c) { alert('이름과 내용을 입력해 주세요.'); return; }
+          google.script.run
+            .withSuccessHandler(function () { tryDetail(currentPostId, currentUnlock, { bumpRead: false, force: true }); })
+            .withFailureHandler(function (e) { alert(e); })
+            .saveComment(currentPostId, u, c, pw);
+        });
+      }
+
+      document.getElementById('btnBack').addEventListener('click', function () {
+        detailRequestSeq++;
+        detailScreen.classList.add('hidden');
+        composeScreen.classList.add('hidden');
+        listScreen.classList.remove('hidden');
+        currentPostId = null;
+        currentDetailData = null;
+        renderTable(listCache);
+      });
+      document.getElementById('btnRefresh').addEventListener('click', loadList);
+
+      var cBodyRich = document.getElementById('cBodyRich');
+      var eBodyRich = document.getElementById('eBodyRich');
+      var cAdminNoticeHint = document.getElementById('cAdminNoticeHint');
+
+       
+      function contentToEditableHtml(raw) {
+        var s = String(raw || '');
+        if (!s) return '';
+        if (/<[a-z][\\s\\S]*>/i.test(s)) return s;
+        return esc(s).replace(/\\r\
+|\\r|\
+/g, '<br>');
+      }
+
+      
+
+      function installRichEditor(btnPrefix, richId, fileId) {
+        var richEl = document.getElementById(richId);
+        function tid(name) {
+          return btnPrefix + name;
+        }
+        function focusRich() {
+          richEl.focus();
+        }
+        function execRich(cmd, val) {
+          focusRich();
+          try {
+            document.execCommand(cmd, false, val == null ? false : val);
+          } catch (e) {}
+        }
+        document.getElementById(tid('tbBold')).addEventListener('click', function () { execRich('bold'); });
+        document.getElementById(tid('tbItalic')).addEventListener('click', function () { execRich('italic'); });
+        document.getElementById(tid('tbUnderline')).addEventListener('click', function () { execRich('underline'); });
+        document.getElementById(tid('tbBr')).addEventListener('click', function () { execRich('insertLineBreak'); });
+        document.getElementById(tid('tbNbsp')).addEventListener('click', function () { execRich('insertHTML', '&nbsp;'); });
+        document.getElementById(tid('tbFg')).addEventListener('input', function () {
+          execRich('foreColor', this.value);
+        });
+        document.getElementById(tid('tbAttach')).addEventListener('click', function () {
+          document.getElementById(fileId).click();
+        });
+        document.getElementById(fileId).addEventListener('change', function () {
+          var files = this.files;
+          if (!files || !files.length) return;
+          var maxDriveB = 10 * 1024 * 1024;
+          var MAX_INLINE = 28000;
+          function insertInlineDataUrl(dataUrl, file, isImg) {
+            focusRich();
+            try {
+              if (isImg) {
+                document.execCommand('insertHTML', false,
+                  '<img src="' + String(dataUrl).replace(/"/g, '&quot;') + '" alt="' + String(file.name).replace(/"/g, '&quot;') + '" style="max-width:100%;height:auto;border-radius:8px">');
+              } else {
+                document.execCommand('insertHTML', false,
+                  '<a href="' + String(dataUrl).replace(/"/g, '&quot;') + '" download="' + String(file.name).replace(/"/g, '&quot;') + '" target="_blank" rel="noopener">📎 ' + esc(file.name) + '</a>');
+              }
+            } catch (e2) {}
+          }
+          function driveFailFallback(isImg, file, dataUrl) {
+            if (file.size <= MAX_INLINE) {
+              insertInlineDataUrl(dataUrl, file, isImg);
+              return;
+            }
+            alert('Drive에 올리지 못했습니다.\
+\
+' +
+              '1) Apps Script에서 함수 「authorizeDriveAttachFolder」를 한 번 실행하고 Drive 허용\
+' +
+              '2) 웹앱 배포: 실행 계정 「나」, 새 버전으로 게시\
+' +
+              '3) 프로젝트의 appsscript.json(매니페스트)에 drive 권한이 들어 있는지 확인 (appsscript.json.gs 파일이 아님)\
+\
+' +
+              '또는 파일을 ' + Math.round(MAX_INLINE / 1024) + 'KB 이하로 줄이면 본문에 직접 넣습니다.');
+          }
+          var i;
+          for (i = 0; i < files.length; i++) {
+            (function (file) {
+              if (file.size > maxDriveB) {
+                alert('파일이 너무 큽니다 (최대 약 10MB): ' + file.name);
+                return;
+              }
+              var fr = new FileReader();
+              fr.onload = function () {
+                var dataUrl = fr.result;
+                var isImg = /^image\//.test(file.type || '');
+                google.script.run
+                  .withSuccessHandler(function (text) {
+                    var r = typeof text === 'string' ? JSON.parse(text) : text;
+                    if (r && r.ok) {
+                      focusRich();
+                      try {
+                        if (isImg) {
+                          var src = r.viewUrl || r.url;
+                          document.execCommand('insertHTML', false,
+                            '<img src="' + String(src).replace(/"/g, '&quot;') + '" alt="' + String(file.name).replace(/"/g, '&quot;') + '" style="max-width:100%;height:auto;border-radius:8px">');
+                        } else {
+                          document.execCommand('insertHTML', false,
+                            '<a href="' + String(r.url).replace(/"/g, '&quot;') + '" target="_blank" rel="noopener">📎 ' + esc(file.name) + '</a>');
+                        }
+                      } catch (e2) {}
+                      return;
+                    }
+                    driveFailFallback(isImg, file, dataUrl);
+                  })
+                  .withFailureHandler(function () {
+                    driveFailFallback(isImg, file, dataUrl);
+                  })
+                  .uploadBoardAttachmentJson(JSON.stringify({
+                    base64: dataUrl,
+                    mimeType: file.type || 'application/octet-stream',
+                    fileName: file.name
+                  }));
+              };
+              fr.onerror = function () { alert('파일을 읽지 못했습니다: ' + file.name); };
+              fr.readAsDataURL(file);
+            })(files[i]);
+          }
+          this.value = '';
+        });
+      }
+
+      installRichEditor('', 'cBodyRich', 'cFile');
+      installRichEditor('e', 'eBodyRich', 'eFile');
+
+      function openComposeUi() {
+        listScreen.classList.add('hidden');
+        composeScreen.classList.remove('hidden');
+        detailScreen.classList.add('hidden');
+      }
+      function closeComposeUi() {
+        composeScreen.classList.add('hidden');
+        listScreen.classList.remove('hidden');
+      }
+
+      document.getElementById('cUser').addEventListener('input', function () {
+        cAdminNoticeHint.classList.toggle('hidden', !isAdminDisplayName(this.value));
+      });
+
+      document.getElementById('btnNewPost').addEventListener('click', function () {
+        document.getElementById('cUser').value = '';
+        document.getElementById('cTitle').value = '';
+        cBodyRich.innerHTML = '';
+        document.getElementById('cPrivate').checked = false;
+        document.getElementById('cPw').value = '';
+        document.getElementById('cPwWrap').classList.add('hidden');
+        document.getElementById('cErr').classList.add('hidden');
+        cAdminNoticeHint.classList.add('hidden');
+        openComposeUi();
+        setTimeout(function () { document.getElementById('cUser').focus(); }, 30);
+      });
+      document.getElementById('btnComposeBack').addEventListener('click', closeComposeUi);
+      document.getElementById('cCancel').addEventListener('click', closeComposeUi);
+      document.getElementById('cSubmit').addEventListener('click', function () {
+        var richEl = cBodyRich;
+        var plain = (richEl.innerText || richEl.textContent || '').replace(/\\s+/g, ' ').trim();
+        var hasMedia = /<img\\s/i.test(richEl.innerHTML) || /<a\\s+[^>]*href=/i.test(richEl.innerHTML);
+        var form = {
+          user: document.getElementById('cUser').value.trim(),
+          title: document.getElementById('cTitle').value.trim(),
+          content: richEl.innerHTML.trim(),
+          isPrivate: document.getElementById('cPrivate').checked,
+          pw: document.getElementById('cPw').value,
+          isNotice: isAdminDisplayName(document.getElementById('cUser').value.trim()),
+          adminPw: ''
+        };
+        document.getElementById('cErr').classList.add('hidden');
+        if (!form.user || !form.title || (!plain && !hasMedia)) {
+          document.getElementById('cErr').textContent = '이름·제목·내용을 입력해 주세요.';
+          document.getElementById('cErr').classList.remove('hidden');
+          return;
+        }
+        if (form.isPrivate && !String(form.pw || '').trim()) {
+          document.getElementById('cErr').textContent = '비밀글은 패스워드를 입력해 주세요.';
+          document.getElementById('cErr').classList.remove('hidden');
+          return;
+        }
+        google.script.run
+          .withSuccessHandler(function () { closeComposeUi(); loadList(); })
+          .withFailureHandler(function (e) {
+            document.getElementById('cErr').textContent = e.message || String(e);
+            document.getElementById('cErr').classList.remove('hidden');
+          })
+          .saveData(form);
+      });
+
+      document.getElementById('uCancel').addEventListener('click', function () { showModal(modalUnlock, false); });
+      document.getElementById('uOk').addEventListener('click', function () {
+        var pw = (document.getElementById('uPw').value || '').trim();
+        document.getElementById('uErr').classList.add('hidden');
+        tryDetail(currentPostId, pw);
+      });
+      document.getElementById('uPw').addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') document.getElementById('uOk').click();
+      });
+
+      document.getElementById('btnDelete').addEventListener('click', function () {
+        if (!currentPostId) return;
+        var pw = prompt('삭제하려면 패스워드를 입력하세요.\
+(작성 시 비밀번호 또는 관리자 비밀번호)');
+        if (pw === null) return;
+        var payload = JSON.stringify({ id: currentPostId, pw: String(pw) });
+        google.script.run
+          .withSuccessHandler(function (text) {
+            var r = typeof text === 'string' ? JSON.parse(text) : text;
+            if (!r.ok) { alert(r.error || '삭제 실패'); return; }
+            detailScreen.classList.add('hidden');
+            listScreen.classList.remove('hidden');
+            try { sessionStorage.removeItem(STORAGE_PREFIX + currentPostId); } catch (e) {}
+            currentPostId = null;
+            loadList();
+          })
+          .withFailureHandler(function (e) { alert(e); })
+          .deletePostText(payload);
+      });
+
+      function openEditWithData(data) {
+        var p = data.post;
+        document.getElementById('eUser').value = p.user || '';
+        document.getElementById('eTitle').value = p.title || '';
+        eBodyRich.innerHTML = contentToEditableHtml(p.content || '');
+        var isPriv = !!p.isPrivate;
+        editWasPrivate = isPriv;
+        document.getElementById('ePrivate').checked = isPriv;
+        document.getElementById('ePostPw').value = '';
+        document.getElementById('ePwWrap').classList.toggle('hidden', !isPriv);
+        document.getElementById('eAuth').value = currentUnlock || getStoredUnlock(currentPostId) || '';
+        document.getElementById('eErr').classList.add('hidden');
+        showModal(modalEdit, true);
+      }
+
+      document.getElementById('btnEdit').addEventListener('click', function () {
+        if (!currentPostId || !currentDetailData || !currentDetailData.post) return;
+        openEditWithData(currentDetailData);
+      });
+
+      document.getElementById('eCancel').addEventListener('click', function () { showModal(modalEdit, false); });
+      document.getElementById('eSubmit').addEventListener('click', function () {
+        var auth = (document.getElementById('eAuth').value || '').trim();
+        var er = eBodyRich;
+        var ePlain = (er.innerText || er.textContent || '').replace(/\\s+/g, ' ').trim();
+        var eHasMedia = /<img\\s/i.test(er.innerHTML) || /<a\\s+[^>]*href=/i.test(er.innerHTML);
+        var o = {
+          id: currentPostId,
+          unlockPw: auth,
+          user: document.getElementById('eUser').value.trim(),
+          title: document.getElementById('eTitle').value.trim(),
+          content: er.innerHTML.trim(),
+          isPrivate: document.getElementById('ePrivate').checked,
+          postPw: document.getElementById('ePostPw').value
+        };
+        document.getElementById('eErr').classList.add('hidden');
+        if (!auth) {
+          document.getElementById('eErr').textContent = '확인용 패스워드를 입력해 주세요.';
+          document.getElementById('eErr').classList.remove('hidden');
+          return;
+        }
+        if (!o.user || !o.title || (!ePlain && !eHasMedia)) {
+          document.getElementById('eErr').textContent = '이름·제목·내용을 입력해 주세요.';
+          document.getElementById('eErr').classList.remove('hidden');
+          return;
+        }
+        if (o.isPrivate && !String(o.postPw || '').trim() && !editWasPrivate) {
+          document.getElementById('eErr').textContent = '비밀글로 저장하려면 비밀글로 저장할 패스워드를 입력해 주세요.';
+          document.getElementById('eErr').classList.remove('hidden');
+          return;
+        }
+        google.script.run
+          .withSuccessHandler(function (text) {
+            var r = typeof text === 'string' ? JSON.parse(text) : text;
+            if (!r.ok) {
+              document.getElementById('eErr').textContent = r.error || '저장 실패';
+              document.getElementById('eErr').classList.remove('hidden');
+              return;
+            }
+            showModal(modalEdit, false);
+            var newUnlock = o.isPrivate ? (String(o.postPw || '').trim() || o.unlockPw) : '';
+            if (o.isPrivate) setStoredUnlock(currentPostId, newUnlock);
+            currentUnlock = newUnlock || o.unlockPw;
+            tryDetail(currentPostId, currentUnlock, { bumpRead: false, force: true });
+          })
+          .withFailureHandler(function (e) {
+            document.getElementById('eErr').textContent = e.message || String(e);
+            document.getElementById('eErr').classList.remove('hidden');
+          })
+          .updatePostText(JSON.stringify(o));
+      });
+
+       
+      postListBody.addEventListener('click', function (e) {
+        var tr = e.target.closest && e.target.closest('tr[data-id]');
+        if (!tr) return;
+        onRowClick({ currentTarget: tr });
+      });
+      if (boardCards) {
+        boardCards.addEventListener('click', function (e) {
+          var card = e.target.closest && e.target.closest('.board-card');
+          if (!card) return;
+          onCardClick({ currentTarget: card });
+        });
+        boardCards.addEventListener('keydown', function (ev) {
+          if (ev.key !== 'Enter' && ev.key !== ' ') return;
+          var card = ev.target.closest && ev.target.closest('.board-card');
+          if (!card || !boardCards.contains(card)) return;
+          ev.preventDefault();
+          onCardClick({ currentTarget: card });
+        });
+      }
+
+      loadList();
+    })();
+  </script>
+</body>
+</html>
+","ncc":"{"awhs":true}"}", "", undefined, true , false  , "false", "https://n-j2muvpcg6k7crunjcef7sc4dlxw67wb6uyiw2eq-0lu-script.googleusercontent.com", "https://drive.google.com/abuse?id=AKkXjowcAJ5cpJWpvoaE-A2mW9Ukvi0lxXJmrIRwVDUi6YGOMGsIQ4nD7qqgQXE0QoY30NjGsSBdIPddUtEWKlOOdMOWzXqmZVDjM7_W%3A0&docurl=https%3A%2F%2Fscript.google.com%2Fmacros%2Fs%2FAKfycbxPPYJgogbTTlL9Ds7Ahb-Qdj8Ylr4rryF1WGp7pyiLTqZzUE9fFo-SuRF22WDLjaZprA%2Fexec");}
+el.src = 'https://n-j2muvpcg6k7crunjcef7sc4dlxw67wb6uyiw2eq-0lu-script.googleusercontent.com/userCodeAppPanel';
+}());
+</script>
+</body>
+</html>

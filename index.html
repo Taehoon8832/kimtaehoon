@@ -1,0 +1,2089 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="김태훈닷컴 — 대입정보·학급 진학관리·오픈채팅 바로가기와 실시간 대화" />
+  <meta name="theme-color" content="#FA2D48" />
+  <title>김태훈닷컴</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --color-primary-50: #FEE8EC;
+      --color-primary-100: #FDC1CB;
+      --color-primary-300: #FA6883;
+      --color-primary-400: #FA4866;
+      --color-primary-500: #FA2D48;
+      --color-primary-600: #E01539;
+      --color-primary-700: #B30D2D;
+      --color-secondary-500: #FF5577;
+
+      --color-neutral-0: #FFFFFF;
+      --color-neutral-50: #F2F2F7;
+      --color-neutral-100: #E5E5EA;
+      --color-neutral-200: #D1D1D6;
+      --color-neutral-300: #A8A8AD;
+      --color-neutral-500: #636366;
+      --color-neutral-700: #2C2C2E;
+      --color-neutral-800: #1C1C1E;
+      --color-neutral-900: #0A0A0A;
+      --color-neutral-1000: #000000;
+
+      --bg-base: #FFFFFF;
+      --bg-subtle: #F2F2F7;
+      --bg-elevated: #FFFFFF;
+      --text-primary: #000000;
+      --text-secondary: #1C1C1E;
+      --text-tertiary: #636366;
+      --text-on-primary: #FFFFFF;
+      --border-default: #E5E5EA;
+      --border-strong: #D1D1D6;
+      --border-focus: #FA2D48;
+
+      --space-xs: 4px;
+      --space-sm: 8px;
+      --space-md: 16px;
+      --space-lg: 24px;
+      --space-xl: 32px;
+      --space-2xl: 48px;
+      --space-3xl: 72px;
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 14px;
+      --radius-xl: 22px;
+      --radius-full: 9999px;
+
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.08);
+      --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.12);
+      --shadow-lg: 0 18px 42px rgba(0, 0, 0, 0.16);
+      --shadow-art: 0 18px 36px rgba(250, 45, 72, 0.24);
+
+      --duration-fast: 120ms;
+      --duration-base: 240ms;
+      --duration-slow: 400ms;
+      --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+      --kakao-yellow: #FEE500;
+      --kakao-fg: #191919;
+      --kakao-muted: #888888;
+      --kakao-chat-bg: #B2C7DA;
+      --kakao-surface: #FFFFFF;
+      --kakao-border: #F0F0F0;
+
+      --container: 1080px;
+      --font: "Noto Sans KR", "Noto Sans", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-base: #000000;
+        --bg-subtle: #0A0A0A;
+        --bg-elevated: #0A0A0A;
+        --text-primary: #F5F5F7;
+        --text-secondary: #F5F5F7;
+        --text-tertiary: #8E8E93;
+        --border-default: #222226;
+        --border-strong: #2C2C2E;
+        --color-primary-500: #FF3B58;
+        --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+        --shadow-lg: 0 18px 42px rgba(0, 0, 0, 0.55);
+      }
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font);
+      background: var(--bg-base);
+      color: var(--text-primary);
+      letter-spacing: 0;
+      line-height: 1.6;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+      letter-spacing: inherit;
+    }
+
+    img,
+    svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    .shell {
+      min-height: 100vh;
+      background:
+        radial-gradient(70% 55% at 50% -8%, rgba(250, 45, 72, 0.14), transparent 62%),
+        radial-gradient(45% 35% at 92% 18%, rgba(255, 85, 119, 0.08), transparent 55%),
+        linear-gradient(180deg, var(--bg-base) 0%, var(--bg-subtle) 100%);
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      min-height: 64px;
+      padding: 8px clamp(12px, 3vw, 24px);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      align-items: center;
+      gap: 10px;
+      background: color-mix(in srgb, var(--bg-base) 84%, transparent);
+      border-bottom: 1px solid var(--border-default);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      justify-self: start;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .nav-brand:hover .brand-name {
+      color: var(--red, #FA2D48);
+    }
+
+    .brand-mark {
+      width: 28px;
+      height: 28px;
+      flex: 0 0 28px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(145deg, #FF6482 0%, #FA2D48 55%, #D60035 100%);
+      box-shadow: 0 5px 15px rgba(250, 45, 72, 0.25);
+      animation: markPulse 3.6s var(--ease-out) infinite;
+    }
+
+    .brand-mark svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .brand-name {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      justify-self: center;
+      display: flex;
+      align-items: stretch;
+      gap: clamp(3px, 0.8vw, 8px);
+      max-width: min(980px, 78vw);
+    }
+
+    .nav-sep {
+      width: 1px;
+      align-self: stretch;
+      margin: 4px 4px;
+      flex: 0 0 1px;
+      background: linear-gradient(
+        180deg,
+        transparent 0%,
+        var(--border-strong) 18%,
+        var(--border-strong) 82%,
+        transparent 100%
+      );
+    }
+
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 4px;
+      min-width: 0;
+      flex: 1 1 0;
+      padding: 4px 4px 5px;
+      border-radius: 12px;
+      text-align: center;
+      transition:
+        transform var(--duration-fast) var(--ease-out),
+        background var(--duration-fast) var(--ease-out);
+    }
+
+    .nav-item:hover,
+    .nav-item:focus-visible {
+      background: color-mix(in srgb, var(--color-primary-500) 8%, transparent);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .nav-item:active {
+      transform: scale(0.97);
+    }
+
+    .nav-item .ic {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--icon-bg);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+      flex: 0 0 auto;
+    }
+
+    .nav-item .ic svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .nav-item.card-c .ic,
+    .nav-item.card-d .ic,
+    .nav-item.card-e .ic {
+      color: #191919;
+      box-shadow: 0 4px 10px rgba(200, 170, 0, 0.22);
+    }
+
+    .nav-item em {
+      font-style: normal;
+      font-size: 9px;
+      font-weight: 650;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      color: var(--text-secondary);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      word-break: keep-all;
+      max-width: 100%;
+    }
+
+    .card-a { --icon-bg: linear-gradient(145deg, #FF8D72 0%, #FA2D48 48%, #5F1235 100%); }
+    .card-b { --icon-bg: linear-gradient(135deg, #5D68FF 0%, #B846CE 47%, #FF5577 100%); }
+    .card-f { --icon-bg: linear-gradient(145deg, #5AC8FA 0%, #007AFF 48%, #003D7A 100%); }
+    .card-g { --icon-bg: linear-gradient(145deg, #FFB340 0%, #FF9500 48%, #C2410C 100%); }
+    .card-h { --icon-bg: linear-gradient(145deg, #34C759 0%, #30B0C7 48%, #0A6B6B 100%); }
+    .card-c { --icon-bg: linear-gradient(145deg, #FFE566 0%, #FEE500 45%, #C9A800 100%); }
+    .card-d { --icon-bg: linear-gradient(145deg, #FFE27A 0%, #FFC107 50%, #E09B00 100%); }
+    .card-e { --icon-bg: linear-gradient(145deg, #FFF1A0 0%, #FEE500 40%, #D4AF00 100%); }
+    .card-i { --icon-bg: linear-gradient(145deg, #A78BFA 0%, #7C3AED 48%, #4C1D95 100%); }
+
+    .nav-item.is-placeholder {
+      cursor: default;
+      pointer-events: none;
+    }
+
+    .nav-item.is-placeholder:hover,
+    .nav-item.is-placeholder:focus-visible {
+      background: transparent;
+      transform: none;
+    }
+
+    .nav-item.is-active {
+      background: color-mix(in srgb, var(--color-primary-500) 14%, transparent);
+    }
+
+    .nav-actions {
+      justify-self: end;
+      display: flex;
+      align-items: center;
+    }
+
+    .inquiry-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px 7px 8px;
+      border-radius: var(--radius-full);
+      background: #191919;
+      color: #FEE500;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+      box-shadow: 0 6px 16px rgba(25, 25, 25, 0.16);
+      transition: transform var(--duration-fast) var(--ease-out), background var(--duration-fast) var(--ease-out);
+    }
+
+    .inquiry-btn:hover,
+    .inquiry-btn:focus-visible {
+      transform: translateY(-1px) scale(1.02);
+      background: #2c2c2e;
+      outline: none;
+    }
+
+    .inquiry-btn:active {
+      transform: scale(0.97);
+    }
+
+    .inquiry-btn .ic {
+      width: 22px;
+      height: 22px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      background: #FEE500;
+      color: #191919;
+    }
+
+    .inquiry-btn .ic svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    .container {
+      width: min(var(--container), 100%);
+      margin: 0 auto;
+      padding: 0 clamp(16px, 4vw, 24px);
+    }
+
+    .chat-section {
+      padding: clamp(20px, 3vw, 28px) clamp(12px, 3vw, 20px) clamp(48px, 8vw, 88px);
+      width: min(1280px, 100%);
+      margin: 0 auto;
+    }
+
+    .expand-panel {
+      display: none;
+      width: min(1280px, 100%);
+      margin: clamp(16px, 2.5vw, 24px) auto 0;
+      padding: 0 clamp(12px, 3vw, 20px);
+      animation: riseIn 0.35s var(--ease-out) both;
+    }
+
+    .expand-panel.is-open {
+      display: block;
+    }
+    .expand-panel[data-theme="susi"] {
+      --expand-accent: #34C759;
+      --expand-mark: linear-gradient(145deg, #34C759 0%, #30B0C7 55%, #0A6B6B 100%);
+    }
+
+    .expand-panel[data-theme="ipgyeol"] {
+      --expand-accent: #007AFF;
+      --expand-mark: linear-gradient(145deg, #5AC8FA 0%, #007AFF 55%, #003D7A 100%);
+    }
+
+    .expand-shell {
+      overflow: hidden;
+      border: 4px solid #191919;
+      border-radius: 28px;
+      background: var(--bg-elevated);
+      box-shadow: 0 24px 50px rgba(25, 25, 25, 0.2);
+      min-height: min(82vh, 920px);
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+
+    .expand-bar {
+      min-height: 56px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      background: color-mix(in srgb, var(--bg-elevated) 90%, var(--expand-accent, #34C759));
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .expand-mark {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--expand-mark, linear-gradient(145deg, #34C759 0%, #30B0C7 55%, #0A6B6B 100%));
+      flex: 0 0 auto;
+    }
+
+    .expand-mark svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .expand-bar strong {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.4;
+      word-break: keep-all;
+    }
+
+    .expand-actions {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .expand-open,
+    .expand-close {
+      border: 0;
+      border-radius: var(--radius-full);
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.3;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform var(--duration-fast) var(--ease-out), background var(--duration-fast) var(--ease-out);
+    }
+
+    .expand-open {
+      background: #191919;
+      color: #fff;
+    }
+
+    .expand-close {
+      background: var(--color-neutral-100);
+      color: var(--text-primary);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .expand-close {
+        background: #2C2C2E;
+      }
+    }
+
+    .expand-open:hover,
+    .expand-close:hover {
+      transform: translateY(-1px);
+    }
+
+    .expand-frame-wrap {
+      min-height: 0;
+      background: #f2f2f7;
+    }
+
+    .expand-frame {
+      width: 100%;
+      height: min(76vh, 860px);
+      border: 0;
+      display: block;
+      background: #fff;
+    }
+
+    .chat-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.75fr);
+      gap: clamp(16px, 2.4vw, 24px);
+      align-items: stretch;
+      padding: clamp(8px, 2vw, 16px) 0;
+    }
+
+    .board-panel {
+      min-width: 0;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      min-height: 680px;
+      max-height: min(860px, 88vh);
+      border: 4px solid #191919;
+      border-radius: 34px;
+      background: var(--bg-elevated);
+      box-shadow: 0 24px 50px rgba(25, 25, 25, 0.22);
+      overflow: hidden;
+      animation: riseIn 0.65s var(--ease-out) both;
+    }
+
+    .board-bar {
+      min-height: 42px;
+      height: auto;
+      padding: 6px 12px 6px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: color-mix(in srgb, var(--bg-elevated) 92%, var(--color-primary-50));
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .board-mark {
+      width: 24px;
+      height: 24px;
+      flex: 0 0 24px;
+      border-radius: 7px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(145deg, #FF8D72 0%, #FA2D48 52%, #7A0820 100%);
+      box-shadow: 0 4px 10px rgba(250, 45, 72, 0.22);
+    }
+
+    .board-mark svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    .board-bar strong {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.35;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    .board-bar .board-title {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      padding-top: 0;
+    }
+
+    .board-open {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 6px 10px;
+      border-radius: var(--radius-full);
+      background: var(--color-primary-500);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      box-shadow: 0 6px 14px rgba(250, 45, 72, 0.2);
+      transition: transform var(--duration-fast) var(--ease-out), background var(--duration-fast) var(--ease-out);
+      white-space: nowrap;
+      flex: 0 0 auto;
+    }
+
+    .board-open:hover,
+    .board-open:focus-visible {
+      transform: translateY(-1px) scale(1.02);
+      background: var(--color-primary-400);
+      outline: none;
+    }
+
+    .board-open:active {
+      transform: scale(0.97);
+    }
+
+    .board-open svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .board-frame-wrap {
+      position: relative;
+      min-height: 0;
+      overflow: auto;
+      background: #c6d6e4;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .board-frame {
+      width: 100%;
+      height: 100%;
+      min-width: 100%;
+      border: 0;
+      display: block;
+      background: #c6d6e4;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(25, 25, 25, 0.25) transparent;
+    }
+
+    .board-frame::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    .board-frame::-webkit-scrollbar-thumb {
+      background: rgba(25, 25, 25, 0.22);
+      border-radius: 999px;
+    }
+
+    .board-frame::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .board-fallback {
+      position: absolute;
+      inset: 0;
+      display: none;
+      place-items: center;
+      padding: 28px 20px;
+      text-align: center;
+      background: color-mix(in srgb, var(--bg-elevated) 92%, transparent);
+    }
+
+    .board-fallback.show {
+      display: grid;
+    }
+
+    .board-fallback-card {
+      width: min(360px, 100%);
+      padding: 28px 22px;
+      border: 1px solid var(--border-default);
+      border-radius: var(--radius-lg);
+      background: var(--bg-elevated);
+      box-shadow: var(--shadow-md);
+    }
+
+    .board-fallback-card .art {
+      width: 64px;
+      height: 64px;
+      margin: 0 auto 16px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(145deg, #FF8D72 0%, #FA2D48 52%, #7A0820 100%);
+      box-shadow: var(--shadow-art);
+    }
+
+    .board-fallback-card .art svg {
+      width: 30px;
+      height: 30px;
+    }
+
+    .board-fallback-card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.35;
+    }
+
+    .board-fallback-card p {
+      margin: 0 0 18px;
+      color: var(--text-tertiary);
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    .phone {
+      width: 100%;
+      min-width: 0;
+      margin: 0;
+      overflow: hidden;
+      border: 4px solid #191919;
+      border-radius: 34px;
+      background: var(--kakao-chat-bg);
+      box-shadow: 0 24px 50px rgba(25, 25, 25, 0.22);
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 680px;
+      max-height: min(860px, 88vh);
+      animation: riseIn 0.65s var(--ease-out) 0.06s both;
+    }
+
+    .phonebar {
+      height: 54px;
+      padding: 0 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--kakao-surface);
+      color: var(--kakao-fg);
+      border-bottom: 1px solid var(--kakao-border);
+    }
+
+    .phonebar strong {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      line-height: 1.4;
+    }
+
+    .phonebar .count {
+      color: var(--kakao-muted);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .phonebar .live {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 9px;
+      border-radius: var(--radius-full);
+      background: #191919;
+      color: var(--kakao-yellow);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+    }
+
+    .phonebar .bar-right {
+      margin-left: auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .phonebar .clear-btn {
+      border: 0;
+      background: transparent;
+      color: var(--kakao-muted);
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.2;
+      cursor: pointer;
+      padding: 4px 6px;
+      border-radius: 8px;
+    }
+
+    .phonebar .clear-btn:hover,
+    .phonebar .clear-btn:focus-visible {
+      color: #FF3838;
+      background: rgba(255, 56, 56, 0.08);
+      outline: none;
+    }
+
+    .phonebar .live i {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #1AAD5C;
+      box-shadow: 0 0 0 0 rgba(26, 173, 92, 0.55);
+      animation: livePulse 1.8s ease-out infinite;
+    }
+
+    .thread {
+      min-height: 0;
+      padding: 16px 14px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .day-chip {
+      align-self: center;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      background: rgba(0, 0, 0, 0.12);
+      color: rgba(25, 25, 25, 0.62);
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .empty-hint {
+      margin: auto;
+      padding: 18px;
+      text-align: center;
+      color: rgba(25, 25, 25, 0.55);
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.6;
+    }
+
+    .msg {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      max-width: 88%;
+      animation: bubbleIn 0.28s var(--ease-out) both;
+    }
+
+    .msg.me {
+      align-self: flex-end;
+      align-items: flex-end;
+      flex-direction: row-reverse;
+    }
+
+    .avatar {
+      width: 36px;
+      height: 36px;
+      flex: 0 0 36px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      background: #F7C95D;
+      color: #191919;
+      font-size: 13px;
+      font-weight: 800;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    .msg-meta {
+      min-width: 0;
+    }
+
+    .msg-name {
+      margin: 0 0 4px 3px;
+      color: rgba(25, 25, 25, 0.72);
+      font-size: 11px;
+      font-weight: 650;
+      line-height: 1.4;
+    }
+
+    .msg.me .msg-name {
+      text-align: right;
+      margin-right: 3px;
+    }
+
+    .bubble-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 6px;
+    }
+
+    .msg.me .bubble-row {
+      flex-direction: row-reverse;
+    }
+
+    .bubble {
+      padding: 10px 12px;
+      border-radius: 3px 14px 14px 14px;
+      background: var(--kakao-surface);
+      color: var(--kakao-fg);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.55;
+      letter-spacing: -0.01em;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+      white-space: pre-wrap;
+    }
+
+    .msg.me .bubble {
+      border-radius: 14px 3px 14px 14px;
+      background: var(--kakao-yellow);
+    }
+
+    .msg-aside {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 3px;
+      flex: 0 0 auto;
+      padding-bottom: 1px;
+    }
+
+    .msg.me .msg-aside {
+      align-items: flex-end;
+    }
+
+    .msg-time {
+      color: rgba(25, 25, 25, 0.55);
+      font-size: 10px;
+      font-weight: 600;
+      white-space: nowrap;
+      line-height: 1.3;
+    }
+
+    .del-btn {
+      border: 0;
+      background: rgba(25, 25, 25, 0.08);
+      color: rgba(25, 25, 25, 0.62);
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1.2;
+      cursor: pointer;
+      padding: 3px 7px;
+      border-radius: 999px;
+      white-space: nowrap;
+      transition: background 100ms ease, color 100ms ease;
+    }
+
+    .del-btn:hover,
+    .del-btn:focus-visible {
+      background: rgba(255, 56, 56, 0.14);
+      color: #FF3838;
+      outline: none;
+    }
+
+    .composer {
+      background: var(--kakao-surface);
+      border-top: 1px solid var(--kakao-border);
+      padding: 12px 14px 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .composer-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .field {
+      width: 100%;
+      min-width: 0;
+      border: 1px solid var(--kakao-border);
+      border-radius: 12px;
+      background: #FAFAFA;
+      color: var(--kakao-fg);
+      padding: 11px 12px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+      outline: none;
+      transition: border-color 100ms ease, box-shadow 100ms ease;
+    }
+
+    .field::placeholder {
+      color: #A0A0A0;
+      font-weight: 500;
+    }
+
+    .field:focus {
+      border-color: var(--kakao-yellow);
+      box-shadow: 0 0 0 3px rgba(254, 229, 0, 0.35);
+    }
+
+    .composer-main {
+      display: flex;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .composer-main .field {
+      flex: 1;
+      min-height: 44px;
+      max-height: 120px;
+      resize: none;
+      line-height: 1.5;
+    }
+
+    .send-btn {
+      width: 44px;
+      height: 44px;
+      flex: 0 0 44px;
+      border: 0;
+      border-radius: 14px;
+      background: var(--kakao-yellow);
+      color: var(--kakao-fg);
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: transform 100ms ease, background 100ms ease;
+    }
+
+    .send-btn:hover {
+      background: #FFE52B;
+      transform: scale(1.04);
+    }
+
+    .send-btn:active {
+      transform: scale(0.96);
+    }
+
+    .send-btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .send-btn svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+    }
+
+    .footer {
+      padding: 40px clamp(16px, 4vw, 24px) 36px;
+      text-align: center;
+      color: var(--text-tertiary);
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+      border-top: 1px solid var(--border-default);
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      z-index: 80;
+      transform: translateX(-50%) translateY(20px);
+      padding: 12px 16px;
+      border-radius: var(--radius-full);
+      background: rgba(25, 25, 25, 0.92);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 650;
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--duration-base) var(--ease-out), transform var(--duration-base) var(--ease-out);
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      display: none;
+      place-items: center;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    .modal-backdrop.open {
+      display: grid;
+    }
+
+    .modal {
+      width: min(360px, 100%);
+      padding: 20px;
+      border-radius: var(--radius-lg);
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .modal h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
+    }
+
+    .modal p {
+      margin: 0 0 14px;
+      color: var(--text-tertiary);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .btn {
+      border: 0;
+      border-radius: var(--radius-full);
+      padding: 10px 18px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform var(--duration-fast) var(--ease-out), background var(--duration-fast) var(--ease-out);
+    }
+
+    .btn:active {
+      transform: scale(0.97);
+    }
+
+    .btn-primary {
+      background: var(--color-primary-500);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: var(--color-neutral-100);
+      color: var(--text-primary);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .btn-secondary {
+        background: #2C2C2E;
+      }
+    }
+
+    @keyframes riseIn {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bubbleIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes markPulse {
+      0%, 100% { box-shadow: 0 5px 15px rgba(250, 45, 72, 0.25); }
+      50% { box-shadow: 0 8px 22px rgba(250, 45, 72, 0.4); }
+    }
+
+    @keyframes livePulse {
+      0% { box-shadow: 0 0 0 0 rgba(26, 173, 92, 0.5); }
+      70% { box-shadow: 0 0 0 8px rgba(26, 173, 92, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(26, 173, 92, 0); }
+    }
+
+    @media (max-width: 980px) {
+      .nav {
+        grid-template-columns: auto 1fr auto;
+      }
+
+      .nav-links {
+        max-width: none;
+        width: 100%;
+      }
+
+      .brand-name {
+        display: none;
+      }
+
+      .chat-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .board-panel,
+      .phone {
+        min-height: 600px;
+        max-height: min(780px, 82vh);
+        border-radius: 30px;
+      }
+
+      .board-bar {
+        padding: 6px 12px;
+      }
+
+      .board-bar strong {
+        font-size: 13px;
+        line-height: 1.35;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 8px 10px 10px;
+      }
+
+      .nav-brand,
+      .nav-actions {
+        justify-self: center;
+      }
+
+      .nav-brand {
+        order: 1;
+      }
+
+      .nav-links {
+        order: 2;
+        max-width: 100%;
+        width: 100%;
+      }
+
+      .nav-actions {
+        order: 3;
+      }
+
+      .nav-item em {
+        font-size: 8px;
+      }
+
+      .nav-item .ic {
+        width: 26px;
+        height: 26px;
+      }
+
+      .chat-shell {
+        gap: 18px;
+      }
+
+      .board-panel {
+        border-width: 3px;
+        border-radius: 24px;
+        min-height: min(640px, 78vh);
+        max-height: min(780px, 82vh);
+      }
+
+      .board-bar {
+        padding: 5px 10px;
+        gap: 6px;
+        min-height: 40px;
+      }
+
+      .board-bar strong {
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .board-open {
+        padding: 5px 9px;
+        font-size: 10px;
+      }
+
+      .phone {
+        border-width: 3px;
+        border-radius: 28px;
+        min-height: min(640px, 78vh);
+        width: 100%;
+      }
+
+      .composer-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .nav-item em {
+        display: none;
+      }
+
+      .nav-item {
+        padding: 4px;
+      }
+
+      .nav-item .ic {
+        width: 30px;
+        height: 30px;
+        border-radius: 9px;
+      }
+
+      .board-panel {
+        border-radius: 20px;
+        min-height: min(580px, 74vh);
+      }
+
+      .board-bar strong {
+        font-size: 12px;
+        line-height: 1.4;
+      }
+
+      .board-open {
+        padding: 5px 8px;
+      }
+
+      .expand-shell {
+        border-width: 3px;
+        border-radius: 20px;
+        min-height: min(74vh, 780px);
+      }
+
+      .expand-frame {
+        height: min(68vh, 700px);
+      }
+
+      .expand-bar strong {
+        font-size: 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <nav class="nav" aria-label="주요 메뉴">
+      <a class="nav-brand" href="http://www.김태훈.com" title="홈" aria-label="김태훈닷컴 홈">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M4.5 18.5 12 4.8l7.5 13.7H4.5Z" fill="currentColor" opacity=".22"/>
+            <path d="M12 5.6 5.8 17.2h12.4L12 5.6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <circle cx="12" cy="13.2" r="1.5" fill="currentColor"/>
+            <path d="M12 10.2v1.2M9.4 17.2h5.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <strong class="brand-name">김태훈닷컴</strong>
+      </a>
+
+      <div class="nav-links" aria-label="바로가기">
+        <span class="nav-sep" aria-hidden="true"></span>
+        <a class="nav-item card-a" href="https://script.google.com/macros/s/AKfycbye1HxXw3mQ9DgOFSik-XwEUiAii3tICdr2shSatZQVfD-Wk5G_i9nVGIyTQGbeQMcC9g/exec" target="_blank" rel="noopener noreferrer" title="2027 학년도 대입정보시스템">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="8" y="7" width="26" height="34" rx="5" fill="rgba(255,255,255,.18)"/>
+              <path d="M14 16h14M14 22h14M14 28h9" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+              <circle cx="33" cy="33" r="9" fill="#fff"/>
+              <path d="M33 28.5v5.2l3.4 2" stroke="#FA2D48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <em>2027 학년도 대입정보시스템</em>
+        </a>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <a class="nav-item card-h" href="#susi" id="susiNav" title="수시 일정" aria-controls="expandPanel" aria-expanded="false">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="10" y="11" width="28" height="26" rx="5" fill="rgba(255,255,255,.2)"/>
+              <path d="M16 9v5M32 9v5M12 20h24" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+              <rect x="16" y="24" width="5" height="5" rx="1.2" fill="#fff"/>
+              <rect x="23.5" y="24" width="5" height="5" rx="1.2" fill="#fff"/>
+              <rect x="31" y="24" width="5" height="5" rx="1.2" fill="#fff"/>
+            </svg>
+          </span>
+          <em>수시 일정</em>
+        </a>
+        <a class="nav-item card-f" href="#ipgyeol" id="ipgyeolNav" title="2026 입결 검색기" aria-controls="expandPanel" aria-expanded="false">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <circle cx="21" cy="21" r="10" stroke="#fff" stroke-width="2.6"/>
+              <path d="M29 29 36 36" stroke="#fff" stroke-width="2.8" stroke-linecap="round"/>
+              <path d="M16 23h10M16 19h7" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <em>2026 입결 검색기</em>
+        </a>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <a class="nav-item card-g" href="https://script.google.com/macros/s/AKfycbzlvdwuLrIzPfjnAjNkodW3NaQ09bewTLjqOtawSQAFT-kFDV3ZZk7UwV4_8KBE11zMzw/exec" target="_blank" rel="noopener noreferrer" title="6논술 장바구니">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M14 16h3.2l2.2 16.2a3 3 0 0 0 3 2.6h11.4a3 3 0 0 0 3-2.5L39 18H17.2" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="22" cy="39" r="2.2" fill="#fff"/>
+              <circle cx="33.5" cy="39" r="2.2" fill="#fff"/>
+              <path d="M24 12v8M20 16h8" stroke="#fff" stroke-width="2.3" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <em>6논술 장바구니</em>
+        </a>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <a class="nav-item card-b" href="https://taehoon8832.github.io/kimtaehoon-com/" target="_blank" rel="noopener noreferrer" title="학급 진학관리시스템">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="7" y="10" width="34" height="26" rx="6" fill="rgba(255,255,255,.18)"/>
+              <path d="M12 18h10M12 23h16M12 28h13" stroke="#fff" stroke-width="2.3" stroke-linecap="round"/>
+              <circle cx="33" cy="19" r="4.2" fill="#fff"/>
+              <path d="M27.5 31.5c1.4-2.4 3.3-3.6 5.5-3.6s4.1 1.2 5.5 3.6" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <em>학급 진학관리시스템</em>
+        </a>
+        <span class="nav-sep" aria-hidden="true"></span>
+
+        <a class="nav-item card-d" href="https://open.kakao.com/o/gPV4vQZd" target="_blank" rel="noopener noreferrer" title="(고3) 담임교사 정보소통">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M24 11c-7.6 0-13.8 4.6-13.8 10.3 0 3.6 2.4 6.8 6.1 8.6L15 35.5l6.2-3.6c.9.1 1.8.2 2.8.2 7.6 0 13.8-4.6 13.8-10.3S31.6 11 24 11Z" fill="#191919"/>
+              <path d="M18 21.2h12M18 25.2h8" stroke="#FEE500" stroke-width="2.2" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <em>(고3) 담임교사 정보소통</em>
+        </a>
+        <a class="nav-item card-c" href="https://open.kakao.com/o/g5kYrH1g" target="_blank" rel="noopener noreferrer" title="진로진학교사 오픈채팅방">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M24 10c-8.3 0-15 5.1-15 11.4 0 4 2.6 7.5 6.6 9.5L14 37l7-4.2c1 .2 2 .2 3 .2 8.3 0 15-5.1 15-11.4S32.3 10 24 10Z" fill="#191919"/>
+              <circle cx="18.5" cy="21.5" r="1.7" fill="#FEE500"/>
+              <circle cx="24" cy="21.5" r="1.7" fill="#FEE500"/>
+              <circle cx="29.5" cy="21.5" r="1.7" fill="#FEE500"/>
+            </svg>
+          </span>
+          <em>진로진학교사 오픈채팅방</em>
+        </a>
+        <a class="nav-item card-e" href="https://open.kakao.com/o/gQDEMdmi" target="_blank" rel="noopener noreferrer" title="다온 대입전략연구회">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M24 10.5c-8 0-14.5 4.9-14.5 11 0 3.9 2.5 7.3 6.4 9.2l-1.4 5.4 5.9-3.5c1.1.2 2.3.3 3.6.3 8 0 14.5-4.9 14.5-11s-6.5-11.4-14.5-11.4Z" fill="#191919"/>
+              <path d="M19.2 20.8 24 17l4.8 3.8v5.4L24 30l-4.8-3.8v-5.4Z" fill="#FEE500"/>
+            </svg>
+          </span>
+          <em>다온 대입전략연구회</em>
+        </a>
+        <span class="nav-sep" aria-hidden="true"></span>
+        <span class="nav-item card-i is-placeholder" title="진학 인사이트 V1.1" role="img" aria-label="진학 인사이트 V1.1">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="8" y="10" width="32" height="28" rx="6" fill="rgba(255,255,255,.18)"/>
+              <path d="M15 30v-6M22 30V18M29 30v-9M36 30V15" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+              <circle cx="36" cy="13.5" r="3.2" fill="#fff"/>
+            </svg>
+          </span>
+          <em>진학 인사이트<br>V1.1</em>
+        </span>
+        <span class="nav-sep" aria-hidden="true"></span>
+      </div>
+
+      <div class="nav-actions">
+        <a class="inquiry-btn" href="https://open.kakao.com/o/sVjK9Ecg" target="_blank" rel="noopener noreferrer" aria-label="문의 오픈채팅">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M12 3.2C6.7 3.2 2.4 6.8 2.4 11.2c0 2.7 1.7 5.1 4.3 6.6L5.4 21l4.5-2.6c.7.1 1.4.2 2.1.2 5.3 0 9.6-3.6 9.6-8S17.3 3.2 12 3.2Z" fill="currentColor"/>
+              <path d="M8.6 10.6h6.8M8.6 13.2h4.6" stroke="#FEE500" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+          </span>
+          문의
+        </a>
+      </div>
+    </nav>
+
+    <section class="expand-panel" id="expandPanel" data-theme="susi" aria-label="확장 보기">
+      <div class="expand-shell">
+        <div class="expand-bar">
+          <span class="expand-mark" aria-hidden="true">
+            <svg id="expandMarkSvg" viewBox="0 0 24 24" fill="none">
+              <rect x="4" y="5" width="16" height="15" rx="3" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M8 3.5v4M16 3.5v4M5 10h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <strong id="expandTitle">2027 수시 일정</strong>
+          <div class="expand-actions">
+            <a class="expand-open" id="expandOpen" href="#" target="_blank" rel="noopener noreferrer">새 창</a>
+            <button type="button" class="expand-close" id="expandClose">닫기</button>
+          </div>
+        </div>
+        <div class="expand-frame-wrap">
+          <iframe
+            class="expand-frame"
+            id="expandFrame"
+            title="확장 보기"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="chat-section" id="chat" aria-label="게시판과 실시간 대화">
+      <div class="chat-shell">
+        <aside class="board-panel" aria-label="자유 게시판">
+          <div class="board-bar">
+            <span class="board-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <rect x="4" y="3.5" width="16" height="17" rx="3.5" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <div class="board-title">
+              <strong>자유 게시판</strong>
+            </div>
+            <a
+              class="board-open"
+              href="https://script.google.com/macros/s/AKfycbxPPYJgogbTTlL9Ds7Ahb-Qdj8Ylr4rryF1WGp7pyiLTqZzUE9fFo-SuRF22WDLjaZprA/exec"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              새 창
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M14 5h5v5M19 5l-9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 6H7a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+          </div>
+          <div class="board-frame-wrap">
+            <iframe
+              class="board-frame"
+              id="boardFrame"
+              title="자유 게시판"
+              src="https://script.google.com/macros/s/AKfycbxPPYJgogbTTlL9Ds7Ahb-Qdj8Ylr4rryF1WGp7pyiLTqZzUE9fFo-SuRF22WDLjaZprA/exec"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+            <div class="board-fallback" id="boardFallback">
+              <div class="board-fallback-card">
+                <div class="art" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <rect x="4" y="3.5" width="16" height="17" rx="3.5" stroke="currentColor" stroke-width="1.8"/>
+                    <path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  </svg>
+                </div>
+                <h3>자유 게시판</h3>
+                <p>미리보기가 제한된 경우 새 창에서 바로 이용할 수 있습니다.</p>
+                <a
+                  class="board-open"
+                  style="margin: 0 auto; width: fit-content;"
+                  href="https://script.google.com/macros/s/AKfycbxPPYJgogbTTlL9Ds7Ahb-Qdj8Ylr4rryF1WGp7pyiLTqZzUE9fFo-SuRF22WDLjaZprA/exec"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  게시판 열기
+                </a>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <div class="phone" aria-label="김태훈닷컴 실시간 대화">
+          <div class="phonebar">
+            <strong>실시간 채팅</strong>
+            <span class="count" id="msgCount">0</span>
+            <div class="bar-right">
+              <button type="button" class="clear-btn" id="clearChatBtn" title="전체 삭제 (관리자 또는 작성 비밀번호)">전체삭제</button>
+              <span class="live"><i></i>LIVE</span>
+            </div>
+          </div>
+
+          <div class="thread" id="thread" aria-live="polite"></div>
+
+          <form class="composer" id="chatForm" autocomplete="off">
+            <div class="composer-row">
+              <input class="field" id="nickname" name="nickname" type="text" maxlength="16" placeholder="닉네임" required />
+              <input class="field" id="password" name="password" type="password" maxlength="32" placeholder="비밀번호" required />
+            </div>
+            <div class="composer-main">
+              <textarea class="field" id="message" name="message" rows="1" maxlength="500" placeholder="메시지 입력" required></textarea>
+              <button class="send-btn" type="submit" id="sendBtn" aria-label="전송">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 4.2 21 12 3.5 19.8l2-6.1L15 12l-9.5-1.7z"/></svg>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      © 2026. 8. 2. 김태훈닷컴
+    </footer>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+
+  <div class="modal-backdrop" id="deleteModal" role="dialog" aria-modal="true" aria-labelledby="deleteTitle">
+    <div class="modal">
+      <h3 id="deleteTitle">메시지 삭제</h3>
+      <p id="deleteDesc">작성 비밀번호 또는 관리자 비밀번호를 입력하면 삭제됩니다.</p>
+      <input class="field" id="deletePassword" type="password" placeholder="비밀번호" autocomplete="off" />
+      <div class="modal-actions">
+        <button class="btn btn-secondary" type="button" id="cancelDelete">취소</button>
+        <button class="btn btn-primary" type="button" id="confirmDelete">삭제</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (() => {
+      "use strict";
+
+      /**
+       * 여러 기기에서 실시간 동기화가 필요하면 Apps Script 웹앱 URL을 넣으세요.
+       * 배포 방법: chat-backend.gs 파일을 Apps Script에 붙여넣고
+       * 배포 > 새 배포 > 웹 앱(모든 사용자 액세스) 후 URL을 아래에 입력합니다.
+       */
+      const CHAT_API_URL = "";
+      const ADMIN_PASSWORD = "6485";
+      const EXPAND_APPS = {
+        susi: {
+          url: "https://script.google.com/macros/s/AKfycbzz9D4B0fHSk_KykVKuUjNtPeEzrtGtGnzytPWqKpSGTilQSRh8sKPnzEHRacmJGb27Qg/exec",
+          title: "2027 수시 일정",
+          theme: "susi",
+          mark: `<rect x="4" y="5" width="16" height="15" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M8 3.5v4M16 3.5v4M5 10h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>`,
+        },
+        ipgyeol: {
+          url: "https://script.google.com/macros/s/AKfycbwIg3mpzLDxQ8eMlDmH2g-c_QqKpjXlE6K7EpnJ8TRxQjIVLSTfEOnAkW0vW4Y85EEf/exec",
+          title: "2026 입결 검색기",
+          theme: "ipgyeol",
+          mark: `<circle cx="11" cy="11" r="5.2" stroke="currentColor" stroke-width="1.8"/><path d="m15 15 4.2 4.2" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>`,
+        },
+      };
+      const STORAGE_KEY = "kimtaehoon_chat_v1";
+      const SESSION_NICK = "kimtaehoon_nick";
+      const POLL_MS = 2500;
+
+      const thread = document.getElementById("thread");
+      const form = document.getElementById("chatForm");
+      const nicknameEl = document.getElementById("nickname");
+      const passwordEl = document.getElementById("password");
+      const messageEl = document.getElementById("message");
+      const sendBtn = document.getElementById("sendBtn");
+      const msgCount = document.getElementById("msgCount");
+      const toast = document.getElementById("toast");
+      const deleteModal = document.getElementById("deleteModal");
+      const deletePassword = document.getElementById("deletePassword");
+      const deleteTitle = document.getElementById("deleteTitle");
+      const deleteDesc = document.getElementById("deleteDesc");
+      const cancelDelete = document.getElementById("cancelDelete");
+      const confirmDelete = document.getElementById("confirmDelete");
+      const clearChatBtn = document.getElementById("clearChatBtn");
+      const boardFrame = document.getElementById("boardFrame");
+      const boardFallback = document.getElementById("boardFallback");
+
+      if (boardFrame && boardFallback) {
+        boardFrame.addEventListener("error", () => {
+          boardFallback.classList.add("show");
+        });
+      }
+
+      const savedNick = localStorage.getItem(SESSION_NICK);
+      if (savedNick) nicknameEl.value = savedNick;
+
+      let messages = [];
+      let pendingDeleteId = null;
+      let deleteMode = "one"; // one | mine
+      let mySessionId = localStorage.getItem("kimtaehoon_sid");
+      if (!mySessionId) {
+        mySessionId = crypto.randomUUID();
+        localStorage.setItem("kimtaehoon_sid", mySessionId);
+      }
+
+      const channel = ("BroadcastChannel" in window)
+        ? new BroadcastChannel("kimtaehoon_chat")
+        : null;
+
+      function showToast(text) {
+        toast.textContent = text;
+        toast.classList.add("show");
+        clearTimeout(showToast._t);
+        showToast._t = setTimeout(() => toast.classList.remove("show"), 2200);
+      }
+
+      async function sha256(text) {
+        const data = new TextEncoder().encode(text);
+        const hash = await crypto.subtle.digest("SHA-256", data);
+        return [...new Uint8Array(hash)].map((b) => b.toString(16).padStart(2, "0")).join("");
+      }
+
+      function escapeHtml(str) {
+        return String(str)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#39;");
+      }
+
+      function formatTime(ts) {
+        const d = new Date(ts);
+        const h = d.getHours();
+        const m = String(d.getMinutes()).padStart(2, "0");
+        const ap = h < 12 ? "오전" : "오후";
+        const hh = h % 12 || 12;
+        return `${ap} ${hh}:${m}`;
+      }
+
+      function formatDay(ts) {
+        const d = new Date(ts);
+        const days = ["일", "월", "화", "수", "목", "금", "토"];
+        return `${d.getFullYear()}년 ${d.getMonth() + 1}월 ${d.getDate()}일 ${days[d.getDay()]}요일`;
+      }
+
+      function dayKey(ts) {
+        const d = new Date(ts);
+        return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+      }
+
+      function loadLocal() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          messages = raw ? JSON.parse(raw) : [];
+          if (!Array.isArray(messages)) messages = [];
+        } catch {
+          messages = [];
+        }
+      }
+
+      function saveLocal() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
+        if (channel) channel.postMessage({ type: "sync", messages });
+      }
+
+      function render() {
+        msgCount.textContent = String(messages.length);
+        if (!messages.length) {
+          thread.innerHTML = `<div class="empty-hint">아직 대화가 없습니다.<br />첫 메시지를 남겨보세요.</div>`;
+          return;
+        }
+
+        const sorted = [...messages].sort((a, b) => a.createdAt - b.createdAt);
+        let html = "";
+        let lastDay = "";
+
+        for (const msg of sorted) {
+          const dk = dayKey(msg.createdAt);
+          if (dk !== lastDay) {
+            html += `<div class="day-chip">${escapeHtml(formatDay(msg.createdAt))}</div>`;
+            lastDay = dk;
+          }
+
+          const mine = msg.sessionId === mySessionId;
+          const initial = (msg.nickname || "?").trim().charAt(0) || "?";
+          const avatarHtml = mine
+            ? ""
+            : `<div class="avatar" aria-hidden="true">${escapeHtml(initial)}</div>`;
+
+          html += `
+            <article class="msg ${mine ? "me" : ""}" data-id="${escapeHtml(msg.id)}">
+              ${avatarHtml}
+              <div class="msg-meta">
+                <div class="msg-name">${escapeHtml(msg.nickname)}</div>
+                <div class="bubble-row">
+                  <div class="msg-aside">
+                    <button type="button" class="del-btn" data-delete="${escapeHtml(msg.id)}" aria-label="메시지 삭제">삭제</button>
+                    <span class="msg-time">${escapeHtml(formatTime(msg.createdAt))}</span>
+                  </div>
+                  <div class="bubble">${escapeHtml(msg.text)}</div>
+                </div>
+              </div>
+            </article>
+          `;
+        }
+
+        const nearBottom = thread.scrollHeight - thread.scrollTop - thread.clientHeight < 80;
+        thread.innerHTML = html;
+        if (nearBottom || messages.length <= 1) {
+          thread.scrollTop = thread.scrollHeight;
+        }
+      }
+
+      async function fetchRemote() {
+        if (!CHAT_API_URL) return false;
+        try {
+          const res = await fetch(`${CHAT_API_URL}?action=list`, { method: "GET" });
+          if (!res.ok) throw new Error("list failed");
+          const data = await res.json();
+          if (Array.isArray(data.messages)) {
+            messages = data.messages;
+            saveLocal();
+            render();
+            return true;
+          }
+        } catch (err) {
+          console.warn("remote list failed", err);
+        }
+        return false;
+      }
+
+      async function postRemote(msg) {
+        if (!CHAT_API_URL) return;
+        try {
+          await fetch(CHAT_API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify({ action: "create", message: msg }),
+          });
+        } catch (err) {
+          console.warn("remote create failed", err);
+        }
+      }
+
+      async function deleteRemote(id, passwordHash) {
+        if (!CHAT_API_URL) return true;
+        try {
+          const res = await fetch(CHAT_API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            body: JSON.stringify({ action: "delete", id, passwordHash }),
+          });
+          const data = await res.json();
+          return Boolean(data && data.ok);
+        } catch (err) {
+          console.warn("remote delete failed", err);
+          return false;
+        }
+      }
+
+      async function addMessage(nickname, text, password) {
+        const passwordHash = await sha256(password);
+        const msg = {
+          id: crypto.randomUUID(),
+          nickname: nickname.trim().slice(0, 16),
+          text: text.trim().slice(0, 500),
+          passwordHash,
+          sessionId: mySessionId,
+          createdAt: Date.now(),
+        };
+        messages.push(msg);
+        saveLocal();
+        render();
+        postRemote(msg);
+        showToast("메시지가 등록되었습니다");
+      }
+
+      function openDeleteModal(id) {
+        deleteMode = "one";
+        pendingDeleteId = id;
+        deleteTitle.textContent = "메시지 삭제";
+        deleteDesc.textContent = "작성 비밀번호 또는 관리자 비밀번호를 입력하면 삭제됩니다.";
+        deletePassword.value = "";
+        deleteModal.classList.add("open");
+        deletePassword.focus();
+      }
+
+      function openClearMineModal() {
+        if (!messages.length) {
+          showToast("삭제할 메시지가 없습니다");
+          return;
+        }
+        deleteMode = "mine";
+        pendingDeleteId = null;
+        deleteTitle.textContent = "전체 삭제";
+        deleteDesc.textContent = "관리자 비밀번호면 전체 삭제, 작성 비밀번호면 해당 글만 삭제됩니다.";
+        deletePassword.value = "";
+        deleteModal.classList.add("open");
+        deletePassword.focus();
+      }
+
+      function closeDeleteModal() {
+        pendingDeleteId = null;
+        deleteMode = "one";
+        deleteModal.classList.remove("open");
+      }
+
+      async function confirmDeleteMessage() {
+        const pwd = deletePassword.value;
+        if (!pwd) {
+          showToast("비밀번호를 입력해 주세요");
+          return;
+        }
+        const isAdmin = pwd === ADMIN_PASSWORD;
+        const hash = await sha256(pwd);
+
+        if (deleteMode === "mine") {
+          let matched;
+          if (isAdmin) {
+            matched = [...messages];
+          } else {
+            matched = messages.filter((m) => m.passwordHash === hash);
+          }
+
+          if (!matched.length) {
+            showToast("비밀번호가 일치하는 메시지가 없습니다");
+            return;
+          }
+
+          if (CHAT_API_URL) {
+            for (const m of matched) {
+              await deleteRemote(m.id, isAdmin ? m.passwordHash : hash);
+            }
+          }
+
+          const removeIds = new Set(matched.map((m) => m.id));
+          messages = messages.filter((m) => !removeIds.has(m.id));
+          saveLocal();
+          render();
+          closeDeleteModal();
+          showToast(isAdmin ? "전체 메시지를 삭제했습니다" : `${matched.length}개의 메시지를 삭제했습니다`);
+          return;
+        }
+
+        if (!pendingDeleteId) return;
+        const target = messages.find((m) => m.id === pendingDeleteId);
+        if (!target) {
+          closeDeleteModal();
+          return;
+        }
+
+        let ok = isAdmin || target.passwordHash === hash;
+        if (CHAT_API_URL && !isAdmin) {
+          ok = await deleteRemote(pendingDeleteId, hash);
+        } else if (CHAT_API_URL && isAdmin) {
+          ok = await deleteRemote(pendingDeleteId, target.passwordHash);
+        }
+
+        if (!ok) {
+          showToast("비밀번호가 일치하지 않습니다");
+          return;
+        }
+
+        messages = messages.filter((m) => m.id !== pendingDeleteId);
+        saveLocal();
+        render();
+        closeDeleteModal();
+        showToast("메시지를 삭제했습니다");
+      }
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const nickname = nicknameEl.value.trim();
+        const password = passwordEl.value;
+        const text = messageEl.value.trim();
+        if (!nickname || !password || !text) {
+          showToast("닉네임, 비밀번호, 내용을 모두 입력해 주세요");
+          return;
+        }
+        sendBtn.disabled = true;
+        try {
+          localStorage.setItem(SESSION_NICK, nickname);
+          await addMessage(nickname, text, password);
+          messageEl.value = "";
+          autoResize();
+          messageEl.focus();
+        } finally {
+          sendBtn.disabled = false;
+        }
+      });
+
+      messageEl.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && !e.shiftKey) {
+          e.preventDefault();
+          form.requestSubmit();
+        }
+      });
+
+      function autoResize() {
+        messageEl.style.height = "auto";
+        messageEl.style.height = `${Math.min(messageEl.scrollHeight, 120)}px`;
+      }
+      messageEl.addEventListener("input", autoResize);
+
+      thread.addEventListener("click", (e) => {
+        const btn = e.target.closest("[data-delete]");
+        if (!btn) return;
+        openDeleteModal(btn.getAttribute("data-delete"));
+      });
+
+      clearChatBtn.addEventListener("click", openClearMineModal);
+      cancelDelete.addEventListener("click", closeDeleteModal);
+      confirmDelete.addEventListener("click", confirmDeleteMessage);
+      deleteModal.addEventListener("click", (e) => {
+        if (e.target === deleteModal) closeDeleteModal();
+      });
+      deletePassword.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") confirmDeleteMessage();
+      });
+
+      window.addEventListener("storage", (e) => {
+        if (e.key === STORAGE_KEY) {
+          loadLocal();
+          render();
+        }
+      });
+
+      if (channel) {
+        channel.onmessage = (ev) => {
+          if (ev.data && ev.data.type === "sync" && Array.isArray(ev.data.messages)) {
+            messages = ev.data.messages;
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
+            render();
+          }
+        };
+      }
+
+      async function boot() {
+        loadLocal();
+        render();
+        const remoteOk = await fetchRemote();
+        if (!remoteOk) render();
+        if (CHAT_API_URL) {
+          setInterval(fetchRemote, POLL_MS);
+        }
+      }
+
+      const expandPanel = document.getElementById("expandPanel");
+      const expandFrame = document.getElementById("expandFrame");
+      const expandTitle = document.getElementById("expandTitle");
+      const expandOpen = document.getElementById("expandOpen");
+      const expandClose = document.getElementById("expandClose");
+      const expandMarkSvg = document.getElementById("expandMarkSvg");
+      const expandNavMap = {
+        susi: document.getElementById("susiNav"),
+        ipgyeol: document.getElementById("ipgyeolNav"),
+      };
+      let activeExpandKey = null;
+
+      function closeExpand() {
+        if (!expandPanel) return;
+        expandPanel.classList.remove("is-open");
+        Object.values(expandNavMap).forEach((nav) => {
+          if (!nav) return;
+          nav.classList.remove("is-active");
+          nav.setAttribute("aria-expanded", "false");
+        });
+        activeExpandKey = null;
+      }
+
+      function openExpand(key) {
+        const app = EXPAND_APPS[key];
+        const nav = expandNavMap[key];
+        if (!app || !expandPanel || !expandFrame || !nav) return;
+
+        if (activeExpandKey === key && expandPanel.classList.contains("is-open")) {
+          closeExpand();
+          return;
+        }
+
+        Object.values(expandNavMap).forEach((item) => {
+          if (!item) return;
+          item.classList.remove("is-active");
+          item.setAttribute("aria-expanded", "false");
+        });
+
+        expandPanel.dataset.theme = app.theme;
+        expandTitle.textContent = app.title;
+        expandFrame.title = app.title;
+        expandOpen.href = app.url;
+        if (expandMarkSvg) expandMarkSvg.innerHTML = app.mark;
+        if (expandFrame.getAttribute("src") !== app.url) {
+          expandFrame.src = app.url;
+        }
+
+        expandPanel.classList.add("is-open");
+        nav.classList.add("is-active");
+        nav.setAttribute("aria-expanded", "true");
+        activeExpandKey = key;
+
+        requestAnimationFrame(() => {
+          expandPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }
+
+      Object.entries(expandNavMap).forEach(([key, nav]) => {
+        if (!nav) return;
+        nav.addEventListener("click", (e) => {
+          e.preventDefault();
+          openExpand(key);
+        });
+      });
+
+      if (expandClose) expandClose.addEventListener("click", closeExpand);
+
+      const brandHome = document.querySelector(".nav-brand");
+      if (brandHome) {
+        brandHome.addEventListener("click", (e) => {
+          const host = decodeURIComponent(location.hostname);
+          const onSite =
+            host === "www.김태훈.com" ||
+            host === "김태훈.com" ||
+            host.endsWith(".김태훈.com") ||
+            location.protocol === "file:";
+          if (!onSite) return;
+          e.preventDefault();
+          closeExpand();
+          if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+
+      if (location.hash === "#susi") openExpand("susi");
+      if (location.hash === "#ipgyeol") openExpand("ipgyeol");
+
+      boot();
+    })();
+  </script>
+</body>
+</html>
