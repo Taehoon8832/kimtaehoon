@@ -267,6 +267,70 @@
       height: 15px;
     }
 
+    .nav-item.card-a .ic-aura {
+      position: relative;
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+    }
+
+    .nav-item.card-a .ic-aura::before,
+    .nav-item.card-a .ic-aura::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 10px;
+      background: conic-gradient(
+        from 0deg,
+        #ff4d6d,
+        #ff9f1c,
+        #ffd60a,
+        #2ec4b6,
+        #4cc9f0,
+        #7b2cbf,
+        #f72585,
+        #ff4d6d
+      );
+      pointer-events: none;
+    }
+
+    .nav-item.card-a .ic-aura::before {
+      inset: -3px;
+      filter: blur(8px);
+      opacity: 0.5;
+      animation:
+        rainbowOrbit 4s linear infinite,
+        rainbowBreath 2.8s ease-in-out infinite;
+    }
+
+    .nav-item.card-a .ic-aura::after {
+      animation: rainbowOrbit 4s linear infinite;
+    }
+
+    .nav-item.card-a .ic {
+      position: relative;
+      z-index: 1;
+      box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22);
+    }
+
+    .nav-item.card-a:hover .ic-aura::before {
+      opacity: 0.72;
+      filter: blur(9px);
+    }
+
+    @keyframes rainbowOrbit {
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes rainbowBreath {
+      0%, 100% { opacity: 0.42; }
+      50% { opacity: 0.68; }
+    }
+
     .nav-item.card-c .ic,
     .nav-item.card-d .ic,
     .nav-item.card-e .ic {
@@ -500,7 +564,7 @@
 
     .chat-shell {
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.75fr);
+      grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.35fr);
       gap: clamp(16px, 2.4vw, 24px);
       align-items: stretch;
       padding: clamp(8px, 2vw, 16px) 0;
@@ -742,6 +806,16 @@
       font-size: 10px;
       font-weight: 800;
       letter-spacing: 0.04em;
+    }
+
+    .phonebar .live.is-offline {
+      color: #d0d0d0;
+    }
+
+    .phonebar .live.is-offline i {
+      background: #8E8E93;
+      animation: none;
+      box-shadow: none;
     }
 
     .phonebar .bar-right {
@@ -1208,23 +1282,47 @@
         order: 1;
       }
 
+      .brand-name {
+        display: block;
+      }
+
       .nav-links {
         order: 2;
         max-width: 100%;
         width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px 4px;
+      }
+
+      .nav-sep {
+        display: none;
       }
 
       .nav-actions {
         order: 3;
       }
 
+      .nav-item {
+        flex: 0 0 calc(25% - 6px);
+        max-width: 78px;
+        padding: 4px 2px 6px;
+      }
+
       .nav-item em {
-        font-size: 8px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        font-size: 9px;
+        line-height: 1.2;
+        font-weight: 700;
+        color: var(--text-primary);
       }
 
       .nav-item .ic {
-        width: 26px;
-        height: 26px;
+        width: 28px;
+        height: 28px;
       }
 
       .chat-shell {
@@ -1267,12 +1365,17 @@
     }
 
     @media (max-width: 420px) {
-      .nav-item em {
-        display: none;
+      .nav-item {
+        flex: 0 0 calc(33.333% - 6px);
+        max-width: 100px;
+        padding: 4px 2px 6px;
       }
 
-      .nav-item {
-        padding: 4px;
+      .nav-item em {
+        display: -webkit-box;
+        font-size: 8.5px;
+        font-weight: 700;
+        line-height: 1.2;
       }
 
       .nav-item .ic {
@@ -1338,13 +1441,15 @@
       <div class="nav-links" aria-label="바로가기">
         <span class="nav-sep" aria-hidden="true"></span>
         <a class="nav-item card-a" href="https://script.google.com/macros/s/AKfycbye1HxXw3mQ9DgOFSik-XwEUiAii3tICdr2shSatZQVfD-Wk5G_i9nVGIyTQGbeQMcC9g/exec" target="_blank" rel="noopener noreferrer" title="2027 학년도 대입정보시스템">
-          <span class="ic" aria-hidden="true">
-            <svg viewBox="0 0 48 48" fill="none">
-              <rect x="8" y="7" width="26" height="34" rx="5" fill="rgba(255,255,255,.18)"/>
-              <path d="M14 16h14M14 22h14M14 28h9" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
-              <circle cx="33" cy="33" r="9" fill="#fff"/>
-              <path d="M33 28.5v5.2l3.4 2" stroke="#FA2D48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+          <span class="ic-aura" aria-hidden="true">
+            <span class="ic">
+              <svg viewBox="0 0 48 48" fill="none">
+                <rect x="8" y="7" width="26" height="34" rx="5" fill="rgba(255,255,255,.18)"/>
+                <path d="M14 16h14M14 22h14M14 28h9" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+                <circle cx="33" cy="33" r="9" fill="#fff"/>
+                <path d="M33 28.5v5.2l3.4 2" stroke="#FA2D48" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
           </span>
           <em>2027 학년도 대입정보시스템</em>
         </a>
@@ -1482,6 +1587,32 @@
 
     <section class="chat-section" id="chat" aria-label="게시판과 실시간 대화">
       <div class="chat-shell">
+        <div class="phone" aria-label="김태훈닷컴 실시간 대화">
+          <div class="phonebar">
+            <strong>실시간 채팅</strong>
+            <span class="count" id="msgCount">0</span>
+            <div class="bar-right">
+              <button type="button" class="clear-btn" id="clearChatBtn" title="전체 삭제 (관리자 또는 작성 비밀번호)">전체삭제</button>
+              <span class="live" id="chatLive"><i></i><span id="chatLiveLabel">연결중</span></span>
+            </div>
+          </div>
+
+          <div class="thread" id="thread" aria-live="polite"></div>
+
+          <form class="composer" id="chatForm" autocomplete="off">
+            <div class="composer-row">
+              <input class="field" id="nickname" name="nickname" type="text" maxlength="16" placeholder="닉네임" required />
+              <input class="field" id="password" name="password" type="password" maxlength="32" placeholder="비밀번호" required />
+            </div>
+            <div class="composer-main">
+              <textarea class="field" id="message" name="message" rows="1" maxlength="500" placeholder="메시지 입력" required></textarea>
+              <button class="send-btn" type="submit" id="sendBtn" aria-label="전송">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 4.2 21 12 3.5 19.8l2-6.1L15 12l-9.5-1.7z"/></svg>
+              </button>
+            </div>
+          </form>
+        </div>
+
         <aside class="board-panel" aria-label="자유 게시판">
           <div class="board-bar">
             <span class="board-mark" aria-hidden="true">
@@ -1538,32 +1669,6 @@
             </div>
           </div>
         </aside>
-
-        <div class="phone" aria-label="김태훈닷컴 실시간 대화">
-          <div class="phonebar">
-            <strong>실시간 채팅</strong>
-            <span class="count" id="msgCount">0</span>
-            <div class="bar-right">
-              <button type="button" class="clear-btn" id="clearChatBtn" title="전체 삭제 (관리자 또는 작성 비밀번호)">전체삭제</button>
-              <span class="live"><i></i>LIVE</span>
-            </div>
-          </div>
-
-          <div class="thread" id="thread" aria-live="polite"></div>
-
-          <form class="composer" id="chatForm" autocomplete="off">
-            <div class="composer-row">
-              <input class="field" id="nickname" name="nickname" type="text" maxlength="16" placeholder="닉네임" required />
-              <input class="field" id="password" name="password" type="password" maxlength="32" placeholder="비밀번호" required />
-            </div>
-            <div class="composer-main">
-              <textarea class="field" id="message" name="message" rows="1" maxlength="500" placeholder="메시지 입력" required></textarea>
-              <button class="send-btn" type="submit" id="sendBtn" aria-label="전송">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 4.2 21 12 3.5 19.8l2-6.1L15 12l-9.5-1.7z"/></svg>
-              </button>
-            </div>
-          </form>
-        </div>
       </div>
     </section>
 
@@ -1591,9 +1696,9 @@
       "use strict";
 
       /**
-       * 여러 기기에서 실시간 동기화가 필요하면 Apps Script 웹앱 URL을 넣으세요.
-       * 배포 방법: chat-backend.gs 파일을 Apps Script에 붙여넣고
-       * 배포 > 새 배포 > 웹 앱(모든 사용자 액세스) 후 URL을 아래에 입력합니다.
+       * ★ 인터넷 전체 실시간 채팅용 Apps Script 웹앱 URL
+       * chat-backend.gs 를 배포한 뒤 아래 따옴표 안에 URL을 넣으세요.
+       * 예: "https://script.google.com/macros/s/XXXX/exec"
        */
       const CHAT_API_URL = "";
       const ADMIN_PASSWORD = "6485";
@@ -1613,7 +1718,7 @@
       };
       const STORAGE_KEY = "kimtaehoon_chat_v1";
       const SESSION_NICK = "kimtaehoon_nick";
-      const POLL_MS = 2500;
+      const POLL_MS = 2000;
 
       const thread = document.getElementById("thread");
       const form = document.getElementById("chatForm");
@@ -1632,6 +1737,8 @@
       const clearChatBtn = document.getElementById("clearChatBtn");
       const boardFrame = document.getElementById("boardFrame");
       const boardFallback = document.getElementById("boardFallback");
+      const chatLive = document.getElementById("chatLive");
+      const chatLiveLabel = document.getElementById("chatLiveLabel");
 
       if (boardFrame && boardFallback) {
         boardFrame.addEventListener("error", () => {
@@ -1645,6 +1752,7 @@
       let messages = [];
       let pendingDeleteId = null;
       let deleteMode = "one"; // one | mine
+      let remoteOnline = false;
       let mySessionId = localStorage.getItem("kimtaehoon_sid");
       if (!mySessionId) {
         mySessionId = crypto.randomUUID();
@@ -1654,6 +1762,13 @@
       const channel = ("BroadcastChannel" in window)
         ? new BroadcastChannel("kimtaehoon_chat")
         : null;
+
+      function setLiveStatus(online, label) {
+        remoteOnline = online;
+        if (!chatLive || !chatLiveLabel) return;
+        chatLive.classList.toggle("is-offline", !online);
+        chatLiveLabel.textContent = label;
+      }
 
       function showToast(text) {
         toast.textContent = text;
@@ -1715,7 +1830,13 @@
       function render() {
         msgCount.textContent = String(messages.length);
         if (!messages.length) {
-          thread.innerHTML = `<div class="empty-hint">아직 대화가 없습니다.<br />첫 메시지를 남겨보세요.</div>`;
+          if (!CHAT_API_URL) {
+            thread.innerHTML = `<div class="empty-hint">chat-backend.gs 수정중</div>`;
+          } else if (!remoteOnline) {
+            thread.innerHTML = `<div class="empty-hint">채팅 서버에 연결하는 중…</div>`;
+          } else {
+            thread.innerHTML = `<div class="empty-hint">아직 대화가 없습니다.<br />첫 메시지를 남겨보세요.</div>`;
+          }
           return;
         }
 
@@ -1760,46 +1881,82 @@
         }
       }
 
-      async function fetchRemote() {
-        if (!CHAT_API_URL) return false;
+      async function apiPost(payload) {
+        const res = await fetch(CHAT_API_URL, {
+          method: "POST",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload),
+          redirect: "follow",
+        });
+        const text = await res.text();
         try {
-          const res = await fetch(`${CHAT_API_URL}?action=list`, { method: "GET" });
+          return JSON.parse(text);
+        } catch {
+          throw new Error("invalid_json");
+        }
+      }
+
+      async function fetchRemote() {
+        if (!CHAT_API_URL) {
+          setLiveStatus(false, "로컬");
+          return false;
+        }
+        try {
+          const res = await fetch(`${CHAT_API_URL}?action=list`, {
+            method: "GET",
+            cache: "no-store",
+            redirect: "follow",
+          });
           if (!res.ok) throw new Error("list failed");
           const data = await res.json();
           if (Array.isArray(data.messages)) {
             messages = data.messages;
             saveLocal();
+            setLiveStatus(true, "LIVE");
             render();
             return true;
           }
+          throw new Error("bad payload");
         } catch (err) {
           console.warn("remote list failed", err);
+          setLiveStatus(false, "재시도");
+          return false;
         }
-        return false;
       }
 
       async function postRemote(msg) {
-        if (!CHAT_API_URL) return;
+        if (!CHAT_API_URL) return false;
         try {
-          await fetch(CHAT_API_URL, {
-            method: "POST",
-            headers: { "Content-Type": "text/plain;charset=utf-8" },
-            body: JSON.stringify({ action: "create", message: msg }),
-          });
+          const data = await apiPost({ action: "create", message: msg });
+          if (data && Array.isArray(data.messages)) {
+            messages = data.messages;
+            saveLocal();
+            setLiveStatus(true, "LIVE");
+            render();
+            return true;
+          }
+          return Boolean(data && data.ok);
         } catch (err) {
           console.warn("remote create failed", err);
+          setLiveStatus(false, "재시도");
+          return false;
         }
       }
 
-      async function deleteRemote(id, passwordHash) {
+      async function deleteRemote(id, passwordHash, adminPassword) {
         if (!CHAT_API_URL) return true;
         try {
-          const res = await fetch(CHAT_API_URL, {
-            method: "POST",
-            headers: { "Content-Type": "text/plain;charset=utf-8" },
-            body: JSON.stringify({ action: "delete", id, passwordHash }),
+          const data = await apiPost({
+            action: "delete",
+            id,
+            passwordHash,
+            adminPassword: adminPassword || "",
           });
-          const data = await res.json();
+          if (data && Array.isArray(data.messages)) {
+            messages = data.messages;
+            saveLocal();
+            render();
+          }
           return Boolean(data && data.ok);
         } catch (err) {
           console.warn("remote delete failed", err);
@@ -1807,7 +1964,39 @@
         }
       }
 
+      async function clearRemote(passwordHash, adminPassword) {
+        if (!CHAT_API_URL) return true;
+        try {
+          const data = await apiPost({
+            action: "clear",
+            passwordHash: passwordHash || "",
+            adminPassword: adminPassword || "",
+          });
+          if (data && Array.isArray(data.messages)) {
+            messages = data.messages;
+            saveLocal();
+            render();
+          }
+          return Boolean(data && data.ok);
+        } catch (err) {
+          console.warn("remote clear failed", err);
+          return false;
+        }
+      }
+
       async function addMessage(nickname, text, password) {
+        if (CHAT_API_URL && !remoteOnline) {
+          const ok = await fetchRemote();
+          if (!ok) {
+            showToast("채팅 서버에 연결되지 않았습니다");
+            return;
+          }
+        }
+        if (!CHAT_API_URL) {
+          showToast("채팅 서버 URL(CHAT_API_URL)을 설정해 주세요");
+          return;
+        }
+
         const passwordHash = await sha256(password);
         const msg = {
           id: crypto.randomUUID(),
@@ -1817,10 +2006,17 @@
           sessionId: mySessionId,
           createdAt: Date.now(),
         };
+
         messages.push(msg);
         saveLocal();
         render();
-        postRemote(msg);
+
+        const posted = await postRemote(msg);
+        if (!posted) {
+          showToast("전송 실패 — 잠시 후 다시 시도해 주세요");
+          await fetchRemote();
+          return;
+        }
         showToast("메시지가 등록되었습니다");
       }
 
@@ -1864,24 +2060,24 @@
         const hash = await sha256(pwd);
 
         if (deleteMode === "mine") {
-          let matched;
-          if (isAdmin) {
-            matched = [...messages];
-          } else {
-            matched = messages.filter((m) => m.passwordHash === hash);
+          if (CHAT_API_URL) {
+            const ok = await clearRemote(isAdmin ? "" : hash, isAdmin ? ADMIN_PASSWORD : "");
+            if (!ok) {
+              showToast("비밀번호가 일치하는 메시지가 없습니다");
+              return;
+            }
+            closeDeleteModal();
+            showToast(isAdmin ? "전체 메시지를 삭제했습니다" : "메시지를 삭제했습니다");
+            return;
           }
 
+          let matched = isAdmin
+            ? [...messages]
+            : messages.filter((m) => m.passwordHash === hash);
           if (!matched.length) {
             showToast("비밀번호가 일치하는 메시지가 없습니다");
             return;
           }
-
-          if (CHAT_API_URL) {
-            for (const m of matched) {
-              await deleteRemote(m.id, isAdmin ? m.passwordHash : hash);
-            }
-          }
-
           const removeIds = new Set(matched.map((m) => m.id));
           messages = messages.filter((m) => !removeIds.has(m.id));
           saveLocal();
@@ -1899,10 +2095,12 @@
         }
 
         let ok = isAdmin || target.passwordHash === hash;
-        if (CHAT_API_URL && !isAdmin) {
-          ok = await deleteRemote(pendingDeleteId, hash);
-        } else if (CHAT_API_URL && isAdmin) {
-          ok = await deleteRemote(pendingDeleteId, target.passwordHash);
+        if (CHAT_API_URL) {
+          ok = await deleteRemote(
+            pendingDeleteId,
+            hash,
+            isAdmin ? ADMIN_PASSWORD : ""
+          );
         }
 
         if (!ok) {
@@ -1910,9 +2108,11 @@
           return;
         }
 
-        messages = messages.filter((m) => m.id !== pendingDeleteId);
-        saveLocal();
-        render();
+        if (!CHAT_API_URL) {
+          messages = messages.filter((m) => m.id !== pendingDeleteId);
+          saveLocal();
+          render();
+        }
         closeDeleteModal();
         showToast("메시지를 삭제했습니다");
       }
@@ -1968,7 +2168,7 @@
       });
 
       window.addEventListener("storage", (e) => {
-        if (e.key === STORAGE_KEY) {
+        if (e.key === STORAGE_KEY && !CHAT_API_URL) {
           loadLocal();
           render();
         }
@@ -1976,6 +2176,7 @@
 
       if (channel) {
         channel.onmessage = (ev) => {
+          if (CHAT_API_URL) return;
           if (ev.data && ev.data.type === "sync" && Array.isArray(ev.data.messages)) {
             messages = ev.data.messages;
             localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
@@ -1985,13 +2186,21 @@
       }
 
       async function boot() {
+        if (!CHAT_API_URL) {
+          setLiveStatus(false, "로컬");
+          messages = [];
+          render();
+          return;
+        }
+        setLiveStatus(false, "연결중");
         loadLocal();
         render();
         const remoteOk = await fetchRemote();
         if (!remoteOk) render();
-        if (CHAT_API_URL) {
-          setInterval(fetchRemote, POLL_MS);
-        }
+        setInterval(fetchRemote, POLL_MS);
+        document.addEventListener("visibilitychange", () => {
+          if (document.visibilityState === "visible") fetchRemote();
+        });
       }
 
       const expandPanel = document.getElementById("expandPanel");

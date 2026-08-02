@@ -1,25 +1,28 @@
 /**
- * 김태훈닷컴 실시간 대화 백엔드 (Google Apps Script)
+ * 김태훈닷컴 실시간 채팅 백엔드 (Google Apps Script)
  *
- * 사용 방법
- * 1. https://script.google.com 에서 새 프로젝트 생성
- * 2. 이 파일 내용을 Code.gs 에 붙여넣기
- * 3. 배포 > 새 배포 > 유형: 웹 앱
+ * [배포 — 1회만]
+ * 1. https://script.google.com  → 새 프로젝트
+ * 2. 이 파일 전체를 Code.gs 에 붙여넣기
+ * 3. 배포 → 새 배포 → 유형: 웹 앱
  *    - 실행 계정: 나
- *    - 액세스 권한: 모든 사용자
- * 4. 배포 후 받은 웹 앱 URL을 index.html 의 CHAT_API_URL 에 붙여넣기
+ *    - 액세스: 모든 사용자
+ * 4. 웹 앱 URL을 복사해 index.html 의 CHAT_API_URL 에 넣기
  *
- * 예)
- *   const CHAT_API_URL = "https://script.google.com/macros/s/XXXX/exec";
+ * 예) const CHAT_API_URL = "https://script.google.com/macros/s/XXXX/exec";
  */
 
 var SHEET_NAME = "messages";
 var MAX_MESSAGES = 300;
+var ADMIN_PASSWORD = "6485";
 
 function doGet(e) {
   var action = (e && e.parameter && e.parameter.action) || "list";
   if (action === "list") {
     return json_({ ok: true, messages: listMessages_() });
+  }
+  if (action === "ping") {
+    return json_({ ok: true, t: Date.now() });
   }
   return json_({ ok: false, error: "unknown_action" });
 }
@@ -31,31 +34,45 @@ function doPost(e) {
       body = JSON.parse(e.postData.contents);
     }
     var action = body.action || "";
+    var lock = LockService.getScriptLock();
+    lock.waitLock(15000);
 
-    if (action === "create") {
-      var msg = body.message || {};
-      if (!msg.id || !msg.nickname || !msg.text || !msg.passwordHash) {
-        return json_({ ok: false, error: "invalid_message" });
+    try {
+      if (action === "create") {
+        var msg = body.message || {};
+        if (!msg.id || !msg.nickname || !msg.text || !msg.passwordHash) {
+          return json_({ ok: false, error: "invalid_message" });
+        }
+        createMessage_({
+          id: String(msg.id).slice(0, 64),
+          nickname: String(msg.nickname).slice(0, 16),
+          text: String(msg.text).slice(0, 500),
+          passwordHash: String(msg.passwordHash).slice(0, 128),
+          sessionId: String(msg.sessionId || "").slice(0, 64),
+          createdAt: Number(msg.createdAt) || Date.now(),
+        });
+        return json_({ ok: true, messages: listMessages_() });
       }
-      createMessage_({
-        id: String(msg.id).slice(0, 64),
-        nickname: String(msg.nickname).slice(0, 16),
-        text: String(msg.text).slice(0, 500),
-        passwordHash: String(msg.passwordHash).slice(0, 128),
-        sessionId: String(msg.sessionId || "").slice(0, 64),
-        createdAt: Number(msg.createdAt) || Date.now(),
-      });
-      return json_({ ok: true });
-    }
 
-    if (action === "delete") {
-      var id = String(body.id || "");
-      var passwordHash = String(body.passwordHash || "");
-      var deleted = deleteMessage_(id, passwordHash);
-      return json_({ ok: deleted });
-    }
+      if (action === "delete") {
+        var id = String(body.id || "");
+        var passwordHash = String(body.passwordHash || "");
+        var adminPassword = String(body.adminPassword || "");
+        var deleted = deleteMessage_(id, passwordHash, adminPassword);
+        return json_({ ok: deleted, messages: listMessages_() });
+      }
 
-    return json_({ ok: false, error: "unknown_action" });
+      if (action === "clear") {
+        var adminPwd = String(body.adminPassword || "");
+        var passwordHash2 = String(body.passwordHash || "");
+        var cleared = clearMessages_(adminPwd, passwordHash2);
+        return json_({ ok: cleared.ok, removed: cleared.removed, messages: listMessages_() });
+      }
+
+      return json_({ ok: false, error: "unknown_action" });
+    } finally {
+      lock.releaseLock();
+    }
   } catch (err) {
     return json_({ ok: false, error: String(err) });
   }
@@ -91,8 +108,8 @@ function listMessages_() {
   var sheet = getSheet_();
   var values = sheet.getDataRange().getValues();
   if (values.length <= 1) return [];
-  var rows = values.slice(1);
-  return rows
+  return values
+    .slice(1)
     .filter(function (r) {
       return r[0];
     })
@@ -113,6 +130,10 @@ function listMessages_() {
 
 function createMessage_(msg) {
   var sheet = getSheet_();
+  var values = sheet.getDataRange().getValues();
+  for (var i = 1; i < values.length; i++) {
+    if (String(values[i][0]) === msg.id) return;
+  }
   sheet.appendRow([
     msg.id,
     msg.nickname,
@@ -128,16 +149,41 @@ function createMessage_(msg) {
   }
 }
 
-function deleteMessage_(id, passwordHash) {
+function deleteMessage_(id, passwordHash, adminPassword) {
   var sheet = getSheet_();
   var values = sheet.getDataRange().getValues();
+  var isAdmin = adminPassword === ADMIN_PASSWORD;
   for (var i = 1; i < values.length; i++) {
-    if (String(values[i][0]) === id && String(values[i][3]) === passwordHash) {
+    if (String(values[i][0]) !== id) continue;
+    if (isAdmin || String(values[i][3]) === passwordHash) {
       sheet.deleteRow(i + 1);
       return true;
     }
   }
   return false;
+}
+
+function clearMessages_(adminPassword, passwordHash) {
+  var sheet = getSheet_();
+  var values = sheet.getDataRange().getValues();
+  if (values.length <= 1) return { ok: true, removed: 0 };
+
+  if (adminPassword === ADMIN_PASSWORD) {
+    var total = values.length - 1;
+    sheet.getRange(2, 1, total, 6).clearContent();
+    return { ok: true, removed: total };
+  }
+
+  if (!passwordHash) return { ok: false, removed: 0 };
+
+  var removed = 0;
+  for (var i = values.length - 1; i >= 1; i--) {
+    if (String(values[i][3]) === passwordHash) {
+      sheet.deleteRow(i + 1);
+      removed++;
+    }
+  }
+  return { ok: removed > 0, removed: removed };
 }
 
 function json_(obj) {
