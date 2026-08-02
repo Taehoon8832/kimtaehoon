@@ -564,7 +564,7 @@
 
     .chat-shell {
       display: grid;
-      grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.35fr);
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.75fr);
       gap: clamp(16px, 2.4vw, 24px);
       align-items: stretch;
       padding: clamp(8px, 2vw, 16px) 0;
@@ -1288,11 +1288,12 @@
 
       .nav-links {
         order: 2;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px 6px;
         max-width: 100%;
         width: 100%;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 6px 4px;
+        padding: 4px 2px 2px;
       }
 
       .nav-sep {
@@ -1304,9 +1305,11 @@
       }
 
       .nav-item {
-        flex: 0 0 calc(25% - 6px);
-        max-width: 78px;
-        padding: 4px 2px 6px;
+        width: 100%;
+        max-width: none;
+        flex: none;
+        padding: 6px 4px 4px;
+        gap: 6px;
       }
 
       .nav-item em {
@@ -1314,15 +1317,33 @@
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
         overflow: hidden;
-        font-size: 9px;
-        line-height: 1.2;
+        font-size: 10px;
+        line-height: 1.25;
         font-weight: 700;
         color: var(--text-primary);
+        min-height: 2.5em;
       }
 
       .nav-item .ic {
-        width: 28px;
-        height: 28px;
+        width: 32px;
+        height: 32px;
+        border-radius: 9px;
+      }
+
+      .nav-item .ic svg {
+        width: 17px;
+        height: 17px;
+      }
+
+      .nav-item.card-a .ic-aura {
+        width: 36px;
+        height: 36px;
+      }
+
+      .nav-item.card-a .ic-aura::before {
+        inset: -2px;
+        filter: blur(5px);
+        opacity: 0.4;
       }
 
       .chat-shell {
@@ -1365,23 +1386,28 @@
     }
 
     @media (max-width: 420px) {
+      .nav-links {
+        gap: 10px 4px;
+      }
+
       .nav-item {
-        flex: 0 0 calc(33.333% - 6px);
-        max-width: 100px;
-        padding: 4px 2px 6px;
+        padding: 4px 2px;
       }
 
       .nav-item em {
-        display: -webkit-box;
-        font-size: 8.5px;
-        font-weight: 700;
-        line-height: 1.2;
+        font-size: 9px;
+        min-height: 2.4em;
       }
 
       .nav-item .ic {
         width: 30px;
         height: 30px;
         border-radius: 9px;
+      }
+
+      .nav-item.card-a .ic-aura {
+        width: 34px;
+        height: 34px;
       }
 
       .board-panel {
@@ -1587,32 +1613,6 @@
 
     <section class="chat-section" id="chat" aria-label="게시판과 실시간 대화">
       <div class="chat-shell">
-        <div class="phone" aria-label="김태훈닷컴 실시간 대화">
-          <div class="phonebar">
-            <strong>실시간 채팅</strong>
-            <span class="count" id="msgCount">0</span>
-            <div class="bar-right">
-              <button type="button" class="clear-btn" id="clearChatBtn" title="전체 삭제 (관리자 또는 작성 비밀번호)">전체삭제</button>
-              <span class="live" id="chatLive"><i></i><span id="chatLiveLabel">연결중</span></span>
-            </div>
-          </div>
-
-          <div class="thread" id="thread" aria-live="polite"></div>
-
-          <form class="composer" id="chatForm" autocomplete="off">
-            <div class="composer-row">
-              <input class="field" id="nickname" name="nickname" type="text" maxlength="16" placeholder="닉네임" required />
-              <input class="field" id="password" name="password" type="password" maxlength="32" placeholder="비밀번호" required />
-            </div>
-            <div class="composer-main">
-              <textarea class="field" id="message" name="message" rows="1" maxlength="500" placeholder="메시지 입력" required></textarea>
-              <button class="send-btn" type="submit" id="sendBtn" aria-label="전송">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 4.2 21 12 3.5 19.8l2-6.1L15 12l-9.5-1.7z"/></svg>
-              </button>
-            </div>
-          </form>
-        </div>
-
         <aside class="board-panel" aria-label="자유 게시판">
           <div class="board-bar">
             <span class="board-mark" aria-hidden="true">
@@ -1669,6 +1669,32 @@
             </div>
           </div>
         </aside>
+
+        <div class="phone" aria-label="김태훈닷컴 실시간 대화">
+          <div class="phonebar">
+            <strong>실시간 채팅</strong>
+            <span class="count" id="msgCount">0</span>
+            <div class="bar-right">
+              <button type="button" class="clear-btn" id="clearChatBtn" title="전체 삭제 (관리자 또는 작성 비밀번호)">전체삭제</button>
+              <span class="live" id="chatLive"><i></i><span id="chatLiveLabel">연결중</span></span>
+            </div>
+          </div>
+
+          <div class="thread" id="thread" aria-live="polite"></div>
+
+          <form class="composer" id="chatForm" autocomplete="off">
+            <div class="composer-row">
+              <input class="field" id="nickname" name="nickname" type="text" maxlength="16" placeholder="닉네임" required />
+              <input class="field" id="password" name="password" type="password" maxlength="32" placeholder="비밀번호" required />
+            </div>
+            <div class="composer-main">
+              <textarea class="field" id="message" name="message" rows="1" maxlength="500" placeholder="메시지 입력" required></textarea>
+              <button class="send-btn" type="submit" id="sendBtn" aria-label="전송">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 4.2 21 12 3.5 19.8l2-6.1L15 12l-9.5-1.7z"/></svg>
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </section>
 
