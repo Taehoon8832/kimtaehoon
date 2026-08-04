@@ -469,7 +469,7 @@
       background:
         radial-gradient(70% 55% at 50% -8%, rgba(250, 45, 72, 0.1), transparent 62%),
         linear-gradient(180deg, var(--bg-subtle) 0%, color-mix(in srgb, var(--bg-subtle) 88%, var(--color-primary-50)) 100%);
-      padding-bottom: 80px;
+      padding-bottom: 28px;
     }
 
     .chat-section {
@@ -956,43 +956,40 @@
       box-shadow: 0 0 0 3px rgba(196, 91, 122, 0.12);
     }
 
-    .univ-notice-badge {
-      flex: 0 0 auto;
+    .univ-notice-item-body {
+      min-width: 0;
+      display: grid;
+      gap: 1px;
+    }
+
+    .univ-notice-preview {
+      color: #8a8798;
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 1.25;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .univ-notice-meta-row {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      min-width: 3.2rem;
-      padding: 2px 7px;
-      border-radius: 999px;
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: -0.01em;
-      line-height: 1.35;
-      white-space: nowrap;
+      gap: 5px;
+      min-width: 0;
+      max-width: 100%;
     }
 
-    .univ-notice-badge.is-board {
-      background: #f3eef8;
-      color: #7a5a8f;
-      border: 1px solid #e4dcf0;
+    .univ-notice-head {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      min-width: 0;
     }
 
-    .univ-notice-badge.is-home {
-      background: #eef3f8;
-      color: #5a6d8f;
-      border: 1px solid #dde5f0;
-    }
-
-    .univ-notice-go {
-      flex: 0 0 auto;
-      color: #a09eb0;
-      font-size: 11px;
-      font-weight: 700;
-      white-space: nowrap;
-    }
-
-    .univ-notice-item:hover .univ-notice-go {
-      color: #c45b7a;
+    .univ-notice-head .univ-notice-title {
+      flex: 1;
+      min-width: 0;
     }
 
     .visually-hidden {
@@ -1012,26 +1009,24 @@
       overflow-y: auto;
       overscroll-behavior: contain;
       -webkit-overflow-scrolling: touch;
-      padding: 4px 0;
+      padding: 2px 0;
     }
 
     .univ-notice-empty {
-      margin: 48px 16px;
+      margin: 36px 14px;
       text-align: center;
       color: #8a8798;
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 600;
-      line-height: 1.65;
+      line-height: 1.6;
     }
 
     .univ-notice-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 5px 12px;
-      border-bottom: 1px solid rgba(120, 130, 160, 0.1);
+      display: block;
+      padding: 4px 10px;
+      border-bottom: 1px solid rgba(120, 130, 160, 0.08);
       cursor: pointer;
-      transition: background 0.14s ease;
+      transition: background 0.12s ease;
       background: transparent;
     }
 
@@ -1088,70 +1083,42 @@
         linear-gradient(90deg, rgba(255, 228, 188, 0.85) 0%, rgba(255, 242, 220, 0.55) 42%, rgba(255, 255, 255, 0.2) 78%);
     }
 
-    .univ-notice-date-wrap {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      flex: 0 0 auto;
-      min-width: 7.2rem;
-    }
-
-    .univ-notice-date {
-      color: #5c5f6e;
-      font-size: 12px;
-      font-weight: 600;
-      font-variant-numeric: tabular-nums;
-      letter-spacing: -0.02em;
-      white-space: nowrap;
-    }
-
-    .univ-notice-new {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(135deg, #ffc2d1 0%, #f2a0b6 48%, #e18bb0 100%);
-      color: #fff;
-      border-radius: 999px;
-      padding: 1px 6px;
-      font-size: 9px;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      line-height: 1.35;
-      box-shadow: 0 2px 8px rgba(225, 139, 176, 0.28);
-    }
-
     .univ-notice-univ {
       flex: 0 0 auto;
       display: inline-flex;
       align-items: center;
-      max-width: 8.5rem;
-      padding: 2px 8px;
+      max-width: 5.8rem;
+      padding: 0 5px;
       border-radius: 999px;
       border: 1px solid #e4e2ef;
       background: #f1f0f8;
       color: #5a5870;
-      font-size: 11px;
+      font-size: 9px;
       font-weight: 700;
-      line-height: 1.35;
+      line-height: 1.45;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       text-decoration: none;
     }
 
-    .univ-notice-univ:hover {
-      border-color: rgba(196, 91, 122, 0.35);
-      color: #c45b7a;
+    .univ-notice-date {
+      color: #8a8798;
+      font-size: 10px;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+      flex: 0 0 auto;
     }
 
     .univ-notice-title {
-      flex: 1;
       min-width: 0;
       color: #2a2d3a;
-      font-size: 13px;
-      font-weight: 600;
+      font-size: 12px;
+      font-weight: 700;
       letter-spacing: -0.02em;
-      line-height: 1.35;
+      line-height: 1.25;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -1169,59 +1136,40 @@
       z-index: 35;
       padding: 0;
       margin: 0;
-      color: #3A3A3C;
-      background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, transparent 48%),
-        linear-gradient(105deg, #FFF5F7 0%, #FFE8F0 32%, #EEF6FF 68%, #F3F0FF 100%);
-      border-top: 1px solid rgba(250, 45, 72, 0.14);
-      box-shadow:
-        0 1px 0 rgba(255, 255, 255, 0.7) inset,
-        0 -8px 28px rgba(250, 45, 72, 0.06);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-    }
-
-    .footer::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      top: 0;
-      height: 1px;
-      background: linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(255, 255, 255, 0.9) 22%,
-        rgba(255, 255, 255, 0.9) 78%,
-        transparent 100%
-      );
-      pointer-events: none;
+      color: rgba(58, 58, 60, 0.72);
+      background: linear-gradient(105deg, rgba(255, 245, 247, 0.72) 0%, rgba(255, 232, 240, 0.55) 40%, rgba(238, 246, 255, 0.5) 100%);
+      border-top: 1px solid rgba(250, 45, 72, 0.08);
+      box-shadow: none;
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
 
     .footer-inner {
       position: relative;
       width: min(1280px, 100%);
       margin: 0 auto;
-      min-height: 64px;
-      padding: 12px clamp(16px, 3.5vw, 28px);
+      min-height: 0;
+      padding: 2px clamp(10px, 2vw, 18px);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: clamp(16px, 4vw, 40px);
+      gap: 10px;
     }
 
     .visit-stats {
       display: flex;
-      align-items: stretch;
+      align-items: center;
       gap: 0;
       min-width: 0;
     }
 
     .visit-metric {
-      display: grid;
-      gap: 6px;
-      padding: 2px clamp(14px, 2.2vw, 22px);
+      display: inline-flex;
+      align-items: baseline;
+      gap: 5px;
+      padding: 0 8px;
       min-width: 0;
+      line-height: 1;
     }
 
     .visit-metric:first-child {
@@ -1235,22 +1183,22 @@
     .visit-kicker {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
+      gap: 4px;
+      font-size: 9px;
+      font-weight: 650;
+      letter-spacing: 0.04em;
       line-height: 1;
-      color: rgba(58, 58, 60, 0.48);
+      color: rgba(58, 58, 60, 0.38);
       white-space: nowrap;
     }
 
     .visit-live {
-      width: 6px;
-      height: 6px;
+      width: 4px;
+      height: 4px;
       border-radius: 50%;
-      background: #FA2D48;
-      box-shadow: 0 0 0 0 rgba(250, 45, 72, 0.35);
-      animation: visitPulse 2.6s var(--ease-out) infinite;
+      background: rgba(250, 45, 72, 0.75);
+      box-shadow: none;
+      animation: none;
       flex: 0 0 auto;
     }
 
@@ -1261,85 +1209,74 @@
     .visit-value {
       margin: 0;
       font-family: "Space Grotesk", var(--font);
-      font-size: clamp(18px, 2.1vw, 22px);
+      font-size: 12px;
       font-weight: 700;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.03em;
       line-height: 1;
       font-variant-numeric: tabular-nums;
-      color: #1C1C1E;
-      min-width: 2ch;
+      color: rgba(28, 28, 30, 0.78);
+      min-width: 1ch;
     }
 
     .visit-value.is-loading {
-      color: rgba(58, 58, 60, 0.28);
+      color: rgba(58, 58, 60, 0.22);
       font-weight: 600;
     }
 
     .visit-rule {
       width: 1px;
-      align-self: stretch;
-      margin: 2px 0;
-      background: linear-gradient(
-        180deg,
-        transparent 0%,
-        rgba(250, 45, 72, 0.16) 18%,
-        rgba(120, 160, 220, 0.18) 82%,
-        transparent 100%
-      );
+      height: 10px;
+      margin: 0;
+      background: rgba(250, 45, 72, 0.12);
       flex: 0 0 auto;
     }
 
     .footer-brand {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 6px;
       min-width: 0;
       margin-left: auto;
     }
 
     .footer-mark {
-      width: 18px;
-      height: 18px;
-      border-radius: 5px;
+      width: 11px;
+      height: 11px;
+      border-radius: 3px;
       display: grid;
       place-items: center;
       color: #fff;
       background: linear-gradient(145deg, #FF8AA0 0%, #FA2D48 55%, #E85A8C 100%);
-      box-shadow: 0 3px 10px rgba(250, 45, 72, 0.22);
+      box-shadow: none;
       flex: 0 0 auto;
+      opacity: 0.85;
     }
 
     .footer-mark svg {
-      width: 10px;
-      height: 10px;
+      width: 7px;
+      height: 7px;
     }
 
     .footer-copy {
       margin: 0;
-      color: rgba(58, 58, 60, 0.52);
-      font-size: 12px;
+      color: rgba(58, 58, 60, 0.4);
+      font-size: 10px;
       font-weight: 500;
-      line-height: 1.35;
+      line-height: 1;
       letter-spacing: -0.01em;
       white-space: nowrap;
       text-align: right;
     }
 
     .footer-copy strong {
-      color: #2C2C2E;
+      color: rgba(44, 44, 46, 0.72);
       font-weight: 700;
-    }
-
-    @keyframes visitPulse {
-      0% { box-shadow: 0 0 0 0 rgba(250, 45, 72, 0.35); }
-      70% { box-shadow: 0 0 0 8px rgba(250, 45, 72, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(250, 45, 72, 0); }
     }
 
     .toast {
       position: fixed;
       left: 50%;
-      bottom: 84px;
+      bottom: 36px;
       z-index: 80;
       transform: translateX(-50%) translateY(20px);
       padding: 12px 16px;
@@ -1541,16 +1478,15 @@
       }
 
       .univ-notice-item {
-        flex-wrap: wrap;
-        gap: 4px 8px;
-        padding: 6px 10px;
+        padding: 4px 8px;
       }
 
-      .univ-notice-date-wrap { min-width: 0; }
-
       .univ-notice-title {
-        flex: 1 1 100%;
-        white-space: normal;
+        font-size: 11px;
+      }
+
+      .univ-notice-preview {
+        font-size: 9px;
       }
     }
 
@@ -1613,20 +1549,14 @@
       }
 
       .footer-inner {
-        min-height: 58px;
-        padding: 10px 14px;
-        gap: 12px;
+        min-height: 0;
+        padding: 2px 10px;
+        gap: 8px;
       }
 
       .visit-metric {
-        gap: 5px;
-        padding: 2px 12px;
-      }
-
-      .visit-kicker {
-        font-size: 9px;
-        letter-spacing: 0.08em;
-        gap: 5px;
+        gap: 4px;
+        padding: 0 6px;
       }
 
       .visit-label-full {
@@ -1638,30 +1568,30 @@
       }
 
       .visit-value {
-        font-size: 17px;
-      }
-
-      .footer-mark {
-        width: 16px;
-        height: 16px;
-        border-radius: 4px;
-      }
-
-      .footer-mark svg {
-        width: 9px;
-        height: 9px;
-      }
-
-      .footer-copy {
         font-size: 11px;
       }
 
+      .footer-mark {
+        width: 10px;
+        height: 10px;
+        border-radius: 2px;
+      }
+
+      .footer-mark svg {
+        width: 6px;
+        height: 6px;
+      }
+
+      .footer-copy {
+        font-size: 9px;
+      }
+
       .lower-layout {
-        padding-bottom: 72px;
+        padding-bottom: 24px;
       }
 
       .toast {
-        bottom: 74px;
+        bottom: 32px;
       }
     }
 
@@ -1922,7 +1852,7 @@
                 type="search"
                 id="univNoticeSearch"
                 class="univ-notice-search"
-                placeholder="대학명 검색…"
+                placeholder="제목·내용·대학 검색…"
                 autocomplete="off"
                 spellcheck="false"
               />
@@ -1930,7 +1860,7 @@
             <span id="univNoticeCount">총 0곳</span>
           </div>
           <div class="univ-notice-list" id="univNoticeList" aria-live="polite">
-            <div class="univ-notice-empty">대학 목록을 불러오는 중입니다…</div>
+            <div class="univ-notice-empty">전체 공지를 불러오는 중입니다…</div>
           </div>
         </aside>
       </div>
@@ -1979,10 +1909,6 @@
     (() => {
       "use strict";
 
-      /**
-       * ★ 방문자 통계용 Apps Script (chat-backend.gs 배포 URL)
-       */
-      const VISIT_API_URL = "";
       const EXPAND_APPS = {
         susi: {
           url: "https://script.google.com/macros/s/AKfycbzz9D4B0fHSk_KykVKuUjNtPeEzrtGtGnzytPWqKpSGTilQSRh8sKPnzEHRacmJGb27Qg/exec",
@@ -2013,9 +1939,13 @@
         });
       }
 
-      const univSources = Array.isArray(window.UNIV_BOARD_DATA && window.UNIV_BOARD_DATA.sources)
-        ? window.UNIV_BOARD_DATA.sources
-        : [];
+      const univBoardData = window.UNIV_BOARD_DATA || {};
+      const univSources = Array.isArray(univBoardData.sources) ? univBoardData.sources : [];
+      let univNotices = Array.isArray(univBoardData.notices) ? univBoardData.notices.slice() : [];
+      const UNIV_MIN_DATE = "2026-01-01";
+      const UNIV_CACHE_KEY = "kimtaehoon_univ_notices_v3";
+      let univQuery = "";
+      let univFetchCursor = 0;
 
       function showToast(text) {
         if (!toast) return;
@@ -2040,60 +1970,146 @@
         univLiveLabel.textContent = label;
       }
 
-      function normalizeUniv(src) {
-        const boardUrl = String(src.boardUrl || "").trim();
-        const homeUrl = String(src.homeUrl || "").trim();
-        const href = boardUrl || homeUrl;
+      function safeHref(boardUrl, homeUrl, explicitUrl) {
+        const home = String(homeUrl || "").trim();
+        const board = String(boardUrl || "").trim();
+        const explicit = String(explicitUrl || "").trim();
+        const broken = /\/admission\/html\/notice\/notice\.asp$/i;
+        const pick = explicit || board || home;
+        if (!pick) return "";
+        if (broken.test(pick) && home) return home;
+        if (!/^https?:\/\//i.test(pick) && home) return home;
+        return pick;
+      }
+
+      function isJunkText(s) {
+        return /var\s|function\s|document\.|<\w+|[{};]=|bbsrg|javascript:/i.test(String(s || ""));
+      }
+
+      function extractDateISO(text) {
+        const m = String(text || "").match(/(20\d{2})\s*[.\-/년]\s*(\d{1,2})\s*[.\-/월]\s*(\d{1,2})/);
+        if (!m) return "";
+        const iso = `${m[1]}-${String(m[2]).padStart(2, "0")}-${String(m[3]).padStart(2, "0")}`;
+        if (iso < "2020-01-01" || iso > "2035-12-31") return "";
+        return iso;
+      }
+
+      function stripTags(html) {
+        return String(html || "")
+          .replace(/<script[\s\S]*?<\/script>/gi, " ")
+          .replace(/<style[\s\S]*?<\/style>/gi, " ")
+          .replace(/<[^>]+>/g, " ")
+          .replace(/&nbsp;/gi, " ")
+          .replace(/&amp;/gi, "&")
+          .replace(/&lt;/gi, "<")
+          .replace(/&gt;/gi, ">")
+          .replace(/&quot;/gi, '"')
+          .replace(/&#39;/gi, "'")
+          .replace(/\s+/g, " ")
+          .trim();
+      }
+
+      function toAbsUrl(href, base) {
+        try {
+          return new URL(href, base).href.split("#")[0];
+        } catch {
+          return "";
+        }
+      }
+
+      function normalizeNotice(it) {
+        const title = String(it.title || "").replace(/\s+/g, " ").trim();
+        let preview = String(it.preview || "").replace(/\s+/g, " ").trim();
+        const univName = String(it.univName || "").replace(/\s+/g, " ").trim();
+        const href = safeHref(it.boardUrl, it.homeUrl, it.url || it.href);
+        if (!title || !href || title.length < 8 || isJunkText(title)) return null;
+        if ((title.match(/[가-힣]/g) || []).length < 4) return null;
+        if (isJunkText(preview) || (preview.match(/[가-힣]/g) || []).length < 2) {
+          preview = `${univName} 입학처 전체 공지사항`;
+        }
         return {
-          id: String(src.id || ""),
-          name: String(src.name || "").replace(/\s+/g, " ").trim(),
-          boardUrl,
-          homeUrl,
+          title,
+          preview: preview.slice(0, 96),
+          univName,
+          dateText: String(it.dateText || (it.dateISO || "").replace(/-/g, ".")),
+          dateISO: String(it.dateISO || ""),
           href,
-          hasBoard: !!boardUrl,
+          univId: String(it.univId || ""),
         };
       }
 
-      function filteredUnivSources(query) {
-        const q = String(query || "").trim().toLowerCase().replace(/\s+/g, "");
-        const list = univSources.map(normalizeUniv).filter((u) => u.name && u.href);
-        list.sort((a, b) => {
-          if (a.hasBoard !== b.hasBoard) return a.hasBoard ? -1 : 1;
-          return a.name.localeCompare(b.name, "ko");
+      function mergeNotices(extra) {
+        const map = new Map();
+        univNotices.concat(extra || []).forEach((raw) => {
+          const n = normalizeNotice(raw);
+          if (!n) return;
+          map.set(`${n.univId}|${n.href}|${n.title}`, {
+            univId: n.univId,
+            univName: n.univName,
+            title: n.title,
+            preview: n.preview,
+            url: n.href,
+            homeUrl: raw.homeUrl || "",
+            dateISO: n.dateISO,
+            dateText: n.dateText,
+          });
         });
-        if (!q) return list;
-        return list.filter((u) => u.name.toLowerCase().replace(/\s+/g, "").includes(q));
+        univNotices = Array.from(map.values()).sort((a, b) =>
+          String(b.dateISO || "").localeCompare(String(a.dateISO || ""))
+        );
+        try {
+          localStorage.setItem(
+            UNIV_CACHE_KEY,
+            JSON.stringify({ t: Date.now(), notices: univNotices.slice(0, 400) })
+          );
+        } catch {
+          /* ignore */
+        }
+      }
+
+      function filteredRows(query) {
+        const q = String(query || "").trim().toLowerCase().replace(/\s+/g, "");
+        let rows = univNotices.map(normalizeNotice).filter(Boolean);
+        rows.sort((a, b) => String(b.dateISO).localeCompare(String(a.dateISO)));
+        if (!q) return rows;
+        return rows.filter((r) => {
+          const hay = `${r.title}${r.preview}${r.univName}`.toLowerCase().replace(/\s+/g, "");
+          return hay.includes(q);
+        });
       }
 
       function renderUnivBoard(query) {
         if (!univListEl) return;
-        const list = filteredUnivSources(query);
-        const boardCount = list.filter((u) => u.hasBoard).length;
+        univQuery = query || "";
+        const list = filteredRows(univQuery);
         if (univCountEl) {
-          univCountEl.textContent = query
-            ? `검색 ${list.length.toLocaleString("ko-KR")}곳`
-            : `총 ${list.length.toLocaleString("ko-KR")}곳 · 공지 ${boardCount.toLocaleString("ko-KR")}`;
+          univCountEl.textContent = univQuery
+            ? `검색 ${list.length.toLocaleString("ko-KR")}건`
+            : `전체 공지 ${list.length.toLocaleString("ko-KR")}건`;
         }
 
         if (!list.length) {
-          univListEl.innerHTML = univSources.length
-            ? `<div class="univ-notice-empty">검색 결과가 없습니다.</div>`
-            : `<div class="univ-notice-empty">대학 목록을 불러오지 못했습니다.<br />univ-board-data.js 파일을 함께 올려 주세요.</div>`;
+          univListEl.innerHTML = `<div class="univ-notice-empty">표시할 전체 공지가 없습니다.<br />입학처에서 공지를 수집하는 중입니다…</div>`;
           return;
         }
 
-        univListEl.innerHTML = list.map((u) => {
-          const name = escapeHtml(u.name);
-          const href = escapeHtml(u.href);
-          const badge = u.hasBoard
-            ? `<span class="univ-notice-badge is-board">공지</span>`
-            : `<span class="univ-notice-badge is-home">입학처</span>`;
-          const go = u.hasBoard ? "공지 보기" : "입학처";
+        univListEl.innerHTML = list.map((r) => {
+          const title = escapeHtml(r.title);
+          const preview = escapeHtml(r.preview);
+          const univ = escapeHtml(r.univName);
+          const href = escapeHtml(r.href);
+          const date = escapeHtml((r.dateText || "").replace(/^20/, "").replace(/\./g, ".").slice(-8));
+          const shortDate = escapeHtml(String(r.dateISO || "").slice(5).replace("-", "."));
           return (
-            `<div class="univ-notice-item${u.hasBoard ? " is-recent" : ""}" data-href="${href}" role="link" tabindex="0" title="${name}">` +
-            badge +
-            `<span class="univ-notice-title">${name}</span>` +
-            `<span class="univ-notice-go">${go} →</span>` +
+            `<div class="univ-notice-item" data-href="${href}" role="link" tabindex="0" title="${title}">` +
+            `<div class="univ-notice-item-body">` +
+            `<div class="univ-notice-head">` +
+            `<span class="univ-notice-title">${title}</span>` +
+            `<span class="univ-notice-univ">${univ}</span>` +
+            `<span class="univ-notice-date">${shortDate || date}</span>` +
+            `</div>` +
+            `<span class="univ-notice-preview">${preview}</span>` +
+            `</div>` +
             `</div>`
           );
         }).join("");
@@ -2102,6 +2118,105 @@
       function openNoticeUrl(url) {
         if (!url || !/^https?:\/\//i.test(url)) return;
         window.open(url, "_blank", "noopener,noreferrer");
+      }
+
+      function parseNoticesFromHtml(html, src, pageUrl) {
+        if (!html || /HTTP 오류 404|404\.0 - Not Found/i.test(html.slice(0, 2500))) return [];
+        const out = [];
+        const re = /<a[^>]+href\s*=\s*["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>([\s\S]{0,260})/gi;
+        let m;
+        while ((m = re.exec(html)) && out.length < 2) {
+          const href = m[1];
+          const title = stripTags(m[2]);
+          const tail = stripTags(m[3]);
+          if (!title || title.length < 8 || title.length > 120 || isJunkText(title)) continue;
+          if ((title.match(/[가-힣]/g) || []).length < 4) continue;
+          if (!/(notice|bbs|board|article|artcl|공지|소식|news|ipsi|admission|view)/i.test(href) &&
+              !/(공지|안내|모집|요강|발표|일정|변경|합격|전형|수시|정시)/.test(title)) continue;
+          const dateISO = extractDateISO(tail) || extractDateISO(title);
+          if (!dateISO || dateISO < UNIV_MIN_DATE) continue;
+          const url = toAbsUrl(href, pageUrl);
+          if (!url) continue;
+          let preview = tail.replace(/(20\d{2})\s*[.\-/년]\s*(\d{1,2})\s*[.\-/월]\s*(\d{1,2})/g, " ").replace(/\s+/g, " ").trim();
+          if (isJunkText(preview) || (preview.match(/[가-힣]/g) || []).length < 2) {
+            preview = `${src.name} 입학처 전체 공지사항`;
+          }
+          out.push({
+            univId: src.id,
+            univName: src.name,
+            title,
+            preview: preview.slice(0, 96),
+            url,
+            homeUrl: src.homeUrl || "",
+            dateISO,
+            dateText: dateISO.replace(/-/g, "."),
+          });
+        }
+        return out;
+      }
+
+      async function fetchHtmlViaProxy(url) {
+        const proxies = [
+          (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
+          (u) => `https://corsproxy.io/?${encodeURIComponent(u)}`,
+        ];
+        for (const make of proxies) {
+          try {
+            const res = await fetch(make(url), { method: "GET", cache: "no-store" });
+            if (!res.ok) continue;
+            const text = await res.text();
+            if (text && text.length > 400) return text;
+          } catch {
+            /* try next */
+          }
+        }
+        return "";
+      }
+
+      async function scrapeSourceLive(src) {
+        const home = String(src.homeUrl || "").trim();
+        const board = String(src.boardUrl || "").trim();
+        const urls = [home, board].filter(Boolean);
+        for (const u of urls) {
+          const html = await fetchHtmlViaProxy(u);
+          if (!html) continue;
+          const items = parseNoticesFromHtml(html, src, u);
+          if (items.length) return items;
+        }
+        return [];
+      }
+
+      async function pumpUnivLiveFetch() {
+        if (!univSources.length) return;
+        const have = new Set(univNotices.map((n) => String(n.univId || "")));
+        const queue = [];
+        const seenHome = new Set();
+        univSources.forEach((s) => {
+          const home = String(s.homeUrl || s.boardUrl || "").trim();
+          if (!home || seenHome.has(home) || have.has(String(s.id))) return;
+          seenHome.add(home);
+          queue.push(s);
+        });
+        if (!queue.length) {
+          setUnivLive(true, "LIVE");
+          return;
+        }
+
+        setUnivLive(true, "수집중");
+        const batch = 3;
+        while (univFetchCursor < queue.length) {
+          const slice = queue.slice(univFetchCursor, univFetchCursor + batch);
+          univFetchCursor += batch;
+          const parts = await Promise.all(slice.map((s) => scrapeSourceLive(s).catch(() => [])));
+          const flat = parts.flat();
+          if (flat.length) {
+            mergeNotices(flat);
+            renderUnivBoard(univQuery);
+          }
+          setUnivLive(true, `${Math.min(univFetchCursor, queue.length)}/${queue.length}`);
+          await new Promise((r) => setTimeout(r, 350));
+        }
+        setUnivLive(true, "LIVE");
       }
 
       if (univListEl) {
@@ -2126,13 +2241,25 @@
       }
 
       function bootUnivNotices() {
-        if (!univSources.length) {
+        try {
+          const cached = JSON.parse(localStorage.getItem(UNIV_CACHE_KEY) || "null");
+          if (cached && Array.isArray(cached.notices) && cached.notices.length) {
+            mergeNotices(cached.notices);
+          }
+        } catch {
+          /* ignore */
+        }
+        if (!univSources.length && !univNotices.length) {
           setUnivLive(false, "오류");
           renderUnivBoard("");
           return;
         }
-        setUnivLive(true, "안내");
+        setUnivLive(true, "공지");
         renderUnivBoard(univSearch ? univSearch.value : "");
+        // 입학처 URL 기준 나머지 대학 공지를 백그라운드 수집
+        setTimeout(() => {
+          pumpUnivLiveFetch().catch(() => setUnivLive(true, "공지"));
+        }, 400);
       }
 
       const expandPanel = document.getElementById("expandPanel");
@@ -2223,8 +2350,10 @@
       if (location.hash === "#susi") openExpand("susi");
       if (location.hash === "#ipgyeol") openExpand("ipgyeol");
 
-      /* ── 방문자 카운터 ── */
-      const VISIT_STORE_KEY = "kimtaehoon_visit_v1";
+      /* ── 방문자 카운터 (서버 없이 공개 Count API) ── */
+      const VISIT_STORE_KEY = "kimtaehoon_visit_v2";
+      const VISIT_NS = "kimtaehoon-com";
+      const COUNT_API = "https://countapi.mileshilliard.com/api/v1";
       const visitTodayEl = document.getElementById("visitToday");
       const visitTotalEl = document.getElementById("visitTotal");
 
@@ -2265,87 +2394,111 @@
         requestAnimationFrame(tick);
       }
 
-      function readLocalVisits() {
+      function readVisitFlag() {
         try {
           const raw = localStorage.getItem(VISIT_STORE_KEY);
           const data = raw ? JSON.parse(raw) : null;
-          if (!data || typeof data !== "object") {
-            return { total: 0, today: 0, date: "", hit: false };
-          }
-          return {
-            total: Number(data.total) || 0,
-            today: Number(data.today) || 0,
-            date: String(data.date || ""),
-            hit: Boolean(data.hit),
-          };
+          if (!data || typeof data !== "object") return { date: "", hit: false };
+          return { date: String(data.date || ""), hit: Boolean(data.hit) };
         } catch {
-          return { total: 0, today: 0, date: "", hit: false };
+          return { date: "", hit: false };
         }
       }
 
-      function writeLocalVisits(data) {
-        localStorage.setItem(VISIT_STORE_KEY, JSON.stringify(data));
-      }
-
-      function syncLocalDay(data) {
-        const today = seoulDateKey();
-        if (data.date !== today) {
-          data.date = today;
-          data.today = 0;
-          data.hit = false;
+      function writeVisitFlag(data) {
+        try {
+          localStorage.setItem(VISIT_STORE_KEY, JSON.stringify(data));
+        } catch {
+          /* ignore quota / private mode */
         }
-        return data;
       }
 
-      function bumpLocalVisits() {
-        const data = syncLocalDay(readLocalVisits());
-        if (!data.hit) {
-          data.hit = true;
-          data.today += 1;
-          data.total += 1;
-          writeLocalVisits(data);
-        } else {
-          writeLocalVisits(data);
-        }
-        return data;
+      function parseCountValue(json) {
+        if (!json || json.error) return null;
+        const n = Number(json.value);
+        return Number.isFinite(n) ? Math.max(0, Math.floor(n)) : null;
       }
 
-      async function fetchVisitJson(url) {
-        const res = await fetch(url, { method: "GET", credentials: "omit", cache: "no-store" });
-        if (!res.ok) throw new Error("visit_http");
+      async function countApi(path) {
+        const res = await fetch(`${COUNT_API}/${path}`, {
+          method: "GET",
+          credentials: "omit",
+          cache: "no-store",
+        });
+        if (!res.ok) throw new Error("count_http_" + res.status);
         return res.json();
+      }
+
+      async function readCount(key) {
+        try {
+          const n = parseCountValue(await countApi("get/" + encodeURIComponent(key)));
+          return n == null ? 0 : n;
+        } catch {
+          return 0;
+        }
+      }
+
+      async function hitCount(key) {
+        const n = parseCountValue(await countApi("hit/" + encodeURIComponent(key)));
+        if (n == null) throw new Error("count_bad");
+        return n;
       }
 
       async function bootVisits() {
         if (!visitTodayEl || !visitTotalEl) return;
 
-        const local = syncLocalDay(readLocalVisits());
-        writeLocalVisits(local);
-
-        if (!VISIT_API_URL) {
-          const data = bumpLocalVisits();
-          animateVisitNum(visitTodayEl, data.today);
-          animateVisitNum(visitTotalEl, data.total);
-          return;
-        }
+        const today = seoulDateKey();
+        const totalKey = VISIT_NS + "-total-v1";
+        const dayKey = VISIT_NS + "-day-" + today;
+        const flag = readVisitFlag();
+        const shouldHit = flag.date !== today || !flag.hit;
 
         try {
-          const shouldHit = !local.hit;
-          const action = shouldHit ? "visitHit" : "visitStats";
-          const json = await fetchVisitJson(`${VISIT_API_URL}?action=${action}`);
-          if (!json || !json.ok) throw new Error("visit_bad");
-
+          let todayN;
+          let totalN;
           if (shouldHit) {
-            local.hit = true;
-            writeLocalVisits(local);
+            const [dayRes, totalRes] = await Promise.all([
+              hitCount(dayKey),
+              hitCount(totalKey),
+            ]);
+            todayN = dayRes;
+            totalN = totalRes;
+            writeVisitFlag({ date: today, hit: true });
+          } else {
+            const [dayRes, totalRes] = await Promise.all([
+              readCount(dayKey),
+              readCount(totalKey),
+            ]);
+            todayN = dayRes;
+            totalN = totalRes;
           }
-
-          animateVisitNum(visitTodayEl, json.today);
-          animateVisitNum(visitTotalEl, json.total);
+          animateVisitNum(visitTodayEl, todayN);
+          animateVisitNum(visitTotalEl, totalN);
         } catch {
-          const data = bumpLocalVisits();
-          animateVisitNum(visitTodayEl, data.today);
-          animateVisitNum(visitTotalEl, data.total);
+          /* API 실패 시 브라우저 로컬 카운트로 폴백 */
+          let localToday = 0;
+          let localTotal = 0;
+          try {
+            const raw = localStorage.getItem(VISIT_STORE_KEY + "_fallback");
+            const data = raw ? JSON.parse(raw) : { total: 0, today: 0, date: "" };
+            if (data.date !== today) {
+              data.date = today;
+              data.today = 0;
+            }
+            if (shouldHit) {
+              data.today += 1;
+              data.total = (Number(data.total) || 0) + 1;
+              writeVisitFlag({ date: today, hit: true });
+            }
+            localStorage.setItem(VISIT_STORE_KEY + "_fallback", JSON.stringify(data));
+            localToday = Number(data.today) || 0;
+            localTotal = Number(data.total) || 0;
+          } catch {
+            localToday = shouldHit ? 1 : 0;
+            localTotal = shouldHit ? 1 : 0;
+          }
+          animateVisitNum(visitTodayEl, localToday);
+          animateVisitNum(visitTotalEl, localTotal);
         }
       }
 
