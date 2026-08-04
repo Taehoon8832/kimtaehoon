@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>✅ 주요 대학 공지사항 모음(실시간)<\\/title>
+    <style>
+      :root {
+        --bg: #f7f5fb;
+        --card: rgba(255, 255, 255, 0.86);
+        --line: rgba(120, 130, 160, 0.12);
+        --text: #2a2d3a;
+        --muted: #8a8798;
+        --primary: #c45b7a;
+        --chip: #f3eef8;
+        --accent-soft: #f3a6b8;
+        --accent: #e86b88;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: "Pretendard", "Noto Sans KR", Arial, sans-serif;
+        background:
+          radial-gradient(80% 50% at 12% 0%, rgba(255, 214, 228, 0.55), transparent 58%),
+          radial-gradient(70% 45% at 92% 8%, rgba(214, 228, 255, 0.5), transparent 55%),
+          radial-gradient(60% 40% at 50% 100%, rgba(230, 220, 255, 0.35), transparent 55%),
+          linear-gradient(180deg, #fbf9fd 0%, var(--bg) 100%);
+        color: var(--text);
+      }
+      .wrap {
+        max-width: 1080px;
+        margin: 16px auto;
+        padding: 0 14px 28px;
+      }
+      .head {
+        position: relative;
+        background:
+          radial-gradient(100% 120% at 10% 10%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 55%),
+          radial-gradient(120% 120% at 90% 0%, rgba(129, 188, 255, 0.24) 0%, rgba(129,188,255,0) 62%),
+          linear-gradient(140deg, #1b2f7c 0%, #2349b9 46%, #2b67ed 100%);
+        color: #fff;
+        border-radius: 16px;
+        padding: 24px;
+        margin-bottom: 16px;
+        box-shadow:
+          0 16px 34px rgba(18, 39, 108, 0.25),
+          inset 0 1px 0 rgba(255, 255, 255, 0.35),
+          inset 0 -10px 24px rgba(13, 38, 103, 0.3);
+        transform: translateZ(0);
+      }
+      .head::before {
+        content: "";
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        top: 8px;
+        height: 42%;
+        border-radius: 12px;
+        background: linear-gradient(to bottom, rgba(255,255,255,0.28), rgba(255,255,255,0));
+        pointer-events: none;
+      }
+      .head::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 16px;
+        box-shadow: inset 0 0 0 1px rgba(255,255,255,0.16);
+        pointer-events: none;
+      }
+      .head h1 {
+        position: relative;
+        z-index: 1;
+        margin: 0 0 6px;
+        font-size: 24px;
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+      }
+      .head-subtitle {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        font-size: 13px;
+        font-weight: 600;
+        opacity: 0.9;
+        color: rgba(255, 255, 255, 0.95);
+        text-shadow: 0 1px 6px rgba(8, 24, 64, 0.4);
+      }
+      .head-univ-grid {
+        position: relative;
+        z-index: 1;
+        margin-top: 12px;
+        display: grid;
+        grid-template-columns: repeat(10, minmax(0, 1fr));
+        gap: 9px;
+      }
+      .head-univ-link {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        min-width: 0;
+        padding: 6px 8px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.24);
+        color: #fff;
+        text-decoration: none;
+        transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+      }
+      .head-univ-link:hover {
+        transform: translateY(-1px);
+        background: rgba(255, 255, 255, 0.2);
+        box-shadow: 0 6px 14px rgba(10, 26, 73, 0.24);
+      }
+      .head-univ-link.is-active {
+        background: rgba(255, 255, 255, 0.32);
+        box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.55), 0 6px 14px rgba(10, 26, 73, 0.2);
+      }
+      button.head-univ-link {
+        appearance: none;
+        -webkit-appearance: none;
+        font: inherit;
+        font-family: inherit;
+        color: inherit;
+        cursor: pointer;
+        margin: 0;
+        text-align: left;
+      }
+      .head-univ-all .head-univ-icon {
+        font-size: 10px;
+        font-weight: 800;
+      }
+      .head-univ-icon {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.92);
+        color: #2752d8;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 10px;
+        font-weight: 900;
+        flex: 0 0 16px;
+        box-shadow: inset 0 -1px 2px rgba(0,0,0,0.08);
+      }
+      .head-univ-name {
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+       
+      .head-univ-grid .head-univ-link:nth-child(1) { color: #dbe8ff; }    
+      .head-univ-grid .head-univ-link:nth-child(1) .head-univ-icon { color: #1e40af; }
+      .head-univ-grid .head-univ-link:nth-child(2) { color: #e5efff; }    
+      .head-univ-grid .head-univ-link:nth-child(2) .head-univ-icon { color: #1f3b8a; }
+      .head-univ-grid .head-univ-link:nth-child(3) { color: #ffe5ea; }    
+      .head-univ-grid .head-univ-link:nth-child(3) .head-univ-icon { color: #7f1d1d; }
+      .head-univ-grid .head-univ-link:nth-child(4) { color: #ffe9e6; }    
+      .head-univ-grid .head-univ-link:nth-child(4) .head-univ-icon { color: #b91c1c; }
+      .head-univ-grid .head-univ-link:nth-child(5) { color: #eaf0ff; }    
+      .head-univ-grid .head-univ-link:nth-child(5) .head-univ-icon { color: #1d4ed8; }
+      .head-univ-grid .head-univ-link:nth-child(6) { color: #ecf4ff; }    
+      .head-univ-grid .head-univ-link:nth-child(6) .head-univ-icon { color: #0f766e; }
+      .head-univ-grid .head-univ-link:nth-child(7) { color: #fff0f3; }    
+      .head-univ-grid .head-univ-link:nth-child(7) .head-univ-icon { color: #9f1239; }
+      .head-univ-grid .head-univ-link:nth-child(8) { color: #fff4df; }    
+      .head-univ-grid .head-univ-link:nth-child(8) .head-univ-icon { color: #92400e; }
+      .head-univ-grid .head-univ-link:nth-child(9) { color: #e8fbff; }    
+      .head-univ-grid .head-univ-link:nth-child(9) .head-univ-icon { color: #0e7490; }
+      .head-univ-grid .head-univ-link:nth-child(10) { color: #eef9ff; }   
+      .head-univ-grid .head-univ-link:nth-child(10) .head-univ-icon { color: #0369a1; }
+      .head-univ-grid .head-univ-link:nth-child(11) { color: #fef3e7; }   
+      .head-univ-grid .head-univ-link:nth-child(11) .head-univ-icon { color: #9a3412; }
+      .head-univ-grid .head-univ-link:nth-child(12) { color: #fff0f8; }   
+      .head-univ-grid .head-univ-link:nth-child(12) .head-univ-icon { color: #be185d; }
+      .head-univ-grid .head-univ-link:nth-child(13) { color: #fef9c3; }   
+      .head-univ-grid .head-univ-link:nth-child(13) .head-univ-icon { color: #a16207; }
+      .head-univ-grid .head-univ-link:nth-child(14) { color: #ffe4ef; }   
+      .head-univ-grid .head-univ-link:nth-child(14) .head-univ-icon { color: #be123c; }
+      .head-univ-grid .head-univ-link:nth-child(15) { color: #f3e8ff; }   
+      .head-univ-grid .head-univ-link:nth-child(15) .head-univ-icon { color: #7e22ce; }
+      .head-univ-grid .head-univ-link:nth-child(16) { color: #e2e8f0; }   
+      .head-univ-grid .head-univ-link:nth-child(16) .head-univ-icon { color: #334155; }
+      .head-univ-grid .head-univ-link:nth-child(17) { color: #e0f2fe; }   
+      .head-univ-grid .head-univ-link:nth-child(17) .head-univ-icon { color: #075985; }
+      .head-univ-grid .head-univ-link:nth-child(18) { color: #ecfeff; }   
+      .head-univ-grid .head-univ-link:nth-child(18) .head-univ-icon { color: #0e7490; }
+      .head-univ-grid .head-univ-link:nth-child(19) { color: #f0fdf4; }   
+      .head-univ-grid .head-univ-link:nth-child(19) .head-univ-icon { color: #15803d; }
+      .head-univ-grid .head-univ-link:nth-child(20) { color: #f5f3ff; }   
+      .head-univ-grid .head-univ-link:nth-child(20) .head-univ-icon { color: #5b21b6; }
+      .head p {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        opacity: 0.95;
+      }
+      .head-top {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+      }
+      .head-note {
+        position: relative;
+        z-index: 1;
+        font-size: 12.5px;
+        opacity: 0.68;
+        white-space: nowrap;
+        text-shadow: 0 0 8px rgba(255, 255, 255, 0.25);
+        animation: noteGlow 2.2s ease-in-out infinite;
+      }
+      @keyframes noteGlow {
+        0%, 100% { opacity: 0.7; transform: translateY(0); }
+        50% { opacity: 0.95; transform: translateY(-1px); }
+      }
+
+      .controls {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        padding: 8px;
+        display: grid;
+        grid-template-columns: 1fr 180px 120px;
+        gap: 8px;
+        margin-bottom: 8px;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+      input, select, button {
+        height: 36px;
+        border: 1px solid rgba(120, 130, 160, 0.16);
+        border-radius: 10px;
+        font-size: 13px;
+        padding: 0 12px;
+        background: rgba(255, 255, 255, 0.92);
+      }
+      button {
+        background: linear-gradient(135deg, #e9a0b4 0%, #c45b7a 55%, #9f6bb8 100%);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        box-shadow: 0 6px 16px rgba(196, 91, 122, 0.22);
+      }
+      button:hover { filter: brightness(0.98); }
+
+      .meta {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 4px 2px 8px;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .list {
+        background: var(--card);
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 10px 28px rgba(90, 70, 120, 0.05);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 5px 12px;
+        min-height: 0;
+        border-bottom: 1px solid var(--line);
+        background: transparent;
+      }
+      .item:last-child { border-bottom: none; }
+      .item.item--row {
+        cursor: pointer;
+        transition: background 0.14s ease;
+      }
+      .item.item--row:hover {
+        background: rgba(255, 255, 255, 0.72);
+      }
+      .item.item--row.recent:hover {
+        background: rgba(255, 236, 242, 0.55);
+      }
+      .item.item--row:focus {
+        outline: 2px solid rgba(232, 107, 136, 0.28);
+        outline-offset: -2px;
+      }
+      .item.item--no-link {
+        cursor: default;
+      }
+      .item.item--no-link:hover {
+        background: inherit;
+      }
+      .item.recent {
+        background: linear-gradient(90deg, rgba(255, 228, 236, 0.55) 0%, rgba(255, 255, 255, 0) 42%);
+        box-shadow: inset 2px 0 0 var(--accent-soft);
+      }
+      .date {
+        color: #5c5f6e;
+        font-weight: 600;
+        font-size: 12px;
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -0.02em;
+        white-space: nowrap;
+      }
+      .date-wrap {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        flex: 0 0 auto;
+        min-width: 7.2rem;
+      }
+      .new-chip {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #ffc2d1 0%, #f2a0b6 48%, #e18bb0 100%);
+        color: #fff;
+        border-radius: 999px;
+        padding: 1px 6px;
+        font-size: 9px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        line-height: 1.35;
+        box-shadow: 0 2px 8px rgba(225, 139, 176, 0.28);
+      }
+      .badge {
+        display: inline-block;
+        text-align: center;
+        padding: 3px 8px;
+        border-radius: 999px;
+        background: var(--chip);
+        color: #6b5b8a;
+        font-size: 11px;
+        font-weight: 700;
+      }
+      .univ-mark {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        flex: 0 0 auto;
+      }
+      .title {
+        flex: 1;
+        min-width: 0;
+      }
+      .univ-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+        padding: 2px 8px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 700;
+        border: 1px solid transparent;
+        line-height: 1.35;
+        white-space: nowrap;
+      }
+      .univ-pill.snu, .univ-pill.ysu, .univ-pill.ku {
+        background: #eef1fb;
+        color: #4d5d8f;
+        border-color: #dde3f5;
+      }
+      .univ-pill.ysg, .univ-pill.sku, .univ-pill.hyu, .univ-pill.cau, .univ-pill.khu,
+      .univ-pill.hufs, .univ-pill.uos, .univ-pill.konkuk, .univ-pill.dgu, .univ-pill.hongik,
+      .univ-pill.ewha, .univ-pill.smwu, .univ-pill.kma, .univ-pill.navy, .univ-pill.afa,
+      .univ-pill.afna, .univ-pill.knpu, .univ-pill.sgu, .univ-pill.skku, .univ-pill.other {
+        background: #f1f0f8;
+        color: #5a5870;
+        border-color: #e4e2ef;
+      }
+      .univ-pill.sgu { background:#f8ecee; color:#8a4a55; border-color:#efd8dc; }
+      .univ-pill.skku { background:#eceff8; color:#4d5d8f; border-color:#dde3f2; }
+      .univ-pill.hyu { background:#eaf4f1; color:#3f6f66; border-color:#d5e8e2; }
+      .univ-pill.cau { background:#f7ecef; color:#8a4a5c; border-color:#efd7de; }
+      .univ-pill.khu { background:#f6efe8; color:#8a6348; border-color:#ecdccb; }
+      .univ-pill.hufs { background:#e9f3f5; color:#3f6d78; border-color:#d2e5ea; }
+      .univ-pill.uos { background:#eaf0f8; color:#4a6290; border-color:#d6e1f0; }
+      .univ-pill.konkuk { background:#f5eee8; color:#866249; border-color:#ead9c8; }
+      .univ-pill.dgu { background:#f6ebf2; color:#84506f; border-color:#ebd4e2; }
+      .univ-pill.hongik { background:#f5f1e4; color:#7a6640; border-color:#e8dfc6; }
+      .univ-pill.ewha { background:#f7eaf0; color:#8a4f68; border-color:#ecd4df; }
+      .univ-pill.smwu { background:#f0ecf7; color:#6a5a8a; border-color:#e0d8ef; }
+      .univ-pill.kma { background:#eef0f3; color:#5a6270; border-color:#dde1e7; }
+      .univ-pill.navy { background:#e8f1f6; color:#456a82; border-color:#d0e2ec; }
+      .univ-pill.afa { background:#e9f3f4; color:#3f6f78; border-color:#d1e5e8; }
+      .univ-pill.afna { background:#ebf4ee; color:#45725a; border-color:#d4e7da; }
+      .univ-pill.knpu { background:#efeaf6; color:#655687; border-color:#dfd6ec; }
+      .univ-pill-icon {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.9);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 9px;
+        box-shadow: inset 0 -1px 1px rgba(0,0,0,0.05);
+      }
+      .head-univ-icon img,
+      .univ-pill-fav {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        object-fit: cover;
+        flex-shrink: 0;
+        display: block;
+      }
+      .head-univ-icon img {
+        background: rgba(255, 255, 255, 0.95);
+      }
+      .univ-pill .univ-pill-fav {
+        box-shadow: inset 0 -1px 1px rgba(0, 0, 0, 0.05);
+      }
+      .head-univ-grid .head-univ-link:nth-child(n + 21) {
+        color: #e8f3ff;
+      }
+      .head-univ-grid .head-univ-link:nth-child(n + 21) .head-univ-icon {
+        background: rgba(255, 255, 255, 0.92);
+      }
+      .title .title-link {
+        color: var(--text);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: -0.02em;
+        line-height: 1.35;
+      }
+      .item--row:hover .title .title-link {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .empty {
+        text-align: center;
+        padding: 24px 12px;
+        color: var(--muted);
+      }
+
+      .loading {
+        display: none;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 600;
+        margin: 6px 2px 0;
+      }
+      .loading.blink {
+        animation: loadingBlink 1s ease-in-out infinite;
+      }
+      @keyframes loadingBlink {
+        0% { opacity: 0.35; transform: translateY(0); }
+        50% { opacity: 1; transform: translateY(-1px); }
+        100% { opacity: 0.35; transform: translateY(0); }
+      }
+
+      @media (max-width: 760px) {
+        .head-univ-grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+        .controls {
+          grid-template-columns: 1fr;
+        }
+        .item {
+          flex-wrap: wrap;
+          gap: 4px 8px;
+          padding: 6px 10px;
+        }
+        .date-wrap { min-width: 0; }
+        .title { flex: 1 1 100%; }
+      }
+    <\\/style>
+  <\\/head>
+  <body>
+    <div class="wrap">
+      <div class="head">
+        <div class="head-top">
+          <h1>✅ 주요 대학 공지사항 모음(실시간)<\\/h1>
+          <span class="head-note">(2026.03.14.제작: 김태훈T)<\\/span>
+        <\\/div>
+        <p class="head-subtitle">- 최근 7일 이내 업로드 NEW<\\/p>
+        <div class="head-univ-grid" id="headUnivGrid"><\\/div>
+      <\\/div>
+
+      <div class="controls">
+        <input id="keyword" type="text" placeholder="키워드 입력" />
+        <select id="univ">
+          <option value="ALL">전체 대학<\\/option>
+        <\\/select>
+        <button onclick="refreshData(true)">새로고침<\\/button>
+      <\\/div>
+
+      <div class="meta">
+        <div id="count">총 0건<\\/div>
+        <div id="updated">업데이트: -<\\/div>
+        <div id="loadHint" class="load-hint" style="display: none; font-size: 12px; color: #b45309; margin-top: 6px;"><\\/div>
+      <\\/div>
+
+      <div class="loading blink" id="loading">🐣 로딩중...<\\/div>
+      <div class="list" id="list"><\\/div>
+    <\\/div>
+
+    <script>
+      function escapeHtml(str) {
+        return (str || "")
+          .replace(/&/g, "&amp;")
+          .replace(/<\\/g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;")
+          .replace(/'/g, "&#39;");
+      }
+
+      function formatKst(iso) {
+        if (!iso) return "-";
+        var d = new Date(iso);
+        if (isNaN(d.getTime())) return iso;
+        return d.toLocaleString("ko-KR", {
+          timeZone: "Asia/Seoul",
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit"
+        });
+      }
+
+      var allItems = [];
+      var lastUpdatedAt = "";
+      var loadWatchTimer = null;
+
+      function isWithinDays(dateIso, days) {
+        if (!dateIso) return false;
+        var d = new Date(dateIso + "T00:00:00");
+        if (isNaN(d.getTime())) return false;
+        var now = new Date();
+        var diff = now.getTime() - d.getTime();
+        var dayMs = 24 * 60 * 60 * 1000;
+        return diff >= 0 && diff <= days * dayMs;
+      }
+
+      function getUnivMarkHtml(it) {
+        var key = String(it.univKey || "").toUpperCase();
+        var name = it.univName || key || "-";
+        var classMap = {
+          SNU: "snu", YSU: "ysu", KU: "ku", SGU: "sgu", SKKU: "skku", HYU: "hyu",
+          CAU: "cau", KHU: "khu", HUFS: "hufs", UOS: "uos", KONKUK: "konkuk",
+          DGU: "dgu", HONGIK: "hongik", EWHA: "ewha", SMWU: "smwu", KMA: "kma",
+          NAVY: "navy", AFA: "afa", AFNA: "afna", KNPU: "knpu",
+          SEOULTECH: "other", INHA: "other", AJOU: "other", SSU: "other",
+          KOOKMIN: "other", HYERICA: "other", SEJONG: "other", GACHON: "other",
+          MJU: "other", SANGMYUNG: "other", CUK: "other", KYONGGI: "other"
+        };
+        var cls = classMap[key] || "other";
+        var iconUrl = (it.univIcon || "").trim();
+        var iconHtml = iconUrl
+          ? '<img class="univ-pill-fav" src="' + escapeHtml(iconUrl) + '" alt="" width="16" height="16" referrerpolicy="no-referrer" loading="lazy">'
+          : '<span class="univ-pill-icon">★<\\/span>';
+
+        return (
+          '<span class="univ-mark">' +
+            '<span class="univ-pill ' + cls + '">' + iconHtml + escapeHtml(name) + "<\\/span>" +
+          "<\\/span>"
+        );
+      }
+
+      function fillUnivSelect(sources) {
+        var sel = document.getElementById("univ");
+        var prev = String(sel.value || "ALL").toUpperCase();
+        sel.innerHTML = '<option value="ALL">전체 대학<\\/option>';
+        (sources || []).forEach(function (s) {
+          if (!s || !s.key) return;
+          var opt = document.createElement("option");
+          opt.value = String(s.key || "").toUpperCase();
+          opt.textContent = s.name || s.key;
+          sel.appendChild(opt);
+        });
+        var has = false;
+        for (var i = 0; i < sel.options.length; i++) {
+          if (sel.options[i].value === prev) { has = true; break; }
+        }
+        sel.value = has ? prev : "ALL";
+      }
+
+      function fillHeadUnivGrid(sources) {
+        var grid = document.getElementById("headUnivGrid");
+        if (!grid) return;
+        grid.innerHTML = "";
+
+        var allBtn = document.createElement("button");
+        allBtn.type = "button";
+        allBtn.className = "head-univ-link head-univ-all";
+        allBtn.setAttribute("data-univ-key", "ALL");
+        allBtn.title = "모든 학교 공지 보기";
+        allBtn.addEventListener("click", function () {
+          var sel = document.getElementById("univ");
+          sel.value = "ALL";
+          grid.querySelectorAll(".head-univ-link.is-active").forEach(function (x) {
+            x.classList.remove("is-active");
+          });
+          allBtn.classList.add("is-active");
+          applyFilterInstant();
+        });
+        var allIcon = document.createElement("span");
+        allIcon.className = "head-univ-icon";
+        allIcon.textContent = "전";
+        var allName = document.createElement("span");
+        allName.className = "head-univ-name";
+        allName.textContent = "전체 보기";
+        allBtn.appendChild(allIcon);
+        allBtn.appendChild(allName);
+        grid.appendChild(allBtn);
+
+        (sources || []).forEach(function (s) {
+          if (!s || !s.key) return;
+          var a = document.createElement("a");
+          a.className = "head-univ-link";
+          a.href = s.url || "#";
+          a.setAttribute("data-univ-key", String(s.key || "").toUpperCase());
+          a.title = (s.name || s.key) + " \— 클릭: 이 학교 공지만 보기 · Ctrl+클릭: 입학처 페이지";
+          a.addEventListener("click", function (e) {
+            if (e.button !== 0) return;
+            if (e.ctrlKey || e.metaKey) return;
+            e.preventDefault();
+            var sel = document.getElementById("univ");
+            sel.value = String(s.key || "").toUpperCase();
+            grid.querySelectorAll(".head-univ-link.is-active").forEach(function (x) {
+              x.classList.remove("is-active");
+            });
+            a.classList.add("is-active");
+            applyFilterInstant();
+            if (String(s.key || "").toUpperCase() === "KMA" && !hasKmaInList()) {
+              tryMergeKmaViaPublicProxyInBrowser();
+            }
+          });
+          var icon = document.createElement("span");
+          icon.className = "head-univ-icon";
+          if (s.icon) {
+            var img = document.createElement("img");
+            img.src = s.icon;
+            img.alt = "";
+            img.width = 16;
+            img.height = 16;
+            img.setAttribute("referrerpolicy", "no-referrer");
+            img.loading = "lazy";
+            icon.appendChild(img);
+          } else {
+            icon.textContent = "★";
+          }
+          var name = document.createElement("span");
+          name.className = "head-univ-name";
+          name.textContent = s.name || s.key;
+          a.appendChild(icon);
+          a.appendChild(name);
+          grid.appendChild(a);
+        });
+      }
+
+      function bindListRowClicks() {
+        var list = document.getElementById("list");
+        if (!list) return;
+        list.querySelectorAll(".item--row[data-href]").forEach(function (row) {
+          var href = row.getAttribute("data-href");
+          if (!href) return;
+          var go = function () {
+            window.open(href, "_blank", "noopener,noreferrer");
+          };
+          row.addEventListener("click", go);
+          row.addEventListener("keydown", function (ev) {
+            if (ev.key === "Enter" || ev.key === " ") {
+              ev.preventDefault();
+              go();
+            }
+          });
+        });
+      }
+
+      function loadUnivUi(done) {
+        google.script.run
+          .withSuccessHandler(function (sources) {
+            fillHeadUnivGrid(sources);
+            fillUnivSelect(sources);
+            if (done) done();
+          })
+          .withFailureHandler(function () {
+            if (done) done();
+          })
+          .getUnivSources();
+      }
+
+      function render(items, updatedAt) {
+        var list = document.getElementById("list");
+        var count = document.getElementById("count");
+        var updated = document.getElementById("updated");
+
+        count.textContent = "총 " + (items.length || 0) + "건";
+        updated.textContent = "업데이트: " + formatKst(updatedAt || lastUpdatedAt);
+
+        if (!items || items.length === 0) {
+          list.innerHTML = '<div class="empty">조건에 맞는 공지사항이 없습니다.<\\/div>';
+          return;
+        }
+
+        var html = items
+          .map(function (it) {
+            var isRecent = isWithinDays(it.dateISO, 7);
+            var rawUrl = String(it.url || "").trim();
+            var hasUrl = rawUrl.length > 0 && rawUrl !== "#";
+            var rowClass = "item item--row" + (isRecent ? " recent" : "") + (hasUrl ? "" : " item--no-link");
+            var safeHref = hasUrl ? rawUrl : "";
+            var titleText = escapeHtml(it.title || "(제목 없음)");
+            return (
+              '<div class="' +
+              rowClass +
+              '" data-href="' +
+              escapeHtml(safeHref) +
+              '" tabindex="' +
+              (hasUrl ? "0" : "-1") +
+              '" role="link">' +
+              '<div class="date-wrap"><span class="date">' +
+              escapeHtml(it.dateText || "-") +
+              "<\\/span>" +
+              (isRecent ? '<span class="new-chip">NEW<\\/span>' : "") +
+              "<\\/div>" +
+              "<div>" +
+              getUnivMarkHtml(it) +
+              "<\\/div>" +
+              '<div class="title"><span class="title-link">' +
+              titleText +
+              "<\\/span><\\/div>" +
+              "<\\/div>"
+            );
+          })
+          .join("");
+
+        list.innerHTML = html;
+        bindListRowClicks();
+      }
+
+      function applyFilterInstant() {
+        var keyword = (document.getElementById("keyword").value || "").toLowerCase().trim();
+        var univ = (document.getElementById("univ").value || "ALL").toUpperCase();
+
+        var grid = document.getElementById("headUnivGrid");
+        if (grid) {
+          grid.querySelectorAll(".head-univ-link").forEach(function (el) {
+            var k = String(el.getAttribute("data-univ-key") || "").toUpperCase();
+            var active = univ === "ALL" ? k === "ALL" : k !== "ALL" && k === univ;
+            el.classList.toggle("is-active", active);
+          });
+        }
+
+        var filtered = allItems.filter(function (it) {
+          var itKey = String(it.univKey || "").toUpperCase();
+          var okUniv = univ === "ALL" || itKey === univ;
+          var okKeyword = !keyword || (it.title || "").toLowerCase().indexOf(keyword) !== -1;
+          return okUniv && okKeyword;
+        });
+        render(filtered, lastUpdatedAt);
+      }
+
+      function setLoadHint(mode) {
+        var el = document.getElementById("loadHint");
+        if (!el) return;
+        if (mode === "snapshot") {
+          el.style.display = "block";
+          el.textContent = "저장된 목록을 불러왔습니다. 최신 통합 수집은 「새로고침」을 눌러 주세요.";
+        } else {
+          el.style.display = "none";
+          el.textContent = "";
+        }
+      }
+
+      function hasKmaInList() {
+        for (var i = 0; i < allItems.length; i++) {
+          if (String(allItems[i].univKey || "").toUpperCase() === "KMA") return true;
+        }
+        return false;
+      }
+
+      function mergeKmaExtraItems(extra) {
+        if (!extra || !extra.length) return;
+        var seen = {};
+        allItems.forEach(function (it) {
+          seen[String(it.title || "") + "|" + String(it.dateISO || "")] = true;
+        });
+        extra.forEach(function (it) {
+          var k = String(it.title || "") + "|" + String(it.dateISO || "");
+          if (seen[k]) return;
+          seen[k] = true;
+          allItems.push(it);
+        });
+        allItems.sort(function (a, b) {
+          return new Date(b.dateISO || 0).getTime() - new Date(a.dateISO || 0).getTime();
+        });
+        applyFilterInstant();
+      }
+
+       
+      function stripTagsKma(s) {
+        return (s || "")
+          .replace(/<script[\\\\s\\\\S]*?<\\\\/script>/gi, "")
+          .replace(/<[^>]+>/g, " ")
+          .replace(/\\\\s+/g, " ")
+          .trim();
+      }
+
+      function clientParseKmaFromHtml(html, pageUrlForOrigin) {
+        if (!html || html.indexOf("artclView") === -1) return [];
+        var originMatch = pageUrlForOrigin.match(/^(https?:\\\\/\\\\/[^\\\\/]+)/);
+        var origin = originMatch ? originMatch[1] : "https://kma.ac.kr";
+        var out = [];
+        var re = /\\\\/bbs\\\\/kma\\\\/160\\\\/(\\\\d+)\\\\/artclView\\\\.do/gi;
+        var seenHref = {};
+        var m;
+        while ((m = re.exec(html)) !== null) {
+          var href = "/bbs/kma/160/" + m[1] + "/artclView.do";
+          if (seenHref[href]) continue;
+          seenHref[href] = true;
+          var idx = m.index;
+          var chunk = html.substring(idx, Math.min(html.length, idx + 4800));
+          var tm = chunk.match(/<div[^>]*class="artclTitle"[^>]*>[\\\\s\\\\S]*?<strong>([\\\\s\\\\S]*?)<\\\\/strong>/i);
+          var title = stripTagsKma(tm ? tm[1] : "");
+          var dm = chunk.match(/<dt>[\\\\s\\\\r\\
+]*등록일[\\\\s\\\\r\\
+]*<\\\\/dt>[\\\\s\\\\S]*?<dd>[\\\\s\\\\r\\
+]*(\\\\d{4}[.\\\\-\\\\/]\\\\d{1,2}[.\\\\-\\\\/]\\\\d{1,2})/i);
+          if (!title || !dm) continue;
+          var dateRaw = stripTagsKma(dm[1]);
+          var dateM = dateRaw.match(/(\\\\d{4})\\\\D+(\\\\d{1,2})\\\\D+(\\\\d{1,2})/);
+          if (!dateM) continue;
+          var y = dateM[1];
+          var mo = ("0" + parseInt(dateM[2], 10)).slice(-2);
+          var da = ("0" + parseInt(dateM[3], 10)).slice(-2);
+          var iso = y + "-" + mo + "-" + da;
+          title = title.replace(/육사/g, "육군사관");
+          if (title.length < 2) continue;
+          out.push({
+            title: title,
+            url: origin + href,
+            dateText: y + "." + parseInt(dateM[2], 10) + "." + parseInt(dateM[3], 10),
+            dateISO: iso,
+            univKey: "KMA",
+            univName: "육군사관",
+            univIcon: "https://www.google.com/s2/favicons?domain=kma.ac.kr&sz=64"
+          });
+          if (out.length >= 12) break;
+        }
+        return out;
+      }
+
+      function tryMergeKmaViaPublicProxyInBrowser() {
+        if (hasKmaInList()) return;
+        var targets = [
+          "https://kma.ac.kr/bbs/kma/160/artclList.do?pageNo=1",
+          "https://www.kma.ac.kr/bbs/kma/160/artclList.do?pageNo=1",
+          "https://kma.ac.kr:461/bbs/kma/160/artclList.do?pageNo=1",
+          "https://www.kma.ac.kr:461/bbs/kma/160/artclList.do?pageNo=1"
+        ];
+        var idx = 0;
+        function fallBackToServer() {
+          google.script.run
+            .withSuccessHandler(function (extra) {
+              mergeKmaExtraItems(extra);
+            })
+            .withFailureHandler(function () {})
+            .getKmaNoticesViaProxyOnly();
+        }
+        function tryOne() {
+          if (hasKmaInList()) return;
+          if (idx >= targets.length) {
+            fallBackToServer();
+            return;
+          }
+          var u = targets[idx++];
+          var proxyUrl = "https://api.allorigins.win/raw?url=" + encodeURIComponent(u);
+          fetch(proxyUrl)
+            .then(function (r) {
+              return r.text();
+            })
+            .then(function (html) {
+              var parsed = clientParseKmaFromHtml(html, u);
+              if (parsed.length) mergeKmaExtraItems(parsed);
+              else tryOne();
+            })
+            .catch(function () {
+              tryOne();
+            });
+        }
+        tryOne();
+      }
+
+       
+      function silentFullNetworkRefreshOnce() {
+        if (window.__fullNetworkRefreshDone) return;
+        window.__fullNetworkRefreshDone = true;
+        google.script.run
+          .withSuccessHandler(function (res) {
+            var safe = res || {};
+            var items = safe.items;
+            if (!items || !items.length) return;
+            allItems = items;
+            lastUpdatedAt = safe.updatedAt || lastUpdatedAt;
+            setLoadHint("");
+            applyFilterInstant();
+            setTimeout(tryMergeKmaViaPublicProxyInBrowser, 200);
+          })
+          .withFailureHandler(function () {})
+          .refreshNotices();
+      }
+
+      function refreshData(forceNetwork) {
+        var loading = document.getElementById("loading");
+        loading.style.display = "block";
+        if (loadWatchTimer) {
+          clearTimeout(loadWatchTimer);
+          loadWatchTimer = null;
+        }
+        loadWatchTimer = setTimeout(function () {
+          loadWatchTimer = null;
+          loading.style.display = "none";
+          var list = document.getElementById("list");
+          var hasRows = list && list.querySelector(".item--row");
+          if (!hasRows && (!allItems || allItems.length === 0)) {
+            list.innerHTML =
+              '<div class="empty">서버 응답이 지연되었습니다. 네트워크·시간 제한일 수 있습니다. 「새로고침」을 다시 눌러 주세요.<\\/div>';
+          }
+        }, 150000);
+
+        var runner = google.script.run
+          .withSuccessHandler(function (res) {
+            if (loadWatchTimer) {
+              clearTimeout(loadWatchTimer);
+              loadWatchTimer = null;
+            }
+            loading.style.display = "none";
+            var safe = res || { updatedAt: "", items: [] };
+            allItems = safe.items || [];
+            lastUpdatedAt = safe.updatedAt || "";
+            setLoadHint(safe.loadMode === "snapshot" ? "snapshot" : "");
+            applyFilterInstant();
+            setTimeout(tryMergeKmaViaPublicProxyInBrowser, 200);
+            if (safe.mergeSuggested) {
+              setTimeout(silentFullNetworkRefreshOnce, 2400);
+            }
+          })
+          .withFailureHandler(function (err) {
+            if (loadWatchTimer) {
+              clearTimeout(loadWatchTimer);
+              loadWatchTimer = null;
+            }
+            loading.style.display = "none";
+            setLoadHint("");
+            document.getElementById("list").innerHTML =
+              '<div class="empty">오류가 발생했습니다: ' + escapeHtml(err && err.message ? err.message : String(err)) + "<\\/div>";
+          });
+
+        if (forceNetwork) {
+          runner.refreshNotices();
+        } else {
+          runner.getInitialNotices();
+        }
+      }
+
+      document.getElementById("keyword").addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          applyFilterInstant();
+        }
+      });
+      document.getElementById("keyword").addEventListener("input", applyFilterInstant);
+      document.getElementById("univ").addEventListener("change", function () {
+        applyFilterInstant();
+        if (String(document.getElementById("univ").value || "").toUpperCase() === "KMA" && !hasKmaInList()) {
+          tryMergeKmaViaPublicProxyInBrowser();
+        }
+      });
+
+      window.addEventListener("load", function () {
+        loadUnivUi(function () {
+          refreshData(false);
+        });
+      });
+    <\\/script>
+  <\\/body>
+<\\/html>","ncc":"{"awhs":true}"}", "", undefined, true , false  , "false", "https://n-yyyoefstwxagqanscquwnebrytw67wb6uyiw2eq-0lu-script.googleusercontent.com", "https://drive.google.com/abuse?id=AKkXjoz85IJ6-OOIr4f6td8oc-uiQeVYR1RpnSNtK2nAuu1BElaVSuYvpaX9ZWpYETRi4_szyWyGG_JpBSYtXa_lRO3oGNjd_AsnclC7%3A0&docurl=https%3A%2F%2Fscript.google.com%2Fmacros%2Fs%2FAKfycbzqJcL725QXXY56QE1VHk9c2J9HcJHRCfEMpIvPU9b-tEyM9T5smLNSUGboUQfijeui_A%2Fexec");}
+el.src = 'https://n-yyyoefstwxagqanscquwnebrytw67wb6uyiw2eq-0lu-script.googleusercontent.com/userCodeAppPanel';
+}());
+</script>
+</body>
+</html>

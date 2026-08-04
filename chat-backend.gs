@@ -1,5 +1,8 @@
 /**
- * 김태훈닷컴 실시간 채팅 백엔드 (Google Apps Script)
+ * 김태훈닷컴 방문자 통계(+레거시 채팅) 백엔드 (Google Apps Script)
+ *
+ * 메인 페이지 실시간 채팅 UI는 제거되었습니다.
+ * 이 파일은 index.html 의 VISIT_API_URL(visitHit / visitStats)용으로 사용합니다.
  *
  * [배포 — 1회만]
  * 1. https://script.google.com  → 새 프로젝트
@@ -7,9 +10,9 @@
  * 3. 배포 → 새 배포 → 유형: 웹 앱
  *    - 실행 계정: 나
  *    - 액세스: 모든 사용자
- * 4. 웹 앱 URL을 복사해 index.html 의 CHAT_API_URL 에 넣기
+ * 4. 웹 앱 URL을 복사해 index.html 의 VISIT_API_URL 에 넣기
  *
- * 예) const CHAT_API_URL = "https://script.google.com/macros/s/XXXX/exec";
+ * 예) const VISIT_API_URL = "https://script.google.com/macros/s/XXXX/exec";
  */
 
 var SHEET_NAME = "messages";

@@ -604,7 +604,7 @@
 
     .chat-shell {
       display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.75fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       gap: clamp(16px, 2.4vw, 24px);
       align-items: stretch;
       padding: clamp(8px, 2vw, 16px) 0;
@@ -795,339 +795,288 @@
       line-height: 1.6;
     }
 
-    .phone {
-      width: 100%;
+    .univ-notice-panel {
       min-width: 0;
-      margin: 0;
-      overflow: hidden;
-      border: 4px solid #191919;
-      border-radius: 34px;
-      background: var(--kakao-chat-bg);
-      box-shadow: 0 24px 50px rgba(25, 25, 25, 0.22);
       display: grid;
-      grid-template-rows: auto 1fr auto;
+      grid-template-rows: auto auto 1fr;
       min-height: 680px;
       max-height: min(860px, 88vh);
+      border: 4px solid #191919;
+      border-radius: 34px;
+      background:
+        radial-gradient(80% 50% at 8% 0%, rgba(255, 214, 228, 0.45), transparent 58%),
+        radial-gradient(70% 45% at 96% 6%, rgba(214, 228, 255, 0.42), transparent 55%),
+        linear-gradient(180deg, #fff 0%, #fbf8fc 100%);
+      box-shadow: 0 24px 50px rgba(25, 25, 25, 0.18);
+      overflow: hidden;
       animation: riseIn 0.65s var(--ease-out) 0.06s both;
     }
 
-    .phonebar {
-      height: 54px;
-      padding: 0 16px;
+    .univ-notice-bar {
+      min-height: 42px;
+      padding: 6px 12px 6px 14px;
       display: flex;
       align-items: center;
       gap: 8px;
-      background: var(--kakao-surface);
-      color: var(--kakao-fg);
-      border-bottom: 1px solid var(--kakao-border);
+      background: color-mix(in srgb, var(--bg-elevated) 88%, #f3e8ff);
+      border-bottom: 1px solid var(--border-default);
     }
 
-    .phonebar strong {
+    .univ-notice-mark {
+      width: 24px;
+      height: 24px;
+      flex: 0 0 24px;
+      border-radius: 7px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(145deg, #e9a0b4 0%, #c45b7a 55%, #9f6bb8 100%);
+      box-shadow: 0 4px 10px rgba(196, 91, 122, 0.24);
+    }
+
+    .univ-notice-mark svg {
+      width: 13px;
+      height: 13px;
+    }
+
+    .univ-notice-bar strong {
       font-size: 14px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      line-height: 1.4;
+      font-weight: 750;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+      line-height: 1.3;
     }
 
-    .phonebar .count {
-      color: var(--kakao-muted);
-      font-size: 12px;
-      font-weight: 600;
-    }
-
-    .phonebar .live {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 4px 9px;
-      border-radius: var(--radius-full);
-      background: #191919;
-      color: var(--kakao-yellow);
-      font-size: 10px;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-    }
-
-    .phonebar .live.is-offline {
-      color: #d0d0d0;
-    }
-
-    .phonebar .live.is-offline i {
-      background: #8E8E93;
-      animation: none;
-      box-shadow: none;
-    }
-
-    .phonebar .bar-right {
+    .univ-notice-actions {
       margin-left: auto;
       display: inline-flex;
       align-items: center;
       gap: 6px;
     }
 
-    .phonebar .clear-btn {
-      border: 0;
-      background: transparent;
-      color: var(--kakao-muted);
-      font-size: 11px;
-      font-weight: 700;
-      line-height: 1.2;
-      cursor: pointer;
-      padding: 4px 6px;
-      border-radius: 8px;
+    .univ-notice-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 8px;
+      border-radius: var(--radius-full);
+      background: #1c1c1e;
+      color: #ffd0dc;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
     }
 
-    .phonebar .clear-btn:hover,
-    .phonebar .clear-btn:focus-visible {
-      color: #FF3838;
-      background: rgba(255, 56, 56, 0.08);
-      outline: none;
-    }
-
-    .phonebar .live i {
+    .univ-notice-live i {
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: #1AAD5C;
-      box-shadow: 0 0 0 0 rgba(26, 173, 92, 0.55);
+      background: #1aad5c;
+      box-shadow: 0 0 0 0 rgba(26, 173, 92, 0.5);
       animation: livePulse 1.8s ease-out infinite;
     }
 
-    .thread {
-      min-height: 0;
-      padding: 16px 14px 12px;
+    .univ-notice-live.is-offline {
+      color: #d0d0d0;
+    }
+
+    .univ-notice-live.is-offline i {
+      background: #8e8e93;
+      animation: none;
+      box-shadow: none;
+    }
+
+    .univ-notice-refresh,
+    .univ-notice-open {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      border: 1px solid var(--border-default);
+      background: #fff;
+      color: var(--text-secondary);
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.2;
+      padding: 5px 9px;
+      border-radius: 999px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .univ-notice-refresh:hover,
+    .univ-notice-open:hover,
+    .univ-notice-refresh:focus-visible,
+    .univ-notice-open:focus-visible {
+      border-color: rgba(196, 91, 122, 0.35);
+      color: #c45b7a;
+      outline: none;
+    }
+
+    .univ-notice-meta {
       display: flex;
-      flex-direction: column;
-      gap: 12px;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 14px;
+      color: #8a8798;
+      font-size: 12px;
+      font-weight: 500;
+      border-bottom: 1px solid rgba(120, 130, 160, 0.1);
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .univ-notice-list {
+      min-height: 0;
       overflow-y: auto;
       overscroll-behavior: contain;
       -webkit-overflow-scrolling: touch;
+      padding: 4px 0;
     }
 
-    .day-chip {
-      align-self: center;
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
-      background: rgba(0, 0, 0, 0.12);
-      color: rgba(25, 25, 25, 0.62);
-      font-size: 11px;
-      font-weight: 600;
-      line-height: 1.4;
-    }
-
-    .empty-hint {
-      margin: auto;
-      padding: 18px;
+    .univ-notice-empty {
+      margin: 48px 16px;
       text-align: center;
-      color: rgba(25, 25, 25, 0.55);
+      color: #8a8798;
       font-size: 13px;
       font-weight: 600;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    .msg {
+    .univ-notice-item {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       gap: 8px;
-      max-width: 88%;
-      animation: bubbleIn 0.28s var(--ease-out) both;
+      padding: 5px 12px;
+      border-bottom: 1px solid rgba(120, 130, 160, 0.1);
+      cursor: pointer;
+      transition: background 0.14s ease;
+      background: transparent;
     }
 
-    .msg.me {
-      align-self: flex-end;
-      align-items: flex-end;
-      flex-direction: row-reverse;
+    .univ-notice-item:last-child { border-bottom: none; }
+
+    .univ-notice-item:hover,
+    .univ-notice-item:focus-visible {
+      background: rgba(255, 236, 242, 0.55);
+      outline: none;
     }
 
-    .avatar {
-      width: 36px;
-      height: 36px;
-      flex: 0 0 36px;
-      border-radius: 13px;
-      display: grid;
-      place-items: center;
-      background: #F7C95D;
-      color: #191919;
-      font-size: 13px;
-      font-weight: 800;
-      overflow: hidden;
-      user-select: none;
+    .univ-notice-item.is-recent {
+      background: linear-gradient(90deg, rgba(255, 228, 236, 0.5) 0%, rgba(255, 255, 255, 0) 42%);
+      box-shadow: inset 2px 0 0 #f3a6b8;
     }
 
-    .msg-meta {
-      min-width: 0;
+    .univ-notice-item.is-today {
+      position: relative;
+      isolation: isolate;
+      background:
+        linear-gradient(90deg, rgba(255, 236, 210, 0.72) 0%, rgba(255, 245, 230, 0.42) 38%, rgba(255, 255, 255, 0) 72%);
+      box-shadow: inset 2px 0 0 #f0b56a;
     }
 
-    .msg-name {
-      margin: 0 0 4px 3px;
-      color: rgba(25, 25, 25, 0.72);
-      font-size: 11px;
-      font-weight: 650;
-      line-height: 1.4;
+    .univ-notice-item.is-today::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(
+        105deg,
+        transparent 0%,
+        transparent 35%,
+        rgba(255, 255, 255, 0.55) 48%,
+        transparent 62%,
+        transparent 100%
+      );
+      background-size: 220% 100%;
+      animation: univTodayShine 4.8s ease-in-out infinite;
+      pointer-events: none;
     }
 
-    .msg.me .msg-name {
-      text-align: right;
-      margin-right: 3px;
+    .univ-notice-item.is-today .univ-notice-date {
+      color: #8a5a28;
     }
 
-    .bubble-row {
-      display: flex;
-      align-items: flex-end;
-      gap: 6px;
+    .univ-notice-item.is-today .univ-notice-title {
+      color: #2a241c;
     }
 
-    .msg.me .bubble-row {
-      flex-direction: row-reverse;
+    .univ-notice-item.is-today:hover,
+    .univ-notice-item.is-today:focus-visible {
+      background:
+        linear-gradient(90deg, rgba(255, 228, 188, 0.85) 0%, rgba(255, 242, 220, 0.55) 42%, rgba(255, 255, 255, 0.2) 78%);
     }
 
-    .bubble {
-      padding: 10px 12px;
-      border-radius: 3px 14px 14px 14px;
-      background: var(--kakao-surface);
-      color: var(--kakao-fg);
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 1.55;
-      letter-spacing: -0.01em;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-      white-space: pre-wrap;
-    }
-
-    .msg.me .bubble {
-      border-radius: 14px 3px 14px 14px;
-      background: var(--kakao-yellow);
-    }
-
-    .msg-aside {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 3px;
+    .univ-notice-date-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
       flex: 0 0 auto;
-      padding-bottom: 1px;
+      min-width: 7.2rem;
     }
 
-    .msg.me .msg-aside {
-      align-items: flex-end;
-    }
-
-    .msg-time {
-      color: rgba(25, 25, 25, 0.55);
-      font-size: 10px;
+    .univ-notice-date {
+      color: #5c5f6e;
+      font-size: 12px;
       font-weight: 600;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: -0.02em;
       white-space: nowrap;
-      line-height: 1.3;
     }
 
-    .del-btn {
-      border: 0;
-      background: rgba(25, 25, 25, 0.08);
-      color: rgba(25, 25, 25, 0.62);
-      font-size: 10px;
-      font-weight: 700;
-      line-height: 1.2;
-      cursor: pointer;
-      padding: 3px 7px;
+    .univ-notice-new {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ffc2d1 0%, #f2a0b6 48%, #e18bb0 100%);
+      color: #fff;
       border-radius: 999px;
+      padding: 1px 6px;
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      line-height: 1.35;
+      box-shadow: 0 2px 8px rgba(225, 139, 176, 0.28);
+    }
+
+    .univ-notice-univ {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      max-width: 8.5rem;
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid #e4e2ef;
+      background: #f1f0f8;
+      color: #5a5870;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.35;
       white-space: nowrap;
-      transition: background 100ms ease, color 100ms ease;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-decoration: none;
     }
 
-    .del-btn:hover,
-    .del-btn:focus-visible {
-      background: rgba(255, 56, 56, 0.14);
-      color: #FF3838;
-      outline: none;
+    .univ-notice-univ:hover {
+      border-color: rgba(196, 91, 122, 0.35);
+      color: #c45b7a;
     }
 
-    .composer {
-      background: var(--kakao-surface);
-      border-top: 1px solid var(--kakao-border);
-      padding: 12px 14px 14px;
-      display: grid;
-      gap: 10px;
-    }
-
-    .composer-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .field {
-      width: 100%;
-      min-width: 0;
-      border: 1px solid var(--kakao-border);
-      border-radius: 12px;
-      background: #FAFAFA;
-      color: var(--kakao-fg);
-      padding: 11px 12px;
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 1.5;
-      letter-spacing: -0.01em;
-      outline: none;
-      transition: border-color 100ms ease, box-shadow 100ms ease;
-    }
-
-    .field::placeholder {
-      color: #A0A0A0;
-      font-weight: 500;
-    }
-
-    .field:focus {
-      border-color: var(--kakao-yellow);
-      box-shadow: 0 0 0 3px rgba(254, 229, 0, 0.35);
-    }
-
-    .composer-main {
-      display: flex;
-      align-items: flex-end;
-      gap: 10px;
-    }
-
-    .composer-main .field {
+    .univ-notice-title {
       flex: 1;
-      min-height: 44px;
-      max-height: 120px;
-      resize: none;
-      line-height: 1.5;
+      min-width: 0;
+      color: #2a2d3a;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.35;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
-    .send-btn {
-      width: 44px;
-      height: 44px;
-      flex: 0 0 44px;
-      border: 0;
-      border-radius: 14px;
-      background: var(--kakao-yellow);
-      color: var(--kakao-fg);
-      display: grid;
-      place-items: center;
-      cursor: pointer;
-      transition: transform 100ms ease, background 100ms ease;
-    }
-
-    .send-btn:hover {
-      background: #FFE52B;
-      transform: scale(1.04);
-    }
-
-    .send-btn:active {
-      transform: scale(0.96);
-    }
-
-    .send-btn:disabled {
-      opacity: 0.45;
-      cursor: not-allowed;
-      transform: none;
-    }
-
-    .send-btn svg {
-      width: 18px;
-      height: 18px;
-      fill: currentColor;
+    .univ-notice-item:hover .univ-notice-title {
+      color: #c45b7a;
     }
 
     .footer {
@@ -1328,80 +1277,6 @@
       transform: translateX(-50%) translateY(0);
     }
 
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      z-index: 90;
-      display: none;
-      place-items: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.45);
-    }
-
-    .modal-backdrop.open {
-      display: grid;
-    }
-
-    .modal {
-      width: min(360px, 100%);
-      padding: 20px;
-      border-radius: var(--radius-lg);
-      background: var(--bg-elevated);
-      color: var(--text-primary);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .modal h3 {
-      margin: 0 0 8px;
-      font-size: 18px;
-      font-weight: 700;
-      line-height: 1.4;
-      letter-spacing: -0.02em;
-    }
-
-    .modal p {
-      margin: 0 0 14px;
-      color: var(--text-tertiary);
-      font-size: 13px;
-      line-height: 1.6;
-    }
-
-    .modal-actions {
-      display: flex;
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    .btn {
-      border: 0;
-      border-radius: var(--radius-full);
-      padding: 10px 18px;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: transform var(--duration-fast) var(--ease-out), background var(--duration-fast) var(--ease-out);
-    }
-
-    .btn:active {
-      transform: scale(0.97);
-    }
-
-    .btn-primary {
-      background: var(--color-primary-500);
-      color: #fff;
-    }
-
-    .btn-secondary {
-      background: var(--color-neutral-100);
-      color: var(--text-primary);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      .btn-secondary {
-        background: #2C2C2E;
-      }
-    }
-
     @keyframes riseIn {
       from {
         opacity: 0;
@@ -1410,17 +1285,6 @@
       to {
         opacity: 1;
         transform: translateY(0);
-      }
-    }
-
-    @keyframes bubbleIn {
-      from {
-        opacity: 0;
-        transform: translateY(8px) scale(0.98);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0) scale(1);
       }
     }
 
@@ -1433,6 +1297,12 @@
       0% { box-shadow: 0 0 0 0 rgba(26, 173, 92, 0.5); }
       70% { box-shadow: 0 0 0 8px rgba(26, 173, 92, 0); }
       100% { box-shadow: 0 0 0 0 rgba(26, 173, 92, 0); }
+    }
+
+    @keyframes univTodayShine {
+      0% { background-position: 120% 0; opacity: 0.35; }
+      40% { opacity: 0.85; }
+      100% { background-position: -40% 0; opacity: 0.35; }
     }
 
     @media (max-width: 980px) {
@@ -1454,7 +1324,7 @@
       }
 
       .board-panel,
-      .phone {
+      .univ-notice-panel {
         min-height: 600px;
         max-height: min(780px, 82vh);
         border-radius: 30px;
@@ -1581,15 +1451,24 @@
         font-size: 10px;
       }
 
-      .phone {
+      .univ-notice-panel {
         border-width: 3px;
         border-radius: 28px;
         min-height: min(640px, 78vh);
         width: 100%;
       }
 
-      .composer-row {
-        grid-template-columns: 1fr;
+      .univ-notice-item {
+        flex-wrap: wrap;
+        gap: 4px 8px;
+        padding: 6px 10px;
+      }
+
+      .univ-notice-date-wrap { min-width: 0; }
+
+      .univ-notice-title {
+        flex: 1 1 100%;
+        white-space: normal;
       }
     }
 
@@ -1883,7 +1762,7 @@
     <hr class="stage-rule" aria-hidden="true" />
 
     <div class="lower-layout">
-    <section class="chat-section" id="chat" aria-label="게시판과 실시간 대화">
+    <section class="chat-section" id="chat" aria-label="게시판과 대학별 공지">
       <div class="chat-shell">
         <aside class="board-panel" aria-label="자유 게시판">
           <div class="board-bar">
@@ -1942,31 +1821,27 @@
           </div>
         </aside>
 
-        <div class="phone" aria-label="김태훈닷컴 실시간 대화">
-          <div class="phonebar">
-            <strong>실시간 채팅</strong>
-            <span class="count" id="msgCount">0</span>
-            <div class="bar-right">
-              <button type="button" class="clear-btn" id="clearChatBtn" title="전체 삭제 (관리자 또는 작성 비밀번호)">전체삭제</button>
-              <span class="live" id="chatLive"><i></i><span id="chatLiveLabel">연결중</span></span>
+        <aside class="univ-notice-panel" aria-label="대학별 공지 안내 게시판">
+          <div class="univ-notice-bar">
+            <span class="univ-notice-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 7.5h14M5 12h14M5 16.5h9" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <strong>대학별 공지 안내 게시판</strong>
+            <div class="univ-notice-actions">
+              <span class="univ-notice-live is-offline" id="univNoticeLive"><i></i><span id="univNoticeLiveLabel">대기</span></span>
+              <button type="button" class="univ-notice-refresh" id="univNoticeRefresh" title="새로고침">새로고침</button>
             </div>
           </div>
-
-          <div class="thread" id="thread" aria-live="polite"></div>
-
-          <form class="composer" id="chatForm" autocomplete="off">
-            <div class="composer-row">
-              <input class="field" id="nickname" name="nickname" type="text" maxlength="16" placeholder="닉네임" required />
-              <input class="field" id="password" name="password" type="password" maxlength="32" placeholder="비밀번호" required />
-            </div>
-            <div class="composer-main">
-              <textarea class="field" id="message" name="message" rows="1" maxlength="500" placeholder="메시지 입력" required></textarea>
-              <button class="send-btn" type="submit" id="sendBtn" aria-label="전송">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 4.2 21 12 3.5 19.8l2-6.1L15 12l-9.5-1.7z"/></svg>
-              </button>
-            </div>
-          </form>
-        </div>
+          <div class="univ-notice-meta">
+            <span id="univNoticeCount">총 0건</span>
+            <span id="univNoticeUpdated">업데이트: —</span>
+          </div>
+          <div class="univ-notice-list" id="univNoticeList" aria-live="polite">
+            <div class="univ-notice-empty">공지를 불러오는 중입니다…</div>
+          </div>
+        </aside>
       </div>
     </section>
 
@@ -2008,29 +1883,19 @@
 
   <div class="toast" id="toast" role="status"></div>
 
-  <div class="modal-backdrop" id="deleteModal" role="dialog" aria-modal="true" aria-labelledby="deleteTitle">
-    <div class="modal">
-      <h3 id="deleteTitle">메시지 삭제</h3>
-      <p id="deleteDesc">작성 비밀번호 또는 관리자 비밀번호를 입력하면 삭제됩니다.</p>
-      <input class="field" id="deletePassword" type="password" placeholder="비밀번호" autocomplete="off" />
-      <div class="modal-actions">
-        <button class="btn btn-secondary" type="button" id="cancelDelete">취소</button>
-        <button class="btn btn-primary" type="button" id="confirmDelete">삭제</button>
-      </div>
-    </div>
-  </div>
-
   <script>
     (() => {
       "use strict";
 
       /**
-       * ★ 인터넷 전체 실시간 채팅용 Apps Script 웹앱 URL
-       * chat-backend.gs 를 배포한 뒤 아래 따옴표 안에 URL을 넣으세요.
-       * 예: "https://script.google.com/macros/s/XXXX/exec"
+       * ★ 대학별 공지 안내 게시판 Apps Script 웹앱 URL
+       * univ-notice-backend.gs 배포 후 아래에 넣으세요.
        */
-      const CHAT_API_URL = "";
-      const ADMIN_PASSWORD = "6485";
+      const UNIV_NOTICE_API_URL = "";
+      /**
+       * ★ 방문자 통계용 Apps Script (chat-backend.gs 배포 URL)
+       */
+      const VISIT_API_URL = "";
       const EXPAND_APPS = {
         susi: {
           url: "https://script.google.com/macros/s/AKfycbzz9D4B0fHSk_KykVKuUjNtPeEzrtGtGnzytPWqKpSGTilQSRh8sKPnzEHRacmJGb27Qg/exec",
@@ -2045,29 +1910,18 @@
           mark: `<circle cx="11" cy="11" r="5.2" stroke="currentColor" stroke-width="1.8"/><path d="m15 15 4.2 4.2" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>`,
         },
       };
-      const STORAGE_KEY = "kimtaehoon_chat_v1";
-      const SESSION_NICK = "kimtaehoon_nick";
-      const POLL_MS = 2000;
+      const UNIV_POLL_MS = 35000;
+      const UNIV_MIN_DATE = "2026-08-01";
 
-      const thread = document.getElementById("thread");
-      const form = document.getElementById("chatForm");
-      const nicknameEl = document.getElementById("nickname");
-      const passwordEl = document.getElementById("password");
-      const messageEl = document.getElementById("message");
-      const sendBtn = document.getElementById("sendBtn");
-      const msgCount = document.getElementById("msgCount");
       const toast = document.getElementById("toast");
-      const deleteModal = document.getElementById("deleteModal");
-      const deletePassword = document.getElementById("deletePassword");
-      const deleteTitle = document.getElementById("deleteTitle");
-      const deleteDesc = document.getElementById("deleteDesc");
-      const cancelDelete = document.getElementById("cancelDelete");
-      const confirmDelete = document.getElementById("confirmDelete");
-      const clearChatBtn = document.getElementById("clearChatBtn");
       const boardFrame = document.getElementById("boardFrame");
       const boardFallback = document.getElementById("boardFallback");
-      const chatLive = document.getElementById("chatLive");
-      const chatLiveLabel = document.getElementById("chatLiveLabel");
+      const univListEl = document.getElementById("univNoticeList");
+      const univCountEl = document.getElementById("univNoticeCount");
+      const univUpdatedEl = document.getElementById("univNoticeUpdated");
+      const univLive = document.getElementById("univNoticeLive");
+      const univLiveLabel = document.getElementById("univNoticeLiveLabel");
+      const univRefreshBtn = document.getElementById("univNoticeRefresh");
 
       if (boardFrame && boardFallback) {
         boardFrame.addEventListener("error", () => {
@@ -2075,41 +1929,16 @@
         });
       }
 
-      const savedNick = localStorage.getItem(SESSION_NICK);
-      if (savedNick) nicknameEl.value = savedNick;
-
-      let messages = [];
-      let pendingDeleteId = null;
-      let deleteMode = "one"; // one | mine
-      let remoteOnline = false;
-      let mySessionId = localStorage.getItem("kimtaehoon_sid");
-      if (!mySessionId) {
-        mySessionId = crypto.randomUUID();
-        localStorage.setItem("kimtaehoon_sid", mySessionId);
-      }
-
-      const channel = ("BroadcastChannel" in window)
-        ? new BroadcastChannel("kimtaehoon_chat")
-        : null;
-
-      function setLiveStatus(online, label) {
-        remoteOnline = online;
-        if (!chatLive || !chatLiveLabel) return;
-        chatLive.classList.toggle("is-offline", !online);
-        chatLiveLabel.textContent = label;
-      }
+      let univItems = [];
+      let univUpdatedAt = "";
+      let univOnline = false;
 
       function showToast(text) {
+        if (!toast) return;
         toast.textContent = text;
         toast.classList.add("show");
         clearTimeout(showToast._t);
         showToast._t = setTimeout(() => toast.classList.remove("show"), 2200);
-      }
-
-      async function sha256(text) {
-        const data = new TextEncoder().encode(text);
-        const hash = await crypto.subtle.digest("SHA-256", data);
-        return [...new Uint8Array(hash)].map((b) => b.toString(16).padStart(2, "0")).join("");
       }
 
       function escapeHtml(str) {
@@ -2121,414 +1950,185 @@
           .replaceAll("'", "&#39;");
       }
 
-      function formatTime(ts) {
-        const d = new Date(ts);
-        const h = d.getHours();
-        const m = String(d.getMinutes()).padStart(2, "0");
-        const ap = h < 12 ? "오전" : "오후";
-        const hh = h % 12 || 12;
-        return `${ap} ${hh}:${m}`;
+      function setUnivLive(online, label) {
+        univOnline = online;
+        if (!univLive || !univLiveLabel) return;
+        univLive.classList.toggle("is-offline", !online);
+        univLiveLabel.textContent = label;
       }
 
-      function formatDay(ts) {
-        const d = new Date(ts);
-        const days = ["일", "월", "화", "수", "목", "금", "토"];
-        return `${d.getFullYear()}년 ${d.getMonth() + 1}월 ${d.getDate()}일 ${days[d.getDay()]}요일`;
+      function formatKst(iso) {
+        if (!iso) return "—";
+        const d = new Date(iso);
+        if (Number.isNaN(d.getTime())) return String(iso);
+        return d.toLocaleString("ko-KR", {
+          timeZone: "Asia/Seoul",
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit",
+        });
       }
 
-      function dayKey(ts) {
-        const d = new Date(ts);
-        return `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+      function seoulTodayISO() {
+        const parts = new Intl.DateTimeFormat("en-CA", {
+          timeZone: "Asia/Seoul",
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        }).formatToParts(new Date());
+        const get = (t) => parts.find((p) => p.type === t)?.value || "00";
+        return `${get("year")}-${get("month")}-${get("day")}`;
       }
 
-      function loadLocal() {
-        try {
-          const raw = localStorage.getItem(STORAGE_KEY);
-          messages = raw ? JSON.parse(raw) : [];
-          if (!Array.isArray(messages)) messages = [];
-        } catch {
-          messages = [];
-        }
+      function isTodayDate(dateISO) {
+        if (!dateISO) return false;
+        return String(dateISO).slice(0, 10) === seoulTodayISO();
       }
 
-      function saveLocal() {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
-        if (channel) channel.postMessage({ type: "sync", messages });
+      function isRecentDate(dateISO) {
+        if (!dateISO) return false;
+        const d = new Date(dateISO + "T00:00:00+09:00");
+        if (Number.isNaN(d.getTime())) return false;
+        const now = Date.now();
+        const diff = now - d.getTime();
+        return diff >= 0 && diff <= 7 * 24 * 60 * 60 * 1000;
       }
 
-      function render() {
-        msgCount.textContent = String(messages.length);
-        if (!messages.length) {
-          if (!CHAT_API_URL) {
-            thread.innerHTML = `<div class="empty-hint">chat-backend.gs 수정중</div>`;
-          } else if (!remoteOnline) {
-            thread.innerHTML = `<div class="empty-hint">채팅 서버에 연결하는 중…</div>`;
-          } else {
-            thread.innerHTML = `<div class="empty-hint">아직 대화가 없습니다.<br />첫 메시지를 남겨보세요.</div>`;
-          }
+      function sanitizeItems(items) {
+        return (Array.isArray(items) ? items : [])
+          .filter((it) => {
+            if (!it || !it.title || !it.url || !it.univName || !it.dateISO) return false;
+            if (!/^https?:\/\//i.test(String(it.url))) return false;
+            if (String(it.dateISO) < UNIV_MIN_DATE) return false;
+            return true;
+          })
+          .sort((a, b) => {
+            if (a.dateISO === b.dateISO) return String(b.fetchedAt || "").localeCompare(String(a.fetchedAt || ""));
+            return a.dateISO < b.dateISO ? 1 : -1;
+          });
+      }
+
+      function renderUnivNotices(items, updatedAt) {
+        if (!univListEl) return;
+        const list = sanitizeItems(items);
+        univItems = list;
+        univUpdatedAt = updatedAt || univUpdatedAt;
+        if (univCountEl) univCountEl.textContent = "총 " + list.length.toLocaleString("ko-KR") + "건";
+        if (univUpdatedEl) univUpdatedEl.textContent = "업데이트: " + formatKst(univUpdatedAt);
+
+        if (!list.length) {
+          univListEl.innerHTML = UNIV_NOTICE_API_URL
+            ? `<div class="univ-notice-empty">표시할 공지가 없습니다.<br />기준일(2026.08.01) 이후·수집된 글만 노출됩니다.</div>`
+            : `<div class="univ-notice-empty">univ-notice-backend.gs 를 배포한 뒤<br />UNIV_NOTICE_API_URL 을 설정해 주세요.</div>`;
           return;
         }
 
-        const sorted = [...messages].sort((a, b) => a.createdAt - b.createdAt);
-        let html = "";
-        let lastDay = "";
+        univListEl.innerHTML = list.map((it) => {
+          const today = isTodayDate(it.dateISO);
+          const recent = !today && isRecentDate(it.dateISO);
+          const dateText = escapeHtml(it.dateText || String(it.dateISO).replace(/-/g, "."));
+          const univ = escapeHtml(it.univName);
+          const title = escapeHtml(it.title);
+          const url = escapeHtml(it.url);
+          const home = escapeHtml(it.homeUrl || "");
+          const rowClass = today ? " is-today" : recent ? " is-recent" : "";
+          return (
+            `<div class="univ-notice-item${rowClass}" data-href="${url}" role="link" tabindex="0">` +
+            `<div class="univ-notice-date-wrap"><span class="univ-notice-date">${dateText}</span>` +
+            (today || recent ? `<span class="univ-notice-new">NEW</span>` : "") +
+            `</div>` +
+            (home
+              ? `<a class="univ-notice-univ" href="${home}" target="_blank" rel="noopener noreferrer" title="입학처 바로가기">${univ}</a>`
+              : `<span class="univ-notice-univ">${univ}</span>`) +
+            `<span class="univ-notice-title">${title}</span>` +
+            `</div>`
+          );
+        }).join("");
+      }
 
-        for (const msg of sorted) {
-          const dk = dayKey(msg.createdAt);
-          if (dk !== lastDay) {
-            html += `<div class="day-chip">${escapeHtml(formatDay(msg.createdAt))}</div>`;
-            lastDay = dk;
+      function openNoticeUrl(url) {
+        if (!url || !/^https?:\/\//i.test(url)) return;
+        window.open(url, "_blank", "noopener,noreferrer");
+      }
+
+      if (univListEl) {
+        univListEl.addEventListener("click", (e) => {
+          const univLink = e.target.closest("a.univ-notice-univ");
+          if (univLink) {
+            e.stopPropagation();
+            return;
           }
-
-          const mine = msg.sessionId === mySessionId;
-          const initial = (msg.nickname || "?").trim().charAt(0) || "?";
-          const avatarHtml = mine
-            ? ""
-            : `<div class="avatar" aria-hidden="true">${escapeHtml(initial)}</div>`;
-
-          html += `
-            <article class="msg ${mine ? "me" : ""}" data-id="${escapeHtml(msg.id)}">
-              ${avatarHtml}
-              <div class="msg-meta">
-                <div class="msg-name">${escapeHtml(msg.nickname)}</div>
-                <div class="bubble-row">
-                  <div class="msg-aside">
-                    <button type="button" class="del-btn" data-delete="${escapeHtml(msg.id)}" aria-label="메시지 삭제">삭제</button>
-                    <span class="msg-time">${escapeHtml(formatTime(msg.createdAt))}</span>
-                  </div>
-                  <div class="bubble">${escapeHtml(msg.text)}</div>
-                </div>
-              </div>
-            </article>
-          `;
-        }
-
-        const nearBottom = thread.scrollHeight - thread.scrollTop - thread.clientHeight < 80;
-        thread.innerHTML = html;
-        if (nearBottom || messages.length <= 1) {
-          thread.scrollTop = thread.scrollHeight;
-        }
-      }
-
-      async function apiPost(payload) {
-        const res = await fetch(CHAT_API_URL, {
-          method: "POST",
-          headers: { "Content-Type": "text/plain;charset=utf-8" },
-          body: JSON.stringify(payload),
-          redirect: "follow",
+          const row = e.target.closest(".univ-notice-item[data-href]");
+          if (!row) return;
+          openNoticeUrl(row.getAttribute("data-href"));
         });
-        const text = await res.text();
-        try {
-          return JSON.parse(text);
-        } catch {
-          throw new Error("invalid_json");
-        }
+        univListEl.addEventListener("keydown", (e) => {
+          if (e.key !== "Enter" && e.key !== " ") return;
+          const row = e.target.closest(".univ-notice-item[data-href]");
+          if (!row) return;
+          e.preventDefault();
+          openNoticeUrl(row.getAttribute("data-href"));
+        });
       }
 
-      async function fetchRemote() {
-        if (!CHAT_API_URL) {
-          setLiveStatus(false, "로컬");
+      async function fetchUnivList(forceRefresh) {
+        if (!UNIV_NOTICE_API_URL) {
+          setUnivLive(false, "미설정");
+          renderUnivNotices([], "");
           return false;
         }
         try {
-          const res = await fetch(`${CHAT_API_URL}?action=list`, {
+          const action = forceRefresh ? "refresh" : "list";
+          const res = await fetch(`${UNIV_NOTICE_API_URL}?action=${action}`, {
             method: "GET",
             cache: "no-store",
             redirect: "follow",
           });
-          if (!res.ok) throw new Error("list failed");
+          if (!res.ok) throw new Error("http_" + res.status);
           const data = await res.json();
-          if (Array.isArray(data.messages)) {
-            messages = data.messages;
-            saveLocal();
-            setLiveStatus(true, "LIVE");
-            render();
-            return true;
-          }
-          throw new Error("bad payload");
-        } catch (err) {
-          console.warn("remote list failed", err);
-          setLiveStatus(false, "재시도");
-          return false;
-        }
-      }
-
-      async function postRemote(msg) {
-        if (!CHAT_API_URL) return false;
-        try {
-          const data = await apiPost({ action: "create", message: msg });
-          if (data && Array.isArray(data.messages)) {
-            messages = data.messages;
-            saveLocal();
-            setLiveStatus(true, "LIVE");
-            render();
-            return true;
-          }
-          return Boolean(data && data.ok);
-        } catch (err) {
-          console.warn("remote create failed", err);
-          setLiveStatus(false, "재시도");
-          return false;
-        }
-      }
-
-      async function deleteRemote(id, passwordHash, adminPassword) {
-        if (!CHAT_API_URL) return true;
-        try {
-          const data = await apiPost({
-            action: "delete",
-            id,
-            passwordHash,
-            adminPassword: adminPassword || "",
-          });
-          if (data && Array.isArray(data.messages)) {
-            messages = data.messages;
-            saveLocal();
-            render();
-          }
-          return Boolean(data && data.ok);
-        } catch (err) {
-          console.warn("remote delete failed", err);
-          return false;
-        }
-      }
-
-      async function clearRemote(passwordHash, adminPassword) {
-        if (!CHAT_API_URL) return true;
-        try {
-          const data = await apiPost({
-            action: "clear",
-            passwordHash: passwordHash || "",
-            adminPassword: adminPassword || "",
-          });
-          if (data && Array.isArray(data.messages)) {
-            messages = data.messages;
-            saveLocal();
-            render();
-          }
-          return Boolean(data && data.ok);
-        } catch (err) {
-          console.warn("remote clear failed", err);
-          return false;
-        }
-      }
-
-      async function addMessage(nickname, text, password) {
-        if (CHAT_API_URL && !remoteOnline) {
-          const ok = await fetchRemote();
-          if (!ok) {
-            showToast("채팅 서버에 연결되지 않았습니다");
-            return;
-          }
-        }
-        if (!CHAT_API_URL) {
-          showToast("채팅 서버 URL(CHAT_API_URL)을 설정해 주세요");
-          return;
-        }
-
-        const passwordHash = await sha256(password);
-        const msg = {
-          id: crypto.randomUUID(),
-          nickname: nickname.trim().slice(0, 16),
-          text: text.trim().slice(0, 500),
-          passwordHash,
-          sessionId: mySessionId,
-          createdAt: Date.now(),
-        };
-
-        messages.push(msg);
-        saveLocal();
-        render();
-
-        const posted = await postRemote(msg);
-        if (!posted) {
-          showToast("전송 실패 — 잠시 후 다시 시도해 주세요");
-          await fetchRemote();
-          return;
-        }
-        showToast("메시지가 등록되었습니다");
-      }
-
-      function openDeleteModal(id) {
-        deleteMode = "one";
-        pendingDeleteId = id;
-        deleteTitle.textContent = "메시지 삭제";
-        deleteDesc.textContent = "작성 비밀번호 또는 관리자 비밀번호를 입력하면 삭제됩니다.";
-        deletePassword.value = "";
-        deleteModal.classList.add("open");
-        deletePassword.focus();
-      }
-
-      function openClearMineModal() {
-        if (!messages.length) {
-          showToast("삭제할 메시지가 없습니다");
-          return;
-        }
-        deleteMode = "mine";
-        pendingDeleteId = null;
-        deleteTitle.textContent = "전체 삭제";
-        deleteDesc.textContent = "관리자 비밀번호면 전체 삭제, 작성 비밀번호면 해당 글만 삭제됩니다.";
-        deletePassword.value = "";
-        deleteModal.classList.add("open");
-        deletePassword.focus();
-      }
-
-      function closeDeleteModal() {
-        pendingDeleteId = null;
-        deleteMode = "one";
-        deleteModal.classList.remove("open");
-      }
-
-      async function confirmDeleteMessage() {
-        const pwd = deletePassword.value;
-        if (!pwd) {
-          showToast("비밀번호를 입력해 주세요");
-          return;
-        }
-        const isAdmin = pwd === ADMIN_PASSWORD;
-        const hash = await sha256(pwd);
-
-        if (deleteMode === "mine") {
-          if (CHAT_API_URL) {
-            const ok = await clearRemote(isAdmin ? "" : hash, isAdmin ? ADMIN_PASSWORD : "");
-            if (!ok) {
-              showToast("비밀번호가 일치하는 메시지가 없습니다");
-              return;
+          if (!data || data.ok === false) throw new Error(data && data.error ? data.error : "bad_payload");
+          const items = sanitizeItems(data.items);
+          if (!items.length && univItems.length && !forceRefresh) {
+            setUnivLive(true, "LIVE");
+            if (univUpdatedEl && data.updatedAt) {
+              univUpdatedAt = data.updatedAt;
+              univUpdatedEl.textContent = "업데이트: " + formatKst(univUpdatedAt);
             }
-            closeDeleteModal();
-            showToast(isAdmin ? "전체 메시지를 삭제했습니다" : "메시지를 삭제했습니다");
-            return;
+            return true;
           }
-
-          let matched = isAdmin
-            ? [...messages]
-            : messages.filter((m) => m.passwordHash === hash);
-          if (!matched.length) {
-            showToast("비밀번호가 일치하는 메시지가 없습니다");
-            return;
+          renderUnivNotices(items, data.updatedAt || "");
+          setUnivLive(true, "LIVE");
+          return true;
+        } catch (err) {
+          console.warn("univ notice fetch failed", err);
+          setUnivLive(false, "재시도");
+          if (!univItems.length) {
+            renderUnivNotices([], univUpdatedAt);
           }
-          const removeIds = new Set(matched.map((m) => m.id));
-          messages = messages.filter((m) => !removeIds.has(m.id));
-          saveLocal();
-          render();
-          closeDeleteModal();
-          showToast(isAdmin ? "전체 메시지를 삭제했습니다" : `${matched.length}개의 메시지를 삭제했습니다`);
-          return;
+          return false;
         }
-
-        if (!pendingDeleteId) return;
-        const target = messages.find((m) => m.id === pendingDeleteId);
-        if (!target) {
-          closeDeleteModal();
-          return;
-        }
-
-        let ok = isAdmin || target.passwordHash === hash;
-        if (CHAT_API_URL) {
-          ok = await deleteRemote(
-            pendingDeleteId,
-            hash,
-            isAdmin ? ADMIN_PASSWORD : ""
-          );
-        }
-
-        if (!ok) {
-          showToast("비밀번호가 일치하지 않습니다");
-          return;
-        }
-
-        if (!CHAT_API_URL) {
-          messages = messages.filter((m) => m.id !== pendingDeleteId);
-          saveLocal();
-          render();
-        }
-        closeDeleteModal();
-        showToast("메시지를 삭제했습니다");
       }
 
-      form.addEventListener("submit", async (e) => {
-        e.preventDefault();
-        const nickname = nicknameEl.value.trim();
-        const password = passwordEl.value;
-        const text = messageEl.value.trim();
-        if (!nickname || !password || !text) {
-          showToast("닉네임, 비밀번호, 내용을 모두 입력해 주세요");
-          return;
-        }
-        sendBtn.disabled = true;
-        try {
-          localStorage.setItem(SESSION_NICK, nickname);
-          await addMessage(nickname, text, password);
-          messageEl.value = "";
-          autoResize();
-          messageEl.focus();
-        } finally {
-          sendBtn.disabled = false;
-        }
-      });
-
-      messageEl.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" && !e.shiftKey) {
-          e.preventDefault();
-          form.requestSubmit();
-        }
-      });
-
-      function autoResize() {
-        messageEl.style.height = "auto";
-        messageEl.style.height = `${Math.min(messageEl.scrollHeight, 120)}px`;
-      }
-      messageEl.addEventListener("input", autoResize);
-
-      thread.addEventListener("click", (e) => {
-        const btn = e.target.closest("[data-delete]");
-        if (!btn) return;
-        openDeleteModal(btn.getAttribute("data-delete"));
-      });
-
-      clearChatBtn.addEventListener("click", openClearMineModal);
-      cancelDelete.addEventListener("click", closeDeleteModal);
-      confirmDelete.addEventListener("click", confirmDeleteMessage);
-      deleteModal.addEventListener("click", (e) => {
-        if (e.target === deleteModal) closeDeleteModal();
-      });
-      deletePassword.addEventListener("keydown", (e) => {
-        if (e.key === "Enter") confirmDeleteMessage();
-      });
-
-      window.addEventListener("storage", (e) => {
-        if (e.key === STORAGE_KEY && !CHAT_API_URL) {
-          loadLocal();
-          render();
-        }
-      });
-
-      if (channel) {
-        channel.onmessage = (ev) => {
-          if (CHAT_API_URL) return;
-          if (ev.data && ev.data.type === "sync" && Array.isArray(ev.data.messages)) {
-            messages = ev.data.messages;
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(messages));
-            render();
-          }
-        };
+      if (univRefreshBtn) {
+        univRefreshBtn.addEventListener("click", async () => {
+          univRefreshBtn.disabled = true;
+          setUnivLive(false, "갱신중");
+          const ok = await fetchUnivList(true);
+          showToast(ok ? "공지 목록을 갱신했습니다" : "갱신에 실패했습니다");
+          univRefreshBtn.disabled = false;
+        });
       }
 
-      async function boot() {
-        if (!CHAT_API_URL) {
-          setLiveStatus(false, "로컬");
-          messages = [];
-          render();
-          return;
-        }
-        setLiveStatus(false, "연결중");
-        loadLocal();
-        render();
-        const remoteOk = await fetchRemote();
-        if (!remoteOk) render();
-        setInterval(fetchRemote, POLL_MS);
+      async function bootUnivNotices() {
+        setUnivLive(false, UNIV_NOTICE_API_URL ? "연결중" : "미설정");
+        renderUnivNotices([], "");
+        await fetchUnivList(false);
+        if (!UNIV_NOTICE_API_URL) return;
+        setInterval(() => fetchUnivList(false), UNIV_POLL_MS);
         document.addEventListener("visibilitychange", () => {
-          if (document.visibilityState === "visible") fetchRemote();
+          if (document.visibilityState === "visible") fetchUnivList(false);
         });
       }
 
@@ -2719,7 +2319,7 @@
         const local = syncLocalDay(readLocalVisits());
         writeLocalVisits(local);
 
-        if (!CHAT_API_URL) {
+        if (!VISIT_API_URL) {
           const data = bumpLocalVisits();
           animateVisitNum(visitTodayEl, data.today);
           animateVisitNum(visitTotalEl, data.total);
@@ -2729,7 +2329,7 @@
         try {
           const shouldHit = !local.hit;
           const action = shouldHit ? "visitHit" : "visitStats";
-          const json = await fetchVisitJson(`${CHAT_API_URL}?action=${action}`);
+          const json = await fetchVisitJson(`${VISIT_API_URL}?action=${action}`);
           if (!json || !json.ok) throw new Error("visit_bad");
 
           if (shouldHit) {
@@ -2746,7 +2346,7 @@
         }
       }
 
-      boot();
+      bootUnivNotices();
       bootVisits();
     })();
   </script>

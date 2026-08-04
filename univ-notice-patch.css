@@ -1,0 +1,113 @@
+/* 대학별 공지 Apps Script HTML <style> 맨 아래에 붙여넣기 후 저장 → 새 배포 */
+:root {
+  --bg: #f7f5fb !important;
+  --card: rgba(255, 255, 255, 0.86) !important;
+  --line: rgba(120, 130, 160, 0.12) !important;
+  --text: #2a2d3a !important;
+  --muted: #8a8798 !important;
+  --primary: #c45b7a !important;
+  --chip: #f3eef8 !important;
+  --accent-soft: #f3a6b8 !important;
+  --accent: #e86b88 !important;
+}
+body {
+  background:
+    radial-gradient(80% 50% at 12% 0%, rgba(255, 214, 228, 0.55), transparent 58%),
+    radial-gradient(70% 45% at 92% 8%, rgba(214, 228, 255, 0.5), transparent 55%),
+    radial-gradient(60% 40% at 50% 100%, rgba(230, 220, 255, 0.35), transparent 55%),
+    linear-gradient(180deg, #fbf9fd 0%, #f7f5fb 100%) !important;
+  color: var(--text) !important;
+}
+.wrap { margin: 16px auto !important; padding: 0 14px 28px !important; }
+.controls {
+  padding: 8px !important;
+  gap: 8px !important;
+  margin-bottom: 8px !important;
+  border-color: var(--line) !important;
+  background: var(--card) !important;
+}
+input, select, button { height: 36px !important; font-size: 13px !important; }
+button {
+  background: linear-gradient(135deg, #e9a0b4 0%, #c45b7a 55%, #9f6bb8 100%) !important;
+  box-shadow: 0 6px 16px rgba(196, 91, 122, 0.22) !important;
+}
+.meta { margin: 4px 2px 8px !important; font-size: 12px !important; }
+.list {
+  border-color: var(--line) !important;
+  background: var(--card) !important;
+  box-shadow: 0 10px 28px rgba(90, 70, 120, 0.05) !important;
+}
+.item {
+  display: flex !important;
+  grid-template-columns: none !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 5px 12px !important;
+  border-bottom-color: var(--line) !important;
+  background: transparent !important;
+}
+.item.item--row:hover { background: rgba(255, 255, 255, 0.72) !important; }
+.item.item--row.recent:hover { background: rgba(255, 236, 242, 0.55) !important; }
+.item.recent {
+  background: linear-gradient(90deg, rgba(255, 228, 236, 0.55) 0%, rgba(255, 255, 255, 0) 42%) !important;
+  border-left: 0 !important;
+  box-shadow: inset 2px 0 0 #f3a6b8 !important;
+}
+.date { color: #5c5f6e !important; font-size: 12px !important; }
+.date-wrap {
+  display: inline-flex !important;
+  gap: 5px !important;
+  flex: 0 0 auto !important;
+  min-width: 7.2rem !important;
+}
+.new-chip {
+  background: linear-gradient(135deg, #ffc2d1 0%, #f2a0b6 48%, #e18bb0 100%) !important;
+  padding: 1px 6px !important;
+  font-size: 9px !important;
+  box-shadow: 0 2px 8px rgba(225, 139, 176, 0.28) !important;
+}
+.univ-mark { flex: 0 0 auto !important; }
+.title { flex: 1 !important; min-width: 0 !important; }
+.title .title-link { font-size: 13px !important; letter-spacing: -0.02em !important; }
+.item--row:hover .title .title-link {
+  color: #c45b7a !important;
+  text-decoration: none !important;
+}
+.univ-pill {
+  gap: 5px !important;
+  padding: 2px 8px !important;
+  font-size: 11px !important;
+  line-height: 1.35 !important;
+}
+.univ-pill.snu, .univ-pill.ysu, .univ-pill.ku {
+  background: #eef1fb !important; color: #4d5d8f !important; border-color: #dde3f5 !important;
+}
+.univ-pill.ysg, .univ-pill.sku, .univ-pill.hyu, .univ-pill.cau, .univ-pill.khu,
+.univ-pill.hufs, .univ-pill.uos, .univ-pill.konkuk, .univ-pill.dgu, .univ-pill.hongik,
+.univ-pill.ewha, .univ-pill.smwu, .univ-pill.kma, .univ-pill.navy, .univ-pill.afa,
+.univ-pill.afna, .univ-pill.knpu, .univ-pill.sgu, .univ-pill.skku, .univ-pill.other {
+  background: #f1f0f8 !important; color: #5a5870 !important; border-color: #e4e2ef !important;
+}
+.univ-pill.sgu { background:#f8ecee !important; color:#8a4a55 !important; border-color:#efd8dc !important; }
+.univ-pill.skku { background:#eceff8 !important; color:#4d5d8f !important; border-color:#dde3f2 !important; }
+.univ-pill.hyu { background:#eaf4f1 !important; color:#3f6f66 !important; border-color:#d5e8e2 !important; }
+.univ-pill.cau { background:#f7ecef !important; color:#8a4a5c !important; border-color:#efd7de !important; }
+.univ-pill.khu { background:#f6efe8 !important; color:#8a6348 !important; border-color:#ecdccb !important; }
+.univ-pill.hufs { background:#e9f3f5 !important; color:#3f6d78 !important; border-color:#d2e5ea !important; }
+.univ-pill.uos { background:#eaf0f8 !important; color:#4a6290 !important; border-color:#d6e1f0 !important; }
+.univ-pill.konkuk { background:#f5eee8 !important; color:#866249 !important; border-color:#ead9c8 !important; }
+.univ-pill.dgu { background:#f6ebf2 !important; color:#84506f !important; border-color:#ebd4e2 !important; }
+.univ-pill.hongik { background:#f5f1e4 !important; color:#7a6640 !important; border-color:#e8dfc6 !important; }
+.univ-pill.ewha { background:#f7eaf0 !important; color:#8a4f68 !important; border-color:#ecd4df !important; }
+.univ-pill.smwu { background:#f0ecf7 !important; color:#6a5a8a !important; border-color:#e0d8ef !important; }
+.univ-pill.kma { background:#eef0f3 !important; color:#5a6270 !important; border-color:#dde1e7 !important; }
+.univ-pill.navy { background:#e8f1f6 !important; color:#456a82 !important; border-color:#d0e2ec !important; }
+.univ-pill.afa { background:#e9f3f4 !important; color:#3f6f78 !important; border-color:#d1e5e8 !important; }
+.univ-pill.afna { background:#ebf4ee !important; color:#45725a !important; border-color:#d4e7da !important; }
+.univ-pill.knpu { background:#efeaf6 !important; color:#655687 !important; border-color:#dfd6ec !important; }
+.univ-pill-icon, .univ-pill-fav { width: 14px !important; height: 14px !important; }
+@media (max-width: 760px) {
+  .item { flex-wrap: wrap !important; gap: 4px 8px !important; padding: 6px 10px !important; }
+  .date-wrap { min-width: 0 !important; }
+  .title { flex: 1 1 100% !important; }
+}
