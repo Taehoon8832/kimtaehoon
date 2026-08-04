@@ -2328,10 +2328,22 @@
         if (!/^https?:\/\//i.test(u)) return true;
         if (/javascript:|void\(0\)|#\s*$/i.test(u)) return true;
         if (/\/admission\/html\/notice\/notice\.asp$/i.test(u) || /error404|404\.html/i.test(u)) return true;
-        const hasId = /[?&](id|no|seq|idx|bbsidx|ntt|article|artcl|brdIdx|dataSid|uid|num)=/i.test(u);
+        // 숙명여대: /counsel/ 루트 경로는 500 — 약한/깨진 URL
+        if (/admission\.sookmyung\.ac\.kr\/counsel\//i.test(u)) return true;
+        const hasId = /[?&](id|no|seq|idx|bbsidx|ntt|article|artcl|brdIdx|dataSid|uid|num|p_board_idx)=/i.test(u);
         if (hasId) return false;
         if (/\/(main|index|intro)(\.(asp|do|php|html?))?\/?$/i.test(u)) return true;
         return false;
+      }
+
+      /** 숙명여대 등 알려진 깨진 경로를 정상 입학처 경로로 교정 */
+      function repairNoticeUrl(url) {
+        let u = String(url || "").trim();
+        u = u.replace(
+          /^https?:\/\/admission\.sookmyung\.ac\.kr\/counsel\//i,
+          "https://admission.sookmyung.ac.kr/admission/html/counsel/"
+        );
+        return u;
       }
 
       function normalizeNotice(it) {
@@ -2354,9 +2366,11 @@
         if (isJunkText(preview) || (preview.match(/[가-힣]/g) || []).length < 2) {
           preview = `${univName} 입학 공지사항 미리보기`;
         }
-        const rawUrl = String(it.url || "").trim();
+        let rawUrl = repairNoticeUrl(it.url);
         // 메인/배너 URL + 날짜 오염 항목은 표시하지 않음 (부정확한 글 제거)
         if (!rawUrl || isWeakNoticeUrl(rawUrl)) return null;
+        // 숙명여대 수시 모집요강(54119)은 2026.05.29 게시 — 8/1 이후 목록에서 제외
+        if (/sookmyung\.ac\.kr/i.test(rawUrl) && /p_board_idx=54119/i.test(rawUrl)) return null;
         return {
           univId,
           univName,

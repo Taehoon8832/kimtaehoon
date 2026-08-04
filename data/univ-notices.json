@@ -184,8 +184,8 @@
     {
       "id": "u029",
       "name": "숙명여대",
-      "homeUrl": "https://admission.sookmyung.ac.kr/",
-      "boardUrl": "https://admission.sookmyung.ac.kr/",
+      "homeUrl": "https://admission.sookmyung.ac.kr/admission/html/main/main.asp",
+      "boardUrl": "https://admission.sookmyung.ac.kr/admission/html/counsel/notice.asp",
       "priority": true
     },
     {
@@ -1509,16 +1509,16 @@
   ],
   "notices": [
     {
-      "id": "2129b40f0c098790d509",
       "univId": "u029",
       "univName": "숙명여대",
-      "title": "수시모집 2027학년도 수시모집 모집요강",
-      "preview": "숙명여대 입학처 전체 공지사항",
-      "url": "https://admission.sookmyung.ac.kr/counsel/noticeView.asp?p_board_idx=54119",
-      "homeUrl": "https://admission.sookmyung.ac.kr/",
+      "title": "정시 2027학년도 정시모집 안내 영상",
+      "preview": "숙명여대 입학 공지사항 미리보기",
+      "url": "https://admission.sookmyung.ac.kr/admission/html/counsel/noticeView.asp?p_board_idx=54305",
+      "homeUrl": "https://admission.sookmyung.ac.kr/admission/html/main/main.asp",
       "dateISO": "2026-08-04",
       "dateText": "2026.08.04",
-      "priority": true
+      "priority": true,
+      "id": "b50d7c764b41c54335fd"
     },
     {
       "id": "bb71f475da4c79b2c191",
@@ -1778,8 +1778,8 @@
       "match": [
         "숙명여대"
       ],
-      "boardUrl": "https://admission.sookmyung.ac.kr/",
-      "homeUrl": "https://admission.sookmyung.ac.kr/",
+      "boardUrl": "https://admission.sookmyung.ac.kr/admission/html/counsel/notice.asp",
+      "homeUrl": "https://admission.sookmyung.ac.kr/admission/html/main/main.asp",
       "univId": "u029",
       "univName": "숙명여대"
     },

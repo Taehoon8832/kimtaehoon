@@ -140,9 +140,24 @@ def is_404(html: str) -> bool:
     return ("HTTP 오류 404" in head) or ("404.0 - Not Found" in head) or ("error404" in head.lower())
 
 
+def repair_url(absu: str) -> str:
+    """알려진 깨진 입학처 경로 교정 (숙명여대 등)."""
+    u = (absu or "").strip()
+    u = re.sub(
+        r"https?://admission\.sookmyung\.ac\.kr/counsel/",
+        "https://admission.sookmyung.ac.kr/admission/html/counsel/",
+        u,
+        flags=re.I,
+    )
+    return u
+
+
 def is_weak_article_url(absu: str, page_url: str) -> bool:
     """홈/메인/해시 링크는 배너성으로 날짜 오염이 잦아 제외."""
     if not absu or not absu.startswith("http"):
+        return True
+    # 숙명여대 구경로(/counsel/)는 500
+    if re.search(r"admission\.sookmyung\.ac\.kr/counsel/", absu, re.I):
         return True
     low = absu.lower().split("#")[0]
     if low.endswith("#") or absu.strip() in ("#",):
@@ -154,7 +169,7 @@ def is_weak_article_url(absu: str, page_url: str) -> bool:
     # 게시글 id 파라미터가 없고 메인/인덱스면 약함
     has_id = bool(
         re.search(
-            r"[?&](id|no|seq|idx|bbsidx|ntt|article|artcl|brdIdx|dataSid|uid|num)=",
+            r"[?&](id|no|seq|idx|bbsidx|ntt|article|artcl|brdIdx|dataSid|uid|num|p_board_idx)=",
             absu,
             re.I,
         )
@@ -239,7 +254,7 @@ def parse_html(html: str, page_url: str, src: dict):
         date_iso = extract_date(title) or extract_date(tail)
         if not date_iso:
             continue
-        absu = urljoin(page_url, href.split("#")[0])
+        absu = repair_url(urljoin(page_url, href.split("#")[0]))
         it = make_item(src, title, tail, absu, date_iso, page_url)
         if it:
             items.append(it)

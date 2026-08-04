@@ -181,8 +181,8 @@
   {
     "id": "u029",
     "name": "숙명여대",
-    "homeUrl": "https://admission.sookmyung.ac.kr/",
-    "boardUrl": "https://admission.sookmyung.ac.kr/",
+    "homeUrl": "https://admission.sookmyung.ac.kr/admission/html/main/main.asp",
+    "boardUrl": "https://admission.sookmyung.ac.kr/admission/html/counsel/notice.asp",
     "priority": true
   },
   {
