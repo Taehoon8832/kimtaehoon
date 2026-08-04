@@ -760,7 +760,7 @@
       "id": "u123",
       "name": "공군사관학교",
       "homeUrl": "https://rokaf.airforce.mil.kr/sites/afaadmission/index.do",
-      "boardUrl": ""
+      "boardUrl": "https://rokaf.airforce.mil.kr/afaadmission/7161/subview.do"
     },
     {
       "id": "u124",
@@ -1566,6 +1566,17 @@
       "priority": true
     },
     {
+      "id": "777c2cdd7a7628fa342d",
+      "univId": "u123",
+      "univName": "공군사관학교",
+      "title": "2027학년도 제78기 공군사관생도 선발 1차시험 분실물 안내",
+      "preview": "공군사관학교 입학 공지사항 미리보기",
+      "url": "https://rokaf.airforce.mil.kr/bbs/afaadmission/2089/43049/artclView.do",
+      "homeUrl": "https://rokaf.airforce.mil.kr/sites/afaadmission/index.do",
+      "dateISO": "2026-08-04",
+      "dateText": "2026.08.04"
+    },
+    {
       "id": "e1d15bc522830796e7b0",
       "univId": "u078",
       "univName": "한경국립대",
@@ -1630,6 +1641,17 @@
       "homeUrl": "http://ipsi.suwon.ac.kr/",
       "dateISO": "2026-08-03",
       "dateText": "2026.08.03"
+    },
+    {
+      "id": "ec4fce58b31c64810b72",
+      "univId": "u123",
+      "univName": "공군사관학교",
+      "title": "2027학년도 사관생도 선발 1차시험 문제, 답안 공개 및 이의제기 안내",
+      "preview": "공군사관학교 입학 공지사항 미리보기",
+      "url": "https://rokaf.airforce.mil.kr/bbs/afaadmission/2089/43032/artclView.do",
+      "homeUrl": "https://rokaf.airforce.mil.kr/sites/afaadmission/index.do",
+      "dateISO": "2026-08-01",
+      "dateText": "2026.08.01"
     }
   ],
   "priority": [

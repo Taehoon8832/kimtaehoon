@@ -136,7 +136,7 @@ var UNIV_SOURCES = [
   { id: "u120", name: "카이스트(KAIST)", homeUrl: "http://admission.kaist.ac.kr/", boardUrl: "https://admission.kaist.ac.kr/notice" },
   { id: "u121", name: "가톨릭꽃동네대", homeUrl: "https://www.kkot.ac.kr/base/main/view", boardUrl: "" },
   { id: "u122", name: "건국대(글로컬)", homeUrl: "http://enter.kku.ac.kr/", boardUrl: "" },
-  { id: "u123", name: "공군사관학교", homeUrl: "https://rokaf.airforce.mil.kr/sites/afaadmission/index.do", boardUrl: "" },
+  { id: "u123", name: "공군사관학교", homeUrl: "https://rokaf.airforce.mil.kr/sites/afaadmission/index.do", boardUrl: "https://rokaf.airforce.mil.kr/afaadmission/7161/subview.do" },
   { id: "u124", name: "극동대", homeUrl: "http://ipsi.kdu.ac.kr/", boardUrl: "" },
   { id: "u125", name: "서원대", homeUrl: "http://www.seowon.ac.kr/iphak", boardUrl: "" },
   { id: "u126", name: "세명대", homeUrl: "http://ipsi.semyung.ac.kr/", boardUrl: "" },

@@ -9,7 +9,7 @@ import re
 import ssl
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from html import unescape
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
@@ -26,7 +26,7 @@ UA = (
 )
 BAD_TITLE = re.compile(
     r"(채용\s*공고|직원\s*채용|근로장학생|학자금대출|문의\s*\(\d|공지사항\s*더보기|"
-    r"^대학\s*입학\s*문의|분실물|OMR|문서등록|예비소집\s*/)",
+    r"^대학\s*입학\s*문의|분실물|OMR|문서등록|예비소집\s*/|졸업\s*\(?예정\)?자\s*안내)",
     re.I,
 )
 
@@ -123,8 +123,22 @@ def to_iso(y, mo, d):
 
 
 def extract_date(text: str) -> str:
-    m = DATE_RE.search(text or "")
-    return to_iso(m.group(1), m.group(2), m.group(3)) if m else ""
+    """여러 날짜가 있으면 마지막 값을 사용(작성일이 뒤에 오는 목록이 많음)."""
+    matches = list(DATE_RE.finditer(text or ""))
+    if not matches:
+        return ""
+    m = matches[-1]
+    return to_iso(m.group(1), m.group(2), m.group(3))
+
+
+def extract_post_date(text: str) -> str:
+    """제목 속 [2026.8.11, 화] 같은 행사·일정일을 제거한 뒤 작성일 추정."""
+    cleaned = re.sub(
+        r"\[\s*20\d{2}\s*[.\-/]\s*\d{1,2}\s*[.\-/]\s*\d{1,2}[^\]]*\]",
+        " ",
+        text or "",
+    )
+    return extract_date(cleaned)
 
 
 def clean_title(title: str) -> str:
@@ -159,6 +173,13 @@ def is_weak_article_url(absu: str, page_url: str) -> bool:
     # 숙명여대 구경로(/counsel/)는 500
     if re.search(r"admission\.sookmyung\.ac\.kr/counsel/", absu, re.I):
         return True
+    # 공군사관학교: Q&A(1041) 제외, 공지 글(2089 artclView)만 허용
+    if re.search(r"rokaf\.airforce\.mil\.kr", absu, re.I):
+        if re.search(r"/bbs/afaadmission/1041/", absu, re.I):
+            return True
+        if re.search(r"/bbs/afaadmission/2089/\d+/artclView\.do", absu, re.I):
+            return False
+        return True
     low = absu.lower().split("#")[0]
     if low.endswith("#") or absu.strip() in ("#",):
         return True
@@ -192,10 +213,14 @@ def is_weak_article_url(absu: str, page_url: str) -> bool:
 
 
 def make_item(src: dict, title_raw: str, preview: str, absu: str, date_iso: str, page_url: str = ""):
-    # 제목에 박힌 날짜가 진짜 게시일 — 반드시 우선
-    title_date = extract_date(title_raw)
-    if title_date:
+    # 목록 작성일 우선. 제목의 행사일([8.11])로 덮어쓰지 않음
+    title_date = extract_post_date(title_raw)
+    if not date_iso:
         date_iso = title_date
+    # 오늘(서울, UTC+9) 이후 날짜는 일정일로 보고 제외
+    today = (datetime.now(timezone.utc) + timedelta(hours=9)).strftime("%Y-%m-%d")
+    if date_iso and date_iso > today:
+        return None
     title = clean_title(title_raw)
     if not title or len(title) < 8 or len(title) > 140:
         return None
@@ -234,9 +259,36 @@ def make_item(src: dict, title_raw: str, preview: str, absu: str, date_iso: str,
     }
 
 
+def parse_afa_notice_board(html: str, page_url: str, src: dict):
+    """공군사관학교 공지사항(7161/2089) 전용 파서 — Q&A 제외."""
+    items = []
+    block = re.compile(
+        r'<a\s+href\s*=\s*["\']([^"\']*?/bbs/afaadmission/2089/\d+/artclView\.do)["\'][^>]*'
+        r'class="[^"]*artclLinkView[^"]*"[\s\S]*?<strong>([\s\S]*?)</strong>[\s\S]*?'
+        r'class="_artclregDate"[\s\S]*?<dd>\s*([^<]+?)\s*</dd>',
+        re.I,
+    )
+    for m in block.finditer(html or ""):
+        href, title_html, date_raw = m.group(1), m.group(2), m.group(3)
+        title = strip_tags(title_html)
+        date_iso = extract_date(date_raw)
+        absu = repair_url(urljoin(page_url, href.split("#")[0]))
+        it = make_item(src, title, f"{src['name']} 입학 공지사항 미리보기", absu, date_iso, page_url)
+        if it:
+            items.append(it)
+    uniq = {f"{it['url']}|{it['title']}": it for it in items}
+    return sorted(uniq.values(), key=lambda x: x["dateISO"], reverse=True)[:MAX_PER]
+
+
 def parse_html(html: str, page_url: str, src: dict):
     if not html or is_404(html):
         return []
+    if "rokaf.airforce.mil.kr" in (page_url or "") and (
+        "/7161/" in page_url or "afaadmission" in page_url
+    ):
+        afa = parse_afa_notice_board(html, page_url, src)
+        if afa:
+            return afa
     items = []
     for m in re.finditer(
         r'<a[^>]+href\s*=\s*["\']([^"\']+)["\'][^>]*>([\s\S]*?)</a>([\s\S]{0,120})',

@@ -2,7 +2,7 @@ name: Refresh university notices
 
 on:
   schedule:
-    # 매 3시간 (UTC) — GitHub Pages에 공지 데이터 자동 반영
+    # 매 3시간 (UTC) — GitHub Pages에 공지·채용 데이터 자동 반영
     - cron: "20 */3 * * *"
   workflow_dispatch:
 
@@ -26,19 +26,22 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Scrape notices
+      - name: Scrape university notices
         env:
           USE_JINA: "1"
         run: python scripts/build_univ_notices.py
+
+      - name: Scrape recruit listings
+        run: python scripts/build_recruit.py
 
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add univ-board-data.js data/univ-notices.json univ-sources.json
+          git add univ-board-data.js data/univ-notices.json univ-sources.json recruit-board-data.js data/recruit-notices.json
           if git diff --staged --quiet; then
-            echo "No notice data changes"
+            echo "No notice/recruit data changes"
             exit 0
           fi
-          git commit -m "chore: refresh university notices"
+          git commit -m "chore: refresh university notices and recruit listings"
           git push

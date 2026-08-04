@@ -145,19 +145,29 @@
     }
 
     .nav {
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 40;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 50;
       min-height: 64px;
       padding: 8px clamp(12px, 3vw, 24px);
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
       align-items: center;
       gap: 10px;
-      background: color-mix(in srgb, var(--bg-base) 84%, transparent);
+      background: color-mix(in srgb, var(--bg-base) 92%, transparent);
       border-bottom: 1px solid var(--border-default);
       backdrop-filter: blur(22px);
       -webkit-backdrop-filter: blur(22px);
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.55) inset;
+    }
+
+    .nav-offset {
+      height: var(--nav-offset, 72px);
+      flex-shrink: 0;
+      pointer-events: none;
     }
 
     .nav-brand {
@@ -267,7 +277,8 @@
       height: 15px;
     }
 
-    .nav-item.card-a .ic-aura {
+    .nav-item.card-a .ic-aura,
+    .nav-item.card-a28 .ic-aura {
       position: relative;
       width: 32px;
       height: 32px;
@@ -277,7 +288,9 @@
     }
 
     .nav-item.card-a .ic-aura::before,
-    .nav-item.card-a .ic-aura::after {
+    .nav-item.card-a .ic-aura::after,
+    .nav-item.card-a28 .ic-aura::before,
+    .nav-item.card-a28 .ic-aura::after {
       content: "";
       position: absolute;
       inset: 0;
@@ -296,7 +309,22 @@
       pointer-events: none;
     }
 
-    .nav-item.card-a .ic-aura::before {
+    .nav-item.card-a28 .ic-aura::before,
+    .nav-item.card-a28 .ic-aura::after {
+      background: conic-gradient(
+        from 0deg,
+        #4cc9f0,
+        #4361ee,
+        #7b2cbf,
+        #f72585,
+        #ff9f1c,
+        #2ec4b6,
+        #4cc9f0
+      );
+    }
+
+    .nav-item.card-a .ic-aura::before,
+    .nav-item.card-a28 .ic-aura::before {
       inset: -3px;
       filter: blur(8px);
       opacity: 0.5;
@@ -305,11 +333,13 @@
         rainbowBreath 2.8s ease-in-out infinite;
     }
 
-    .nav-item.card-a .ic-aura::after {
+    .nav-item.card-a .ic-aura::after,
+    .nav-item.card-a28 .ic-aura::after {
       animation: rainbowOrbit 4s linear infinite;
     }
 
-    .nav-item.card-a .ic {
+    .nav-item.card-a .ic,
+    .nav-item.card-a28 .ic {
       position: relative;
       z-index: 1;
       box-shadow:
@@ -317,7 +347,8 @@
         inset 0 1px 0 rgba(255, 255, 255, 0.22);
     }
 
-    .nav-item.card-a:hover .ic-aura::before {
+    .nav-item.card-a:hover .ic-aura::before,
+    .nav-item.card-a28:hover .ic-aura::before {
       opacity: 0.72;
       filter: blur(9px);
     }
@@ -354,6 +385,7 @@
     }
 
     .card-a { --icon-bg: linear-gradient(145deg, #FF8D72 0%, #FA2D48 48%, #5F1235 100%); }
+    .card-a28 { --icon-bg: linear-gradient(145deg, #5AC8FA 0%, #5856D6 48%, #2C1A6B 100%); }
     .card-b { --icon-bg: linear-gradient(135deg, #5D68FF 0%, #B846CE 47%, #FF5577 100%); }
     .card-f { --icon-bg: linear-gradient(145deg, #5AC8FA 0%, #007AFF 48%, #003D7A 100%); }
     .card-g { --icon-bg: linear-gradient(145deg, #FFB340 0%, #FF9500 48%, #C2410C 100%); }
@@ -436,10 +468,6 @@
       position: relative;
       background: var(--bg-base);
       isolation: isolate;
-    }
-
-    .upper-layout .nav {
-      border-bottom: 1px solid var(--border-default);
     }
 
     .upper-stage {
@@ -608,209 +636,39 @@
       gap: clamp(16px, 2.4vw, 24px);
       align-items: stretch;
       padding: clamp(8px, 2vw, 16px) 0;
+      max-width: var(--container);
+      margin: 0 auto;
+      width: 100%;
     }
 
-    .board-panel {
+    .univ-notice-panel,
+    .recruit-panel {
       min-width: 0;
-      display: grid;
-      grid-template-rows: auto 1fr;
-      min-height: 680px;
-      max-height: min(860px, 88vh);
-      border: 4px solid #191919;
-      border-radius: 34px;
-      background: var(--bg-elevated);
-      box-shadow: 0 24px 50px rgba(25, 25, 25, 0.22);
-      overflow: hidden;
-      animation: riseIn 0.65s var(--ease-out) both;
-    }
-
-    .board-bar {
-      min-height: 42px;
-      height: auto;
-      padding: 6px 12px 6px 14px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: color-mix(in srgb, var(--bg-elevated) 92%, var(--color-primary-50));
-      border-bottom: 1px solid var(--border-default);
-    }
-
-    .board-mark {
-      width: 24px;
-      height: 24px;
-      flex: 0 0 24px;
-      border-radius: 7px;
-      display: grid;
-      place-items: center;
-      color: #fff;
-      background: linear-gradient(145deg, #FF8D72 0%, #FA2D48 52%, #7A0820 100%);
-      box-shadow: 0 4px 10px rgba(250, 45, 72, 0.22);
-    }
-
-    .board-mark svg {
-      width: 13px;
-      height: 13px;
-    }
-
-    .board-bar strong {
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      line-height: 1.35;
-      word-break: keep-all;
-      overflow-wrap: break-word;
-    }
-
-    .board-bar .board-title {
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      padding-top: 0;
-    }
-
-    .board-open {
-      margin-left: auto;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 6px 10px;
-      border-radius: var(--radius-full);
-      background: var(--color-primary-500);
-      color: #fff;
-      font-size: 11px;
-      font-weight: 700;
-      line-height: 1.25;
-      letter-spacing: -0.01em;
-      box-shadow: 0 6px 14px rgba(250, 45, 72, 0.2);
-      transition: transform var(--duration-fast) var(--ease-out), background var(--duration-fast) var(--ease-out);
-      white-space: nowrap;
-      flex: 0 0 auto;
-    }
-
-    .board-open:hover,
-    .board-open:focus-visible {
-      transform: translateY(-1px) scale(1.02);
-      background: var(--color-primary-400);
-      outline: none;
-    }
-
-    .board-open:active {
-      transform: scale(0.97);
-    }
-
-    .board-open svg {
-      width: 12px;
-      height: 12px;
-    }
-
-    .board-frame-wrap {
-      position: relative;
-      min-height: 0;
-      overflow: hidden;
-      background: #c6d6e4;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .board-frame {
-      width: 112%;
-      height: 112%;
-      min-width: 112%;
-      border: 0;
-      display: block;
-      background: #c6d6e4;
-      overflow: auto;
-      -webkit-overflow-scrolling: touch;
-      transform: scale(0.89);
-      transform-origin: top left;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(25, 25, 25, 0.25) transparent;
-    }
-
-    .board-frame::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-
-    .board-frame::-webkit-scrollbar-thumb {
-      background: rgba(25, 25, 25, 0.22);
-      border-radius: 999px;
-    }
-
-    .board-frame::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    .board-fallback {
-      position: absolute;
-      inset: 0;
-      display: none;
-      place-items: center;
-      padding: 28px 20px;
-      text-align: center;
-      background: color-mix(in srgb, var(--bg-elevated) 92%, transparent);
-    }
-
-    .board-fallback.show {
-      display: grid;
-    }
-
-    .board-fallback-card {
-      width: min(360px, 100%);
-      padding: 28px 22px;
-      border: 1px solid var(--border-default);
-      border-radius: var(--radius-lg);
-      background: var(--bg-elevated);
-      box-shadow: var(--shadow-md);
-    }
-
-    .board-fallback-card .art {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 16px;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      color: #fff;
-      background: linear-gradient(145deg, #FF8D72 0%, #FA2D48 52%, #7A0820 100%);
-      box-shadow: var(--shadow-art);
-    }
-
-    .board-fallback-card .art svg {
-      width: 30px;
-      height: 30px;
-    }
-
-    .board-fallback-card h3 {
-      margin: 0 0 8px;
-      font-size: 18px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      line-height: 1.35;
-    }
-
-    .board-fallback-card p {
-      margin: 0 0 18px;
-      color: var(--text-tertiary);
-      font-size: 13px;
-      font-weight: 500;
-      line-height: 1.6;
-    }
-
-    .univ-notice-panel {
-      min-width: 0;
+      width: 100%;
       display: grid;
       grid-template-rows: auto auto 1fr;
       min-height: 680px;
       max-height: min(860px, 88vh);
       border: 4px solid #191919;
       border-radius: 34px;
+      overflow: hidden;
+    }
+
+    .univ-notice-panel {
       background:
         linear-gradient(180deg, #eef3fa 0%, #f5f8fc 42%, #ffffff 100%);
       box-shadow:
         0 28px 56px rgba(25, 25, 25, 0.26),
         0 0 0 1px rgba(255, 255, 255, 0.65) inset;
-      overflow: hidden;
+      animation: riseIn 0.65s var(--ease-out) both;
+    }
+
+    .recruit-panel {
+      background:
+        linear-gradient(180deg, #eef6f2 0%, #f4faf7 42%, #ffffff 100%);
+      box-shadow:
+        0 28px 56px rgba(25, 25, 25, 0.26),
+        0 0 0 1px rgba(255, 255, 255, 0.65) inset;
       animation: riseIn 0.65s var(--ease-out) 0.06s both;
     }
 
@@ -934,7 +792,7 @@
 
     .univ-notice-search {
       width: 100%;
-      max-width: 220px;
+      max-width: min(420px, 100%);
       height: 30px;
       padding: 0 12px;
       border: 1px solid rgba(120, 130, 160, 0.18);
@@ -1284,7 +1142,7 @@
     .visit-stats-card {
       width: min(420px, 100%);
       margin-bottom: 28px;
-      padding: 14px 14px 12px;
+      padding: 14px 14px 16px;
       border-radius: 16px;
       border: 1px solid rgba(120, 130, 160, 0.16);
       background:
@@ -1292,6 +1150,7 @@
         radial-gradient(70% 50% at 100% 0%, rgba(214, 228, 255, 0.4), transparent 50%),
         #fff;
       box-shadow: 0 18px 40px rgba(25, 25, 25, 0.18);
+      overflow: visible;
     }
 
     .visit-stats-card-head {
@@ -1356,16 +1215,18 @@
       grid-template-columns: repeat(7, 1fr);
       gap: 6px;
       align-items: end;
-      height: 96px;
-      padding: 8px 2px 0;
+      min-height: 124px;
+      padding: 8px 2px 2px;
+      overflow: visible;
     }
 
     .visit-stats-bar-wrap {
-      display: grid;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
       gap: 4px;
-      justify-items: center;
-      height: 100%;
-      align-content: end;
+      min-height: 116px;
     }
 
     .visit-stats-bar {
@@ -1374,6 +1235,7 @@
       border-radius: 6px 6px 3px 3px;
       background: linear-gradient(180deg, #f2a0b6 0%, #c45b7a 100%);
       min-height: 4px;
+      flex-shrink: 0;
       transition: height 0.35s ease;
     }
 
@@ -1382,17 +1244,23 @@
     }
 
     .visit-stats-bar-label {
+      display: block;
       font-size: 9px;
+      line-height: 1.25;
       font-weight: 650;
       color: #8a8798;
       white-space: nowrap;
+      flex-shrink: 0;
+      padding-bottom: 1px;
     }
 
     .visit-stats-bar-val {
       font-size: 9px;
+      line-height: 1.2;
       font-weight: 700;
       color: #5c5f6e;
       font-variant-numeric: tabular-nums;
+      flex-shrink: 0;
     }
 
     .visit-kicker {
@@ -1554,23 +1422,14 @@
       }
 
       .chat-shell {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
       }
 
-      .board-panel,
-      .univ-notice-panel {
+      .univ-notice-panel,
+      .recruit-panel {
         min-height: 600px;
         max-height: min(780px, 82vh);
         border-radius: 30px;
-      }
-
-      .board-bar {
-        padding: 6px 12px;
-      }
-
-      .board-bar strong {
-        font-size: 13px;
-        line-height: 1.35;
       }
     }
 
@@ -1647,45 +1506,21 @@
         height: 15px;
       }
 
-      .nav-item.card-a .ic-aura {
+      .nav-item.card-a .ic-aura,
+      .nav-item.card-a28 .ic-aura {
         width: 32px;
         height: 32px;
       }
 
-      .nav-item.card-a .ic-aura::before {
+      .nav-item.card-a .ic-aura::before,
+      .nav-item.card-a28 .ic-aura::before {
         inset: -2px;
         filter: blur(4px);
         opacity: 0.38;
       }
 
-      .chat-shell {
-        gap: 18px;
-      }
-
-      .board-panel {
-        border-width: 3px;
-        border-radius: 24px;
-        min-height: min(640px, 78vh);
-        max-height: min(780px, 82vh);
-      }
-
-      .board-bar {
-        padding: 5px 10px;
-        gap: 6px;
-        min-height: 40px;
-      }
-
-      .board-bar strong {
-        font-size: 12px;
-        line-height: 1.35;
-      }
-
-      .board-open {
-        padding: 5px 9px;
-        font-size: 10px;
-      }
-
-      .univ-notice-panel {
+      .univ-notice-panel,
+      .recruit-panel {
         border-width: 3px;
         border-radius: 28px;
         min-height: min(640px, 78vh);
@@ -1743,23 +1578,10 @@
         height: 14px;
       }
 
-      .nav-item.card-a .ic-aura {
+      .nav-item.card-a .ic-aura,
+      .nav-item.card-a28 .ic-aura {
         width: 30px;
         height: 30px;
-      }
-
-      .board-panel {
-        border-radius: 20px;
-        min-height: min(580px, 74vh);
-      }
-
-      .board-bar strong {
-        font-size: 12px;
-        line-height: 1.4;
-      }
-
-      .board-open {
-        padding: 5px 8px;
       }
 
       .expand-shell {
@@ -1835,8 +1657,7 @@
 </head>
 <body>
   <div class="shell">
-    <div class="upper-layout">
-    <nav class="nav" aria-label="주요 메뉴">
+    <nav class="nav" aria-label="주요 메뉴" id="siteNav">
       <a class="nav-brand" href="http://www.김태훈.com" title="홈" aria-label="김태훈닷컴 홈">
         <span class="brand-mark" aria-hidden="true">
           <svg viewBox="0 0 24 24" fill="none">
@@ -1864,8 +1685,21 @@
           </span>
           <em>2027 학년도 대입정보시스템</em>
         </a>
+        <span class="nav-item card-a28 is-placeholder" title="2028 학년도 대입정보시스템" role="img" aria-label="2028 학년도 대입정보시스템">
+          <span class="ic-aura" aria-hidden="true">
+            <span class="ic">
+              <svg viewBox="0 0 48 48" fill="none">
+                <rect x="8" y="7" width="26" height="34" rx="5" fill="rgba(255,255,255,.18)"/>
+                <path d="M14 16h14M14 22h14M14 28h9" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+                <circle cx="33" cy="33" r="9" fill="#fff"/>
+                <path d="M33 28.5v5.2l3.4 2" stroke="#5856D6" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+          </span>
+          <em>2028 학년도 대입정보시스템</em>
+        </span>
         <span class="nav-sep" aria-hidden="true"></span>
-        <a class="nav-item card-h" href="#susi" id="susiNav" title="수시 일정" aria-controls="expandPanel" aria-expanded="false">
+        <a class="nav-item card-h" href="https://script.google.com/macros/s/AKfycbzz9D4B0fHSk_KykVKuUjNtPeEzrtGtGnzytPWqKpSGTilQSRh8sKPnzEHRacmJGb27Qg/exec" target="_blank" rel="noopener noreferrer" title="수시 일정" id="susiNav">
           <span class="ic" aria-hidden="true">
             <svg viewBox="0 0 48 48" fill="none">
               <rect x="10" y="11" width="28" height="26" rx="5" fill="rgba(255,255,255,.2)"/>
@@ -1877,7 +1711,7 @@
           </span>
           <em>수시 일정</em>
         </a>
-        <a class="nav-item card-f" href="#ipgyeol" id="ipgyeolNav" title="2026 입결 검색기" aria-controls="expandPanel" aria-expanded="false">
+        <a class="nav-item card-f" href="https://script.google.com/macros/s/AKfycbwIg3mpzLDxQ8eMlDmH2g-c_QqKpjXlE6K7EpnJ8TRxQjIVLSTfEOnAkW0vW4Y85EEf/exec" target="_blank" rel="noopener noreferrer" title="2026 입결 검색기" id="ipgyeolNav">
           <span class="ic" aria-hidden="true">
             <svg viewBox="0 0 48 48" fill="none">
               <circle cx="21" cy="21" r="10" stroke="#fff" stroke-width="2.6"/>
@@ -1968,7 +1802,9 @@
         </a>
       </div>
     </nav>
+    <div class="nav-offset" id="navOffset" aria-hidden="true"></div>
 
+    <div class="upper-layout">
     <div class="upper-stage" aria-label="상단 레이아웃">
     <section class="expand-panel" id="expandPanel" data-theme="susi" aria-label="확장 보기">
       <div class="expand-shell">
@@ -2002,65 +1838,8 @@
     <hr class="stage-rule" aria-hidden="true" />
 
     <div class="lower-layout">
-    <section class="chat-section" id="chat" aria-label="게시판과 대학별 공지">
+    <section class="chat-section" id="chat" aria-label="공지·채용 게시판">
       <div class="chat-shell">
-        <aside class="board-panel" aria-label="자유 게시판">
-          <div class="board-bar">
-            <span class="board-mark" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none">
-                <rect x="4" y="3.5" width="16" height="17" rx="3.5" stroke="currentColor" stroke-width="1.8"/>
-                <path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-              </svg>
-            </span>
-            <div class="board-title">
-              <strong>자유 게시판</strong>
-            </div>
-            <a
-              class="board-open"
-              href="https://script.google.com/macros/s/AKfycbxPPYJgogbTTlL9Ds7Ahb-Qdj8Ylr4rryF1WGp7pyiLTqZzUE9fFo-SuRF22WDLjaZprA/exec"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              새 창
-              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                <path d="M14 5h5v5M19 5l-9 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M10 6H7a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2v-3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-            </a>
-          </div>
-          <div class="board-frame-wrap">
-            <iframe
-              class="board-frame"
-              id="boardFrame"
-              title="자유 게시판"
-              src="https://script.google.com/macros/s/AKfycbxPPYJgogbTTlL9Ds7Ahb-Qdj8Ylr4rryF1WGp7pyiLTqZzUE9fFo-SuRF22WDLjaZprA/exec"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-            <div class="board-fallback" id="boardFallback">
-              <div class="board-fallback-card">
-                <div class="art" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <rect x="4" y="3.5" width="16" height="17" rx="3.5" stroke="currentColor" stroke-width="1.8"/>
-                    <path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                  </svg>
-                </div>
-                <h3>자유 게시판</h3>
-                <p>미리보기가 제한된 경우 새 창에서 바로 이용할 수 있습니다.</p>
-                <a
-                  class="board-open"
-                  style="margin: 0 auto; width: fit-content;"
-                  href="https://script.google.com/macros/s/AKfycbxPPYJgogbTTlL9Ds7Ahb-Qdj8Ylr4rryF1WGp7pyiLTqZzUE9fFo-SuRF22WDLjaZprA/exec"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  게시판 열기
-                </a>
-              </div>
-            </div>
-          </div>
-        </aside>
-
         <aside class="univ-notice-panel" aria-label="대학별 공지 안내 게시판">
           <div class="univ-notice-bar">
             <span class="univ-notice-mark" aria-hidden="true">
@@ -2089,6 +1868,38 @@
           </div>
           <div class="univ-notice-list" id="univNoticeList" aria-live="polite">
             <div class="univ-notice-empty">전체 공지를 불러오는 중입니다…</div>
+          </div>
+        </aside>
+
+        <aside class="recruit-panel" aria-label="석박 채용 정보 게시판">
+          <div class="univ-notice-bar">
+            <span class="univ-notice-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M8 7h8M7 11h10M9 15h6" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+                <rect x="5" y="4.5" width="14" height="15" rx="2.2" stroke="currentColor" stroke-width="1.7"/>
+              </svg>
+            </span>
+            <strong>석박 채용 정보 게시판</strong>
+            <div class="univ-notice-actions">
+              <span class="univ-notice-live" id="recruitLive"><i></i><span id="recruitLiveLabel">안내</span></span>
+            </div>
+          </div>
+          <div class="univ-notice-meta">
+            <label class="univ-notice-search-wrap">
+              <span class="visually-hidden">채용 검색</span>
+              <input
+                type="search"
+                id="recruitSearch"
+                class="univ-notice-search"
+                placeholder="대학·제목·내용 검색…"
+                autocomplete="off"
+                spellcheck="false"
+              />
+            </label>
+            <span id="recruitCount">채용 0건</span>
+          </div>
+          <div class="univ-notice-list" id="recruitList" aria-live="polite">
+            <div class="univ-notice-empty">채용 정보를 불러오는 중입니다…</div>
           </div>
         </aside>
       </div>
@@ -2155,6 +1966,7 @@
   <div class="toast" id="toast" role="status"></div>
 
   <script src="univ-board-data.js"></script>
+  <script src="recruit-board-data.js"></script>
   <script>
     (() => {
       "use strict";
@@ -2175,19 +1987,11 @@
       };
 
       const toast = document.getElementById("toast");
-      const boardFrame = document.getElementById("boardFrame");
-      const boardFallback = document.getElementById("boardFallback");
       const univListEl = document.getElementById("univNoticeList");
       const univCountEl = document.getElementById("univNoticeCount");
       const univLive = document.getElementById("univNoticeLive");
       const univLiveLabel = document.getElementById("univNoticeLiveLabel");
       const univSearch = document.getElementById("univNoticeSearch");
-
-      if (boardFrame && boardFallback) {
-        boardFrame.addEventListener("error", () => {
-          boardFallback.classList.add("show");
-        });
-      }
 
       const UNIV_MIN_DATE = "2026-08-01";
       const UNIV_DATA_URL = "data/univ-notices.json";
@@ -2316,11 +2120,22 @@
       }
 
       function extractDateISO(text) {
-        const m = String(text || "").match(/(20\d{2})\s*[.\-/년]\s*(\d{1,2})\s*[.\-/월]\s*(\d{1,2})/);
-        if (!m) return "";
-        const iso = `${m[1]}-${String(m[2]).padStart(2, "0")}-${String(m[3]).padStart(2, "0")}`;
-        if (iso < "2020-01-01" || iso > "2035-12-31") return "";
-        return iso;
+        const matches = String(text || "").matchAll(/(20\d{2})\s*[.\-/년]\s*(\d{1,2})\s*[.\-/월]\s*(\d{1,2})/g);
+        let last = "";
+        for (const m of matches) {
+          const iso = `${m[1]}-${String(m[2]).padStart(2, "0")}-${String(m[3]).padStart(2, "0")}`;
+          if (iso >= "2020-01-01" && iso <= "2035-12-31") last = iso;
+        }
+        return last;
+      }
+
+      /** 제목 속 [2026.8.11, 화] 같은 행사·일정일 제거 후 작성일 추정 */
+      function extractPostDateFromTitle(text) {
+        const cleaned = String(text || "").replace(
+          /\[\s*20\d{2}\s*[.\-/년]\s*\d{1,2}\s*[.\-/월]\s*\d{1,2}[^\]]*\]/g,
+          " "
+        );
+        return extractDateISO(cleaned);
       }
 
       function isWeakNoticeUrl(url) {
@@ -2330,7 +2145,10 @@
         if (/\/admission\/html\/notice\/notice\.asp$/i.test(u) || /error404|404\.html/i.test(u)) return true;
         // 숙명여대: /counsel/ 루트 경로는 500 — 약한/깨진 URL
         if (/admission\.sookmyung\.ac\.kr\/counsel\//i.test(u)) return true;
-        const hasId = /[?&](id|no|seq|idx|bbsidx|ntt|article|artcl|brdIdx|dataSid|uid|num|p_board_idx)=/i.test(u);
+        // 공군사관학교: Q&A 게시판(1041) 제외 — 공지사항(2089)만
+        if (/rokaf\.airforce\.mil\.kr/i.test(u) && /\/bbs\/afaadmission\/1041\//i.test(u)) return true;
+        const hasId = /[?&](id|no|seq|idx|bbsidx|ntt|article|artcl|brdIdx|dataSid|uid|num|p_board_idx)=/i.test(u)
+          || /\/bbs\/afaadmission\/2089\/\d+\/artclView\.do/i.test(u);
         if (hasId) return false;
         if (/\/(main|index|intro)(\.(asp|do|php|html?))?\/?$/i.test(u)) return true;
         return false;
@@ -2348,9 +2166,15 @@
 
       function normalizeNotice(it) {
         const rawTitle = String(it.title || "").replace(/\s+/g, " ").trim();
-        // 제목에 날짜가 있으면 그 날짜가 진짜 게시일 (잘못된 8/4 오염 방지)
-        const titleDate = extractDateISO(rawTitle);
-        let dateISO = titleDate || String(it.dateISO || "").slice(0, 10);
+        // 목록 작성일(dateISO) 우선. 제목의 [8.11] 행사일을 게시일로 쓰지 않음
+        const stored = String(it.dateISO || "").slice(0, 10);
+        const titlePostDate = extractPostDateFromTitle(rawTitle);
+        let dateISO = "";
+        if (stored && stored >= UNIV_MIN_DATE) dateISO = stored;
+        else if (titlePostDate && titlePostDate >= UNIV_MIN_DATE) dateISO = titlePostDate;
+        const today = seoulTodayISO();
+        // 오늘 이후 날짜는 게시일이 아닌 일정일로 보고 제외 (예: 감리교신대 8/11)
+        if (dateISO && dateISO > today) return null;
         const title = cleanTitle(rawTitle);
         let preview = String(it.preview || "").replace(/\s+/g, " ").trim();
         const univName = String(it.univName || "").replace(/\s+/g, " ").trim();
@@ -2359,7 +2183,7 @@
         if (title.length < 6 || isJunkText(title)) return null;
         if ((title.match(/[가-힣]/g) || []).length < 3) return null;
         if (!dateISO || dateISO < UNIV_MIN_DATE) return null;
-        if (/채용\s*공고|직원\s*채용|근로장학생|학자금대출|문의\s*\(\d|공지사항\s*더보기|^대학\s*입학\s*문의|화살표|부탁드립니다|문의드립니다|\[답변완료\]/i.test(title)) return null;
+        if (/채용\s*공고|직원\s*채용|근로장학생|학자금대출|문의\s*\(\d|공지사항\s*더보기|^대학\s*입학\s*문의|화살표|부탁드립니다|문의드립니다|\[답변완료\]|졸업\s*\(?예정\)?자\s*안내/i.test(title)) return null;
         if (/화살표|이전페이지|다음페이지/.test(preview)) {
           preview = `${univName} 입학 공지사항 미리보기`;
         }
@@ -2371,6 +2195,9 @@
         if (!rawUrl || isWeakNoticeUrl(rawUrl)) return null;
         // 숙명여대 수시 모집요강(54119)은 2026.05.29 게시 — 8/1 이후 목록에서 제외
         if (/sookmyung\.ac\.kr/i.test(rawUrl) && /p_board_idx=54119/i.test(rawUrl)) return null;
+        // 공군사관학교: 공지사항 게시글만 (Q&A·문의 제외)
+        if (/rokaf\.airforce\.mil\.kr/i.test(rawUrl) && !/\/bbs\/afaadmission\/2089\//i.test(rawUrl)) return null;
+        if (/공군사관/.test(univName) && /문의|질문|답변|Q\s*&\s*A/i.test(title)) return null;
         return {
           univId,
           univName,
@@ -2557,6 +2384,176 @@
         });
       }
 
+      /* —— 석박 채용 정보 게시판 (진학프로) —— */
+      const recruitListEl = document.getElementById("recruitList");
+      const recruitCountEl = document.getElementById("recruitCount");
+      const recruitLive = document.getElementById("recruitLive");
+      const recruitLiveLabel = document.getElementById("recruitLiveLabel");
+      const recruitSearch = document.getElementById("recruitSearch");
+      const RECRUIT_DATA_URL = "data/recruit-notices.json";
+      const RECRUIT_POLL_MS = 180000;
+      let recruitBoardData = window.RECRUIT_BOARD_DATA || {};
+      let recruitPool = Array.isArray(recruitBoardData.notices) ? recruitBoardData.notices.slice() : [];
+      let recruitUpdatedAt = String(recruitBoardData.updatedAt || "");
+      let recruitQuery = "";
+      let recruitPollBusy = false;
+
+      function setRecruitLive(online, label) {
+        if (!recruitLive || !recruitLiveLabel) return;
+        recruitLive.classList.toggle("is-offline", !online);
+        recruitLiveLabel.textContent = label;
+      }
+
+      function normalizeRecruit(it) {
+        const univName = String(it.univName || it.univFull || "").replace(/\s+/g, " ").trim();
+        const title = String(it.title || "").replace(/\s+/g, " ").trim();
+        let preview = String(it.preview || "").replace(/\s+/g, " ").trim();
+        const dateISO = String(it.dateISO || "").slice(0, 10);
+        const url = String(it.url || "").trim();
+        if (!univName || !title || title.length < 4) return null;
+        if (!/^https?:\/\/www\.jinhakpro\.com\/recruit\/\d+/i.test(url)) return null;
+        if (!dateISO || dateISO < "2020-01-01") return null;
+        if (!preview) preview = `${univName} 석·박사 채용 정보`;
+        return {
+          univName,
+          title,
+          preview: preview.slice(0, 140),
+          dateISO,
+          href: url,
+          deadlineISO: String(it.deadlineISO || "").slice(0, 10),
+        };
+      }
+
+      function applyRecruitPayload(payload) {
+        if (!payload || typeof payload !== "object") return false;
+        recruitBoardData = payload;
+        window.RECRUIT_BOARD_DATA = payload;
+        recruitPool = Array.isArray(payload.notices) ? payload.notices.slice() : [];
+        recruitUpdatedAt = String(payload.updatedAt || recruitUpdatedAt || "");
+        return true;
+      }
+
+      function buildRecruitRows() {
+        // 진학프로 목록 순서 유지(최신 등록이 위). 날짜만 표시용.
+        return recruitPool.map(normalizeRecruit).filter(Boolean);
+      }
+
+      function filteredRecruitRows(query) {
+        const q = String(query || "").trim().toLowerCase().replace(/\s+/g, "");
+        const rows = buildRecruitRows();
+        if (!q) return rows;
+        return rows.filter((r) => {
+          const hay = `${r.title}${r.preview}${r.univName}`.toLowerCase().replace(/\s+/g, "");
+          return hay.includes(q);
+        });
+      }
+
+      function renderRecruitBoard(query) {
+        if (!recruitListEl) return;
+        recruitQuery = query || "";
+        const list = filteredRecruitRows(recruitQuery);
+        const today = seoulTodayISO();
+        if (recruitCountEl) {
+          recruitCountEl.textContent = recruitQuery
+            ? `검색 ${list.length.toLocaleString("ko-KR")}건`
+            : `채용 ${list.length.toLocaleString("ko-KR")}건`;
+        }
+        setRecruitLive(true, formatUpdatedLabel(recruitUpdatedAt));
+
+        if (!list.length) {
+          recruitListEl.innerHTML =
+            `<div class="univ-notice-empty">등록된 석·박사 채용 정보가 없습니다.<br>진학프로 채용 목록을 주기적으로 갱신합니다.</div>`;
+          return;
+        }
+
+        let lastDate = null;
+        recruitListEl.innerHTML = list.map((r) => {
+          const title = escapeHtml(r.title);
+          const preview = escapeHtml(r.preview);
+          const univPlain = escapeHtml(r.univName);
+          const univHtml = formatUnivLabel(r.univName);
+          const href = escapeHtml(r.href);
+          const isToday = r.dateISO && r.dateISO === today;
+          const shortDate = escapeHtml(r.dateISO.slice(5).replace("-", "."));
+          const dayStart = r.dateISO !== lastDate;
+          lastDate = r.dateISO;
+          const cls = [
+            "univ-notice-item",
+            isToday ? "is-today" : "",
+            dayStart ? "is-day-start" : "",
+          ].filter(Boolean).join(" ");
+          return (
+            `<div class="${cls}" data-href="${href}" role="link" tabindex="0" title="${univPlain} — ${title}">` +
+            `<div class="univ-notice-item-body">` +
+            `<div class="univ-notice-head">` +
+            `<span class="univ-notice-univ">${univHtml}</span>` +
+            (isToday ? `<span class="univ-notice-new">오늘</span>` : "") +
+            `<span class="univ-notice-title">${title}</span>` +
+            `<span class="univ-notice-date">${shortDate}</span>` +
+            `</div>` +
+            `<span class="univ-notice-preview">${preview}</span>` +
+            `</div>` +
+            `</div>`
+          );
+        }).join("");
+      }
+
+      async function refreshRecruitFromGithub() {
+        if (recruitPollBusy) return;
+        recruitPollBusy = true;
+        try {
+          const res = await fetch(`${RECRUIT_DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
+          if (!res.ok) throw new Error(`http_${res.status}`);
+          const payload = await res.json();
+          applyRecruitPayload(payload);
+          renderRecruitBoard(recruitQuery);
+          setRecruitLive(true, formatUpdatedLabel(recruitUpdatedAt));
+        } catch {
+          if (!recruitPool.length) setRecruitLive(false, "오류");
+          else setRecruitLive(true, formatUpdatedLabel(recruitUpdatedAt));
+        } finally {
+          recruitPollBusy = false;
+        }
+      }
+
+      if (recruitListEl) {
+        recruitListEl.addEventListener("click", (e) => {
+          const row = e.target.closest(".univ-notice-item[data-href]");
+          if (!row) return;
+          openNoticeUrl(row.getAttribute("data-href"));
+        });
+        recruitListEl.addEventListener("keydown", (e) => {
+          if (e.key !== "Enter" && e.key !== " ") return;
+          const row = e.target.closest(".univ-notice-item[data-href]");
+          if (!row) return;
+          e.preventDefault();
+          openNoticeUrl(row.getAttribute("data-href"));
+        });
+      }
+
+      if (recruitSearch) {
+        recruitSearch.addEventListener("input", () => {
+          renderRecruitBoard(recruitSearch.value);
+        });
+      }
+
+      function bootRecruitBoard() {
+        if (!recruitListEl) return;
+        if (!recruitPool.length) {
+          setRecruitLive(false, "오류");
+          renderRecruitBoard("");
+          refreshRecruitFromGithub();
+          return;
+        }
+        setRecruitLive(true, formatUpdatedLabel(recruitUpdatedAt));
+        renderRecruitBoard(recruitSearch ? recruitSearch.value : "");
+        setTimeout(() => refreshRecruitFromGithub(), 500);
+        setInterval(() => refreshRecruitFromGithub(), RECRUIT_POLL_MS);
+        document.addEventListener("visibilitychange", () => {
+          if (document.visibilityState === "visible") refreshRecruitFromGithub();
+        });
+      }
+
       const expandPanel = document.getElementById("expandPanel");
       const expandFrame = document.getElementById("expandFrame");
       const expandTitle = document.getElementById("expandTitle");
@@ -2615,14 +2612,6 @@
         });
       }
 
-      Object.entries(expandNavMap).forEach(([key, nav]) => {
-        if (!nav) return;
-        nav.addEventListener("click", (e) => {
-          e.preventDefault();
-          openExpand(key);
-        });
-      });
-
       if (expandClose) expandClose.addEventListener("click", closeExpand);
 
       const brandHome = document.querySelector(".nav-brand");
@@ -2641,9 +2630,6 @@
           window.scrollTo({ top: 0, behavior: "smooth" });
         });
       }
-
-      if (location.hash === "#susi") openExpand("susi");
-      if (location.hash === "#ipgyeol") openExpand("ipgyeol");
 
       /* ── 방문자 카운터 + 통계 ── */
       const VISIT_STORE_KEY = "kimtaehoon_visit_v3";
@@ -2853,7 +2839,21 @@
         if (e.key === "Escape") closeVisitStats();
       });
 
+      function syncNavOffset() {
+        const nav = document.getElementById("siteNav");
+        if (!nav) return;
+        const h = Math.ceil(nav.getBoundingClientRect().height);
+        document.documentElement.style.setProperty("--nav-offset", `${h}px`);
+      }
+      syncNavOffset();
+      window.addEventListener("resize", syncNavOffset);
+      if (typeof ResizeObserver !== "undefined") {
+        const nav = document.getElementById("siteNav");
+        if (nav) new ResizeObserver(syncNavOffset).observe(nav);
+      }
+
       bootUnivNotices();
+      bootRecruitBoard();
       bootVisits();
     })();
   </script>
