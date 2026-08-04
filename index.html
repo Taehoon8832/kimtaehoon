@@ -1182,6 +1182,40 @@
       line-height: 1;
     }
 
+    .visit-stats-tabs {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 10px;
+      padding: 3px;
+      border-radius: 10px;
+      background: rgba(120, 130, 160, 0.08);
+    }
+
+    .visit-stats-tab {
+      flex: 1;
+      border: 0;
+      border-radius: 8px;
+      padding: 6px 8px;
+      background: transparent;
+      color: #8a8798;
+      font-size: 11px;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      cursor: pointer;
+      line-height: 1.2;
+    }
+
+    .visit-stats-tab:hover {
+      color: #5c5f6e;
+      background: rgba(255, 255, 255, 0.55);
+    }
+
+    .visit-stats-tab.is-active {
+      background: #fff;
+      color: #2a2d3a;
+      box-shadow: 0 1px 3px rgba(25, 25, 25, 0.08);
+    }
+
     .visit-stats-summary {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1214,7 +1248,7 @@
 
     .visit-stats-chart {
       display: grid;
-      grid-template-columns: repeat(7, 1fr);
+      grid-template-columns: repeat(var(--visit-cols, 7), 1fr);
       gap: 6px;
       align-items: end;
       min-height: 124px;
@@ -1801,6 +1835,7 @@
           </span>
           <em>다온 대입전략연구회</em>
         </a>
+        <span class="nav-sep" aria-hidden="true"></span>
         <a class="nav-item card-j" href="https://jinhak.sen.go.kr/index.do" target="_blank" rel="noopener noreferrer" title="서울진로진학상담센터">
           <span class="ic" aria-hidden="true">
             <svg viewBox="0 0 48 48" fill="none">
@@ -1811,6 +1846,7 @@
           </span>
           <em>서울진로진학상담센터</em>
         </a>
+        <span class="nav-sep" aria-hidden="true"></span>
         <span class="nav-item card-k is-placeholder" title="외부활동(강의, 컨설팅)" role="img" aria-label="외부활동(강의, 컨설팅)">
           <span class="ic" aria-hidden="true">
             <svg viewBox="0 0 48 48" fill="none">
@@ -1979,7 +2015,7 @@
             </span>
           </div>
         </div>
-        <p class="footer-note">김태훈 닷컴은 진로ㆍ진학ㆍ입시 등을 연구하는 개인 공간입니다.</p>
+        <p class="footer-note">김태훈 닷컴은 진로 - 진학 - 입시 - 교육 정책 등을 연구-정리하는 개인 공간입니다.</p>
         <div class="footer-brand">
           <span class="footer-mark" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
@@ -2002,11 +2038,16 @@
         <strong id="visitStatsTitle">방문자 통계</strong>
         <button type="button" class="visit-stats-close" id="visitStatsClose" aria-label="닫기">×</button>
       </div>
+      <div class="visit-stats-tabs" role="tablist" aria-label="통계 기간">
+        <button type="button" class="visit-stats-tab is-active" role="tab" aria-selected="true" data-visit-range="day">일간</button>
+        <button type="button" class="visit-stats-tab" role="tab" aria-selected="false" data-visit-range="week">주간</button>
+        <button type="button" class="visit-stats-tab" role="tab" aria-selected="false" data-visit-range="month">월간</button>
+      </div>
       <div class="visit-stats-summary">
-        <div class="visit-stats-pill"><span>오늘</span><b id="visitStatsToday">0</b></div>
+        <div class="visit-stats-pill"><span id="visitStatsPeriodLabel">오늘</span><b id="visitStatsToday">0</b></div>
         <div class="visit-stats-pill"><span>누적</span><b id="visitStatsTotal">0</b></div>
       </div>
-      <div class="visit-stats-chart" id="visitStatsChart" aria-label="최근 7일 방문자"></div>
+      <div class="visit-stats-chart" id="visitStatsChart" aria-label="방문자 추이"></div>
     </div>
   </div>
 
@@ -2724,7 +2765,12 @@
       const visitStatsChart = document.getElementById("visitStatsChart");
       const visitStatsTodayEl = document.getElementById("visitStatsToday");
       const visitStatsTotalEl = document.getElementById("visitStatsTotal");
+      const visitStatsPeriodLabel = document.getElementById("visitStatsPeriodLabel");
+      const visitStatsTabs = visitStatsModal
+        ? Array.from(visitStatsModal.querySelectorAll(".visit-stats-tab[data-visit-range]"))
+        : [];
       let visitState = { today: 0, total: 0, date: "", hit: false, days: {} };
+      let visitRange = "day";
 
       function seoulDateKey(d = new Date()) {
         const parts = new Intl.DateTimeFormat("en-CA", {
@@ -2820,45 +2866,158 @@
       function applyVisitDisplay(todayN, totalN) {
         animateVisitNum(visitTodayEl, todayN);
         animateVisitNum(visitTotalEl, totalN);
-        if (visitStatsTodayEl) visitStatsTodayEl.textContent = formatVisit(todayN);
         if (visitStatsTotalEl) visitStatsTotalEl.textContent = formatVisit(totalN);
+        updateVisitStatsPeriod();
       }
 
-      function last7Days(today) {
+      function dayCount(key) {
+        return Math.max(0, Number(visitState.days[key]) || 0);
+      }
+
+      function sumDays(keys) {
+        return keys.reduce((acc, k) => acc + dayCount(k), 0);
+      }
+
+      function lastNDays(today, n) {
         const out = [];
         const base = new Date(today + "T12:00:00+09:00");
-        for (let i = 6; i >= 0; i--) {
-          const d = new Date(base.getTime() - i * 86400000);
-          out.push(seoulDateKey(d));
+        for (let i = n - 1; i >= 0; i--) {
+          out.push(seoulDateKey(new Date(base.getTime() - i * 86400000)));
         }
         return out;
+      }
+
+      /** 월요일 시작 주 키 YYYY-Www */
+      function weekStartKey(dateISO) {
+        const d = new Date(dateISO + "T12:00:00+09:00");
+        const day = d.getDay(); // 0 Sun
+        const diff = day === 0 ? -6 : 1 - day;
+        d.setDate(d.getDate() + diff);
+        return seoulDateKey(d);
+      }
+
+      function weekLabel(startISO) {
+        const d = new Date(startISO + "T12:00:00+09:00");
+        const end = new Date(d.getTime() + 6 * 86400000);
+        const a = `${String(d.getMonth() + 1).padStart(2, "0")}.${String(d.getDate()).padStart(2, "0")}`;
+        const b = `${String(end.getMonth() + 1).padStart(2, "0")}.${String(end.getDate()).padStart(2, "0")}`;
+        return `${a}~`;
+      }
+
+      function monthKey(dateISO) {
+        return String(dateISO || "").slice(0, 7);
+      }
+
+      function monthLabel(ym) {
+        const [, m] = String(ym).split("-");
+        return `${Number(m)}월`;
+      }
+
+      function buildVisitSeries(range, today) {
+        if (range === "week") {
+          const weeks = [];
+          let cursor = weekStartKey(today);
+          for (let i = 0; i < 8; i++) {
+            const start = new Date(cursor + "T12:00:00+09:00");
+            start.setDate(start.getDate() - i * 7);
+            const startISO = seoulDateKey(start);
+            const keys = [];
+            for (let d = 0; d < 7; d++) {
+              keys.push(seoulDateKey(new Date(start.getTime() + d * 86400000)));
+            }
+            weeks.unshift({
+              key: startISO,
+              label: weekLabel(startISO),
+              value: sumDays(keys),
+              active: startISO === weekStartKey(today),
+              title: `${weekLabel(startISO).replace("~", "")} 주: ${sumDays(keys)}`,
+            });
+          }
+          return weeks;
+        }
+        if (range === "month") {
+          const months = [];
+          const base = new Date(today + "T12:00:00+09:00");
+          for (let i = 5; i >= 0; i--) {
+            const d = new Date(base.getFullYear(), base.getMonth() - i, 1, 12);
+            const ym = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}`;
+            const keys = Object.keys(visitState.days || {}).filter((k) => monthKey(k) === ym);
+            const value = sumDays(keys);
+            months.push({
+              key: ym,
+              label: monthLabel(ym),
+              value,
+              active: ym === monthKey(today),
+              title: `${ym}: ${value}`,
+            });
+          }
+          return months;
+        }
+        // day
+        return lastNDays(today, 7).map((d) => ({
+          key: d,
+          label: d.slice(5).replace("-", "."),
+          value: dayCount(d),
+          active: d === today,
+          title: `${d.slice(5).replace("-", ".")}: ${dayCount(d)}`,
+        }));
+      }
+
+      function updateVisitStatsPeriod() {
+        const today = seoulDateKey();
+        let periodN = visitState.today;
+        let label = "오늘";
+        if (visitRange === "week") {
+          const start = weekStartKey(today);
+          const keys = [];
+          const base = new Date(start + "T12:00:00+09:00");
+          for (let d = 0; d < 7; d++) {
+            keys.push(seoulDateKey(new Date(base.getTime() + d * 86400000)));
+          }
+          periodN = sumDays(keys);
+          label = "이번 주";
+        } else if (visitRange === "month") {
+          const ym = monthKey(today);
+          periodN = sumDays(Object.keys(visitState.days || {}).filter((k) => monthKey(k) === ym));
+          label = "이번 달";
+        }
+        if (visitStatsPeriodLabel) visitStatsPeriodLabel.textContent = label;
+        if (visitStatsTodayEl) visitStatsTodayEl.textContent = formatVisit(periodN);
       }
 
       function renderVisitChart() {
         if (!visitStatsChart) return;
         const today = seoulDateKey();
-        const days = last7Days(today);
-        const vals = days.map((d) => Math.max(0, Number(visitState.days[d]) || 0));
-        const max = Math.max(1, ...vals);
-        visitStatsChart.innerHTML = days.map((d, i) => {
-          const v = vals[i];
-          const h = Math.max(4, Math.round((v / max) * 72));
-          const label = d.slice(5).replace("-", ".");
-          const isToday = d === today;
+        const series = buildVisitSeries(visitRange, today);
+        visitStatsChart.style.setProperty("--visit-cols", String(Math.max(1, series.length)));
+        const max = Math.max(1, ...series.map((s) => s.value));
+        visitStatsChart.innerHTML = series.map((s) => {
+          const h = Math.max(4, Math.round((s.value / max) * 72));
           return (
-            `<div class="visit-stats-bar-wrap" title="${label}: ${v}">` +
-            `<span class="visit-stats-bar-val">${v}</span>` +
-            `<div class="visit-stats-bar${isToday ? " is-today" : ""}" style="height:${h}px"></div>` +
-            `<span class="visit-stats-bar-label">${label}</span>` +
+            `<div class="visit-stats-bar-wrap" title="${escapeHtml(s.title)}">` +
+            `<span class="visit-stats-bar-val">${s.value}</span>` +
+            `<div class="visit-stats-bar${s.active ? " is-today" : ""}" style="height:${h}px"></div>` +
+            `<span class="visit-stats-bar-label">${escapeHtml(s.label)}</span>` +
             `</div>`
           );
         }).join("");
+        updateVisitStatsPeriod();
+      }
+
+      function setVisitRange(range) {
+        visitRange = range === "week" || range === "month" ? range : "day";
+        visitStatsTabs.forEach((tab) => {
+          const on = tab.getAttribute("data-visit-range") === visitRange;
+          tab.classList.toggle("is-active", on);
+          tab.setAttribute("aria-selected", on ? "true" : "false");
+        });
+        renderVisitChart();
       }
 
       function openVisitStats() {
         if (!visitStatsModal) return;
-        renderVisitChart();
-        applyVisitDisplay(visitState.today, visitState.total);
+        setVisitRange(visitRange);
+        if (visitStatsTotalEl) visitStatsTotalEl.textContent = formatVisit(visitState.total);
         visitStatsModal.hidden = false;
         visitStatsModal.classList.add("is-open");
       }
@@ -2916,6 +3075,11 @@
           if (e.target === visitStatsModal) closeVisitStats();
         });
       }
+      visitStatsTabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          setVisitRange(tab.getAttribute("data-visit-range") || "day");
+        });
+      });
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeVisitStats();
       });
