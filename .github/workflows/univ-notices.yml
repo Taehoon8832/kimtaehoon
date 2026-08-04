@@ -34,14 +34,17 @@ jobs:
       - name: Scrape recruit listings
         run: python scripts/build_recruit.py
 
+      - name: Scrape JobKorea popular jobs
+        run: python scripts/build_jobkorea.py
+
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add univ-board-data.js data/univ-notices.json univ-sources.json recruit-board-data.js data/recruit-notices.json
+          git add univ-board-data.js data/univ-notices.json univ-sources.json recruit-board-data.js data/recruit-notices.json jobkorea-board-data.js data/jobkorea-notices.json
           if git diff --staged --quiet; then
-            echo "No notice/recruit data changes"
+            echo "No notice/recruit/jobkorea data changes"
             exit 0
           fi
-          git commit -m "chore: refresh university notices and recruit listings"
+          git commit -m "chore: refresh university notices, recruit, and JobKorea listings"
           git push
