@@ -965,6 +965,7 @@
     }
 
     .univ-notice-preview {
+      padding-left: calc(7.4rem + 10px);
       color: #7a7788;
       font-size: 11px;
       font-weight: 500;
@@ -976,8 +977,8 @@
 
     .univ-notice-head {
       display: flex;
-      align-items: center;
-      gap: 6px;
+      align-items: baseline;
+      gap: 8px;
       min-width: 0;
     }
 
@@ -997,15 +998,6 @@
       margin-top: 0;
       padding-top: 5px;
     }
-
-    .univ-notice-univ.tone-0 { background: #efe6f8; border-color: #d4c2eb; color: #5a3480; }
-    .univ-notice-univ.tone-1 { background: #e6eef8; border-color: #c2d2eb; color: #2f5080; }
-    .univ-notice-univ.tone-2 { background: #f8e6ee; border-color: #ebc2d4; color: #803450; }
-    .univ-notice-univ.tone-3 { background: #e6f5ee; border-color: #bfe5d0; color: #2d6b4e; }
-    .univ-notice-univ.tone-4 { background: #f7eee6; border-color: #e8d0bc; color: #7a4a2c; }
-    .univ-notice-univ.tone-5 { background: #e8e6f6; border-color: #c8c4e8; color: #3c3880; }
-    .univ-notice-univ.tone-6 { background: #f6e8f0; border-color: #e4c4d6; color: #7a3558; }
-    .univ-notice-univ.tone-7 { background: #e8f2f6; border-color: #c4dce6; color: #2f5f70; }
 
     .visually-hidden {
       position: absolute;
@@ -1095,26 +1087,50 @@
     }
 
     .univ-notice-univ {
-      flex: 0 0 auto;
-      display: inline-flex;
-      align-items: center;
-      max-width: 8.4rem;
-      min-width: 4.2rem;
+      flex: 0 0 7.4rem;
+      width: 7.4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
       justify-content: center;
-      padding: 2px 9px;
-      border-radius: 8px;
-      border: 1px solid #ddd0ef;
-      background: #f3eef8;
-      color: #5b3d8a;
-      font-size: 11.5px;
+      gap: 1px;
+      padding: 0 10px 0 0;
+      margin: 0;
+      border: 0;
+      border-right: 1px solid rgba(42, 45, 58, 0.12);
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      color: #1a1d28;
+      text-decoration: none;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .univ-notice-univ-main {
+      display: block;
+      width: 100%;
+      font-size: 12.5px;
       font-weight: 800;
-      line-height: 1.35;
-      letter-spacing: -0.04em;
+      letter-spacing: -0.045em;
+      line-height: 1.2;
+      color: #1a1d28;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      text-decoration: none;
-      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset;
+    }
+
+    .univ-notice-univ-campus {
+      display: block;
+      width: 100%;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      color: #8a8798;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .univ-notice-date {
@@ -1679,6 +1695,19 @@
         padding: 4px 8px;
       }
 
+      .univ-notice-univ {
+        flex-basis: 6.2rem;
+        width: 6.2rem;
+      }
+
+      .univ-notice-univ-main {
+        font-size: 12px;
+      }
+
+      .univ-notice-preview {
+        padding-left: calc(6.2rem + 8px);
+      }
+
       .univ-notice-title {
         font-size: 11px;
       }
@@ -2159,15 +2188,16 @@
         });
       }
 
-      const univBoardData = window.UNIV_BOARD_DATA || {};
-      const univSources = Array.isArray(univBoardData.sources) ? univBoardData.sources : [];
-      const univPriority = Array.isArray(univBoardData.priority) ? univBoardData.priority : [];
       const UNIV_MIN_DATE = "2026-08-01";
-      const UNIV_LIVE_MS = 50000;
+      const UNIV_DATA_URL = "data/univ-notices.json";
+      const UNIV_POLL_MS = 180000;
+      let univBoardData = window.UNIV_BOARD_DATA || {};
+      let univSources = Array.isArray(univBoardData.sources) ? univBoardData.sources : [];
+      let univPriority = Array.isArray(univBoardData.priority) ? univBoardData.priority : [];
       let univNoticePool = Array.isArray(univBoardData.notices) ? univBoardData.notices.slice() : [];
+      let univUpdatedAt = String(univBoardData.updatedAt || "");
       let univQuery = "";
-      let univLiveBusy = false;
-      let univLiveCursor = 0;
+      let univPollBusy = false;
 
       const PRIORITY_ORDER = [
         "서울대", "연세대", "고려대", "서강대", "성균관대", "한양대", "중앙대", "경희대",
@@ -2196,6 +2226,22 @@
         if (!univLive || !univLiveLabel) return;
         univLive.classList.toggle("is-offline", !online);
         univLiveLabel.textContent = label;
+      }
+
+      function formatUpdatedLabel(iso) {
+        if (!iso) return "GitHub";
+        const d = new Date(iso);
+        if (Number.isNaN(d.getTime())) return "GitHub";
+        const parts = new Intl.DateTimeFormat("ko-KR", {
+          timeZone: "Asia/Seoul",
+          month: "numeric",
+          day: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: false,
+        }).formatToParts(d);
+        const get = (t) => parts.find((p) => p.type === t)?.value || "";
+        return `${get("month")}/${get("day")} ${get("hour")}:${get("minute")}`;
       }
 
       function seoulTodayISO() {
@@ -2233,11 +2279,16 @@
         return univPriority.find((p) => p.univId === univId) || null;
       }
 
-      function univToneClass(name) {
-        const s = String(name || "");
-        let h = 0;
-        for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
-        return `tone-${h % 8}`;
+      function formatUnivLabel(name) {
+        const raw = String(name || "").trim();
+        const m = raw.match(/^(.+?)(\([^)]+\))$/);
+        if (m) {
+          return (
+            `<span class="univ-notice-univ-main">${escapeHtml(m[1])}</span>` +
+            `<span class="univ-notice-univ-campus">${escapeHtml(m[2])}</span>`
+          );
+        }
+        return `<span class="univ-notice-univ-main">${escapeHtml(raw)}</span>`;
       }
 
       /** 검증된 입학처/공지 URL만 사용 (404 경로 차단) */
@@ -2256,38 +2307,11 @@
         return home || board || "";
       }
 
-      function extractDateISO(text) {
-        const m = String(text || "").match(/(20\d{2})\s*[.\-/년]\s*(\d{1,2})\s*[.\-/월]\s*(\d{1,2})/);
-        if (!m) return "";
-        const iso = `${m[1]}-${String(m[2]).padStart(2, "0")}-${String(m[3]).padStart(2, "0")}`;
-        if (iso < "2020-01-01" || iso > "2035-12-31") return "";
-        return iso;
-      }
-
-      function stripTags(html) {
-        return String(html || "")
-          .replace(/<script[\s\S]*?<\/script>/gi, " ")
-          .replace(/<style[\s\S]*?<\/style>/gi, " ")
-          .replace(/<[^>]+>/g, " ")
-          .replace(/&nbsp;/gi, " ")
-          .replace(/&amp;/gi, "&")
-          .replace(/\s+/g, " ")
-          .trim();
-      }
-
       function cleanTitle(title) {
         let t = String(title || "").replace(/\s+/g, " ").trim();
         t = t.replace(/^(새글|N|NEW|공지)\s*/i, "");
         t = t.replace(/(20\d{2})\s*[.\-/년]\s*(\d{1,2})\s*[.\-/월]\s*(\d{1,2})/g, " ");
         return t.replace(/\s+/g, " ").trim().replace(/^[·\-|]+\s*|\s*[·\-|]+$/g, "");
-      }
-
-      function toAbsUrl(href, base) {
-        try {
-          return new URL(href, base).href.split("#")[0];
-        } catch {
-          return "";
-        }
       }
 
       function normalizeNotice(it) {
@@ -2338,6 +2362,18 @@
         univNoticePool = Array.from(map.values());
       }
 
+      function applyUnivPayload(payload) {
+        if (!payload || typeof payload !== "object") return false;
+        univBoardData = payload;
+        window.UNIV_BOARD_DATA = payload;
+        univSources = Array.isArray(payload.sources) ? payload.sources : univSources;
+        univPriority = Array.isArray(payload.priority) ? payload.priority : univPriority;
+        univNoticePool = Array.isArray(payload.notices) ? payload.notices.slice() : [];
+        univUpdatedAt = String(payload.updatedAt || univUpdatedAt || "");
+        mergeNoticePool(univNoticePool);
+        return true;
+      }
+
       /** 실제 공지(제목+미리보기+날짜)만 · 최신순 */
       function buildUnivRows() {
         const today = seoulTodayISO();
@@ -2375,10 +2411,11 @@
             ? `검색 ${list.length.toLocaleString("ko-KR")}건`
             : `공지 ${list.length.toLocaleString("ko-KR")}건 · ${univSet.size}개 대학 · 8/1~`;
         }
+        setUnivLive(true, formatUpdatedLabel(univUpdatedAt));
 
         if (!list.length) {
           univListEl.innerHTML =
-            `<div class="univ-notice-empty">2026.08.01 이후 수집된 공지사항이 없습니다.<br>실시간으로 입학처를 확인 중입니다…</div>`;
+            `<div class="univ-notice-empty">2026.08.01 이후 수집된 공지사항이 없습니다.<br>GitHub Actions가 주기적으로 입학처 공지를 갱신합니다.</div>`;
           return;
         }
 
@@ -2386,9 +2423,9 @@
         univListEl.innerHTML = list.map((r) => {
           const title = escapeHtml(r.title);
           const preview = escapeHtml(r.preview);
-          const univ = escapeHtml(r.univName);
+          const univPlain = escapeHtml(r.univName);
+          const univHtml = formatUnivLabel(r.univName);
           const href = escapeHtml(r.href);
-          const tone = univToneClass(r.univName);
           const isToday = r.dateISO && r.dateISO === today;
           const shortDate = escapeHtml(r.dateISO.slice(5).replace("-", "."));
           const dayStart = r.dateISO !== lastDate;
@@ -2399,10 +2436,10 @@
             dayStart ? "is-day-start" : "",
           ].filter(Boolean).join(" ");
           return (
-            `<div class="${cls}" data-href="${href}" role="link" tabindex="0" title="${univ} — ${title}">` +
+            `<div class="${cls}" data-href="${href}" role="link" tabindex="0" title="${univPlain} — ${title}">` +
             `<div class="univ-notice-item-body">` +
             `<div class="univ-notice-head">` +
-            `<span class="univ-notice-univ ${tone}">${univ}</span>` +
+            `<span class="univ-notice-univ">${univHtml}</span>` +
             (isToday ? `<span class="univ-notice-new">오늘</span>` : "") +
             `<span class="univ-notice-title">${title}</span>` +
             `<span class="univ-notice-date">${shortDate}</span>` +
@@ -2419,140 +2456,25 @@
         window.open(url, "_blank", "noopener,noreferrer");
       }
 
-      function parseBoardHtml(html, cfg, pageUrl) {
-        if (!html || /HTTP 오류 404|404\.0 - Not Found|error404/i.test(html.slice(0, 2800))) return [];
-        const out = [];
-        const seen = new Set();
-        const re = /<a[^>]+href\s*=\s*["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>([\s\S]{0,360})/gi;
-        let m;
-        while ((m = re.exec(html)) && out.length < 8) {
-          const href = m[1];
-          const title = cleanTitle(stripTags(m[2]));
-          const tail = stripTags(m[3]);
-          if (!title || title.length < 8 || title.length > 140 || isJunkText(title)) continue;
-          if ((title.match(/[가-힣]/g) || []).length < 4) continue;
-          if (!/(notice|bbs|board|article|artcl|공지|소식|news|view|Board|ntt|brd)/i.test(href) &&
-              !/(공지|안내|모집|요강|발표|일정|변경|합격|전형|수시|정시|면접|상담)/.test(title)) continue;
-          const dateISO = extractDateISO(tail) || extractDateISO(title) || extractDateISO(stripTags(m[0]));
-          if (!dateISO || dateISO < UNIV_MIN_DATE) continue;
-          const abs = toAbsUrl(href, pageUrl);
-          if (!abs || /error404|\/admission\/html\/notice\/notice\.asp$/i.test(abs)) continue;
-          const key = `${abs}|${title}`;
-          if (seen.has(key)) continue;
-          seen.add(key);
-          let preview = tail
-            .replace(/(20\d{2})\s*[.\-/년]\s*(\d{1,2})\s*[.\-/월]\s*(\d{1,2})/g, " ")
-            .replace(/\s+/g, " ")
-            .trim();
-          if (isJunkText(preview) || (preview.match(/[가-힣]/g) || []).length < 2) {
-            preview = `${cfg.univName || cfg.name} 입학 공지사항 미리보기`;
-          }
-          out.push({
-            univId: cfg.univId || cfg.id,
-            univName: cfg.univName || cfg.name,
-            title,
-            preview: preview.slice(0, 110),
-            url: abs,
-            homeUrl: cfg.homeUrl,
-            dateISO,
-            dateText: dateISO.replace(/-/g, "."),
-            priority: isPriorityUniv(cfg.univName || cfg.name),
-          });
-        }
-        return out;
-      }
-
-      async function fetchHtmlProxy(url) {
-        const proxies = [
-          (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
-          (u) => `https://corsproxy.io/?${encodeURIComponent(u)}`,
-        ];
-        for (const make of proxies) {
-          try {
-            const res = await fetch(make(url), { cache: "no-store" });
-            if (!res.ok) continue;
-            const text = await res.text();
-            if (text && text.length > 400) return text;
-          } catch {
-            /* next */
-          }
-        }
-        return "";
-      }
-
-      function liveFetchTargets() {
-        const map = new Map();
-        univPriority.forEach((p) => {
-          if (!p.univId) return;
-          map.set(p.univId, {
-            id: p.univId,
-            name: p.univName,
-            univId: p.univId,
-            univName: p.univName,
-            boardUrl: p.boardUrl,
-            homeUrl: p.homeUrl,
-            priority: true,
-          });
-        });
-        univSources.forEach((s) => {
-          if (map.has(s.id)) return;
-          if (!(s.boardUrl || s.homeUrl)) return;
-          map.set(s.id, {
-            id: s.id,
-            name: s.name,
-            univId: s.id,
-            univName: s.name,
-            boardUrl: s.boardUrl,
-            homeUrl: s.homeUrl,
-            priority: Boolean(s.priority),
-          });
-        });
-        const list = Array.from(map.values());
-        list.sort((a, b) => {
-          const ar = a.priority ? priorityRank(a.name) : 2000;
-          const br = b.priority ? priorityRank(b.name) : 2000;
-          if (ar !== br) return ar - br;
-          return a.name.localeCompare(b.name, "ko");
-        });
-        return list;
-      }
-
-      async function refreshUnivLive() {
-        const targets = liveFetchTargets();
-        if (univLiveBusy || !targets.length) return;
-        univLiveBusy = true;
-        setUnivLive(true, "LIVE");
+      /** GitHub에 커밋된 JSON만 다시 읽음 (Apps Script / CORS 스크래핑 없음) */
+      async function refreshUnivFromGithub() {
+        if (univPollBusy) return;
+        univPollBusy = true;
         try {
-          const batchSize = 5;
-          const start = univLiveCursor % targets.length;
-          const slice = [];
-          for (let i = 0; i < batchSize && i < targets.length; i++) {
-            slice.push(targets[(start + i) % targets.length]);
-          }
-          univLiveCursor = (start + batchSize) % Math.max(targets.length, 1);
-
-          const parts = await Promise.all(
-            slice.map(async (cfg) => {
-              const urls = [cfg.boardUrl, cfg.homeUrl].filter(Boolean);
-              for (const u of urls) {
-                const html = await fetchHtmlProxy(u);
-                if (!html) continue;
-                const items = parseBoardHtml(html, cfg, u);
-                if (items.length) return items;
-              }
-              return [];
-            })
-          );
-          const flat = parts.flat();
-          if (flat.length) {
-            mergeNoticePool(flat);
-            renderUnivBoard(univQuery);
-          }
-          setUnivLive(true, "LIVE");
+          const res = await fetch(`${UNIV_DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
+          if (!res.ok) throw new Error(`http_${res.status}`);
+          const payload = await res.json();
+          const nextUpdated = String(payload.updatedAt || "");
+          const changed = nextUpdated && nextUpdated !== univUpdatedAt;
+          applyUnivPayload(payload);
+          renderUnivBoard(univQuery);
+          setUnivLive(true, formatUpdatedLabel(univUpdatedAt));
+          if (changed) setUnivLive(true, formatUpdatedLabel(univUpdatedAt));
         } catch {
-          setUnivLive(true, "READY");
+          if (!univNoticePool.length) setUnivLive(false, "오류");
+          else setUnivLive(true, formatUpdatedLabel(univUpdatedAt));
         } finally {
-          univLiveBusy = false;
+          univPollBusy = false;
         }
       }
 
@@ -2581,15 +2503,16 @@
         if (!univSources.length && !univPriority.length && !univNoticePool.length) {
           setUnivLive(false, "오류");
           renderUnivBoard("");
+          refreshUnivFromGithub();
           return;
         }
         mergeNoticePool(univNoticePool);
-        setUnivLive(true, "READY");
+        setUnivLive(true, formatUpdatedLabel(univUpdatedAt));
         renderUnivBoard(univSearch ? univSearch.value : "");
-        setTimeout(() => refreshUnivLive(), 280);
-        setInterval(() => refreshUnivLive(), UNIV_LIVE_MS);
+        setTimeout(() => refreshUnivFromGithub(), 400);
+        setInterval(() => refreshUnivFromGithub(), UNIV_POLL_MS);
         document.addEventListener("visibilitychange", () => {
-          if (document.visibilityState === "visible") refreshUnivLive();
+          if (document.visibilityState === "visible") refreshUnivFromGithub();
         });
       }
 

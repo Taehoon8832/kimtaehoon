@@ -1,12 +1,9 @@
 /**
- * 김태훈닷컴 — 대학별 공지 안내 게시판 백엔드 (Google Apps Script)
+ * [DEPRECATED] 대학 공지는 GitHub Actions 로 이전됨.
+ * 사용: scripts/build_univ_notices.py + .github/workflows/univ-notices.yml
+ * 사이트는 Apps Script 없이 univ-board-data.js / data/univ-notices.json 만 사용합니다.
  *
- * [배포]
- * 1. https://script.google.com → 새 프로젝트
- * 2. 이 파일 전체를 Code.gs 에 붙여넣기
- * 3. 배포 → 새 배포 → 웹 앱 (실행: 나 / 액세스: 모든 사용자)
- * 4. 트리거: refreshNotices 를 3~5분마다
- * 5. 웹 앱 URL을 index.html 의 UNIV_NOTICE_API_URL 에 넣기
+ * 아래는 참고용 보관본입니다. 새로 배포하지 마세요.
  */
 
 var NOTICE_SHEET = "notices";
