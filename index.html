@@ -707,20 +707,22 @@
     .board-frame-wrap {
       position: relative;
       min-height: 0;
-      overflow: auto;
+      overflow: hidden;
       background: #c6d6e4;
       -webkit-overflow-scrolling: touch;
     }
 
     .board-frame {
-      width: 100%;
-      height: 100%;
-      min-width: 100%;
+      width: 112%;
+      height: 112%;
+      min-width: 112%;
       border: 0;
       display: block;
       background: #c6d6e4;
       overflow: auto;
       -webkit-overflow-scrolling: touch;
+      transform: scale(0.89);
+      transform-origin: top left;
       scrollbar-width: thin;
       scrollbar-color: rgba(25, 25, 25, 0.25) transparent;
     }
@@ -959,30 +961,22 @@
     .univ-notice-item-body {
       min-width: 0;
       display: grid;
-      gap: 1px;
+      gap: 2px;
     }
 
     .univ-notice-preview {
-      color: #8a8798;
-      font-size: 10px;
+      color: #7a7788;
+      font-size: 11px;
       font-weight: 500;
-      line-height: 1.25;
+      line-height: 1.3;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
-    .univ-notice-meta-row {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      min-width: 0;
-      max-width: 100%;
-    }
-
     .univ-notice-head {
       display: flex;
-      align-items: baseline;
+      align-items: center;
       gap: 6px;
       min-width: 0;
     }
@@ -990,6 +984,24 @@
     .univ-notice-head .univ-notice-title {
       flex: 1;
       min-width: 0;
+    }
+
+    .univ-notice-item.is-day-start {
+      border-top: 2px solid #2a2d3a;
+      margin-top: 2px;
+      padding-top: 7px;
+    }
+
+    .univ-notice-item.is-day-start:first-child {
+      border-top: none;
+      margin-top: 0;
+      padding-top: 5px;
+    }
+
+    .univ-notice-item.is-priority .univ-notice-univ {
+      background: linear-gradient(180deg, #efe6ff 0%, #e4d7fb 100%);
+      border-color: #b89de0;
+      color: #4b2d7a;
     }
 
     .visually-hidden {
@@ -1023,8 +1035,8 @@
 
     .univ-notice-item {
       display: block;
-      padding: 4px 10px;
-      border-bottom: 1px solid rgba(120, 130, 160, 0.08);
+      padding: 5px 10px;
+      border-bottom: 1px solid rgba(120, 130, 160, 0.1);
       cursor: pointer;
       transition: background 0.12s ease;
       background: transparent;
@@ -1038,17 +1050,12 @@
       outline: none;
     }
 
-    .univ-notice-item.is-recent {
-      background: linear-gradient(90deg, rgba(255, 228, 236, 0.5) 0%, rgba(255, 255, 255, 0) 42%);
-      box-shadow: inset 2px 0 0 #f3a6b8;
-    }
-
     .univ-notice-item.is-today {
       position: relative;
       isolation: isolate;
       background:
-        linear-gradient(90deg, rgba(255, 236, 210, 0.72) 0%, rgba(255, 245, 230, 0.42) 38%, rgba(255, 255, 255, 0) 72%);
-      box-shadow: inset 2px 0 0 #f0b56a;
+        linear-gradient(90deg, rgba(255, 236, 210, 0.88) 0%, rgba(255, 245, 230, 0.55) 42%, rgba(255, 255, 255, 0.15) 78%);
+      box-shadow: inset 3px 0 0 #e8a23a;
     }
 
     .univ-notice-item.is-today::before {
@@ -1060,65 +1067,90 @@
         105deg,
         transparent 0%,
         transparent 35%,
-        rgba(255, 255, 255, 0.55) 48%,
+        rgba(255, 255, 255, 0.65) 48%,
         transparent 62%,
         transparent 100%
       );
       background-size: 220% 100%;
-      animation: univTodayShine 4.8s ease-in-out infinite;
+      animation: univTodayShine 4.2s ease-in-out infinite;
       pointer-events: none;
     }
 
     .univ-notice-item.is-today .univ-notice-date {
       color: #8a5a28;
+      font-weight: 800;
     }
 
     .univ-notice-item.is-today .univ-notice-title {
       color: #2a241c;
     }
 
+    .univ-notice-item.is-today .univ-notice-univ {
+      background: #fff3d6;
+      border-color: #f0c878;
+      color: #8a5a28;
+    }
+
     .univ-notice-item.is-today:hover,
     .univ-notice-item.is-today:focus-visible {
       background:
-        linear-gradient(90deg, rgba(255, 228, 188, 0.85) 0%, rgba(255, 242, 220, 0.55) 42%, rgba(255, 255, 255, 0.2) 78%);
+        linear-gradient(90deg, rgba(255, 228, 188, 0.95) 0%, rgba(255, 242, 220, 0.7) 45%, rgba(255, 255, 255, 0.25) 80%);
     }
 
     .univ-notice-univ {
       flex: 0 0 auto;
       display: inline-flex;
       align-items: center;
-      max-width: 5.8rem;
-      padding: 0 5px;
+      max-width: 7.2rem;
+      padding: 1px 7px;
       border-radius: 999px;
-      border: 1px solid #e4e2ef;
-      background: #f1f0f8;
-      color: #5a5870;
-      font-size: 9px;
-      font-weight: 700;
-      line-height: 1.45;
+      border: 1px solid #c9b8e0;
+      background: linear-gradient(180deg, #f4ecff 0%, #ebe2f8 100%);
+      color: #5b3d8a;
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1.4;
+      letter-spacing: -0.02em;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       text-decoration: none;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
     }
 
     .univ-notice-date {
-      color: #8a8798;
-      font-size: 10px;
-      font-weight: 600;
+      color: #5c5f6e;
+      font-size: 11px;
+      font-weight: 700;
       font-variant-numeric: tabular-nums;
       letter-spacing: -0.02em;
       white-space: nowrap;
       flex: 0 0 auto;
+      min-width: 2.6rem;
+      text-align: right;
+    }
+
+    .univ-notice-new {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 5px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #ffc2d1, #e86b88);
+      color: #fff;
+      font-size: 9px;
+      font-weight: 800;
+      line-height: 1.4;
+      letter-spacing: 0.03em;
     }
 
     .univ-notice-title {
       min-width: 0;
-      color: #2a2d3a;
-      font-size: 12px;
+      color: #1f2230;
+      font-size: 12.5px;
       font-weight: 700;
       letter-spacing: -0.02em;
-      line-height: 1.25;
+      line-height: 1.3;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -1146,10 +1178,10 @@
 
     .footer-inner {
       position: relative;
-      width: min(1280px, 100%);
-      margin: 0 auto;
+      width: 100%;
+      margin: 0;
       min-height: 0;
-      padding: 2px clamp(10px, 2vw, 18px);
+      padding: 2px 10px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -1161,13 +1193,14 @@
       align-items: center;
       gap: 0;
       min-width: 0;
+      margin-right: auto;
     }
 
     .visit-metric {
       display: inline-flex;
       align-items: baseline;
       gap: 5px;
-      padding: 0 8px;
+      padding: 0 7px;
       min-width: 0;
       line-height: 1;
     }
@@ -1178,6 +1211,171 @@
 
     .visit-metric:last-child {
       padding-right: 0;
+    }
+
+    .visit-total-wrap {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 4px;
+    }
+
+    .visit-stats-btn {
+      width: 16px;
+      height: 16px;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      border-radius: 4px;
+      display: inline-grid;
+      place-items: center;
+      background: transparent;
+      color: rgba(58, 58, 60, 0.28);
+      cursor: pointer;
+      transition: color 0.15s ease, background 0.15s ease;
+      flex: 0 0 auto;
+    }
+
+    .visit-stats-btn:hover,
+    .visit-stats-btn:focus-visible {
+      color: rgba(196, 91, 122, 0.75);
+      background: rgba(196, 91, 122, 0.08);
+      outline: none;
+    }
+
+    .visit-stats-btn svg {
+      width: 11px;
+      height: 11px;
+      display: block;
+    }
+
+    .visit-stats-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 90;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 16px;
+      background: rgba(20, 18, 28, 0.28);
+      backdrop-filter: blur(4px);
+    }
+
+    .visit-stats-modal.is-open {
+      display: flex;
+    }
+
+    .visit-stats-card {
+      width: min(420px, 100%);
+      margin-bottom: 28px;
+      padding: 14px 14px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(120, 130, 160, 0.16);
+      background:
+        radial-gradient(80% 60% at 10% 0%, rgba(255, 214, 228, 0.45), transparent 55%),
+        radial-gradient(70% 50% at 100% 0%, rgba(214, 228, 255, 0.4), transparent 50%),
+        #fff;
+      box-shadow: 0 18px 40px rgba(25, 25, 25, 0.18);
+    }
+
+    .visit-stats-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .visit-stats-card-head strong {
+      font-size: 14px;
+      font-weight: 750;
+      letter-spacing: -0.02em;
+      color: #2a2d3a;
+    }
+
+    .visit-stats-close {
+      border: 0;
+      background: rgba(120, 130, 160, 0.1);
+      color: #5c5f6e;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 1;
+    }
+
+    .visit-stats-summary {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .visit-stats-pill {
+      padding: 8px 10px;
+      border-radius: 12px;
+      background: rgba(243, 238, 248, 0.9);
+      border: 1px solid rgba(201, 184, 224, 0.45);
+    }
+
+    .visit-stats-pill span {
+      display: block;
+      font-size: 10px;
+      font-weight: 650;
+      color: #8a8798;
+      margin-bottom: 3px;
+    }
+
+    .visit-stats-pill b {
+      font-family: "Space Grotesk", var(--font);
+      font-size: 18px;
+      font-weight: 700;
+      color: #1c1c1e;
+      letter-spacing: -0.03em;
+    }
+
+    .visit-stats-chart {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 6px;
+      align-items: end;
+      height: 96px;
+      padding: 8px 2px 0;
+    }
+
+    .visit-stats-bar-wrap {
+      display: grid;
+      gap: 4px;
+      justify-items: center;
+      height: 100%;
+      align-content: end;
+    }
+
+    .visit-stats-bar {
+      width: 100%;
+      max-width: 28px;
+      border-radius: 6px 6px 3px 3px;
+      background: linear-gradient(180deg, #f2a0b6 0%, #c45b7a 100%);
+      min-height: 4px;
+      transition: height 0.35s ease;
+    }
+
+    .visit-stats-bar.is-today {
+      background: linear-gradient(180deg, #ffd08a 0%, #e8a23a 100%);
+    }
+
+    .visit-stats-bar-label {
+      font-size: 9px;
+      font-weight: 650;
+      color: #8a8798;
+      white-space: nowrap;
+    }
+
+    .visit-stats-bar-val {
+      font-size: 9px;
+      font-weight: 700;
+      color: #5c5f6e;
+      font-variant-numeric: tabular-nums;
     }
 
     .visit-kicker {
@@ -1883,7 +2081,15 @@
               <span class="visit-label-full">누적 방문자</span>
               <span class="visit-label-short">누적</span>
             </span>
-            <strong class="visit-value is-loading" id="visitTotal">—</strong>
+            <span class="visit-total-wrap">
+              <strong class="visit-value is-loading" id="visitTotal">—</strong>
+              <button type="button" class="visit-stats-btn" id="visitStatsBtn" title="방문자 통계" aria-label="방문자 통계 보기">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 19h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M7 16V10M12 16V7M17 16v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </span>
           </div>
         </div>
         <div class="footer-brand">
@@ -1899,6 +2105,20 @@
         </div>
       </div>
     </footer>
+    </div>
+  </div>
+
+  <div class="visit-stats-modal" id="visitStatsModal" hidden>
+    <div class="visit-stats-card" role="dialog" aria-modal="true" aria-labelledby="visitStatsTitle">
+      <div class="visit-stats-card-head">
+        <strong id="visitStatsTitle">방문자 통계</strong>
+        <button type="button" class="visit-stats-close" id="visitStatsClose" aria-label="닫기">×</button>
+      </div>
+      <div class="visit-stats-summary">
+        <div class="visit-stats-pill"><span>오늘</span><b id="visitStatsToday">0</b></div>
+        <div class="visit-stats-pill"><span>누적</span><b id="visitStatsTotal">0</b></div>
+      </div>
+      <div class="visit-stats-chart" id="visitStatsChart" aria-label="최근 7일 방문자"></div>
     </div>
   </div>
 
@@ -1941,11 +2161,18 @@
 
       const univBoardData = window.UNIV_BOARD_DATA || {};
       const univSources = Array.isArray(univBoardData.sources) ? univBoardData.sources : [];
-      let univNotices = Array.isArray(univBoardData.notices) ? univBoardData.notices.slice() : [];
-      const UNIV_MIN_DATE = "2026-01-01";
-      const UNIV_CACHE_KEY = "kimtaehoon_univ_notices_v3";
+      const univPriority = Array.isArray(univBoardData.priority) ? univBoardData.priority : [];
+      const UNIV_MIN_DATE = "2026-08-01";
+      const UNIV_LIVE_MS = 45000;
+      let univNoticePool = Array.isArray(univBoardData.notices) ? univBoardData.notices.slice() : [];
       let univQuery = "";
-      let univFetchCursor = 0;
+      let univLiveBusy = false;
+
+      const PRIORITY_ORDER = [
+        "서울대", "연세대", "고려대", "서강대", "성균관대", "한양대", "중앙대", "경희대",
+        "한국외대", "서울시립대", "건국대", "동국대", "홍익대", "이화여대", "숙명여대",
+        "숭실대", "국민대", "서울과기대", "세종대", "인하대", "아주대", "가천대",
+      ];
 
       function showToast(text) {
         if (!toast) return;
@@ -1970,20 +2197,55 @@
         univLiveLabel.textContent = label;
       }
 
-      function safeHref(boardUrl, homeUrl, explicitUrl) {
-        const home = String(homeUrl || "").trim();
-        const board = String(boardUrl || "").trim();
-        const explicit = String(explicitUrl || "").trim();
-        const broken = /\/admission\/html\/notice\/notice\.asp$/i;
-        const pick = explicit || board || home;
-        if (!pick) return "";
-        if (broken.test(pick) && home) return home;
-        if (!/^https?:\/\//i.test(pick) && home) return home;
-        return pick;
+      function seoulTodayISO() {
+        const parts = new Intl.DateTimeFormat("en-CA", {
+          timeZone: "Asia/Seoul",
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        }).formatToParts(new Date());
+        const get = (t) => parts.find((p) => p.type === t)?.value || "00";
+        return `${get("year")}-${get("month")}-${get("day")}`;
       }
 
       function isJunkText(s) {
         return /var\s|function\s|document\.|<\w+|[{};]=|bbsrg|javascript:/i.test(String(s || ""));
+      }
+
+      function priorityRank(name) {
+        const n = String(name || "");
+        for (let i = 0; i < PRIORITY_ORDER.length; i++) {
+          const k = PRIORITY_ORDER[i];
+          if (k === "서울과기대" && n.includes("서울과학기술대")) return i;
+          if (k === "서울시립대" && (n.includes("서울시립대") || n === "시립대")) return i;
+          if (n.includes(k)) return i;
+        }
+        return 1000;
+      }
+
+      function isPriorityUniv(nameOrId) {
+        if (univPriority.some((p) => p.univId === nameOrId || p.univName === nameOrId)) return true;
+        return priorityRank(nameOrId) < 1000;
+      }
+
+      function priorityCfgById(univId) {
+        return univPriority.find((p) => p.univId === univId) || null;
+      }
+
+      /** 검증된 입학처/공지 URL만 사용 (404 경로 차단) */
+      function safeOpenUrl(it) {
+        const cfg = priorityCfgById(it.univId);
+        const home = String((cfg && cfg.homeUrl) || it.homeUrl || "").trim();
+        const board = String((cfg && cfg.boardUrl) || it.boardUrl || "").trim();
+        const url = String(it.url || "").trim();
+        const broken = /\/admission\/html\/notice\/notice\.asp$/i;
+        const badHostPath = /error404|404\.html/i;
+        const candidates = [url, board, home].filter((u) => /^https?:\/\//i.test(u));
+        for (const u of candidates) {
+          if (broken.test(u) || badHostPath.test(u)) continue;
+          return u;
+        }
+        return home || board || "";
       }
 
       function extractDateISO(text) {
@@ -2001,10 +2263,6 @@
           .replace(/<[^>]+>/g, " ")
           .replace(/&nbsp;/gi, " ")
           .replace(/&amp;/gi, "&")
-          .replace(/&lt;/gi, "<")
-          .replace(/&gt;/gi, ">")
-          .replace(/&quot;/gi, '"')
-          .replace(/&#39;/gi, "'")
           .replace(/\s+/g, " ")
           .trim();
       }
@@ -2021,29 +2279,40 @@
         const title = String(it.title || "").replace(/\s+/g, " ").trim();
         let preview = String(it.preview || "").replace(/\s+/g, " ").trim();
         const univName = String(it.univName || "").replace(/\s+/g, " ").trim();
-        const href = safeHref(it.boardUrl, it.homeUrl, it.url || it.href);
-        if (!title || !href || title.length < 8 || isJunkText(title)) return null;
-        if ((title.match(/[가-힣]/g) || []).length < 4) return null;
+        const univId = String(it.univId || "");
+        const dateISO = String(it.dateISO || "").slice(0, 10);
+        const boardOnly = Boolean(it.boardOnly);
+        if (!title || !univName) return null;
+        if (!boardOnly) {
+          if (title.length < 6 || isJunkText(title)) return null;
+          if ((title.match(/[가-힣]/g) || []).length < 3) return null;
+          if (!dateISO || dateISO < UNIV_MIN_DATE) return null;
+        }
         if (isJunkText(preview) || (preview.match(/[가-힣]/g) || []).length < 2) {
           preview = `${univName} 입학처 전체 공지사항`;
         }
+        const href = safeOpenUrl(it);
+        if (!href) return null;
         return {
-          title,
-          preview: preview.slice(0, 96),
+          univId,
           univName,
-          dateText: String(it.dateText || (it.dateISO || "").replace(/-/g, ".")),
-          dateISO: String(it.dateISO || ""),
+          title,
+          preview: preview.slice(0, 110),
+          dateISO: boardOnly ? "" : dateISO,
           href,
-          univId: String(it.univId || ""),
+          priority: isPriorityUniv(univName) || Boolean(it.priority),
+          boardOnly,
+          hasNotice: !boardOnly,
         };
       }
 
-      function mergeNotices(extra) {
+      function mergeNoticePool(extra) {
         const map = new Map();
-        univNotices.concat(extra || []).forEach((raw) => {
+        univNoticePool.concat(extra || []).forEach((raw) => {
           const n = normalizeNotice(raw);
           if (!n) return;
-          map.set(`${n.univId}|${n.href}|${n.title}`, {
+          const key = `${n.univId}|${n.title}|${n.dateISO}|${n.boardOnly ? "b" : "n"}`;
+          map.set(key, {
             univId: n.univId,
             univName: n.univName,
             title: n.title,
@@ -2051,26 +2320,95 @@
             url: n.href,
             homeUrl: raw.homeUrl || "",
             dateISO: n.dateISO,
-            dateText: n.dateText,
+            dateText: n.dateISO ? n.dateISO.replace(/-/g, ".") : "",
+            priority: n.priority,
+            boardOnly: n.boardOnly,
           });
         });
-        univNotices = Array.from(map.values()).sort((a, b) =>
-          String(b.dateISO || "").localeCompare(String(a.dateISO || ""))
+        univNoticePool = Array.from(map.values());
+      }
+
+      function ensurePriorityBoardRows() {
+        const havePost = new Set(
+          univNoticePool
+            .filter((n) => n.dateISO && n.dateISO >= UNIV_MIN_DATE && !n.boardOnly)
+            .map((n) => n.univId)
         );
-        try {
-          localStorage.setItem(
-            UNIV_CACHE_KEY,
-            JSON.stringify({ t: Date.now(), notices: univNotices.slice(0, 400) })
-          );
-        } catch {
-          /* ignore */
-        }
+        const extras = [];
+        univPriority.forEach((p) => {
+          if (!p.univId || havePost.has(p.univId)) return;
+          const existsBoard = univNoticePool.some((n) => n.univId === p.univId && n.boardOnly);
+          if (existsBoard) return;
+          extras.push({
+            univId: p.univId,
+            univName: p.univName,
+            title: `${p.univName} 입학처 전체 공지사항`,
+            preview: "2026.08.01 이후 공지 · 입학처 게시판 바로가기",
+            url: p.boardUrl || p.homeUrl,
+            homeUrl: p.homeUrl,
+            dateISO: "",
+            priority: true,
+            boardOnly: true,
+          });
+        });
+        if (extras.length) mergeNoticePool(extras);
+      }
+
+      function buildUnivRows() {
+        const today = seoulTodayISO();
+        ensurePriorityBoardRows();
+
+        const noticeRows = univNoticePool
+          .map(normalizeNotice)
+          .filter(Boolean)
+          .filter((r) => r.priority || (r.dateISO && r.dateISO >= UNIV_MIN_DATE));
+
+        // 우선 대학 공지(실제 글) 먼저, 그다음 우선 대학 게시판 링크, 나머지 대학
+        const prioPosts = noticeRows.filter((r) => r.priority && r.hasNotice);
+        const prioBoards = noticeRows.filter((r) => r.priority && r.boardOnly);
+        const otherPosts = noticeRows.filter((r) => !r.priority && r.hasNotice);
+
+        const covered = new Set(noticeRows.filter((r) => r.priority).map((r) => r.univId));
+        const otherUnis = univSources
+          .filter((s) => !covered.has(s.id) && !isPriorityUniv(s.name))
+          .map((s) => {
+            const href = safeOpenUrl({ univId: s.id, homeUrl: s.homeUrl, boardUrl: s.boardUrl, url: "" });
+            if (!href) return null;
+            return {
+              univId: s.id,
+              univName: s.name,
+              title: `${s.name} 입학처 전체 공지사항`,
+              preview: "모집요강 · 일정 · 합격 발표 등 입학처 공지",
+              dateISO: "",
+              href,
+              priority: false,
+              boardOnly: true,
+              hasNotice: false,
+            };
+          })
+          .filter(Boolean);
+
+        const sortFn = (a, b) => {
+          if (a.dateISO === today && b.dateISO !== today) return -1;
+          if (b.dateISO === today && a.dateISO !== today) return 1;
+          const ar = priorityRank(a.univName);
+          const br = priorityRank(b.univName);
+          if (a.priority && b.priority && ar !== br) return ar - br;
+          if (a.dateISO !== b.dateISO) return String(b.dateISO).localeCompare(String(a.dateISO));
+          return a.univName.localeCompare(b.univName, "ko");
+        };
+
+        prioPosts.sort(sortFn);
+        prioBoards.sort((a, b) => priorityRank(a.univName) - priorityRank(b.univName));
+        otherPosts.sort(sortFn);
+        otherUnis.sort((a, b) => a.univName.localeCompare(b.univName, "ko"));
+
+        return prioPosts.concat(prioBoards, otherPosts, otherUnis);
       }
 
       function filteredRows(query) {
         const q = String(query || "").trim().toLowerCase().replace(/\s+/g, "");
-        let rows = univNotices.map(normalizeNotice).filter(Boolean);
-        rows.sort((a, b) => String(b.dateISO).localeCompare(String(a.dateISO)));
+        const rows = buildUnivRows();
         if (!q) return rows;
         return rows.filter((r) => {
           const hay = `${r.title}${r.preview}${r.univName}`.toLowerCase().replace(/\s+/g, "");
@@ -2082,31 +2420,44 @@
         if (!univListEl) return;
         univQuery = query || "";
         const list = filteredRows(univQuery);
+        const today = seoulTodayISO();
+        const prioCount = list.filter((r) => r.priority && r.hasNotice).length;
         if (univCountEl) {
           univCountEl.textContent = univQuery
             ? `검색 ${list.length.toLocaleString("ko-KR")}건`
-            : `전체 공지 ${list.length.toLocaleString("ko-KR")}건`;
+            : `우선공지 ${prioCount} · 전체 ${list.length.toLocaleString("ko-KR")}`;
         }
 
         if (!list.length) {
-          univListEl.innerHTML = `<div class="univ-notice-empty">표시할 전체 공지가 없습니다.<br />입학처에서 공지를 수집하는 중입니다…</div>`;
+          univListEl.innerHTML = `<div class="univ-notice-empty">2026.08.01 이후 공지가 없습니다.</div>`;
           return;
         }
 
+        let lastDate = null;
         univListEl.innerHTML = list.map((r) => {
           const title = escapeHtml(r.title);
           const preview = escapeHtml(r.preview);
           const univ = escapeHtml(r.univName);
           const href = escapeHtml(r.href);
-          const date = escapeHtml((r.dateText || "").replace(/^20/, "").replace(/\./g, ".").slice(-8));
-          const shortDate = escapeHtml(String(r.dateISO || "").slice(5).replace("-", "."));
+          const isToday = r.dateISO && r.dateISO === today;
+          const shortDate = r.dateISO ? escapeHtml(r.dateISO.slice(5).replace("-", ".")) : "";
+          const dayKey = r.dateISO || "_none";
+          const dayStart = dayKey !== lastDate;
+          lastDate = dayKey;
+          const cls = [
+            "univ-notice-item",
+            isToday ? "is-today" : "",
+            dayStart ? "is-day-start" : "",
+            r.priority ? "is-priority" : "",
+          ].filter(Boolean).join(" ");
           return (
-            `<div class="univ-notice-item" data-href="${href}" role="link" tabindex="0" title="${title}">` +
+            `<div class="${cls}" data-href="${href}" role="link" tabindex="0" title="${univ} — ${title}">` +
             `<div class="univ-notice-item-body">` +
             `<div class="univ-notice-head">` +
-            `<span class="univ-notice-title">${title}</span>` +
             `<span class="univ-notice-univ">${univ}</span>` +
-            `<span class="univ-notice-date">${shortDate || date}</span>` +
+            (isToday ? `<span class="univ-notice-new">오늘</span>` : "") +
+            `<span class="univ-notice-title">${title}</span>` +
+            (shortDate ? `<span class="univ-notice-date">${shortDate}</span>` : "") +
             `</div>` +
             `<span class="univ-notice-preview">${preview}</span>` +
             `</div>` +
@@ -2120,103 +2471,92 @@
         window.open(url, "_blank", "noopener,noreferrer");
       }
 
-      function parseNoticesFromHtml(html, src, pageUrl) {
-        if (!html || /HTTP 오류 404|404\.0 - Not Found/i.test(html.slice(0, 2500))) return [];
+      function parsePriorityHtml(html, cfg, pageUrl) {
+        if (!html || /HTTP 오류 404|404\.0 - Not Found|error404/i.test(html.slice(0, 2800))) return [];
         const out = [];
-        const re = /<a[^>]+href\s*=\s*["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>([\s\S]{0,260})/gi;
+        const re = /<a[^>]+href\s*=\s*["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>([\s\S]{0,300})/gi;
         let m;
-        while ((m = re.exec(html)) && out.length < 2) {
+        while ((m = re.exec(html)) && out.length < 6) {
           const href = m[1];
           const title = stripTags(m[2]);
           const tail = stripTags(m[3]);
-          if (!title || title.length < 8 || title.length > 120 || isJunkText(title)) continue;
+          if (!title || title.length < 8 || title.length > 140 || isJunkText(title)) continue;
           if ((title.match(/[가-힣]/g) || []).length < 4) continue;
-          if (!/(notice|bbs|board|article|artcl|공지|소식|news|ipsi|admission|view)/i.test(href) &&
+          if (!/(notice|bbs|board|article|artcl|공지|소식|news|view|Board)/i.test(href) &&
               !/(공지|안내|모집|요강|발표|일정|변경|합격|전형|수시|정시)/.test(title)) continue;
           const dateISO = extractDateISO(tail) || extractDateISO(title);
           if (!dateISO || dateISO < UNIV_MIN_DATE) continue;
-          const url = toAbsUrl(href, pageUrl);
-          if (!url) continue;
+          const abs = toAbsUrl(href, pageUrl);
+          if (!abs || /error404|notice\.asp$/i.test(abs)) continue;
           let preview = tail.replace(/(20\d{2})\s*[.\-/년]\s*(\d{1,2})\s*[.\-/월]\s*(\d{1,2})/g, " ").replace(/\s+/g, " ").trim();
           if (isJunkText(preview) || (preview.match(/[가-힣]/g) || []).length < 2) {
-            preview = `${src.name} 입학처 전체 공지사항`;
+            preview = `${cfg.univName} 입학처 전체 공지사항`;
           }
           out.push({
-            univId: src.id,
-            univName: src.name,
+            univId: cfg.univId,
+            univName: cfg.univName,
             title,
-            preview: preview.slice(0, 96),
-            url,
-            homeUrl: src.homeUrl || "",
+            preview: preview.slice(0, 110),
+            url: abs,
+            homeUrl: cfg.homeUrl,
             dateISO,
             dateText: dateISO.replace(/-/g, "."),
+            priority: true,
           });
         }
         return out;
       }
 
-      async function fetchHtmlViaProxy(url) {
+      async function fetchHtmlProxy(url) {
         const proxies = [
           (u) => `https://api.allorigins.win/raw?url=${encodeURIComponent(u)}`,
           (u) => `https://corsproxy.io/?${encodeURIComponent(u)}`,
         ];
         for (const make of proxies) {
           try {
-            const res = await fetch(make(url), { method: "GET", cache: "no-store" });
+            const res = await fetch(make(url), { cache: "no-store" });
             if (!res.ok) continue;
             const text = await res.text();
-            if (text && text.length > 400) return text;
+            if (text && text.length > 500) return text;
           } catch {
-            /* try next */
+            /* next */
           }
         }
         return "";
       }
 
-      async function scrapeSourceLive(src) {
-        const home = String(src.homeUrl || "").trim();
-        const board = String(src.boardUrl || "").trim();
-        const urls = [home, board].filter(Boolean);
-        for (const u of urls) {
-          const html = await fetchHtmlViaProxy(u);
-          if (!html) continue;
-          const items = parseNoticesFromHtml(html, src, u);
-          if (items.length) return items;
-        }
-        return [];
-      }
-
-      async function pumpUnivLiveFetch() {
-        if (!univSources.length) return;
-        const have = new Set(univNotices.map((n) => String(n.univId || "")));
-        const queue = [];
-        const seenHome = new Set();
-        univSources.forEach((s) => {
-          const home = String(s.homeUrl || s.boardUrl || "").trim();
-          if (!home || seenHome.has(home) || have.has(String(s.id))) return;
-          seenHome.add(home);
-          queue.push(s);
-        });
-        if (!queue.length) {
-          setUnivLive(true, "LIVE");
-          return;
-        }
-
-        setUnivLive(true, "수집중");
-        const batch = 3;
-        while (univFetchCursor < queue.length) {
-          const slice = queue.slice(univFetchCursor, univFetchCursor + batch);
-          univFetchCursor += batch;
-          const parts = await Promise.all(slice.map((s) => scrapeSourceLive(s).catch(() => [])));
-          const flat = parts.flat();
-          if (flat.length) {
-            mergeNotices(flat);
-            renderUnivBoard(univQuery);
-          }
-          setUnivLive(true, `${Math.min(univFetchCursor, queue.length)}/${queue.length}`);
-          await new Promise((r) => setTimeout(r, 350));
-        }
+      async function refreshPriorityLive() {
+        if (univLiveBusy || !univPriority.length) return;
+        univLiveBusy = true;
         setUnivLive(true, "LIVE");
+        try {
+          const batchSize = 4;
+          for (let i = 0; i < univPriority.length; i += batchSize) {
+            const slice = univPriority.slice(i, i + batchSize);
+            const parts = await Promise.all(
+              slice.map(async (cfg) => {
+                const urls = [cfg.boardUrl, cfg.homeUrl].filter(Boolean);
+                for (const u of urls) {
+                  const html = await fetchHtmlProxy(u);
+                  if (!html) continue;
+                  const items = parsePriorityHtml(html, cfg, u);
+                  if (items.length) return items;
+                }
+                return [];
+              })
+            );
+            const flat = parts.flat();
+            if (flat.length) {
+              mergeNoticePool(flat);
+              renderUnivBoard(univQuery);
+            }
+          }
+          setUnivLive(true, "LIVE");
+        } catch {
+          setUnivLive(true, "READY");
+        } finally {
+          univLiveBusy = false;
+        }
       }
 
       if (univListEl) {
@@ -2241,25 +2581,20 @@
       }
 
       function bootUnivNotices() {
-        try {
-          const cached = JSON.parse(localStorage.getItem(UNIV_CACHE_KEY) || "null");
-          if (cached && Array.isArray(cached.notices) && cached.notices.length) {
-            mergeNotices(cached.notices);
-          }
-        } catch {
-          /* ignore */
-        }
-        if (!univSources.length && !univNotices.length) {
+        if (!univSources.length && !univPriority.length) {
           setUnivLive(false, "오류");
           renderUnivBoard("");
           return;
         }
-        setUnivLive(true, "공지");
+        mergeNoticePool(univNoticePool);
+        setUnivLive(true, "READY");
         renderUnivBoard(univSearch ? univSearch.value : "");
-        // 입학처 URL 기준 나머지 대학 공지를 백그라운드 수집
-        setTimeout(() => {
-          pumpUnivLiveFetch().catch(() => setUnivLive(true, "공지"));
-        }, 400);
+        // 우선 22개 대학 실시간 갱신
+        setTimeout(() => refreshPriorityLive(), 300);
+        setInterval(() => refreshPriorityLive(), UNIV_LIVE_MS);
+        document.addEventListener("visibilitychange", () => {
+          if (document.visibilityState === "visible") refreshPriorityLive();
+        });
       }
 
       const expandPanel = document.getElementById("expandPanel");
@@ -2350,12 +2685,19 @@
       if (location.hash === "#susi") openExpand("susi");
       if (location.hash === "#ipgyeol") openExpand("ipgyeol");
 
-      /* ── 방문자 카운터 (서버 없이 공개 Count API) ── */
-      const VISIT_STORE_KEY = "kimtaehoon_visit_v2";
+      /* ── 방문자 카운터 + 통계 ── */
+      const VISIT_STORE_KEY = "kimtaehoon_visit_v3";
       const VISIT_NS = "kimtaehoon-com";
       const COUNT_API = "https://countapi.mileshilliard.com/api/v1";
       const visitTodayEl = document.getElementById("visitToday");
       const visitTotalEl = document.getElementById("visitTotal");
+      const visitStatsBtn = document.getElementById("visitStatsBtn");
+      const visitStatsModal = document.getElementById("visitStatsModal");
+      const visitStatsClose = document.getElementById("visitStatsClose");
+      const visitStatsChart = document.getElementById("visitStatsChart");
+      const visitStatsTodayEl = document.getElementById("visitStatsToday");
+      const visitStatsTotalEl = document.getElementById("visitStatsTotal");
+      let visitState = { today: 0, total: 0, date: "", hit: false, days: {} };
 
       function seoulDateKey(d = new Date()) {
         const parts = new Intl.DateTimeFormat("en-CA", {
@@ -2376,41 +2718,45 @@
         if (!el) return;
         el.classList.remove("is-loading");
         const target = Math.max(0, Math.floor(Number(to) || 0));
-        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        if (reduce || target <= 0) {
-          el.textContent = formatVisit(target);
-          return;
-        }
-        const from = Number(String(el.textContent).replace(/[^\d]/g, "")) || 0;
-        const start = from > 0 && from < target ? from : Math.max(0, target - Math.min(target, 28));
-        const dur = 640;
-        const t0 = performance.now();
-        function tick(now) {
-          const p = Math.min(1, (now - t0) / dur);
-          const eased = 1 - Math.pow(1 - p, 3);
-          el.textContent = formatVisit(Math.round(start + (target - start) * eased));
-          if (p < 1) requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
+        el.textContent = formatVisit(target);
       }
 
-      function readVisitFlag() {
+      function readVisitState() {
         try {
           const raw = localStorage.getItem(VISIT_STORE_KEY);
           const data = raw ? JSON.parse(raw) : null;
-          if (!data || typeof data !== "object") return { date: "", hit: false };
-          return { date: String(data.date || ""), hit: Boolean(data.hit) };
+          if (!data || typeof data !== "object") {
+            return { today: 0, total: 0, date: "", hit: false, days: {} };
+          }
+          return {
+            today: Math.max(0, Number(data.today) || 0),
+            total: Math.max(0, Number(data.total) || 0),
+            date: String(data.date || ""),
+            hit: Boolean(data.hit),
+            days: data.days && typeof data.days === "object" ? data.days : {},
+          };
         } catch {
-          return { date: "", hit: false };
+          return { today: 0, total: 0, date: "", hit: false, days: {} };
         }
       }
 
-      function writeVisitFlag(data) {
+      function writeVisitState(data) {
+        visitState = data;
         try {
           localStorage.setItem(VISIT_STORE_KEY, JSON.stringify(data));
         } catch {
-          /* ignore quota / private mode */
+          /* ignore */
         }
+      }
+
+      function syncVisitDay(data, today) {
+        if (data.date !== today) {
+          data.date = today;
+          data.today = 0;
+          data.hit = false;
+        }
+        if (!data.days || typeof data.days !== "object") data.days = {};
+        return data;
       }
 
       function parseCountValue(json) {
@@ -2432,9 +2778,9 @@
       async function readCount(key) {
         try {
           const n = parseCountValue(await countApi("get/" + encodeURIComponent(key)));
-          return n == null ? 0 : n;
+          return n;
         } catch {
-          return 0;
+          return null;
         }
       }
 
@@ -2444,63 +2790,108 @@
         return n;
       }
 
+      function applyVisitDisplay(todayN, totalN) {
+        animateVisitNum(visitTodayEl, todayN);
+        animateVisitNum(visitTotalEl, totalN);
+        if (visitStatsTodayEl) visitStatsTodayEl.textContent = formatVisit(todayN);
+        if (visitStatsTotalEl) visitStatsTotalEl.textContent = formatVisit(totalN);
+      }
+
+      function last7Days(today) {
+        const out = [];
+        const base = new Date(today + "T12:00:00+09:00");
+        for (let i = 6; i >= 0; i--) {
+          const d = new Date(base.getTime() - i * 86400000);
+          out.push(seoulDateKey(d));
+        }
+        return out;
+      }
+
+      function renderVisitChart() {
+        if (!visitStatsChart) return;
+        const today = seoulDateKey();
+        const days = last7Days(today);
+        const vals = days.map((d) => Math.max(0, Number(visitState.days[d]) || 0));
+        const max = Math.max(1, ...vals);
+        visitStatsChart.innerHTML = days.map((d, i) => {
+          const v = vals[i];
+          const h = Math.max(4, Math.round((v / max) * 72));
+          const label = d.slice(5).replace("-", ".");
+          const isToday = d === today;
+          return (
+            `<div class="visit-stats-bar-wrap" title="${label}: ${v}">` +
+            `<span class="visit-stats-bar-val">${v}</span>` +
+            `<div class="visit-stats-bar${isToday ? " is-today" : ""}" style="height:${h}px"></div>` +
+            `<span class="visit-stats-bar-label">${label}</span>` +
+            `</div>`
+          );
+        }).join("");
+      }
+
+      function openVisitStats() {
+        if (!visitStatsModal) return;
+        renderVisitChart();
+        applyVisitDisplay(visitState.today, visitState.total);
+        visitStatsModal.hidden = false;
+        visitStatsModal.classList.add("is-open");
+      }
+
+      function closeVisitStats() {
+        if (!visitStatsModal) return;
+        visitStatsModal.classList.remove("is-open");
+        visitStatsModal.hidden = true;
+      }
+
       async function bootVisits() {
         if (!visitTodayEl || !visitTotalEl) return;
 
         const today = seoulDateKey();
         const totalKey = VISIT_NS + "-total-v1";
         const dayKey = VISIT_NS + "-day-" + today;
-        const flag = readVisitFlag();
-        const shouldHit = flag.date !== today || !flag.hit;
+        let data = syncVisitDay(readVisitState(), today);
+        applyVisitDisplay(data.today, data.total);
 
+        // 새로고침·재방문마다 +1 (페이지 로드 시마다 카운트)
         try {
-          let todayN;
-          let totalN;
-          if (shouldHit) {
-            const [dayRes, totalRes] = await Promise.all([
-              hitCount(dayKey),
-              hitCount(totalKey),
-            ]);
-            todayN = dayRes;
-            totalN = totalRes;
-            writeVisitFlag({ date: today, hit: true });
-          } else {
-            const [dayRes, totalRes] = await Promise.all([
-              readCount(dayKey),
-              readCount(totalKey),
-            ]);
-            todayN = dayRes;
-            totalN = totalRes;
-          }
-          animateVisitNum(visitTodayEl, todayN);
-          animateVisitNum(visitTotalEl, totalN);
+          const [dayRes, totalRes] = await Promise.all([
+            hitCount(dayKey),
+            hitCount(totalKey),
+          ]);
+          const todayN = Math.max(data.today + 1, dayRes);
+          const totalN = Math.max(data.total + 1, totalRes);
+          data.today = todayN;
+          data.total = totalN;
+          data.date = today;
+          data.hit = true;
+          data.days[today] = todayN;
+          writeVisitState(data);
+          applyVisitDisplay(todayN, totalN);
         } catch {
-          /* API 실패 시 브라우저 로컬 카운트로 폴백 */
-          let localToday = 0;
-          let localTotal = 0;
-          try {
-            const raw = localStorage.getItem(VISIT_STORE_KEY + "_fallback");
-            const data = raw ? JSON.parse(raw) : { total: 0, today: 0, date: "" };
-            if (data.date !== today) {
-              data.date = today;
-              data.today = 0;
-            }
-            if (shouldHit) {
-              data.today += 1;
-              data.total = (Number(data.total) || 0) + 1;
-              writeVisitFlag({ date: today, hit: true });
-            }
-            localStorage.setItem(VISIT_STORE_KEY + "_fallback", JSON.stringify(data));
-            localToday = Number(data.today) || 0;
-            localTotal = Number(data.total) || 0;
-          } catch {
-            localToday = shouldHit ? 1 : 0;
-            localTotal = shouldHit ? 1 : 0;
-          }
-          animateVisitNum(visitTodayEl, localToday);
-          animateVisitNum(visitTotalEl, localTotal);
+          data.today += 1;
+          data.total += 1;
+          data.date = today;
+          data.hit = true;
+          data.days[today] = data.today;
+          writeVisitState(data);
+          applyVisitDisplay(data.today, data.total);
         }
       }
+
+      if (visitStatsBtn) {
+        visitStatsBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          openVisitStats();
+        });
+      }
+      if (visitStatsClose) visitStatsClose.addEventListener("click", closeVisitStats);
+      if (visitStatsModal) {
+        visitStatsModal.addEventListener("click", (e) => {
+          if (e.target === visitStatsModal) closeVisitStats();
+        });
+      }
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeVisitStats();
+      });
 
       bootUnivNotices();
       bootVisits();

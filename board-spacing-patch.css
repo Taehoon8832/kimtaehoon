@@ -1,16 +1,20 @@
 /* Apps Script HTML <style> 맨 아래에 붙여넣기 후 저장 → 새 배포 */
-.board-wrap { padding: 8px max(8px, env(safe-area-inset-right)) 16px max(8px, env(safe-area-inset-left)) !important; }
-.board-head { gap: 6px !important; margin-bottom: 6px !important; padding: 6px 10px !important; }
-.board-head h1 { gap: 8px !important; font-size: 15px !important; }
-.board-head h1::before { height: 22px !important; padding: 0 7px !important; border-radius: 7px !important; font-size: 10px !important; }
-.btn-new { gap: 4px !important; padding: 6px 12px !important; font-size: 12px !important; }
-.btn-new svg { width: 14px !important; height: 14px !important; }
-.btn-ghost { padding: 6px 10px !important; font-size: 12px !important; }
-.board-table thead th { padding: 6px 6px !important; }
-.board-table tbody td { padding: 6px 6px !important; vertical-align: middle !important; }
-.col-num { width: 40px !important; max-width: 44px !important; padding-left: 4px !important; padding-right: 4px !important; }
-.board-card { padding: 8px 10px 7px !important; margin-bottom: 6px !important; }
+.board-wrap { padding: 6px max(6px, env(safe-area-inset-right)) 10px max(6px, env(safe-area-inset-left)) !important; }
+.board-head { gap: 4px !important; margin-bottom: 4px !important; padding: 4px 8px !important; }
+.board-head h1 { gap: 6px !important; font-size: 14px !important; }
+.board-head h1::before { height: 20px !important; padding: 0 6px !important; border-radius: 6px !important; font-size: 9px !important; }
+.btn-new { gap: 3px !important; padding: 5px 10px !important; font-size: 11px !important; }
+.btn-new svg { width: 13px !important; height: 13px !important; }
+.btn-ghost { padding: 5px 8px !important; font-size: 11px !important; }
+.board-table thead th { padding: 4px 5px !important; font-size: 11px !important; }
+.board-table tbody td { padding: 4px 5px !important; vertical-align: middle !important; font-size: 12px !important; line-height: 1.3 !important; }
+.col-num { width: 34px !important; max-width: 38px !important; padding-left: 2px !important; padding-right: 2px !important; }
+.board-card { padding: 5px 8px 4px !important; margin-bottom: 4px !important; }
+.board-card .title { font-size: 13px !important; line-height: 1.3 !important; }
+.board-card .meta { font-size: 11px !important; margin-top: 2px !important; }
 @media (max-width: 768px) {
-  .board-head > div .btn-ghost { min-height: 32px !important; padding: 0 10px !important; }
-  .board-head > div .btn-new { min-height: 34px !important; padding: 6px 12px !important; }
+  .board-head > div .btn-ghost { min-height: 28px !important; padding: 0 8px !important; }
+  .board-head > div .btn-new { min-height: 30px !important; padding: 4px 10px !important; }
+  .board-table tbody td { padding: 3px 4px !important; }
+  .board-card { padding: 4px 7px 3px !important; margin-bottom: 3px !important; }
 }

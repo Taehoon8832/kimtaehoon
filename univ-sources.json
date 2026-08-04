@@ -21,7 +21,8 @@
     "id": "u004",
     "name": "건국대(서울)",
     "homeUrl": "http://enter.konkuk.ac.kr/",
-    "boardUrl": "https://enter.konkuk.ac.kr/se/notice"
+    "boardUrl": "https://enter.konkuk.ac.kr/",
+    "priority": true
   },
   {
     "id": "u005",
@@ -33,13 +34,15 @@
     "id": "u006",
     "name": "경희대(서울)",
     "homeUrl": "https://iphak.khu.ac.kr/main.do",
-    "boardUrl": "https://iphak.khu.ac.kr/notice/notice.do"
+    "boardUrl": "https://iphak.khu.ac.kr/main.do",
+    "priority": true
   },
   {
     "id": "u007",
     "name": "고려대(안암)",
     "homeUrl": "http://oku.korea.ac.kr/",
-    "boardUrl": "https://oku.korea.ac.kr/oku/cms/FR_CON/index.do?MENU_ID=590"
+    "boardUrl": "https://oku.korea.ac.kr/oku/cms/FR_CON/index.do?MENU_ID=590",
+    "priority": true
   },
   {
     "id": "u008",
@@ -51,7 +54,8 @@
     "id": "u009",
     "name": "국민대",
     "homeUrl": "http://admission.kookmin.ac.kr/index.php?noMobile=1",
-    "boardUrl": ""
+    "boardUrl": "https://admission.kookmin.ac.kr/",
+    "priority": true
   },
   {
     "id": "u010",
@@ -63,7 +67,8 @@
     "id": "u011",
     "name": "동국대(서울)",
     "homeUrl": "https://ipsi.dongguk.edu/",
-    "boardUrl": "https://ipsi.dongguk.edu/article/NOTICE/list"
+    "boardUrl": "https://ipsi.dongguk.edu/article/NOTICE/list",
+    "priority": true
   },
   {
     "id": "u012",
@@ -93,7 +98,8 @@
     "id": "u016",
     "name": "서강대",
     "homeUrl": "http://admission.sogang.ac.kr/",
-    "boardUrl": ""
+    "boardUrl": "https://admission.sogang.ac.kr/",
+    "priority": true
   },
   {
     "id": "u017",
@@ -105,7 +111,8 @@
     "id": "u018",
     "name": "서울과학기술대",
     "homeUrl": "http://admission.seoultech.ac.kr/",
-    "boardUrl": ""
+    "boardUrl": "http://admission.seoultech.ac.kr/",
+    "priority": true
   },
   {
     "id": "u019",
@@ -123,13 +130,15 @@
     "id": "u021",
     "name": "서울대",
     "homeUrl": "http://admission.snu.ac.kr/",
-    "boardUrl": "https://admission.snu.ac.kr/undergraduate/notice"
+    "boardUrl": "https://admission.snu.ac.kr/undergraduate/notice",
+    "priority": true
   },
   {
     "id": "u022",
     "name": "서울시립대",
     "homeUrl": "http://iphak.uos.ac.kr/",
-    "boardUrl": "https://iphak.uos.ac.kr/ips/notice/notice.do"
+    "boardUrl": "https://iphak.uos.ac.kr/ips/notice/notice.do",
+    "priority": true
   },
   {
     "id": "u023",
@@ -147,7 +156,8 @@
     "id": "u025",
     "name": "성균관대",
     "homeUrl": "https://admission.skku.edu/",
-    "boardUrl": "https://admission.skku.edu/admission/notice.htm"
+    "boardUrl": "https://admission.skku.edu/",
+    "priority": true
   },
   {
     "id": "u026",
@@ -165,25 +175,29 @@
     "id": "u028",
     "name": "세종대",
     "homeUrl": "http://ipsi.sejong.ac.kr/",
-    "boardUrl": "https://ipsi.sejong.ac.kr/notice/noticeList.do"
+    "boardUrl": "https://ipsi.sejong.ac.kr/",
+    "priority": true
   },
   {
     "id": "u029",
     "name": "숙명여대",
     "homeUrl": "https://admission.sookmyung.ac.kr/",
-    "boardUrl": ""
+    "boardUrl": "https://admission.sookmyung.ac.kr/",
+    "priority": true
   },
   {
     "id": "u030",
     "name": "숭실대",
     "homeUrl": "https://iphak.ssu.ac.kr/",
-    "boardUrl": "https://iphak.ssu.ac.kr/bachelor/notice"
+    "boardUrl": "https://iphak.ssu.ac.kr/",
+    "priority": true
   },
   {
     "id": "u031",
     "name": "연세대(서울)",
     "homeUrl": "https://admission.yonsei.ac.kr/seoul/admission/html/main/main.asp",
-    "boardUrl": ""
+    "boardUrl": "https://admission.yonsei.ac.kr/seoul/admission/html/main/main.asp",
+    "priority": true
   },
   {
     "id": "u032",
@@ -195,7 +209,8 @@
     "id": "u033",
     "name": "이화여대",
     "homeUrl": "http://admission.ewha.ac.kr/",
-    "boardUrl": ""
+    "boardUrl": "http://admission.ewha.ac.kr/",
+    "priority": true
   },
   {
     "id": "u034",
@@ -207,7 +222,8 @@
     "id": "u035",
     "name": "중앙대(서울)",
     "homeUrl": "http://admission.cau.ac.kr/",
-    "boardUrl": "https://admission.cau.ac.kr/cms/FR_CON/Board/Board.do?mCode=MN021"
+    "boardUrl": "https://admission.cau.ac.kr/cms/FR_CON/Board/Board.do?mCode=MN021",
+    "priority": true
   },
   {
     "id": "u036",
@@ -231,7 +247,8 @@
     "id": "u039",
     "name": "한국외대(서울)",
     "homeUrl": "http://adms.hufs.ac.kr/",
-    "boardUrl": "https://adms.hufs.ac.kr/cms/FR_CON/Board/Board.do?mCode=MN036"
+    "boardUrl": "https://adms.hufs.ac.kr/cms/FR_CON/Board/Board.do?mCode=MN036",
+    "priority": true
   },
   {
     "id": "u040",
@@ -249,13 +266,15 @@
     "id": "u042",
     "name": "한양대(서울)",
     "homeUrl": "https://go.hanyang.ac.kr/",
-    "boardUrl": "https://go.hanyang.ac.kr/new/notice"
+    "boardUrl": "https://go.hanyang.ac.kr/",
+    "priority": true
   },
   {
     "id": "u043",
     "name": "홍익대(서울)",
     "homeUrl": "https://www.hongik.ac.kr/kr/admission/undergraduate-admission.do",
-    "boardUrl": "https://www.hongik.ac.kr/kr/admission/notice.do"
+    "boardUrl": "https://www.hongik.ac.kr/kr/admission/undergraduate-admission.do",
+    "priority": true
   },
   {
     "id": "u044",
@@ -273,7 +292,8 @@
     "id": "u046",
     "name": "가천대(글로벌)",
     "homeUrl": "http://admission.gachon.ac.kr/admission/html/main/main.asp",
-    "boardUrl": "https://admission.gachon.ac.kr/admission/html/counsel/notice.asp"
+    "boardUrl": "https://admission.gachon.ac.kr/admission/html/counsel/notice.asp",
+    "priority": true
   },
   {
     "id": "u047",
@@ -399,7 +419,8 @@
     "id": "u067",
     "name": "아주대",
     "homeUrl": "http://www.iajou.ac.kr/",
-    "boardUrl": "https://www.iajou.ac.kr/admission/notice.do"
+    "boardUrl": "https://www.iajou.ac.kr/admission/notice.do",
+    "priority": true
   },
   {
     "id": "u068",
@@ -555,7 +576,8 @@
     "id": "u093",
     "name": "인하대",
     "homeUrl": "http://admission.inha.ac.kr/",
-    "boardUrl": "https://admission.inha.ac.kr/cms/FR_CON/Board/Board.do?mCode=MN031"
+    "boardUrl": "https://admission.inha.ac.kr/cms/FR_CON/Board/Board.do?mCode=MN031",
+    "priority": true
   },
   {
     "id": "u094",
