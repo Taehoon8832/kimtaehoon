@@ -140,8 +140,48 @@ def is_404(html: str) -> bool:
     return ("HTTP 오류 404" in head) or ("404.0 - Not Found" in head) or ("error404" in head.lower())
 
 
-def make_item(src: dict, title: str, preview: str, absu: str, date_iso: str):
-    title = clean_title(title)
+def is_weak_article_url(absu: str, page_url: str) -> bool:
+    """홈/메인/해시 링크는 배너성으로 날짜 오염이 잦아 제외."""
+    if not absu or not absu.startswith("http"):
+        return True
+    low = absu.lower().split("#")[0]
+    if low.endswith("#") or absu.strip() in ("#",):
+        return True
+    if re.search(r"javascript:|void\(0\)", absu, re.I):
+        return True
+    if BROKEN.search(absu):
+        return True
+    # 게시글 id 파라미터가 없고 메인/인덱스면 약함
+    has_id = bool(
+        re.search(
+            r"[?&](id|no|seq|idx|bbsidx|ntt|article|artcl|brdIdx|dataSid|uid|num)=",
+            absu,
+            re.I,
+        )
+    )
+    if has_id:
+        return False
+    if re.search(r"/(main|index|intro)(\.(asp|do|php|html?))?/?$", low):
+        return True
+    # 페이지 URL 자체와 동일하면 목록 배너
+    try:
+        if urljoin(page_url, ".") == urljoin(absu, ".") and not has_id:
+            # same directory index
+            if re.search(r"/(main|index)\.", low) or low.rstrip("/").endswith(
+                urlparse(page_url).netloc
+            ):
+                return True
+    except Exception:
+        pass
+    return False
+
+
+def make_item(src: dict, title_raw: str, preview: str, absu: str, date_iso: str, page_url: str = ""):
+    # 제목에 박힌 날짜가 진짜 게시일 — 반드시 우선
+    title_date = extract_date(title_raw)
+    if title_date:
+        date_iso = title_date
+    title = clean_title(title_raw)
     if not title or len(title) < 8 or len(title) > 140:
         return None
     if SKIP.match(title) or JUNK.search(title) or BAD_TITLE.search(title):
@@ -154,9 +194,16 @@ def make_item(src: dict, title: str, preview: str, absu: str, date_iso: str):
         return None
     if not absu.startswith("http") or BROKEN.search(absu):
         return None
+    if is_weak_article_url(absu, page_url or absu):
+        return None
+    # 화살표/배너형 메뉴 문구 제거
+    if re.search(r"화살표|이전페이지|다음페이지|진행도", title):
+        return None
     preview = DATE_RE.sub(" ", preview or "")
     preview = re.sub(r"\s+", " ", preview).strip(" ·-|")
     if JUNK.search(preview) or len(re.findall(r"[가-힣]", preview)) < 2:
+        preview = f"{src['name']} 입학 공지사항 미리보기"
+    if re.search(r"화살표|이전페이지|다음페이지", preview):
         preview = f"{src['name']} 입학 공지사항 미리보기"
     key = f"{src['id']}|{absu}|{title}"
     return {
@@ -177,21 +224,23 @@ def parse_html(html: str, page_url: str, src: dict):
         return []
     items = []
     for m in re.finditer(
-        r'<a[^>]+href\s*=\s*["\']([^"\']+)["\'][^>]*>([\s\S]*?)</a>([\s\S]{0,360})',
+        r'<a[^>]+href\s*=\s*["\']([^"\']+)["\'][^>]*>([\s\S]*?)</a>([\s\S]{0,120})',
         html,
         re.I,
     ):
         href = unescape(m.group(1)).strip()
+        if not href or href.startswith("#") or href.lower().startswith("javascript:"):
+            continue
         title = strip_tags(m.group(2))
         tail = strip_tags(m.group(3))
         if not (NOTICE_HREF.search(href) or TITLE_HINT.search(title)):
             continue
-        date_iso = extract_date(tail) or extract_date(title)
-        # nearby window before link (list layouts put date left)
+        # 제목 날짜 우선, 없으면 바로 뒤 짧은은 꼬리만
+        date_iso = extract_date(title) or extract_date(tail)
         if not date_iso:
             continue
         absu = urljoin(page_url, href.split("#")[0])
-        it = make_item(src, title, tail, absu, date_iso)
+        it = make_item(src, title, tail, absu, date_iso, page_url)
         if it:
             items.append(it)
     uniq = {f"{it['url']}|{it['title']}": it for it in items}
@@ -207,22 +256,15 @@ def parse_markdown(md: str, src: dict):
         date_iso = to_iso(m.group(4), m.group(5), m.group(6))
         if not (NOTICE_HREF.search(url) or TITLE_HINT.search(title)):
             continue
-        it = make_item(src, title, tail, url, date_iso)
+        # 마크다운에서도 제목 날짜가 있으면 그걸 우선
+        title_date = extract_date(title)
+        if title_date:
+            date_iso = title_date
+        it = make_item(src, title, tail, url, date_iso, url)
         if it:
             items.append(it)
-    # fallback: title lines with nearby dates (no markdown link)
-    for m in re.finditer(
-        r"(?:^|\n)\s*(?:[-*•]\s*)?(.{8,140}?)\s+(20\d{2})[.\-/](\d{1,2})[.\-/](\d{1,2})",
-        md or "",
-    ):
-        title = strip_tags(m.group(1))
-        date_iso = to_iso(m.group(2), m.group(3), m.group(4))
-        if not TITLE_HINT.search(title):
-            continue
-        home = (src.get("boardUrl") or src.get("homeUrl") or "").strip()
-        it = make_item(src, title, f"{src['name']} 입학 공지사항 미리보기", home, date_iso)
-        if it:
-            items.append(it)
+    # fallback: title lines with nearby dates (no markdown link) — 약한 URL이라 스킵
+    # (홈 URL에 날짜만 붙이면 서강대 5/29→8/4 같은 오염이 재발함)
     uniq = {f"{it['url']}|{it['title']}": it for it in items}
     return sorted(uniq.values(), key=lambda x: x["dateISO"], reverse=True)[:MAX_PER]
 
