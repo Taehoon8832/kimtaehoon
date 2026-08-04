@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""입학처 homeUrl 기준 전체 공지 제목·내용 미리보기 수집 → univ-board-data.js"""
+"""전체 대학 입학처 공지 수집 (2026-08-01 이후) → univ-board-data.js"""
 from __future__ import annotations
 
 import hashlib
@@ -15,57 +15,86 @@ from urllib.parse import urljoin, urlparse
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parent
-MIN_DATE = "2026-01-01"  # 미리보기용 (표시는 최신 우선)
-MAX_PER_UNIV = 2
+MIN_DATE = "2026-08-01"
+MAX_PER = 6
+CTX = ssl._create_unverified_context()
 UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
 )
-CTX = ssl._create_unverified_context()
 
-DATE_RE = re.compile(
-    r"(20\d{2})\s*[.\-/년]\s*(\d{1,2})\s*[.\-/월]\s*(\d{1,2})"
+DATE_RE = re.compile(r"(20\d{2})\s*[.\-/년]\s*(\d{1,2})\s*[.\-/월]\s*(\d{1,2})")
+TITLE_HINT = re.compile(
+    r"(공지|안내|모집|요강|발표|일정|변경|합격|전형|수시|정시|면접|설명회|시행|모의|상담|접수|결과)"
 )
-SKIP_TITLE = re.compile(
-    r"^(더보기|more|이전|다음|목록|home|로그인|전체|공지사항|공지|뉴스|닫기|메뉴)$",
+NOTICE_HREF = re.compile(
+    r"(notice|bbs|board|article|artcl|공지|소식|news|view|Board|ipsi|admission|ntt|brd)",
     re.I,
 )
 JUNK = re.compile(
-    r"(var\s|function\s|document\.|<\w+|[{};]=|bbsrg|nowd|rsD|onclick|javascript:)",
+    r"(var\s|function\s|document\.|<\w+|javascript:|bbsrg|사이트맵|로그인|개인정보|이용약관|웹접근성)",
     re.I,
 )
-NOTICE_HINT = re.compile(
-    r"(notice|bbs|board|article|artcl|공지|소식|news|ipsi|admission|view|게시)",
+SKIP = re.compile(
+    r"^(더보기|more|이전|다음|목록|home|로그인|전체|공지사항|공지|뉴스|새글|N|NEW)$",
     re.I,
 )
-TITLE_HINT = re.compile(
-    r"(공지|안내|모집|요강|발표|일정|변경|합격|전형|수시|정시|면접|실기|논술|설명회)"
+BROKEN = re.compile(r"/admission/html/notice/notice\.asp$|error404|404\.html", re.I)
+MD_LINK = re.compile(
+    r"\[([^\]]{6,180})\]\((https?://[^)\s]+)\)([\s\S]{0,160}?)"
+    r"(20\d{2})\s*[.\-/년]\s*(\d{1,2})\s*[.\-/월]\s*(\d{1,2})"
+)
+COMMON_PATHS = (
+    "/notice",
+    "/bbs/notice",
+    "/board/notice",
+    "/admission/notice",
+    "/ipsi/notice",
+    "/enter/notice",
+    "/html/notice/notice.asp",
+    "/cms/FR_CON/Board/Board.do",
 )
 
 
 def load_sources():
+    js = ROOT / "univ-board-data.js"
+    if js.exists():
+        raw = js.read_text(encoding="utf-8").split("=", 1)[1].strip().rstrip(";")
+        try:
+            return json.loads(raw).get("sources") or []
+        except Exception:
+            pass
     return json.loads((ROOT / "univ-sources.json").read_text(encoding="utf-8"))
 
 
-def fetch(url: str, timeout: int = 16) -> str:
+def fetch(url: str, timeout: int = 16):
     req = Request(
         url,
         headers={
             "User-Agent": UA,
-            "Accept": "text/html,application/xhtml+xml;q=0.9,*/*;q=0.8",
+            "Accept": "text/html,application/xhtml+xml,text/plain;q=0.9,*/*;q=0.8",
             "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.8",
         },
     )
     with urlopen(req, context=CTX, timeout=timeout) as res:
         raw = res.read()
+        final = res.geturl()
+        code = getattr(res, "status", 200) or 200
     for enc in ("utf-8", "euc-kr", "cp949"):
         try:
             text = raw.decode(enc)
-            if len(re.findall(r"[가-힣]", text)) >= 5 or enc == "cp949":
-                return text
+            if len(re.findall(r"[가-힣]", text)) >= 6 or enc == "cp949":
+                return code, text, final
         except Exception:
             continue
-    return raw.decode("utf-8", errors="ignore")
+    return code, raw.decode("utf-8", "ignore"), final
+
+
+def fetch_jina(url: str) -> str:
+    code, text, _ = fetch("https://r.jina.ai/" + url, timeout=40)
+    if code >= 400 or len(text) < 200:
+        return ""
+    return text
 
 
 def strip_tags(html: str) -> str:
@@ -73,11 +102,10 @@ def strip_tags(html: str) -> str:
     s = re.sub(r"<script[\s\S]*?</script>", " ", s, flags=re.I)
     s = re.sub(r"<style[\s\S]*?</style>", " ", s, flags=re.I)
     s = re.sub(r"<[^>]+>", " ", s)
-    s = s.replace("\xa0", " ")
     return re.sub(r"\s+", " ", s).strip()
 
 
-def to_iso(y, mo, d) -> str:
+def to_iso(y, mo, d):
     try:
         iso = f"{int(y):04d}-{int(mo):02d}-{int(d):02d}"
     except Exception:
@@ -87,223 +115,261 @@ def to_iso(y, mo, d) -> str:
     return iso
 
 
-def abs_url(href: str, base: str) -> str:
-    href = unescape((href or "").strip()).split("#")[0]
-    if not href or href.startswith("javascript:") or href == "#":
-        return ""
-    if href.startswith("//"):
-        return "https:" + href
-    try:
-        return urljoin(base, href)
-    except Exception:
-        return ""
-
-
 def extract_date(text: str) -> str:
     m = DATE_RE.search(text or "")
-    if not m:
-        return ""
-    return to_iso(m.group(1), m.group(2), m.group(3))
+    return to_iso(m.group(1), m.group(2), m.group(3)) if m else ""
 
 
-def is_404_page(html: str) -> bool:
-    head = (html or "")[:2500]
-    return ("HTTP 오류 404" in head) or ("404.0 - Not Found" in head) or (
-        re.search(r"<title>[^<]*404[^<]*</title>", head, re.I) is not None
-        and "공지" not in head
-    )
+def clean_title(title: str) -> str:
+    t = re.sub(r"\s+", " ", (title or "")).strip()
+    t = re.sub(r"^(새글|N|NEW|공지)\s*", "", t, flags=re.I)
+    t = DATE_RE.sub("", t)
+    t = re.sub(r"\s+", " ", t).strip(" ·-|")
+    return t
 
 
-def parse_notices(html: str, src: dict, page_url: str):
-    if not html or is_404_page(html):
+def is_404(html: str) -> bool:
+    head = (html or "")[:2800]
+    return ("HTTP 오류 404" in head) or ("404.0 - Not Found" in head) or ("error404" in head.lower())
+
+
+def make_item(src: dict, title: str, preview: str, absu: str, date_iso: str):
+    title = clean_title(title)
+    if not title or len(title) < 8 or len(title) > 140:
+        return None
+    if SKIP.match(title) or JUNK.search(title):
+        return None
+    if len(re.findall(r"[가-힣]", title)) < 4:
+        return None
+    if not date_iso or date_iso < MIN_DATE:
+        return None
+    if not absu.startswith("http") or BROKEN.search(absu):
+        return None
+    preview = DATE_RE.sub(" ", preview or "")
+    preview = re.sub(r"\s+", " ", preview).strip(" ·-|")
+    if JUNK.search(preview) or len(re.findall(r"[가-힣]", preview)) < 2:
+        preview = f"{src['name']} 입학 공지사항 미리보기"
+    key = f"{src['id']}|{absu}|{title}"
+    return {
+        "id": hashlib.sha1(key.encode()).hexdigest()[:20],
+        "univId": src["id"],
+        "univName": src["name"],
+        "title": title,
+        "preview": preview[:120],
+        "url": absu,
+        "homeUrl": src.get("homeUrl") or "",
+        "dateISO": date_iso,
+        "dateText": date_iso.replace("-", "."),
+    }
+
+
+def parse_html(html: str, page_url: str, src: dict):
+    if not html or is_404(html):
         return []
     items = []
-    # anchor + nearby tail for date/preview
     for m in re.finditer(
-        r'<a[^>]+href\s*=\s*["\']([^"\']+)["\'][^>]*>([\s\S]*?)</a>([\s\S]{0,280})',
+        r'<a[^>]+href\s*=\s*["\']([^"\']+)["\'][^>]*>([\s\S]*?)</a>([\s\S]{0,360})',
         html,
         re.I,
     ):
-        href = m.group(1)
+        href = unescape(m.group(1)).strip()
         title = strip_tags(m.group(2))
         tail = strip_tags(m.group(3))
-        if not title or len(title) < 8 or len(title) > 120:
-            continue
-        if SKIP_TITLE.match(title) or JUNK.search(title):
-            continue
-        if len(re.findall(r"[가-힣]", title)) < 4:
-            continue
-        if not (NOTICE_HINT.search(href) or TITLE_HINT.search(title)):
+        if not (NOTICE_HREF.search(href) or TITLE_HINT.search(title)):
             continue
         date_iso = extract_date(tail) or extract_date(title)
-        if not date_iso or date_iso < MIN_DATE:
+        # nearby window before link (list layouts put date left)
+        if not date_iso:
             continue
-        url = abs_url(href, page_url)
-        if not url or url.rstrip("/") == page_url.rstrip("/"):
-            continue
-        # preview = nearby text without the date echo
-        preview = DATE_RE.sub(" ", tail)
-        preview = re.sub(r"\s+", " ", preview).strip(" ·-|")
-        if JUNK.search(preview) or len(re.findall(r"[가-힣]", preview)) < 4:
-            preview = f"{src['name']} 입학처 전체 공지사항"
-        preview = preview[:96]
-        key = f"{src['id']}|{url}|{title}"
-        items.append(
-            {
-                "id": hashlib.sha1(key.encode("utf-8")).hexdigest()[:20],
-                "univId": src["id"],
-                "univName": src["name"],
-                "title": title,
-                "preview": preview,
-                "url": url,
-                "homeUrl": src.get("homeUrl") or "",
-                "dateISO": date_iso,
-                "dateText": date_iso.replace("-", "."),
-            }
-        )
-
-    # table rows fallback
-    for m in re.finditer(r"<tr[^>]*>([\s\S]*?)</tr>", html, re.I):
-        row = m.group(1)
-        if re.search(r"<th[\s>]", row, re.I):
-            continue
-        a = re.search(
-            r'<a[^>]+href\s*=\s*["\']([^"\']+)["\'][^>]*>([\s\S]*?)</a>', row, re.I
-        )
-        if not a:
-            continue
-        title = strip_tags(a.group(2))
-        date_iso = extract_date(strip_tags(row))
-        if not title or len(title) < 8 or not date_iso or date_iso < MIN_DATE:
-            continue
-        if SKIP_TITLE.match(title) or JUNK.search(title):
-            continue
-        if len(re.findall(r"[가-힣]", title)) < 4:
-            continue
-        if not (NOTICE_HINT.search(a.group(1)) or TITLE_HINT.search(title)):
-            continue
-        url = abs_url(a.group(1), page_url)
-        if not url:
-            continue
-        key = f"{src['id']}|{url}|{title}"
-        items.append(
-            {
-                "id": hashlib.sha1(key.encode("utf-8")).hexdigest()[:20],
-                "univId": src["id"],
-                "univName": src["name"],
-                "title": title,
-                "preview": f"{src['name']} 입학처 전체 공지사항",
-                "url": url,
-                "homeUrl": src.get("homeUrl") or "",
-                "dateISO": date_iso,
-                "dateText": date_iso.replace("-", "."),
-            }
-        )
-
-    uniq = {}
-    for it in items:
-        uniq[f"{it['url']}|{it['title']}"] = it
-    out = sorted(uniq.values(), key=lambda x: x["dateISO"], reverse=True)
-    return out[:MAX_PER_UNIV]
+        absu = urljoin(page_url, href.split("#")[0])
+        it = make_item(src, title, tail, absu, date_iso)
+        if it:
+            items.append(it)
+    uniq = {f"{it['url']}|{it['title']}": it for it in items}
+    return sorted(uniq.values(), key=lambda x: x["dateISO"], reverse=True)[:MAX_PER]
 
 
-def scrape_source(src: dict):
-    home = (src.get("homeUrl") or "").strip()
-    board = (src.get("boardUrl") or "").strip()
-    # 입학처 URL 기준: home 우선, board는 보조
+def parse_markdown(md: str, src: dict):
+    items = []
+    for m in MD_LINK.finditer(md or ""):
+        title = strip_tags(m.group(1))
+        url = m.group(2).split("#")[0]
+        tail = strip_tags(m.group(3))
+        date_iso = to_iso(m.group(4), m.group(5), m.group(6))
+        if not (NOTICE_HREF.search(url) or TITLE_HINT.search(title)):
+            continue
+        it = make_item(src, title, tail, url, date_iso)
+        if it:
+            items.append(it)
+    # fallback: title lines with nearby dates (no markdown link)
+    for m in re.finditer(
+        r"(?:^|\n)\s*(?:[-*•]\s*)?(.{8,140}?)\s+(20\d{2})[.\-/](\d{1,2})[.\-/](\d{1,2})",
+        md or "",
+    ):
+        title = strip_tags(m.group(1))
+        date_iso = to_iso(m.group(2), m.group(3), m.group(4))
+        if not TITLE_HINT.search(title):
+            continue
+        home = (src.get("boardUrl") or src.get("homeUrl") or "").strip()
+        it = make_item(src, title, f"{src['name']} 입학 공지사항 미리보기", home, date_iso)
+        if it:
+            items.append(it)
+    uniq = {f"{it['url']}|{it['title']}": it for it in items}
+    return sorted(uniq.values(), key=lambda x: x["dateISO"], reverse=True)[:MAX_PER]
+
+
+def candidate_urls(src: dict):
     urls = []
-    for u in (home, board):
-        if u and u not in urls:
+    for u in ((src.get("boardUrl") or "").strip(), (src.get("homeUrl") or "").strip()):
+        if u and u not in urls and not BROKEN.search(u):
             urls.append(u)
+    home = (src.get("homeUrl") or "").strip()
+    if home and not BROKEN.search(home):
+        try:
+            p = urlparse(home)
+            base = f"{p.scheme}://{p.netloc}"
+            for path in COMMON_PATHS:
+                u = urljoin(base + "/", path.lstrip("/"))
+                if u not in urls and not BROKEN.search(u):
+                    urls.append(u)
+        except Exception:
+            pass
+    return urls[:5]
+
+
+def scrape_one(src, use_jina=False):
+    urls = candidate_urls(src)
     if not urls:
         return [], "no_url"
-
     all_items = []
-    last_err = ""
+    err = ""
     for u in urls:
         try:
-            html = fetch(u)
-            items = parse_notices(html, src, u)
+            code, html, final = fetch(u)
+            if code >= 400 or is_404(html):
+                err = f"http_{code}"
+                continue
+            items = parse_html(html, final, src)
             all_items.extend(items)
             if items:
                 break
         except Exception as e:
-            last_err = f"{type(e).__name__}"
-            continue
-
-    uniq = {}
-    for it in all_items:
-        uniq[f"{it['url']}|{it['title']}"] = it
-    items = sorted(uniq.values(), key=lambda x: x["dateISO"], reverse=True)[
-        :MAX_PER_UNIV
-    ]
-    if items:
-        return items, "ok"
-    return [], last_err or "empty"
+            err = type(e).__name__
+    if not all_items and use_jina:
+        for u in urls[:2]:
+            try:
+                md = fetch_jina(u)
+                items = parse_markdown(md, src)
+                all_items.extend(items)
+                if items:
+                    break
+                time.sleep(0.35)
+            except Exception as e:
+                err = "jina_" + type(e).__name__
+    uniq = {f"{it['url']}|{it['title']}": it for it in all_items}
+    items = sorted(uniq.values(), key=lambda x: x["dateISO"], reverse=True)[:MAX_PER]
+    return items, ("ok" if items else (err or "empty"))
 
 
 def main():
     sources = load_sources()
-    # unique by homeUrl to avoid double work, then expand names
-    by_home = {}
+    groups = {}
     for s in sources:
-        key = (s.get("homeUrl") or s.get("boardUrl") or s["id"]).strip()
-        by_home.setdefault(key, []).append(s)
+        key = ((s.get("homeUrl") or "") + "|" + (s.get("boardUrl") or "")).strip("|")
+        if not key:
+            key = s["id"]
+        groups.setdefault(key, []).append(s)
 
-    print(f"sources={len(sources)} homes={len(by_home)}")
+    print(f"sources={len(sources)} groups={len(groups)}")
     results = {}
     ok = empty = fail = 0
 
-    with ThreadPoolExecutor(max_workers=12) as ex:
-        futs = {ex.submit(scrape_source, group[0]): group for group in by_home.values()}
+    # pass 1: fast direct HTML
+    with ThreadPoolExecutor(max_workers=16) as ex:
+        futs = {ex.submit(scrape_one, g[0], False): g for g in groups.values()}
         for fut in as_completed(futs):
             group = futs[fut]
             items, status = fut.result()
             name = group[0]["name"]
             if status == "ok":
                 ok += 1
-                # replicate for campus aliases sharing same home
                 for src in group:
                     for it in items:
                         copy = dict(it)
                         copy["univId"] = src["id"]
                         copy["univName"] = src["name"]
                         copy["homeUrl"] = src.get("homeUrl") or copy.get("homeUrl") or ""
-                        key = f"{copy['univId']}|{copy['url']}|{copy['title']}"
-                        copy["id"] = hashlib.sha1(key.encode()).hexdigest()[:20]
-                        results[key] = copy
+                        k = f"{copy['univId']}|{copy['url']}|{copy['title']}"
+                        copy["id"] = hashlib.sha1(k.encode()).hexdigest()[:20]
+                        results[k] = copy
                 print(f"OK  {name}: {len(items)}")
-            elif status == "empty":
+            elif status in ("empty", "no_url"):
                 empty += 1
             else:
                 fail += 1
-                print(f"--  {name}: {status}")
 
-    notices = sorted(
-        results.values(),
-        key=lambda x: (x["dateISO"], x.get("title") or ""),
-        reverse=True,
-    )
-    # hard cap for file size / UI
-    if len(notices) > 500:
-        notices = notices[:500]
+    # pass 2: jina for empty groups that have boardUrl (rate-limited)
+    need_jina = []
+    covered_keys = set()
+    for k, it in results.items():
+        covered_keys.add(((it.get("homeUrl") or "") + "|" + "").strip())
+    have_univ = {it["univId"] for it in results.values()}
+    for g in groups.values():
+        if any(s["id"] in have_univ for s in g):
+            continue
+        if (g[0].get("boardUrl") or "").strip() or (g[0].get("priority")):
+            need_jina.append(g)
+
+    print(f"jina_pass candidates={len(need_jina)}")
+    for g in need_jina:
+        items, status = scrape_one(g[0], True)
+        name = g[0]["name"]
+        if status == "ok":
+            ok += 1
+            empty = max(0, empty - 1)
+            for src in g:
+                for it in items:
+                    copy = dict(it)
+                    copy["univId"] = src["id"]
+                    copy["univName"] = src["name"]
+                    copy["homeUrl"] = src.get("homeUrl") or copy.get("homeUrl") or ""
+                    k = f"{copy['univId']}|{copy['url']}|{copy['title']}"
+                    copy["id"] = hashlib.sha1(k.encode()).hexdigest()[:20]
+                    results[k] = copy
+            print(f"JINA {name}: {len(items)}")
+        time.sleep(0.55)
+
+    notices = sorted(results.values(), key=lambda x: (x["dateISO"], x["title"]), reverse=True)
+    priority = []
+    js_path = ROOT / "univ-board-data.js"
+    if js_path.exists():
+        try:
+            old = json.loads(js_path.read_text(encoding="utf-8").split("=", 1)[1].strip().rstrip(";"))
+            priority = old.get("priority") or []
+            # keep older valid notices so we don't regress
+            for n in old.get("notices") or []:
+                if not n.get("dateISO") or n["dateISO"] < MIN_DATE:
+                    continue
+                if not n.get("title") or not n.get("url"):
+                    continue
+                k = f"{n.get('univId')}|{n.get('url')}|{n.get('title')}"
+                results.setdefault(k, n)
+            notices = sorted(results.values(), key=lambda x: (x["dateISO"], x["title"]), reverse=True)
+        except Exception:
+            priority = []
 
     payload = {
         "minDate": MIN_DATE,
         "updatedAt": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "sources": sources,
         "notices": notices,
+        "priority": priority,
     }
-    (ROOT / "univ-sources.json").write_text(
-        json.dumps(sources, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
-    js = (
-        "window.UNIV_BOARD_DATA="
-        + json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
-        + ";\n"
-    )
-    (ROOT / "univ-board-data.js").write_text(js, encoding="utf-8")
-    print(f"done ok={ok} empty={empty} fail={fail} notices={len(notices)}")
+    (ROOT / "univ-sources.json").write_text(json.dumps(sources, ensure_ascii=False, indent=2), encoding="utf-8")
+    js = "window.UNIV_BOARD_DATA=" + json.dumps(payload, ensure_ascii=False, separators=(",", ":")) + ";\n"
+    js_path.write_text(js, encoding="utf-8")
+    univs = len({n["univId"] for n in notices})
+    print(f"done ok={ok} empty={empty} fail={fail} notices={len(notices)} univs={univs}")
 
 
 if __name__ == "__main__":

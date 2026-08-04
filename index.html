@@ -998,11 +998,14 @@
       padding-top: 5px;
     }
 
-    .univ-notice-item.is-priority .univ-notice-univ {
-      background: linear-gradient(180deg, #efe6ff 0%, #e4d7fb 100%);
-      border-color: #b89de0;
-      color: #4b2d7a;
-    }
+    .univ-notice-univ.tone-0 { background: #efe6f8; border-color: #d4c2eb; color: #5a3480; }
+    .univ-notice-univ.tone-1 { background: #e6eef8; border-color: #c2d2eb; color: #2f5080; }
+    .univ-notice-univ.tone-2 { background: #f8e6ee; border-color: #ebc2d4; color: #803450; }
+    .univ-notice-univ.tone-3 { background: #e6f5ee; border-color: #bfe5d0; color: #2d6b4e; }
+    .univ-notice-univ.tone-4 { background: #f7eee6; border-color: #e8d0bc; color: #7a4a2c; }
+    .univ-notice-univ.tone-5 { background: #e8e6f6; border-color: #c8c4e8; color: #3c3880; }
+    .univ-notice-univ.tone-6 { background: #f6e8f0; border-color: #e4c4d6; color: #7a3558; }
+    .univ-notice-univ.tone-7 { background: #e8f2f6; border-color: #c4dce6; color: #2f5f70; }
 
     .visually-hidden {
       position: absolute;
@@ -1054,8 +1057,8 @@
       position: relative;
       isolation: isolate;
       background:
-        linear-gradient(90deg, rgba(255, 236, 210, 0.88) 0%, rgba(255, 245, 230, 0.55) 42%, rgba(255, 255, 255, 0.15) 78%);
-      box-shadow: inset 3px 0 0 #e8a23a;
+        linear-gradient(90deg, rgba(255, 214, 228, 0.42) 0%, rgba(243, 238, 248, 0.55) 45%, rgba(255, 255, 255, 0.2) 85%);
+      box-shadow: inset 3px 0 0 #e9a0b4;
     }
 
     .univ-notice-item.is-today::before {
@@ -1066,56 +1069,52 @@
       background: linear-gradient(
         105deg,
         transparent 0%,
-        transparent 35%,
-        rgba(255, 255, 255, 0.65) 48%,
+        transparent 38%,
+        rgba(255, 255, 255, 0.55) 50%,
         transparent 62%,
         transparent 100%
       );
       background-size: 220% 100%;
-      animation: univTodayShine 4.2s ease-in-out infinite;
+      animation: univTodayShine 5s ease-in-out infinite;
       pointer-events: none;
     }
 
     .univ-notice-item.is-today .univ-notice-date {
-      color: #8a5a28;
+      color: #c45b7a;
       font-weight: 800;
     }
 
     .univ-notice-item.is-today .univ-notice-title {
-      color: #2a241c;
-    }
-
-    .univ-notice-item.is-today .univ-notice-univ {
-      background: #fff3d6;
-      border-color: #f0c878;
-      color: #8a5a28;
+      color: #2a2d3a;
     }
 
     .univ-notice-item.is-today:hover,
     .univ-notice-item.is-today:focus-visible {
       background:
-        linear-gradient(90deg, rgba(255, 228, 188, 0.95) 0%, rgba(255, 242, 220, 0.7) 45%, rgba(255, 255, 255, 0.25) 80%);
+        linear-gradient(90deg, rgba(255, 214, 228, 0.58) 0%, rgba(243, 238, 248, 0.7) 48%, rgba(255, 255, 255, 0.35) 88%);
     }
 
     .univ-notice-univ {
       flex: 0 0 auto;
       display: inline-flex;
       align-items: center;
-      max-width: 7.2rem;
-      padding: 1px 7px;
-      border-radius: 999px;
-      border: 1px solid #c9b8e0;
-      background: linear-gradient(180deg, #f4ecff 0%, #ebe2f8 100%);
+      max-width: 8.4rem;
+      min-width: 4.2rem;
+      justify-content: center;
+      padding: 2px 9px;
+      border-radius: 8px;
+      border: 1px solid #ddd0ef;
+      background: #f3eef8;
       color: #5b3d8a;
-      font-size: 11px;
+      font-size: 11.5px;
       font-weight: 800;
-      line-height: 1.4;
-      letter-spacing: -0.02em;
+      line-height: 1.35;
+      letter-spacing: -0.04em;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       text-decoration: none;
-      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset;
     }
 
     .univ-notice-date {
@@ -1134,14 +1133,15 @@
       flex: 0 0 auto;
       display: inline-flex;
       align-items: center;
-      padding: 0 5px;
+      padding: 0 6px;
       border-radius: 999px;
-      background: linear-gradient(135deg, #ffc2d1, #e86b88);
-      color: #fff;
+      border: 1px solid #f0b8c8;
+      background: rgba(255, 228, 236, 0.95);
+      color: #c45b7a;
       font-size: 9px;
       font-weight: 800;
       line-height: 1.4;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.02em;
     }
 
     .univ-notice-title {
@@ -2055,7 +2055,7 @@
                 spellcheck="false"
               />
             </label>
-            <span id="univNoticeCount">총 0곳</span>
+            <span id="univNoticeCount">공지 0건</span>
           </div>
           <div class="univ-notice-list" id="univNoticeList" aria-live="polite">
             <div class="univ-notice-empty">전체 공지를 불러오는 중입니다…</div>
@@ -2163,10 +2163,11 @@
       const univSources = Array.isArray(univBoardData.sources) ? univBoardData.sources : [];
       const univPriority = Array.isArray(univBoardData.priority) ? univBoardData.priority : [];
       const UNIV_MIN_DATE = "2026-08-01";
-      const UNIV_LIVE_MS = 45000;
+      const UNIV_LIVE_MS = 50000;
       let univNoticePool = Array.isArray(univBoardData.notices) ? univBoardData.notices.slice() : [];
       let univQuery = "";
       let univLiveBusy = false;
+      let univLiveCursor = 0;
 
       const PRIORITY_ORDER = [
         "서울대", "연세대", "고려대", "서강대", "성균관대", "한양대", "중앙대", "경희대",
@@ -2209,7 +2210,7 @@
       }
 
       function isJunkText(s) {
-        return /var\s|function\s|document\.|<\w+|[{};]=|bbsrg|javascript:/i.test(String(s || ""));
+        return /var\s|function\s|document\.|<\w+|[{};]=|bbsrg|javascript:|개인정보|이용약관/i.test(String(s || ""));
       }
 
       function priorityRank(name) {
@@ -2230,6 +2231,13 @@
 
       function priorityCfgById(univId) {
         return univPriority.find((p) => p.univId === univId) || null;
+      }
+
+      function univToneClass(name) {
+        const s = String(name || "");
+        let h = 0;
+        for (let i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0;
+        return `tone-${h % 8}`;
       }
 
       /** 검증된 입학처/공지 URL만 사용 (404 경로 차단) */
@@ -2267,6 +2275,13 @@
           .trim();
       }
 
+      function cleanTitle(title) {
+        let t = String(title || "").replace(/\s+/g, " ").trim();
+        t = t.replace(/^(새글|N|NEW|공지)\s*/i, "");
+        t = t.replace(/(20\d{2})\s*[.\-/년]\s*(\d{1,2})\s*[.\-/월]\s*(\d{1,2})/g, " ");
+        return t.replace(/\s+/g, " ").trim().replace(/^[·\-|]+\s*|\s*[·\-|]+$/g, "");
+      }
+
       function toAbsUrl(href, base) {
         try {
           return new URL(href, base).href.split("#")[0];
@@ -2276,20 +2291,18 @@
       }
 
       function normalizeNotice(it) {
-        const title = String(it.title || "").replace(/\s+/g, " ").trim();
+        const title = cleanTitle(it.title);
         let preview = String(it.preview || "").replace(/\s+/g, " ").trim();
         const univName = String(it.univName || "").replace(/\s+/g, " ").trim();
         const univId = String(it.univId || "");
         const dateISO = String(it.dateISO || "").slice(0, 10);
-        const boardOnly = Boolean(it.boardOnly);
         if (!title || !univName) return null;
-        if (!boardOnly) {
-          if (title.length < 6 || isJunkText(title)) return null;
-          if ((title.match(/[가-힣]/g) || []).length < 3) return null;
-          if (!dateISO || dateISO < UNIV_MIN_DATE) return null;
-        }
+        if (title.length < 6 || isJunkText(title)) return null;
+        if ((title.match(/[가-힣]/g) || []).length < 3) return null;
+        if (!dateISO || dateISO < UNIV_MIN_DATE) return null;
+        if (/채용\s*공고|직원\s*채용|근로장학생|학자금대출|문의\s*\(\d|공지사항\s*더보기|^대학\s*입학\s*문의/i.test(title)) return null;
         if (isJunkText(preview) || (preview.match(/[가-힣]/g) || []).length < 2) {
-          preview = `${univName} 입학처 전체 공지사항`;
+          preview = `${univName} 입학 공지사항 미리보기`;
         }
         const href = safeOpenUrl(it);
         if (!href) return null;
@@ -2298,11 +2311,9 @@
           univName,
           title,
           preview: preview.slice(0, 110),
-          dateISO: boardOnly ? "" : dateISO,
+          dateISO,
           href,
           priority: isPriorityUniv(univName) || Boolean(it.priority),
-          boardOnly,
-          hasNotice: !boardOnly,
         };
       }
 
@@ -2311,7 +2322,7 @@
         univNoticePool.concat(extra || []).forEach((raw) => {
           const n = normalizeNotice(raw);
           if (!n) return;
-          const key = `${n.univId}|${n.title}|${n.dateISO}|${n.boardOnly ? "b" : "n"}`;
+          const key = `${n.univId}|${n.title}|${n.dateISO}`;
           map.set(key, {
             univId: n.univId,
             univName: n.univName,
@@ -2320,90 +2331,27 @@
             url: n.href,
             homeUrl: raw.homeUrl || "",
             dateISO: n.dateISO,
-            dateText: n.dateISO ? n.dateISO.replace(/-/g, ".") : "",
+            dateText: n.dateISO.replace(/-/g, "."),
             priority: n.priority,
-            boardOnly: n.boardOnly,
           });
         });
         univNoticePool = Array.from(map.values());
       }
 
-      function ensurePriorityBoardRows() {
-        const havePost = new Set(
-          univNoticePool
-            .filter((n) => n.dateISO && n.dateISO >= UNIV_MIN_DATE && !n.boardOnly)
-            .map((n) => n.univId)
-        );
-        const extras = [];
-        univPriority.forEach((p) => {
-          if (!p.univId || havePost.has(p.univId)) return;
-          const existsBoard = univNoticePool.some((n) => n.univId === p.univId && n.boardOnly);
-          if (existsBoard) return;
-          extras.push({
-            univId: p.univId,
-            univName: p.univName,
-            title: `${p.univName} 입학처 전체 공지사항`,
-            preview: "2026.08.01 이후 공지 · 입학처 게시판 바로가기",
-            url: p.boardUrl || p.homeUrl,
-            homeUrl: p.homeUrl,
-            dateISO: "",
-            priority: true,
-            boardOnly: true,
-          });
-        });
-        if (extras.length) mergeNoticePool(extras);
-      }
-
+      /** 실제 공지(제목+미리보기+날짜)만 · 최신순 */
       function buildUnivRows() {
         const today = seoulTodayISO();
-        ensurePriorityBoardRows();
-
-        const noticeRows = univNoticePool
-          .map(normalizeNotice)
-          .filter(Boolean)
-          .filter((r) => r.priority || (r.dateISO && r.dateISO >= UNIV_MIN_DATE));
-
-        // 우선 대학 공지(실제 글) 먼저, 그다음 우선 대학 게시판 링크, 나머지 대학
-        const prioPosts = noticeRows.filter((r) => r.priority && r.hasNotice);
-        const prioBoards = noticeRows.filter((r) => r.priority && r.boardOnly);
-        const otherPosts = noticeRows.filter((r) => !r.priority && r.hasNotice);
-
-        const covered = new Set(noticeRows.filter((r) => r.priority).map((r) => r.univId));
-        const otherUnis = univSources
-          .filter((s) => !covered.has(s.id) && !isPriorityUniv(s.name))
-          .map((s) => {
-            const href = safeOpenUrl({ univId: s.id, homeUrl: s.homeUrl, boardUrl: s.boardUrl, url: "" });
-            if (!href) return null;
-            return {
-              univId: s.id,
-              univName: s.name,
-              title: `${s.name} 입학처 전체 공지사항`,
-              preview: "모집요강 · 일정 · 합격 발표 등 입학처 공지",
-              dateISO: "",
-              href,
-              priority: false,
-              boardOnly: true,
-              hasNotice: false,
-            };
-          })
-          .filter(Boolean);
-
-        const sortFn = (a, b) => {
+        const rows = univNoticePool.map(normalizeNotice).filter(Boolean);
+        rows.sort((a, b) => {
           if (a.dateISO === today && b.dateISO !== today) return -1;
           if (b.dateISO === today && a.dateISO !== today) return 1;
+          if (a.dateISO !== b.dateISO) return String(b.dateISO).localeCompare(String(a.dateISO));
           const ar = priorityRank(a.univName);
           const br = priorityRank(b.univName);
-          if (a.priority && b.priority && ar !== br) return ar - br;
-          if (a.dateISO !== b.dateISO) return String(b.dateISO).localeCompare(String(a.dateISO));
+          if (ar !== br) return ar - br;
           return a.univName.localeCompare(b.univName, "ko");
-        };
-
-        prioPosts.sort(sortFn);
-        prioBoards.sort((a, b) => priorityRank(a.univName) - priorityRank(b.univName));
-        otherPosts.sort(sortFn);
-        otherUnis.sort((a, b) => a.univName.localeCompare(b.univName, "ko"));
-
-        return prioPosts.concat(prioBoards, otherPosts, otherUnis);
+        });
+        return rows;
       }
 
       function filteredRows(query) {
@@ -2421,15 +2369,16 @@
         univQuery = query || "";
         const list = filteredRows(univQuery);
         const today = seoulTodayISO();
-        const prioCount = list.filter((r) => r.priority && r.hasNotice).length;
+        const univSet = new Set(list.map((r) => r.univId || r.univName));
         if (univCountEl) {
           univCountEl.textContent = univQuery
             ? `검색 ${list.length.toLocaleString("ko-KR")}건`
-            : `우선공지 ${prioCount} · 전체 ${list.length.toLocaleString("ko-KR")}`;
+            : `공지 ${list.length.toLocaleString("ko-KR")}건 · ${univSet.size}개 대학 · 8/1~`;
         }
 
         if (!list.length) {
-          univListEl.innerHTML = `<div class="univ-notice-empty">2026.08.01 이후 공지가 없습니다.</div>`;
+          univListEl.innerHTML =
+            `<div class="univ-notice-empty">2026.08.01 이후 수집된 공지사항이 없습니다.<br>실시간으로 입학처를 확인 중입니다…</div>`;
           return;
         }
 
@@ -2439,25 +2388,24 @@
           const preview = escapeHtml(r.preview);
           const univ = escapeHtml(r.univName);
           const href = escapeHtml(r.href);
+          const tone = univToneClass(r.univName);
           const isToday = r.dateISO && r.dateISO === today;
-          const shortDate = r.dateISO ? escapeHtml(r.dateISO.slice(5).replace("-", ".")) : "";
-          const dayKey = r.dateISO || "_none";
-          const dayStart = dayKey !== lastDate;
-          lastDate = dayKey;
+          const shortDate = escapeHtml(r.dateISO.slice(5).replace("-", "."));
+          const dayStart = r.dateISO !== lastDate;
+          lastDate = r.dateISO;
           const cls = [
             "univ-notice-item",
             isToday ? "is-today" : "",
             dayStart ? "is-day-start" : "",
-            r.priority ? "is-priority" : "",
           ].filter(Boolean).join(" ");
           return (
             `<div class="${cls}" data-href="${href}" role="link" tabindex="0" title="${univ} — ${title}">` +
             `<div class="univ-notice-item-body">` +
             `<div class="univ-notice-head">` +
-            `<span class="univ-notice-univ">${univ}</span>` +
+            `<span class="univ-notice-univ ${tone}">${univ}</span>` +
             (isToday ? `<span class="univ-notice-new">오늘</span>` : "") +
             `<span class="univ-notice-title">${title}</span>` +
-            (shortDate ? `<span class="univ-notice-date">${shortDate}</span>` : "") +
+            `<span class="univ-notice-date">${shortDate}</span>` +
             `</div>` +
             `<span class="univ-notice-preview">${preview}</span>` +
             `</div>` +
@@ -2471,37 +2419,44 @@
         window.open(url, "_blank", "noopener,noreferrer");
       }
 
-      function parsePriorityHtml(html, cfg, pageUrl) {
+      function parseBoardHtml(html, cfg, pageUrl) {
         if (!html || /HTTP 오류 404|404\.0 - Not Found|error404/i.test(html.slice(0, 2800))) return [];
         const out = [];
-        const re = /<a[^>]+href\s*=\s*["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>([\s\S]{0,300})/gi;
+        const seen = new Set();
+        const re = /<a[^>]+href\s*=\s*["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>([\s\S]{0,360})/gi;
         let m;
-        while ((m = re.exec(html)) && out.length < 6) {
+        while ((m = re.exec(html)) && out.length < 8) {
           const href = m[1];
-          const title = stripTags(m[2]);
+          const title = cleanTitle(stripTags(m[2]));
           const tail = stripTags(m[3]);
           if (!title || title.length < 8 || title.length > 140 || isJunkText(title)) continue;
           if ((title.match(/[가-힣]/g) || []).length < 4) continue;
-          if (!/(notice|bbs|board|article|artcl|공지|소식|news|view|Board)/i.test(href) &&
-              !/(공지|안내|모집|요강|발표|일정|변경|합격|전형|수시|정시)/.test(title)) continue;
-          const dateISO = extractDateISO(tail) || extractDateISO(title);
+          if (!/(notice|bbs|board|article|artcl|공지|소식|news|view|Board|ntt|brd)/i.test(href) &&
+              !/(공지|안내|모집|요강|발표|일정|변경|합격|전형|수시|정시|면접|상담)/.test(title)) continue;
+          const dateISO = extractDateISO(tail) || extractDateISO(title) || extractDateISO(stripTags(m[0]));
           if (!dateISO || dateISO < UNIV_MIN_DATE) continue;
           const abs = toAbsUrl(href, pageUrl);
-          if (!abs || /error404|notice\.asp$/i.test(abs)) continue;
-          let preview = tail.replace(/(20\d{2})\s*[.\-/년]\s*(\d{1,2})\s*[.\-/월]\s*(\d{1,2})/g, " ").replace(/\s+/g, " ").trim();
+          if (!abs || /error404|\/admission\/html\/notice\/notice\.asp$/i.test(abs)) continue;
+          const key = `${abs}|${title}`;
+          if (seen.has(key)) continue;
+          seen.add(key);
+          let preview = tail
+            .replace(/(20\d{2})\s*[.\-/년]\s*(\d{1,2})\s*[.\-/월]\s*(\d{1,2})/g, " ")
+            .replace(/\s+/g, " ")
+            .trim();
           if (isJunkText(preview) || (preview.match(/[가-힣]/g) || []).length < 2) {
-            preview = `${cfg.univName} 입학처 전체 공지사항`;
+            preview = `${cfg.univName || cfg.name} 입학 공지사항 미리보기`;
           }
           out.push({
-            univId: cfg.univId,
-            univName: cfg.univName,
+            univId: cfg.univId || cfg.id,
+            univName: cfg.univName || cfg.name,
             title,
             preview: preview.slice(0, 110),
             url: abs,
             homeUrl: cfg.homeUrl,
             dateISO,
             dateText: dateISO.replace(/-/g, "."),
-            priority: true,
+            priority: isPriorityUniv(cfg.univName || cfg.name),
           });
         }
         return out;
@@ -2517,7 +2472,7 @@
             const res = await fetch(make(url), { cache: "no-store" });
             if (!res.ok) continue;
             const text = await res.text();
-            if (text && text.length > 500) return text;
+            if (text && text.length > 400) return text;
           } catch {
             /* next */
           }
@@ -2525,31 +2480,73 @@
         return "";
       }
 
-      async function refreshPriorityLive() {
-        if (univLiveBusy || !univPriority.length) return;
+      function liveFetchTargets() {
+        const map = new Map();
+        univPriority.forEach((p) => {
+          if (!p.univId) return;
+          map.set(p.univId, {
+            id: p.univId,
+            name: p.univName,
+            univId: p.univId,
+            univName: p.univName,
+            boardUrl: p.boardUrl,
+            homeUrl: p.homeUrl,
+            priority: true,
+          });
+        });
+        univSources.forEach((s) => {
+          if (map.has(s.id)) return;
+          if (!(s.boardUrl || s.homeUrl)) return;
+          map.set(s.id, {
+            id: s.id,
+            name: s.name,
+            univId: s.id,
+            univName: s.name,
+            boardUrl: s.boardUrl,
+            homeUrl: s.homeUrl,
+            priority: Boolean(s.priority),
+          });
+        });
+        const list = Array.from(map.values());
+        list.sort((a, b) => {
+          const ar = a.priority ? priorityRank(a.name) : 2000;
+          const br = b.priority ? priorityRank(b.name) : 2000;
+          if (ar !== br) return ar - br;
+          return a.name.localeCompare(b.name, "ko");
+        });
+        return list;
+      }
+
+      async function refreshUnivLive() {
+        const targets = liveFetchTargets();
+        if (univLiveBusy || !targets.length) return;
         univLiveBusy = true;
         setUnivLive(true, "LIVE");
         try {
-          const batchSize = 4;
-          for (let i = 0; i < univPriority.length; i += batchSize) {
-            const slice = univPriority.slice(i, i + batchSize);
-            const parts = await Promise.all(
-              slice.map(async (cfg) => {
-                const urls = [cfg.boardUrl, cfg.homeUrl].filter(Boolean);
-                for (const u of urls) {
-                  const html = await fetchHtmlProxy(u);
-                  if (!html) continue;
-                  const items = parsePriorityHtml(html, cfg, u);
-                  if (items.length) return items;
-                }
-                return [];
-              })
-            );
-            const flat = parts.flat();
-            if (flat.length) {
-              mergeNoticePool(flat);
-              renderUnivBoard(univQuery);
-            }
+          const batchSize = 5;
+          const start = univLiveCursor % targets.length;
+          const slice = [];
+          for (let i = 0; i < batchSize && i < targets.length; i++) {
+            slice.push(targets[(start + i) % targets.length]);
+          }
+          univLiveCursor = (start + batchSize) % Math.max(targets.length, 1);
+
+          const parts = await Promise.all(
+            slice.map(async (cfg) => {
+              const urls = [cfg.boardUrl, cfg.homeUrl].filter(Boolean);
+              for (const u of urls) {
+                const html = await fetchHtmlProxy(u);
+                if (!html) continue;
+                const items = parseBoardHtml(html, cfg, u);
+                if (items.length) return items;
+              }
+              return [];
+            })
+          );
+          const flat = parts.flat();
+          if (flat.length) {
+            mergeNoticePool(flat);
+            renderUnivBoard(univQuery);
           }
           setUnivLive(true, "LIVE");
         } catch {
@@ -2581,7 +2578,7 @@
       }
 
       function bootUnivNotices() {
-        if (!univSources.length && !univPriority.length) {
+        if (!univSources.length && !univPriority.length && !univNoticePool.length) {
           setUnivLive(false, "오류");
           renderUnivBoard("");
           return;
@@ -2589,11 +2586,10 @@
         mergeNoticePool(univNoticePool);
         setUnivLive(true, "READY");
         renderUnivBoard(univSearch ? univSearch.value : "");
-        // 우선 22개 대학 실시간 갱신
-        setTimeout(() => refreshPriorityLive(), 300);
-        setInterval(() => refreshPriorityLive(), UNIV_LIVE_MS);
+        setTimeout(() => refreshUnivLive(), 280);
+        setInterval(() => refreshUnivLive(), UNIV_LIVE_MS);
         document.addEventListener("visibilitychange", () => {
-          if (document.visibilityState === "visible") refreshPriorityLive();
+          if (document.visibilityState === "visible") refreshUnivLive();
         });
       }
 
