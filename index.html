@@ -8,7 +8,7 @@
   <title>김태훈닷컴</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
       --color-primary-50: #FEE8EC;
@@ -432,6 +432,46 @@
       padding: 0 clamp(16px, 4vw, 24px);
     }
 
+    .upper-layout {
+      position: relative;
+      background: var(--bg-base);
+      isolation: isolate;
+    }
+
+    .upper-layout .nav {
+      border-bottom: 1px solid var(--border-default);
+    }
+
+    .upper-stage {
+      width: min(1280px, 100%);
+      margin: 0 auto;
+      padding: 0 clamp(12px, 3vw, 20px);
+      display: grid;
+      gap: clamp(12px, 2vw, 20px);
+      align-content: start;
+    }
+
+    .upper-stage:has(.expand-panel.is-open) {
+      padding-top: clamp(16px, 2.5vw, 24px);
+      padding-bottom: clamp(16px, 2.5vw, 24px);
+    }
+
+    .stage-rule {
+      height: 4px;
+      width: 100%;
+      margin: 0;
+      border: 0;
+      background: #191919;
+      flex-shrink: 0;
+    }
+
+    .lower-layout {
+      background:
+        radial-gradient(70% 55% at 50% -8%, rgba(250, 45, 72, 0.1), transparent 62%),
+        linear-gradient(180deg, var(--bg-subtle) 0%, color-mix(in srgb, var(--bg-subtle) 88%, var(--color-primary-50)) 100%);
+      padding-bottom: 80px;
+    }
+
     .chat-section {
       padding: clamp(20px, 3vw, 28px) clamp(12px, 3vw, 20px) clamp(48px, 8vw, 88px);
       width: min(1280px, 100%);
@@ -440,9 +480,9 @@
 
     .expand-panel {
       display: none;
-      width: min(1280px, 100%);
-      margin: clamp(16px, 2.5vw, 24px) auto 0;
-      padding: 0 clamp(12px, 3vw, 20px);
+      width: 100%;
+      margin: 0;
+      padding: 0;
       animation: riseIn 0.35s var(--ease-out) both;
     }
 
@@ -1091,20 +1131,183 @@
     }
 
     .footer {
-      padding: 40px clamp(16px, 4vw, 24px) 36px;
-      text-align: center;
-      color: var(--text-tertiary);
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 35;
+      padding: 0;
+      margin: 0;
+      color: #F5F5F7;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, transparent 42%),
+        linear-gradient(90deg, #111111 0%, #0A0A0A 48%, #111111 100%);
+      border-top: 2px solid #FA2D48;
+      box-shadow:
+        0 -1px 0 rgba(255, 255, 255, 0.06) inset,
+        0 -18px 40px rgba(0, 0, 0, 0.28);
+    }
+
+    .footer::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 1px;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.18) 20%,
+        rgba(255, 255, 255, 0.18) 80%,
+        transparent 100%
+      );
+      pointer-events: none;
+    }
+
+    .footer-inner {
+      position: relative;
+      width: min(1280px, 100%);
+      margin: 0 auto;
+      min-height: 64px;
+      padding: 12px clamp(16px, 3.5vw, 28px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: clamp(16px, 4vw, 40px);
+    }
+
+    .visit-stats {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+      min-width: 0;
+    }
+
+    .visit-metric {
+      display: grid;
+      gap: 6px;
+      padding: 2px clamp(14px, 2.2vw, 22px);
+      min-width: 0;
+    }
+
+    .visit-metric:first-child {
+      padding-left: 0;
+    }
+
+    .visit-metric:last-child {
+      padding-right: 0;
+    }
+
+    .visit-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      line-height: 1;
+      color: rgba(245, 245, 247, 0.42);
+      white-space: nowrap;
+    }
+
+    .visit-live {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #FA2D48;
+      box-shadow: 0 0 0 0 rgba(250, 45, 72, 0.55);
+      animation: visitPulse 2.6s var(--ease-out) infinite;
+      flex: 0 0 auto;
+    }
+
+    .visit-label-short {
+      display: none;
+    }
+
+    .visit-value {
+      margin: 0;
+      font-family: "Space Grotesk", var(--font);
+      font-size: clamp(18px, 2.1vw, 22px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+      color: #FFFFFF;
+      min-width: 2ch;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+    }
+
+    .visit-value.is-loading {
+      color: rgba(245, 245, 247, 0.35);
+      font-weight: 600;
+    }
+
+    .visit-rule {
+      width: 1px;
+      align-self: stretch;
+      margin: 2px 0;
+      background: linear-gradient(
+        180deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.18) 18%,
+        rgba(255, 255, 255, 0.18) 82%,
+        transparent 100%
+      );
+      flex: 0 0 auto;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      margin-left: auto;
+    }
+
+    .footer-mark {
+      width: 18px;
+      height: 18px;
+      border-radius: 5px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: linear-gradient(145deg, #FF6482 0%, #FA2D48 55%, #D60035 100%);
+      box-shadow: 0 4px 12px rgba(250, 45, 72, 0.35);
+      flex: 0 0 auto;
+    }
+
+    .footer-mark svg {
+      width: 10px;
+      height: 10px;
+    }
+
+    .footer-copy {
+      margin: 0;
+      color: rgba(245, 245, 247, 0.46);
       font-size: 12px;
       font-weight: 500;
-      line-height: 1.5;
+      line-height: 1.35;
       letter-spacing: -0.01em;
-      border-top: 1px solid var(--border-default);
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    .footer-copy strong {
+      color: rgba(245, 245, 247, 0.78);
+      font-weight: 700;
+    }
+
+    @keyframes visitPulse {
+      0% { box-shadow: 0 0 0 0 rgba(250, 45, 72, 0.5); }
+      70% { box-shadow: 0 0 0 8px rgba(250, 45, 72, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(250, 45, 72, 0); }
     }
 
     .toast {
       position: fixed;
       left: 50%;
-      bottom: 24px;
+      bottom: 84px;
       z-index: 80;
       transform: translateX(-50%) translateY(20px);
       padding: 12px 16px;
@@ -1446,6 +1649,58 @@
       .expand-bar strong {
         font-size: 14px;
       }
+
+      .footer-inner {
+        min-height: 58px;
+        padding: 10px 14px;
+        gap: 12px;
+      }
+
+      .visit-metric {
+        gap: 5px;
+        padding: 2px 12px;
+      }
+
+      .visit-kicker {
+        font-size: 9px;
+        letter-spacing: 0.08em;
+        gap: 5px;
+      }
+
+      .visit-label-full {
+        display: none;
+      }
+
+      .visit-label-short {
+        display: inline;
+      }
+
+      .visit-value {
+        font-size: 17px;
+      }
+
+      .footer-mark {
+        width: 16px;
+        height: 16px;
+        border-radius: 4px;
+      }
+
+      .footer-mark svg {
+        width: 9px;
+        height: 9px;
+      }
+
+      .footer-copy {
+        font-size: 11px;
+      }
+
+      .lower-layout {
+        padding-bottom: 72px;
+      }
+
+      .toast {
+        bottom: 74px;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -1460,6 +1715,7 @@
 </head>
 <body>
   <div class="shell">
+    <div class="upper-layout">
     <nav class="nav" aria-label="주요 메뉴">
       <a class="nav-brand" href="http://www.김태훈.com" title="홈" aria-label="김태훈닷컴 홈">
         <span class="brand-mark" aria-hidden="true">
@@ -1593,6 +1849,7 @@
       </div>
     </nav>
 
+    <div class="upper-stage" aria-label="상단 레이아웃">
     <section class="expand-panel" id="expandPanel" data-theme="susi" aria-label="확장 보기">
       <div class="expand-shell">
         <div class="expand-bar">
@@ -1619,7 +1876,12 @@
         </div>
       </div>
     </section>
+    </div>
+    </div>
 
+    <hr class="stage-rule" aria-hidden="true" />
+
+    <div class="lower-layout">
     <section class="chat-section" id="chat" aria-label="게시판과 실시간 대화">
       <div class="chat-shell">
         <aside class="board-panel" aria-label="자유 게시판">
@@ -1708,8 +1970,39 @@
     </section>
 
     <footer class="footer">
-      © 2026. 8. 2. 김태훈닷컴
+      <div class="footer-inner">
+        <div class="visit-stats" aria-label="방문자 통계">
+          <div class="visit-metric" title="오늘 방문자">
+            <span class="visit-kicker">
+              <i class="visit-live" aria-hidden="true"></i>
+              <span class="visit-label-full">오늘 방문자</span>
+              <span class="visit-label-short">오늘</span>
+            </span>
+            <strong class="visit-value is-loading" id="visitToday">—</strong>
+          </div>
+          <span class="visit-rule" aria-hidden="true"></span>
+          <div class="visit-metric" title="누적 방문자">
+            <span class="visit-kicker">
+              <span class="visit-label-full">누적 방문자</span>
+              <span class="visit-label-short">누적</span>
+            </span>
+            <strong class="visit-value is-loading" id="visitTotal">—</strong>
+          </div>
+        </div>
+        <div class="footer-brand">
+          <span class="footer-mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M4.5 18.5 12 4.8l7.5 13.7H4.5Z" fill="currentColor" opacity=".22"/>
+              <path d="M12 5.6 5.8 17.2h12.4L12 5.6Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <circle cx="12" cy="13.2" r="1.5" fill="currentColor"/>
+              <path d="M12 10.2v1.2M9.4 17.2h5.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <p class="footer-copy">© 2026. 8. 2. <strong>김태훈닷컴</strong></p>
+        </div>
+      </div>
     </footer>
+    </div>
   </div>
 
   <div class="toast" id="toast" role="status"></div>
@@ -2326,7 +2619,134 @@
       if (location.hash === "#susi") openExpand("susi");
       if (location.hash === "#ipgyeol") openExpand("ipgyeol");
 
+      /* ── 방문자 카운터 ── */
+      const VISIT_STORE_KEY = "kimtaehoon_visit_v1";
+      const visitTodayEl = document.getElementById("visitToday");
+      const visitTotalEl = document.getElementById("visitTotal");
+
+      function seoulDateKey(d = new Date()) {
+        const parts = new Intl.DateTimeFormat("en-CA", {
+          timeZone: "Asia/Seoul",
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+        }).formatToParts(d);
+        const get = (t) => parts.find((p) => p.type === t)?.value || "00";
+        return `${get("year")}-${get("month")}-${get("day")}`;
+      }
+
+      function formatVisit(n) {
+        return Number(n || 0).toLocaleString("ko-KR");
+      }
+
+      function animateVisitNum(el, to) {
+        if (!el) return;
+        el.classList.remove("is-loading");
+        const target = Math.max(0, Math.floor(Number(to) || 0));
+        const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (reduce || target <= 0) {
+          el.textContent = formatVisit(target);
+          return;
+        }
+        const from = Number(String(el.textContent).replace(/[^\d]/g, "")) || 0;
+        const start = from > 0 && from < target ? from : Math.max(0, target - Math.min(target, 28));
+        const dur = 640;
+        const t0 = performance.now();
+        function tick(now) {
+          const p = Math.min(1, (now - t0) / dur);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = formatVisit(Math.round(start + (target - start) * eased));
+          if (p < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      }
+
+      function readLocalVisits() {
+        try {
+          const raw = localStorage.getItem(VISIT_STORE_KEY);
+          const data = raw ? JSON.parse(raw) : null;
+          if (!data || typeof data !== "object") {
+            return { total: 0, today: 0, date: "", hit: false };
+          }
+          return {
+            total: Number(data.total) || 0,
+            today: Number(data.today) || 0,
+            date: String(data.date || ""),
+            hit: Boolean(data.hit),
+          };
+        } catch {
+          return { total: 0, today: 0, date: "", hit: false };
+        }
+      }
+
+      function writeLocalVisits(data) {
+        localStorage.setItem(VISIT_STORE_KEY, JSON.stringify(data));
+      }
+
+      function syncLocalDay(data) {
+        const today = seoulDateKey();
+        if (data.date !== today) {
+          data.date = today;
+          data.today = 0;
+          data.hit = false;
+        }
+        return data;
+      }
+
+      function bumpLocalVisits() {
+        const data = syncLocalDay(readLocalVisits());
+        if (!data.hit) {
+          data.hit = true;
+          data.today += 1;
+          data.total += 1;
+          writeLocalVisits(data);
+        } else {
+          writeLocalVisits(data);
+        }
+        return data;
+      }
+
+      async function fetchVisitJson(url) {
+        const res = await fetch(url, { method: "GET", credentials: "omit", cache: "no-store" });
+        if (!res.ok) throw new Error("visit_http");
+        return res.json();
+      }
+
+      async function bootVisits() {
+        if (!visitTodayEl || !visitTotalEl) return;
+
+        const local = syncLocalDay(readLocalVisits());
+        writeLocalVisits(local);
+
+        if (!CHAT_API_URL) {
+          const data = bumpLocalVisits();
+          animateVisitNum(visitTodayEl, data.today);
+          animateVisitNum(visitTotalEl, data.total);
+          return;
+        }
+
+        try {
+          const shouldHit = !local.hit;
+          const action = shouldHit ? "visitHit" : "visitStats";
+          const json = await fetchVisitJson(`${CHAT_API_URL}?action=${action}`);
+          if (!json || !json.ok) throw new Error("visit_bad");
+
+          if (shouldHit) {
+            local.hit = true;
+            writeLocalVisits(local);
+          }
+
+          animateVisitNum(visitTodayEl, json.today);
+          animateVisitNum(visitTotalEl, json.total);
+        } catch {
+          const data = bumpLocalVisits();
+          animateVisitNum(visitTodayEl, data.today);
+          animateVisitNum(visitTotalEl, data.total);
+        }
+      }
+
       boot();
+      bootVisits();
     })();
   </script>
 </body>

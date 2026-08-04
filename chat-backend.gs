@@ -24,6 +24,12 @@ function doGet(e) {
   if (action === "ping") {
     return json_({ ok: true, t: Date.now() });
   }
+  if (action === "visitStats") {
+    return json_({ ok: true, today: visitToday_(), total: visitTotal_() });
+  }
+  if (action === "visitHit") {
+    return json_(recordVisit_());
+  }
   return json_({ ok: false, error: "unknown_action" });
 }
 
@@ -190,4 +196,42 @@ function json_(obj) {
   return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(
     ContentService.MimeType.JSON
   );
+}
+
+function seoulDate_() {
+  return Utilities.formatDate(new Date(), "Asia/Seoul", "yyyy-MM-dd");
+}
+
+function visitToday_() {
+  var props = PropertiesService.getScriptProperties();
+  var today = seoulDate_();
+  if ((props.getProperty("VISIT_DATE") || "") !== today) return 0;
+  return Number(props.getProperty("VISIT_TODAY") || 0);
+}
+
+function visitTotal_() {
+  return Number(PropertiesService.getScriptProperties().getProperty("VISIT_TOTAL") || 0);
+}
+
+function recordVisit_() {
+  var props = PropertiesService.getScriptProperties();
+  var lock = LockService.getScriptLock();
+  lock.waitLock(10000);
+  try {
+    var today = seoulDate_();
+    var storedDate = props.getProperty("VISIT_DATE") || "";
+    var todayCount = Number(props.getProperty("VISIT_TODAY") || 0);
+    var total = Number(props.getProperty("VISIT_TOTAL") || 0);
+    if (storedDate !== today) {
+      todayCount = 0;
+      props.setProperty("VISIT_DATE", today);
+    }
+    todayCount += 1;
+    total += 1;
+    props.setProperty("VISIT_TODAY", String(todayCount));
+    props.setProperty("VISIT_TOTAL", String(total));
+    return { ok: true, today: todayCount, total: total };
+  } finally {
+    lock.releaseLock();
+  }
 }
