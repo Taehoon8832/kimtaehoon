@@ -1,16 +1,20 @@
 # -*- coding: utf-8 -*-
-"""진학프로 석박 채용 정보 수집 → recruit-board-data.js / data/recruit-notices.json"""
+"""진학프로 석박 채용 정보 수집 → recruit-board-data.js / data/recruit-notices.json
+
+정확성 우선:
+- 등록일·마감일·기관명·제목은 목록 페이지 __NUXT_DATA__에서 해석
+- HTML 카드는 미리보기(유형·지역·지원방법) 보조
+- 이웃 날짜 보간·추측 날짜 사용 금지
+"""
 from __future__ import annotations
 
 import hashlib
 import json
 import re
 import ssl
-import time
 from datetime import datetime, timedelta, timezone
 from html import unescape
 from pathlib import Path
-from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -21,7 +25,6 @@ UA = (
     "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
 )
 DATE_DOT = re.compile(r"(20\d{2})\s*[.\-/]\s*(\d{1,2})\s*[.\-/]\s*(\d{1,2})")
-ISO_TS = r"20\d{2}-\d{2}-\d{2}T[^\"']*"
 
 
 def fetch(url: str) -> str:
@@ -59,71 +62,90 @@ def short_univ(name: str) -> str:
     return n
 
 
-def parse_nuxt_dates(html: str) -> dict:
-    """id → {deadline, created} from Nuxt payload fragments.
+def date_only(val) -> str:
+    """'2026-08-04T03:00:47.692Z' / '2026-08-04 03:00:47' → YYYY-MM-DD"""
+    s = str(val or "").strip()
+    m = re.match(r"(20\d{2}-\d{2}-\d{2})", s)
+    return m.group(1) if m else ""
 
-    두 형태가 섞여 있음:
-      45716,"제목",false,"deadlineISO","createdISO",...
-      45728,"제목","deadlineISO","createdISO","updatedISO",...
-    """
+
+def seoul_today() -> str:
+    return (datetime.now(timezone.utc) + timedelta(hours=9)).strftime("%Y-%m-%d")
+
+
+def dday_label(deadline_iso: str, today: str) -> str:
+    if not deadline_iso or not today:
+        return ""
+    try:
+        d0 = datetime.strptime(today, "%Y-%m-%d").date()
+        d1 = datetime.strptime(deadline_iso, "%Y-%m-%d").date()
+    except ValueError:
+        return ""
+    diff = (d1 - d0).days
+    if diff > 0:
+        return f"D-{diff}"
+    if diff == 0:
+        return "D-Day"
+    return f"마감+{abs(diff)}"
+
+
+def load_nuxt_data(html: str):
+    m = re.search(
+        r'<script[^>]+id="__NUXT_DATA__"[^>]*>([\s\S]*?)</script>',
+        html or "",
+    )
+    if not m:
+        return None
+    try:
+        return json.loads(m.group(1))
+    except json.JSONDecodeError:
+        return None
+
+
+def resolve(data, ref):
+    if isinstance(ref, int) and 0 <= ref < len(data):
+        return data[ref]
+    return ref
+
+
+def parse_nuxt_recruits(html: str) -> dict:
+    """recruitId(str) → 정확한 메타데이터."""
+    data = load_nuxt_data(html)
+    if not data:
+        return {}
     out = {}
-    html = html or ""
-
-    pat_bool = re.compile(
-        rf'(\d{{4,6}}),"([^"\\]{{4,240}})",(true|false),"({ISO_TS})","({ISO_TS})"'
-    )
-    for m in pat_bool.finditer(html):
-        rid, _title, closed, deadline, created = m.groups()
-        out[rid] = {
-            "deadline": deadline[:10],
-            "created": created[:10],
-            "closed": closed == "true",
-        }
-
-    pat_str = re.compile(
-        rf'(\d{{4,6}}),"([^"\\]{{4,240}})","({ISO_TS})","({ISO_TS})","({ISO_TS})"'
-    )
-    for m in pat_str.finditer(html):
-        rid, _title, deadline, created, _updated = m.groups()
-        if rid in out:
+    for item in data:
+        if not isinstance(item, dict) or "recruitIdx" not in item:
             continue
-        out[rid] = {
-            "deadline": deadline[:10],
-            "created": created[:10],
-            "closed": False,
+        rid = resolve(data, item.get("recruitIdx"))
+        if not isinstance(rid, int):
+            continue
+        title = resolve(data, item.get("recruitTitle"))
+        organ = resolve(data, item.get("organName"))
+        register = date_only(resolve(data, item.get("registerTime")))
+        publish_start = date_only(resolve(data, item.get("publishStartTime")))
+        apply_start = date_only(resolve(data, item.get("applyStartTime")))
+        apply_end = date_only(
+            resolve(data, item.get("applyEndTime") or item.get("applyEarlyEndTime"))
+        )
+        # 게시일 = 등록일(registerTime). 없으면 publishStart.
+        date_iso = register or publish_start or apply_start
+        if not date_iso or not title:
+            continue
+        out[str(rid)] = {
+            "title": str(title).strip(),
+            "univFull": str(organ or "").strip(),
+            "univName": short_univ(str(organ or "")) or str(organ or "").strip() or "기관",
+            "dateISO": date_iso,
+            "deadlineISO": apply_end or "",
+            "registerISO": register,
+            "publishStartISO": publish_start,
         }
     return out
 
 
-def parse_detail_dates(html: str) -> dict:
-    """상세 페이지에서 deadline / 등록·시작일 추정."""
-    pairs = re.findall(
-        rf'"({ISO_TS})","({ISO_TS})"',
-        html or "",
-    )
-    for a, b in pairs:
-        # 마감일이 등록/시작일보다 뒤인 쌍
-        if a[:10] >= b[:10] and a[:10] >= "2020-01-01":
-            return {"deadline": a[:10], "created": b[:10]}
-    stamps = re.findall(r"(20\d{2}-\d{2}-\d{2})T", html or "")
-    stamps = [s for s in stamps if s >= "2020-01-01"]
-    if len(stamps) >= 2:
-        # 페이지 로드 시각 제외: .000Z / :59 쪽이 마감인 경우 많음
-        return {"deadline": stamps[0], "created": stamps[1]}
-    return {}
-
-
-def fetch_detail_meta(rid: str) -> dict:
-    url = f"https://www.jinhakpro.com/recruit/{rid}"
-    try:
-        html = fetch(url)
-    except (HTTPError, URLError, TimeoutError, OSError) as e:
-        print(f"detail fail {rid}: {e}")
-        return {}
-    return parse_detail_dates(html)
-
-
 def parse_cards(html: str) -> list:
+    """HTML 카드에서 목록 순서·미리보기 보조 정보."""
     blocks = re.split(r'(?=<a[^>]+href="/recruit/\d+")', html or "")
     items = []
     seen = set()
@@ -136,26 +158,8 @@ def parse_cards(html: str) -> list:
             continue
         seen.add(rid)
 
-        univ = ""
-        for am in re.finditer(r'alt="([^"]+)"', b):
-            cand = unescape(am.group(1)).strip()
-            if any(
-                k in cand
-                for k in ("대학", "학교", "대학원", "연구소", "센터", "University", "College", "Institute")
-            ) or cand.endswith("대"):
-                univ = cand
-                break
-        if not univ:
-            am = re.search(r'alt="([^"]+)"', b)
-            univ = unescape(am.group(1)).strip() if am else ""
-
-        tit_m = re.search(r'class="card_recr_tit"[^>]*>([\s\S]*?)</', b, re.I)
-        title = strip_tags(tit_m.group(1)) if tit_m else ""
-        if len(title) < 6:
-            continue
-
-        info_m = re.search(r'class="card_recr_info"[^>]*>([\s\S]*?)</p>', b, re.I)
         info_bits = []
+        info_m = re.search(r'class="card_recr_info"[^>]*>([\s\S]*?)</p>', b, re.I)
         if info_m:
             info_bits = [
                 strip_tags(x)
@@ -171,32 +175,17 @@ def parse_cards(html: str) -> list:
 
         period_m = re.search(r'class="card_period"[^>]*>([\s\S]*?)</p>', b, re.I)
         period_raw = period_m.group(1) if period_m else ""
-        dday = ""
-        dm = re.search(r"D-?\d+", period_raw, re.I)
-        if dm:
-            dday = dm.group(0)
         deadline_dot = ""
         pm = DATE_DOT.search(period_raw)
         if pm:
             deadline_dot = to_iso(pm.group(1), pm.group(2), pm.group(3))
 
-        preview_parts = []
-        if tags:
-            preview_parts.append(" · ".join(tags[:3]))
-        if info_bits:
-            preview_parts.append(" · ".join(info_bits[:3]))
-        if dday:
-            preview_parts.append(f"마감 {dday}")
-        preview = " · ".join(preview_parts) if preview_parts else "석·박사 채용 정보"
-
         items.append(
             {
                 "id": rid,
-                "univName": short_univ(univ) or univ or "기관",
-                "univFull": univ,
-                "title": title,
-                "preview": preview[:140],
                 "url": "https://www.jinhakpro.com" + href,
+                "tags": tags,
+                "infoBits": info_bits,
                 "deadlineISO": deadline_dot,
                 "listOrder": len(items),
             }
@@ -204,78 +193,74 @@ def parse_cards(html: str) -> list:
     return items
 
 
-def fill_missing_dates(notices: list, dates: dict) -> None:
-    """목록 Nuxt에 없는 등록일은 상세 페이지에서 보완."""
-    missing = [n for n in notices if not n.get("_created")]
-    if not missing:
-        return
-    print(f"fetching detail dates for {len(missing)} items…")
-    for i, n in enumerate(missing):
-        meta = fetch_detail_meta(n["recruitId"])
-        if meta.get("created"):
-            n["_created"] = meta["created"]
-            n["dateISO"] = meta["created"]
-            n["dateText"] = meta["created"].replace("-", ".")
-        if meta.get("deadline") and not n.get("deadlineISO"):
-            n["deadlineISO"] = meta["deadline"]
-            n["deadlineText"] = meta["deadline"].replace("-", ".")
-        if i < len(missing) - 1:
-            time.sleep(0.35)
+def build_preview(tags, info_bits, deadline_iso: str, today: str) -> str:
+    parts = []
+    if tags:
+        parts.append(" · ".join(tags[:3]))
+    if info_bits:
+        parts.append(" · ".join(info_bits[:3]))
+    dd = dday_label(deadline_iso, today)
+    if dd:
+        parts.append(f"마감 {dd}")
+    if deadline_iso:
+        parts.append(f"접수마감 {deadline_iso.replace('-', '.')}")
+    return " · ".join(parts) if parts else "석·박사 채용 정보"
 
 
 def main():
     html = fetch(LIST_URL)
     if "Security Check" in html and len(html) < 5000:
         raise SystemExit("blocked by security check")
+
+    nuxt = parse_nuxt_recruits(html)
     cards = parse_cards(html)
-    dates = parse_nuxt_dates(html)
-    print(f"cards={len(cards)} nuxt_dates={len(dates)}")
+    today = seoul_today()
+    print(f"cards={len(cards)} nuxt_recruits={len(nuxt)}")
 
     notices = []
+    missing = []
     for c in cards:
-        meta = dates.get(c["id"], {})
-        created = meta.get("created") or ""
-        deadline = meta.get("deadline") or c.get("deadlineISO") or ""
-        preview = c["preview"]
-        if deadline and deadline not in preview:
-            preview = f"{preview} · 접수마감 {deadline.replace('-', '.')}"
-        key = f"{c['id']}|{c['title']}"
+        rid = c["id"]
+        meta = nuxt.get(rid)
+        if not meta:
+            missing.append(rid)
+            continue
+        date_iso = meta["dateISO"]
+        # 미래 등록일은 오류로 보고 제외
+        if date_iso > today:
+            print(f"skip future date {rid} {date_iso}")
+            continue
+        deadline = meta.get("deadlineISO") or c.get("deadlineISO") or ""
+        title = meta["title"]
+        if len(title) < 4:
+            continue
+        preview = build_preview(c.get("tags") or [], c.get("infoBits") or [], deadline, today)
+        key = f"{rid}|{title}|{date_iso}"
         notices.append(
             {
                 "id": hashlib.sha1(key.encode()).hexdigest()[:20],
-                "recruitId": c["id"],
-                "univName": c["univName"],
-                "univFull": c.get("univFull") or c["univName"],
-                "title": c["title"],
+                "recruitId": rid,
+                "univName": meta["univName"],
+                "univFull": meta["univFull"] or meta["univName"],
+                "title": title,
                 "preview": preview[:160],
                 "url": c["url"],
-                "dateISO": created or "",
-                "dateText": created.replace("-", ".") if created else "",
+                "dateISO": date_iso,
+                "dateText": date_iso.replace("-", "."),
                 "deadlineISO": deadline,
                 "deadlineText": deadline.replace("-", ".") if deadline else "",
                 "listOrder": c["listOrder"],
-                "_created": created,
             }
         )
 
-    fill_missing_dates(notices, dates)
+    if missing:
+        print(f"warning: {len(missing)} cards without nuxt meta:", missing)
 
-    # 이웃 등록일로 남은 빈칸 보간 (목록이 최신순이므로 인접 날짜 사용)
-    for i, n in enumerate(notices):
-        if n["dateISO"]:
-            continue
-        prev = next((x["dateISO"] for x in reversed(notices[:i]) if x["dateISO"]), "")
-        nxt = next((x["dateISO"] for x in notices[i + 1 :] if x["dateISO"]), "")
-        n["dateISO"] = prev or nxt or n.get("deadlineISO") or ""
-        n["dateText"] = n["dateISO"].replace("-", ".") if n["dateISO"] else ""
-
-    # 진학프로 목록 순서 유지(= 최신 등록 위)
-    notices.sort(key=lambda x: x["listOrder"])
+    # 등록일 최신순 · 같으면 목록 순서
+    notices.sort(key=lambda x: (x["dateISO"], -x["listOrder"]), reverse=True)
     for n in notices:
         n.pop("listOrder", None)
-        n.pop("_created", None)
 
-    today = (datetime.now(timezone.utc) + timedelta(hours=9)).strftime("%Y-%m-%d")
     payload = {
         "source": LIST_URL,
         "updatedAt": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
@@ -295,8 +280,8 @@ def main():
         encoding="utf-8",
     )
     print(f"wrote {len(notices)} items → {js_path.name}, {json_path.as_posix()}")
-    for n in notices[:5]:
-        print(n["dateISO"], n["univName"], "|", n["title"][:48])
+    for n in notices[:8]:
+        print(n["dateISO"], n["deadlineISO"], n["univName"], "|", n["title"][:42])
 
 
 if __name__ == "__main__":

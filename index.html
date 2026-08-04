@@ -2404,23 +2404,50 @@
         recruitLiveLabel.textContent = label;
       }
 
+      function recruitDday(deadlineISO, today) {
+        if (!deadlineISO || !today) return "";
+        const t0 = Date.parse(`${today}T12:00:00+09:00`);
+        const t1 = Date.parse(`${deadlineISO}T12:00:00+09:00`);
+        if (Number.isNaN(t0) || Number.isNaN(t1)) return "";
+        const diff = Math.round((t1 - t0) / 86400000);
+        if (diff > 0) return `D-${diff}`;
+        if (diff === 0) return "D-Day";
+        return "";
+      }
+
       function normalizeRecruit(it) {
         const univName = String(it.univName || it.univFull || "").replace(/\s+/g, " ").trim();
         const title = String(it.title || "").replace(/\s+/g, " ").trim();
-        let preview = String(it.preview || "").replace(/\s+/g, " ").trim();
         const dateISO = String(it.dateISO || "").slice(0, 10);
+        const deadlineISO = String(it.deadlineISO || "").slice(0, 10);
         const url = String(it.url || "").trim();
+        const today = seoulTodayISO();
         if (!univName || !title || title.length < 4) return null;
         if (!/^https?:\/\/www\.jinhakpro\.com\/recruit\/\d+/i.test(url)) return null;
-        if (!dateISO || dateISO < "2020-01-01") return null;
-        if (!preview) preview = `${univName} 석·박사 채용 정보`;
+        if (!dateISO || dateISO < "2020-01-01" || dateISO > today) return null;
+        // 미리보기의 낡은 D-n 제거 후 마감일 기준으로 재계산
+        let preview = String(it.preview || "")
+          .replace(/\s+/g, " ")
+          .replace(/(^|·\s*)마감\s*D-?\d+\s*/gi, "$1")
+          .replace(/(^|·\s*)마감\s*D-Day\s*/gi, "$1")
+          .replace(/(^|·\s*)접수마감\s*20\d{2}[./-]\d{1,2}[./-]\d{1,2}\s*/g, "$1")
+          .replace(/(?:^|\s)·\s*(?=·|$)/g, " ")
+          .replace(/\s*·\s*/g, " · ")
+          .replace(/^\s*·\s*|\s*·\s*$/g, "")
+          .trim();
+        const bits = [];
+        if (preview) bits.push(preview);
+        const dd = recruitDday(deadlineISO, today);
+        if (dd) bits.push(`마감 ${dd}`);
+        if (deadlineISO) bits.push(`접수마감 ${deadlineISO.replace(/-/g, ".")}`);
+        preview = bits.join(" · ") || `${univName} 석·박사 채용 정보`;
         return {
           univName,
           title,
-          preview: preview.slice(0, 140),
+          preview: preview.slice(0, 160),
           dateISO,
           href: url,
-          deadlineISO: String(it.deadlineISO || "").slice(0, 10),
+          deadlineISO,
         };
       }
 
@@ -2434,8 +2461,15 @@
       }
 
       function buildRecruitRows() {
-        // 진학프로 목록 순서 유지(최신 등록이 위). 날짜만 표시용.
-        return recruitPool.map(normalizeRecruit).filter(Boolean);
+        const today = seoulTodayISO();
+        const rows = recruitPool.map(normalizeRecruit).filter(Boolean);
+        rows.sort((a, b) => {
+          if (a.dateISO === today && b.dateISO !== today) return -1;
+          if (b.dateISO === today && a.dateISO !== today) return 1;
+          if (a.dateISO !== b.dateISO) return String(b.dateISO).localeCompare(String(a.dateISO));
+          return a.univName.localeCompare(b.univName, "ko");
+        });
+        return rows;
       }
 
       function filteredRecruitRows(query) {
