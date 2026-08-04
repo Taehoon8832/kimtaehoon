@@ -394,6 +394,8 @@
     .card-d { --icon-bg: linear-gradient(145deg, #FFE27A 0%, #FFC107 50%, #E09B00 100%); }
     .card-e { --icon-bg: linear-gradient(145deg, #FFF1A0 0%, #FEE500 40%, #D4AF00 100%); }
     .card-i { --icon-bg: linear-gradient(145deg, #A78BFA 0%, #7C3AED 48%, #4C1D95 100%); }
+    .card-j { --icon-bg: linear-gradient(145deg, #5AC8FA 0%, #0A84FF 48%, #003D99 100%); }
+    .card-k { --icon-bg: linear-gradient(145deg, #FF9F6B 0%, #FF6B35 48%, #9A3412 100%); }
 
     .nav-item.is-placeholder {
       cursor: default;
@@ -1314,6 +1316,25 @@
       flex: 0 0 auto;
     }
 
+    .footer-note {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      margin: 0;
+      max-width: min(46vw, 420px);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-size: 10px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: -0.02em;
+      color: rgba(58, 58, 60, 0.28);
+      pointer-events: none;
+      user-select: none;
+    }
+
     .footer-brand {
       display: flex;
       align-items: center;
@@ -1636,6 +1657,10 @@
         font-size: 9px;
       }
 
+      .footer-note {
+        display: none;
+      }
+
       .lower-layout {
         padding-bottom: 24px;
       }
@@ -1776,6 +1801,27 @@
           </span>
           <em>다온 대입전략연구회</em>
         </a>
+        <a class="nav-item card-j" href="https://jinhak.sen.go.kr/index.do" target="_blank" rel="noopener noreferrer" title="서울진로진학상담센터">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M10 36V16.5L24 9l14 7.5V36" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M18 36V24h12v12" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="24" cy="19.5" r="2.4" fill="#fff"/>
+            </svg>
+          </span>
+          <em>서울진로진학상담센터</em>
+        </a>
+        <span class="nav-item card-k is-placeholder" title="외부활동(강의, 컨설팅)" role="img" aria-label="외부활동(강의, 컨설팅)">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <path d="M12 34V18l16-7v16L12 34Z" stroke="#fff" stroke-width="2.3" stroke-linejoin="round"/>
+              <path d="M28 11v16l8 3.5V14.5L28 11Z" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/>
+              <path d="M14 36h20" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/>
+              <circle cx="20" cy="24" r="1.8" fill="#fff"/>
+            </svg>
+          </span>
+          <em>외부활동<br>(강의, 컨설팅)</em>
+        </span>
         <span class="nav-sep" aria-hidden="true"></span>
         <span class="nav-item card-i is-placeholder" title="진학 인사이트 V1.1" role="img" aria-label="진학 인사이트 V1.1">
           <span class="ic" aria-hidden="true">
@@ -1933,6 +1979,7 @@
             </span>
           </div>
         </div>
+        <p class="footer-note">김태훈 닷컴은 진로ㆍ진학ㆍ입시 등을 연구하는 개인 공간입니다.</p>
         <div class="footer-brand">
           <span class="footer-mark" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
