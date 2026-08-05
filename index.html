@@ -2186,7 +2186,7 @@
 
       const UNIV_MIN_DATE = "2026-08-01";
       const UNIV_DATA_URL = "data/univ-notices.json";
-      const UNIV_POLL_MS = 180000;
+      const UNIV_POLL_MS = 60000;
       let univBoardData = window.UNIV_BOARD_DATA || {};
       let univSources = Array.isArray(univBoardData.sources) ? univBoardData.sources : [];
       let univPriority = Array.isArray(univBoardData.priority) ? univBoardData.priority : [];
@@ -2194,6 +2194,7 @@
       let univUpdatedAt = String(univBoardData.updatedAt || "");
       let univQuery = "";
       let univPollBusy = false;
+      let boardDayISO = "";
 
       const PRIORITY_ORDER = [
         "서울대", "연세대", "고려대", "서강대", "성균관대", "한양대", "중앙대", "경희대",
@@ -2249,6 +2250,33 @@
         }).formatToParts(new Date());
         const get = (t) => parts.find((p) => p.type === t)?.value || "00";
         return `${get("year")}-${get("month")}-${get("day")}`;
+      }
+
+      function countTodayRows(rows, today) {
+        return rows.filter((r) => r.dateISO === today).length;
+      }
+
+      function noticeFingerprint(pool, keys) {
+        return (pool || [])
+          .map((it) => keys.map((k) => String(it[k] || "")).join("|"))
+          .sort()
+          .join("\n");
+      }
+
+      function toastBoardRefresh(label, todayCount) {
+        if (todayCount > 0) showToast(`${label} 갱신 · 오늘 ${todayCount}건`);
+        else showToast(`${label} 갱신`);
+      }
+
+      function syncBoardDay() {
+        const today = seoulTodayISO();
+        if (!boardDayISO) {
+          boardDayISO = today;
+          return false;
+        }
+        if (boardDayISO === today) return false;
+        boardDayISO = today;
+        return true;
       }
 
       function isJunkText(s) {
@@ -2465,10 +2493,13 @@
         const list = filteredRows(univQuery);
         const today = seoulTodayISO();
         const univSet = new Set(list.map((r) => r.univId || r.univName));
+        const todayCount = countTodayRows(list, today);
         if (univCountEl) {
           univCountEl.textContent = univQuery
             ? `검색 ${list.length.toLocaleString("ko-KR")}건`
-            : `공지 ${list.length.toLocaleString("ko-KR")}건 · ${univSet.size}개 대학 · 8/1~`;
+            : todayCount > 0
+              ? `오늘 ${todayCount.toLocaleString("ko-KR")}건 · 공지 ${list.length.toLocaleString("ko-KR")}건 · ${univSet.size}개 대학`
+              : `공지 ${list.length.toLocaleString("ko-KR")}건 · ${univSet.size}개 대학 · 8/1~`;
         }
         setUnivLive(true, formatUpdatedLabel(univUpdatedAt));
 
@@ -2516,19 +2547,24 @@
       }
 
       /** GitHub에 커밋된 JSON만 다시 읽음 (Apps Script / CORS 스크래핑 없음) */
-      async function refreshUnivFromGithub() {
+      async function refreshUnivFromGithub(opts) {
         if (univPollBusy) return;
         univPollBusy = true;
+        const silent = Boolean(opts && opts.silent);
         try {
+          const prevFp = noticeFingerprint(univNoticePool, ["univId", "title", "dateISO"]);
+          const prevUpdated = univUpdatedAt;
           const res = await fetch(`${UNIV_DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
           if (!res.ok) throw new Error(`http_${res.status}`);
           const payload = await res.json();
-          const nextUpdated = String(payload.updatedAt || "");
-          const changed = nextUpdated && nextUpdated !== univUpdatedAt;
           applyUnivPayload(payload);
           renderUnivBoard(univQuery);
           setUnivLive(true, formatUpdatedLabel(univUpdatedAt));
-          if (changed) setUnivLive(true, formatUpdatedLabel(univUpdatedAt));
+          const nextFp = noticeFingerprint(univNoticePool, ["univId", "title", "dateISO"]);
+          const changed = (univUpdatedAt && univUpdatedAt !== prevUpdated) || nextFp !== prevFp;
+          if (changed && !silent) {
+            toastBoardRefresh("대학 공지", countTodayRows(buildUnivRows(), seoulTodayISO()));
+          }
         } catch {
           if (!univNoticePool.length) setUnivLive(false, "오류");
           else setUnivLive(true, formatUpdatedLabel(univUpdatedAt));
@@ -2562,13 +2598,13 @@
         if (!univSources.length && !univPriority.length && !univNoticePool.length) {
           setUnivLive(false, "오류");
           renderUnivBoard("");
-          refreshUnivFromGithub();
+          refreshUnivFromGithub({ silent: true });
           return;
         }
         mergeNoticePool(univNoticePool);
         setUnivLive(true, formatUpdatedLabel(univUpdatedAt));
         renderUnivBoard(univSearch ? univSearch.value : "");
-        setTimeout(() => refreshUnivFromGithub(), 400);
+        setTimeout(() => refreshUnivFromGithub({ silent: true }), 400);
         setInterval(() => refreshUnivFromGithub(), UNIV_POLL_MS);
         document.addEventListener("visibilitychange", () => {
           if (document.visibilityState === "visible") refreshUnivFromGithub();
@@ -2582,7 +2618,7 @@
       const recruitLiveLabel = document.getElementById("recruitLiveLabel");
       const recruitSearch = document.getElementById("recruitSearch");
       const RECRUIT_DATA_URL = "data/recruit-notices.json";
-      const RECRUIT_POLL_MS = 180000;
+      const RECRUIT_POLL_MS = 60000;
       let recruitBoardData = window.RECRUIT_BOARD_DATA || {};
       let recruitPool = Array.isArray(recruitBoardData.notices) ? recruitBoardData.notices.slice() : [];
       let recruitUpdatedAt = String(recruitBoardData.updatedAt || "");
@@ -2678,10 +2714,13 @@
         recruitQuery = query || "";
         const list = filteredRecruitRows(recruitQuery);
         const today = seoulTodayISO();
+        const todayCount = countTodayRows(list, today);
         if (recruitCountEl) {
           recruitCountEl.textContent = recruitQuery
             ? `검색 ${list.length.toLocaleString("ko-KR")}건`
-            : `채용 ${list.length.toLocaleString("ko-KR")}건`;
+            : todayCount > 0
+              ? `오늘 ${todayCount.toLocaleString("ko-KR")}건 · 채용 ${list.length.toLocaleString("ko-KR")}건`
+              : `채용 ${list.length.toLocaleString("ko-KR")}건`;
         }
         setRecruitLive(true, formatUpdatedLabel(recruitUpdatedAt));
 
@@ -2723,16 +2762,24 @@
         }).join("");
       }
 
-      async function refreshRecruitFromGithub() {
+      async function refreshRecruitFromGithub(opts) {
         if (recruitPollBusy) return;
         recruitPollBusy = true;
+        const silent = Boolean(opts && opts.silent);
         try {
+          const prevFp = noticeFingerprint(recruitPool, ["url", "title", "dateISO"]);
+          const prevUpdated = recruitUpdatedAt;
           const res = await fetch(`${RECRUIT_DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
           if (!res.ok) throw new Error(`http_${res.status}`);
           const payload = await res.json();
           applyRecruitPayload(payload);
           renderRecruitBoard(recruitQuery);
           setRecruitLive(true, formatUpdatedLabel(recruitUpdatedAt));
+          const nextFp = noticeFingerprint(recruitPool, ["url", "title", "dateISO"]);
+          const changed = (recruitUpdatedAt && recruitUpdatedAt !== prevUpdated) || nextFp !== prevFp;
+          if (changed && !silent) {
+            toastBoardRefresh("석박 채용", countTodayRows(buildRecruitRows(), seoulTodayISO()));
+          }
         } catch {
           if (!recruitPool.length) setRecruitLive(false, "오류");
           else setRecruitLive(true, formatUpdatedLabel(recruitUpdatedAt));
@@ -2767,12 +2814,12 @@
         if (!recruitPool.length) {
           setRecruitLive(false, "오류");
           renderRecruitBoard("");
-          refreshRecruitFromGithub();
+          refreshRecruitFromGithub({ silent: true });
           return;
         }
         setRecruitLive(true, formatUpdatedLabel(recruitUpdatedAt));
         renderRecruitBoard(recruitSearch ? recruitSearch.value : "");
-        setTimeout(() => refreshRecruitFromGithub(), 500);
+        setTimeout(() => refreshRecruitFromGithub({ silent: true }), 500);
         setInterval(() => refreshRecruitFromGithub(), RECRUIT_POLL_MS);
         document.addEventListener("visibilitychange", () => {
           if (document.visibilityState === "visible") refreshRecruitFromGithub();
@@ -2786,7 +2833,7 @@
       const jobkoreaLiveLabel = document.getElementById("jobkoreaLiveLabel");
       const jobkoreaSearch = document.getElementById("jobkoreaSearch");
       const JOBKOREA_DATA_URL = "data/jobkorea-notices.json";
-      const JOBKOREA_POLL_MS = 180000;
+      const JOBKOREA_POLL_MS = 60000;
       let jobkoreaBoardData = window.JOBKOREA_BOARD_DATA || {};
       let jobkoreaPool = Array.isArray(jobkoreaBoardData.notices) ? jobkoreaBoardData.notices.slice() : [];
       let jobkoreaUpdatedAt = String(jobkoreaBoardData.updatedAt || "");
@@ -2892,10 +2939,13 @@
         jobkoreaQuery = query || "";
         const list = filteredJobkoreaRows(jobkoreaQuery);
         const today = seoulTodayISO();
+        const todayCount = countTodayRows(list, today);
         if (jobkoreaCountEl) {
           jobkoreaCountEl.textContent = jobkoreaQuery
             ? `검색 ${list.length.toLocaleString("ko-KR")}건`
-            : `인기 ${list.length.toLocaleString("ko-KR")}건`;
+            : todayCount > 0
+              ? `오늘 ${todayCount.toLocaleString("ko-KR")}건 · 인기 ${list.length.toLocaleString("ko-KR")}건`
+              : `인기 ${list.length.toLocaleString("ko-KR")}건`;
         }
         setJobkoreaLive(true, formatUpdatedLabel(jobkoreaUpdatedAt));
 
@@ -2936,16 +2986,24 @@
         }).join("");
       }
 
-      async function refreshJobkoreaFromGithub() {
+      async function refreshJobkoreaFromGithub(opts) {
         if (jobkoreaPollBusy) return;
         jobkoreaPollBusy = true;
+        const silent = Boolean(opts && opts.silent);
         try {
+          const prevFp = noticeFingerprint(jobkoreaPool, ["jobId", "title", "dateISO"]);
+          const prevUpdated = jobkoreaUpdatedAt;
           const res = await fetch(`${JOBKOREA_DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
           if (!res.ok) throw new Error(`http_${res.status}`);
           const payload = await res.json();
           applyJobkoreaPayload(payload);
           renderJobkoreaBoard(jobkoreaQuery);
           setJobkoreaLive(true, formatUpdatedLabel(jobkoreaUpdatedAt));
+          const nextFp = noticeFingerprint(jobkoreaPool, ["jobId", "title", "dateISO"]);
+          const changed = (jobkoreaUpdatedAt && jobkoreaUpdatedAt !== prevUpdated) || nextFp !== prevFp;
+          if (changed && !silent) {
+            toastBoardRefresh("채용 공고", countTodayRows(buildJobkoreaRows(), seoulTodayISO()));
+          }
         } catch {
           if (!jobkoreaPool.length) setJobkoreaLive(false, "오류");
           else setJobkoreaLive(true, formatUpdatedLabel(jobkoreaUpdatedAt));
@@ -2980,12 +3038,12 @@
         if (!jobkoreaPool.length) {
           setJobkoreaLive(false, "오류");
           renderJobkoreaBoard("");
-          refreshJobkoreaFromGithub();
+          refreshJobkoreaFromGithub({ silent: true });
           return;
         }
         setJobkoreaLive(true, formatUpdatedLabel(jobkoreaUpdatedAt));
         renderJobkoreaBoard(jobkoreaSearch ? jobkoreaSearch.value : "");
-        setTimeout(() => refreshJobkoreaFromGithub(), 500);
+        setTimeout(() => refreshJobkoreaFromGithub({ silent: true }), 500);
         setInterval(() => refreshJobkoreaFromGithub(), JOBKOREA_POLL_MS);
         document.addEventListener("visibilitychange", () => {
           if (document.visibilityState === "visible") refreshJobkoreaFromGithub();
@@ -3441,6 +3499,13 @@
       bootUnivNotices();
       bootRecruitBoard();
       bootJobkoreaBoard();
+      boardDayISO = seoulTodayISO();
+      setInterval(() => {
+        if (!syncBoardDay()) return;
+        renderUnivBoard(univQuery);
+        renderRecruitBoard(recruitQuery);
+        renderJobkoreaBoard(jobkoreaQuery);
+      }, 30000);
       bootVisits();
     })();
   </script>

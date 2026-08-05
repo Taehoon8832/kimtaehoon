@@ -16,13 +16,22 @@ import hashlib
 import json
 import re
 import ssl
+import sys
+import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from _board_io import load_board, notice_count, write_board
 
 ROOT = Path(__file__).resolve().parent.parent
 HOME_URL = "https://www.jobkorea.co.kr/"
 API_URL = "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729"
+JS_NAME = "jobkorea-board-data.js"
+GLOBAL_NAME = "JOBKOREA_BOARD_DATA"
+JSON_REL = "data/jobkorea-notices.json"
 CTX = ssl._create_unverified_context()
 UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -135,18 +144,26 @@ def abs_job_url(path: str, job_id: str) -> str:
 
 
 def fetch_popular() -> dict:
-    req = Request(
-        API_URL,
-        headers={
-            "User-Agent": UA,
-            "Accept": "application/json",
-            "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.8",
-            "Origin": "https://www.jobkorea.co.kr",
-            "Referer": HOME_URL,
-        },
-    )
-    with urlopen(req, context=CTX, timeout=45) as res:
-        return json.loads(res.read().decode("utf-8"))
+    last_err = ""
+    for i in range(4):
+        try:
+            req = Request(
+                API_URL,
+                headers={
+                    "User-Agent": UA,
+                    "Accept": "application/json",
+                    "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.8",
+                    "Origin": "https://www.jobkorea.co.kr",
+                    "Referer": HOME_URL,
+                },
+            )
+            with urlopen(req, context=CTX, timeout=45) as res:
+                return json.loads(res.read().decode("utf-8"))
+        except (HTTPError, URLError, TimeoutError, OSError, json.JSONDecodeError) as e:
+            last_err = f"{type(e).__name__}: {e}"
+            print(f"jobkorea fetch attempt {i + 1}/4: {last_err}")
+            time.sleep(1.0 * (i + 1))
+    raise RuntimeError(f"fetch_failed:{last_err}")
 
 
 def build_preview(job: dict, deadline_iso: str, today: str) -> str:
@@ -172,11 +189,11 @@ def build_preview(job: dict, deadline_iso: str, today: str) -> str:
 def parse_notices(payload: dict, today: str) -> list:
     type_info = payload.get("type") or {}
     if str(type_info.get("code") or "").upper() != "POPULAR":
-        raise SystemExit(f"unexpected curated type: {type_info!r}")
+        raise RuntimeError(f"unexpected curated type: {type_info!r}")
 
     job_list = payload.get("jobList")
     if not isinstance(job_list, list):
-        raise SystemExit("jobList missing")
+        raise RuntimeError("jobList missing")
 
     notices = []
     seen = set()
@@ -239,11 +256,28 @@ def parse_notices(payload: dict, today: str) -> list:
     return notices
 
 
-def main():
-    payload = fetch_popular()
+def keep_previous(reason: str) -> int:
+    prev = load_board(ROOT, JS_NAME, GLOBAL_NAME, JSON_REL)
+    n = notice_count(prev)
+    if n > 0:
+        print(f"KEEP previous jobkorea data ({n} items) — {reason}")
+        return 0
+    print(f"ERROR no previous jobkorea data and scrape failed — {reason}", file=sys.stderr)
+    return 0
+
+
+def main() -> int:
     today = seoul_today()
-    notices = parse_notices(payload, today)
+    try:
+        payload = fetch_popular()
+        notices = parse_notices(payload, today)
+    except Exception as e:
+        print(f"jobkorea scrape failed: {type(e).__name__}: {e}")
+        return keep_previous(str(e))
+
     print(f"popular_jobs={len(notices)} type={payload.get('type')}")
+    if len(notices) < 3:
+        return keep_previous(f"too_few_items:{len(notices)}")
 
     out = {
         "source": HOME_URL,
@@ -254,18 +288,8 @@ def main():
         "count": len(notices),
         "notices": notices,
     }
-
-    js_path = ROOT / "jobkorea-board-data.js"
-    json_path = ROOT / "data" / "jobkorea-notices.json"
-    json_path.parent.mkdir(parents=True, exist_ok=True)
-    json_path.write_text(json.dumps(out, ensure_ascii=False, indent=2), encoding="utf-8")
-    js_path.write_text(
-        "window.JOBKOREA_BOARD_DATA="
-        + json.dumps(out, ensure_ascii=False, separators=(",", ":"))
-        + ";\n",
-        encoding="utf-8",
-    )
-    print(f"wrote {len(notices)} items → {js_path.name}, {json_path.as_posix()}")
+    write_board(ROOT, JS_NAME, GLOBAL_NAME, JSON_REL, out)
+    print(f"wrote {len(notices)} items → {JS_NAME}, {JSON_REL}")
     for n in notices[:8]:
         print(
             n["dateISO"],
@@ -274,7 +298,8 @@ def main():
             "|",
             n["title"][:40],
         )
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

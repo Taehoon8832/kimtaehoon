@@ -389,7 +389,7 @@ def scrape_one(src, use_jina=False):
     return items, ("ok" if items else (err or "empty"))
 
 
-def main():
+def run_scrape() -> None:
     sources = load_sources()
     groups = {}
     for s in sources:
@@ -403,11 +403,16 @@ def main():
     ok = empty = fail = 0
 
     # pass 1: fast direct HTML
-    with ThreadPoolExecutor(max_workers=16) as ex:
+    with ThreadPoolExecutor(max_workers=12) as ex:
         futs = {ex.submit(scrape_one, g[0], False): g for g in groups.values()}
         for fut in as_completed(futs):
             group = futs[fut]
-            items, status = fut.result()
+            try:
+                items, status = fut.result()
+            except Exception as e:
+                fail += 1
+                print(f"FAIL {group[0].get('name')}: {type(e).__name__}")
+                continue
             name = group[0]["name"]
             if status == "ok":
                 ok += 1
@@ -428,9 +433,6 @@ def main():
 
     # pass 2: jina for empty groups that have boardUrl (rate-limited)
     need_jina = []
-    covered_keys = set()
-    for k, it in results.items():
-        covered_keys.add(((it.get("homeUrl") or "") + "|" + "").strip())
     have_univ = {it["univId"] for it in results.values()}
     for g in groups.values():
         if any(s["id"] in have_univ for s in g):
@@ -440,8 +442,14 @@ def main():
 
     if USE_JINA:
         print(f"jina_pass candidates={len(need_jina)}")
-        for g in need_jina:
-            items, status = scrape_one(g[0], True)
+        # 시간 폭주 방지: 우선/보드 URL 그룹만 최대 40곳
+        for g in need_jina[:40]:
+            try:
+                items, status = scrape_one(g[0], True)
+            except Exception as e:
+                print(f"JINA FAIL {g[0].get('name')}: {type(e).__name__}")
+                time.sleep(0.55)
+                continue
             name = g[0]["name"]
             if status == "ok":
                 ok += 1
@@ -481,6 +489,10 @@ def main():
         except Exception:
             priority = []
 
+    if len(notices) < 5 and js_path.exists():
+        print(f"KEEP previous univ data — too few new notices ({len(notices)})")
+        return
+
     payload = {
         "minDate": MIN_DATE,
         "updatedAt": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
@@ -498,5 +510,15 @@ def main():
     print(f"wrote {js_path.name} and {json_path.as_posix()}")
 
 
+def main() -> int:
+    try:
+        run_scrape()
+        return 0
+    except Exception as e:
+        print(f"univ scrape failed: {type(e).__name__}: {e}")
+        print("KEEP previous univ board data — fatal scrape error")
+        return 0
+
+
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

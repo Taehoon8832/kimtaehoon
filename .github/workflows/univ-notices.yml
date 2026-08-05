@@ -2,8 +2,8 @@ name: Refresh university notices
 
 on:
   schedule:
-    # 매 3시간 (UTC) — GitHub Pages에 공지·채용 데이터 자동 반영
-    - cron: "20 */3 * * *"
+    # 매 1시간 (UTC) — 대학 공지는 수집이 무거워 채용보드보다 간격 유지
+    - cron: "10 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -29,22 +29,25 @@ jobs:
       - name: Scrape university notices
         env:
           USE_JINA: "1"
+        working-directory: ${{ github.workspace }}
         run: python scripts/build_univ_notices.py
-
-      - name: Scrape recruit listings
-        run: python scripts/build_recruit.py
-
-      - name: Scrape JobKorea popular jobs
-        run: python scripts/build_jobkorea.py
 
       - name: Commit updated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add univ-board-data.js data/univ-notices.json univ-sources.json recruit-board-data.js data/recruit-notices.json jobkorea-board-data.js data/jobkorea-notices.json
+          git add univ-board-data.js data/univ-notices.json univ-sources.json
           if git diff --staged --quiet; then
-            echo "No notice/recruit/jobkorea data changes"
+            echo "No university notice data changes"
             exit 0
           fi
-          git commit -m "chore: refresh university notices, recruit, and JobKorea listings"
-          git push
+          git commit -m "chore: refresh university notices"
+          for i in 1 2 3; do
+            git pull --rebase --autostash || true
+            if git push; then
+              exit 0
+            fi
+            sleep $((i * 3))
+          done
+          echo "push retry exhausted (univ)"
+          exit 0
