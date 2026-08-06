@@ -1,7 +1,7 @@
 {
   "minDate": "2026-08-01",
-  "updatedAt": "2026-08-06T07:01:48.383790Z",
-  "checkedAt": "2026-08-06T07:01:48.383806Z",
+  "updatedAt": "2026-08-06T10:05:44.179080Z",
+  "checkedAt": "2026-08-06T10:05:44.179101Z",
   "sources": [
     {
       "id": "u001",
@@ -1543,6 +1543,17 @@
       "dateText": "2026.08.06"
     },
     {
+      "id": "fad29fdaea903996c3e1",
+      "univId": "u044",
+      "univName": "한예종",
+      "title": "[8.12.(수) 9시~9. 9.(수) 18시] 2026-2학기 주거안정장학금 2차 신청",
+      "preview": "한예종 입학 공지사항 미리보기",
+      "url": "https://www.karts.ac.kr/nri/bbs/NuriBbsDetail.do?bbsId=BBSNURI_001&nttNo=9857386",
+      "homeUrl": "https://www.karts.ac.kr/index_karts.jsp",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
       "id": "b8442fe2e70f2c37c35c",
       "univId": "u123",
       "univName": "공군사관학교",
@@ -2044,5 +2055,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=14 empty=195 fail=7 fresh=22"
+  "statusReason": "ok=13 empty=196 fail=7 fresh=19"
 }
