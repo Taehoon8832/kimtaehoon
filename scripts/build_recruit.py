@@ -311,21 +311,44 @@ def main():
         else:
             raise SystemExit(f"recruit scrape failed with no previous data: {e}")
 
-    if kept_prev and previous and previous.get("notices") == notices:
+    day_changed = bool(previous) and previous.get("today") != today
+
+    # 동일 목록이어도 자정 이후에는 today·checkedAt을 갱신해 프론트가 살아 있게
+    if kept_prev and previous and previous.get("notices") == notices and not day_changed:
         print(f"unchanged {len(notices)} items (kept previous: {reason})")
         return
 
+    if day_changed:
+        refreshed = []
+        for n in notices:
+            item = dict(n)
+            deadline = str(item.get("deadlineISO") or "")
+            # 미리보기 꼬리의 D-day만 오늘 기준으로 다시 붙임
+            base = re.sub(r"(?:^|\s*·\s*)마감\s+(?:D-\d+|D-Day|마감\+\d+)\s*", " · ", str(item.get("preview") or ""))
+            base = re.sub(r"\s*·\s*·\s*", " · ", base).strip(" ·")
+            dd = dday_label(deadline, today)
+            bits = [p for p in re.split(r"\s*·\s*", base) if p]
+            if dd:
+                bits.append(f"마감 {dd}")
+            if deadline and not any(p.startswith("접수마감") for p in bits):
+                bits.append(f"접수마감 {deadline.replace('-', '.')}")
+            item["preview"] = " · ".join(bits)[:160] if bits else str(item.get("preview") or "석·박사 채용 정보")
+            refreshed.append(item)
+        notices = refreshed
+
     payload = {
         "source": LIST_URL,
-        "updatedAt": utc_now_iso(),
+        "updatedAt": previous.get("updatedAt") if kept_prev and previous else utc_now_iso(),
         "checkedAt": utc_now_iso(),
         "today": today,
         "count": len(notices),
         "notices": notices,
-        "stale": False,
-        "status": "fresh",
-        "statusReason": reason,
+        "stale": bool(kept_prev),
+        "status": "cached" if kept_prev else "fresh",
+        "statusReason": reason if not day_changed else f"{reason};day_rollover",
     }
+    if not kept_prev:
+        payload["updatedAt"] = utc_now_iso()
 
     write_board(
         js_path=js_path,
@@ -333,10 +356,21 @@ def main():
         global_name="RECRUIT_BOARD_DATA",
         payload=payload,
     )
-    print(f"wrote {len(notices)} items → {js_path.name}, {json_path.as_posix()} ({reason})")
+    print(f"wrote {len(notices)} items → {js_path.name}, {json_path.as_posix()} ({payload['statusReason']})")
     for n in notices[:8]:
         print(n["dateISO"], n.get("deadlineISO", ""), n["univName"], "|", n["title"][:42])
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except SystemExit:
+        raise
+    except Exception as e:
+        js_path = ROOT / "recruit-board-data.js"
+        json_path = ROOT / "data" / "recruit-notices.json"
+        for path in (json_path, js_path):
+            if path.exists() and path.stat().st_size > 100:
+                print(f"fatal retained previous board data after error: {e}")
+                raise SystemExit(0)
+        raise

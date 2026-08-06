@@ -2842,6 +2842,57 @@
         return true;
       }
 
+      /** 서울 자정까지 남은 ms (탭이 오래 잠들어도 날짜 전환을 놓치지 않도록) */
+      function msUntilSeoulMidnight() {
+        const now = new Date();
+        const parts = new Intl.DateTimeFormat("en-CA", {
+          timeZone: "Asia/Seoul",
+          year: "numeric",
+          month: "2-digit",
+          day: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: false,
+        }).formatToParts(now);
+        const get = (t) => Number(parts.find((p) => p.type === t)?.value || 0);
+        const h = get("hour") === 24 ? 0 : get("hour");
+        const m = get("minute");
+        const s = get("second");
+        const elapsed = ((h * 60 + m) * 60 + s) * 1000;
+        const dayMs = 24 * 60 * 60 * 1000;
+        return Math.max(1000, dayMs - elapsed + 800);
+      }
+
+      function onBoardDayRollover() {
+        try {
+          renderUnivBoard(univQuery);
+          renderRecruitBoard(recruitQuery);
+          renderJobkoreaBoard(jobkoreaQuery);
+          if (typeof renderSagwanDday === "function") renderSagwanDday();
+        } catch (_) {
+          /* 날짜 전환 시 UI 오류로 전체 폴링이 죽지 않게 */
+        }
+        refreshUnivFromGithub({ silent: true });
+        refreshRecruitFromGithub({ silent: true });
+        refreshJobkoreaFromGithub({ silent: true });
+      }
+
+      function ensureBoardDay() {
+        if (!syncBoardDay()) return false;
+        onBoardDayRollover();
+        return true;
+      }
+
+      function scheduleSeoulMidnightRollover() {
+        const delay = Math.min(msUntilSeoulMidnight(), 6 * 60 * 60 * 1000);
+        clearTimeout(scheduleSeoulMidnightRollover._t);
+        scheduleSeoulMidnightRollover._t = setTimeout(() => {
+          ensureBoardDay();
+          scheduleSeoulMidnightRollover();
+        }, delay);
+      }
+
       function isJunkText(s) {
         return /var\s|function\s|document\.|<\w+|[{};]=|bbsrg|javascript:|개인정보|이용약관/i.test(String(s || ""));
       }
@@ -3172,16 +3223,20 @@
         if (!univSources.length && !univPriority.length && !univNoticePool.length) {
           setUnivLive(false, "대기");
           renderUnivBoard("");
-          refreshUnivFromGithub({ silent: true });
-          return;
+        } else {
+          mergeNoticePool(univNoticePool);
+          setUnivLive(true, formatUpdatedLabel(univUpdatedAt));
+          renderUnivBoard(univSearch ? univSearch.value : "");
         }
-        mergeNoticePool(univNoticePool);
-        setUnivLive(true, formatUpdatedLabel(univUpdatedAt));
-        renderUnivBoard(univSearch ? univSearch.value : "");
         setTimeout(() => refreshUnivFromGithub({ silent: true }), 400);
-        setInterval(() => refreshUnivFromGithub(), UNIV_POLL_MS);
+        setInterval(() => {
+          ensureBoardDay();
+          refreshUnivFromGithub();
+        }, UNIV_POLL_MS);
         document.addEventListener("visibilitychange", () => {
-          if (document.visibilityState === "visible") refreshUnivFromGithub();
+          if (document.visibilityState !== "visible") return;
+          ensureBoardDay();
+          refreshUnivFromGithub({ silent: true });
         });
       }
 
@@ -3386,15 +3441,19 @@
         if (!recruitPool.length) {
           setRecruitLive(false, "대기");
           renderRecruitBoard("");
-          refreshRecruitFromGithub({ silent: true });
-          return;
+        } else {
+          setRecruitLive(true, formatUpdatedLabel(recruitUpdatedAt));
+          renderRecruitBoard(recruitSearch ? recruitSearch.value : "");
         }
-        setRecruitLive(true, formatUpdatedLabel(recruitUpdatedAt));
-        renderRecruitBoard(recruitSearch ? recruitSearch.value : "");
         setTimeout(() => refreshRecruitFromGithub({ silent: true }), 500);
-        setInterval(() => refreshRecruitFromGithub(), RECRUIT_POLL_MS);
+        setInterval(() => {
+          ensureBoardDay();
+          refreshRecruitFromGithub();
+        }, RECRUIT_POLL_MS);
         document.addEventListener("visibilitychange", () => {
-          if (document.visibilityState === "visible") refreshRecruitFromGithub();
+          if (document.visibilityState !== "visible") return;
+          ensureBoardDay();
+          refreshRecruitFromGithub({ silent: true });
         });
       }
 
@@ -3608,15 +3667,19 @@
         if (!jobkoreaPool.length) {
           setJobkoreaLive(false, "대기");
           renderJobkoreaBoard("");
-          refreshJobkoreaFromGithub({ silent: true });
-          return;
+        } else {
+          setJobkoreaLive(true, formatUpdatedLabel(jobkoreaUpdatedAt));
+          renderJobkoreaBoard(jobkoreaSearch ? jobkoreaSearch.value : "");
         }
-        setJobkoreaLive(true, formatUpdatedLabel(jobkoreaUpdatedAt));
-        renderJobkoreaBoard(jobkoreaSearch ? jobkoreaSearch.value : "");
         setTimeout(() => refreshJobkoreaFromGithub({ silent: true }), 500);
-        setInterval(() => refreshJobkoreaFromGithub(), JOBKOREA_POLL_MS);
+        setInterval(() => {
+          ensureBoardDay();
+          refreshJobkoreaFromGithub();
+        }, JOBKOREA_POLL_MS);
         document.addEventListener("visibilitychange", () => {
-          if (document.visibilityState === "visible") refreshJobkoreaFromGithub();
+          if (document.visibilityState !== "visible") return;
+          ensureBoardDay();
+          refreshJobkoreaFromGithub({ silent: true });
         });
       }
 
@@ -4191,12 +4254,13 @@
       bootRecruitBoard();
       bootJobkoreaBoard();
       boardDayISO = seoulTodayISO();
+      scheduleSeoulMidnightRollover();
       setInterval(() => {
-        if (!syncBoardDay()) return;
-        renderUnivBoard(univQuery);
-        renderRecruitBoard(recruitQuery);
-        renderJobkoreaBoard(jobkoreaQuery);
-      }, 30000);
+        ensureBoardDay();
+      }, 15000);
+      document.addEventListener("visibilitychange", () => {
+        if (document.visibilityState === "visible") ensureBoardDay();
+      });
       bootVisits();
     })();
   </script>

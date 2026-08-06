@@ -9,14 +9,15 @@ on:
 permissions:
   contents: write
 
+# 이전 실행을 취소하지 않음 — "All jobs were cancelled" 방지
 concurrency:
   group: refresh-boards
   cancel-in-progress: false
 
 jobs:
-  jobkorea:
+  scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
         with:
@@ -26,54 +27,32 @@ jobs:
         with:
           python-version: "3.12"
 
+      # 순차 수집: 병렬 push 충돌·한쪽 실패로 전체 취소되는 문제 방지
       - name: Scrape JobKorea
+        id: jobkorea
+        continue-on-error: true
         run: python scripts/build_jobkorea.py
 
-      - name: Commit JobKorea data
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add jobkorea-board-data.js data/jobkorea-notices.json
-          if git diff --staged --quiet; then
-            echo "No JobKorea changes"
-            exit 0
-          fi
-          git commit -m "chore: refresh JobKorea listings"
-          for i in 1 2 3; do
-            git pull --rebase --autostash origin main && git push && exit 0
-            sleep $((i * 3))
-          done
-          git pull --rebase --autostash origin main
-          git push
-
-  recruit:
-    runs-on: ubuntu-latest
-    timeout-minutes: 8
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
       - name: Scrape recruit
+        id: recruit
+        continue-on-error: true
         run: python scripts/build_recruit.py
 
-      - name: Commit recruit data
+      - name: Commit board data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add recruit-board-data.js data/recruit-notices.json
+          git add jobkorea-board-data.js data/jobkorea-notices.json \
+                  recruit-board-data.js data/recruit-notices.json
           if git diff --staged --quiet; then
-            echo "No recruit changes"
+            echo "No board data changes"
             exit 0
           fi
-          git commit -m "chore: refresh recruit listings"
-          for i in 1 2 3; do
+          git commit -m "chore: refresh job & recruit boards"
+          for i in 1 2 3 4 5; do
             git pull --rebase --autostash origin main && git push && exit 0
-            sleep $((i * 3))
+            sleep $((i * 4))
+            git fetch origin main || true
           done
-          git pull --rebase --autostash origin main
-          git push
+          echo "Push retries exhausted; leaving commit local to next run"
+          exit 0

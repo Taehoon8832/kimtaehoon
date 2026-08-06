@@ -267,23 +267,38 @@ def main():
         else:
             raise SystemExit(f"jobkorea scrape failed with no previous data: {e}")
 
-    if kept_prev and previous and previous.get("notices") == notices:
+    day_changed = bool(previous) and previous.get("today") != today
+
+    # 동일 목록이어도 자정 이후에는 today·D-day·checkedAt을 갱신
+    if kept_prev and previous and previous.get("notices") == notices and not day_changed:
         print(f"unchanged {len(notices)} items (kept previous: {reason})")
         return
+
+    if day_changed:
+        refreshed = []
+        for n in notices:
+            item = dict(n)
+            dl = date_only(item.get("deadlineISO"))
+            always = bool(item.get("alwaysHire"))
+            item["dday"] = dday_label(dl, today, always)
+            refreshed.append(item)
+        notices = refreshed
 
     out = {
         "source": HOME_URL,
         "api": API_URL,
         "section": "인기 JOB",
-        "updatedAt": utc_now_iso(),
+        "updatedAt": previous.get("updatedAt") if kept_prev and previous else utc_now_iso(),
         "checkedAt": utc_now_iso(),
         "today": today,
         "count": len(notices),
         "notices": notices,
-        "stale": False,
-        "status": "fresh",
-        "statusReason": reason,
+        "stale": bool(kept_prev),
+        "status": "cached" if kept_prev else "fresh",
+        "statusReason": reason if not day_changed else f"{reason};day_rollover",
     }
+    if not kept_prev:
+        out["updatedAt"] = utc_now_iso()
 
     write_board(
         js_path=js_path,
@@ -291,7 +306,7 @@ def main():
         global_name="JOBKOREA_BOARD_DATA",
         payload=out,
     )
-    print(f"wrote {len(notices)} items → {js_path.name}, {json_path.as_posix()} ({reason})")
+    print(f"wrote {len(notices)} items → {js_path.name}, {json_path.as_posix()} ({out['statusReason']})")
     for n in notices[:8]:
         print(
             n["dateISO"],
@@ -303,4 +318,15 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except SystemExit:
+        raise
+    except Exception as e:
+        js_path = ROOT / "jobkorea-board-data.js"
+        json_path = ROOT / "data" / "jobkorea-notices.json"
+        for path in (json_path, js_path):
+            if path.exists() and path.stat().st_size > 100:
+                print(f"fatal retained previous board data after error: {e}")
+                raise SystemExit(0)
+        raise

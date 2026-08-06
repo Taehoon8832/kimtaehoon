@@ -27,6 +27,8 @@ jobs:
           python-version: "3.12"
 
       - name: Scrape university notices
+        id: scrape
+        continue-on-error: true
         env:
           USE_JINA: "1"
         run: python scripts/build_univ_notices.py
@@ -41,9 +43,10 @@ jobs:
             exit 0
           fi
           git commit -m "chore: refresh university notices"
-          for i in 1 2 3; do
+          for i in 1 2 3 4 5; do
             git pull --rebase --autostash origin main && git push && exit 0
             sleep $((i * 4))
+            git fetch origin main || true
           done
-          git pull --rebase --autostash origin main
-          git push
+          echo "Push retries exhausted; leaving commit for next run"
+          exit 0
