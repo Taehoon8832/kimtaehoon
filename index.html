@@ -488,12 +488,18 @@
     }
 
     .stage-rule {
-      height: 4px;
-      width: 100%;
-      margin: 0;
+      height: 2px;
+      width: min(1560px, calc(100% - 24px));
+      margin: 2px auto 0;
       border: 0;
-      background: #191919;
+      background: linear-gradient(90deg, transparent 0%, #6b4f3a 10%, #a67c52 50%, #6b4f3a 90%, transparent 100%);
+      box-shadow: 0 1px 0 rgba(245, 230, 200, 0.35);
       flex-shrink: 0;
+    }
+
+    .sagwan-board-rule {
+      margin-top: 4px;
+      margin-bottom: 2px;
     }
 
     .lower-layout {
@@ -1503,9 +1509,9 @@
     .sagwan-strip {
       width: min(1560px, 100%);
       margin: 0 auto;
-      padding: clamp(14px, 2vw, 20px) clamp(12px, 3vw, 20px) clamp(10px, 1.6vw, 16px);
+      padding: 8px clamp(12px, 3vw, 20px) 10px;
       display: grid;
-      gap: 12px;
+      gap: 8px;
     }
 
     .sagwan-schedule-row {
@@ -1517,13 +1523,13 @@
     .sagwan-schedule-btn {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      padding: 8px 14px 8px 8px;
-      border: 2px solid #191919;
+      gap: 8px;
+      padding: 5px 12px 5px 6px;
+      border: 1.5px solid #3d2b1f;
       border-radius: 999px;
-      background: linear-gradient(135deg, #fff 0%, #f4f7fb 100%);
-      color: #111;
-      box-shadow: 0 8px 20px rgba(25, 25, 25, 0.08);
+      background: linear-gradient(135deg, #fffdf8 0%, #f3ebe0 100%);
+      color: #2a1c12;
+      box-shadow: 0 4px 12px rgba(80, 50, 20, 0.1);
       cursor: pointer;
       transition: transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
       font: inherit;
@@ -1531,102 +1537,90 @@
 
     .sagwan-schedule-btn:hover,
     .sagwan-schedule-btn:focus-visible {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 26px rgba(25, 25, 25, 0.14);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 18px rgba(80, 50, 20, 0.16);
       outline: none;
     }
 
     .sagwan-schedule-btn .ic {
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
       display: grid;
       place-items: center;
-      background: linear-gradient(145deg, #1f6feb 0%, #0b3d91 55%, #06275e 100%);
-      color: #fff;
+      background: linear-gradient(145deg, #6b4f3a 0%, #3d2b1f 100%);
+      color: #f5e6c8;
       flex-shrink: 0;
     }
 
     .sagwan-schedule-btn .ic svg {
-      width: 22px;
-      height: 22px;
+      width: 16px;
+      height: 16px;
     }
 
     .sagwan-schedule-btn strong {
-      font-size: 14px;
+      font-size: 12.5px;
       font-weight: 800;
       letter-spacing: -0.03em;
-      line-height: 1.25;
+      line-height: 1.2;
     }
 
     .sagwan-main-row {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) 18px auto;
-      gap: 14px;
+      grid-template-columns: minmax(0, 1fr) 14px minmax(148px, 168px);
+      gap: 10px;
       align-items: stretch;
     }
 
     .sagwan-dday-panel {
       min-width: 0;
-      border-radius: 22px;
-      padding: 16px 16px 14px;
+      border-radius: 16px;
+      padding: 8px;
       background:
-        radial-gradient(80% 90% at 12% 0%, rgba(80, 200, 210, 0.18), transparent 50%),
-        linear-gradient(160deg, #2b3340 0%, #1c222c 55%, #151a22 100%);
-      box-shadow: 0 16px 36px rgba(20, 24, 32, 0.28);
+        radial-gradient(80% 90% at 12% 0%, rgba(166, 124, 82, 0.2), transparent 50%),
+        linear-gradient(160deg, #2f2924 0%, #1f1a16 55%, #161210 100%);
+      box-shadow: 0 10px 24px rgba(40, 28, 16, 0.22);
       color: #fff;
-    }
-
-    .sagwan-dday-head {
-      margin-bottom: 12px;
-    }
-
-    .sagwan-dday-head .eyebrow {
-      display: block;
-      font-family: "Space Grotesk", var(--font);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: #4ecdc4;
-      margin-bottom: 2px;
-    }
-
-    .sagwan-dday-head strong {
-      font-size: clamp(16px, 2vw, 20px);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.25;
     }
 
     .sagwan-dday-grid {
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 10px;
+      gap: 7px;
     }
 
     .sagwan-dday-card {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
-      padding: 12px 8px 10px;
-      border-radius: 14px;
+      gap: 0;
+      overflow: hidden;
+      border-radius: 11px;
       background: #fff;
       color: #111;
       text-decoration: none;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
       transition: transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
     }
 
     .sagwan-dday-card:hover,
     .sagwan-dday-card:focus-visible {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 22px rgba(0, 0, 0, 0.18);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
       outline: none;
     }
 
+    .sagwan-dday-card .card-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      width: 100%;
+      padding: 8px 6px 7px;
+    }
+
     .sagwan-dday-card .name {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 800;
       letter-spacing: -0.02em;
     }
@@ -1634,24 +1628,24 @@
     .sagwan-dday-badge {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      min-width: 72px;
+      gap: 4px;
+      min-width: 64px;
       justify-content: center;
-      padding: 6px 12px;
+      padding: 4px 10px;
       border-radius: 999px;
       font-family: "Space Grotesk", var(--font);
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 700;
       letter-spacing: -0.02em;
       color: #fff;
       box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, 0.35),
-        0 4px 10px rgba(0, 0, 0, 0.18);
+        0 3px 8px rgba(0, 0, 0, 0.16);
     }
 
     .sagwan-dday-badge svg {
-      width: 13px;
-      height: 13px;
+      width: 12px;
+      height: 12px;
       opacity: 0.95;
     }
 
@@ -1678,87 +1672,57 @@
       color: #222;
     }
 
-    .sagwan-date-row {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 12px;
-      position: relative;
+    .sagwan-dday-card .card-foot {
+      width: 100%;
+      padding: 5px 4px 6px;
+      background: #eef3f7;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+      text-align: center;
+      line-height: 1.25;
     }
 
-    .sagwan-date-row::before {
-      content: "";
-      position: absolute;
-      left: 6%;
-      right: 6%;
-      top: 50%;
-      border-top: 2px dotted rgba(220, 60, 60, 0.55);
-      z-index: 0;
-    }
-
-    .sagwan-date-chip {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2px;
-      padding: 8px 6px;
-      border: 1.5px solid #222;
-      border-radius: 10px;
-      background: #e8f6ef;
-      text-decoration: none;
-      color: inherit;
-      transition: transform var(--duration-fast) var(--ease-out);
-    }
-
-    .sagwan-date-chip:hover,
-    .sagwan-date-chip:focus-visible {
-      transform: translateY(-2px);
-      outline: none;
-    }
-
-    .sagwan-date-chip .label {
-      font-size: 11px;
+    .sagwan-dday-card .card-foot .label {
+      display: block;
+      font-size: 10px;
       font-weight: 700;
-      color: #6b3fa0;
-      text-decoration: underline;
-      text-underline-offset: 2px;
+      color: #6b4f8a;
       letter-spacing: -0.02em;
     }
 
-    .sagwan-date-chip .date {
-      font-size: 15px;
+    .sagwan-dday-card .card-foot .date {
+      font-size: 12px;
       font-weight: 800;
       letter-spacing: -0.03em;
-      color: #111;
+      color: #222;
       font-family: "Space Grotesk", var(--font);
     }
 
     .sagwan-divider {
-      width: 2px;
+      width: 1.5px;
       align-self: stretch;
-      background: linear-gradient(180deg, transparent, #191919 12%, #191919 88%, transparent);
+      background: linear-gradient(180deg, transparent, #8b6914 14%, #a67c52 50%, #8b6914 86%, transparent);
       border-radius: 2px;
-      opacity: 0.85;
+      opacity: 0.9;
     }
 
     .sagwan-review-btn {
-      width: min(168px, 28vw);
+      width: 100%;
       min-height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      padding: 16px 12px;
-      border: 3px solid #191919;
-      border-radius: 22px;
+      gap: 8px;
+      padding: 12px 10px;
+      border: 1.5px solid #6b4f3a;
+      border-radius: 16px;
       background:
-        radial-gradient(90% 80% at 50% 0%, rgba(255, 214, 102, 0.55), transparent 60%),
-        linear-gradient(160deg, #fff8e8 0%, #ffe0a8 45%, #ffb347 100%);
-      box-shadow: 0 14px 30px rgba(180, 100, 20, 0.22);
-      color: #1a1200;
+        radial-gradient(90% 70% at 50% 0%, rgba(245, 230, 200, 0.75), transparent 58%),
+        linear-gradient(165deg, #3d2b1f 0%, #5c4030 42%, #8b6914 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 236, 200, 0.22),
+        0 10px 22px rgba(60, 40, 20, 0.22);
+      color: #f8efd8;
       text-decoration: none;
       cursor: pointer;
       font: inherit;
@@ -1767,8 +1731,10 @@
 
     .sagwan-review-btn:hover,
     .sagwan-review-btn:focus-visible {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 18px 36px rgba(180, 100, 20, 0.3);
+      transform: translateY(-2px);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 236, 200, 0.28),
+        0 14px 28px rgba(60, 40, 20, 0.28);
       outline: none;
     }
 
@@ -1777,33 +1743,35 @@
     }
 
     .sagwan-review-btn .ic {
-      width: 52px;
-      height: 52px;
-      border-radius: 16px;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
       display: grid;
       place-items: center;
-      background: linear-gradient(145deg, #ff8a3d 0%, #e85d04 55%, #9d0208 100%);
-      color: #fff;
-      box-shadow: 0 8px 16px rgba(180, 60, 20, 0.28);
+      background: linear-gradient(145deg, #f0d59a 0%, #c9a227 50%, #8b6914 100%);
+      color: #2a1c12;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     }
 
     .sagwan-review-btn .ic svg {
-      width: 28px;
-      height: 28px;
+      width: 22px;
+      height: 22px;
     }
 
     .sagwan-review-btn strong {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 800;
       letter-spacing: -0.03em;
       text-align: center;
-      line-height: 1.3;
+      line-height: 1.35;
+      color: #fff8e8;
+      text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
     }
 
     .sagwan-review-btn small {
-      font-size: 10px;
-      font-weight: 700;
-      color: #8a5a18;
+      font-size: 9.5px;
+      font-weight: 650;
+      color: rgba(245, 230, 200, 0.72);
       letter-spacing: 0.02em;
     }
 
@@ -1881,7 +1849,7 @@
     @media (max-width: 980px) {
       .sagwan-main-row {
         grid-template-columns: 1fr;
-        gap: 12px;
+        gap: 8px;
       }
 
       .sagwan-divider {
@@ -1893,27 +1861,22 @@
         min-height: 0;
         flex-direction: row;
         justify-content: flex-start;
-        padding: 12px 14px;
-        gap: 12px;
+        padding: 10px 12px;
+        gap: 10px;
       }
 
       .sagwan-review-btn strong {
         text-align: left;
+        font-size: 12.5px;
       }
     }
 
     @media (max-width: 720px) {
-      .sagwan-dday-grid,
-      .sagwan-date-row {
+      .sagwan-dday-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .sagwan-date-row::before {
-        display: none;
-      }
-
-      .sagwan-dday-card:last-child,
-      .sagwan-date-chip:last-child {
+      .sagwan-dday-card:last-child {
         grid-column: 1 / -1;
       }
     }
@@ -2405,8 +2368,6 @@
     </div>
     </div>
 
-    <hr class="stage-rule" aria-hidden="true" />
-
     <div class="lower-layout">
     <section class="sagwan-strip" aria-label="2027 사관학교 일정 및 점공">
       <div class="sagwan-schedule-row">
@@ -2423,29 +2384,26 @@
       </div>
 
       <div class="sagwan-main-row">
-        <div class="sagwan-dday-panel">
-          <div class="sagwan-dday-head">
-            <span class="eyebrow">COUNTDOWN</span>
-            <strong>2027 사관학교 점공 D-day</strong>
-          </div>
+        <div class="sagwan-dday-panel" aria-label="2027 사관학교 점공 D-day">
           <div class="sagwan-dday-grid" id="sagwanDdayGrid"></div>
-          <div class="sagwan-date-row" id="sagwanDateRow"></div>
         </div>
 
         <div class="sagwan-divider" aria-hidden="true"></div>
 
-        <button type="button" class="sagwan-review-btn is-soon" id="sagwanReviewBtn" aria-label="2027 면접 후기집 참여">
+        <button type="button" class="sagwan-review-btn is-soon" id="sagwanReviewBtn" aria-label="2027학년도 면접 후기집 참여(교사)">
           <span class="ic" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
               <path d="M6 4.5h9.5L18.5 7.5V19a1.5 1.5 0 0 1-1.5 1.5H6A1.5 1.5 0 0 1 4.5 19V6A1.5 1.5 0 0 1 6 4.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
               <path d="M15 4.8V8h3.2M8 11.5h8M8 15h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
             </svg>
           </span>
-          <strong>2027 면접 후기집<br>참여</strong>
+          <strong>2027학년도<br>면접 후기집 참여<br>(교사)</strong>
           <small>URL 준비 중</small>
         </button>
       </div>
     </section>
+
+    <hr class="stage-rule sagwan-board-rule" aria-hidden="true" />
 
     <section class="chat-section" id="chat" aria-label="채용공고·석박채용·대학공지 게시판">
       <div class="chat-shell">
@@ -4028,8 +3986,7 @@
 
       function renderSagwanDday() {
         const grid = document.getElementById("sagwanDdayGrid");
-        const dates = document.getElementById("sagwanDateRow");
-        if (!grid || !dates) return;
+        if (!grid) return;
         const today = seoulTodayISO();
         const calIcon =
           `<svg viewBox="0 0 24 24" fill="none" aria-hidden="true">` +
@@ -4041,17 +3998,17 @@
           const tone = dd.toneClass || `tone-${item.tone}`;
           return (
             `<a class="sagwan-dday-card" href="${item.url}" target="_blank" rel="noopener noreferrer" title="${item.name} 점공 참여">` +
+            `<span class="card-top">` +
             `<span class="name">${item.name}</span>` +
             `<span class="sagwan-dday-badge ${tone}">${calIcon}${dd.text}</span>` +
+            `</span>` +
+            `<span class="card-foot">` +
+            `<span class="label">[${item.name} 점공]</span>` +
+            `<span class="date">${item.dateLabel}</span>` +
+            `</span>` +
             `</a>`
           );
         }).join("");
-        dates.innerHTML = SAGWAN_POINTS.map((item) => (
-          `<a class="sagwan-date-chip" href="${item.url}" target="_blank" rel="noopener noreferrer" title="${item.name} 점공">` +
-          `<span class="label">[${item.name} 점공]</span>` +
-          `<span class="date">${item.dateLabel}</span>` +
-          `</a>`
-        )).join("");
       }
 
       function bootSagwanStrip() {
@@ -4086,7 +4043,7 @@
               window.open(SAGWAN_REVIEW_URL, "_blank", "noopener,noreferrer");
               return;
             }
-            showToast("2027 면접 후기집 URL이 곧 공개됩니다");
+            showToast("2027학년도 면접 후기집(교사) URL이 곧 공개됩니다");
           });
         }
         document.addEventListener("keydown", (e) => {
