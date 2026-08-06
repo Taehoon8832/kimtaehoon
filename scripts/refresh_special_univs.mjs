@@ -67,6 +67,15 @@ const TARGETS = [
       "https://www.knuh.ac.kr/admission/brd/list.do?mnuBaseId=MNU0000210&topBaseId=MNU0000209&tplSer=29",
     allow: /knuh\.ac\.kr\/admission\/brd\/view\.do\?.*mnuBaseId=MNU0000210/i,
   },
+  {
+    id: "u044",
+    name: "한예종",
+    homeUrl: "https://www.karts.ac.kr/main/appl.do",
+    boardUrl:
+      "https://www.karts.ac.kr/cop/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000007",
+    allow: /karts\.ac\.kr\/cop\/bbs\/selectBoardArticle\.do\?.*bbsId=BBSMSTR_000000000007/i,
+    maxPages: 8,
+  },
 ];
 
 function sha20(s) {
@@ -297,6 +306,26 @@ function parseKnuh(html, cfg) {
   return out;
 }
 
+function parseKarts(html, cfg) {
+  const out = [];
+  const re =
+    /href="(\/cop\/bbs\/selectBoardArticle\.do\?[^"]*bbsId=BBSMSTR_000000000007[^"]*)"[^>]*title="([^"]+)"[\s\S]{0,1200}?<span class="mont">(20\d{2}\.\d{2}\.\d{2})<\/span>/gi;
+  for (const m of html.matchAll(re)) {
+    const ntt = (m[1].match(/nttNo=(\d+)/i) || [])[1];
+    if (!ntt) continue;
+    const href = `https://www.karts.ac.kr/cop/bbs/selectBoardArticle.do?bbsId=BBSMSTR_000000000007&nttNo=${ntt}`;
+    const title = m[2].replace(/\s+/g, " ").trim();
+    const dateISO = extractIso(m[3]);
+    const block = m[0];
+    const cateM = block.match(/class="[^"]*ntc_vis[^"]*"[^>]*>([^<]+)</i);
+    const cate = cateM ? cateM[1].replace(/<[^>]+>/g, "").trim() : "";
+    const preview = cate ? `[${cate}] 한예종 입학 공지` : "한예종 입학 공지사항 미리보기";
+    const it = makeItem(cfg, title, href, dateISO, preview);
+    if (it) out.push(it);
+  }
+  return out;
+}
+
 const PARSERS = {
   u188: parseMmu,
   u121: parseKkot,
@@ -305,6 +334,7 @@ const PARSERS = {
   u066: parseActs,
   u174: parseJesus,
   u157: parseKnuh,
+  u044: parseKarts,
 };
 
 function loadPayload() {
@@ -341,39 +371,68 @@ async function main() {
   const payload = loadPayload();
   payload.sources = updateSources(payload.sources);
   const today = seoulToday();
-  const keepIds = new Set(TARGETS.map((t) => t.id));
-  const others = (payload.notices || []).filter((n) => !keepIds.has(n.univId));
-  const fresh = [];
+  const byId = new Map(TARGETS.map((t) => [t.id, t]));
+  const notices = [];
+
+  // 지정 대학이 아닌 공지는 그대로 유지
+  for (const n of payload.notices || []) {
+    if (!byId.has(n.univId)) notices.push(n);
+  }
 
   for (const cfg of TARGETS) {
+    const prev = (payload.notices || []).filter((n) => n.univId === cfg.id);
     try {
-      const html = await fetchHtml(cfg);
       const parser = PARSERS[cfg.id];
-      let items = parser(html, cfg);
+      let items = [];
+      if (cfg.id === "u044") {
+        const maxPages = cfg.maxPages || 5;
+        for (let page = 1; page <= maxPages; page++) {
+          const pageUrl = `${cfg.boardUrl}&pageIndex=${page}`;
+          const html = await fetchHtml({ ...cfg, boardUrl: pageUrl });
+          const pageItems = parser(html, cfg);
+          if (!pageItems.length) break;
+          items.push(...pageItems);
+          const oldest = pageItems.map((it) => it.dateISO).sort()[0] || "";
+          if (oldest && oldest < MIN_DATE) break;
+        }
+      } else {
+        const html = await fetchHtml(cfg);
+        items = parser(html, cfg);
+      }
       const map = new Map();
       for (const it of items) map.set(`${it.url}|${it.title}`, it);
       items = [...map.values()]
         .filter((it) => it.dateISO >= MIN_DATE && it.dateISO <= today)
         .sort((a, b) => b.dateISO.localeCompare(a.dateISO))
-        .slice(0, 8);
-      console.log(`${cfg.name}: ${items.length}건 (>=${MIN_DATE})`);
-      for (const it of items.slice(0, 6)) {
-        console.log(" ", it.dateISO, it.title.slice(0, 70));
-        console.log("   ", it.url);
+        .slice(0, cfg.id === "u044" ? 20 : 8);
+
+      if (items.length) {
+        console.log(`${cfg.name}: ${items.length}건 (>=${MIN_DATE})`);
+        for (const it of items.slice(0, 6)) {
+          console.log(" ", it.dateISO, it.title.slice(0, 70));
+          console.log("   ", it.url);
+        }
+        notices.push(...items);
+      } else {
+        // 신규 수집 0건이면 허용 URL의 이전 글만 유지 (빈 결과로 전체 삭제 방지)
+        const kept = prev.filter((n) => cfg.allow.test(String(n.url || "")));
+        console.log(`${cfg.name}: 0건 → 이전 허용 글 ${kept.length}건 유지`);
+        notices.push(...kept);
       }
-      fresh.push(...items);
     } catch (e) {
-      console.error(`${cfg.name} FAIL`, e.message || e);
+      const kept = prev.filter((n) => cfg.allow.test(String(n.url || "")));
+      console.error(`${cfg.name} FAIL`, e.message || e, `→ 이전 ${kept.length}건 유지`);
+      notices.push(...kept);
     }
   }
 
-  payload.notices = [...fresh, ...others].sort((a, b) =>
+  payload.notices = notices.sort((a, b) =>
     `${b.dateISO}|${b.title}`.localeCompare(`${a.dateISO}|${a.title}`)
   );
   payload.updatedAt = new Date().toISOString();
   payload.checkedAt = payload.updatedAt;
   savePayload(payload);
-  console.log(`done notices=${payload.notices.length} special=${fresh.length}`);
+  console.log(`done notices=${payload.notices.length}`);
 }
 
 main().catch((e) => {

@@ -1,7 +1,7 @@
 {
   "minDate": "2026-08-01",
-  "updatedAt": "2026-08-06T15:52:41.019888Z",
-  "checkedAt": "2026-08-06T15:52:41.019907Z",
+  "updatedAt": "2026-08-06T23:34:16.751Z",
+  "checkedAt": "2026-08-06T23:34:16.751Z",
   "sources": [
     {
       "id": "u001",
@@ -283,8 +283,8 @@
     {
       "id": "u044",
       "name": "한예종",
-      "homeUrl": "https://www.karts.ac.kr/index_karts.jsp",
-      "boardUrl": ""
+      "homeUrl": "https://www.karts.ac.kr/main/appl.do",
+      "boardUrl": "https://www.karts.ac.kr/cop/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000007"
     },
     {
       "id": "u045",
@@ -1554,28 +1554,6 @@
       "dateText": "2026.08.06"
     },
     {
-      "id": "78a42e8378e45e99dc9f",
-      "univId": "u044",
-      "univName": "한예종",
-      "title": "[한예종 공식 홍보 서포터즈] 예종지기 9기 모집 공고",
-      "preview": "한예종 입학 공지사항 미리보기",
-      "url": "https://www.karts.ac.kr/nri/bbs/NuriBbsDetail.do?bbsId=BBSNURI_001&nttNo=9857393",
-      "homeUrl": "https://www.karts.ac.kr/index_karts.jsp",
-      "dateISO": "2026-08-06",
-      "dateText": "2026.08.06"
-    },
-    {
-      "id": "fad29fdaea903996c3e1",
-      "univId": "u044",
-      "univName": "한예종",
-      "title": "[8.12.(수) 9시~9. 9.(수) 18시] 2026-2학기 주거안정장학금 2차 신청",
-      "preview": "한예종 입학 공지사항 미리보기",
-      "url": "https://www.karts.ac.kr/nri/bbs/NuriBbsDetail.do?bbsId=BBSNURI_001&nttNo=9857386",
-      "homeUrl": "https://www.karts.ac.kr/index_karts.jsp",
-      "dateISO": "2026-08-06",
-      "dateText": "2026.08.06"
-    },
-    {
       "id": "b8442fe2e70f2c37c35c",
       "univId": "u123",
       "univName": "공군사관학교",
@@ -1583,17 +1561,6 @@
       "preview": "공군사관학교 입학 공지사항 미리보기",
       "url": "https://rokaf.airforce.mil.kr/bbs/afaadmission/2089/43066/artclView.do",
       "homeUrl": "https://rokaf.airforce.mil.kr/sites/afaadmission/index.do",
-      "dateISO": "2026-08-06",
-      "dateText": "2026.08.06"
-    },
-    {
-      "id": "6b27137303aa4b2149eb",
-      "univId": "u044",
-      "univName": "한예종",
-      "title": "2026학년도 2학기 기숙사 정기개관 납부자 명단(08.05. 납부자)",
-      "preview": "한예종 입학 공지사항 미리보기",
-      "url": "https://www.karts.ac.kr/nri/bbs/NuriBbsDetail.do?bbsId=BBSNURI_001&nttNo=9857394",
-      "homeUrl": "https://www.karts.ac.kr/index_karts.jsp",
       "dateISO": "2026-08-06",
       "dateText": "2026.08.06"
     },
@@ -1742,39 +1709,6 @@
       "dateText": "2026.08.04"
     },
     {
-      "id": "47b4e56378f4dc779f24",
-      "univId": "u044",
-      "univName": "한예종",
-      "title": "2026-2학기 국가장학금 우선감면 안내",
-      "preview": "한예종 입학 공지사항 미리보기",
-      "url": "https://www.karts.ac.kr/nri/bbs/NuriBbsDetail.do?bbsId=BBSNURI_001&nttNo=9857404",
-      "homeUrl": "https://www.karts.ac.kr/index_karts.jsp",
-      "dateISO": "2026-08-04",
-      "dateText": "2026.08.04"
-    },
-    {
-      "id": "8837ed295cef4af4a31d",
-      "univId": "u044",
-      "univName": "한예종",
-      "title": "한예종 전임교원 5명 신규 임용",
-      "preview": "한예종 입학 공지사항 미리보기",
-      "url": "https://www.karts.ac.kr/cop/bbs/selectBoardArticle.do?siteId=SITE_000000000000001&bbsId=BBSMSTR_000000000013&nttNo=70319",
-      "homeUrl": "https://www.karts.ac.kr/index_karts.jsp",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03"
-    },
-    {
-      "id": "3cc65e5b79ec40bc682f",
-      "univId": "u044",
-      "univName": "한예종",
-      "title": "제27회 전통연희겨루기 한마당",
-      "preview": "한예종 입학 공지사항 미리보기",
-      "url": "https://www.karts.ac.kr/nri/bbs/NuriBbsDetail.do?bbsId=BBSNURI_001&nttNo=9857448",
-      "homeUrl": "https://www.karts.ac.kr/index_karts.jsp",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03"
-    },
-    {
       "id": "6a614aff14388f3afe12",
       "univId": "u030",
       "univName": "숭실대",
@@ -1782,17 +1716,6 @@
       "preview": "숭실대 입학 공지사항 미리보기",
       "url": "https://iphak.ssu.ac.kr/board/notice_view.asp?flag=7&page=1&number=2314&page_no=10__",
       "homeUrl": "https://iphak.ssu.ac.kr/",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03"
-    },
-    {
-      "id": "2edcf8b46c77ef160899",
-      "univId": "u044",
-      "univName": "한예종",
-      "title": "[학점교류] 2026학년도 2학기 광운대학교 교류수학 안내",
-      "preview": "한예종 입학 공지사항 미리보기",
-      "url": "https://www.karts.ac.kr/nri/bbs/NuriBbsDetail.do?bbsId=BBSNURI_001&nttNo=9857443",
-      "homeUrl": "https://www.karts.ac.kr/index_karts.jsp",
       "dateISO": "2026-08-03",
       "dateText": "2026.08.03"
     },
@@ -1808,37 +1731,15 @@
       "dateText": "2026.08.03"
     },
     {
-      "id": "589e0449485abc60255c",
+      "id": "karts70317",
       "univId": "u044",
       "univName": "한예종",
-      "title": "2026학년도 2학기 수강신청 ㆍ변경 ㆍ취소 안내",
-      "preview": "한예종 입학 공지사항 미리보기",
-      "url": "https://www.karts.ac.kr/nri/bbs/NuriBbsDetail.do?bbsId=BBSNURI_001&nttNo=9857441",
-      "homeUrl": "https://www.karts.ac.kr/index_karts.jsp",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03"
-    },
-    {
-      "id": "4ef21f00f05137929e0f",
-      "univId": "u044",
-      "univName": "한예종",
-      "title": "2026년 2학기 한예종 외국인 유학생 헬핑버디 선발 공고",
-      "preview": "한예종 입학 공지사항 미리보기",
-      "url": "https://www.karts.ac.kr/nri/bbs/NuriBbsDetail.do?bbsId=BBSNURI_001&nttNo=9857444",
-      "homeUrl": "https://www.karts.ac.kr/index_karts.jsp",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03"
-    },
-    {
-      "id": "dee460c0e9823aecc6c2",
-      "univId": "u044",
-      "univName": "한예종",
-      "title": "2025학년도 후기 학위수여식 개최 안내",
-      "preview": "한예종 입학 공지사항 미리보기",
-      "url": "https://www.karts.ac.kr/nri/bbs/NuriBbsDetail.do?bbsId=BBSNURI_001&nttNo=9857455",
-      "homeUrl": "https://www.karts.ac.kr/index_karts.jsp",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03"
+      "title": "음악원 및 무용원 예술사과정 특별전형 시험시간표 등 안내",
+      "preview": "[예술사] 한예종 입학 공지",
+      "url": "https://www.karts.ac.kr/cop/bbs/selectBoardArticle.do?bbsId=BBSMSTR_000000000007&nttNo=70317",
+      "homeUrl": "https://www.karts.ac.kr/main/appl.do",
+      "dateISO": "2026-08-02",
+      "dateText": "2026.08.02"
     },
     {
       "id": "ec4fce58b31c64810b72",

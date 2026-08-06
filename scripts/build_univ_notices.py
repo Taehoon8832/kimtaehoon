@@ -101,6 +101,16 @@ SPECIAL_UNIV = {
         "boardUrl": "https://www.knuh.ac.kr/admission/brd/list.do?mnuBaseId=MNU0000210&topBaseId=MNU0000209&tplSer=29",
         "allow": re.compile(r"knuh\.ac\.kr/admission/brd/view\.do\?.*mnuBaseId=MNU0000210", re.I),
     },
+    "u044": {  # 한예종 — 입학정보 홈 + 공지사항 전체(bbs 007)
+        "homeUrl": "https://www.karts.ac.kr/main/appl.do",
+        "boardUrl": "https://www.karts.ac.kr/cop/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000007",
+        "allow": re.compile(
+            r"karts\.ac\.kr/cop/bbs/selectBoardArticle\.do\?.*bbsId=BBSMSTR_000000000007",
+            re.I,
+        ),
+        "maxPages": 8,
+        "maxPer": 20,
+    },
 }
 
 
@@ -530,9 +540,36 @@ def parse_special(html: str, src: dict):
             it = make_item(src, title, f"{src['name']} 입학 공지사항 미리보기", href, m.group(3), cfg["boardUrl"])
             if it and cfg["allow"].search(it["url"]) and it["dateISO"] <= today:
                 items.append(it)
+    elif uid == "u044":  # 한예종 입학 공지사항 전체
+        for m in re.finditer(
+            r'href="(/cop/bbs/selectBoardArticle\.do\?[^"]*bbsId=BBSMSTR_000000000007[^"]*)"'
+            r'[^>]*title="([^"]+)"[\s\S]{0,1200}?<span class="mont">(20\d{2}\.\d{2}\.\d{2})</span>',
+            html,
+            re.I,
+        ):
+            raw_href = unescape(m.group(1)).replace("&amp;", "&")
+            ntt = re.search(r"nttNo=(\d+)", raw_href, re.I)
+            if not ntt:
+                continue
+            href = (
+                "https://www.karts.ac.kr/cop/bbs/selectBoardArticle.do?"
+                f"bbsId=BBSMSTR_000000000007&nttNo={ntt.group(1)}"
+            )
+            title = re.sub(r"\s+", " ", unescape(m.group(2))).strip()
+            date_iso = extract_date(m.group(3))
+            block = html[m.start() : m.start() + 900]
+            cate = ""
+            cm = re.search(r'class="[^"]*ntc_vis[^"]*"[^>]*>([^<]+)<', block, re.I)
+            if cm:
+                cate = strip_tags(cm.group(1)).strip()
+            preview = f"[{cate}] 한예종 입학 공지" if cate else "한예종 입학 공지사항 미리보기"
+            it = make_item(src, title, preview, href, date_iso, cfg["boardUrl"])
+            if it and cfg["allow"].search(it["url"]) and it["dateISO"] <= today:
+                items.append(it)
 
     uniq = {f"{it['url']}|{it['title']}": it for it in items}
-    return sorted(uniq.values(), key=lambda x: x["dateISO"], reverse=True)[:MAX_PER]
+    limit = int(cfg.get("maxPer") or MAX_PER) if cfg else MAX_PER
+    return sorted(uniq.values(), key=lambda x: x["dateISO"], reverse=True)[:limit]
 
 
 def scrape_one(src, use_jina=False):
@@ -541,6 +578,33 @@ def scrape_one(src, use_jina=False):
     if special:
         board = special["boardUrl"]
         try:
+            # 한예종: 공지 전체 게시판을 페이지 단위로 수집 (MIN_DATE 이전이면 중단)
+            if uid == "u044":
+                all_items = []
+                max_pages = int(special.get("maxPages") or 5)
+                for page in range(1, max_pages + 1):
+                    page_url = f"{board}&pageIndex={page}" if "?" in board else f"{board}?pageIndex={page}"
+                    code, html, final = fetch(page_url, timeout=25, prefer_curl=bool(special.get("curl")))
+                    if code >= 400 or is_404(html):
+                        if page == 1:
+                            return [], f"http_{code}"
+                        break
+                    page_items = parse_special(html, src)
+                    if not page_items:
+                        # 파서가 비었으면 날짜 미달·구조 변경 — 1페이지면 empty
+                        if page == 1:
+                            return [], "empty"
+                        break
+                    all_items.extend(page_items)
+                    oldest = min((it["dateISO"] for it in page_items), default="")
+                    if oldest and oldest < MIN_DATE:
+                        break
+                    time.sleep(0.25)
+                uniq = {f"{it['url']}|{it['title']}": it for it in all_items}
+                items = sorted(uniq.values(), key=lambda x: x["dateISO"], reverse=True)
+                items = [it for it in items if it["dateISO"] >= MIN_DATE][: int(special.get("maxPer") or MAX_PER)]
+                return items, ("ok" if items else "empty")
+
             code, html, final = fetch(board, timeout=25, prefer_curl=bool(special.get("curl")))
             if code >= 400 or is_404(html):
                 return [], f"http_{code}"

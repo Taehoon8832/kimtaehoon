@@ -279,8 +279,8 @@
   {
     "id": "u044",
     "name": "한예종",
-    "homeUrl": "https://www.karts.ac.kr/index_karts.jsp",
-    "boardUrl": ""
+    "homeUrl": "https://www.karts.ac.kr/main/appl.do",
+    "boardUrl": "https://www.karts.ac.kr/cop/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000007"
   },
   {
     "id": "u045",
