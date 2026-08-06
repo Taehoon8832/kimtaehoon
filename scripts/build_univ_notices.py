@@ -110,6 +110,30 @@ SPECIAL_UNIV = {
         ),
         "maxPages": 8,
         "maxPer": 20,
+        "pageParam": "pageIndex",
+    },
+    # 동양대 — 입학홍보처 공지사항 전체 (동두천·양주 동일 게시판)
+    "u055": {
+        "homeUrl": "https://ipsi.dyu.ac.kr/information/information_01/",
+        "boardUrl": "https://ipsi.dyu.ac.kr/information/information_01/",
+        "allow": re.compile(
+            r"ipsi\.dyu\.ac\.kr/information/information_01/\?.*mod=document.*uid=\d+",
+            re.I,
+        ),
+        "maxPages": 6,
+        "maxPer": 20,
+        "pageParam": "pageid",
+    },
+    "u227": {
+        "homeUrl": "https://ipsi.dyu.ac.kr/information/information_01/",
+        "boardUrl": "https://ipsi.dyu.ac.kr/information/information_01/",
+        "allow": re.compile(
+            r"ipsi\.dyu\.ac\.kr/information/information_01/\?.*mod=document.*uid=\d+",
+            re.I,
+        ),
+        "maxPages": 6,
+        "maxPer": 20,
+        "pageParam": "pageid",
     },
 }
 
@@ -566,10 +590,43 @@ def parse_special(html: str, src: dict):
             it = make_item(src, title, preview, href, date_iso, cfg["boardUrl"])
             if it and cfg["allow"].search(it["url"]) and it["dateISO"] <= today:
                 items.append(it)
+    elif uid in ("u055", "u227"):  # 동양대 입학홍보처 공지사항 전체
+        for m in re.finditer(
+            r'href="(/information/information_01/\?[^"]*?mod=document(?:&amp;|&#038;|&)uid=(\d+)[^"]*)"'
+            r'[\s\S]*?kboard-default-cut-strings">\s*([^<]+?)\s*<'
+            r'[\s\S]*?kboard-list-date">(20\d{2}\.\d{2}\.\d{2})</td>',
+            html,
+            re.I,
+        ):
+            uid_num = m.group(2)
+            href = (
+                "https://ipsi.dyu.ac.kr/information/information_01/"
+                f"?mod=document&uid={uid_num}"
+            )
+            title = re.sub(r"\s+", " ", unescape(m.group(3))).strip()
+            date_iso = extract_date(m.group(4))
+            it = make_item(
+                src,
+                title,
+                f"{src['name']} 입학 공지사항 미리보기",
+                href,
+                date_iso,
+                cfg["boardUrl"],
+            )
+            if it and cfg["allow"].search(it["url"]) and it["dateISO"] <= today:
+                items.append(it)
 
     uniq = {f"{it['url']}|{it['title']}": it for it in items}
     limit = int(cfg.get("maxPer") or MAX_PER) if cfg else MAX_PER
     return sorted(uniq.values(), key=lambda x: x["dateISO"], reverse=True)[:limit]
+
+
+def _paged_board_url(board: str, page: int, page_param: str) -> str:
+    if page_param == "pageid":
+        return f"{board.rstrip('/')}/?pageid={page}"
+    if "?" in board:
+        return f"{board}&{page_param}={page}"
+    return f"{board}?{page_param}={page}"
 
 
 def scrape_one(src, use_jina=False):
@@ -578,12 +635,13 @@ def scrape_one(src, use_jina=False):
     if special:
         board = special["boardUrl"]
         try:
-            # 한예종: 공지 전체 게시판을 페이지 단위로 수집 (MIN_DATE 이전이면 중단)
-            if uid == "u044":
+            # 다중 페이지 게시판: MIN_DATE 이전 글이 나오면 중단
+            if special.get("maxPages"):
                 all_items = []
                 max_pages = int(special.get("maxPages") or 5)
+                page_param = special.get("pageParam") or "pageIndex"
                 for page in range(1, max_pages + 1):
-                    page_url = f"{board}&pageIndex={page}" if "?" in board else f"{board}?pageIndex={page}"
+                    page_url = _paged_board_url(board, page, page_param)
                     code, html, final = fetch(page_url, timeout=25, prefer_curl=bool(special.get("curl")))
                     if code >= 400 or is_404(html):
                         if page == 1:
@@ -591,7 +649,6 @@ def scrape_one(src, use_jina=False):
                         break
                     page_items = parse_special(html, src)
                     if not page_items:
-                        # 파서가 비었으면 날짜 미달·구조 변경 — 1페이지면 empty
                         if page == 1:
                             return [], "empty"
                         break

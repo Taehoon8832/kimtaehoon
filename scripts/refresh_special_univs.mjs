@@ -75,6 +75,25 @@ const TARGETS = [
       "https://www.karts.ac.kr/cop/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000007",
     allow: /karts\.ac\.kr\/cop\/bbs\/selectBoardArticle\.do\?.*bbsId=BBSMSTR_000000000007/i,
     maxPages: 8,
+    pageParam: "pageIndex",
+  },
+  {
+    id: "u055",
+    name: "동양대(동두천)",
+    homeUrl: "https://ipsi.dyu.ac.kr/information/information_01/",
+    boardUrl: "https://ipsi.dyu.ac.kr/information/information_01/",
+    allow: /ipsi\.dyu\.ac\.kr\/information\/information_01\/\?.*mod=document.*uid=\d+/i,
+    maxPages: 6,
+    pageParam: "pageid",
+  },
+  {
+    id: "u227",
+    name: "동양대(양주)",
+    homeUrl: "https://ipsi.dyu.ac.kr/information/information_01/",
+    boardUrl: "https://ipsi.dyu.ac.kr/information/information_01/",
+    allow: /ipsi\.dyu\.ac\.kr\/information\/information_01\/\?.*mod=document.*uid=\d+/i,
+    maxPages: 6,
+    pageParam: "pageid",
   },
 ];
 
@@ -326,6 +345,20 @@ function parseKarts(html, cfg) {
   return out;
 }
 
+function parseDyu(html, cfg) {
+  const out = [];
+  const re =
+    /href="(\/information\/information_01\/\?[^"]*?mod=document(?:&amp;|&#038;|&)uid=(\d+)[^"]*)"[\s\S]*?kboard-default-cut-strings">\s*([^<]+?)\s*<[\s\S]*?kboard-list-date">(20\d{2}\.\d{2}\.\d{2})<\/td>/gi;
+  for (const m of html.matchAll(re)) {
+    const href = `https://ipsi.dyu.ac.kr/information/information_01/?mod=document&uid=${m[2]}`;
+    const title = m[3].replace(/\s+/g, " ").trim();
+    const dateISO = extractIso(m[4]);
+    const it = makeItem(cfg, title, href, dateISO, `${cfg.name} 입학 공지사항 미리보기`);
+    if (it) out.push(it);
+  }
+  return out;
+}
+
 const PARSERS = {
   u188: parseMmu,
   u121: parseKkot,
@@ -335,6 +368,8 @@ const PARSERS = {
   u174: parseJesus,
   u157: parseKnuh,
   u044: parseKarts,
+  u055: parseDyu,
+  u227: parseDyu,
 };
 
 function loadPayload() {
@@ -384,10 +419,18 @@ async function main() {
     try {
       const parser = PARSERS[cfg.id];
       let items = [];
-      if (cfg.id === "u044") {
+      if (cfg.maxPages) {
         const maxPages = cfg.maxPages || 5;
+        const pageParam = cfg.pageParam || "pageIndex";
         for (let page = 1; page <= maxPages; page++) {
-          const pageUrl = `${cfg.boardUrl}&pageIndex=${page}`;
+          let pageUrl;
+          if (pageParam === "pageid") {
+            pageUrl = `${cfg.boardUrl.replace(/\/?$/, "/")}?pageid=${page}`;
+          } else {
+            pageUrl = cfg.boardUrl.includes("?")
+              ? `${cfg.boardUrl}&${pageParam}=${page}`
+              : `${cfg.boardUrl}?${pageParam}=${page}`;
+          }
           const html = await fetchHtml({ ...cfg, boardUrl: pageUrl });
           const pageItems = parser(html, cfg);
           if (!pageItems.length) break;

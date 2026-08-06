@@ -1,7 +1,7 @@
 {
   "minDate": "2026-08-01",
-  "updatedAt": "2026-08-06T23:34:16.751Z",
-  "checkedAt": "2026-08-06T23:34:16.751Z",
+  "updatedAt": "2026-08-06T23:42:31.794Z",
+  "checkedAt": "2026-08-06T23:42:31.794Z",
   "sources": [
     {
       "id": "u001",
@@ -350,8 +350,8 @@
     {
       "id": "u055",
       "name": "동양대(동두천)",
-      "homeUrl": "http://ipsi.dyu.ac.kr/",
-      "boardUrl": ""
+      "homeUrl": "https://ipsi.dyu.ac.kr/information/information_01/",
+      "boardUrl": "https://ipsi.dyu.ac.kr/information/information_01/"
     },
     {
       "id": "u056",
@@ -1384,8 +1384,8 @@
     {
       "id": "u227",
       "name": "동양대(양주)",
-      "homeUrl": "http://ipsi.dyu.ac.kr/",
-      "boardUrl": ""
+      "homeUrl": "https://ipsi.dyu.ac.kr/information/information_01/",
+      "boardUrl": "https://ipsi.dyu.ac.kr/information/information_01/"
     },
     {
       "id": "u228",
@@ -1517,28 +1517,6 @@
       "preview": "국립한국해양대 입학 공지사항 미리보기",
       "url": "http://ipsi.kmou.ac.kr/ipsi/na/ntt/selectNttInfo.do?nttSn=10377567&mi=3299",
       "homeUrl": "http://ipsi.kmou.ac.kr/",
-      "dateISO": "2026-08-06",
-      "dateText": "2026.08.06"
-    },
-    {
-      "id": "21cf65a0651c6e3d7f36",
-      "univId": "u055",
-      "univName": "동양대(동두천)",
-      "title": "신입생장학금서류 제출 관련 (1)",
-      "preview": "동양대(동두천) 입학 공지사항 미리보기",
-      "url": "https://ipsi.dyu.ac.kr/information/information_02/?mod=document&pageid=1&uid=1981",
-      "homeUrl": "http://ipsi.dyu.ac.kr/",
-      "dateISO": "2026-08-06",
-      "dateText": "2026.08.06"
-    },
-    {
-      "id": "56b2699aa73c7752bfce",
-      "univId": "u227",
-      "univName": "동양대(양주)",
-      "title": "신입생장학금서류 제출 관련 (1)",
-      "preview": "동양대(동두천) 입학 공지사항 미리보기",
-      "url": "https://ipsi.dyu.ac.kr/information/information_02/?mod=document&pageid=1&uid=1981",
-      "homeUrl": "http://ipsi.dyu.ac.kr/",
       "dateISO": "2026-08-06",
       "dateText": "2026.08.06"
     },
