@@ -1,7 +1,7 @@
 {
   "minDate": "2026-08-01",
-  "updatedAt": "2026-08-06T12:39:49.970735Z",
-  "checkedAt": "2026-08-06T12:39:49.970779Z",
+  "updatedAt": "2026-08-06T15:52:41.019888Z",
+  "checkedAt": "2026-08-06T15:52:41.019907Z",
   "sources": [
     {
       "id": "u001",
@@ -1521,6 +1521,28 @@
       "dateText": "2026.08.06"
     },
     {
+      "id": "21cf65a0651c6e3d7f36",
+      "univId": "u055",
+      "univName": "동양대(동두천)",
+      "title": "신입생장학금서류 제출 관련 (1)",
+      "preview": "동양대(동두천) 입학 공지사항 미리보기",
+      "url": "https://ipsi.dyu.ac.kr/information/information_02/?mod=document&pageid=1&uid=1981",
+      "homeUrl": "http://ipsi.dyu.ac.kr/",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
+      "id": "56b2699aa73c7752bfce",
+      "univId": "u227",
+      "univName": "동양대(양주)",
+      "title": "신입생장학금서류 제출 관련 (1)",
+      "preview": "동양대(동두천) 입학 공지사항 미리보기",
+      "url": "https://ipsi.dyu.ac.kr/information/information_02/?mod=document&pageid=1&uid=1981",
+      "homeUrl": "http://ipsi.dyu.ac.kr/",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
       "id": "7262b8f7f56bf7e18f79",
       "univId": "u208",
       "univName": "국립한국해양대",
@@ -1676,23 +1698,23 @@
       "dateText": "2026.08.04"
     },
     {
-      "id": "395a77c2a65c4685fd78",
-      "univId": "u021",
-      "univName": "서울대",
-      "title": "2027학년도 치의학대학원 신입생 모집 인터넷 접수 OPEN",
-      "preview": "서울대 입학 공지사항 미리보기",
-      "url": "http://admission.snu.ac.kr/graduate/professional/notice?md=v&bbsidx=173108",
-      "homeUrl": "http://admission.snu.ac.kr/",
-      "dateISO": "2026-08-04",
-      "dateText": "2026.08.04"
-    },
-    {
       "id": "b006329d19e955a090b7",
       "univId": "u021",
       "univName": "서울대",
       "title": "2027학년도 치의학대학원 신입생 모집 인터넷 접수 OPEN",
       "preview": "서울대 입학 공지사항 미리보기",
       "url": "https://admission.snu.ac.kr/graduate/professional/notice?md=v&bbsidx=173108",
+      "homeUrl": "http://admission.snu.ac.kr/",
+      "dateISO": "2026-08-04",
+      "dateText": "2026.08.04"
+    },
+    {
+      "id": "395a77c2a65c4685fd78",
+      "univId": "u021",
+      "univName": "서울대",
+      "title": "2027학년도 치의학대학원 신입생 모집 인터넷 접수 OPEN",
+      "preview": "서울대 입학 공지사항 미리보기",
+      "url": "http://admission.snu.ac.kr/graduate/professional/notice?md=v&bbsidx=173108",
       "homeUrl": "http://admission.snu.ac.kr/",
       "dateISO": "2026-08-04",
       "dateText": "2026.08.04"
@@ -2054,5 +2076,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=12 empty=197 fail=7 fresh=17"
+  "statusReason": "ok=15 empty=194 fail=7 fresh=25"
 }
