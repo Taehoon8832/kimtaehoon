@@ -1,6 +1,7 @@
 {
   "minDate": "2026-08-01",
-  "updatedAt": "2026-08-06T00:17:47.451Z",
+  "updatedAt": "2026-08-06T15:52:41.019888Z",
+  "checkedAt": "2026-08-06T15:52:41.019907Z",
   "sources": [
     {
       "id": "u001",
@@ -1509,6 +1510,116 @@
   ],
   "notices": [
     {
+      "id": "896eeaeeb5d41fc6cac4",
+      "univId": "u208",
+      "univName": "국립한국해양대",
+      "title": "재외국민/외국인 2027학년도 재외국민 특별전형 지원자격 서류심사 결과 공고",
+      "preview": "국립한국해양대 입학 공지사항 미리보기",
+      "url": "http://ipsi.kmou.ac.kr/ipsi/na/ntt/selectNttInfo.do?nttSn=10377567&mi=3299",
+      "homeUrl": "http://ipsi.kmou.ac.kr/",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
+      "id": "21cf65a0651c6e3d7f36",
+      "univId": "u055",
+      "univName": "동양대(동두천)",
+      "title": "신입생장학금서류 제출 관련 (1)",
+      "preview": "동양대(동두천) 입학 공지사항 미리보기",
+      "url": "https://ipsi.dyu.ac.kr/information/information_02/?mod=document&pageid=1&uid=1981",
+      "homeUrl": "http://ipsi.dyu.ac.kr/",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
+      "id": "56b2699aa73c7752bfce",
+      "univId": "u227",
+      "univName": "동양대(양주)",
+      "title": "신입생장학금서류 제출 관련 (1)",
+      "preview": "동양대(동두천) 입학 공지사항 미리보기",
+      "url": "https://ipsi.dyu.ac.kr/information/information_02/?mod=document&pageid=1&uid=1981",
+      "homeUrl": "http://ipsi.dyu.ac.kr/",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
+      "id": "7262b8f7f56bf7e18f79",
+      "univId": "u208",
+      "univName": "국립한국해양대",
+      "title": "공통 국립한국해양대학교 대입전형결과 이의신청 안내",
+      "preview": "국립한국해양대 입학 공지사항 미리보기",
+      "url": "http://ipsi.kmou.ac.kr/ipsi/na/ntt/selectNttInfo.do?nttSn=10377566&mi=3299",
+      "homeUrl": "http://ipsi.kmou.ac.kr/",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
+      "id": "78a42e8378e45e99dc9f",
+      "univId": "u044",
+      "univName": "한예종",
+      "title": "[한예종 공식 홍보 서포터즈] 예종지기 9기 모집 공고",
+      "preview": "한예종 입학 공지사항 미리보기",
+      "url": "https://www.karts.ac.kr/nri/bbs/NuriBbsDetail.do?bbsId=BBSNURI_001&nttNo=9857393",
+      "homeUrl": "https://www.karts.ac.kr/index_karts.jsp",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
+      "id": "fad29fdaea903996c3e1",
+      "univId": "u044",
+      "univName": "한예종",
+      "title": "[8.12.(수) 9시~9. 9.(수) 18시] 2026-2학기 주거안정장학금 2차 신청",
+      "preview": "한예종 입학 공지사항 미리보기",
+      "url": "https://www.karts.ac.kr/nri/bbs/NuriBbsDetail.do?bbsId=BBSNURI_001&nttNo=9857386",
+      "homeUrl": "https://www.karts.ac.kr/index_karts.jsp",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
+      "id": "b8442fe2e70f2c37c35c",
+      "univId": "u123",
+      "univName": "공군사관학교",
+      "title": "2027학년도 제79기 공군사관생도선발 1차시험 성적확인 및 지원확정, 이의제기 안내",
+      "preview": "공군사관학교 입학 공지사항 미리보기",
+      "url": "https://rokaf.airforce.mil.kr/bbs/afaadmission/2089/43066/artclView.do",
+      "homeUrl": "https://rokaf.airforce.mil.kr/sites/afaadmission/index.do",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
+      "id": "6b27137303aa4b2149eb",
+      "univId": "u044",
+      "univName": "한예종",
+      "title": "2026학년도 2학기 기숙사 정기개관 납부자 명단(08.05. 납부자)",
+      "preview": "한예종 입학 공지사항 미리보기",
+      "url": "https://www.karts.ac.kr/nri/bbs/NuriBbsDetail.do?bbsId=BBSNURI_001&nttNo=9857394",
+      "homeUrl": "https://www.karts.ac.kr/index_karts.jsp",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
+      "id": "c798f5b9b8c69342ef2e",
+      "univId": "u208",
+      "univName": "국립한국해양대",
+      "title": "수시 2027학년도 신입생 수시모집 체육 실기고사 요강(해양스포츠과학과)",
+      "preview": "국립한국해양대 입학 공지사항 미리보기",
+      "url": "http://ipsi.kmou.ac.kr/ipsi/na/ntt/selectNttInfo.do?nttSn=10377529&mi=3310",
+      "homeUrl": "http://ipsi.kmou.ac.kr/",
+      "dateISO": "2026-08-05",
+      "dateText": "2026.08.05"
+    },
+    {
+      "id": "e1ea8ab494144836dcd3",
+      "univId": "u208",
+      "univName": "국립한국해양대",
+      "title": "수시 2027학년도 신입생 수시모집 체육 실기고사 요강(해양스포츠과학과)",
+      "preview": "국립한국해양대 입학 공지사항 미리보기",
+      "url": "http://ipsi.kmou.ac.kr/ipsi/na/ntt/selectNttInfo.do?nttSn=10377529&mi=3310&srch_aditCol1=수시",
+      "homeUrl": "http://ipsi.kmou.ac.kr/",
+      "dateISO": "2026-08-05",
+      "dateText": "2026.08.05"
+    },
+    {
       "id": "16fdce45155e092562a0",
       "univId": "u130",
       "univName": "청주교대",
@@ -1554,6 +1665,28 @@
       "dateText": "2026.08.04"
     },
     {
+      "id": "0d7f7ece4f7575104a29",
+      "univId": "u127",
+      "univName": "우석대(진천)",
+      "title": "수시/정시 2027학년도 예비신입생을 위한 특별혜택 안내",
+      "preview": "우석대(진천) 입학 공지사항 미리보기",
+      "url": "https://www.woosuk.ac.kr/?menu=42&mode=view&no=362226",
+      "homeUrl": "https://www.woosuk.ac.kr/WoosukEntrance.do",
+      "dateISO": "2026-08-04",
+      "dateText": "2026.08.04"
+    },
+    {
+      "id": "d44c9321d197383a1292",
+      "univId": "u176",
+      "univName": "우석대(전주)",
+      "title": "수시/정시 2027학년도 예비신입생을 위한 특별혜택 안내",
+      "preview": "우석대(전주) 입학 공지사항 미리보기",
+      "url": "http://www.woosuk.ac.kr/?menu=42&mode=view&no=362226",
+      "homeUrl": "http://www.woosuk.ac.kr/WoosukEntrance.do",
+      "dateISO": "2026-08-04",
+      "dateText": "2026.08.04"
+    },
+    {
       "id": "b998fba104315a82f5a8",
       "univId": "u029",
       "univName": "숙명여대",
@@ -1580,12 +1713,11 @@
       "univId": "u021",
       "univName": "서울대",
       "title": "2027학년도 치의학대학원 신입생 모집 인터넷 접수 OPEN",
-      "preview": "서울대 입학처 전체 공지사항",
+      "preview": "서울대 입학 공지사항 미리보기",
       "url": "http://admission.snu.ac.kr/graduate/professional/notice?md=v&bbsidx=173108",
       "homeUrl": "http://admission.snu.ac.kr/",
       "dateISO": "2026-08-04",
-      "dateText": "2026.08.04",
-      "priority": true
+      "dateText": "2026.08.04"
     },
     {
       "id": "e1d15bc522830796e7b0",
@@ -1654,6 +1786,28 @@
       "dateText": "2026.08.03"
     },
     {
+      "id": "2edcf8b46c77ef160899",
+      "univId": "u044",
+      "univName": "한예종",
+      "title": "[학점교류] 2026학년도 2학기 광운대학교 교류수학 안내",
+      "preview": "한예종 입학 공지사항 미리보기",
+      "url": "https://www.karts.ac.kr/nri/bbs/NuriBbsDetail.do?bbsId=BBSNURI_001&nttNo=9857443",
+      "homeUrl": "https://www.karts.ac.kr/index_karts.jsp",
+      "dateISO": "2026-08-03",
+      "dateText": "2026.08.03"
+    },
+    {
+      "id": "88a98f99b6fde55b49ba",
+      "univId": "u062",
+      "univName": "수원대",
+      "title": "[수시] 2027학년도 논술고사 가이드북(모의문제 및 해설 포함) new",
+      "preview": "수원대 입학 공지사항 미리보기",
+      "url": "https://ipsi.suwon.ac.kr/board/notice/read/5666",
+      "homeUrl": "http://ipsi.suwon.ac.kr/",
+      "dateISO": "2026-08-03",
+      "dateText": "2026.08.03"
+    },
+    {
       "id": "589e0449485abc60255c",
       "univId": "u044",
       "univName": "한예종",
@@ -1683,28 +1837,6 @@
       "preview": "한예종 입학 공지사항 미리보기",
       "url": "https://www.karts.ac.kr/nri/bbs/NuriBbsDetail.do?bbsId=BBSNURI_001&nttNo=9857455",
       "homeUrl": "https://www.karts.ac.kr/index_karts.jsp",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03"
-    },
-    {
-      "id": "2edcf8b46c77ef160899",
-      "univId": "u044",
-      "univName": "한예종",
-      "title": "[학점교류] 2026학년도 2학기 광운대학교 교류수학 안내",
-      "preview": "한예종 입학 공지사항 미리보기",
-      "url": "https://www.karts.ac.kr/nri/bbs/NuriBbsDetail.do?bbsId=BBSNURI_001&nttNo=9857443",
-      "homeUrl": "https://www.karts.ac.kr/index_karts.jsp",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03"
-    },
-    {
-      "id": "88a98f99b6fde55b49ba",
-      "univId": "u062",
-      "univName": "수원대",
-      "title": "[수시] 2027학년도 논술고사 가이드북(모의문제 및 해설 포함) new",
-      "preview": "수원대 입학 공지사항 미리보기",
-      "url": "https://ipsi.suwon.ac.kr/board/notice/read/5666",
-      "homeUrl": "http://ipsi.suwon.ac.kr/",
       "dateISO": "2026-08-03",
       "dateText": "2026.08.03"
     },
@@ -1942,5 +2074,7 @@
       "univName": "가천대(글로벌)"
     }
   ],
-  "checkedAt": "2026-08-06T00:17:47.451Z"
+  "stale": false,
+  "status": "fresh",
+  "statusReason": "ok=15 empty=194 fail=7 fresh=25"
 }
