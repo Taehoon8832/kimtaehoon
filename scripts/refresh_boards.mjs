@@ -343,8 +343,31 @@ async function refreshRecruit() {
   });
 }
 
-const root = ROOT;
-console.log("ROOT=", root);
-await refreshJobkorea();
-await refreshRecruit();
+function loadPrevNotices(jsonRel) {
+  try {
+    const p = path.join(ROOT, jsonRel);
+    if (!fs.existsSync(p)) return null;
+    const data = JSON.parse(fs.readFileSync(p, "utf8"));
+    return Array.isArray(data?.notices) && data.notices.length ? data : null;
+  } catch {
+    return null;
+  }
+}
+
+async function safeRefresh(name, fn, jsonRel) {
+  try {
+    await fn();
+  } catch (err) {
+    const prev = loadPrevNotices(jsonRel);
+    if (prev) {
+      console.error(`${name} failed, keeping previous ${prev.notices.length} items:`, err?.message || err);
+      return;
+    }
+    throw err;
+  }
+}
+
+console.log("ROOT=", ROOT);
+await safeRefresh("jobkorea", refreshJobkorea, "data/jobkorea-notices.json");
+await safeRefresh("recruit", refreshRecruit, "data/recruit-notices.json");
 console.log("done");

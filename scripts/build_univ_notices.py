@@ -389,7 +389,22 @@ def scrape_one(src, use_jina=False):
     return items, ("ok" if items else (err or "empty"))
 
 
-def run_scrape() -> None:
+def merge_previous_notices(results: dict, old: dict) -> list:
+    for n in old.get("notices") or []:
+        if not n.get("dateISO") or n["dateISO"] < MIN_DATE:
+            continue
+        if not n.get("title") or not n.get("url"):
+            continue
+        if BAD_TITLE.search(n.get("title") or ""):
+            continue
+        k = f"{n.get('univId')}|{n.get('url')}|{n.get('title')}"
+        results.setdefault(k, n)
+    return sorted(results.values(), key=lambda x: (x["dateISO"], x["title"]), reverse=True)
+
+
+def main():
+    js_path = ROOT / "univ-board-data.js"
+    json_path = ROOT / "data" / "univ-notices.json"
     sources = load_sources()
     groups = {}
     for s in sources:
@@ -401,104 +416,112 @@ def run_scrape() -> None:
     print(f"sources={len(sources)} groups={len(groups)}")
     results = {}
     ok = empty = fail = 0
+    scrape_error = None
 
-    # pass 1: fast direct HTML
-    with ThreadPoolExecutor(max_workers=12) as ex:
-        futs = {ex.submit(scrape_one, g[0], False): g for g in groups.values()}
-        for fut in as_completed(futs):
-            group = futs[fut]
-            try:
-                items, status = fut.result()
-            except Exception as e:
-                fail += 1
-                print(f"FAIL {group[0].get('name')}: {type(e).__name__}")
+    try:
+        # pass 1: fast direct HTML
+        with ThreadPoolExecutor(max_workers=12) as ex:
+            futs = {ex.submit(scrape_one, g[0], False): g for g in groups.values()}
+            for fut in as_completed(futs):
+                group = futs[fut]
+                name = group[0]["name"]
+                try:
+                    items, status = fut.result()
+                except Exception as e:
+                    fail += 1
+                    print(f"ERR {name}: {type(e).__name__}")
+                    continue
+                if status == "ok":
+                    ok += 1
+                    for src in group:
+                        for it in items:
+                            copy = dict(it)
+                            copy["univId"] = src["id"]
+                            copy["univName"] = src["name"]
+                            copy["homeUrl"] = src.get("homeUrl") or copy.get("homeUrl") or ""
+                            k = f"{copy['univId']}|{copy['url']}|{copy['title']}"
+                            copy["id"] = hashlib.sha1(k.encode()).hexdigest()[:20]
+                            results[k] = copy
+                    print(f"OK  {name}: {len(items)}")
+                elif status in ("empty", "no_url"):
+                    empty += 1
+                else:
+                    fail += 1
+
+        # pass 2: jina for empty groups that have boardUrl (rate-limited)
+        need_jina = []
+        have_univ = {it["univId"] for it in results.values()}
+        for g in groups.values():
+            if any(s["id"] in have_univ for s in g):
                 continue
-            name = group[0]["name"]
-            if status == "ok":
-                ok += 1
-                for src in group:
-                    for it in items:
-                        copy = dict(it)
-                        copy["univId"] = src["id"]
-                        copy["univName"] = src["name"]
-                        copy["homeUrl"] = src.get("homeUrl") or copy.get("homeUrl") or ""
-                        k = f"{copy['univId']}|{copy['url']}|{copy['title']}"
-                        copy["id"] = hashlib.sha1(k.encode()).hexdigest()[:20]
-                        results[k] = copy
-                print(f"OK  {name}: {len(items)}")
-            elif status in ("empty", "no_url"):
-                empty += 1
-            else:
-                fail += 1
+            if (g[0].get("boardUrl") or "").strip() or (g[0].get("priority")):
+                need_jina.append(g)
 
-    # pass 2: jina for empty groups that have boardUrl (rate-limited)
-    need_jina = []
-    have_univ = {it["univId"] for it in results.values()}
-    for g in groups.values():
-        if any(s["id"] in have_univ for s in g):
-            continue
-        if (g[0].get("boardUrl") or "").strip() or (g[0].get("priority")):
-            need_jina.append(g)
-
-    if USE_JINA:
-        print(f"jina_pass candidates={len(need_jina)}")
-        # 시간 폭주 방지: 우선/보드 URL 그룹만 최대 40곳
-        for g in need_jina[:40]:
-            try:
-                items, status = scrape_one(g[0], True)
-            except Exception as e:
-                print(f"JINA FAIL {g[0].get('name')}: {type(e).__name__}")
+        if USE_JINA:
+            print(f"jina_pass candidates={len(need_jina)}")
+            for g in need_jina:
+                try:
+                    items, status = scrape_one(g[0], True)
+                except Exception as e:
+                    print(f"JINA ERR {g[0]['name']}: {type(e).__name__}")
+                    time.sleep(0.55)
+                    continue
+                name = g[0]["name"]
+                if status == "ok":
+                    ok += 1
+                    empty = max(0, empty - 1)
+                    for src in g:
+                        for it in items:
+                            copy = dict(it)
+                            copy["univId"] = src["id"]
+                            copy["univName"] = src["name"]
+                            copy["homeUrl"] = src.get("homeUrl") or copy.get("homeUrl") or ""
+                            k = f"{copy['univId']}|{copy['url']}|{copy['title']}"
+                            copy["id"] = hashlib.sha1(k.encode()).hexdigest()[:20]
+                            results[k] = copy
+                    print(f"JINA {name}: {len(items)}")
                 time.sleep(0.55)
-                continue
-            name = g[0]["name"]
-            if status == "ok":
-                ok += 1
-                empty = max(0, empty - 1)
-                for src in g:
-                    for it in items:
-                        copy = dict(it)
-                        copy["univId"] = src["id"]
-                        copy["univName"] = src["name"]
-                        copy["homeUrl"] = src.get("homeUrl") or copy.get("homeUrl") or ""
-                        k = f"{copy['univId']}|{copy['url']}|{copy['title']}"
-                        copy["id"] = hashlib.sha1(k.encode()).hexdigest()[:20]
-                        results[k] = copy
-                print(f"JINA {name}: {len(items)}")
-            time.sleep(0.55)
-    else:
-        print("jina_pass skipped (USE_JINA=0)")
+        else:
+            print("jina_pass skipped (USE_JINA=0)")
+    except Exception as e:
+        scrape_error = e
+        print(f"error: univ scrape aborted: {e}")
 
+    fresh_count = len(results)
     notices = sorted(results.values(), key=lambda x: (x["dateISO"], x["title"]), reverse=True)
     priority = []
-    js_path = ROOT / "univ-board-data.js"
-    json_path = ROOT / "data" / "univ-notices.json"
+    old = {}
     if js_path.exists():
         try:
             old = json.loads(js_path.read_text(encoding="utf-8").split("=", 1)[1].strip().rstrip(";"))
             priority = old.get("priority") or []
-            for n in old.get("notices") or []:
-                if not n.get("dateISO") or n["dateISO"] < MIN_DATE:
-                    continue
-                if not n.get("title") or not n.get("url"):
-                    continue
-                if BAD_TITLE.search(n.get("title") or ""):
-                    continue
-                k = f"{n.get('univId')}|{n.get('url')}|{n.get('title')}"
-                results.setdefault(k, n)
-            notices = sorted(results.values(), key=lambda x: (x["dateISO"], x["title"]), reverse=True)
+            notices = merge_previous_notices(results, old)
+        except Exception:
+            priority = []
+    elif json_path.exists():
+        try:
+            old = json.loads(json_path.read_text(encoding="utf-8"))
+            priority = old.get("priority") or []
+            notices = merge_previous_notices(results, old)
         except Exception:
             priority = []
 
-    if len(notices) < 5 and js_path.exists():
-        print(f"KEEP previous univ data — too few new notices ({len(notices)})")
-        return
+    if not notices and old.get("notices"):
+        notices = [n for n in old["notices"] if n.get("dateISO") and n["dateISO"] >= MIN_DATE]
+        print(f"warn: using previous notices only ({len(notices)})")
 
+    if not notices:
+        raise SystemExit(f"univ scrape produced no notices ({scrape_error or 'empty'})")
     payload = {
         "minDate": MIN_DATE,
         "updatedAt": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "checkedAt": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "sources": sources,
         "notices": notices,
         "priority": priority,
+        "stale": fresh_count == 0,
+        "status": "cached" if fresh_count == 0 else "fresh",
+        "statusReason": f"ok={ok} empty={empty} fail={fail} fresh={fresh_count}",
     }
     (ROOT / "univ-sources.json").write_text(json.dumps(sources, ensure_ascii=False, indent=2), encoding="utf-8")
     json_path.parent.mkdir(parents=True, exist_ok=True)
@@ -510,15 +533,17 @@ def run_scrape() -> None:
     print(f"wrote {js_path.name} and {json_path.as_posix()}")
 
 
-def main() -> int:
-    try:
-        run_scrape()
-        return 0
-    except Exception as e:
-        print(f"univ scrape failed: {type(e).__name__}: {e}")
-        print("KEEP previous univ board data — fatal scrape error")
-        return 0
-
-
 if __name__ == "__main__":
-    raise SystemExit(main())
+    try:
+        main()
+    except SystemExit:
+        raise
+    except Exception as e:
+        # 이전 데이터가 있으면 워크플로를 깨지 않음
+        js_path = ROOT / "univ-board-data.js"
+        json_path = ROOT / "data" / "univ-notices.json"
+        for path in (json_path, js_path):
+            if path.exists() and path.stat().st_size > 100:
+                print(f"fatal retained previous board data after error: {e}")
+                raise SystemExit(0)
+        raise

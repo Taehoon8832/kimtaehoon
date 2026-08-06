@@ -2,7 +2,7 @@ name: Refresh university notices
 
 on:
   schedule:
-    # 매 1시간 (UTC) — 대학 공지는 수집이 무거워 채용보드보다 간격 유지
+    # 매 1시간 (UTC)
     - cron: "10 * * * *"
   workflow_dispatch:
 
@@ -11,25 +11,24 @@ permissions:
 
 concurrency:
   group: univ-notices
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
       - name: Scrape university notices
         env:
           USE_JINA: "1"
-        working-directory: ${{ github.workspace }}
         run: python scripts/build_univ_notices.py
 
       - name: Commit updated data
@@ -43,11 +42,8 @@ jobs:
           fi
           git commit -m "chore: refresh university notices"
           for i in 1 2 3; do
-            git pull --rebase --autostash || true
-            if git push; then
-              exit 0
-            fi
-            sleep $((i * 3))
+            git pull --rebase --autostash origin main && git push && exit 0
+            sleep $((i * 4))
           done
-          echo "push retry exhausted (univ)"
-          exit 0
+          git pull --rebase --autostash origin main
+          git push

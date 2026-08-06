@@ -2,7 +2,7 @@ name: Refresh job & recruit boards
 
 on:
   schedule:
-    # 15분마다 (UTC) — 채용·석박은 가벼운 API/HTML이라 자주 갱신
+    # 15분마다 (UTC)
     - cron: "*/15 * * * *"
   workflow_dispatch:
 
@@ -18,16 +18,15 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Scrape JobKorea popular jobs
-        working-directory: ${{ github.workspace }}
+      - name: Scrape JobKorea
         run: python scripts/build_jobkorea.py
 
       - name: Commit JobKorea data
@@ -36,34 +35,30 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add jobkorea-board-data.js data/jobkorea-notices.json
           if git diff --staged --quiet; then
-            echo "No jobkorea data changes"
+            echo "No JobKorea changes"
             exit 0
           fi
           git commit -m "chore: refresh JobKorea listings"
           for i in 1 2 3; do
-            git pull --rebase --autostash || true
-            if git push; then
-              exit 0
-            fi
+            git pull --rebase --autostash origin main && git push && exit 0
             sleep $((i * 3))
           done
-          echo "push retry exhausted (jobkorea)"
-          exit 0
+          git pull --rebase --autostash origin main
+          git push
 
   recruit:
     runs-on: ubuntu-latest
     timeout-minutes: 8
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Scrape recruit listings
-        working-directory: ${{ github.workspace }}
+      - name: Scrape recruit
         run: python scripts/build_recruit.py
 
       - name: Commit recruit data
@@ -72,16 +67,13 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add recruit-board-data.js data/recruit-notices.json
           if git diff --staged --quiet; then
-            echo "No recruit data changes"
+            echo "No recruit changes"
             exit 0
           fi
           git commit -m "chore: refresh recruit listings"
           for i in 1 2 3; do
-            git pull --rebase --autostash || true
-            if git push; then
-              exit 0
-            fi
+            git pull --rebase --autostash origin main && git push && exit 0
             sleep $((i * 3))
           done
-          echo "push retry exhausted (recruit)"
-          exit 0
+          git pull --rebase --autostash origin main
+          git push

@@ -2553,7 +2553,6 @@
         const silent = Boolean(opts && opts.silent);
         try {
           const prevFp = noticeFingerprint(univNoticePool, ["univId", "title", "dateISO"]);
-          const prevUpdated = univUpdatedAt;
           const res = await fetch(`${UNIV_DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
           if (!res.ok) throw new Error(`http_${res.status}`);
           const payload = await res.json();
@@ -2561,13 +2560,12 @@
           renderUnivBoard(univQuery);
           setUnivLive(true, formatUpdatedLabel(univUpdatedAt));
           const nextFp = noticeFingerprint(univNoticePool, ["univId", "title", "dateISO"]);
-          const changed = (univUpdatedAt && univUpdatedAt !== prevUpdated) || nextFp !== prevFp;
-          if (changed && !silent) {
+          if (nextFp !== prevFp && !silent) {
             toastBoardRefresh("대학 공지", countTodayRows(buildUnivRows(), seoulTodayISO()));
           }
         } catch {
-          if (!univNoticePool.length) setUnivLive(false, "오류");
-          else setUnivLive(true, formatUpdatedLabel(univUpdatedAt));
+          if (univNoticePool.length) setUnivLive(true, formatUpdatedLabel(univUpdatedAt));
+          else setUnivLive(false, "대기");
         } finally {
           univPollBusy = false;
         }
@@ -2596,7 +2594,7 @@
 
       function bootUnivNotices() {
         if (!univSources.length && !univPriority.length && !univNoticePool.length) {
-          setUnivLive(false, "오류");
+          setUnivLive(false, "대기");
           renderUnivBoard("");
           refreshUnivFromGithub({ silent: true });
           return;
@@ -2768,7 +2766,6 @@
         const silent = Boolean(opts && opts.silent);
         try {
           const prevFp = noticeFingerprint(recruitPool, ["url", "title", "dateISO"]);
-          const prevUpdated = recruitUpdatedAt;
           const res = await fetch(`${RECRUIT_DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
           if (!res.ok) throw new Error(`http_${res.status}`);
           const payload = await res.json();
@@ -2776,13 +2773,12 @@
           renderRecruitBoard(recruitQuery);
           setRecruitLive(true, formatUpdatedLabel(recruitUpdatedAt));
           const nextFp = noticeFingerprint(recruitPool, ["url", "title", "dateISO"]);
-          const changed = (recruitUpdatedAt && recruitUpdatedAt !== prevUpdated) || nextFp !== prevFp;
-          if (changed && !silent) {
+          if (nextFp !== prevFp && !silent) {
             toastBoardRefresh("석박 채용", countTodayRows(buildRecruitRows(), seoulTodayISO()));
           }
         } catch {
-          if (!recruitPool.length) setRecruitLive(false, "오류");
-          else setRecruitLive(true, formatUpdatedLabel(recruitUpdatedAt));
+          if (recruitPool.length) setRecruitLive(true, formatUpdatedLabel(recruitUpdatedAt));
+          else setRecruitLive(false, "대기");
         } finally {
           recruitPollBusy = false;
         }
@@ -2812,7 +2808,7 @@
       function bootRecruitBoard() {
         if (!recruitListEl) return;
         if (!recruitPool.length) {
-          setRecruitLive(false, "오류");
+          setRecruitLive(false, "대기");
           renderRecruitBoard("");
           refreshRecruitFromGithub({ silent: true });
           return;
@@ -2992,7 +2988,6 @@
         const silent = Boolean(opts && opts.silent);
         try {
           const prevFp = noticeFingerprint(jobkoreaPool, ["jobId", "title", "dateISO"]);
-          const prevUpdated = jobkoreaUpdatedAt;
           const res = await fetch(`${JOBKOREA_DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
           if (!res.ok) throw new Error(`http_${res.status}`);
           const payload = await res.json();
@@ -3000,13 +2995,12 @@
           renderJobkoreaBoard(jobkoreaQuery);
           setJobkoreaLive(true, formatUpdatedLabel(jobkoreaUpdatedAt));
           const nextFp = noticeFingerprint(jobkoreaPool, ["jobId", "title", "dateISO"]);
-          const changed = (jobkoreaUpdatedAt && jobkoreaUpdatedAt !== prevUpdated) || nextFp !== prevFp;
-          if (changed && !silent) {
+          if (nextFp !== prevFp && !silent) {
             toastBoardRefresh("채용 공고", countTodayRows(buildJobkoreaRows(), seoulTodayISO()));
           }
         } catch {
-          if (!jobkoreaPool.length) setJobkoreaLive(false, "오류");
-          else setJobkoreaLive(true, formatUpdatedLabel(jobkoreaUpdatedAt));
+          if (jobkoreaPool.length) setJobkoreaLive(true, formatUpdatedLabel(jobkoreaUpdatedAt));
+          else setJobkoreaLive(false, "대기");
         } finally {
           jobkoreaPollBusy = false;
         }
@@ -3036,7 +3030,7 @@
       function bootJobkoreaBoard() {
         if (!jobkoreaListEl) return;
         if (!jobkoreaPool.length) {
-          setJobkoreaLive(false, "오류");
+          setJobkoreaLive(false, "대기");
           renderJobkoreaBoard("");
           refreshJobkoreaFromGithub({ silent: true });
           return;

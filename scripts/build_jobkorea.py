@@ -15,28 +15,22 @@ from __future__ import annotations
 import hashlib
 import json
 import re
-import ssl
 import sys
-import time
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
-from urllib.error import HTTPError, URLError
-from urllib.request import Request, urlopen
-
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _board_io import load_board, notice_count, write_board
 
 ROOT = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(ROOT / "scripts"))
+from _board_io import (  # noqa: E402
+    fetch_text,
+    keep_previous_if_weak,
+    load_previous,
+    utc_now_iso,
+    write_board,
+)
+
 HOME_URL = "https://www.jobkorea.co.kr/"
 API_URL = "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729"
-JS_NAME = "jobkorea-board-data.js"
-GLOBAL_NAME = "JOBKOREA_BOARD_DATA"
-JSON_REL = "data/jobkorea-notices.json"
-CTX = ssl._create_unverified_context()
-UA = (
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
-)
 
 CAREER_LABEL = {
     "NEWBIE": "신입",
@@ -144,26 +138,17 @@ def abs_job_url(path: str, job_id: str) -> str:
 
 
 def fetch_popular() -> dict:
-    last_err = ""
-    for i in range(4):
-        try:
-            req = Request(
-                API_URL,
-                headers={
-                    "User-Agent": UA,
-                    "Accept": "application/json",
-                    "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.8",
-                    "Origin": "https://www.jobkorea.co.kr",
-                    "Referer": HOME_URL,
-                },
-            )
-            with urlopen(req, context=CTX, timeout=45) as res:
-                return json.loads(res.read().decode("utf-8"))
-        except (HTTPError, URLError, TimeoutError, OSError, json.JSONDecodeError) as e:
-            last_err = f"{type(e).__name__}: {e}"
-            print(f"jobkorea fetch attempt {i + 1}/4: {last_err}")
-            time.sleep(1.0 * (i + 1))
-    raise RuntimeError(f"fetch_failed:{last_err}")
+    text = fetch_text(
+        API_URL,
+        headers={
+            "Accept": "application/json",
+            "Origin": "https://www.jobkorea.co.kr",
+            "Referer": HOME_URL,
+        },
+        timeout=45,
+        retries=4,
+    )
+    return json.loads(text)
 
 
 def build_preview(job: dict, deadline_iso: str, today: str) -> str:
@@ -188,7 +173,8 @@ def build_preview(job: dict, deadline_iso: str, today: str) -> str:
 
 def parse_notices(payload: dict, today: str) -> list:
     type_info = payload.get("type") or {}
-    if str(type_info.get("code") or "").upper() != "POPULAR":
+    type_code = str(type_info.get("code") or "").upper()
+    if type_code and type_code != "POPULAR":
         raise RuntimeError(f"unexpected curated type: {type_info!r}")
 
     job_list = payload.get("jobList")
@@ -256,50 +242,65 @@ def parse_notices(payload: dict, today: str) -> list:
     return notices
 
 
-def keep_previous(reason: str) -> int:
-    prev = load_board(ROOT, JS_NAME, GLOBAL_NAME, JSON_REL)
-    n = notice_count(prev)
-    if n > 0:
-        print(f"KEEP previous jobkorea data ({n} items) — {reason}")
-        return 0
-    print(f"ERROR no previous jobkorea data and scrape failed — {reason}", file=sys.stderr)
-    return 0
-
-
-def main() -> int:
+def main():
+    js_path = ROOT / "jobkorea-board-data.js"
+    json_path = ROOT / "data" / "jobkorea-notices.json"
+    previous = load_previous(json_path, js_path)
     today = seoul_today()
+    kept_prev = False
+    reason = "ok"
+    type_info = None
+
     try:
         payload = fetch_popular()
+        type_info = payload.get("type")
         notices = parse_notices(payload, today)
+        print(f"popular_jobs={len(notices)} type={type_info}")
+        notices, reason = keep_previous_if_weak(new_notices=notices, previous=previous)
+        kept_prev = reason.startswith("keep_prev")
     except Exception as e:
-        print(f"jobkorea scrape failed: {type(e).__name__}: {e}")
-        return keep_previous(str(e))
+        print(f"error: jobkorea scrape failed: {e}")
+        if previous and isinstance(previous.get("notices"), list) and previous["notices"]:
+            notices = previous["notices"]
+            kept_prev = True
+            reason = f"keep_prev_exception:{type(e).__name__}"
+        else:
+            raise SystemExit(f"jobkorea scrape failed with no previous data: {e}")
 
-    print(f"popular_jobs={len(notices)} type={payload.get('type')}")
-    if len(notices) < 3:
-        return keep_previous(f"too_few_items:{len(notices)}")
+    if kept_prev and previous and previous.get("notices") == notices:
+        print(f"unchanged {len(notices)} items (kept previous: {reason})")
+        return
 
     out = {
         "source": HOME_URL,
         "api": API_URL,
         "section": "인기 JOB",
-        "updatedAt": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "updatedAt": utc_now_iso(),
+        "checkedAt": utc_now_iso(),
         "today": today,
         "count": len(notices),
         "notices": notices,
+        "stale": False,
+        "status": "fresh",
+        "statusReason": reason,
     }
-    write_board(ROOT, JS_NAME, GLOBAL_NAME, JSON_REL, out)
-    print(f"wrote {len(notices)} items → {JS_NAME}, {JSON_REL}")
+
+    write_board(
+        js_path=js_path,
+        json_path=json_path,
+        global_name="JOBKOREA_BOARD_DATA",
+        payload=out,
+    )
+    print(f"wrote {len(notices)} items → {js_path.name}, {json_path.as_posix()} ({reason})")
     for n in notices[:8]:
         print(
             n["dateISO"],
-            f"#{n['popularRank']}",
+            f"#{n.get('popularRank', '?')}",
             n["companyName"],
             "|",
             n["title"][:40],
         )
-    return 0
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    main()

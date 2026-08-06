@@ -4,72 +4,69 @@
 정확성 우선:
 - 등록일·마감일·기관명·제목은 목록 페이지 __NUXT_DATA__에서 해석
 - HTML 카드는 미리보기(유형·지역·지원방법) 보조
-- 수집 실패 시 이전 데이터를 유지하고 exit 0 (Actions가 깨지지 않음)
+- 이웃 날짜 보간·추측 날짜 사용 금지
 """
 from __future__ import annotations
 
 import hashlib
 import json
 import re
-import ssl
 import sys
-import time
 from datetime import datetime, timedelta, timezone
 from html import unescape
 from pathlib import Path
-from urllib.error import HTTPError, URLError
-from urllib.request import Request, urlopen
-
-sys.path.insert(0, str(Path(__file__).resolve().parent))
-from _board_io import load_board, looks_blocked, notice_count, write_board
 
 ROOT = Path(__file__).resolve().parent.parent
-LIST_URL = "https://www.jinhakpro.com/recruit/list"
-JS_NAME = "recruit-board-data.js"
-GLOBAL_NAME = "RECRUIT_BOARD_DATA"
-JSON_REL = "data/recruit-notices.json"
-CTX = ssl._create_unverified_context()
-UA = (
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+sys.path.insert(0, str(ROOT / "scripts"))
+from _board_io import (  # noqa: E402
+    fetch_text,
+    keep_previous_if_weak,
+    load_previous,
+    utc_now_iso,
+    write_board,
 )
+
+LIST_URL = "https://www.jinhakpro.com/recruit/list"
 DATE_DOT = re.compile(r"(20\d{2})\s*[.\-/]\s*(\d{1,2})\s*[.\-/]\s*(\d{1,2})")
 
 
-def fetch(url: str, timeout: int = 45) -> str:
-    req = Request(
+def fetch(url: str) -> str:
+    return fetch_text(
         url,
         headers={
-            "User-Agent": UA,
-            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-            "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.8",
-            "Cache-Control": "no-cache",
-            "Pragma": "no-cache",
+            "Accept": "text/html,application/xhtml+xml",
             "Referer": "https://www.jinhakpro.com/",
         },
+        timeout=45,
+        retries=4,
     )
-    with urlopen(req, context=CTX, timeout=timeout) as res:
-        return res.read().decode("utf-8", "ignore")
 
 
-def fetch_with_retries(url: str, attempts: int = 4) -> str:
-    last_err = ""
-    for i in range(attempts):
-        try:
-            html = fetch(url)
-            if looks_blocked(html):
-                last_err = "blocked"
-                print(f"fetch attempt {i + 1}/{attempts}: blocked/security check")
-            elif "__NUXT_DATA__" not in html and 'href="/recruit/' not in html:
-                last_err = "unexpected_html"
-                print(f"fetch attempt {i + 1}/{attempts}: unexpected html len={len(html)}")
-            else:
-                return html
-        except (HTTPError, URLError, TimeoutError, OSError) as e:
-            last_err = type(e).__name__
-            print(f"fetch attempt {i + 1}/{attempts}: {last_err}: {e}")
-        time.sleep(1.2 * (i + 1))
-    raise RuntimeError(f"fetch_failed:{last_err}")
+def fetch_list_html() -> str:
+    """직접 접속 실패·보안차단 시 Jina 미러로 폴백."""
+    try:
+        html = fetch(LIST_URL)
+        if "Security Check" in html and len(html) < 5000:
+            print("warn: security check on direct fetch, trying jina")
+        elif len(html) > 800 and ("__NUXT_DATA__" in html or "/recruit/" in html):
+            return html
+        else:
+            print("warn: thin direct html, trying jina")
+    except Exception as e:
+        print(f"warn: direct fetch failed: {e}")
+
+    try:
+        mirror = fetch_text(
+            "https://r.jina.ai/" + LIST_URL,
+            headers={"Accept": "text/plain,*/*"},
+            timeout=60,
+            retries=3,
+        )
+        if len(mirror) > 400:
+            return mirror
+    except Exception as e:
+        print(f"warn: jina fetch failed: {e}")
+    return ""
 
 
 def strip_tags(html: str) -> str:
@@ -95,6 +92,7 @@ def short_univ(name: str) -> str:
 
 
 def date_only(val) -> str:
+    """'2026-08-04T03:00:47.692Z' / '2026-08-04 03:00:47' → YYYY-MM-DD"""
     s = str(val or "").strip()
     m = re.match(r"(20\d{2}-\d{2}-\d{2})", s)
     return m.group(1) if m else ""
@@ -140,6 +138,7 @@ def resolve(data, ref):
 
 
 def parse_nuxt_recruits(html: str) -> dict:
+    """recruitId(str) → 정확한 메타데이터."""
     data = load_nuxt_data(html)
     if not data:
         return {}
@@ -158,6 +157,7 @@ def parse_nuxt_recruits(html: str) -> dict:
         apply_end = date_only(
             resolve(data, item.get("applyEndTime") or item.get("applyEarlyEndTime"))
         )
+        # 게시일 = 등록일(registerTime). 없으면 publishStart.
         date_iso = register or publish_start or apply_start
         if not date_iso or not title:
             continue
@@ -174,6 +174,7 @@ def parse_nuxt_recruits(html: str) -> dict:
 
 
 def parse_cards(html: str) -> list:
+    """HTML 카드에서 목록 순서·미리보기 보조 정보."""
     blocks = re.split(r'(?=<a[^>]+href="/recruit/\d+")', html or "")
     items = []
     seen = set()
@@ -239,6 +240,7 @@ def build_notices(html: str, today: str) -> list:
     nuxt = parse_nuxt_recruits(html)
     cards = parse_cards(html)
     print(f"cards={len(cards)} nuxt_recruits={len(nuxt)}")
+
     notices = []
     missing = []
     for c in cards:
@@ -273,49 +275,68 @@ def build_notices(html: str, today: str) -> list:
                 "listOrder": c["listOrder"],
             }
         )
+
     if missing:
-        print(f"warning: {len(missing)} cards without nuxt meta:", missing[:12])
+        print(f"warning: {len(missing)} cards without nuxt meta:", missing)
+
     notices.sort(key=lambda x: (x["dateISO"], -x["listOrder"]), reverse=True)
     for n in notices:
         n.pop("listOrder", None)
     return notices
 
 
-def keep_previous(reason: str) -> int:
-    prev = load_board(ROOT, JS_NAME, GLOBAL_NAME, JSON_REL)
-    n = notice_count(prev)
-    if n > 0:
-        print(f"KEEP previous recruit data ({n} items) — {reason}")
-        return 0
-    print(f"ERROR no previous recruit data and scrape failed — {reason}", file=sys.stderr)
-    return 0  # Actions를 깨지 않음. 화면은 번들/빈 상태 유지.
-
-
-def main() -> int:
+def main():
+    js_path = ROOT / "recruit-board-data.js"
+    json_path = ROOT / "data" / "recruit-notices.json"
+    previous = load_previous(json_path, js_path)
     today = seoul_today()
-    try:
-        html = fetch_with_retries(LIST_URL)
-        notices = build_notices(html, today)
-    except Exception as e:
-        print(f"recruit scrape failed: {type(e).__name__}: {e}")
-        return keep_previous(str(e))
+    kept_prev = False
+    reason = "ok"
 
-    if len(notices) < 3:
-        return keep_previous(f"too_few_items:{len(notices)}")
+    try:
+        html = fetch_list_html()
+        if not html:
+            raise RuntimeError("empty list html")
+        if "Security Check" in html and len(html) < 5000 and "__NUXT_DATA__" not in html:
+            raise RuntimeError("blocked by security check")
+        notices = build_notices(html, today)
+        notices, reason = keep_previous_if_weak(new_notices=notices, previous=previous)
+        kept_prev = reason.startswith("keep_prev")
+    except Exception as e:
+        print(f"error: recruit scrape failed: {e}")
+        if previous and isinstance(previous.get("notices"), list) and previous["notices"]:
+            notices = previous["notices"]
+            kept_prev = True
+            reason = f"keep_prev_exception:{type(e).__name__}"
+        else:
+            raise SystemExit(f"recruit scrape failed with no previous data: {e}")
+
+    if kept_prev and previous and previous.get("notices") == notices:
+        print(f"unchanged {len(notices)} items (kept previous: {reason})")
+        return
 
     payload = {
         "source": LIST_URL,
-        "updatedAt": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "updatedAt": utc_now_iso(),
+        "checkedAt": utc_now_iso(),
         "today": today,
         "count": len(notices),
         "notices": notices,
+        "stale": False,
+        "status": "fresh",
+        "statusReason": reason,
     }
-    write_board(ROOT, JS_NAME, GLOBAL_NAME, JSON_REL, payload)
-    print(f"wrote {len(notices)} items → {JS_NAME}, {JSON_REL}")
+
+    write_board(
+        js_path=js_path,
+        json_path=json_path,
+        global_name="RECRUIT_BOARD_DATA",
+        payload=payload,
+    )
+    print(f"wrote {len(notices)} items → {js_path.name}, {json_path.as_posix()} ({reason})")
     for n in notices[:8]:
-        print(n["dateISO"], n["deadlineISO"], n["univName"], "|", n["title"][:42])
-    return 0
+        print(n["dateISO"], n.get("deadlineISO", ""), n["univName"], "|", n["title"][:42])
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    main()
