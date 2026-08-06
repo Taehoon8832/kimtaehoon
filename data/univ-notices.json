@@ -1,7 +1,7 @@
 {
   "minDate": "2026-08-01",
-  "updatedAt": "2026-08-06T10:05:44.179080Z",
-  "checkedAt": "2026-08-06T10:05:44.179101Z",
+  "updatedAt": "2026-08-06T12:39:49.970735Z",
+  "checkedAt": "2026-08-06T12:39:49.970779Z",
   "sources": [
     {
       "id": "u001",
@@ -1676,6 +1676,17 @@
       "dateText": "2026.08.04"
     },
     {
+      "id": "395a77c2a65c4685fd78",
+      "univId": "u021",
+      "univName": "서울대",
+      "title": "2027학년도 치의학대학원 신입생 모집 인터넷 접수 OPEN",
+      "preview": "서울대 입학 공지사항 미리보기",
+      "url": "http://admission.snu.ac.kr/graduate/professional/notice?md=v&bbsidx=173108",
+      "homeUrl": "http://admission.snu.ac.kr/",
+      "dateISO": "2026-08-04",
+      "dateText": "2026.08.04"
+    },
+    {
       "id": "b006329d19e955a090b7",
       "univId": "u021",
       "univName": "서울대",
@@ -1685,18 +1696,6 @@
       "homeUrl": "http://admission.snu.ac.kr/",
       "dateISO": "2026-08-04",
       "dateText": "2026.08.04"
-    },
-    {
-      "id": "395a77c2a65c4685fd78",
-      "univId": "u021",
-      "univName": "서울대",
-      "title": "2027학년도 치의학대학원 신입생 모집 인터넷 접수 OPEN",
-      "preview": "서울대 입학처 전체 공지사항",
-      "url": "http://admission.snu.ac.kr/graduate/professional/notice?md=v&bbsidx=173108",
-      "homeUrl": "http://admission.snu.ac.kr/",
-      "dateISO": "2026-08-04",
-      "dateText": "2026.08.04",
-      "priority": true
     },
     {
       "id": "e1d15bc522830796e7b0",
@@ -2055,5 +2054,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=13 empty=196 fail=7 fresh=19"
+  "statusReason": "ok=12 empty=197 fail=7 fresh=17"
 }
