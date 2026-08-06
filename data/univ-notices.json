@@ -1,7 +1,7 @@
 {
   "minDate": "2026-08-01",
-  "updatedAt": "2026-08-06T04:01:25.209043Z",
-  "checkedAt": "2026-08-06T04:01:25.209065Z",
+  "updatedAt": "2026-08-06T07:01:48.383790Z",
+  "checkedAt": "2026-08-06T07:01:48.383806Z",
   "sources": [
     {
       "id": "u001",
@@ -1510,6 +1510,28 @@
   ],
   "notices": [
     {
+      "id": "896eeaeeb5d41fc6cac4",
+      "univId": "u208",
+      "univName": "국립한국해양대",
+      "title": "재외국민/외국인 2027학년도 재외국민 특별전형 지원자격 서류심사 결과 공고",
+      "preview": "국립한국해양대 입학 공지사항 미리보기",
+      "url": "http://ipsi.kmou.ac.kr/ipsi/na/ntt/selectNttInfo.do?nttSn=10377567&mi=3299",
+      "homeUrl": "http://ipsi.kmou.ac.kr/",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
+      "id": "7262b8f7f56bf7e18f79",
+      "univId": "u208",
+      "univName": "국립한국해양대",
+      "title": "공통 국립한국해양대학교 대입전형결과 이의신청 안내",
+      "preview": "국립한국해양대 입학 공지사항 미리보기",
+      "url": "http://ipsi.kmou.ac.kr/ipsi/na/ntt/selectNttInfo.do?nttSn=10377566&mi=3299",
+      "homeUrl": "http://ipsi.kmou.ac.kr/",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
       "id": "78a42e8378e45e99dc9f",
       "univId": "u044",
       "univName": "한예종",
@@ -1541,6 +1563,28 @@
       "homeUrl": "https://www.karts.ac.kr/index_karts.jsp",
       "dateISO": "2026-08-06",
       "dateText": "2026.08.06"
+    },
+    {
+      "id": "c798f5b9b8c69342ef2e",
+      "univId": "u208",
+      "univName": "국립한국해양대",
+      "title": "수시 2027학년도 신입생 수시모집 체육 실기고사 요강(해양스포츠과학과)",
+      "preview": "국립한국해양대 입학 공지사항 미리보기",
+      "url": "http://ipsi.kmou.ac.kr/ipsi/na/ntt/selectNttInfo.do?nttSn=10377529&mi=3310",
+      "homeUrl": "http://ipsi.kmou.ac.kr/",
+      "dateISO": "2026-08-05",
+      "dateText": "2026.08.05"
+    },
+    {
+      "id": "e1ea8ab494144836dcd3",
+      "univId": "u208",
+      "univName": "국립한국해양대",
+      "title": "수시 2027학년도 신입생 수시모집 체육 실기고사 요강(해양스포츠과학과)",
+      "preview": "국립한국해양대 입학 공지사항 미리보기",
+      "url": "http://ipsi.kmou.ac.kr/ipsi/na/ntt/selectNttInfo.do?nttSn=10377529&mi=3310&srch_aditCol1=수시",
+      "homeUrl": "http://ipsi.kmou.ac.kr/",
+      "dateISO": "2026-08-05",
+      "dateText": "2026.08.05"
     },
     {
       "id": "16fdce45155e092562a0",
@@ -2000,5 +2044,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=13 empty=196 fail=7 fresh=18"
+  "statusReason": "ok=14 empty=195 fail=7 fresh=22"
 }
