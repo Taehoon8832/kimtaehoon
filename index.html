@@ -1800,8 +1800,8 @@
     }
 
     .sagwan-modal-card {
-      width: min(680px, 100%);
-      max-height: min(82vh, 640px);
+      width: min(780px, 100%);
+      max-height: min(88vh, 760px);
       display: grid;
       grid-template-rows: auto 1fr;
       border-radius: 14px;
@@ -1826,6 +1826,52 @@
       font-weight: 800;
       letter-spacing: -0.02em;
       color: #2a1c12;
+      min-width: 0;
+      flex: 1;
+    }
+
+    .sagwan-zoom-tools {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      flex-shrink: 0;
+    }
+
+    .sagwan-zoom-tools button {
+      border: 1px solid rgba(92, 64, 48, 0.28);
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: #fff;
+      color: #2a1c12;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      line-height: 1;
+      display: grid;
+      place-items: center;
+      transition: background var(--duration-fast) var(--ease-out);
+    }
+
+    .sagwan-zoom-tools button:hover,
+    .sagwan-zoom-tools button:focus-visible {
+      background: #f3ebe0;
+      outline: none;
+    }
+
+    .sagwan-zoom-tools button:disabled {
+      opacity: 0.38;
+      cursor: default;
+    }
+
+    .sagwan-zoom-label {
+      min-width: 44px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 750;
+      font-family: "Space Grotesk", var(--font);
+      color: #5c4030;
+      letter-spacing: -0.02em;
     }
 
     .sagwan-modal-close {
@@ -1838,39 +1884,44 @@
       font-size: 16px;
       cursor: pointer;
       line-height: 1;
+      flex-shrink: 0;
     }
 
     .sagwan-modal-body {
       overflow: auto;
-      padding: 8px;
+      padding: 10px;
       background: #f7f3ee;
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
+      display: block;
+      overscroll-behavior: contain;
+    }
+
+    .sagwan-modal-body .sagwan-zoom-stage {
+      display: block;
+      width: 100%;
+      margin: 0 auto;
     }
 
     .sagwan-modal-body img {
       display: block;
-      width: auto;
-      max-width: 100%;
-      max-height: min(68vh, 540px);
+      width: 100%;
+      max-width: none;
       height: auto;
-      object-fit: contain;
       border-radius: 8px;
       border: 1px solid rgba(92, 64, 48, 0.12);
       background: #fff;
       margin: 0 auto;
+      user-select: none;
+      -webkit-user-drag: none;
     }
 
     @media (max-width: 640px) {
       .sagwan-modal-card {
         width: min(100%, 100%);
-        max-height: min(86vh, 620px);
+        max-height: min(90vh, 720px);
       }
 
-      .sagwan-modal-body img {
-        max-height: min(72vh, 520px);
-        width: 100%;
+      .sagwan-modal-head strong {
+        font-size: 12px;
       }
     }
 
@@ -2581,16 +2632,25 @@
     <div class="sagwan-modal-card" role="dialog" aria-modal="true" aria-labelledby="sagwanScheduleTitle">
       <div class="sagwan-modal-head">
         <strong id="sagwanScheduleTitle">2027학년도 사관학교 원서접수 일정</strong>
+        <div class="sagwan-zoom-tools" aria-label="일정표 확대·축소">
+          <button type="button" id="sagwanZoomOut" aria-label="축소" title="축소">−</button>
+          <span class="sagwan-zoom-label" id="sagwanZoomLabel">100%</span>
+          <button type="button" id="sagwanZoomIn" aria-label="확대" title="확대">+</button>
+          <button type="button" id="sagwanZoomReset" aria-label="원래 크기" title="원래 크기">⟲</button>
+        </div>
         <button type="button" class="sagwan-modal-close" id="sagwanScheduleClose" aria-label="닫기">×</button>
       </div>
-      <div class="sagwan-modal-body">
-        <img
-          src="assets/sagwan-2027-schedule.png"
-          alt="2027학년도 사관학교 원서접수 일정표 — 육사·공사·해사·국간사"
-          width="1600"
-          height="900"
-          loading="lazy"
-        />
+      <div class="sagwan-modal-body" id="sagwanModalBody">
+        <div class="sagwan-zoom-stage" id="sagwanZoomStage">
+          <img
+            id="sagwanScheduleImg"
+            src="assets/sagwan-2027-schedule.png"
+            alt="2027학년도 사관학교 원서접수 일정표 — 육사·공사·해사·국간사"
+            width="1600"
+            height="900"
+            loading="lazy"
+          />
+        </div>
       </div>
     </div>
   </div>
@@ -4044,9 +4104,34 @@
         const modal = document.getElementById("sagwanScheduleModal");
         const closeBtn = document.getElementById("sagwanScheduleClose");
         const reviewBtn = document.getElementById("sagwanReviewBtn");
+        const zoomImg = document.getElementById("sagwanScheduleImg");
+        const zoomLabel = document.getElementById("sagwanZoomLabel");
+        const zoomInBtn = document.getElementById("sagwanZoomIn");
+        const zoomOutBtn = document.getElementById("sagwanZoomOut");
+        const zoomResetBtn = document.getElementById("sagwanZoomReset");
+        const modalBody = document.getElementById("sagwanModalBody");
+        const ZOOM_MIN = 0.75;
+        const ZOOM_MAX = 2.5;
+        const ZOOM_STEP = 0.25;
+        let scheduleZoom = 1;
+        const zoomStage = document.getElementById("sagwanZoomStage");
+
+        function applyScheduleZoom() {
+          scheduleZoom = Math.min(ZOOM_MAX, Math.max(ZOOM_MIN, Math.round(scheduleZoom * 100) / 100));
+          if (zoomStage) zoomStage.style.width = `${scheduleZoom * 100}%`;
+          if (zoomLabel) zoomLabel.textContent = `${Math.round(scheduleZoom * 100)}%`;
+          if (zoomOutBtn) zoomOutBtn.disabled = scheduleZoom <= ZOOM_MIN + 0.001;
+          if (zoomInBtn) zoomInBtn.disabled = scheduleZoom >= ZOOM_MAX - 0.001;
+        }
+
+        function setScheduleZoom(next) {
+          scheduleZoom = next;
+          applyScheduleZoom();
+        }
 
         function openScheduleModal() {
           if (!modal) return;
+          setScheduleZoom(1);
           modal.hidden = false;
           modal.classList.add("is-open");
           document.body.style.overflow = "hidden";
@@ -4056,10 +4141,26 @@
           modal.classList.remove("is-open");
           modal.hidden = true;
           document.body.style.overflow = "";
+          setScheduleZoom(1);
         }
 
         if (scheduleBtn) scheduleBtn.addEventListener("click", openScheduleModal);
         if (closeBtn) closeBtn.addEventListener("click", closeScheduleModal);
+        if (zoomInBtn) zoomInBtn.addEventListener("click", () => setScheduleZoom(scheduleZoom + ZOOM_STEP));
+        if (zoomOutBtn) zoomOutBtn.addEventListener("click", () => setScheduleZoom(scheduleZoom - ZOOM_STEP));
+        if (zoomResetBtn) zoomResetBtn.addEventListener("click", () => setScheduleZoom(1));
+        if (modalBody) {
+          modalBody.addEventListener(
+            "wheel",
+            (e) => {
+              if (!modal || !modal.classList.contains("is-open")) return;
+              if (!(e.ctrlKey || e.metaKey)) return;
+              e.preventDefault();
+              setScheduleZoom(scheduleZoom + (e.deltaY < 0 ? ZOOM_STEP : -ZOOM_STEP));
+            },
+            { passive: false }
+          );
+        }
         if (modal) {
           modal.addEventListener("click", (e) => {
             if (e.target === modal) closeScheduleModal();
@@ -4080,6 +4181,7 @@
           closeVisitStats();
         });
 
+        applyScheduleZoom();
         renderSagwanDday();
         setInterval(renderSagwanDday, 60 * 60 * 1000);
       }
