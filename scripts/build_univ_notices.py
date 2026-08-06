@@ -7,6 +7,7 @@ import json
 import os
 import re
 import ssl
+import subprocess
 import time
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime, timedelta, timezone
@@ -62,39 +63,114 @@ COMMON_PATHS = (
     "/cms/FR_CON/Board/Board.do",
 )
 
+# 정확 수집이 필요한 대학: 지정 공지게시판만 사용
+SPECIAL_UNIV = {
+    "u188": {  # 목포해양대
+        "homeUrl": "https://www.mmu.ac.kr/admission",
+        "boardUrl": "https://www.mmu.ac.kr/admission/board/245",
+        "allow": re.compile(r"mmu\.ac\.kr/admission/board/245/", re.I),
+        "curl": True,
+    },
+    "u121": {  # 가톨릭꽃동네대
+        "homeUrl": "https://www.kkot.ac.kr/ipsi/main/view/",
+        "boardUrl": "https://www.kkot.ac.kr/ipsi/board/list?boardManagementNo=1143&menuLevel=2&menuNo=120",
+        "allow": re.compile(r"kkot\.ac\.kr/ipsi/board/read\?.*boardManagementNo=1143", re.I),
+    },
+    "u003": {  # 감리교신대 — 입학공지(mId=516)만
+        "homeUrl": "https://www.mtu.ac.kr/mtu/main/main.do?mId=1",
+        "boardUrl": "https://www.mtu.ac.kr/mtu/board/list.do?mId=516",
+        "allow": re.compile(r"mtu\.ac\.kr/mtu/board/view\.do\?mId=516", re.I),
+    },
+    "u219": {  # 금오공대
+        "homeUrl": "https://iphak.kumoh.ac.kr/ipsi/index.do?sso=ok",
+        "boardUrl": "https://iphak.kumoh.ac.kr/ipsi/sub0601.do",
+        "allow": re.compile(r"iphak\.kumoh\.ac\.kr/ipsi/sub0601\.do", re.I),
+    },
+    "u066": {  # 아신대
+        "homeUrl": "https://www.acts.ac.kr/admission/design/index.asp",
+        "boardUrl": "https://www.acts.ac.kr/modules/board/bd_list.asp?id=univ_admission&ca_no=2&left=occa1",
+        "allow": re.compile(r"acts\.ac\.kr/modules/board/bd_view\.asp\?.*id=univ_admission", re.I),
+    },
+    "u174": {  # 예수대 — 입학처 홈(menu=183), 공지(menu=190)
+        "homeUrl": "https://jesus.ac.kr/enter/?menu=183",
+        "boardUrl": "https://jesus.ac.kr/enter/?menu=190",
+        "allow": re.compile(r"jesus\.ac\.kr/enter/\?menu=190", re.I),
+    },
+    "u157": {  # 한국전통문화대 — 입학공지(MNU0000210)만 (Q&A 제외)
+        "homeUrl": "https://www.knuh.ac.kr/admission/main.do",
+        "boardUrl": "https://www.knuh.ac.kr/admission/brd/list.do?mnuBaseId=MNU0000210&topBaseId=MNU0000209&tplSer=29",
+        "allow": re.compile(r"knuh\.ac\.kr/admission/brd/view\.do\?.*mnuBaseId=MNU0000210", re.I),
+    },
+}
+
 
 def load_sources():
     js = ROOT / "univ-board-data.js"
+    sources = []
     if js.exists():
         raw = js.read_text(encoding="utf-8").split("=", 1)[1].strip().rstrip(";")
         try:
-            return json.loads(raw).get("sources") or []
+            sources = json.loads(raw).get("sources") or []
         except Exception:
-            pass
-    return json.loads((ROOT / "univ-sources.json").read_text(encoding="utf-8"))
+            sources = []
+    if not sources:
+        sources = json.loads((ROOT / "univ-sources.json").read_text(encoding="utf-8"))
+    # 지정 대학 URL을 올바른 입학처/공지 게시판으로 고정
+    out = []
+    for s in sources:
+        cfg = SPECIAL_UNIV.get(s.get("id") or "")
+        if cfg:
+            s = dict(s)
+            s["homeUrl"] = cfg["homeUrl"]
+            s["boardUrl"] = cfg["boardUrl"]
+        out.append(s)
+    return out
 
 
-def fetch(url: str, timeout: int = 16):
-    req = Request(
-        url,
-        headers={
-            "User-Agent": UA,
-            "Accept": "text/html,application/xhtml+xml,text/plain;q=0.9,*/*;q=0.8",
-            "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.8",
-        },
-    )
-    with urlopen(req, context=CTX, timeout=timeout) as res:
-        raw = res.read()
-        final = res.geturl()
-        code = getattr(res, "status", 200) or 200
+def _decode_body(raw: bytes) -> str:
     for enc in ("utf-8", "euc-kr", "cp949"):
         try:
             text = raw.decode(enc)
             if len(re.findall(r"[가-힣]", text)) >= 6 or enc == "cp949":
-                return code, text, final
+                return text
         except Exception:
             continue
-    return code, raw.decode("utf-8", "ignore"), final
+    return raw.decode("utf-8", "ignore")
+
+
+def fetch_curl(url: str, timeout: int = 30):
+    """일부 서버(목포해양대 등)의 비정상 헤더를 urllib이 거부할 때 폴백."""
+    try:
+        raw = subprocess.check_output(
+            ["curl", "-k", "-L", "-s", "--max-time", str(timeout), "-A", UA, url],
+            stderr=subprocess.DEVNULL,
+        )
+        return 200, _decode_body(raw), url
+    except Exception:
+        return 0, "", url
+
+
+def fetch(url: str, timeout: int = 16, prefer_curl: bool = False):
+    if prefer_curl:
+        code, text, final = fetch_curl(url, timeout=max(timeout, 25))
+        if text:
+            return code, text, final
+    try:
+        req = Request(
+            url,
+            headers={
+                "User-Agent": UA,
+                "Accept": "text/html,application/xhtml+xml,text/plain;q=0.9,*/*;q=0.8",
+                "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.8",
+            },
+        )
+        with urlopen(req, context=CTX, timeout=timeout) as res:
+            raw = res.read()
+            final = res.geturl()
+            code = getattr(res, "status", 200) or 200
+        return code, _decode_body(raw), final
+    except Exception:
+        return fetch_curl(url, timeout=max(timeout, 25))
 
 
 def fetch_jina(url: str) -> str:
@@ -355,7 +431,127 @@ def candidate_urls(src: dict):
     return urls[:5]
 
 
+def parse_special(html: str, src: dict):
+    """지정 대학 공지 게시판 전용 파서."""
+    uid = src.get("id") or ""
+    cfg = SPECIAL_UNIV.get(uid)
+    if not cfg or not html:
+        return []
+    items = []
+    today = (datetime.now(timezone.utc) + timedelta(hours=9)).strftime("%Y-%m-%d")
+
+    if uid == "u188":  # 목포해양대 board/245
+        for m in re.finditer(
+            r'href="([^"]*board/245[^"]*read/\d+[^"]*)"[^>]*>([^<]+)</a>[\s\S]*?'
+            r'<td class="date">(\d{4}-\d{2}-\d{2})</td>',
+            html,
+            re.I,
+        ):
+            href = urljoin(cfg["boardUrl"], m.group(1).rstrip("?"))
+            it = make_item(src, m.group(2), f"{src['name']} 입학 공지사항 미리보기", href, m.group(3), cfg["boardUrl"])
+            if it and cfg["allow"].search(it["url"]):
+                items.append(it)
+    elif uid == "u121":  # 꽃동네 입학 공지 1143
+        for m in re.finditer(
+            r'href="((?:https?://[^"]*)?/?ipsi/board/read\?[^"]*boardManagementNo=1143[^"]*)"[^>]*>([\s\S]*?)</a>([\s\S]{0,240})',
+            html,
+            re.I,
+        ):
+            title = strip_tags(m.group(2))
+            date_iso = extract_date(title + " " + strip_tags(m.group(3)))
+            href = urljoin("https://www.kkot.ac.kr", unescape(m.group(1)))
+            it = make_item(src, title, f"{src['name']} 입학 공지사항 미리보기", href, date_iso, cfg["boardUrl"])
+            if it and cfg["allow"].search(it["url"]):
+                items.append(it)
+    elif uid == "u003":  # 감리교 입학공지 mId=516
+        for m in re.finditer(
+            r'view\.do\?mId=516&(?:amp;)?brdIdx=(\d+)[^"\']*["\'][^>]*>([\s\S]*?)</a>[\s\S]{0,400}?(20\d{2}-\d{2}-\d{2})',
+            html,
+            re.I,
+        ):
+            title = strip_tags(m.group(2))
+            href = f"https://www.mtu.ac.kr/mtu/board/view.do?mId=516&brdIdx={m.group(1)}"
+            it = make_item(src, title, f"{src['name']} 입학 공지사항 미리보기", href, m.group(3), cfg["boardUrl"])
+            if it and cfg["allow"].search(it["url"]):
+                items.append(it)
+    elif uid == "u219":  # 금오공대 입학정보 공지
+        for m in re.finditer(
+            r'href="([^"]*mode=view&(?:amp;)?articleNo=\d+[^"]*)"[^>]*>([\s\S]*?)</a>',
+            html,
+            re.I,
+        ):
+            block = m.group(2)
+            date_iso = extract_date(block)
+            title = re.sub(r"^공지\s*", "", strip_tags(block))
+            title = re.sub(r"\s*국립금오공과대학교.*$", "", title)
+            title = DATE_RE.sub("", title).strip()
+            href = urljoin(cfg["boardUrl"], unescape(m.group(1)))
+            it = make_item(src, title, f"{src['name']} 입학 공지사항 미리보기", href, date_iso, cfg["boardUrl"])
+            if it and cfg["allow"].search(it["url"]):
+                items.append(it)
+    elif uid == "u066":  # 아신대 입학 공지
+        for m in re.finditer(
+            r'bd_view\.asp\?([^"\']+)["\'][^>]*>([\s\S]*?)</a>[\s\S]{0,220}?(20\d{2}-\d{2}-\d{2})',
+            html,
+            re.I,
+        ):
+            q = unescape(m.group(1))
+            if "id=univ_admission" not in q:
+                continue
+            title = re.sub(r"\s*교학지원팀\s*$", "", strip_tags(m.group(2))).strip()
+            href = urljoin("https://www.acts.ac.kr/modules/board/", "bd_view.asp?" + q)
+            it = make_item(src, title, f"{src['name']} 입학 공지사항 미리보기", href, m.group(3), cfg["boardUrl"])
+            if it and cfg["allow"].search(it["url"]):
+                items.append(it)
+    elif uid == "u174":  # 예수대 공지 menu=190
+        for m in re.finditer(
+            r'href="(\./\?menu=190&(?:amp;)?mode=view&(?:amp;)?no=\d+)"[^>]*>([\s\S]*?)</a>([\s\S]{0,280}?)</tr>',
+            html,
+            re.I,
+        ):
+            title = strip_tags(m.group(2))
+            date_iso = extract_date(m.group(3))
+            href = urljoin("https://jesus.ac.kr/enter/", unescape(m.group(1)).lstrip("./"))
+            it = make_item(src, title, f"{src['name']} 입학 공지사항 미리보기", href, date_iso, cfg["boardUrl"])
+            if it and cfg["allow"].search(it["url"]):
+                items.append(it)
+    elif uid == "u157":  # 한국전통문화대 입학공지
+        for m in re.finditer(
+            r"fnBrdView\('(\d+)'\)\"[\s\S]*?>([\s\S]*?)</a>[\s\S]*?<td class=\"date\"[^>]*>(20\d{2}-\d{2}-\d{2})</td>",
+            html,
+            re.I,
+        ):
+            title = re.sub(r"\[대\s*학\]|\[대학원\]|\[편입학\]", " ", strip_tags(m.group(2)))
+            title = re.sub(r"\s+", " ", title).strip()
+            href = (
+                "https://www.knuh.ac.kr/admission/brd/view.do?"
+                f"mnuBaseId=MNU0000210&topBaseId=MNU0000209&tplSer=29&atcSer={m.group(1)}"
+            )
+            it = make_item(src, title, f"{src['name']} 입학 공지사항 미리보기", href, m.group(3), cfg["boardUrl"])
+            if it and cfg["allow"].search(it["url"]) and it["dateISO"] <= today:
+                items.append(it)
+
+    uniq = {f"{it['url']}|{it['title']}": it for it in items}
+    return sorted(uniq.values(), key=lambda x: x["dateISO"], reverse=True)[:MAX_PER]
+
+
 def scrape_one(src, use_jina=False):
+    uid = src.get("id") or ""
+    special = SPECIAL_UNIV.get(uid)
+    if special:
+        board = special["boardUrl"]
+        try:
+            code, html, final = fetch(board, timeout=25, prefer_curl=bool(special.get("curl")))
+            if code >= 400 or is_404(html):
+                return [], f"http_{code}"
+            items = parse_special(html, src)
+            if items:
+                return items, "ok"
+            # 특수 파서 실패 시 일반 파서는 쓰지 않음(오탐 방지)
+            return [], "empty"
+        except Exception as e:
+            return [], type(e).__name__
+
     urls = candidate_urls(src)
     if not urls:
         return [], "no_url"
@@ -396,6 +592,11 @@ def merge_previous_notices(results: dict, old: dict) -> list:
         if not n.get("title") or not n.get("url"):
             continue
         if BAD_TITLE.search(n.get("title") or ""):
+            continue
+        uid = n.get("univId") or ""
+        special = SPECIAL_UNIV.get(uid)
+        # 지정 대학은 허용 URL만 유지 (잘못된 게시판·Q&A·상담 글 제거)
+        if special and not special["allow"].search(n.get("url") or ""):
             continue
         k = f"{n.get('univId')}|{n.get('url')}|{n.get('title')}"
         results.setdefault(k, n)
