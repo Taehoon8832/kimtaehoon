@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-07",
-  "updatedAt": "2026-08-07T07:15:22.706Z",
-  "checkedAt": "2026-08-07T07:15:22.706Z",
+  "updatedAt": "2026-08-07T08:35:25.329Z",
+  "checkedAt": "2026-08-07T08:35:25.329Z",
   "sources": [
     {
       "id": "u001",
@@ -1560,6 +1560,17 @@
       "dateText": "2026.08.07"
     },
     {
+      "id": "df7be8d5be56b7260c94",
+      "univId": "u044",
+      "univName": "한예종",
+      "title": "2027학년도 10월입시 정원 외 전형 지원자격 검토 결과 안내",
+      "preview": "한예종 입학 공지사항 미리보기",
+      "url": "https://www.karts.ac.kr/cop/bbs/selectBoardArticle.do?bbsId=BBSMSTR_000000000007&nttNo=70321",
+      "homeUrl": "https://www.karts.ac.kr/main/appl.do",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
+    {
       "id": "577d50059058a2357b4a",
       "univId": "u044",
       "univName": "한예종",
@@ -2115,5 +2126,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=12 empty=38 fail=166 fresh=33"
+  "statusReason": "ok=9 empty=5 fail=202 fresh=34"
 }
