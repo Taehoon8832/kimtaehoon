@@ -47,24 +47,7 @@ jobs:
         run: python scripts/build_univ_notices.py
 
       - name: Validate board JSON
-        run: |
-          node -e "
-          const fs=require('fs');
-          for (const f of ['data/univ-notices.json','univ-board-data.js']) {
-            let t=fs.readFileSync(f,'utf8');
-            if (t.includes('<<<<<<<') || t.includes('>>>>>>>')) {
-              console.error('conflict markers in', f);
-              process.exit(1);
-            }
-            if (f.endsWith('.js')) t=t.split('=').slice(1).join('=').trim().replace(/;$/,'');
-            const j=JSON.parse(t);
-            if (!Array.isArray(j.notices) || !j.notices.length) {
-              console.error('empty notices in', f);
-              process.exit(1);
-            }
-            console.log(f, 'notices', j.notices.length, 'minDate', j.minDate);
-          }
-          "
+        run: node scripts/validate_board_json.mjs data/univ-notices.json univ-board-data.js
 
       - name: Commit updated data
         run: |

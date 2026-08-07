@@ -2124,5 +2124,6 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "merged_history notices=52"
+  "statusReason": "merged_history notices=52",
+  "today": "2026-08-07"
 }

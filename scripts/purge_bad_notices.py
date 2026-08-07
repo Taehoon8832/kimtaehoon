@@ -5,7 +5,18 @@ import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-MIN = "2026-08-01"
+
+
+def admission_min_date() -> str:
+    from datetime import datetime, timedelta, timezone
+
+    today = (datetime.now(timezone.utc) + timedelta(hours=9)).date()
+    if today.month >= 8:
+        return f"{today.year}-08-01"
+    return f"{today.year - 1}-08-01"
+
+
+MIN = admission_min_date()
 js_path = ROOT / "univ-board-data.js"
 payload = json.loads(js_path.read_text(encoding="utf-8").split("=", 1)[1].strip().rstrip(";"))
 

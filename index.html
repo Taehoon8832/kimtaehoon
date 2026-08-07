@@ -3524,9 +3524,11 @@
 
       function applyRecruitPayload(payload) {
         if (!payload || typeof payload !== "object") return false;
+        if (!Array.isArray(payload.notices)) return false;
+        if (!payload.notices.length && recruitPool.length) return false;
         recruitBoardData = payload;
         window.RECRUIT_BOARD_DATA = payload;
-        recruitPool = Array.isArray(payload.notices) ? payload.notices.slice() : [];
+        recruitPool = payload.notices.slice();
         recruitUpdatedAt = String(payload.updatedAt || recruitUpdatedAt || "");
         return true;
       }
@@ -3751,9 +3753,11 @@
 
       function applyJobkoreaPayload(payload) {
         if (!payload || typeof payload !== "object") return false;
+        if (!Array.isArray(payload.notices)) return false;
+        if (!payload.notices.length && jobkoreaPool.length) return false;
         jobkoreaBoardData = payload;
         window.JOBKOREA_BOARD_DATA = payload;
-        jobkoreaPool = Array.isArray(payload.notices) ? payload.notices.slice() : [];
+        jobkoreaPool = payload.notices.slice();
         jobkoreaUpdatedAt = String(payload.updatedAt || jobkoreaUpdatedAt || "");
         return true;
       }
@@ -4071,9 +4075,11 @@
 
       function applyTeacherPayload(payload) {
         if (!payload || typeof payload !== "object") return false;
+        if (!Array.isArray(payload.notices)) return false;
+        if (!payload.notices.length && teacherPool.length) return false;
         teacherBoardData = payload;
         window.TEACHER_BOARD_DATA = payload;
-        teacherPool = Array.isArray(payload.notices) ? payload.notices.slice() : [];
+        teacherPool = payload.notices.slice();
         teacherUpdatedAt = String(payload.updatedAt || teacherUpdatedAt || "");
         return true;
       }
@@ -4129,9 +4135,11 @@
 
       function applySuhuiPayload(payload) {
         if (!payload || typeof payload !== "object") return false;
+        if (!Array.isArray(payload.notices)) return false;
+        if (!payload.notices.length && suhuiPool.length) return false;
         suhuiBoardData = payload;
         window.SUHUI_BOARD_DATA = payload;
-        suhuiPool = Array.isArray(payload.notices) ? payload.notices.slice() : [];
+        suhuiPool = payload.notices.slice();
         suhuiUpdatedAt = String(payload.updatedAt || suhuiUpdatedAt || "");
         return true;
       }
@@ -4189,9 +4197,11 @@
 
       function applyEduPayload(payload) {
         if (!payload || typeof payload !== "object") return false;
+        if (!Array.isArray(payload.notices)) return false;
+        if (!payload.notices.length && eduPool.length) return false;
         eduBoardData = payload;
         window.EDU_BOARD_DATA = payload;
-        eduPool = Array.isArray(payload.notices) ? payload.notices.slice() : [];
+        eduPool = payload.notices.slice();
         eduUpdatedAt = String(payload.updatedAt || eduUpdatedAt || "");
         return true;
       }

@@ -9,7 +9,6 @@ on:
 permissions:
   contents: write
 
-# 이전 실행을 취소하지 않음 — "All jobs were cancelled" 방지
 concurrency:
   group: refresh-boards
   cancel-in-progress: false
@@ -27,7 +26,10 @@ jobs:
         with:
           python-version: "3.12"
 
-      # 순차 수집: 병렬 push 충돌·한쪽 실패로 전체 취소되는 문제 방지
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
       - name: Scrape JobKorea
         id: jobkorea
         continue-on-error: true
@@ -37,6 +39,19 @@ jobs:
         id: recruit
         continue-on-error: true
         run: python scripts/build_recruit.py
+
+      - name: Node fallback (job+recruit)
+        if: steps.jobkorea.outcome != 'success' || steps.recruit.outcome != 'success'
+        continue-on-error: true
+        env:
+          NODE_TLS_REJECT_UNAUTHORIZED: "0"
+        run: node scripts/refresh_boards.mjs
+
+      - name: Validate board JSON
+        run: |
+          node scripts/validate_board_json.mjs \
+            data/jobkorea-notices.json jobkorea-board-data.js \
+            data/recruit-notices.json recruit-board-data.js
 
       - name: Commit board data
         run: |
@@ -50,9 +65,16 @@ jobs:
           fi
           git commit -m "chore: refresh job & recruit boards"
           for i in 1 2 3 4 5; do
-            git pull --rebase --autostash origin main && git push && exit 0
+            if git pull --rebase --autostash origin main; then
+              if grep -R "<<<<<<<" -n jobkorea-board-data.js recruit-board-data.js data/jobkorea-notices.json data/recruit-notices.json >/dev/null 2>&1; then
+                echo "Conflict markers after rebase; aborting push"
+                git rebase --abort || true
+                exit 0
+              fi
+              git push && exit 0
+            fi
             sleep $((i * 4))
             git fetch origin main || true
           done
-          echo "Push retries exhausted; leaving commit local to next run"
+          echo "Push retries exhausted; leaving commit for next run"
           exit 0

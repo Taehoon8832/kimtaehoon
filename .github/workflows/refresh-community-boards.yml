@@ -2,8 +2,8 @@ name: Refresh community boards
 
 on:
   schedule:
-    # 20분마다 (UTC)
-    - cron: "*/20 * * * *"
+    # 15분마다 (UTC) — 정교사·수만휘·교육정책
+    - cron: "*/15 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -26,6 +26,10 @@ jobs:
         with:
           python-version: "3.12"
 
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
       - name: Scrape teacher cafe
         id: teacher
         continue-on-error: true
@@ -41,6 +45,13 @@ jobs:
         continue-on-error: true
         run: python scripts/build_edu_policy.py
 
+      - name: Validate community JSON
+        run: |
+          node scripts/validate_board_json.mjs \
+            data/teacher-notices.json teacher-board-data.js \
+            data/suhui-notices.json suhui-board-data.js \
+            data/edu-notices.json edu-board-data.js
+
       - name: Commit community board data
         run: |
           git config user.name "github-actions[bot]"
@@ -54,9 +65,16 @@ jobs:
           fi
           git commit -m "chore: refresh community boards"
           for i in 1 2 3 4 5; do
-            git pull --rebase --autostash origin main && git push && exit 0
+            if git pull --rebase --autostash origin main; then
+              if grep -R "<<<<<<<" -n teacher-board-data.js suhui-board-data.js edu-board-data.js data/teacher-notices.json data/suhui-notices.json data/edu-notices.json >/dev/null 2>&1; then
+                echo "Conflict markers after rebase; aborting push"
+                git rebase --abort || true
+                exit 0
+              fi
+              git push && exit 0
+            fi
             sleep $((i * 4))
             git fetch origin main || true
           done
-          echo "Push retries exhausted; leaving commit local to next run"
+          echo "Push retries exhausted; leaving commit for next run"
           exit 0

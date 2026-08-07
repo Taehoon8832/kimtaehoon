@@ -422,7 +422,11 @@ def make_item(src: dict, title_raw: str, preview: str, absu: str, date_iso: str,
         return None
     if not date_iso or date_iso < MIN_DATE:
         return None
-    if date_iso > "2026-08-31" and not TITLE_HINT.search(title):
+    # 시즌 초반(minDate+30일) 이후 글은 입시 키워드가 있을 때만 허용 (오탐 감소)
+    soft_end = (
+        datetime.strptime(MIN_DATE, "%Y-%m-%d").date() + timedelta(days=30)
+    ).strftime("%Y-%m-%d")
+    if date_iso > soft_end and not TITLE_HINT.search(title):
         return None
     if not absu.startswith("http") or BROKEN.search(absu):
         return None
@@ -1009,8 +1013,10 @@ def main():
 
     if not notices:
         raise SystemExit(f"univ scrape produced no notices ({scrape_error or 'empty'})")
+    today = (datetime.now(timezone.utc) + timedelta(hours=9)).strftime("%Y-%m-%d")
     payload = {
         "minDate": MIN_DATE,
+        "today": today,
         "updatedAt": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "checkedAt": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "sources": sources,

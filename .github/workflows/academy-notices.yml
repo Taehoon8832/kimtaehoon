@@ -1,9 +1,7 @@
 name: Refresh military academy notices
 
+# 사관학교는 univ-notices(15분)에 포함됨. 수동 긴급 갱신만 유지.
 on:
-  schedule:
-    # 매 15분 — univ-board-data와 동일 그룹으로 충돌 방지
-    - cron: "7,22,37,52 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -32,15 +30,7 @@ jobs:
         run: node scripts/refresh_academy_univs.mjs
 
       - name: Validate board JSON
-        run: |
-          node -e "
-          const fs=require('fs');
-          let t=fs.readFileSync('data/univ-notices.json','utf8');
-          if (t.includes('<<<<<<<')) { console.error('conflict'); process.exit(1); }
-          const j=JSON.parse(t);
-          if (!Array.isArray(j.notices) || !j.notices.length) process.exit(1);
-          console.log('notices', j.notices.length);
-          "
+        run: node scripts/validate_board_json.mjs data/univ-notices.json univ-board-data.js
 
       - name: Commit updated data
         run: |
@@ -55,7 +45,7 @@ jobs:
           for i in 1 2 3 4 5; do
             if git pull --rebase --autostash origin main; then
               if grep -R "<<<<<<<" -n univ-board-data.js data/univ-notices.json >/dev/null 2>&1; then
-                echo "Conflict markers detected after rebase; aborting push"
+                echo "Conflict markers after rebase; aborting push"
                 git rebase --abort || true
                 exit 0
               fi

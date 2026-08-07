@@ -272,6 +272,11 @@ function makeItem(src, titleRaw, preview, absu, dateISO, pageUrl, minDate) {
   }
   if ((title.match(/[가-힣]/g) || []).length < 4) return null;
   if (!dateISO || dateISO < minDate || dateISO > today) return null;
+  // 시즌 초반(minDate+30일) 이후는 입시 키워드가 있는 글만
+  const [sy, sm, sd] = minDate.split("-").map(Number);
+  const soft = new Date(Date.UTC(sy, sm - 1, sd + 30));
+  const softEnd = soft.toISOString().slice(0, 10);
+  if (dateISO > softEnd && !TITLE_HINT.test(title)) return null;
   absu = repairUrl(absu);
   if (!absu.startsWith("http") || BROKEN.test(absu) || isWeakUrl(absu, pageUrl || absu)) return null;
   let prev = stripTags(preview || "");
@@ -839,6 +844,7 @@ async function main() {
   const freshCount = [...results.values()].filter((n) => n.dateISO >= minDate).length;
   const payload = {
     minDate,
+    today,
     updatedAt: new Date().toISOString(),
     checkedAt: new Date().toISOString(),
     sources,
