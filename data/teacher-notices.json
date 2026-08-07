@@ -1,10 +1,19 @@
 {
   "source": "https://cafe.daum.net/applymate/Alvz",
-  "updatedAt": "2026-08-07T00:21:00Z",
-  "checkedAt": "2026-08-07T00:21:00Z",
+  "updatedAt": "2026-08-07T04:31:38.405523Z",
+  "checkedAt": "2026-08-07T04:31:38.405518Z",
   "today": "2026-08-07",
   "count": 40,
   "notices": [
+    {
+      "id": "ab305706b4b9823e0d50",
+      "sourceName": "사립학교 정교사",
+      "title": "[경북,전남광주] 포스크교육재단 - 영어 外",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
     {
       "id": "cc03e0d5ee642853178d",
       "sourceName": "사립학교 정교사",
@@ -351,15 +360,6 @@
       "id": "f3d8a35b5149e466d55a",
       "sourceName": "사립학교 정교사",
       "title": "[서울] 예일학원 - 국어 외 (7명)",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
-      "id": "3da5f422772098019d4d",
-      "sourceName": "사립학교 정교사",
-      "title": "[서울] 영파학원 - 사회2 수학 물리 (예정)",
       "preview": "",
       "url": "",
       "dateISO": "2026-08-07",
