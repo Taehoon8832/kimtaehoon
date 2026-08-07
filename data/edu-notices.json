@@ -67,8 +67,8 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-07T08:21:25.558984Z",
-  "checkedAt": "2026-08-07T08:21:25.558979Z",
+  "updatedAt": "2026-08-07T09:28:38.094558Z",
+  "checkedAt": "2026-08-07T09:28:38.094552Z",
   "today": "2026-08-07",
   "count": 80,
   "notices": [
@@ -119,16 +119,6 @@
       "title": "삼육보건대학교–전국외국인근로자사회적협동조합, 인도네시아 유학생 지원 업무협약 체결",
       "preview": "베리타스알파 소식",
       "url": "https://www.veritas-a.com/news/articleView.html?idxno=622466",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
-      "id": "e4d1490fb61fae944866",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국립창원대 우수 연구실 선정으로 DNA+ 특성화 연구 생태계 조성 본격화!",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622464",
       "dateISO": "2026-08-07",
       "dateText": "2026.08.07"
     },
@@ -189,6 +179,16 @@
       "title": "2027년 EBS 교과 프로그램 강사 모집 공고 (~9.3까지)",
       "preview": "EBSi 알림",
       "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE&artclId=000000400497252",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
+    {
+      "id": "04a03f98331b7b2b9099",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "'수요자 무시 전범' 한과영이 6개교 늘어난다고?.. '최대 사교육 유발 입시' 영재학교 13개교 체제",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622446",
       "dateISO": "2026-08-07",
       "dateText": "2026.08.07"
     },

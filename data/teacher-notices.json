@@ -1,10 +1,28 @@
 {
   "source": "https://cafe.daum.net/applymate/Alvz",
-  "updatedAt": "2026-08-07T08:21:19.408184Z",
-  "checkedAt": "2026-08-07T08:21:19.408179Z",
+  "updatedAt": "2026-08-07T09:28:28.826549Z",
+  "checkedAt": "2026-08-07T09:28:28.826544Z",
   "today": "2026-08-07",
   "count": 40,
   "notices": [
+    {
+      "id": "d1240593567808747701",
+      "sourceName": "사립학교 정교사",
+      "title": "[전북] 경초학원(호남제일고) - 국어",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
+    {
+      "id": "1fb97a367e0901931644",
+      "sourceName": "사립학교 정교사",
+      "title": "[서울,경기, 경북] 동국대학교 - 정보 外",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
     {
       "id": "ab305706b4b9823e0d50",
       "sourceName": "사립학교 정교사",
@@ -342,24 +360,6 @@
       "id": "7e116e659a5651ca5dfa",
       "sourceName": "사립학교 정교사",
       "title": "[서울] 원석학원 - 국어 영어 수학 사회 (예정)",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
-      "id": "1a934e2f4b6fdfb38f87",
-      "sourceName": "사립학교 정교사",
-      "title": "[서울] 오산학원 - 영어 (예정)",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
-      "id": "f3d8a35b5149e466d55a",
-      "sourceName": "사립학교 정교사",
-      "title": "[서울] 예일학원 - 국어 외 (7명)",
       "preview": "",
       "url": "",
       "dateISO": "2026-08-07",
