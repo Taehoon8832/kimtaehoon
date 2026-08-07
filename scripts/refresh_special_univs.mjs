@@ -106,6 +106,14 @@ const TARGETS = [
     maxPages: 6,
     pageParam: "pageid",
   },
+  {
+    id: "u173",
+    name: "군산대",
+    homeUrl: "https://www.kunsan.ac.kr/iphak/index.kunsan",
+    boardUrl:
+      "https://www.kunsan.ac.kr/iphak/board/list.kunsan?boardId=BBS_0000041&menuCd=DOM_000001218001000000&paging=ok&startPage=1",
+    allow: /kunsan\.ac\.kr\/iphak\/board\/view\.kunsan\?.*boardId=BBS_0000041.*dataSid=\d+/i,
+  },
 ];
 
 function sha20(s) {
@@ -370,6 +378,21 @@ function parseDyu(html, cfg) {
   return out;
 }
 
+function parseKunsan(html, cfg) {
+  const out = [];
+  const re =
+    /href="([^"]*\/iphak\/board\/view\.kunsan\?[^"]*boardId=BBS_0000041[^"]*dataSid=(\d+)[^"]*)"[^>]*>([\s\S]*?)<\/a>[\s\S]{0,800}?(20\d{2}-\d{2}-\d{2})/gi;
+  for (const m of html.matchAll(re)) {
+    const href =
+      `https://www.kunsan.ac.kr/iphak/board/view.kunsan?boardId=BBS_0000041` +
+      `&menuCd=DOM_000001218001000000&paging=ok&startPage=1&dataSid=${m[2]}`;
+    const title = m[3].replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+    const it = makeItem(cfg, title, href, m[4]);
+    if (it) out.push(it);
+  }
+  return out;
+}
+
 const PARSERS = {
   u188: parseMmu,
   u121: parseKkot,
@@ -381,6 +404,7 @@ const PARSERS = {
   u044: parseKarts,
   u055: parseDyu,
   u227: parseDyu,
+  u173: parseKunsan,
 };
 
 function loadPayload() {
@@ -430,6 +454,7 @@ async function main() {
     try {
       const parser = PARSERS[cfg.id];
       let items = [];
+      let boardHit = false;
       if (cfg.maxPages) {
         const maxPages = cfg.maxPages || 5;
         const pageParam = cfg.pageParam || "pageIndex";
@@ -443,6 +468,7 @@ async function main() {
               : `${cfg.boardUrl}?${pageParam}=${page}`;
           }
           const html = await fetchHtml({ ...cfg, boardUrl: pageUrl });
+          if (/dataSid=\d+|nttNo=\d+|artclView|board\/245/i.test(html)) boardHit = true;
           const pageItems = parser(html, cfg);
           if (!pageItems.length) break;
           items.push(...pageItems);
@@ -451,6 +477,13 @@ async function main() {
         }
       } else {
         const html = await fetchHtml(cfg);
+        if (
+          cfg.id === "u173"
+            ? /view\.kunsan\?[^"']*dataSid=\d+/i.test(html) && /20\d{2}-\d{2}-\d{2}/.test(html)
+            : /href=/i.test(html)
+        ) {
+          boardHit = true;
+        }
         items = parser(html, cfg);
       }
       const map = new Map();
@@ -467,8 +500,10 @@ async function main() {
           console.log("   ", it.url);
         }
         notices.push(...items);
+      } else if (boardHit && cfg.id === "u173") {
+        // 목록은 읽혔으나 minDate 이후 글 없음 → 날짜 오염된 이전 글 제거
+        console.log(`${cfg.name}: 0건 (>=${MIN_DATE}) — cleared stale`);
       } else {
-        // 신규 0건이면 이전 글 유지 (허용 URL 필터로 전부 지우지 않음)
         console.log(`${cfg.name}: 0건 → 이전 ${prev.length}건 유지`);
         notices.push(...prev);
       }

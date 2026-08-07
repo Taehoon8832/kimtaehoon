@@ -182,6 +182,18 @@ SPECIAL_UNIV = {
         ),
         "parser": "kafna",
     },
+    "u173": {  # 국립군산대 입학처 전체 공지 — 목록 작성일만 사용
+        "homeUrl": "https://www.kunsan.ac.kr/iphak/index.kunsan",
+        "boardUrl": (
+            "https://www.kunsan.ac.kr/iphak/board/list.kunsan?"
+            "boardId=BBS_0000041&menuCd=DOM_000001218001000000&paging=ok&startPage=1"
+        ),
+        "allow": re.compile(
+            r"kunsan\.ac\.kr/iphak/board/view\.kunsan\?.*boardId=BBS_0000041.*dataSid=\d+",
+            re.I,
+        ),
+        "parser": "kunsan",
+    },
 }
 
 
@@ -511,6 +523,28 @@ def parse_kafna_notice_board(html: str, page_url: str, src: dict):
     return items
 
 
+def parse_kunsan_notice_board(html: str, page_url: str, src: dict):
+    """국립군산대 입학처 공지 — 목록 작성일(YYYY-MM-DD)만 사용."""
+    items = []
+    pat = re.compile(
+        r'href="([^"]*/iphak/board/view\.kunsan\?[^"]*boardId=BBS_0000041[^"]*dataSid=(\d+)[^"]*)"'
+        r"[^>]*>([\s\S]*?)</a>[\s\S]{0,800}?(20\d{2}-\d{2}-\d{2})",
+        re.I,
+    )
+    for m in pat.finditer(html or ""):
+        sid = m.group(2)
+        title = strip_tags(m.group(3))
+        date_iso = m.group(4)
+        absu = (
+            "https://www.kunsan.ac.kr/iphak/board/view.kunsan?"
+            f"boardId=BBS_0000041&menuCd=DOM_000001218001000000&paging=ok&startPage=1&dataSid={sid}"
+        )
+        it = make_item(src, title, f"{src['name']} 입학 공지사항 미리보기", absu, date_iso, page_url)
+        if it:
+            items.append(it)
+    return items
+
+
 def parse_html(html: str, page_url: str, src: dict):
     if not html or is_404(html):
         return []
@@ -740,6 +774,8 @@ def parse_special(html: str, src: dict):
         items.extend(parse_afa_notice_board(html, cfg["boardUrl"], src))
     elif cfg.get("parser") == "kafna" or uid == "u109":
         items.extend(parse_kafna_notice_board(html, cfg["boardUrl"], src))
+    elif cfg.get("parser") == "kunsan" or uid == "u173":
+        items.extend(parse_kunsan_notice_board(html, cfg["boardUrl"], src))
     elif cfg.get("k2Path"):
         items.extend(
             parse_k2_artcl_board(html, cfg["boardUrl"], src, cfg["k2Path"], cfg.get("allow"))
@@ -835,7 +871,8 @@ def scrape_one(src, use_jina=False):
     return items, ("ok" if items else (err or "empty"))
 
 
-def merge_previous_notices(results: dict, old: dict) -> list:
+def merge_previous_notices(results: dict, old: dict, skip_univs: set | None = None) -> list:
+    skip = skip_univs or set()
     for n in old.get("notices") or []:
         if not n.get("dateISO") or n["dateISO"] < MIN_DATE:
             continue
@@ -844,6 +881,9 @@ def merge_previous_notices(results: dict, old: dict) -> list:
         if BAD_TITLE.search(n.get("title") or ""):
             continue
         uid = n.get("univId") or ""
+        # 이번 실행에서 지정 대학 게시판을 성공적으로 읽었으면 이전 글 재병합 안 함
+        if uid in skip:
+            continue
         special = SPECIAL_UNIV.get(uid)
         # 지정 대학은 허용 URL만 유지 (잘못된 게시판·Q&A·상담 글 제거)
         if special and not special["allow"].search(n.get("url") or ""):
@@ -866,6 +906,7 @@ def main():
 
     print(f"sources={len(sources)} groups={len(groups)}")
     results = {}
+    special_done: set[str] = set()
     ok = empty = fail = 0
     scrape_error = None
 
@@ -882,6 +923,9 @@ def main():
                     fail += 1
                     print(f"ERR {name}: {type(e).__name__}")
                     continue
+                if SPECIAL_UNIV.get(group[0].get("id") or "") and status in ("ok", "empty"):
+                    for s in group:
+                        special_done.add(s["id"])
                 if status == "ok":
                     ok += 1
                     for src in group:
@@ -896,6 +940,8 @@ def main():
                     print(f"OK  {name}: {len(items)}")
                 elif status in ("empty", "no_url"):
                     empty += 1
+                    if group[0].get("id") in special_done:
+                        print(f"OK  {name}: 0건 (>={MIN_DATE}) — cleared stale")
                 else:
                     fail += 1
 
@@ -946,14 +992,14 @@ def main():
         try:
             old = json.loads(js_path.read_text(encoding="utf-8").split("=", 1)[1].strip().rstrip(";"))
             priority = old.get("priority") or []
-            notices = merge_previous_notices(results, old)
+            notices = merge_previous_notices(results, old, special_done)
         except Exception:
             priority = []
     elif json_path.exists():
         try:
             old = json.loads(json_path.read_text(encoding="utf-8"))
             priority = old.get("priority") or []
-            notices = merge_previous_notices(results, old)
+            notices = merge_previous_notices(results, old, special_done)
         except Exception:
             priority = []
 

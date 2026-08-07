@@ -136,6 +136,14 @@ const SPECIAL = {
     allow: /tapply\.tonc\.net\/kafna\/\?doc=bbs\/board\.php&.*bo_table=notice.*wr_id=\d+/i,
     parser: "kafna",
   },
+  u173: {
+    // 국립군산대 입학처 전체 공지 — 작성일(td)만 사용 (날짜 오염 방지)
+    homeUrl: "https://www.kunsan.ac.kr/iphak/index.kunsan",
+    boardUrl:
+      "https://www.kunsan.ac.kr/iphak/board/list.kunsan?boardId=BBS_0000041&menuCd=DOM_000001218001000000&paging=ok&startPage=1",
+    allow: /kunsan\.ac\.kr\/iphak\/board\/view\.kunsan\?.*boardId=BBS_0000041.*dataSid=\d+/i,
+    parser: "kunsan",
+  },
 };
 
 function sha20(s) {
@@ -381,9 +389,28 @@ function parseKafna(html, src, cfg, minDate) {
   return out;
 }
 
+function parseKunsan(html, src, cfg, minDate) {
+  const out = [];
+  // 목록 행: view.kunsan?...dataSid=N ... 제목 ... 작성일 YYYY-MM-DD
+  const re =
+    /href="([^"]*\/iphak\/board\/view\.kunsan\?[^"]*boardId=BBS_0000041[^"]*dataSid=(\d+)[^"]*)"[^>]*>([\s\S]*?)<\/a>[\s\S]{0,800}?(20\d{2}-\d{2}-\d{2})/gi;
+  for (const m of html.matchAll(re)) {
+    const sid = m[2];
+    const title = stripTags(m[3]) || stripTags(m[1]);
+    const dateISO = m[4];
+    const href =
+      `https://www.kunsan.ac.kr/iphak/board/view.kunsan?boardId=BBS_0000041` +
+      `&menuCd=DOM_000001218001000000&paging=ok&startPage=1&dataSid=${sid}`;
+    const it = makeItem(src, title, "", href, dateISO, cfg.boardUrl, minDate);
+    if (it && cfg.allow.test(it.url)) out.push(it);
+  }
+  return out;
+}
+
 function parseSpecial(html, src, cfg, minDate) {
   if (cfg.parser === "afa") return parseAfa(html, src, cfg, minDate);
   if (cfg.parser === "kafna") return parseKafna(html, src, cfg, minDate);
+  if (cfg.parser === "kunsan") return parseKunsan(html, src, cfg, minDate);
   if (cfg.k2Path) return parseK2(html, src, cfg, minDate);
 
   const out = [];
@@ -578,9 +605,14 @@ async function scrapeOne(src, minDate, useJina) {
   if (cfg) {
     try {
       const items = await scrapeSpecial({ ...src, ...cfg }, cfg, minDate);
-      return { items, status: items.length ? "ok" : "empty" };
+      // specialDone: 게시판 조회 성공(0건 포함) — 오염된 이전 글을 다시 병합하지 않음
+      return {
+        items,
+        status: items.length ? "ok" : "empty",
+        specialDone: true,
+      };
     } catch (e) {
-      return { items: [], status: e.name || "error" };
+      return { items: [], status: e.name || "error", specialDone: false };
     }
   }
   const urls = candidateUrls(src);
@@ -691,6 +723,7 @@ async function main() {
   console.log(`sources=${sources.length} groups=${groupList.length}`);
 
   const results = new Map();
+  const specialDone = new Set();
   let ok = 0;
   let empty = 0;
   let fail = 0;
@@ -704,11 +737,14 @@ async function main() {
     try {
       return { group, ...(await scrapeOne(src, minDate, false)) };
     } catch (e) {
-      return { group, items: [], status: e.message || "error" };
+      return { group, items: [], status: e.message || "error", specialDone: false };
     }
   });
 
   for (const r of pass1) {
+    if (r.specialDone) {
+      for (const s of r.group) specialDone.add(s.id);
+    }
     if (r.status === "ok" && r.items.length) {
       ok += 1;
       for (const src of r.group) {
@@ -727,6 +763,9 @@ async function main() {
       console.log(`OK  ${r.group[0].name}: ${r.items.length}`);
     } else if (r.status === "empty" || r.status === "no_url") {
       empty += 1;
+      if (r.specialDone) {
+        console.log(`OK  ${r.group[0].name}: 0건 (>=${minDate}) — cleared stale`);
+      }
     } else {
       fail += 1;
     }
@@ -770,12 +809,15 @@ async function main() {
     }
   }
 
-  // merge previous valid notices
+  // merge previous valid notices (지정 대학은 이번 수집 성공 시 이전 글 재병합 안 함)
   for (const n of old.notices || []) {
     if (!n?.dateISO || n.dateISO < minDate || !n.title || !n.url) continue;
+    if (specialDone.has(n.univId)) continue;
     if (BAD_TITLE.test(n.title) && !(n.title.includes("분실물") && SPECIAL[n.univId])) continue;
     const cfg = SPECIAL[n.univId];
     if (cfg?.allow && !cfg.allow.test(n.url)) continue;
+    // 군산대 등: 잘못된 날짜 오염 글(작성일≠목록일) 차단 — 이전 데이터 안전망
+    if (n.univId === "u173" && !/boardId=BBS_0000041/i.test(n.url || "")) continue;
     const k = `${n.univId}|${n.url}|${n.title}`;
     if (!results.has(k)) results.set(k, n);
   }
