@@ -17,7 +17,17 @@ from urllib.parse import urljoin, urlparse
 from urllib.request import Request, urlopen
 
 ROOT = Path(__file__).resolve().parent.parent
-MIN_DATE = "2026-08-01"
+
+
+def admission_min_date() -> str:
+    """입시 시즌 창: 매년 8/1 ~ 다음 해 7/31 (서울 기준)."""
+    today = (datetime.now(timezone.utc) + timedelta(hours=9)).date()
+    if today.month >= 8:
+        return f"{today.year}-08-01"
+    return f"{today.year - 1}-08-01"
+
+
+MIN_DATE = os.environ.get("UNIV_MIN_DATE") or admission_min_date()
 MAX_PER = 6
 USE_JINA = (os.environ.get("USE_JINA") or "1").strip() not in ("0", "false", "False")
 CTX = ssl._create_unverified_context()

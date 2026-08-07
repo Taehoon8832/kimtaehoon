@@ -10,7 +10,18 @@ import { fileURLToPath } from "node:url";
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const MIN_DATE = "2026-08-01";
+function admissionMinDate() {
+  const today = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Seoul",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+  const y = Number(today.slice(0, 4));
+  const m = Number(today.slice(5, 7));
+  return m >= 8 ? `${y}-08-01` : `${y - 1}-08-01`;
+}
+const MIN_DATE = process.env.UNIV_MIN_DATE || admissionMinDate();
 const MAX_PER = 8;
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36";
@@ -216,9 +227,14 @@ function savePayload(payload) {
   const jsPath = path.join(ROOT, "univ-board-data.js");
   const jsonPath = path.join(ROOT, "data", "univ-notices.json");
   const sourcesPath = path.join(ROOT, "univ-sources.json");
+  const text = JSON.stringify(payload);
+  if (text.includes("<<<<<<<") || !Array.isArray(payload.notices) || !payload.notices.length) {
+    throw new Error("refusing to write invalid/empty univ payload");
+  }
+  JSON.parse(text);
   fs.mkdirSync(path.dirname(jsonPath), { recursive: true });
   fs.writeFileSync(jsonPath, JSON.stringify(payload, null, 2), "utf8");
-  fs.writeFileSync(jsPath, "window.UNIV_BOARD_DATA=" + JSON.stringify(payload) + ";\n", "utf8");
+  fs.writeFileSync(jsPath, "window.UNIV_BOARD_DATA=" + text + ";\n", "utf8");
   fs.writeFileSync(sourcesPath, JSON.stringify(payload.sources || [], null, 2), "utf8");
 }
 

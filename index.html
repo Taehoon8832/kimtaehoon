@@ -2931,9 +2931,20 @@
       const univLiveLabel = document.getElementById("univNoticeLiveLabel");
       const univSearch = document.getElementById("univNoticeSearch");
 
-      const UNIV_MIN_DATE = "2026-08-01";
       const UNIV_DATA_URL = "data/univ-notices.json";
       const UNIV_POLL_MS = 60000;
+      /** 입시 시즌 창: 매년 8/1 ~ 다음 해 7/31 (서버 minDate 우선) */
+      function admissionMinDate(todayISO) {
+        const today = String(todayISO || seoulTodayISO());
+        const y = Number(today.slice(0, 4));
+        const m = Number(today.slice(5, 7));
+        return m >= 8 ? `${y}-08-01` : `${y - 1}-08-01`;
+      }
+      function univMinDate() {
+        const fromData = String((univBoardData && univBoardData.minDate) || "").trim();
+        if (/^\d{4}-\d{2}-\d{2}$/.test(fromData)) return fromData;
+        return admissionMinDate();
+      }
       let univBoardData = window.UNIV_BOARD_DATA || {};
       let univSources = Array.isArray(univBoardData.sources) ? univBoardData.sources : [];
       let univPriority = Array.isArray(univBoardData.priority) ? univBoardData.priority : [];
@@ -3173,6 +3184,11 @@
         u044: /karts\.ac\.kr\/cop\/bbs\/selectBoardArticle\.do\?.*bbsId=BBSMSTR_000000000007/i, // 한예종 입학공지
         u055: /ipsi\.dyu\.ac\.kr\/information\/information_01\/\?.*mod=document.*uid=\d+/i, // 동양대(동두천)
         u227: /ipsi\.dyu\.ac\.kr\/information\/information_01\/\?.*mod=document.*uid=\d+/i, // 동양대(양주)
+        u032: /kma\.ac\.kr(?::\d+)?\/bbs\/kma\/160\/\d+\/artclView\.do/i, // 육사
+        u245: /navy\.ac\.kr(?::\d+)?\/bbs\/iphak\/142\/\d+\/artclView\.do/i, // 해사
+        u232: /kaay\.mil\.kr(?::\d+)?\/bbs\/kaay\/152\/\d+\/artclView\.do/i, // 3사
+        u123: /rokaf\.airforce\.mil\.kr\/bbs\/afaadmission\/2089\/\d+\/artclView\.do/i, // 공사
+        u109: /tapply\.tonc\.net\/kafna\/\?doc=bbs\/board\.php&.*bo_table=notice.*wr_id=\d+/i, // 국간사
       };
 
       function isWeakNoticeUrl(url) {
@@ -3184,8 +3200,8 @@
         if (/admission\.sookmyung\.ac\.kr\/counsel\//i.test(u)) return true;
         // 공군사관학교: Q&A 게시판(1041) 제외 — 공지사항(2089)만
         if (/rokaf\.airforce\.mil\.kr/i.test(u) && /\/bbs\/afaadmission\/1041\//i.test(u)) return true;
-        const hasId = /[?&](id|no|seq|idx|bbsidx|ntt|article|artcl|brdIdx|dataSid|uid|num|p_board_idx)=/i.test(u)
-          || /\/bbs\/afaadmission\/2089\/\d+\/artclView\.do/i.test(u);
+        const hasId = /[?&](id|no|seq|idx|bbsidx|ntt|article|artcl|brdIdx|dataSid|uid|num|p_board_idx|wr_id|nttSn)=/i.test(u)
+          || /\/bbs\/(?:afaadmission\/2089|kma\/160|iphak\/142|kaay\/152)\/\d+\/artclView\.do/i.test(u);
         if (hasId) return false;
         if (/\/(main|index|intro)(\.(asp|do|php|html?))?\/?$/i.test(u)) return true;
         return false;
@@ -3207,8 +3223,9 @@
         const stored = String(it.dateISO || "").slice(0, 10);
         const titlePostDate = extractPostDateFromTitle(rawTitle);
         let dateISO = "";
-        if (stored && stored >= UNIV_MIN_DATE) dateISO = stored;
-        else if (titlePostDate && titlePostDate >= UNIV_MIN_DATE) dateISO = titlePostDate;
+        const minDate = univMinDate();
+        if (stored && stored >= minDate) dateISO = stored;
+        else if (titlePostDate && titlePostDate >= minDate) dateISO = titlePostDate;
         const today = seoulTodayISO();
         // 오늘 이후 날짜는 게시일이 아닌 일정일로 보고 제외 (예: 감리교신대 8/11)
         if (dateISO && dateISO > today) return null;
@@ -3219,7 +3236,7 @@
         if (!title || !univName) return null;
         if (title.length < 6 || isJunkText(title)) return null;
         if ((title.match(/[가-힣]/g) || []).length < 3) return null;
-        if (!dateISO || dateISO < UNIV_MIN_DATE) return null;
+        if (!dateISO || dateISO < minDate) return null;
         if (/채용\s*공고|직원\s*채용|근로장학생|학자금대출|문의\s*\(\d|공지사항\s*더보기|^대학\s*입학\s*문의|화살표|부탁드립니다|문의드립니다|\[답변완료\]|졸업\s*\(?예정\)?자\s*안내/i.test(title)) return null;
         if (/화살표|이전페이지|다음페이지/.test(preview)) {
           preview = `${univName} 입학 공지사항 미리보기`;
@@ -3271,11 +3288,14 @@
 
       function applyUnivPayload(payload) {
         if (!payload || typeof payload !== "object") return false;
+        if (!Array.isArray(payload.notices)) return false;
+        // 깨진/빈 원격 JSON으로 정상 목록을 덮지 않음
+        if (!payload.notices.length && univNoticePool.length) return false;
         univBoardData = payload;
         window.UNIV_BOARD_DATA = payload;
         univSources = Array.isArray(payload.sources) ? payload.sources : univSources;
         univPriority = Array.isArray(payload.priority) ? payload.priority : univPriority;
-        univNoticePool = Array.isArray(payload.notices) ? payload.notices.slice() : [];
+        univNoticePool = payload.notices.slice();
         univUpdatedAt = String(payload.updatedAt || univUpdatedAt || "");
         mergeNoticePool(univNoticePool);
         return true;
@@ -3319,13 +3339,14 @@
             ? `검색 ${list.length.toLocaleString("ko-KR")}건`
             : todayCount > 0
               ? `오늘 ${todayCount.toLocaleString("ko-KR")}건 · 공지 ${list.length.toLocaleString("ko-KR")}건 · ${univSet.size}개 대학`
-              : `공지 ${list.length.toLocaleString("ko-KR")}건 · ${univSet.size}개 대학 · 8/1~`;
+              : `공지 ${list.length.toLocaleString("ko-KR")}건 · ${univSet.size}개 대학 · ${univMinDate().slice(5).replace("-", "/") }~`;
         }
         setUnivLive(true, formatUpdatedLabel(univUpdatedAt));
 
         if (!list.length) {
+          const minLabel = univMinDate().replace(/-/g, ".");
           univListEl.innerHTML =
-            `<div class="univ-notice-empty">2026.08.01 이후 수집된 공지사항이 없습니다.<br>GitHub Actions가 주기적으로 입학처 공지를 갱신합니다.</div>`;
+            `<div class="univ-notice-empty">${minLabel} 이후 수집된 공지사항이 없습니다.<br>입학처 공지를 자동으로 다시 수집하는 중입니다.</div>`;
           return;
         }
 

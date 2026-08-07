@@ -15,7 +15,8 @@
     "id": "u003",
     "name": "감리교신대",
     "homeUrl": "https://www.mtu.ac.kr/mtu/main/main.do?mId=1",
-    "boardUrl": "https://www.mtu.ac.kr/mtu/board/list.do?mId=516"
+    "boardUrl": "https://www.mtu.ac.kr/mtu/board/list.do?mId=516",
+    "priority": true
   },
   {
     "id": "u004",
@@ -281,7 +282,8 @@
     "id": "u044",
     "name": "한예종",
     "homeUrl": "https://www.karts.ac.kr/main/appl.do",
-    "boardUrl": "https://www.karts.ac.kr/cop/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000007"
+    "boardUrl": "https://www.karts.ac.kr/cop/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000007",
+    "priority": true
   },
   {
     "id": "u045",
@@ -348,7 +350,8 @@
     "id": "u055",
     "name": "동양대(동두천)",
     "homeUrl": "https://ipsi.dyu.ac.kr/information/information_01/",
-    "boardUrl": "https://ipsi.dyu.ac.kr/information/information_01/"
+    "boardUrl": "https://ipsi.dyu.ac.kr/information/information_01/",
+    "priority": true
   },
   {
     "id": "u056",
@@ -414,7 +417,8 @@
     "id": "u066",
     "name": "아신대",
     "homeUrl": "https://www.acts.ac.kr/admission/design/index.asp",
-    "boardUrl": "https://www.acts.ac.kr/modules/board/bd_list.asp?id=univ_admission&ca_no=2&left=occa1"
+    "boardUrl": "https://www.acts.ac.kr/modules/board/bd_list.asp?id=univ_admission&ca_no=2&left=occa1",
+    "priority": true
   },
   {
     "id": "u067",
@@ -747,7 +751,8 @@
     "id": "u121",
     "name": "가톨릭꽃동네대",
     "homeUrl": "https://www.kkot.ac.kr/ipsi/main/view/",
-    "boardUrl": "https://www.kkot.ac.kr/ipsi/board/list?boardManagementNo=1143&menuLevel=2&menuNo=120"
+    "boardUrl": "https://www.kkot.ac.kr/ipsi/board/list?boardManagementNo=1143&menuLevel=2&menuNo=120",
+    "priority": true
   },
   {
     "id": "u122",
@@ -964,7 +969,8 @@
     "id": "u157",
     "name": "한국전통문화대",
     "homeUrl": "https://www.knuh.ac.kr/admission/main.do",
-    "boardUrl": "https://www.knuh.ac.kr/admission/brd/list.do?mnuBaseId=MNU0000210&topBaseId=MNU0000209&tplSer=29"
+    "boardUrl": "https://www.knuh.ac.kr/admission/brd/list.do?mnuBaseId=MNU0000210&topBaseId=MNU0000209&tplSer=29",
+    "priority": true
   },
   {
     "id": "u158",
@@ -1066,7 +1072,8 @@
     "id": "u174",
     "name": "예수대",
     "homeUrl": "https://jesus.ac.kr/enter/?menu=183",
-    "boardUrl": "https://jesus.ac.kr/enter/?menu=190"
+    "boardUrl": "https://jesus.ac.kr/enter/?menu=190",
+    "priority": true
   },
   {
     "id": "u175",
@@ -1150,7 +1157,8 @@
     "id": "u188",
     "name": "목포해양대",
     "homeUrl": "https://www.mmu.ac.kr/admission",
-    "boardUrl": "https://www.mmu.ac.kr/admission/board/245"
+    "boardUrl": "https://www.mmu.ac.kr/admission/board/245",
+    "priority": true
   },
   {
     "id": "u189",
@@ -1336,7 +1344,8 @@
     "id": "u219",
     "name": "금오공대",
     "homeUrl": "https://iphak.kumoh.ac.kr/ipsi/index.do?sso=ok",
-    "boardUrl": "https://iphak.kumoh.ac.kr/ipsi/sub0601.do"
+    "boardUrl": "https://iphak.kumoh.ac.kr/ipsi/sub0601.do",
+    "priority": true
   },
   {
     "id": "u220",
@@ -1384,7 +1393,8 @@
     "id": "u227",
     "name": "동양대(양주)",
     "homeUrl": "https://ipsi.dyu.ac.kr/information/information_01/",
-    "boardUrl": "https://ipsi.dyu.ac.kr/information/information_01/"
+    "boardUrl": "https://ipsi.dyu.ac.kr/information/information_01/",
+    "priority": true
   },
   {
     "id": "u228",
