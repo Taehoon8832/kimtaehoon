@@ -67,28 +67,38 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-07T07:14:46.294287Z",
-  "checkedAt": "2026-08-07T07:14:46.294282Z",
+  "updatedAt": "2026-08-07T08:21:25.558984Z",
+  "checkedAt": "2026-08-07T08:21:25.558979Z",
   "today": "2026-08-07",
   "count": 80,
   "notices": [
     {
-      "id": "708e004df909b9e1a9d9",
+      "id": "b15381924b33771f19f4",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "한국기술교육대 '2026 중부권 제조 AX SUMMIT' 성료",
+      "title": "충북대 세계 최초 차세대 리튬 과잉 망간계 양극재 '수 초 이내' 단일공정 합성기술 개발",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622452",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622465",
       "dateISO": "2026-08-07",
       "dateText": "2026.08.07"
     },
     {
-      "id": "da17a4176c040e4c697c",
+      "id": "1eacae0ecad5ea036351",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "전남대 의대 국립대 최초 \"의생명 시각화 및 소통\" 교과목 신설",
+      "title": "충북대 K컬처의 미래를 그린다",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622457",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622470",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
+    {
+      "id": "a3c89c0c4814eb3d6b13",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "송언석 국회의원 꿈자람마을돌봄터 방문… 지역 돌봄 현장 살펴",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622468",
       "dateISO": "2026-08-07",
       "dateText": "2026.08.07"
     },
@@ -103,22 +113,32 @@
       "dateText": "2026.08.07"
     },
     {
-      "id": "0fa562e084fcb181912c",
+      "id": "ce00d0974809a416a6d6",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "대구공업대 호텔외식조리계열 떡제조기능사 특강 진행",
+      "title": "삼육보건대학교–전국외국인근로자사회적협동조합, 인도네시아 유학생 지원 업무협약 체결",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622450",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622466",
       "dateISO": "2026-08-07",
       "dateText": "2026.08.07"
     },
     {
-      "id": "d80282de0148be9c4f28",
+      "id": "e4d1490fb61fae944866",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "국립공주대 현장 맞춤형 3D CAD 금형 설계 직무역량 강화 과정 성료",
+      "title": "국립창원대 우수 연구실 선정으로 DNA+ 특성화 연구 생태계 조성 본격화!",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622459",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622464",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
+    {
+      "id": "7bfd7a8ecc8c019c35e4",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "국립공주대 2026학년도 1학기 한국어교육과정 수료식 개최",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622469",
       "dateISO": "2026-08-07",
       "dateText": "2026.08.07"
     },
@@ -133,32 +153,12 @@
       "dateText": "2026.08.07"
     },
     {
-      "id": "4406fb3ec6c770f5c674",
+      "id": "95062f395a9df409b08d",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "광주프레메디 산부인과-전남대 동물자원학부 난임 연구 전문인력 양성 위해 '맞손'",
+      "title": "건양사이버대 제1기 외국인 요양보호사 합격자 배출",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622456",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
-      "id": "d38650403893390322ac",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "건양대 논산계룡진로직업체험지원센터 '학부모와 함께하는 진로체험' 성료",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622453",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
-      "id": "2920de0a8669b109bde1",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "건국대 글로컬캠퍼스 RISE사업단 'ISO 국제표준 인증 심사원 교육' 성료",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622454",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622467",
       "dateISO": "2026-08-07",
       "dateText": "2026.08.07"
     },
@@ -173,22 +173,22 @@
       "dateText": "2026.08.07"
     },
     {
+      "id": "c2a844ec4cc5d871160b",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "[수능D-100] ‘개편 전 마지막 수능’ 역대최대 N수생/사탐런/지역의사제.. “흔들리지 말고 실전 완성”",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622417",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
+    {
       "id": "5c7600aaa3f862e9e0f7",
       "sourceId": "ebsi",
       "sourceName": "EBSi",
       "title": "2027년 EBS 교과 프로그램 강사 모집 공고 (~9.3까지)",
       "preview": "EBSi 알림",
       "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE&artclId=000000400497252",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
-      "id": "47cb97fa229b11ddc8fb",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "\" 랜선 너머의 융합, 수학과 과학으로 미래를 잇다 – 2026 인천대 사이버영재교육원 초등 고학년 캠프 \" 성료",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622451",
       "dateISO": "2026-08-07",
       "dateText": "2026.08.07"
     },
