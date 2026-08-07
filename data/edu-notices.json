@@ -67,88 +67,28 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-07T04:31:46.847662Z",
-  "checkedAt": "2026-08-07T04:31:46.847656Z",
+  "updatedAt": "2026-08-07T05:59:59.490008Z",
+  "checkedAt": "2026-08-07T05:59:59.490003Z",
   "today": "2026-08-07",
   "count": 80,
   "notices": [
     {
-      "id": "74705b7f81acca6b0985",
+      "id": "3d1aef94d4c44db34360",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "제주대 초등컴퓨터교육학과 광주교대와 전라/제주권 디지털새싹 성과 확산 대규모 특별강연 개최",
+      "title": "한성대 학력 제한 전면 폐지·AI 실무 프로젝트 평가 도입…파격적 채용 혁신",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622427",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622443",
       "dateISO": "2026-08-07",
       "dateText": "2026.08.07"
     },
     {
-      "id": "09baf2dd8d26222998d5",
+      "id": "090718aeb64ef8e8c7d9",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "제주대 제주 향기산업 고도화를 위한 글로벌 연계 교육 및 제품화 프로그램 성료",
+      "title": "한라대 외국인 유학생 생활지원 네트워크 발족식 개최",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622428",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
-      "id": "c342b3aea6d33f4bc78f",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "제주대 아열대생물자원을 활용한 바이오헬스/혁신신약 교육연구단 2026 제주대-이화여대 BK21 교육연구단간 학술교류 심포지엄 개최",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622429",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
-      "id": "40c849de974eeaa46a6b",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "제주대 박남제 교수팀 링크스인공지능과 블록체인 영상보안 원천 기술이전 체결",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622425",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
-      "id": "438abbd3b50ba4d1c6a4",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "제주대 공학교육혁신센터 '2026 미래 모빌리티 3D 설계 교육 아카데미' 성료",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622424",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
-      "id": "9942c01bd9aa41be28b6",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "제주대 '제주 Heritage 친환경 탁본 아카이빙' 런케이션 성과보고",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622426",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
-      "id": "7f8871b3ec27de4b7e68",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "연성대 대학일자리플러스센터 산학관 연계 ‘2026 안양과천 캡스톤 디자인 수업’ 성료",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622430",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
-      "id": "281c6fee00d1d61c4d79",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "세종사이버대 세무/회계/금융학과, '방학 동안 취득해야 하는 세무/회계 자격증' 특강 성료",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622423",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622437",
       "dateISO": "2026-08-07",
       "dateText": "2026.08.07"
     },
@@ -163,6 +103,36 @@
       "dateText": "2026.08.07"
     },
     {
+      "id": "2a74637559c2c4665bfb",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "서울대 글로벌사회공헌단 동문과 함께하는 네팔 SNU 공헌단 파견",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622442",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
+    {
+      "id": "22b767f0811a4abe4234",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "동양대 영주 대영고 학생 105명 대상 미래산업 융합 부트캠프 운영",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622440",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
+    {
+      "id": "3638b48b48bc42c56fde",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "국립한국해양대 앵커사업단 '2026 KOREA-ASEAN Maritime Week' 성료",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622439",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
+    {
       "id": "7e7ddcb20d34f8d9ee69",
       "sourceId": "moe_blog",
       "sourceName": "교육부블로그",
@@ -173,12 +143,42 @@
       "dateText": "2026.08.07"
     },
     {
+      "id": "70b677c3ca6e8c4777a6",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "고려대-순천향대병원 공동연구팀 재발성 방광염 원인 규명.. '가드너렐라균-대장균 상호작용 확인'",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622435",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
+    {
+      "id": "ed74b9b3d6734973976d",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "경성대 권용진 교수 연구팀 여드름 피부 항염 소재 PDRN 연구 학술지 게재",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622438",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
+    {
       "id": "0dec66fd18baacc233fc",
       "sourceId": "edupress",
       "sourceName": "에듀프레스",
       "title": "[인사] 서울시교육청 교육전문직",
       "preview": "에듀프레스 소식",
       "url": "https://www.edupress.kr/news/articleView.html?idxno=30387",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
+    {
+      "id": "e66433105999b416cc19",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "[2027전문대수시특집] '유지취업률 전국여대 1위’ 경인여대 수시 1226명(93.9%).. 치위생학과 정원 44명 '확대'",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622433",
       "dateISO": "2026-08-07",
       "dateText": "2026.08.07"
     },
