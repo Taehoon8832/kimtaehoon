@@ -202,8 +202,9 @@
   {
     "id": "u032",
     "name": "육군사관학교",
-    "homeUrl": "http://www.kma.ac.kr/",
-    "boardUrl": "https://www.kma.ac.kr/kma/160/subview.do"
+    "homeUrl": "https://www.kma.ac.kr:461/",
+    "boardUrl": "https://www.kma.ac.kr:461/kma/2100/subview.do",
+    "priority": true
   },
   {
     "id": "u033",
@@ -673,7 +674,8 @@
     "id": "u109",
     "name": "국군간호사관학교",
     "homeUrl": "https://tapply.tonc.net/kafna/",
-    "boardUrl": ""
+    "boardUrl": "https://tapply.tonc.net/kafna/?doc=bbs/board.php&bo_table=notice",
+    "priority": true
   },
   {
     "id": "u110",
@@ -757,7 +759,8 @@
     "id": "u123",
     "name": "공군사관학교",
     "homeUrl": "https://rokaf.airforce.mil.kr/sites/afaadmission/index.do",
-    "boardUrl": "https://rokaf.airforce.mil.kr/afaadmission/7161/subview.do"
+    "boardUrl": "https://rokaf.airforce.mil.kr/afaadmission/7161/subview.do",
+    "priority": true
   },
   {
     "id": "u124",
@@ -1411,7 +1414,8 @@
     "id": "u232",
     "name": "육군3사관학교",
     "homeUrl": "https://www.kaay.mil.kr:458/kaay/1142/subview.do",
-    "boardUrl": ""
+    "boardUrl": "https://www.kaay.mil.kr:458/kaay/1159/subview.do",
+    "priority": true
   },
   {
     "id": "u233",
@@ -1488,8 +1492,9 @@
   {
     "id": "u245",
     "name": "해군사관학교",
-    "homeUrl": "https://www.navy.ac.kr:4443/navyac/index.do",
-    "boardUrl": ""
+    "homeUrl": "https://www.navy.ac.kr:4443/sites/iphak/index.do",
+    "boardUrl": "https://www.navy.ac.kr:4443/iphak/1630/subview.do",
+    "priority": true
   },
   {
     "id": "u246",

@@ -32,6 +32,7 @@ BAD_TITLE = re.compile(
 )
 
 DATE_RE = re.compile(r"(20\d{2})\s*[.\-/년]\s*(\d{1,2})\s*[.\-/월]\s*(\d{1,2})")
+YY_DATE_RE = re.compile(r"(?<!\d)(\d{2})-(\d{2})-(\d{2})(?!\d)")
 TITLE_HINT = re.compile(
     r"(공지|안내|모집|요강|발표|일정|변경|합격|전형|수시|정시|면접|설명회|시행|모의|상담|접수|결과)"
 )
@@ -135,6 +136,42 @@ SPECIAL_UNIV = {
         "maxPer": 20,
         "pageParam": "pageid",
     },
+    # 사관학교 — 입학 공지 게시판 고정 (K2Web / gnu board)
+    "u032": {  # 육군사관학교 입시 공지사항
+        "homeUrl": "https://www.kma.ac.kr:461/",
+        "boardUrl": "https://www.kma.ac.kr:461/kma/2100/subview.do",
+        "allow": re.compile(r"kma\.ac\.kr(?::\d+)?/bbs/kma/160/\d+/artclView\.do", re.I),
+        "k2Path": r"/bbs/kma/160/",
+    },
+    "u245": {  # 해군사관학교 입학 공지사항
+        "homeUrl": "https://www.navy.ac.kr:4443/sites/iphak/index.do",
+        "boardUrl": "https://www.navy.ac.kr:4443/iphak/1630/subview.do",
+        "allow": re.compile(r"navy\.ac\.kr(?::\d+)?/bbs/iphak/142/\d+/artclView\.do", re.I),
+        "k2Path": r"/bbs/iphak/142/",
+    },
+    "u232": {  # 육군3사관학교 공지사항
+        "homeUrl": "https://www.kaay.mil.kr:458/kaay/1142/subview.do",
+        "boardUrl": "https://www.kaay.mil.kr:458/kaay/1159/subview.do",
+        "allow": re.compile(r"kaay\.mil\.kr(?::\d+)?/bbs/kaay/152/\d+/artclView\.do", re.I),
+        "k2Path": r"/bbs/kaay/152/",
+    },
+    "u123": {  # 공군사관학교 공지사항(2089) — Q&A(1041) 제외
+        "homeUrl": "https://rokaf.airforce.mil.kr/sites/afaadmission/index.do",
+        "boardUrl": "https://rokaf.airforce.mil.kr/afaadmission/7161/subview.do",
+        "allow": re.compile(
+            r"rokaf\.airforce\.mil\.kr/bbs/afaadmission/2089/\d+/artclView\.do", re.I
+        ),
+        "parser": "afa",
+    },
+    "u109": {  # 국군간호사관학교 공지사항
+        "homeUrl": "https://tapply.tonc.net/kafna/",
+        "boardUrl": "https://tapply.tonc.net/kafna/?doc=bbs/board.php&bo_table=notice",
+        "allow": re.compile(
+            r"tapply\.tonc\.net/kafna/\?doc=bbs/board\.php&.*bo_table=notice.*wr_id=\d+",
+            re.I,
+        ),
+        "parser": "kafna",
+    },
 }
 
 
@@ -235,10 +272,17 @@ def to_iso(y, mo, d):
 def extract_date(text: str) -> str:
     """여러 날짜가 있으면 마지막 값을 사용(작성일이 뒤에 오는 목록이 많음)."""
     matches = list(DATE_RE.finditer(text or ""))
-    if not matches:
+    if matches:
+        m = matches[-1]
+        return to_iso(m.group(1), m.group(2), m.group(3))
+    # 국간사 등: 26-08-01
+    yy = list(YY_DATE_RE.finditer(text or ""))
+    if not yy:
         return ""
-    m = matches[-1]
-    return to_iso(m.group(1), m.group(2), m.group(3))
+    m = yy[-1]
+    y = int(m.group(1))
+    y += 2000 if y < 70 else 1900
+    return to_iso(y, m.group(2), m.group(3))
 
 
 def extract_post_date(text: str) -> str:
@@ -290,6 +334,15 @@ def is_weak_article_url(absu: str, page_url: str) -> bool:
         if re.search(r"/bbs/afaadmission/2089/\d+/artclView\.do", absu, re.I):
             return False
         return True
+    # 육·해·3사관학교: artclView 게시글만
+    if re.search(r"kma\.ac\.kr", absu, re.I):
+        return not re.search(r"/bbs/kma/160/\d+/artclView\.do", absu, re.I)
+    if re.search(r"navy\.ac\.kr", absu, re.I):
+        return not re.search(r"/bbs/iphak/142/\d+/artclView\.do", absu, re.I)
+    if re.search(r"kaay\.mil\.kr", absu, re.I):
+        return not re.search(r"/bbs/kaay/152/\d+/artclView\.do", absu, re.I)
+    if re.search(r"tapply\.tonc\.net/kafna", absu, re.I):
+        return not re.search(r"bo_table=notice.*wr_id=\d+", absu, re.I)
     low = absu.lower().split("#")[0]
     if low.endswith("#") or absu.strip() in ("#",):
         return True
@@ -334,8 +387,15 @@ def make_item(src: dict, title_raw: str, preview: str, absu: str, date_iso: str,
     title = clean_title(title_raw)
     if not title or len(title) < 8 or len(title) > 140:
         return None
-    if SKIP.match(title) or JUNK.search(title) or BAD_TITLE.search(title):
+    if SKIP.match(title) or JUNK.search(title):
         return None
+    if BAD_TITLE.search(title):
+        # 사관학교 분실물 안내는 입시 공지로 유지
+        if not (
+            src.get("id") in ("u032", "u245", "u123", "u232", "u109")
+            and "분실물" in title
+        ):
+            return None
     if len(re.findall(r"[가-힣]", title)) < 4:
         return None
     if not date_iso or date_iso < MIN_DATE:
@@ -386,8 +446,59 @@ def parse_afa_notice_board(html: str, page_url: str, src: dict):
         it = make_item(src, title, f"{src['name']} 입학 공지사항 미리보기", absu, date_iso, page_url)
         if it:
             items.append(it)
+    # 등록일 클래스명이 다를 때 폴백
+    if not items:
+        items = parse_k2_artcl_board(
+            html, page_url, src, r"/bbs/afaadmission/2089/",
+            re.compile(r"rokaf\.airforce\.mil\.kr/bbs/afaadmission/2089/\d+/artclView\.do", re.I),
+        )
     uniq = {f"{it['url']}|{it['title']}": it for it in items}
     return sorted(uniq.values(), key=lambda x: x["dateISO"], reverse=True)[:MAX_PER]
+
+
+def parse_k2_artcl_board(html: str, page_url: str, src: dict, path_re: str, allow=None):
+    """K2Web artclView 목록 공통 파서 (육사·해사·3사 등)."""
+    items = []
+    pat = re.compile(
+        rf'href\s*=\s*["\']([^"\']*?{path_re}\d+/artclView\.do)["\']'
+        r'[\s\S]{0,1800}?<strong>([\s\S]{0,240}?)</strong>'
+        r'[\s\S]{0,1800}?(20\d{2}\s*[.\-/]\s*\d{1,2}\s*[.\-/]\s*\d{1,2})',
+        re.I,
+    )
+    for m in pat.finditer(html or ""):
+        href, title_html, date_raw = m.group(1), m.group(2), m.group(3)
+        title = strip_tags(title_html)
+        date_iso = extract_date(date_raw)
+        absu = repair_url(urljoin(page_url, href.split("#")[0]))
+        if allow and not allow.search(absu):
+            continue
+        it = make_item(src, title, f"{src['name']} 입학 공지사항 미리보기", absu, date_iso, page_url)
+        if it:
+            items.append(it)
+    return items
+
+
+def parse_kafna_notice_board(html: str, page_url: str, src: dict):
+    """국군간호사관학교 gnu 게시판 (YY-MM-DD)."""
+    items = []
+    pat = re.compile(
+        r"href=['\"](\./\?doc=bbs/board\.php&bo_table=notice[^'\"]*?wr_id=(\d+)[^'\"]*)['\"]"
+        r"[\s\S]{0,200}?<b>([\s\S]{0,200}?)</b>[\s\S]{0,400}?"
+        r"(?<!\d)(\d{2}-\d{2}-\d{2})(?!\d)",
+        re.I,
+    )
+    for m in pat.finditer(html or ""):
+        href_raw, wr_id, title_html, date_raw = m.group(1), m.group(2), m.group(3), m.group(4)
+        title = strip_tags(title_html)
+        date_iso = extract_date(date_raw)
+        absu = (
+            "https://tapply.tonc.net/kafna/"
+            f"?doc=bbs/board.php&bo_table=notice&wr_id={wr_id}"
+        )
+        it = make_item(src, title, f"{src['name']} 입학 공지사항 미리보기", absu, date_iso, page_url)
+        if it:
+            items.append(it)
+    return items
 
 
 def parse_html(html: str, page_url: str, src: dict):
@@ -615,6 +726,14 @@ def parse_special(html: str, src: dict):
             )
             if it and cfg["allow"].search(it["url"]) and it["dateISO"] <= today:
                 items.append(it)
+    elif uid == "u123" or cfg.get("parser") == "afa":
+        items.extend(parse_afa_notice_board(html, cfg["boardUrl"], src))
+    elif cfg.get("parser") == "kafna" or uid == "u109":
+        items.extend(parse_kafna_notice_board(html, cfg["boardUrl"], src))
+    elif cfg.get("k2Path"):
+        items.extend(
+            parse_k2_artcl_board(html, cfg["boardUrl"], src, cfg["k2Path"], cfg.get("allow"))
+        )
 
     uniq = {f"{it['url']}|{it['title']}": it for it in items}
     limit = int(cfg.get("maxPer") or MAX_PER) if cfg else MAX_PER

@@ -1,37 +1,35 @@
-name: Refresh university notices
+name: Refresh military academy notices
 
 on:
   schedule:
-    # 매 20분 (UTC) — 전체 대학 공지
-    - cron: "5,25,45 * * * *"
+    # 매 15분 (UTC) — 사관학교 공지 빠른 갱신
+    - cron: "*/15 * * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: univ-notices
-  cancel-in-progress: false
+  group: academy-notices
+  cancel-in-progress: true
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-node@v4
         with:
-          python-version: "3.12"
+          node-version: "20"
 
-      - name: Scrape university notices
-        id: scrape
-        continue-on-error: true
+      - name: Scrape academy notices
         env:
-          USE_JINA: "1"
-        run: python scripts/build_univ_notices.py
+          NODE_TLS_REJECT_UNAUTHORIZED: "0"
+        run: node scripts/refresh_academy_univs.mjs
 
       - name: Commit updated data
         run: |
@@ -39,10 +37,10 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add univ-board-data.js data/univ-notices.json univ-sources.json
           if git diff --staged --quiet; then
-            echo "No university notice data changes"
+            echo "No academy notice data changes"
             exit 0
           fi
-          git commit -m "chore: refresh university notices"
+          git commit -m "chore: refresh military academy notices"
           for i in 1 2 3 4 5; do
             git pull --rebase --autostash origin main && git push && exit 0
             sleep $((i * 4))

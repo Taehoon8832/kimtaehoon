@@ -1,6 +1,6 @@
 {
   "minDate": "2026-08-01",
-  "updatedAt": "2026-08-06T23:42:31.794Z",
+  "updatedAt": "2026-08-07T00:45:52.064Z",
   "checkedAt": "2026-08-06T23:42:31.794Z",
   "sources": [
     {
@@ -206,8 +206,9 @@
     {
       "id": "u032",
       "name": "육군사관학교",
-      "homeUrl": "http://www.kma.ac.kr/",
-      "boardUrl": "https://www.kma.ac.kr/kma/160/subview.do"
+      "homeUrl": "https://www.kma.ac.kr:461/",
+      "boardUrl": "https://www.kma.ac.kr:461/kma/2100/subview.do",
+      "priority": true
     },
     {
       "id": "u033",
@@ -677,7 +678,8 @@
       "id": "u109",
       "name": "국군간호사관학교",
       "homeUrl": "https://tapply.tonc.net/kafna/",
-      "boardUrl": ""
+      "boardUrl": "https://tapply.tonc.net/kafna/?doc=bbs/board.php&bo_table=notice",
+      "priority": true
     },
     {
       "id": "u110",
@@ -761,7 +763,8 @@
       "id": "u123",
       "name": "공군사관학교",
       "homeUrl": "https://rokaf.airforce.mil.kr/sites/afaadmission/index.do",
-      "boardUrl": "https://rokaf.airforce.mil.kr/afaadmission/7161/subview.do"
+      "boardUrl": "https://rokaf.airforce.mil.kr/afaadmission/7161/subview.do",
+      "priority": true
     },
     {
       "id": "u124",
@@ -1415,7 +1418,8 @@
       "id": "u232",
       "name": "육군3사관학교",
       "homeUrl": "https://www.kaay.mil.kr:458/kaay/1142/subview.do",
-      "boardUrl": ""
+      "boardUrl": "https://www.kaay.mil.kr:458/kaay/1159/subview.do",
+      "priority": true
     },
     {
       "id": "u233",
@@ -1492,8 +1496,9 @@
     {
       "id": "u245",
       "name": "해군사관학교",
-      "homeUrl": "https://www.navy.ac.kr:4443/navyac/index.do",
-      "boardUrl": ""
+      "homeUrl": "https://www.navy.ac.kr:4443/sites/iphak/index.do",
+      "boardUrl": "https://www.navy.ac.kr:4443/iphak/1630/subview.do",
+      "priority": true
     },
     {
       "id": "u246",
@@ -1510,13 +1515,46 @@
   ],
   "notices": [
     {
-      "id": "896eeaeeb5d41fc6cac4",
-      "univId": "u208",
-      "univName": "국립한국해양대",
-      "title": "재외국민/외국인 2027학년도 재외국민 특별전형 지원자격 서류심사 결과 공고",
-      "preview": "국립한국해양대 입학 공지사항 미리보기",
-      "url": "http://ipsi.kmou.ac.kr/ipsi/na/ntt/selectNttInfo.do?nttSn=10377567&mi=3299",
-      "homeUrl": "http://ipsi.kmou.ac.kr/",
+      "id": "d1cf9d7a876c9dfd4660",
+      "univId": "u032",
+      "univName": "육군사관학교",
+      "title": "★ 2027학년도(제87기) 육군사관생도 선발 1차시험 원점수 공개 및 이의신청 안내 ★",
+      "preview": "육군사관학교 입학 공지사항 미리보기",
+      "url": "https://www.kma.ac.kr:461/bbs/kma/160/29211/artclView.do",
+      "homeUrl": "https://www.kma.ac.kr:461/",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
+    {
+      "id": "d8b2783b8ea7e26477e3",
+      "univId": "u245",
+      "univName": "해군사관학교",
+      "title": "(공지) 2027학년도 제85기 해군사관생도 선발 1차 시험 성적확인 및 지원확정 절차 안내",
+      "preview": "해군사관학교 입학 공지사항 미리보기",
+      "url": "https://www.navy.ac.kr:4443/bbs/iphak/142/841485/artclView.do",
+      "homeUrl": "https://www.navy.ac.kr:4443/sites/iphak/index.do",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
+      "id": "bfffdd1a8e7726f2de09",
+      "univId": "u245",
+      "univName": "해군사관학교",
+      "title": "(공지) 2027학년도 제85기 해군사관생도 선발 2차시험 제출서류 안내",
+      "preview": "해군사관학교 입학 공지사항 미리보기",
+      "url": "https://www.navy.ac.kr:4443/bbs/iphak/142/841488/artclView.do",
+      "homeUrl": "https://www.navy.ac.kr:4443/sites/iphak/index.do",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
+      "id": "b8442fe2e70f2c37c35c",
+      "univId": "u123",
+      "univName": "공군사관학교",
+      "title": "2027학년도 제79기 공군사관생도선발 1차시험 성적확인 및 지원확정, 이의제기 안내",
+      "preview": "공군사관학교 입학 공지사항 미리보기",
+      "url": "https://rokaf.airforce.mil.kr/bbs/afaadmission/2089/43066/artclView.do",
+      "homeUrl": "https://rokaf.airforce.mil.kr/sites/afaadmission/index.do",
       "dateISO": "2026-08-06",
       "dateText": "2026.08.06"
     },
@@ -1532,15 +1570,26 @@
       "dateText": "2026.08.06"
     },
     {
-      "id": "b8442fe2e70f2c37c35c",
-      "univId": "u123",
-      "univName": "공군사관학교",
-      "title": "2027학년도 제79기 공군사관생도선발 1차시험 성적확인 및 지원확정, 이의제기 안내",
-      "preview": "공군사관학교 입학 공지사항 미리보기",
-      "url": "https://rokaf.airforce.mil.kr/bbs/afaadmission/2089/43066/artclView.do",
-      "homeUrl": "https://rokaf.airforce.mil.kr/sites/afaadmission/index.do",
+      "id": "896eeaeeb5d41fc6cac4",
+      "univId": "u208",
+      "univName": "국립한국해양대",
+      "title": "재외국민/외국인 2027학년도 재외국민 특별전형 지원자격 서류심사 결과 공고",
+      "preview": "국립한국해양대 입학 공지사항 미리보기",
+      "url": "http://ipsi.kmou.ac.kr/ipsi/na/ntt/selectNttInfo.do?nttSn=10377567&mi=3299",
+      "homeUrl": "http://ipsi.kmou.ac.kr/",
       "dateISO": "2026-08-06",
       "dateText": "2026.08.06"
+    },
+    {
+      "id": "16fdce45155e092562a0",
+      "univId": "u130",
+      "univName": "청주교대",
+      "title": "2027학년도 교원양성대학 온라인 공동 입시설명회 안내",
+      "preview": "청주교대 입학 공지사항 미리보기",
+      "url": "https://www.cje.ac.kr/ipsi/web/board/brdDetail.do?menu_cd=000008&num=92348",
+      "homeUrl": "https://www.cje.ac.kr/ipsi/",
+      "dateISO": "2026-08-05",
+      "dateText": "2026.08.05"
     },
     {
       "id": "c798f5b9b8c69342ef2e",
@@ -1565,80 +1614,35 @@
       "dateText": "2026.08.05"
     },
     {
-      "id": "16fdce45155e092562a0",
-      "univId": "u130",
-      "univName": "청주교대",
-      "title": "2027학년도 교원양성대학 온라인 공동 입시설명회 안내",
-      "preview": "청주교대 입학 공지사항 미리보기",
-      "url": "https://www.cje.ac.kr/ipsi/web/board/brdDetail.do?menu_cd=000008&num=92348",
-      "homeUrl": "https://www.cje.ac.kr/ipsi/",
-      "dateISO": "2026-08-05",
-      "dateText": "2026.08.05"
-    },
-    {
-      "id": "5f0aa436cfa1583cf9ef",
-      "univId": "u173",
-      "univName": "군산대",
-      "title": "편입학 간호학과",
-      "preview": "군산대 입학 공지사항 미리보기",
-      "url": "https://www.kunsan.ac.kr/board/view.kunsan?menuCd=DOM_000001218003000000&boardId=BBS_0000044&dataSid=1385113",
-      "homeUrl": "http://www.kunsan.ac.kr/iphak/index.kunsan",
+      "id": "eb4b6f0b6e1e2cf87904",
+      "univId": "u105",
+      "univName": "춘천교대",
+      "title": "2027학년도 교원양성대학 온라인 공동 입시설명회 개최 안내",
+      "preview": "춘천교대 입학 공지사항 미리보기",
+      "url": "https://enter.cnue.ac.kr/enter/communication/notice.do?mode=view&articleNo=41625",
+      "homeUrl": "https://enter.cnue.ac.kr/enter/index.do",
       "dateISO": "2026-08-04",
       "dateText": "2026.08.04"
     },
     {
-      "univId": "u029",
-      "univName": "숙명여대",
-      "title": "정시 2027학년도 정시모집 안내 영상",
-      "preview": "숙명여대 입학 공지사항 미리보기",
-      "url": "https://admission.sookmyung.ac.kr/admission/html/counsel/noticeView.asp?p_board_idx=54305",
-      "homeUrl": "https://admission.sookmyung.ac.kr/admission/html/main/main.asp",
-      "dateISO": "2026-08-04",
-      "dateText": "2026.08.04",
-      "priority": true,
-      "id": "b50d7c764b41c54335fd"
-    },
-    {
-      "id": "f5982ae598cd8831b91d",
-      "univId": "u204",
-      "univName": "부산대",
-      "title": "재외국민 2027학년도 재외국민 특별전형 면접(실기)고사 안내 공고",
-      "preview": "부산대 입학 공지사항 미리보기",
-      "url": "https://go.pusan.ac.kr/college_2016/pages/index.asp?p=50&b=B_1_1&bn=49781&m=read",
-      "homeUrl": "http://go.pusan.ac.kr/college_2016/main/main.asp",
+      "id": "e1d15bc522830796e7b0",
+      "univId": "u078",
+      "univName": "한경국립대",
+      "title": "2027학년도 입학전형 비대면 맞춤형 상담프로그램 신청 안내 수시",
+      "preview": "한경국립대 입학 공지사항 미리보기",
+      "url": "https://ipsi.hknu.ac.kr/help/notice_view.php?bn=5157&nPage=1",
+      "homeUrl": "https://ipsi.hknu.ac.kr/",
       "dateISO": "2026-08-04",
       "dateText": "2026.08.04"
     },
     {
-      "id": "0d7f7ece4f7575104a29",
-      "univId": "u127",
-      "univName": "우석대(진천)",
-      "title": "수시/정시 2027학년도 예비신입생을 위한 특별혜택 안내",
-      "preview": "우석대(진천) 입학 공지사항 미리보기",
-      "url": "https://www.woosuk.ac.kr/?menu=42&mode=view&no=362226",
-      "homeUrl": "https://www.woosuk.ac.kr/WoosukEntrance.do",
-      "dateISO": "2026-08-04",
-      "dateText": "2026.08.04"
-    },
-    {
-      "id": "d44c9321d197383a1292",
-      "univId": "u176",
-      "univName": "우석대(전주)",
-      "title": "수시/정시 2027학년도 예비신입생을 위한 특별혜택 안내",
-      "preview": "우석대(전주) 입학 공지사항 미리보기",
-      "url": "http://www.woosuk.ac.kr/?menu=42&mode=view&no=362226",
-      "homeUrl": "http://www.woosuk.ac.kr/WoosukEntrance.do",
-      "dateISO": "2026-08-04",
-      "dateText": "2026.08.04"
-    },
-    {
-      "id": "b998fba104315a82f5a8",
-      "univId": "u029",
-      "univName": "숙명여대",
-      "title": "공통 2027학년도 대입전형 안내 영상",
-      "preview": "숙명여대 입학 공지사항 미리보기",
-      "url": "https://admission.sookmyung.ac.kr/admission/html/counsel/noticeView.asp?p_board_idx=54305",
-      "homeUrl": "https://admission.sookmyung.ac.kr/admission/html/main/main.asp",
+      "id": "777c2cdd7a7628fa342d",
+      "univId": "u123",
+      "univName": "공군사관학교",
+      "title": "2027학년도 제78기 공군사관생도 선발 1차시험 분실물 안내",
+      "preview": "공군사관학교 입학 공지사항 미리보기",
+      "url": "https://rokaf.airforce.mil.kr/bbs/afaadmission/2089/43049/artclView.do",
+      "homeUrl": "https://rokaf.airforce.mil.kr/sites/afaadmission/index.do",
       "dateISO": "2026-08-04",
       "dateText": "2026.08.04"
     },
@@ -1665,37 +1669,71 @@
       "dateText": "2026.08.04"
     },
     {
-      "id": "e1d15bc522830796e7b0",
-      "univId": "u078",
-      "univName": "한경국립대",
-      "title": "2027학년도 입학전형 비대면 맞춤형 상담프로그램 신청 안내 수시",
-      "preview": "한경국립대 입학 공지사항 미리보기",
-      "url": "https://ipsi.hknu.ac.kr/help/notice_view.php?bn=5157&nPage=1",
-      "homeUrl": "https://ipsi.hknu.ac.kr/",
+      "id": "b998fba104315a82f5a8",
+      "univId": "u029",
+      "univName": "숙명여대",
+      "title": "공통 2027학년도 대입전형 안내 영상",
+      "preview": "숙명여대 입학 공지사항 미리보기",
+      "url": "https://admission.sookmyung.ac.kr/admission/html/counsel/noticeView.asp?p_board_idx=54305",
+      "homeUrl": "https://admission.sookmyung.ac.kr/admission/html/main/main.asp",
       "dateISO": "2026-08-04",
       "dateText": "2026.08.04"
     },
     {
-      "id": "eb4b6f0b6e1e2cf87904",
-      "univId": "u105",
-      "univName": "춘천교대",
-      "title": "2027학년도 교원양성대학 온라인 공동 입시설명회 개최 안내",
-      "preview": "춘천교대 입학 공지사항 미리보기",
-      "url": "https://enter.cnue.ac.kr/enter/communication/notice.do?mode=view&articleNo=41625",
-      "homeUrl": "https://enter.cnue.ac.kr/enter/index.do",
+      "id": "0d7f7ece4f7575104a29",
+      "univId": "u127",
+      "univName": "우석대(진천)",
+      "title": "수시/정시 2027학년도 예비신입생을 위한 특별혜택 안내",
+      "preview": "우석대(진천) 입학 공지사항 미리보기",
+      "url": "https://www.woosuk.ac.kr/?menu=42&mode=view&no=362226",
+      "homeUrl": "https://www.woosuk.ac.kr/WoosukEntrance.do",
       "dateISO": "2026-08-04",
       "dateText": "2026.08.04"
     },
     {
-      "id": "6a614aff14388f3afe12",
-      "univId": "u030",
-      "univName": "숭실대",
-      "title": "순수외국인 2026-2학기 순수외국인(3차 모집) 등록금 납부확인서 조회 03 --> 자세히 보기",
-      "preview": "숭실대 입학 공지사항 미리보기",
-      "url": "https://iphak.ssu.ac.kr/board/notice_view.asp?flag=7&page=1&number=2314&page_no=10__",
-      "homeUrl": "https://iphak.ssu.ac.kr/",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03"
+      "id": "d44c9321d197383a1292",
+      "univId": "u176",
+      "univName": "우석대(전주)",
+      "title": "수시/정시 2027학년도 예비신입생을 위한 특별혜택 안내",
+      "preview": "우석대(전주) 입학 공지사항 미리보기",
+      "url": "http://www.woosuk.ac.kr/?menu=42&mode=view&no=362226",
+      "homeUrl": "http://www.woosuk.ac.kr/WoosukEntrance.do",
+      "dateISO": "2026-08-04",
+      "dateText": "2026.08.04"
+    },
+    {
+      "id": "f5982ae598cd8831b91d",
+      "univId": "u204",
+      "univName": "부산대",
+      "title": "재외국민 2027학년도 재외국민 특별전형 면접(실기)고사 안내 공고",
+      "preview": "부산대 입학 공지사항 미리보기",
+      "url": "https://go.pusan.ac.kr/college_2016/pages/index.asp?p=50&b=B_1_1&bn=49781&m=read",
+      "homeUrl": "http://go.pusan.ac.kr/college_2016/main/main.asp",
+      "dateISO": "2026-08-04",
+      "dateText": "2026.08.04"
+    },
+    {
+      "univId": "u029",
+      "univName": "숙명여대",
+      "title": "정시 2027학년도 정시모집 안내 영상",
+      "preview": "숙명여대 입학 공지사항 미리보기",
+      "url": "https://admission.sookmyung.ac.kr/admission/html/counsel/noticeView.asp?p_board_idx=54305",
+      "homeUrl": "https://admission.sookmyung.ac.kr/admission/html/main/main.asp",
+      "dateISO": "2026-08-04",
+      "dateText": "2026.08.04",
+      "priority": true,
+      "id": "b50d7c764b41c54335fd"
+    },
+    {
+      "id": "5f0aa436cfa1583cf9ef",
+      "univId": "u173",
+      "univName": "군산대",
+      "title": "편입학 간호학과",
+      "preview": "군산대 입학 공지사항 미리보기",
+      "url": "https://www.kunsan.ac.kr/board/view.kunsan?menuCd=DOM_000001218003000000&boardId=BBS_0000044&dataSid=1385113",
+      "homeUrl": "http://www.kunsan.ac.kr/iphak/index.kunsan",
+      "dateISO": "2026-08-04",
+      "dateText": "2026.08.04"
     },
     {
       "id": "88a98f99b6fde55b49ba",
@@ -1709,6 +1747,17 @@
       "dateText": "2026.08.03"
     },
     {
+      "id": "6a614aff14388f3afe12",
+      "univId": "u030",
+      "univName": "숭실대",
+      "title": "순수외국인 2026-2학기 순수외국인(3차 모집) 등록금 납부확인서 조회 03 --> 자세히 보기",
+      "preview": "숭실대 입학 공지사항 미리보기",
+      "url": "https://iphak.ssu.ac.kr/board/notice_view.asp?flag=7&page=1&number=2314&page_no=10__",
+      "homeUrl": "https://iphak.ssu.ac.kr/",
+      "dateISO": "2026-08-03",
+      "dateText": "2026.08.03"
+    },
+    {
       "id": "karts70317",
       "univId": "u044",
       "univName": "한예종",
@@ -1718,6 +1767,39 @@
       "homeUrl": "https://www.karts.ac.kr/main/appl.do",
       "dateISO": "2026-08-02",
       "dateText": "2026.08.02"
+    },
+    {
+      "id": "f5d3fd91105ac24a66c0",
+      "univId": "u245",
+      "univName": "해군사관학교",
+      "title": "(공지) 2027학년도 사관생도 선발 1차시험 답안 공개, 이의제기 안내",
+      "preview": "해군사관학교 입학 공지사항 미리보기",
+      "url": "https://www.navy.ac.kr:4443/bbs/iphak/142/841474/artclView.do",
+      "homeUrl": "https://www.navy.ac.kr:4443/sites/iphak/index.do",
+      "dateISO": "2026-08-01",
+      "dateText": "2026.08.01"
+    },
+    {
+      "id": "15c8c70cb8c620997efa",
+      "univId": "u032",
+      "univName": "육군사관학교",
+      "title": "★ 2027학년도 사관생도 선발 1차시험 문제 이의신청 안내 ★",
+      "preview": "육군사관학교 입학 공지사항 미리보기",
+      "url": "https://www.kma.ac.kr:461/bbs/kma/160/29182/artclView.do",
+      "homeUrl": "https://www.kma.ac.kr:461/",
+      "dateISO": "2026-08-01",
+      "dateText": "2026.08.01"
+    },
+    {
+      "id": "169d1fd4c468f8be4680",
+      "univId": "u109",
+      "univName": "국군간호사관학교",
+      "title": "2027학년도 1차 시험 답안지와 이의제기 신청 안내",
+      "preview": "국군간호사관학교 입학 공지사항 미리보기",
+      "url": "https://tapply.tonc.net/kafna/?doc=bbs/board.php&bo_table=notice&wr_id=373",
+      "homeUrl": "https://tapply.tonc.net/kafna/",
+      "dateISO": "2026-08-01",
+      "dateText": "2026.08.01"
     },
     {
       "id": "ec4fce58b31c64810b72",
