@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-08",
-  "updatedAt": "2026-08-07T22:39:12.852Z",
-  "checkedAt": "2026-08-07T22:39:12.852Z",
+  "updatedAt": "2026-08-07T23:18:03.167Z",
+  "checkedAt": "2026-08-07T23:18:03.167Z",
   "sources": [
     {
       "id": "u001",
@@ -1527,6 +1527,17 @@
   ],
   "notices": [
     {
+      "id": "9c0d4f54e98f8f63ce00",
+      "univId": "u044",
+      "univName": "한예종",
+      "title": "예술사과정 10월입시 시험예정일 안내",
+      "preview": "한예종 입학 공지사항 미리보기",
+      "url": "https://www.karts.ac.kr/cop/bbs/selectBoardArticle.do?bbsId=BBSMSTR_000000000007&nttNo=70323",
+      "homeUrl": "https://www.karts.ac.kr/main/appl.do",
+      "dateISO": "2026-08-08",
+      "dateText": "2026.08.08"
+    },
+    {
       "id": "2658272e1da0b84b08a4",
       "univId": "u109",
       "univName": "국군간호사관학교",
@@ -1869,6 +1880,17 @@
       "dateText": "2026.08.03"
     },
     {
+      "id": "1b89aae5beae68b31d6a",
+      "univId": "u062",
+      "univName": "수원대",
+      "title": "434 [수시] 2027학년도 논술고사 가이드북(모의문제 및 해설 포함) 작성자 : 입학처 작성일 : 조회수 : 644",
+      "preview": "수원대 입학 공지사항 미리보기",
+      "url": "http://ipsi.suwon.ac.kr/board/notice/read/5666",
+      "homeUrl": "http://ipsi.suwon.ac.kr/",
+      "dateISO": "2026-08-03",
+      "dateText": "2026.08.03"
+    },
+    {
       "id": "6a614aff14388f3afe12",
       "univId": "u030",
       "univName": "숭실대",
@@ -2170,5 +2192,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=13 empty=29 fail=174 fresh=38"
+  "statusReason": "ok=12 empty=15 fail=189 fresh=40"
 }
