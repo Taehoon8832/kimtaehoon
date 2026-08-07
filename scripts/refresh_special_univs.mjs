@@ -8,7 +8,18 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const MIN_DATE = "2026-08-01";
+function admissionMinDate() {
+  const today = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Seoul",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+  const y = Number(today.slice(0, 4));
+  const m = Number(today.slice(5, 7));
+  return m >= 8 ? `${y}-08-01` : `${y - 1}-08-01`;
+}
+const MIN_DATE = process.env.UNIV_MIN_DATE || admissionMinDate();
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36";
 
@@ -457,15 +468,13 @@ async function main() {
         }
         notices.push(...items);
       } else {
-        // 신규 수집 0건이면 허용 URL의 이전 글만 유지 (빈 결과로 전체 삭제 방지)
-        const kept = prev.filter((n) => cfg.allow.test(String(n.url || "")));
-        console.log(`${cfg.name}: 0건 → 이전 허용 글 ${kept.length}건 유지`);
-        notices.push(...kept);
+        // 신규 0건이면 이전 글 유지 (허용 URL 필터로 전부 지우지 않음)
+        console.log(`${cfg.name}: 0건 → 이전 ${prev.length}건 유지`);
+        notices.push(...prev);
       }
     } catch (e) {
-      const kept = prev.filter((n) => cfg.allow.test(String(n.url || "")));
-      console.error(`${cfg.name} FAIL`, e.message || e, `→ 이전 ${kept.length}건 유지`);
-      notices.push(...kept);
+      console.error(`${cfg.name} FAIL`, e.message || e, `→ 이전 ${prev.length}건 유지`);
+      notices.push(...prev);
     }
   }
 

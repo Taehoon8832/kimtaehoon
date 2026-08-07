@@ -304,7 +304,7 @@ async function main() {
       notices.push(...items);
     } else {
       console.log(`${cfg.name}: empty — keep previous ${prev.length}`);
-      notices.push(...prev.filter((n) => cfg.allow.test(n.url || "")));
+      notices.push(...prev);
     }
   }
 

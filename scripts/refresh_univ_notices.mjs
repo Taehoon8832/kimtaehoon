@@ -172,12 +172,19 @@ function extractIso(text) {
     const m = full[full.length - 1];
     return toIso(m[1], m[2], m[3]);
   }
-  const yy = [...String(text || "").matchAll(/(?<!\d)(\d{2})-(\d{2})-(\d{2})(?!\d)/g)];
+  // 26.08.07 / 26-08-01 / 26/08/07
+  const yy = [
+    ...String(text || "").matchAll(/(?<!\d)(\d{2})\s*[.\-/]\s*(\d{1,2})\s*[.\-/]\s*(\d{1,2})(?!\d)/g),
+  ];
   if (!yy.length) return "";
   const m = yy[yy.length - 1];
   let y = Number(m[1]);
+  // 학년도(26,27…) 오탐 방지: 월이 1~12일 때만
+  const mo = Number(m[2]);
+  const d = Number(m[3]);
+  if (mo < 1 || mo > 12 || d < 1 || d > 31) return "";
   y += y < 70 ? 2000 : 1900;
-  return toIso(y, m[2], m[3]);
+  return toIso(y, mo, d);
 }
 
 function decodeEntities(s) {
@@ -277,7 +284,7 @@ function makeItem(src, titleRaw, preview, absu, dateISO, pageUrl, minDate) {
   };
 }
 
-async function fetchText(url, opts = {}) {
+async function fetchTextOnce(url, opts = {}) {
   const ctrl = new AbortController();
   const t = setTimeout(() => ctrl.abort(), FETCH_TIMEOUT_MS);
   try {
@@ -313,6 +320,16 @@ async function fetchText(url, opts = {}) {
     return buf.toString("utf8");
   } finally {
     clearTimeout(t);
+  }
+}
+
+async function fetchText(url, opts = {}) {
+  try {
+    return await fetchTextOnce(url, opts);
+  } catch {
+    // 1회 재시도
+    await new Promise((r) => setTimeout(r, 250));
+    return fetchTextOnce(url, opts);
   }
 }
 
@@ -470,7 +487,7 @@ function parseHtml(html, pageUrl, src, minDate) {
     if (afa.length) return afa.slice(0, MAX_PER);
   }
   const items = [];
-  const re = /<a[^>]+href\s*=\s*["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>([\s\S]{0,120})/gi;
+  const re = /<a[^>]+href\s*=\s*["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>([\s\S]{0,420})/gi;
   for (const m of html.matchAll(re)) {
     const href = decodeEntities(m[1]).trim();
     if (!href || href.startsWith("#") || /^javascript:/i.test(href)) continue;

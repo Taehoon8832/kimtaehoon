@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""전체 대학 입학처 공지 수집 (2026-08-01 이후) → univ-board-data.js"""
+"""전체 대학 입학처 공지 수집 (입시 시즌 8/1~ 자동) → univ-board-data.js"""
 from __future__ import annotations
 
 import hashlib
