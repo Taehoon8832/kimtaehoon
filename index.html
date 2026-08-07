@@ -776,6 +776,14 @@
       background: transparent;
     }
 
+    .teacher-panel .univ-notice-date {
+      flex: 0 0 auto;
+      min-width: 6.8rem;
+      width: auto;
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
     .univ-notice-bar {
       min-height: 42px;
       padding: 6px 12px 6px 14px;
@@ -3982,7 +3990,9 @@
           const title = escapeHtml(r.title);
           const preview = escapeHtml(r.preview);
           const isToday = r.dateISO && r.dateISO === today;
-          const shortDate = escapeHtml(r.dateISO.slice(5).replace("-", "."));
+          const shortDate = escapeHtml(
+            r.dateLabel || r.dateISO.slice(5).replace("-", ".")
+          );
           const dayStart = r.dateISO !== lastDate;
           lastDate = r.dateISO;
           const cls = [
@@ -4027,6 +4037,16 @@
         }).join("");
       }
 
+      function teacherDateLabel(dateISO, title) {
+        const iso = String(dateISO || "");
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(iso)) return "";
+        const yy = iso.slice(2, 4);
+        const mm = iso.slice(5, 7);
+        const region = (String(title || "").match(/^\[([^\]]+)\]/) || [])[1];
+        const regionText = String(region || "").replace(/\s+/g, "").trim();
+        return regionText ? `${yy}.${mm}.(${regionText})` : `${yy}.${mm}.`;
+      }
+
       function applyTeacherPayload(payload) {
         if (!payload || typeof payload !== "object") return false;
         teacherBoardData = payload;
@@ -4039,7 +4059,12 @@
       function buildTeacherRows() {
         return sortCommunityRows(
           teacherPool
-            .map((it) => normalizeCommunityItem(it, { requireUrl: false, fallbackPreview: "" }))
+            .map((it) => {
+              const row = normalizeCommunityItem(it, { requireUrl: false, fallbackPreview: "" });
+              if (!row) return null;
+              row.dateLabel = teacherDateLabel(row.dateISO, row.title);
+              return row;
+            })
             .filter(Boolean)
         );
       }
