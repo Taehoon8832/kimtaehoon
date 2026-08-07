@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-08",
-  "updatedAt": "2026-08-07T17:52:26.779Z",
-  "checkedAt": "2026-08-07T17:52:26.779Z",
+  "updatedAt": "2026-08-07T18:44:22.963Z",
+  "checkedAt": "2026-08-07T18:44:22.963Z",
   "sources": [
     {
       "id": "u001",
@@ -1696,7 +1696,7 @@
       "univId": "u105",
       "univName": "춘천교대",
       "title": "2027학년도 교원양성대학 온라인 공동 입시설명회 개최 안내",
-      "preview": "춘천교대 입학 공지사항 미리보기",
+      "preview": "N 2026-08-04 더보기 주요일정",
       "url": "https://enter.cnue.ac.kr/enter/communication/notice.do?mode=view&articleNo=41625",
       "homeUrl": "https://enter.cnue.ac.kr/enter/index.do",
       "dateISO": "2026-08-04",
@@ -1829,6 +1829,17 @@
       "univId": "u062",
       "univName": "수원대",
       "title": "434 [수시] 2027학년도 논술고사 가이드북(모의문제 및 해설 포함) 작성자 : 입학처 작성일 : 조회수 : 602",
+      "preview": "수원대 입학 공지사항 미리보기",
+      "url": "http://ipsi.suwon.ac.kr/board/notice/read/5666",
+      "homeUrl": "http://ipsi.suwon.ac.kr/",
+      "dateISO": "2026-08-03",
+      "dateText": "2026.08.03"
+    },
+    {
+      "id": "26382aa6a530729bd203",
+      "univId": "u062",
+      "univName": "수원대",
+      "title": "434 [수시] 2027학년도 논술고사 가이드북(모의문제 및 해설 포함) 작성자 : 입학처 작성일 : 조회수 : 628",
       "preview": "수원대 입학 공지사항 미리보기",
       "url": "http://ipsi.suwon.ac.kr/board/notice/read/5666",
       "homeUrl": "http://ipsi.suwon.ac.kr/",
@@ -2137,5 +2148,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=11 empty=41 fail=164 fresh=35"
+  "statusReason": "ok=9 empty=15 fail=192 fresh=36"
 }
