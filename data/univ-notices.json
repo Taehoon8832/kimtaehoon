@@ -1,7 +1,7 @@
 {
   "minDate": "2026-08-01",
-  "updatedAt": "2026-08-06T23:42:31.794Z",
-  "checkedAt": "2026-08-06T23:42:31.794Z",
+  "updatedAt": "2026-08-07T00:37:01.692974Z",
+  "checkedAt": "2026-08-07T00:37:01.692995Z",
   "sources": [
     {
       "id": "u001",
@@ -1510,6 +1510,17 @@
   ],
   "notices": [
     {
+      "id": "459e8823a8f750dbc6bb",
+      "univId": "u157",
+      "univName": "한국전통문화대",
+      "title": "2027학년도 우선선발 입학고사 최종정답 확정·공개",
+      "preview": "한국전통문화대 입학 공지사항 미리보기",
+      "url": "https://www.knuh.ac.kr/admission/brd/view.do?mnuBaseId=MNU0000210&topBaseId=MNU0000209&tplSer=29&atcSer=46553",
+      "homeUrl": "https://www.knuh.ac.kr/admission/main.do",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
+    {
       "id": "896eeaeeb5d41fc6cac4",
       "univId": "u208",
       "univName": "국립한국해양대",
@@ -1709,7 +1720,7 @@
       "dateText": "2026.08.03"
     },
     {
-      "id": "karts70317",
+      "id": "5f773f30965298e4bde1",
       "univId": "u044",
       "univName": "한예종",
       "title": "음악원 및 무용원 예술사과정 특별전형 시험시간표 등 안내",
@@ -1955,5 +1966,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=15 empty=194 fail=7 fresh=25"
+  "statusReason": "ok=14 empty=195 fail=7 fresh=15"
 }
