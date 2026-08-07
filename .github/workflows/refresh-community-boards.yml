@@ -1,0 +1,62 @@
+name: Refresh community boards
+
+on:
+  schedule:
+    # 20분마다 (UTC)
+    - cron: "*/20 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-community-boards
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Scrape teacher cafe
+        id: teacher
+        continue-on-error: true
+        run: python scripts/build_teacher_cafe.py
+
+      - name: Scrape suhui cafe
+        id: suhui
+        continue-on-error: true
+        run: python scripts/build_suhui_cafe.py
+
+      - name: Scrape edu policy
+        id: edu
+        continue-on-error: true
+        run: python scripts/build_edu_policy.py
+
+      - name: Commit community board data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add teacher-board-data.js data/teacher-notices.json \
+                  suhui-board-data.js data/suhui-notices.json \
+                  edu-board-data.js data/edu-notices.json
+          if git diff --staged --quiet; then
+            echo "No community board data changes"
+            exit 0
+          fi
+          git commit -m "chore: refresh community boards"
+          for i in 1 2 3 4 5; do
+            git pull --rebase --autostash origin main && git push && exit 0
+            sleep $((i * 4))
+            git fetch origin main || true
+          done
+          echo "Push retries exhausted; leaving commit local to next run"
+          exit 0

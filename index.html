@@ -652,7 +652,10 @@
 
     .univ-notice-panel,
     .recruit-panel,
-    .jobkorea-panel {
+    .jobkorea-panel,
+    .teacher-panel,
+    .suhui-panel,
+    .edu-panel {
       min-width: 0;
       width: 100%;
       height: 100%;
@@ -693,6 +696,33 @@
       animation: riseIn 0.65s var(--ease-out) 0.12s both;
     }
 
+    .teacher-panel {
+      background:
+        linear-gradient(180deg, #f6f0ea 0%, #faf5f0 42%, #ffffff 100%);
+      box-shadow:
+        0 28px 56px rgba(25, 25, 25, 0.26),
+        0 0 0 1px rgba(255, 255, 255, 0.65) inset;
+      animation: riseIn 0.65s var(--ease-out) 0.16s both;
+    }
+
+    .suhui-panel {
+      background:
+        linear-gradient(180deg, #f3f1f7 0%, #f7f5fb 42%, #ffffff 100%);
+      box-shadow:
+        0 28px 56px rgba(25, 25, 25, 0.26),
+        0 0 0 1px rgba(255, 255, 255, 0.65) inset;
+      animation: riseIn 0.65s var(--ease-out) 0.2s both;
+    }
+
+    .edu-panel {
+      background:
+        linear-gradient(180deg, #eef5f1 0%, #f4f9f6 42%, #ffffff 100%);
+      box-shadow:
+        0 28px 56px rgba(25, 25, 25, 0.26),
+        0 0 0 1px rgba(255, 255, 255, 0.65) inset;
+      animation: riseIn 0.65s var(--ease-out) 0.24s both;
+    }
+
     .jobkorea-panel .univ-notice-bar {
       background: linear-gradient(180deg, #dde8ec 0%, #e8f0f3 100%);
     }
@@ -709,6 +739,41 @@
     .recruit-panel .univ-notice-mark {
       background: linear-gradient(145deg, #7bc4a0 0%, #3f9a6e 55%, #2d6f52 100%);
       box-shadow: 0 4px 10px rgba(63, 154, 110, 0.24);
+    }
+
+    .teacher-panel .univ-notice-bar {
+      background: linear-gradient(180deg, #ece2d6 0%, #f3ebe2 100%);
+    }
+
+    .teacher-panel .univ-notice-mark {
+      background: linear-gradient(145deg, #c4a07a 0%, #8f6a45 55%, #6a4a2e 100%);
+      box-shadow: 0 4px 10px rgba(143, 106, 69, 0.24);
+    }
+
+    .suhui-panel .univ-notice-bar {
+      background: linear-gradient(180deg, #e7e3ef 0%, #efeaf5 100%);
+    }
+
+    .suhui-panel .univ-notice-mark {
+      background: linear-gradient(145deg, #9b8bb8 0%, #6d5a8f 55%, #4f3f6a 100%);
+      box-shadow: 0 4px 10px rgba(109, 90, 143, 0.24);
+    }
+
+    .edu-panel .univ-notice-bar {
+      background: linear-gradient(180deg, #dceee4 0%, #e7f4ec 100%);
+    }
+
+    .edu-panel .univ-notice-mark {
+      background: linear-gradient(145deg, #7ab89a 0%, #3f8f6a 55%, #2d6a4e 100%);
+      box-shadow: 0 4px 10px rgba(63, 143, 106, 0.24);
+    }
+
+    .teacher-panel .univ-notice-item {
+      cursor: default;
+    }
+
+    .teacher-panel .univ-notice-item:hover {
+      background: transparent;
     }
 
     .univ-notice-bar {
@@ -1980,7 +2045,10 @@
 
       .univ-notice-panel,
       .recruit-panel,
-      .jobkorea-panel {
+      .jobkorea-panel,
+      .teacher-panel,
+      .suhui-panel,
+      .edu-panel {
         min-height: 600px;
         max-height: min(780px, 82vh);
         border-radius: 30px;
@@ -1994,7 +2062,10 @@
 
       .univ-notice-panel,
       .recruit-panel,
-      .jobkorea-panel {
+      .jobkorea-panel,
+      .teacher-panel,
+      .suhui-panel,
+      .edu-panel {
         min-height: min(720px, 82vh);
       }
 
@@ -2105,7 +2176,10 @@
 
       .univ-notice-panel,
       .recruit-panel,
-      .jobkorea-panel {
+      .jobkorea-panel,
+      .teacher-panel,
+      .suhui-panel,
+      .edu-panel {
         border-width: 3px;
         border-radius: 28px;
         min-height: min(640px, 78vh);
@@ -2484,7 +2558,7 @@
 
     <hr class="stage-rule sagwan-board-rule" aria-hidden="true" />
 
-    <section class="chat-section" id="chat" aria-label="채용공고·석박채용·대학공지 게시판">
+    <section class="chat-section" id="chat" aria-label="채용·석박·대학·카페·교육정책 게시판">
       <div class="chat-shell">
         <aside class="jobkorea-panel" aria-label="채용 공고 게시판">
           <div class="univ-notice-bar">
@@ -2578,6 +2652,105 @@
           </div>
           <div class="univ-notice-list" id="univNoticeList" aria-live="polite">
             <div class="univ-notice-empty">전체 공지를 불러오는 중입니다…</div>
+          </div>
+        </aside>
+      </div>
+
+      <hr class="stage-rule sagwan-board-rule" aria-hidden="true" />
+
+      <div class="chat-shell">
+        <aside class="teacher-panel" aria-label="사립학교 정교사 게시판">
+          <div class="univ-notice-bar">
+            <span class="univ-notice-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M12 4.8 4.8 8.2v2.2l7.2 3.4 7.2-3.4V8.2L12 4.8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+                <path d="M7.2 12.4v3.2c0 1.6 2.1 2.9 4.8 2.9s4.8-1.3 4.8-2.9v-3.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <strong>사립학교 정교사</strong>
+            <div class="univ-notice-actions">
+              <span class="univ-notice-live" id="teacherLive"><i></i><span id="teacherLiveLabel">안내</span></span>
+            </div>
+          </div>
+          <div class="univ-notice-meta">
+            <label class="univ-notice-search-wrap">
+              <span class="visually-hidden">사립학교 정교사 검색</span>
+              <input
+                type="search"
+                id="teacherSearch"
+                class="univ-notice-search"
+                placeholder="제목·내용 검색…"
+                autocomplete="off"
+                spellcheck="false"
+              />
+            </label>
+            <span id="teacherCount">글 0건</span>
+          </div>
+          <div class="univ-notice-list" id="teacherList" aria-live="polite">
+            <div class="univ-notice-empty">사립학교 정교사 글을 불러오는 중입니다…</div>
+          </div>
+        </aside>
+
+        <aside class="suhui-panel" aria-label="수만휘 게시판">
+          <div class="univ-notice-bar">
+            <span class="univ-notice-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 7h14M5 12h14M5 17h10" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <strong>수만휘 게시판</strong>
+            <div class="univ-notice-actions">
+              <span class="univ-notice-live" id="suhuiLive"><i></i><span id="suhuiLiveLabel">안내</span></span>
+            </div>
+          </div>
+          <div class="univ-notice-meta">
+            <label class="univ-notice-search-wrap">
+              <span class="visually-hidden">수만휘 검색</span>
+              <input
+                type="search"
+                id="suhuiSearch"
+                class="univ-notice-search"
+                placeholder="제목·내용 검색…"
+                autocomplete="off"
+                spellcheck="false"
+              />
+            </label>
+            <span id="suhuiCount">글 0건</span>
+          </div>
+          <div class="univ-notice-list" id="suhuiList" aria-live="polite">
+            <div class="univ-notice-empty">수만휘 글을 불러오는 중입니다…</div>
+          </div>
+        </aside>
+
+        <aside class="edu-panel" aria-label="교육 정책·정보 게시판">
+          <div class="univ-notice-bar">
+            <span class="univ-notice-mark" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M6 5.5h12v13H6V5.5Z" stroke="currentColor" stroke-width="1.7"/>
+                <path d="M9 9h6M9 12.5h6M9 16h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <strong>교육 정책, 정보</strong>
+            <div class="univ-notice-actions">
+              <span class="univ-notice-live" id="eduLive"><i></i><span id="eduLiveLabel">안내</span></span>
+            </div>
+          </div>
+          <div class="univ-notice-meta">
+            <label class="univ-notice-search-wrap">
+              <span class="visually-hidden">교육 정책 검색</span>
+              <input
+                type="search"
+                id="eduSearch"
+                class="univ-notice-search"
+                placeholder="출처·제목·내용 검색…"
+                autocomplete="off"
+                spellcheck="false"
+              />
+            </label>
+            <span id="eduCount">소식 0건</span>
+          </div>
+          <div class="univ-notice-list" id="eduList" aria-live="polite">
+            <div class="univ-notice-empty">교육 정책·정보를 불러오는 중입니다…</div>
           </div>
         </aside>
       </div>
@@ -2680,6 +2853,9 @@
   <script src="univ-board-data.js"></script>
   <script src="recruit-board-data.js"></script>
   <script src="jobkorea-board-data.js"></script>
+  <script src="teacher-board-data.js"></script>
+  <script src="suhui-board-data.js"></script>
+  <script src="edu-board-data.js"></script>
   <script>
     (() => {
       "use strict";
@@ -2869,6 +3045,9 @@
           renderUnivBoard(univQuery);
           renderRecruitBoard(recruitQuery);
           renderJobkoreaBoard(jobkoreaQuery);
+          if (typeof renderTeacherBoard === "function") renderTeacherBoard(teacherQuery);
+          if (typeof renderSuhuiBoard === "function") renderSuhuiBoard(suhuiQuery);
+          if (typeof renderEduBoard === "function") renderEduBoard(eduQuery);
           if (typeof renderSagwanDday === "function") renderSagwanDday();
         } catch (_) {
           /* 날짜 전환 시 UI 오류로 전체 폴링이 죽지 않게 */
@@ -2876,6 +3055,9 @@
         refreshUnivFromGithub({ silent: true });
         refreshRecruitFromGithub({ silent: true });
         refreshJobkoreaFromGithub({ silent: true });
+        if (typeof refreshTeacherFromGithub === "function") refreshTeacherFromGithub({ silent: true });
+        if (typeof refreshSuhuiFromGithub === "function") refreshSuhuiFromGithub({ silent: true });
+        if (typeof refreshEduFromGithub === "function") refreshEduFromGithub({ silent: true });
       }
 
       function ensureBoardDay() {
@@ -3686,6 +3868,418 @@
         });
       }
 
+      /* —— 사립학교 정교사 / 수만휘 / 교육 정책·정보 —— */
+      const COMMUNITY_POLL_MS = 60000;
+      const teacherListEl = document.getElementById("teacherList");
+      const teacherCountEl = document.getElementById("teacherCount");
+      const teacherLive = document.getElementById("teacherLive");
+      const teacherLiveLabel = document.getElementById("teacherLiveLabel");
+      const teacherSearch = document.getElementById("teacherSearch");
+      const TEACHER_DATA_URL = "data/teacher-notices.json";
+      let teacherBoardData = window.TEACHER_BOARD_DATA || {};
+      let teacherPool = Array.isArray(teacherBoardData.notices) ? teacherBoardData.notices.slice() : [];
+      let teacherUpdatedAt = String(teacherBoardData.updatedAt || "");
+      let teacherQuery = "";
+      let teacherPollBusy = false;
+
+      const suhuiListEl = document.getElementById("suhuiList");
+      const suhuiCountEl = document.getElementById("suhuiCount");
+      const suhuiLive = document.getElementById("suhuiLive");
+      const suhuiLiveLabel = document.getElementById("suhuiLiveLabel");
+      const suhuiSearch = document.getElementById("suhuiSearch");
+      const SUHUI_DATA_URL = "data/suhui-notices.json";
+      let suhuiBoardData = window.SUHUI_BOARD_DATA || {};
+      let suhuiPool = Array.isArray(suhuiBoardData.notices) ? suhuiBoardData.notices.slice() : [];
+      let suhuiUpdatedAt = String(suhuiBoardData.updatedAt || "");
+      let suhuiQuery = "";
+      let suhuiPollBusy = false;
+
+      const eduListEl = document.getElementById("eduList");
+      const eduCountEl = document.getElementById("eduCount");
+      const eduLive = document.getElementById("eduLive");
+      const eduLiveLabel = document.getElementById("eduLiveLabel");
+      const eduSearch = document.getElementById("eduSearch");
+      const EDU_DATA_URL = "data/edu-notices.json";
+      let eduBoardData = window.EDU_BOARD_DATA || {};
+      let eduPool = Array.isArray(eduBoardData.notices) ? eduBoardData.notices.slice() : [];
+      let eduUpdatedAt = String(eduBoardData.updatedAt || "");
+      let eduQuery = "";
+      let eduPollBusy = false;
+
+      function setCommunityLive(liveEl, labelEl, online, label) {
+        if (!liveEl || !labelEl) return;
+        liveEl.classList.toggle("is-offline", !online);
+        labelEl.textContent = label;
+      }
+
+      function normalizeCommunityItem(it, opts) {
+        const title = String(it.title || "").replace(/\s+/g, " ").trim();
+        const dateISO = String(it.dateISO || "").slice(0, 10);
+        const today = seoulTodayISO();
+        const sourceName = String(it.sourceName || opts.defaultSource || "").replace(/\s+/g, " ").trim();
+        const url = String(it.url || "").trim();
+        if (!title || title.length < 4) return null;
+        if (!dateISO || dateISO < "2020-01-01" || dateISO > today) return null;
+        if (opts.requireUrl && !/^https?:\/\//i.test(url)) return null;
+        let preview = String(it.preview || "").replace(/\s+/g, " ").trim();
+        if (isJunkText(preview)) preview = "";
+        if (isJunkText(title)) return null;
+        preview = preview.slice(0, 160) || opts.fallbackPreview || "게시글";
+        return {
+          sourceName,
+          title,
+          preview,
+          dateISO,
+          href: opts.requireUrl ? url : "",
+        };
+      }
+
+      function sortCommunityRows(rows) {
+        const today = seoulTodayISO();
+        rows.sort((a, b) => {
+          if (a.dateISO === today && b.dateISO !== today) return -1;
+          if (b.dateISO === today && a.dateISO !== today) return 1;
+          if (a.dateISO !== b.dateISO) return String(b.dateISO).localeCompare(String(a.dateISO));
+          return String(a.title).localeCompare(String(b.title), "ko");
+        });
+        return rows;
+      }
+
+      function filterCommunityRows(rows, query) {
+        const q = String(query || "").trim().toLowerCase().replace(/\s+/g, "");
+        if (!q) return rows;
+        return rows.filter((r) => {
+          const hay = `${r.title}${r.preview}${r.sourceName || ""}`.toLowerCase().replace(/\s+/g, "");
+          return hay.includes(q);
+        });
+      }
+
+      function setCountLabel(el, query, list, unit) {
+        if (!el) return;
+        const today = seoulTodayISO();
+        const todayCount = countTodayRows(list, today);
+        if (query) {
+          el.textContent = `검색 ${list.length.toLocaleString("ko-KR")}건`;
+          return;
+        }
+        el.textContent = todayCount > 0
+          ? `오늘 ${todayCount.toLocaleString("ko-KR")}건 · ${unit} ${list.length.toLocaleString("ko-KR")}건`
+          : `${unit} ${list.length.toLocaleString("ko-KR")}건`;
+      }
+
+      function renderCommunityList(listEl, list, opts) {
+        if (!listEl) return;
+        const today = seoulTodayISO();
+        if (!list.length) {
+          listEl.innerHTML = `<div class="univ-notice-empty">${opts.emptyHtml}</div>`;
+          return;
+        }
+        let lastDate = null;
+        listEl.innerHTML = list.map((r) => {
+          const title = escapeHtml(r.title);
+          const preview = escapeHtml(r.preview);
+          const isToday = r.dateISO && r.dateISO === today;
+          const shortDate = escapeHtml(r.dateISO.slice(5).replace("-", "."));
+          const dayStart = r.dateISO !== lastDate;
+          lastDate = r.dateISO;
+          const cls = [
+            "univ-notice-item",
+            isToday ? "is-today" : "",
+            dayStart ? "is-day-start" : "",
+          ].filter(Boolean).join(" ");
+          const sourceHtml = opts.showSource
+            ? `<span class="univ-notice-univ"><span class="univ-notice-univ-main">${escapeHtml(r.sourceName || opts.defaultSource || "")}</span></span>`
+            : "";
+          if (opts.clickable && r.href) {
+            const href = escapeHtml(r.href);
+            const tip = escapeHtml(`${r.sourceName || ""} — ${r.title}`.replace(/^\s*—\s*/, ""));
+            return (
+              `<div class="${cls}" data-href="${href}" role="link" tabindex="0" title="${tip}">` +
+              `<div class="univ-notice-item-body">` +
+              `<div class="univ-notice-head">` +
+              sourceHtml +
+              (isToday ? `<span class="univ-notice-new">오늘</span>` : "") +
+              `<span class="univ-notice-title">${title}</span>` +
+              `<span class="univ-notice-date">${shortDate}</span>` +
+              `</div>` +
+              `<span class="univ-notice-preview">${preview}</span>` +
+              `</div></div>`
+            );
+          }
+          return (
+            `<div class="${cls}" role="article" title="${title}">` +
+            `<div class="univ-notice-item-body">` +
+            `<div class="univ-notice-head">` +
+            sourceHtml +
+            (isToday ? `<span class="univ-notice-new">오늘</span>` : "") +
+            `<span class="univ-notice-title">${title}</span>` +
+            `<span class="univ-notice-date">${shortDate}</span>` +
+            `</div>` +
+            `<span class="univ-notice-preview">${preview}</span>` +
+            `</div></div>`
+          );
+        }).join("");
+      }
+
+      function applyTeacherPayload(payload) {
+        if (!payload || typeof payload !== "object") return false;
+        teacherBoardData = payload;
+        window.TEACHER_BOARD_DATA = payload;
+        teacherPool = Array.isArray(payload.notices) ? payload.notices.slice() : [];
+        teacherUpdatedAt = String(payload.updatedAt || teacherUpdatedAt || "");
+        return true;
+      }
+
+      function buildTeacherRows() {
+        return sortCommunityRows(
+          teacherPool
+            .map((it) => normalizeCommunityItem(it, { requireUrl: false, fallbackPreview: "사립학교 정교사 카페 글" }))
+            .filter(Boolean)
+        );
+      }
+
+      function renderTeacherBoard(query) {
+        if (!teacherListEl) return;
+        teacherQuery = query || "";
+        const list = filterCommunityRows(buildTeacherRows(), teacherQuery);
+        setCountLabel(teacherCountEl, teacherQuery, list, "글");
+        setCommunityLive(teacherLive, teacherLiveLabel, true, formatUpdatedLabel(teacherUpdatedAt));
+        renderCommunityList(teacherListEl, list, {
+          showSource: false,
+          clickable: false,
+          emptyHtml: "등록된 사립학교 정교사 글이 없습니다.<br>다음 카페 목록을 주기적으로 갱신합니다.",
+        });
+      }
+
+      async function refreshTeacherFromGithub(opts) {
+        if (teacherPollBusy) return;
+        teacherPollBusy = true;
+        const silent = Boolean(opts && opts.silent);
+        try {
+          const prevFp = noticeFingerprint(teacherPool, ["title", "dateISO"]);
+          const res = await fetch(`${TEACHER_DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
+          if (!res.ok) throw new Error(`http_${res.status}`);
+          applyTeacherPayload(await res.json());
+          renderTeacherBoard(teacherQuery);
+          setCommunityLive(teacherLive, teacherLiveLabel, true, formatUpdatedLabel(teacherUpdatedAt));
+          const nextFp = noticeFingerprint(teacherPool, ["title", "dateISO"]);
+          if (nextFp !== prevFp && !silent) {
+            toastBoardRefresh("사립학교 정교사", countTodayRows(buildTeacherRows(), seoulTodayISO()));
+          }
+        } catch {
+          if (teacherPool.length) setCommunityLive(teacherLive, teacherLiveLabel, true, formatUpdatedLabel(teacherUpdatedAt));
+          else setCommunityLive(teacherLive, teacherLiveLabel, false, "대기");
+        } finally {
+          teacherPollBusy = false;
+        }
+      }
+
+      function applySuhuiPayload(payload) {
+        if (!payload || typeof payload !== "object") return false;
+        suhuiBoardData = payload;
+        window.SUHUI_BOARD_DATA = payload;
+        suhuiPool = Array.isArray(payload.notices) ? payload.notices.slice() : [];
+        suhuiUpdatedAt = String(payload.updatedAt || suhuiUpdatedAt || "");
+        return true;
+      }
+
+      function buildSuhuiRows() {
+        return sortCommunityRows(
+          suhuiPool
+            .map((it) =>
+              normalizeCommunityItem(it, {
+                requireUrl: true,
+                defaultSource: "수만휘",
+                fallbackPreview: "수만휘 카페 글",
+              })
+            )
+            .filter(Boolean)
+        );
+      }
+
+      function renderSuhuiBoard(query) {
+        if (!suhuiListEl) return;
+        suhuiQuery = query || "";
+        const list = filterCommunityRows(buildSuhuiRows(), suhuiQuery);
+        setCountLabel(suhuiCountEl, suhuiQuery, list, "글");
+        setCommunityLive(suhuiLive, suhuiLiveLabel, true, formatUpdatedLabel(suhuiUpdatedAt));
+        renderCommunityList(suhuiListEl, list, {
+          showSource: true,
+          defaultSource: "수만휘",
+          clickable: true,
+          emptyHtml: "등록된 수만휘 글이 없습니다.<br>네이버 카페 목록을 주기적으로 갱신합니다.",
+        });
+      }
+
+      async function refreshSuhuiFromGithub(opts) {
+        if (suhuiPollBusy) return;
+        suhuiPollBusy = true;
+        const silent = Boolean(opts && opts.silent);
+        try {
+          const prevFp = noticeFingerprint(suhuiPool, ["url", "title", "dateISO"]);
+          const res = await fetch(`${SUHUI_DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
+          if (!res.ok) throw new Error(`http_${res.status}`);
+          applySuhuiPayload(await res.json());
+          renderSuhuiBoard(suhuiQuery);
+          setCommunityLive(suhuiLive, suhuiLiveLabel, true, formatUpdatedLabel(suhuiUpdatedAt));
+          const nextFp = noticeFingerprint(suhuiPool, ["url", "title", "dateISO"]);
+          if (nextFp !== prevFp && !silent) {
+            toastBoardRefresh("수만휘", countTodayRows(buildSuhuiRows(), seoulTodayISO()));
+          }
+        } catch {
+          if (suhuiPool.length) setCommunityLive(suhuiLive, suhuiLiveLabel, true, formatUpdatedLabel(suhuiUpdatedAt));
+          else setCommunityLive(suhuiLive, suhuiLiveLabel, false, "대기");
+        } finally {
+          suhuiPollBusy = false;
+        }
+      }
+
+      function applyEduPayload(payload) {
+        if (!payload || typeof payload !== "object") return false;
+        eduBoardData = payload;
+        window.EDU_BOARD_DATA = payload;
+        eduPool = Array.isArray(payload.notices) ? payload.notices.slice() : [];
+        eduUpdatedAt = String(payload.updatedAt || eduUpdatedAt || "");
+        return true;
+      }
+
+      function buildEduRows() {
+        return sortCommunityRows(
+          eduPool
+            .map((it) =>
+              normalizeCommunityItem(it, {
+                requireUrl: true,
+                defaultSource: "교육",
+                fallbackPreview: "교육 정책·정보",
+              })
+            )
+            .filter(Boolean)
+        );
+      }
+
+      function renderEduBoard(query) {
+        if (!eduListEl) return;
+        eduQuery = query || "";
+        const list = filterCommunityRows(buildEduRows(), eduQuery);
+        setCountLabel(eduCountEl, eduQuery, list, "소식");
+        setCommunityLive(eduLive, eduLiveLabel, true, formatUpdatedLabel(eduUpdatedAt));
+        renderCommunityList(eduListEl, list, {
+          showSource: true,
+          defaultSource: "교육",
+          clickable: true,
+          emptyHtml: "등록된 교육 정책·정보가 없습니다.<br>여러 출처를 주기적으로 갱신합니다.",
+        });
+      }
+
+      async function refreshEduFromGithub(opts) {
+        if (eduPollBusy) return;
+        eduPollBusy = true;
+        const silent = Boolean(opts && opts.silent);
+        try {
+          const prevFp = noticeFingerprint(eduPool, ["url", "title", "dateISO", "sourceId"]);
+          const res = await fetch(`${EDU_DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
+          if (!res.ok) throw new Error(`http_${res.status}`);
+          applyEduPayload(await res.json());
+          renderEduBoard(eduQuery);
+          setCommunityLive(eduLive, eduLiveLabel, true, formatUpdatedLabel(eduUpdatedAt));
+          const nextFp = noticeFingerprint(eduPool, ["url", "title", "dateISO", "sourceId"]);
+          if (nextFp !== prevFp && !silent) {
+            toastBoardRefresh("교육 정책·정보", countTodayRows(buildEduRows(), seoulTodayISO()));
+          }
+        } catch {
+          if (eduPool.length) setCommunityLive(eduLive, eduLiveLabel, true, formatUpdatedLabel(eduUpdatedAt));
+          else setCommunityLive(eduLive, eduLiveLabel, false, "대기");
+        } finally {
+          eduPollBusy = false;
+        }
+      }
+
+      function bindCommunityListClicks(listEl) {
+        if (!listEl) return;
+        listEl.addEventListener("click", (e) => {
+          const row = e.target.closest(".univ-notice-item[data-href]");
+          if (!row) return;
+          openNoticeUrl(row.getAttribute("data-href"));
+        });
+        listEl.addEventListener("keydown", (e) => {
+          if (e.key !== "Enter" && e.key !== " ") return;
+          const row = e.target.closest(".univ-notice-item[data-href]");
+          if (!row) return;
+          e.preventDefault();
+          openNoticeUrl(row.getAttribute("data-href"));
+        });
+      }
+
+      bindCommunityListClicks(suhuiListEl);
+      bindCommunityListClicks(eduListEl);
+
+      if (teacherSearch) {
+        teacherSearch.addEventListener("input", () => renderTeacherBoard(teacherSearch.value));
+      }
+      if (suhuiSearch) {
+        suhuiSearch.addEventListener("input", () => renderSuhuiBoard(suhuiSearch.value));
+      }
+      if (eduSearch) {
+        eduSearch.addEventListener("input", () => renderEduBoard(eduSearch.value));
+      }
+
+      function bootCommunityBoard(cfg) {
+        if (!cfg.listEl) return;
+        if (!cfg.pool.length) {
+          cfg.setLive(false, "대기");
+          cfg.render("");
+        } else {
+          cfg.setLive(true, formatUpdatedLabel(cfg.updatedAt));
+          cfg.render(cfg.search ? cfg.search.value : "");
+        }
+        setTimeout(() => cfg.refresh({ silent: true }), 600);
+        setInterval(() => {
+          ensureBoardDay();
+          cfg.refresh();
+        }, COMMUNITY_POLL_MS);
+        document.addEventListener("visibilitychange", () => {
+          if (document.visibilityState !== "visible") return;
+          ensureBoardDay();
+          cfg.refresh({ silent: true });
+        });
+      }
+
+      function bootTeacherBoard() {
+        bootCommunityBoard({
+          listEl: teacherListEl,
+          pool: teacherPool,
+          search: teacherSearch,
+          updatedAt: teacherUpdatedAt,
+          setLive: (online, label) => setCommunityLive(teacherLive, teacherLiveLabel, online, label),
+          render: renderTeacherBoard,
+          refresh: refreshTeacherFromGithub,
+        });
+      }
+
+      function bootSuhuiBoard() {
+        bootCommunityBoard({
+          listEl: suhuiListEl,
+          pool: suhuiPool,
+          search: suhuiSearch,
+          updatedAt: suhuiUpdatedAt,
+          setLive: (online, label) => setCommunityLive(suhuiLive, suhuiLiveLabel, online, label),
+          render: renderSuhuiBoard,
+          refresh: refreshSuhuiFromGithub,
+        });
+      }
+
+      function bootEduBoard() {
+        bootCommunityBoard({
+          listEl: eduListEl,
+          pool: eduPool,
+          search: eduSearch,
+          updatedAt: eduUpdatedAt,
+          setLive: (online, label) => setCommunityLive(eduLive, eduLiveLabel, online, label),
+          render: renderEduBoard,
+          refresh: refreshEduFromGithub,
+        });
+      }
+
       const expandPanel = document.getElementById("expandPanel");
       const expandFrame = document.getElementById("expandFrame");
       const expandTitle = document.getElementById("expandTitle");
@@ -4256,6 +4850,9 @@
       bootUnivNotices();
       bootRecruitBoard();
       bootJobkoreaBoard();
+      bootTeacherBoard();
+      bootSuhuiBoard();
+      bootEduBoard();
       boardDayISO = seoulTodayISO();
       scheduleSeoulMidnightRollover();
       setInterval(() => {
