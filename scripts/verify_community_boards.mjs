@@ -151,7 +151,7 @@ async function buildTeacher(today) {
         id: sha(`${art.dataid}|${title}|${dateISO}`),
         sourceName: "사립학교 정교사",
         title: title.slice(0, 140),
-        preview: strip(art.headCont || "").slice(0, 120) || "사립학교 정교사 카페 글",
+        preview: strip(art.headCont || "").slice(0, 120),
         url: "",
         dateISO,
         dateText: dateISO.replace(/-/g, "."),

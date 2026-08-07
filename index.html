@@ -3924,7 +3924,10 @@
         let preview = String(it.preview || "").replace(/\s+/g, " ").trim();
         if (isJunkText(preview)) preview = "";
         if (isJunkText(title)) return null;
-        preview = preview.slice(0, 160) || opts.fallbackPreview || "게시글";
+        const fallback = Object.prototype.hasOwnProperty.call(opts, "fallbackPreview")
+          ? String(opts.fallbackPreview || "")
+          : "게시글";
+        preview = preview.slice(0, 160) || fallback;
         return {
           sourceName,
           title,
@@ -3990,6 +3993,9 @@
           const sourceHtml = opts.showSource
             ? `<span class="univ-notice-univ"><span class="univ-notice-univ-main">${escapeHtml(r.sourceName || opts.defaultSource || "")}</span></span>`
             : "";
+          const previewHtml = r.preview
+            ? `<span class="univ-notice-preview">${preview}</span>`
+            : "";
           if (opts.clickable && r.href) {
             const href = escapeHtml(r.href);
             const tip = escapeHtml(`${r.sourceName || ""} — ${r.title}`.replace(/^\s*—\s*/, ""));
@@ -4002,7 +4008,7 @@
               `<span class="univ-notice-title">${title}</span>` +
               `<span class="univ-notice-date">${shortDate}</span>` +
               `</div>` +
-              `<span class="univ-notice-preview">${preview}</span>` +
+              previewHtml +
               `</div></div>`
             );
           }
@@ -4015,7 +4021,7 @@
             `<span class="univ-notice-title">${title}</span>` +
             `<span class="univ-notice-date">${shortDate}</span>` +
             `</div>` +
-            `<span class="univ-notice-preview">${preview}</span>` +
+            previewHtml +
             `</div></div>`
           );
         }).join("");
@@ -4033,7 +4039,7 @@
       function buildTeacherRows() {
         return sortCommunityRows(
           teacherPool
-            .map((it) => normalizeCommunityItem(it, { requireUrl: false, fallbackPreview: "사립학교 정교사 카페 글" }))
+            .map((it) => normalizeCommunityItem(it, { requireUrl: false, fallbackPreview: "" }))
             .filter(Boolean)
         );
       }

@@ -116,7 +116,7 @@ def fetch_api(today: str) -> list:
         date_iso = elapsed_to_iso(str(art.get("articleElapsedTime") or ""), today)
         if not date_iso or date_iso > today:
             continue
-        preview = strip_tags(str(art.get("headCont") or ""))[:120] or "사립학교 정교사 카페 글"
+        preview = strip_tags(str(art.get("headCont") or ""))[:120]
         dataid = art.get("dataid") or ""
         key = f"{dataid}|{title}|{date_iso}"
         items.append(
@@ -167,7 +167,7 @@ def parse_fallback(text: str, today: str) -> list:
                 "id": hashlib.sha1(key.encode()).hexdigest()[:20],
                 "sourceName": "사립학교 정교사",
                 "title": title[:140],
-                "preview": strip_tags(m.group(3))[:120] or "사립학교 정교사 카페 글",
+                "preview": strip_tags(m.group(3))[:120],
                 "url": "",
                 "dateISO": date_iso,
                 "dateText": date_iso.replace("-", "."),
