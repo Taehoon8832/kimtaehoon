@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-07",
-  "updatedAt": "2026-08-07T04:14:07.008Z",
-  "checkedAt": "2026-08-07T04:14:07.008Z",
+  "updatedAt": "2026-08-07T06:01:16.722Z",
+  "checkedAt": "2026-08-07T06:01:16.722Z",
   "sources": [
     {
       "id": "u001",
@@ -1549,6 +1549,17 @@
       "dateText": "2026.08.07"
     },
     {
+      "id": "e7cd3ad884092a26a495",
+      "univId": "u157",
+      "univName": "한국전통문화대",
+      "title": "2026학년도 대학원 후기 2차 신입생 선발 면접 및 구술고사 안내",
+      "preview": "한국전통문화대 입학 공지사항 미리보기",
+      "url": "https://www.knuh.ac.kr/admission/brd/view.do?mnuBaseId=MNU0000210&topBaseId=MNU0000209&tplSer=29&atcSer=46569",
+      "homeUrl": "https://www.knuh.ac.kr/admission/main.do",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
+    {
       "id": "577d50059058a2357b4a",
       "univId": "u044",
       "univName": "한예종",
@@ -1575,6 +1586,17 @@
       "univId": "u245",
       "univName": "해군사관학교",
       "title": "(공지) 2027학년도 제85기 해군사관생도 선발 1차 시험 성적확인 및 지원확정 절차 안내",
+      "preview": "해군사관학교 입학 공지사항 미리보기",
+      "url": "https://www.navy.ac.kr:4443/bbs/iphak/142/841485/artclView.do",
+      "homeUrl": "https://www.navy.ac.kr:4443/sites/iphak/index.do",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
+      "id": "ed3e6ee578f871dc4c08",
+      "univId": "u245",
+      "univName": "해군사관학교",
+      "title": "(공지) 2027학년도 제85기 해군사관생도 선발 1차 시험 성적확인 및 지원확정, 이의제기 절차 안내",
       "preview": "해군사관학교 입학 공지사항 미리보기",
       "url": "https://www.navy.ac.kr:4443/bbs/iphak/142/841485/artclView.do",
       "homeUrl": "https://www.navy.ac.kr:4443/sites/iphak/index.do",
@@ -2104,5 +2126,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=10 empty=32 fail=174 fresh=32"
+  "statusReason": "ok=12 empty=18 fail=186 fresh=34"
 }
