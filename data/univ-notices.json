@@ -1,7 +1,12 @@
 {
   "minDate": "2026-08-01",
+<<<<<<< HEAD
   "updatedAt": "2026-08-07T00:45:52.064Z",
   "checkedAt": "2026-08-06T23:42:31.794Z",
+=======
+  "updatedAt": "2026-08-07T00:37:01.692974Z",
+  "checkedAt": "2026-08-07T00:37:01.692995Z",
+>>>>>>> 9a2370d3dfb7443b3e78aba53158b50d49a7b86f
   "sources": [
     {
       "id": "u001",
@@ -1515,6 +1520,7 @@
   ],
   "notices": [
     {
+<<<<<<< HEAD
       "id": "d1cf9d7a876c9dfd4660",
       "univId": "u032",
       "univName": "육군사관학교",
@@ -1522,10 +1528,20 @@
       "preview": "육군사관학교 입학 공지사항 미리보기",
       "url": "https://www.kma.ac.kr:461/bbs/kma/160/29211/artclView.do",
       "homeUrl": "https://www.kma.ac.kr:461/",
+=======
+      "id": "459e8823a8f750dbc6bb",
+      "univId": "u157",
+      "univName": "한국전통문화대",
+      "title": "2027학년도 우선선발 입학고사 최종정답 확정·공개",
+      "preview": "한국전통문화대 입학 공지사항 미리보기",
+      "url": "https://www.knuh.ac.kr/admission/brd/view.do?mnuBaseId=MNU0000210&topBaseId=MNU0000209&tplSer=29&atcSer=46553",
+      "homeUrl": "https://www.knuh.ac.kr/admission/main.do",
+>>>>>>> 9a2370d3dfb7443b3e78aba53158b50d49a7b86f
       "dateISO": "2026-08-07",
       "dateText": "2026.08.07"
     },
     {
+<<<<<<< HEAD
       "id": "d8b2783b8ea7e26477e3",
       "univId": "u245",
       "univName": "해군사관학교",
@@ -1555,6 +1571,15 @@
       "preview": "공군사관학교 입학 공지사항 미리보기",
       "url": "https://rokaf.airforce.mil.kr/bbs/afaadmission/2089/43066/artclView.do",
       "homeUrl": "https://rokaf.airforce.mil.kr/sites/afaadmission/index.do",
+=======
+      "id": "896eeaeeb5d41fc6cac4",
+      "univId": "u208",
+      "univName": "국립한국해양대",
+      "title": "재외국민/외국인 2027학년도 재외국민 특별전형 지원자격 서류심사 결과 공고",
+      "preview": "국립한국해양대 입학 공지사항 미리보기",
+      "url": "http://ipsi.kmou.ac.kr/ipsi/na/ntt/selectNttInfo.do?nttSn=10377567&mi=3299",
+      "homeUrl": "http://ipsi.kmou.ac.kr/",
+>>>>>>> 9a2370d3dfb7443b3e78aba53158b50d49a7b86f
       "dateISO": "2026-08-06",
       "dateText": "2026.08.06"
     },
@@ -1747,6 +1772,7 @@
       "dateText": "2026.08.03"
     },
     {
+<<<<<<< HEAD
       "id": "6a614aff14388f3afe12",
       "univId": "u030",
       "univName": "숭실대",
@@ -1759,6 +1785,9 @@
     },
     {
       "id": "karts70317",
+=======
+      "id": "5f773f30965298e4bde1",
+>>>>>>> 9a2370d3dfb7443b3e78aba53158b50d49a7b86f
       "univId": "u044",
       "univName": "한예종",
       "title": "음악원 및 무용원 예술사과정 특별전형 시험시간표 등 안내",
@@ -2037,5 +2066,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=15 empty=194 fail=7 fresh=25"
+  "statusReason": "ok=14 empty=195 fail=7 fresh=15"
 }
