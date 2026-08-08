@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-08T06:09:52.926083Z",
-  "checkedAt": "2026-08-08T06:09:52.926078Z",
+  "updatedAt": "2026-08-08T07:15:46.160815Z",
+  "checkedAt": "2026-08-08T07:15:46.160810Z",
   "today": "2026-08-08",
   "count": 24,
   "notices": [
@@ -20,7 +20,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 2,
-      "popularScore": 4.146751
+      "popularScore": 4.173276
     },
     {
       "id": "658a9d6752f2fad29333",
@@ -34,8 +34,8 @@
       "deadlineISO": "2026-09-06",
       "deadlineText": "2026.09.06",
       "alwaysHire": false,
-      "popularRank": 12,
-      "popularScore": 2.32983
+      "popularRank": 10,
+      "popularScore": 2.325626
     },
     {
       "id": "e8edd83d0f5b54809dd6",
@@ -49,8 +49,8 @@
       "deadlineISO": "2026-09-06",
       "deadlineText": "2026.09.06",
       "alwaysHire": false,
-      "popularRank": 15,
-      "popularScore": 2.262339
+      "popularRank": 14,
+      "popularScore": 2.267489
     },
     {
       "id": "ae7e3a51be869a48c2cd",
@@ -64,8 +64,8 @@
       "deadlineISO": "2026-10-06",
       "deadlineText": "2026.10.06",
       "alwaysHire": false,
-      "popularRank": 16,
-      "popularScore": 2.208045
+      "popularRank": 17,
+      "popularScore": 2.208507
     },
     {
       "id": "5bdf117422a38ac42fd6",
@@ -79,8 +79,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 19,
-      "popularScore": 2.165045
+      "popularRank": 18,
+      "popularScore": 2.179508
     },
     {
       "id": "65243abe3e6bf2a43e0c",
@@ -95,7 +95,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 21,
-      "popularScore": 2.118709
+      "popularScore": 2.123861
     },
     {
       "id": "a19b344837c8700e1a2e",
@@ -110,7 +110,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 6,
-      "popularScore": 2.981421
+      "popularScore": 2.945123
     },
     {
       "id": "94be55d131a72c4b3e55",
@@ -125,7 +125,7 @@
       "deadlineText": "2026.09.05",
       "alwaysHire": false,
       "popularRank": 22,
-      "popularScore": 1.994822
+      "popularScore": 1.993261
     },
     {
       "id": "52e3de0f3e258ff8c87a",
@@ -139,8 +139,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 10,
-      "popularScore": 2.386679
+      "popularRank": 12,
+      "popularScore": 2.294229
     },
     {
       "id": "522bb785534ed67465cc",
@@ -154,8 +154,8 @@
       "deadlineISO": "2026-09-04",
       "deadlineText": "2026.09.04",
       "alwaysHire": false,
-      "popularRank": 18,
-      "popularScore": 2.192813
+      "popularRank": 16,
+      "popularScore": 2.215825
     },
     {
       "id": "dc573c0c1587bdd41aba",
@@ -170,7 +170,7 @@
       "deadlineText": "2026.09.30",
       "alwaysHire": false,
       "popularRank": 20,
-      "popularScore": 2.13131
+      "popularScore": 2.141103
     },
     {
       "id": "165bd411aea39b534d26",
@@ -185,7 +185,7 @@
       "deadlineText": "2026.08.13",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 4.844699
+      "popularScore": 4.812511
     },
     {
       "id": "40c04c463d1729207506",
@@ -200,7 +200,7 @@
       "deadlineText": "2026.08.16",
       "alwaysHire": false,
       "popularRank": 5,
-      "popularScore": 3.450871
+      "popularScore": 3.369602
     },
     {
       "id": "f40907036afe640c5ffb",
@@ -214,8 +214,8 @@
       "deadlineISO": "2026-09-03",
       "deadlineText": "2026.09.03",
       "alwaysHire": false,
-      "popularRank": 8,
-      "popularScore": 2.460701
+      "popularRank": 15,
+      "popularScore": 2.239983
     },
     {
       "id": "cdd3b46c07e0236116a7",
@@ -230,7 +230,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 7,
-      "popularScore": 2.648805
+      "popularScore": 2.626183
     },
     {
       "id": "7f2dd9899c2e60be7e76",
@@ -244,8 +244,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 9,
-      "popularScore": 2.399358
+      "popularRank": 8,
+      "popularScore": 2.406031
     },
     {
       "id": "7f759a92c2a8f3e9be44",
@@ -259,8 +259,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 11,
-      "popularScore": 2.365166
+      "popularRank": 9,
+      "popularScore": 2.354513
     },
     {
       "id": "db62b6f15906cd88db83",
@@ -274,8 +274,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 13,
-      "popularScore": 2.277171
+      "popularRank": 11,
+      "popularScore": 2.3040779
     },
     {
       "id": "621244133718cacd4b65",
@@ -289,8 +289,8 @@
       "deadlineISO": "2026-08-18",
       "deadlineText": "2026.08.18",
       "alwaysHire": false,
-      "popularRank": 17,
-      "popularScore": 2.20507
+      "popularRank": 19,
+      "popularScore": 2.158026
     },
     {
       "id": "b2daad0d3bdddc3e904b",
@@ -305,7 +305,7 @@
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
       "popularRank": 23,
-      "popularScore": 1.867868
+      "popularScore": 1.990432
     },
     {
       "id": "cb9a8f87ca6dfd53dfc4",
@@ -319,8 +319,23 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 14,
-      "popularScore": 2.264966
+      "popularRank": 13,
+      "popularScore": 2.273719
+    },
+    {
+      "id": "036f8fc9662e29dbb23f",
+      "jobId": "49670450",
+      "companyName": "㈜미디어로그",
+      "title": "미디어로그(LG그룹) 채용연계형 인턴(신입) 채용",
+      "preview": "신입 · 인턴 · 서울 마포구 · 마감 D-3 · 접수마감 2026.08.11",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49670450",
+      "dateISO": "2026-07-29",
+      "dateText": "2026.07.29",
+      "deadlineISO": "2026-08-11",
+      "deadlineText": "2026.08.11",
+      "alwaysHire": false,
+      "popularRank": 24,
+      "popularScore": 1.8479279
     },
     {
       "id": "3f28d4ebc0198319a0b7",
@@ -335,7 +350,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 4,
-      "popularScore": 3.833137
+      "popularScore": 3.830468
     },
     {
       "id": "f896f9c80364e0074e46",
@@ -350,22 +365,7 @@
       "deadlineText": "2026.08.09",
       "alwaysHire": false,
       "popularRank": 3,
-      "popularScore": 3.944618
-    },
-    {
-      "id": "f80ee528f1166b9baf35",
-      "jobId": "49560148",
-      "companyName": "㈜지에스아이티엠(GSITM)",
-      "title": "AI Solution Architect & Tech Evangelist 모집",
-      "preview": "경력 8년↑ · 정규직 · 서울 종로구 · 마감 D-1 · 접수마감 2026.08.09",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49560148",
-      "dateISO": "2026-07-10",
-      "dateText": "2026.07.10",
-      "deadlineISO": "2026-08-09",
-      "deadlineText": "2026.08.09",
-      "alwaysHire": false,
-      "popularRank": 24,
-      "popularScore": 1.824805
+      "popularScore": 3.965922
     }
   ],
   "stale": false,
