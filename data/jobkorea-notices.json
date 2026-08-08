@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-08T19:37:15.743393Z",
-  "checkedAt": "2026-08-08T19:37:15.743389Z",
+  "updatedAt": "2026-08-08T20:02:53.719951Z",
+  "checkedAt": "2026-08-08T20:02:53.719947Z",
   "today": "2026-08-09",
   "count": 24,
   "notices": [
@@ -23,21 +23,6 @@
       "popularScore": 2.2442229
     },
     {
-      "id": "4dc3996bd794d9028ad1",
-      "jobId": "49731748",
-      "companyName": "세방그룹",
-      "title": "2026년 3분기 신입ㆍ채용연계형 인턴ㆍ경력 정기 채용",
-      "preview": "신입·경력 · 정규직·인턴 · 서울 강남구 · 마감 D-8 · 접수마감 2026.08.17",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49731748",
-      "dateISO": "2026-08-08",
-      "dateText": "2026.08.08",
-      "deadlineISO": "2026-08-17",
-      "deadlineText": "2026.08.17",
-      "alwaysHire": false,
-      "popularRank": 24,
-      "popularScore": 1.739506
-    },
-    {
       "id": "a1fe7bd9977bbed907d5",
       "jobId": "49730351",
       "companyName": "㈜안랩",
@@ -50,7 +35,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 2,
-      "popularScore": 4.046155
+      "popularScore": 4.051938
     },
     {
       "id": "5bdf117422a38ac42fd6",
@@ -65,7 +50,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 10,
-      "popularScore": 2.478549
+      "popularScore": 2.478552
     },
     {
       "id": "65243abe3e6bf2a43e0c",
@@ -124,7 +109,7 @@
       "deadlineISO": "2026-09-05",
       "deadlineText": "2026.09.05",
       "alwaysHire": false,
-      "popularRank": 21,
+      "popularRank": 22,
       "popularScore": 1.810047
     },
     {
@@ -185,7 +170,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 8,
-      "popularScore": 2.584347
+      "popularScore": 2.567045
     },
     {
       "id": "7f759a92c2a8f3e9be44",
@@ -244,7 +229,7 @@
       "deadlineISO": "2026-09-02",
       "deadlineText": "2026.09.02",
       "alwaysHire": false,
-      "popularRank": 22,
+      "popularRank": 23,
       "popularScore": 1.79836
     },
     {
@@ -259,8 +244,23 @@
       "deadlineISO": "2026-08-22",
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
-      "popularRank": 20,
+      "popularRank": 21,
       "popularScore": 1.909646
+    },
+    {
+      "id": "cb9a8f87ca6dfd53dfc4",
+      "jobId": "49684211",
+      "companyName": "카페24㈜",
+      "title": "[커머스플랫폼팀] 카페24 플랫폼 기획자(PO/PM) 모집",
+      "preview": "경력 3년↑ · 정규직 · 서울 동작구 · 상시채용",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49684211",
+      "dateISO": "2026-07-30",
+      "dateText": "2026.07.30",
+      "deadlineISO": "",
+      "deadlineText": "",
+      "alwaysHire": true,
+      "popularRank": 20,
+      "popularScore": 2.112679
     },
     {
       "id": "c4b6e2d9e1ed5272120e",
@@ -289,7 +289,7 @@
       "deadlineISO": "2026-08-11",
       "deadlineText": "2026.08.11",
       "alwaysHire": false,
-      "popularRank": 23,
+      "popularRank": 24,
       "popularScore": 1.7575359
     },
     {
@@ -305,7 +305,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 4,
-      "popularScore": 3.820549
+      "popularScore": 3.832454
     },
     {
       "id": "f896f9c80364e0074e46",
@@ -320,7 +320,7 @@
       "deadlineText": "2026.08.09",
       "alwaysHire": false,
       "popularRank": 5,
-      "popularScore": 3.064743
+      "popularScore": 3.058079
     },
     {
       "id": "d5aa9dbc05ebb87dadde",
@@ -365,7 +365,7 @@
       "deadlineText": "2026.09.19",
       "alwaysHire": false,
       "popularRank": 12,
-      "popularScore": 2.34796
+      "popularScore": 2.347959
     }
   ],
   "stale": false,
