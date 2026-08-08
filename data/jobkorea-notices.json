@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-08T17:31:20.859512Z",
-  "checkedAt": "2026-08-08T17:31:20.859509Z",
+  "updatedAt": "2026-08-08T18:03:33.361200Z",
+  "checkedAt": "2026-08-08T18:03:33.361195Z",
   "today": "2026-08-09",
   "count": 24,
   "notices": [
@@ -19,23 +19,8 @@
       "deadlineISO": "2026-09-07",
       "deadlineText": "2026.09.07",
       "alwaysHire": false,
-      "popularRank": 11,
-      "popularScore": 2.354345
-    },
-    {
-      "id": "4dc3996bd794d9028ad1",
-      "jobId": "49731748",
-      "companyName": "세방그룹",
-      "title": "2026년 3분기 신입ㆍ채용연계형 인턴ㆍ경력 정기 채용",
-      "preview": "신입·경력 · 정규직·인턴 · 서울 강남구 · 마감 D-8 · 접수마감 2026.08.17",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49731748",
-      "dateISO": "2026-08-08",
-      "dateText": "2026.08.08",
-      "deadlineISO": "2026-08-17",
-      "deadlineText": "2026.08.17",
-      "alwaysHire": false,
-      "popularRank": 24,
-      "popularScore": 1.785851
+      "popularRank": 14,
+      "popularScore": 2.243794
     },
     {
       "id": "a1fe7bd9977bbed907d5",
@@ -50,7 +35,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 3,
-      "popularScore": 4.007953
+      "popularScore": 4.000098
     },
     {
       "id": "5bdf117422a38ac42fd6",
@@ -64,8 +49,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 9,
-      "popularScore": 2.464489
+      "popularRank": 10,
+      "popularScore": 2.463152
     },
     {
       "id": "ae7e3a51be869a48c2cd",
@@ -79,8 +64,8 @@
       "deadlineISO": "2026-10-06",
       "deadlineText": "2026.10.06",
       "alwaysHire": false,
-      "popularRank": 16,
-      "popularScore": 2.196697
+      "popularRank": 17,
+      "popularScore": 2.1937351
     },
     {
       "id": "65243abe3e6bf2a43e0c",
@@ -95,7 +80,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 19,
-      "popularScore": 2.11522
+      "popularScore": 2.152608
     },
     {
       "id": "658a9d6752f2fad29333",
@@ -110,7 +95,7 @@
       "deadlineText": "2026.09.06",
       "alwaysHire": false,
       "popularRank": 20,
-      "popularScore": 2.108652
+      "popularScore": 2.108616
     },
     {
       "id": "a19b344837c8700e1a2e",
@@ -125,7 +110,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 6,
-      "popularScore": 3.005362
+      "popularScore": 3.016624
     },
     {
       "id": "94be55d131a72c4b3e55",
@@ -140,7 +125,7 @@
       "deadlineText": "2026.09.05",
       "alwaysHire": false,
       "popularRank": 22,
-      "popularScore": 1.81068
+      "popularScore": 1.810728
     },
     {
       "id": "522bb785534ed67465cc",
@@ -154,8 +139,8 @@
       "deadlineISO": "2026-09-04",
       "deadlineText": "2026.09.04",
       "alwaysHire": false,
-      "popularRank": 17,
-      "popularScore": 2.196251
+      "popularRank": 16,
+      "popularScore": 2.195952
     },
     {
       "id": "165bd411aea39b534d26",
@@ -170,7 +155,7 @@
       "deadlineText": "2026.08.13",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 4.257428
+      "popularScore": 4.1503468
     },
     {
       "id": "40c04c463d1729207506",
@@ -184,8 +169,8 @@
       "deadlineISO": "2026-08-16",
       "deadlineText": "2026.08.16",
       "alwaysHire": false,
-      "popularRank": 14,
-      "popularScore": 2.288806
+      "popularRank": 7,
+      "popularScore": 2.993631
     },
     {
       "id": "cdd3b46c07e0236116a7",
@@ -199,8 +184,8 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 7,
-      "popularScore": 2.560903
+      "popularRank": 8,
+      "popularScore": 2.604552
     },
     {
       "id": "7f759a92c2a8f3e9be44",
@@ -214,8 +199,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 8,
-      "popularScore": 2.547235
+      "popularRank": 9,
+      "popularScore": 2.5454159
     },
     {
       "id": "db62b6f15906cd88db83",
@@ -230,7 +215,7 @@
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
       "popularRank": 15,
-      "popularScore": 2.250125
+      "popularScore": 2.232656
     },
     {
       "id": "4352e8d6ee149c8515e7",
@@ -245,7 +230,22 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 18,
-      "popularScore": 2.17302
+      "popularScore": 2.172923
+    },
+    {
+      "id": "0b5b75a6cfcb94e44f3f",
+      "jobId": "49705487",
+      "companyName": "엘씨(LC)푸드",
+      "title": "(주)엘씨푸드 ㅣ 본사 경영기획실 차장급 인재 모집",
+      "preview": "경력 5년↑ · 정규직·계약직 · 서울 마포구 · 마감 D-24 · 접수마감 2026.09.02",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49705487",
+      "dateISO": "2026-08-03",
+      "dateText": "2026.08.03",
+      "deadlineISO": "2026-09-02",
+      "deadlineText": "2026.09.02",
+      "alwaysHire": false,
+      "popularRank": 23,
+      "popularScore": 1.8087729
     },
     {
       "id": "b2daad0d3bdddc3e904b",
@@ -260,7 +260,7 @@
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
       "popularRank": 21,
-      "popularScore": 1.93075
+      "popularScore": 1.933804
     },
     {
       "id": "c4b6e2d9e1ed5272120e",
@@ -275,7 +275,7 @@
       "deadlineText": "2026.09.27",
       "alwaysHire": false,
       "popularRank": 2,
-      "popularScore": 4.020033
+      "popularScore": 4.0188017
     },
     {
       "id": "036f8fc9662e29dbb23f",
@@ -289,8 +289,8 @@
       "deadlineISO": "2026-08-11",
       "deadlineText": "2026.08.11",
       "alwaysHire": false,
-      "popularRank": 23,
-      "popularScore": 1.8024089
+      "popularRank": 24,
+      "popularScore": 1.8038329
     },
     {
       "id": "3f28d4ebc0198319a0b7",
@@ -305,7 +305,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 4,
-      "popularScore": 3.851533
+      "popularScore": 3.822401
     },
     {
       "id": "f896f9c80364e0074e46",
@@ -320,7 +320,7 @@
       "deadlineText": "2026.08.09",
       "alwaysHire": false,
       "popularRank": 5,
-      "popularScore": 3.014569
+      "popularScore": 3.033072
     },
     {
       "id": "d5aa9dbc05ebb87dadde",
@@ -334,8 +334,8 @@
       "deadlineISO": "2026-08-23",
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
-      "popularRank": 10,
-      "popularScore": 2.370911
+      "popularRank": 11,
+      "popularScore": 2.370573
     },
     {
       "id": "ece21208d32d2683d912",
@@ -350,7 +350,7 @@
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
       "popularRank": 13,
-      "popularScore": 2.327106
+      "popularScore": 2.326737
     },
     {
       "id": "093f8212d4703005bd11",
@@ -365,7 +365,7 @@
       "deadlineText": "2026.09.19",
       "alwaysHire": false,
       "popularRank": 12,
-      "popularScore": 2.329576
+      "popularScore": 2.332006
     }
   ],
   "stale": false,
