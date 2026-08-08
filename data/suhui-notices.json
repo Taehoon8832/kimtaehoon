@@ -1,10 +1,73 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-08T17:23:53.504910Z",
-  "checkedAt": "2026-08-08T17:23:53.504905Z",
+  "updatedAt": "2026-08-08T17:53:46.803638Z",
+  "checkedAt": "2026-08-08T17:53:46.803633Z",
   "today": "2026-08-09",
-  "count": 40,
+  "count": 39,
   "notices": [
+    {
+      "id": "c9abdd990d9bc40fbda4",
+      "sourceName": "수만휘",
+      "title": "생기부 생명으로 채웠는데 간호대 학종으로 써볼 수 있을까요",
+      "preview": "[┃간호 게시판] 생기부를 생명 위주로 채웠는데,,,, 간호대 학종으로 써볼만 할까요??? 원래 생명계열 희망이고 간호는 교과로 쓸려고 했는데 갑자기 좀 욕심이 생겨서요,,,,,",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599956",
+      "dateISO": "2026-08-09",
+      "dateText": "2026.08.09"
+    },
+    {
+      "id": "36941f3020006ca0a087",
+      "sourceName": "수만휘",
+      "title": "일반고 1.68 수시 카드",
+      "preview": "[┏Team08 수험생 게시판] 전과목 1.68 1학년때 1점 초반에서 시작해서 우하향이고 시립대 융합 응용 화학과(교과) 경희대 응용 화학과(교과), 약과학과(종합) 중앙대 화학공학과(성장형) 성균관대 바이오 신약",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599955",
+      "dateISO": "2026-08-09",
+      "dateText": "2026.08.09"
+    },
+    {
+      "id": "cbd266bc17ed17d25dcc",
+      "sourceName": "수만휘",
+      "title": "대박~!!",
+      "preview": "[티키타카페 게시판] 대박을 위해서~!!",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599954",
+      "dateISO": "2026-08-09",
+      "dateText": "2026.08.09"
+    },
+    {
+      "id": "cb2777ce4d459735b57b",
+      "sourceName": "수만휘",
+      "title": "비교대 생기부 학종으로 합격",
+      "preview": "[┃교대 게시판] 안녕하세요 혹시 비교대 생기부인데 학종으로 합격하신 분 있을까요? 생기부가 완전 이공계(교육 내용 전혀 없음인데 교대에 꿈이 생겨 재도전하려 합니다 생기부 기반 면접 준비가 막막해서 도움구합니다ㅠㅠ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599953",
+      "dateISO": "2026-08-09",
+      "dateText": "2026.08.09"
+    },
+    {
+      "id": "002f6a20fcb666b91ffb",
+      "sourceName": "수만휘",
+      "title": "일반고 3점대 우주 상향",
+      "preview": "[🔥문과 수시 자유게시판] 일반고 전교과 3.2 국영수사과한 3.4 미컴 학종으로 우주 상향 넣어보고 싶은데 어디 학교가 좋을까요? 건국대 쓰고 싶었는데 버리는 카드라고 해서 후회하더라도 쓸지말지 고민중입니다. 건국",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599952",
+      "dateISO": "2026-08-09",
+      "dateText": "2026.08.09"
+    },
+    {
+      "id": "eb14a36521992301fb30",
+      "sourceName": "수만휘",
+      "title": "2점중반 미디어 수시카드 한번만 봐주세요..",
+      "preview": "[┏Team08 수험생 게시판] 안녕하세요 모든 내신아 끝난 고3입니다! 수시카드 결정하는게 너무 어려워서 도움이 필요해요ㅜㅜ 전과목: 2.38 상위10과목(동국대식): 1.8 국영 2.3 국영사 2.32 국영사한 ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599951",
+      "dateISO": "2026-08-09",
+      "dateText": "2026.08.09"
+    },
+    {
+      "id": "e8cfa671e6f4604cf395",
+      "sourceName": "수만휘",
+      "title": "간단한 거 하나 여쭤봐요..",
+      "preview": "[┏Team08 수험생 게시판] 3학년 2학기 반장은 할 필요가 있나요? 보통 다들 어떻게 하시나요? 뽑는 방식도 궁금해요...",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599950",
+      "dateISO": "2026-08-09",
+      "dateText": "2026.08.09"
+    },
     {
       "id": "eb510d0002a995a5c6ff",
       "sourceName": "수만휘",
@@ -290,78 +353,6 @@
       "title": "티처스 재수전쟁 이거 대체 언제하는걸까요",
       "preview": "[티키타카페 게시판] 티저만 올린지 몇개월인데 언제올라오는거지",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599917",
-      "dateISO": "2026-08-09",
-      "dateText": "2026.08.09"
-    },
-    {
-      "id": "5932bbd45b619247dae2",
-      "sourceName": "수만휘",
-      "title": "논술 학원 바꿀지 고민",
-      "preview": "[😃수험생 일상글 게시판] 원래 다니던 곳은 대학 측 예시답안 안 보시고 한문장 한문장 꼼꼼히 첨삭해주시고 내용측면(평가의 방향이 잘못됨,비판이 과함 등)에서 첨삭해주셨는데 사정상 학원을 옮기게 되었어요 근데 옮긴 ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599916",
-      "dateISO": "2026-08-09",
-      "dateText": "2026.08.09"
-    },
-    {
-      "id": "cc1188884d8880d3b5b4",
-      "sourceName": "수만휘",
-      "title": "여러분 폰 어떤거 쓰시나요?",
-      "preview": "[티키타카페 게시판] 모델명까지 구체적으로요",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599915",
-      "dateISO": "2026-08-09",
-      "dateText": "2026.08.09"
-    },
-    {
-      "id": "c9de24a606567e361e74",
-      "sourceName": "수만휘",
-      "title": "1~2점대 공대지망 생기부 봐드려요",
-      "preview": "[🔥이과 수시 자유게시판] 좀 심심해서 시간 날 때 생기부 평가 해드리려고 해요 저도 전략 세우고, 마음 다잡는 데에 작년에 도움이 많이 됐었던 기억이 있어서 해보려고 합니다 올해 수시 쓰고, 공대 계열 지망하시는 ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599914",
-      "dateISO": "2026-08-09",
-      "dateText": "2026.08.09"
-    },
-    {
-      "id": "7fbfee4499e30566ce58",
-      "sourceName": "수만휘",
-      "title": "경영학과) 도와주세요ㅜㅜ",
-      "preview": "[┃Team10 수험생 게시판] 경영학과 가고 싶은데 세특 주제가 너무 막막합니다.. 누구라도 괜찮으니 경영관련 세특 채워보신 분들 제발 많이 도와주세요..ㅜㅠ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599913",
-      "dateISO": "2026-08-09",
-      "dateText": "2026.08.09"
-    },
-    {
-      "id": "37d2d3666d8872cde4b6",
-      "sourceName": "수만휘",
-      "title": "09년생 2학년 1학기까지 1.0 비율 아직 안나왔죠?",
-      "preview": "[┃Team09 수험생 게시판] 작년엔 경기도교육청인가 부산교육청에서 이때쯤 내주었던 것 같은데 곧 나오겠죠?",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599912",
-      "dateISO": "2026-08-09",
-      "dateText": "2026.08.09"
-    },
-    {
-      "id": "ea5f7f07ed198473a750",
-      "sourceName": "수만휘",
-      "title": "안녕하세요",
-      "preview": "[😃가입인사+규정확인] 수만휘 카페 글",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599911",
-      "dateISO": "2026-08-09",
-      "dateText": "2026.08.09"
-    },
-    {
-      "id": "56faf7e2e244031baf43",
-      "sourceName": "수만휘",
-      "title": "지거국 대 인서울하위권",
-      "preview": "[┏Team08 수험생 게시판] 한경대, 서경대, 경기대 정도 대학이랑 전남대랑 비교하면 어디를 가는게 낫나요? 과는 산업공학으로 같고요 지역은 경기도 거주이긴 한데 서울도 거리가 있어서 기숙사는 필수라 거리는 상관",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599910",
-      "dateISO": "2026-08-09",
-      "dateText": "2026.08.09"
-    },
-    {
-      "id": "381a3d093d27c138bde2",
-      "sourceName": "수만휘",
-      "title": "수학 백분위 70이 되려면? ㅠㅠ",
-      "preview": "[┏Team08 수험생 게시판] 모고(확통) 4-5 뜹니다 수1,2 2회독정도 했고 확통은 개념 나가는 중입니다.... 목표는 백분위 70이상 나오기입니다 9모전까진 제가 영어랑 사탐에 집중해야해서 수학은 감 유지하",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599909",
       "dateISO": "2026-08-09",
       "dateText": "2026.08.09"
     }
