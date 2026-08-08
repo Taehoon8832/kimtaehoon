@@ -1,10 +1,109 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-08T17:53:46.803638Z",
-  "checkedAt": "2026-08-08T17:53:46.803633Z",
+  "updatedAt": "2026-08-08T18:18:10.628965Z",
+  "checkedAt": "2026-08-08T18:18:10.628960Z",
   "today": "2026-08-09",
   "count": 39,
   "notices": [
+    {
+      "id": "6980fee452a94fa7261a",
+      "sourceName": "수만휘",
+      "title": "내신 3점대 인하대 ㅜㅜㅜ봐주세요ㅜㅜ",
+      "preview": "[😃수험생 일상글 게시판] 일반고 내신 국영수사 3.29 전체는 3.4정도되는데여 학생부를 미디어커뮤니케이션,마케팅으로 다 맞춰놓은상태인데 인하대 미디어커뮤니케이션은 너무 높더라구요 인하대 소비자학과 학종으로 지원하",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599969",
+      "dateISO": "2026-08-09",
+      "dateText": "2026.08.09"
+    },
+    {
+      "id": "9f77e7aab1037f4241f5",
+      "sourceName": "수만휘",
+      "title": "수시로 원서 넣을때",
+      "preview": "[┏Team08 수험생 게시판] 나이스 학생부 온라인 제공 신청 같은거 해야하나요? 아니면 그냥 아무것도 없이 하면 되나요?",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599968",
+      "dateISO": "2026-08-09",
+      "dateText": "2026.08.09"
+    },
+    {
+      "id": "8d01588332b3d7fe7971",
+      "sourceName": "수만휘",
+      "title": "경희대 네오르네상스 궁금한거 물어보세요!",
+      "preview": "[┃경희+시+외+이+중] 경희대 네오르네상스 전형으로 서울캠퍼스에 재학중입니다 자사고 출신이지만 5-6등급이었기에 경희대는 저에게 우주상향 학교였는데요, 이런 낮은 점수를 극복하고 최초합격 할 수 있었던 이유는 면접",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599967",
+      "dateISO": "2026-08-09",
+      "dateText": "2026.08.09"
+    },
+    {
+      "id": "92df9b07cd43a719293d",
+      "sourceName": "수만휘",
+      "title": "26학번 고대생 질문 받아요!",
+      "preview": "[┃고려+연세대학교] 작년 학추로 어문 계열 합격했고, 내신은 고대식으로 1.46 정도였어요! 특히 학추 관련이라면 제가 정말 잘 답변드릴 수 있을 것 같아요ㅎㅎ 질문 받습니다!",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599966",
+      "dateISO": "2026-08-09",
+      "dateText": "2026.08.09"
+    },
+    {
+      "id": "39cc4361b8044162a343",
+      "sourceName": "수만휘",
+      "title": "가톨릭대 미디어기술콘텐츠학과",
+      "preview": "[🔥문과 수시 자유게시판] 3년 내내 미디어커뮤니케이션으로 생기부를 채웠는데 학종으로 이 학과 지원 가능할까요? 공학 계열이라고 하는데 미디어커뮤니케이션학과랑은 다른 학과인가요?",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599965",
+      "dateISO": "2026-08-09",
+      "dateText": "2026.08.09"
+    },
+    {
+      "id": "38f7d073b6a1b725b559",
+      "sourceName": "수만휘",
+      "title": "호서대식 3.36",
+      "preview": "[┏Team08 수험생 게시판] 호서대 교과 면접 3.36이면 합격 가능할까요? ㅠ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599964",
+      "dateISO": "2026-08-09",
+      "dateText": "2026.08.09"
+    },
+    {
+      "id": "fb013e721273cd3c3692",
+      "sourceName": "수만휘",
+      "title": "9모신청",
+      "preview": "[🔥문과 수능 자유게시판] 지금 9월 모의고사 신청해서 받아주는 곳 있을까요? 정보 부탁드립니다ㅜㅜ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599963",
+      "dateISO": "2026-08-09",
+      "dateText": "2026.08.09"
+    },
+    {
+      "id": "db885dad0dbbbe889491",
+      "sourceName": "수만휘",
+      "title": "영어 과외 선생님 구합니다",
+      "preview": "[🔥문과 수능 자유게시판] 안녕하세요 화상과외 영어 선생님 구합니다 자세한 사항은 아래 오픈채팅으로 톡 남겨주시면 연락드리겠습니다! 연락 주실 때 나이, 과외이력 , 자세한 커리큘럼, 금액, 시범과외 여부 알려주시면",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599961",
+      "dateISO": "2026-08-09",
+      "dateText": "2026.08.09"
+    },
+    {
+      "id": "d9fc0483a0f05a121e24",
+      "sourceName": "수만휘",
+      "title": "고2 정시러 질문있어요ㅠㅠ!",
+      "preview": "[┃Team09 수험생 게시판] 이번에 정시를 하기로 마음먹었는데 수학 모고는 6정도로 아예 노베이스고 국어 3-4 영어 3 수능 준빌 어떻게 해야할까요ㅠㅠ 공부를 어떻게 시작해야할지 모르겠어요….",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599960",
+      "dateISO": "2026-08-09",
+      "dateText": "2026.08.09"
+    },
+    {
+      "id": "733f4c91a3c40b403104",
+      "sourceName": "수만휘",
+      "title": "강남대성의대관윈터스쿨",
+      "preview": "[┃Team09 수험생 게시판] 강대 의대관 윈터스쿨 질문드립니다 선착순 모집이 오픈되면 빨리 마감되는 것으로 알고 있어요 기준 성적만 만족하면 선착순 성공 시 바로 확정인건가요? 아니면 사람을 더 받아서 성적으로 ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599959",
+      "dateISO": "2026-08-09",
+      "dateText": "2026.08.09"
+    },
+    {
+      "id": "065bb1a73687e991fb41",
+      "sourceName": "수만휘",
+      "title": "작년 산출 점수 기준으로 50컷과 0.07 차이가 나는데 산출등급은 70컷보다 낮은 경우",
+      "preview": "[🔥문과 수시 자유게시판] 가 있나요? 교과 전형에서 선발을 산출 점수로 한다고 알고 있어서 그거를 기준으로 하면 교과에서 가능성이 보이는데 단순 등급으로만 하면 조금 힘들어보여서요 이런 현상에 대해 아시는 분 있나",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599958",
+      "dateISO": "2026-08-09",
+      "dateText": "2026.08.09"
+    },
     {
       "id": "c9abdd990d9bc40fbda4",
       "sourceName": "수만휘",
@@ -65,15 +164,6 @@
       "title": "간단한 거 하나 여쭤봐요..",
       "preview": "[┏Team08 수험생 게시판] 3학년 2학기 반장은 할 필요가 있나요? 보통 다들 어떻게 하시나요? 뽑는 방식도 궁금해요...",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599950",
-      "dateISO": "2026-08-09",
-      "dateText": "2026.08.09"
-    },
-    {
-      "id": "eb510d0002a995a5c6ff",
-      "sourceName": "수만휘",
-      "title": "전북대 경영",
-      "preview": "[😃수험생 일상글 게시판] 교과로 상향 좀 힘들겠죠...작년에 충원도 많이 되고 경쟁률도 괜찮던데 제 내신이랑 0.8 정도 차이나요",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599949",
       "dateISO": "2026-08-09",
       "dateText": "2026.08.09"
     },
@@ -263,96 +353,6 @@
       "title": "공부도 복싱처럼",
       "preview": "[😃수험생 일상글 게시판] 복싱을 배웁니다 복싱도 공부와 같아요 거울보며 혼자서 진득하게 스텝뛰며 주먹내야합니다 샌드백 혼자서 계속계속 쳐야합니다 개념 진득하게 읽어야하고 문제 계속계속 풀어야하죠 복싱 정말 재밋습니",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599927",
-      "dateISO": "2026-08-09",
-      "dateText": "2026.08.09"
-    },
-    {
-      "id": "7fb5454c601f18708510",
-      "sourceName": "수만휘",
-      "title": "연세 미래캠 가천대",
-      "preview": "[┏Team08 수험생 게시판] 수만휘 카페 글",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599926",
-      "dateISO": "2026-08-09",
-      "dateText": "2026.08.09"
-    },
-    {
-      "id": "7f6114870816869882fd",
-      "sourceName": "수만휘",
-      "title": "日日 學習事項",
-      "preview": "[🔥재/반/N수 자유게시판] 수만휘 카페 글",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599925",
-      "dateISO": "2026-08-09",
-      "dateText": "2026.08.09"
-    },
-    {
-      "id": "3a78d9dab540d5746e99",
-      "sourceName": "수만휘",
-      "title": "다들 수능 좋은 결과 있기를!!",
-      "preview": "[티키타카페 게시판] 날씨는 덥지만 화이팅,,!",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599924",
-      "dateISO": "2026-08-09",
-      "dateText": "2026.08.09"
-    },
-    {
-      "id": "effa954e7e0fb575ed5c",
-      "sourceName": "수만휘",
-      "title": "이번에 교과 상향 지르는 건 힘들까요??",
-      "preview": "[🔥문과 수시 자유게시판] 생기부 30%평가하고 내신 점수 70%로 들어가는데 최저가 높은 학교거든요 이번에 교과로 상향 지르는 건 어려울까요??ㅠ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599923",
-      "dateISO": "2026-08-09",
-      "dateText": "2026.08.09"
-    },
-    {
-      "id": "4623ef4a7628dc80b181",
-      "sourceName": "수만휘",
-      "title": "성범죄 무고죄 전부 전과자로 만든 레전드 검사",
-      "preview": "[😃수험생 일상글 게시판] 수만휘 카페 글",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599922",
-      "dateISO": "2026-08-09",
-      "dateText": "2026.08.09"
-    },
-    {
-      "id": "6074950ed6812a33f47c",
-      "sourceName": "수만휘",
-      "title": "일반고 4.6 수시카드 봐주세요 ..ㅜㅜ!!",
-      "preview": "[┏Team08 수험생 게시판] 경기 일반고 내신 4.61 입니다.. 4.78 > 4.57 > 4.25 으로 우상향했습니다..! 안양대 아리학생부종합 사회계열자유전공 (서류100) 성결대 영암인재전형 인문사회계열자유",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599921",
-      "dateISO": "2026-08-09",
-      "dateText": "2026.08.09"
-    },
-    {
-      "id": "fe91bbd2b6cf4c322c74",
-      "sourceName": "수만휘",
-      "title": "대치동 시대인재",
-      "preview": "[🔥학부모님 자유게시판] 대치동에 있는 시대인재는 윈터스쿨 통학형 운영을 안하는건가요? 있다면 인강보며자습개념 인지 시간표대로 강의를 듣는건지 궁금한데 제가 못 찾는건지 안보여서요",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599920",
-      "dateISO": "2026-08-09",
-      "dateText": "2026.08.09"
-    },
-    {
-      "id": "a9f8444fa9a61aa146b2",
-      "sourceName": "수만휘",
-      "title": "외대 질러볼까요..",
-      "preview": "[┏Team08 수험생 게시판] 외대식 환산 점수 974점인데 낮은과 질러볼만할까요ㅠㅠ…",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599919",
-      "dateISO": "2026-08-09",
-      "dateText": "2026.08.09"
-    },
-    {
-      "id": "67e5ba0c33767e8da76e",
-      "sourceName": "수만휘",
-      "title": "정승제50일수학",
-      "preview": "[😃수험생 일상글 게시판] 정승제선생님의 50일 수학 많이 도움되나요?? 강의 들으시면서 문제 풀어보시고 도움 되신 분들 있으실까요?? 후기 좀 알려주세요.... 쎈 정도는 풀수 있는 실력인데 주변에서 정승제 50일",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599918",
-      "dateISO": "2026-08-09",
-      "dateText": "2026.08.09"
-    },
-    {
-      "id": "1757ee4e5716bbbd0088",
-      "sourceName": "수만휘",
-      "title": "티처스 재수전쟁 이거 대체 언제하는걸까요",
-      "preview": "[티키타카페 게시판] 티저만 올린지 몇개월인데 언제올라오는거지",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29599917",
       "dateISO": "2026-08-09",
       "dateText": "2026.08.09"
     }
