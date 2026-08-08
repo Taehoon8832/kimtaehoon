@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-08T21:31:15.211466Z",
-  "checkedAt": "2026-08-08T21:31:15.211461Z",
+  "updatedAt": "2026-08-08T22:02:55.803414Z",
+  "checkedAt": "2026-08-08T22:02:55.803409Z",
   "today": "2026-08-09",
   "count": 24,
   "notices": [
@@ -20,7 +20,7 @@
       "deadlineText": "2026.09.07",
       "alwaysHire": false,
       "popularRank": 14,
-      "popularScore": 2.244226
+      "popularScore": 2.2442229
     },
     {
       "id": "a1fe7bd9977bbed907d5",
@@ -50,7 +50,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 10,
-      "popularScore": 2.478557
+      "popularScore": 2.478563
     },
     {
       "id": "65243abe3e6bf2a43e0c",
@@ -95,7 +95,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 6,
-      "popularScore": 3.038452
+      "popularScore": 3.048448
     },
     {
       "id": "94be55d131a72c4b3e55",
@@ -140,7 +140,7 @@
       "deadlineText": "2026.08.13",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 4.146519
+      "popularScore": 4.149855
     },
     {
       "id": "40c04c463d1729207506",
@@ -170,7 +170,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 8,
-      "popularScore": 2.567045
+      "popularScore": 2.573468
     },
     {
       "id": "7f759a92c2a8f3e9be44",
@@ -185,7 +185,7 @@
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
       "popularRank": 9,
-      "popularScore": 2.522709
+      "popularScore": 2.522721
     },
     {
       "id": "db62b6f15906cd88db83",
@@ -230,7 +230,7 @@
       "deadlineText": "2026.09.02",
       "alwaysHire": false,
       "popularRank": 23,
-      "popularScore": 1.79836
+      "popularScore": 1.798378
     },
     {
       "id": "b2daad0d3bdddc3e904b",
@@ -245,7 +245,7 @@
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
       "popularRank": 21,
-      "popularScore": 1.909646
+      "popularScore": 1.9000831
     },
     {
       "id": "cb9a8f87ca6dfd53dfc4",
@@ -275,7 +275,7 @@
       "deadlineText": "2026.09.27",
       "alwaysHire": false,
       "popularRank": 3,
-      "popularScore": 4.019762
+      "popularScore": 4.019776
     },
     {
       "id": "036f8fc9662e29dbb23f",
@@ -290,7 +290,7 @@
       "deadlineText": "2026.08.11",
       "alwaysHire": false,
       "popularRank": 24,
-      "popularScore": 1.751737
+      "popularScore": 1.7575359
     },
     {
       "id": "3f28d4ebc0198319a0b7",
@@ -305,7 +305,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 4,
-      "popularScore": 3.832454
+      "popularScore": 3.829122
     },
     {
       "id": "f896f9c80364e0074e46",
@@ -320,7 +320,7 @@
       "deadlineText": "2026.08.09",
       "alwaysHire": false,
       "popularRank": 5,
-      "popularScore": 3.058079
+      "popularScore": 3.0811741
     },
     {
       "id": "d5aa9dbc05ebb87dadde",
@@ -335,7 +335,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 11,
-      "popularScore": 2.37575
+      "popularScore": 2.375748
     },
     {
       "id": "ece21208d32d2683d912",
@@ -365,7 +365,7 @@
       "deadlineText": "2026.09.19",
       "alwaysHire": false,
       "popularRank": 12,
-      "popularScore": 2.34796
+      "popularScore": 2.347959
     }
   ],
   "stale": false,
