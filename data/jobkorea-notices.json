@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-08T02:10:46.714802Z",
-  "checkedAt": "2026-08-08T02:10:46.714798Z",
+  "updatedAt": "2026-08-08T03:44:20.280983Z",
+  "checkedAt": "2026-08-08T03:44:20.280979Z",
   "today": "2026-08-08",
   "count": 24,
   "notices": [
@@ -20,7 +20,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 2,
-      "popularScore": 4.186964
+      "popularScore": 4.1834393
     },
     {
       "id": "658a9d6752f2fad29333",
@@ -35,7 +35,7 @@
       "deadlineText": "2026.09.06",
       "alwaysHire": false,
       "popularRank": 13,
-      "popularScore": 2.288181
+      "popularScore": 2.289896
     },
     {
       "id": "ae7e3a51be869a48c2cd",
@@ -49,8 +49,8 @@
       "deadlineISO": "2026-10-06",
       "deadlineText": "2026.10.06",
       "alwaysHire": false,
-      "popularRank": 19,
-      "popularScore": 2.141025
+      "popularRank": 18,
+      "popularScore": 2.14801
     },
     {
       "id": "5bdf117422a38ac42fd6",
@@ -65,7 +65,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 20,
-      "popularScore": 2.11894
+      "popularScore": 2.119948
     },
     {
       "id": "a19b344837c8700e1a2e",
@@ -79,8 +79,8 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 7,
-      "popularScore": 2.998726
+      "popularRank": 6,
+      "popularScore": 2.969949
     },
     {
       "id": "94be55d131a72c4b3e55",
@@ -95,7 +95,7 @@
       "deadlineText": "2026.09.05",
       "alwaysHire": false,
       "popularRank": 22,
-      "popularScore": 1.996268
+      "popularScore": 1.996596
     },
     {
       "id": "52e3de0f3e258ff8c87a",
@@ -109,23 +109,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 6,
-      "popularScore": 3.0940151
-    },
-    {
-      "id": "dc573c0c1587bdd41aba",
-      "jobId": "49725696",
-      "companyName": "코드아이디어",
-      "title": "[IT] 해내는 PM/기획자 채용",
-      "preview": "경력 1년↑ · 정규직·계약직 · 서울 강서구 · 마감 D-53 · 접수마감 2026.09.30",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49725696",
-      "dateISO": "2026-08-05",
-      "dateText": "2026.08.05",
-      "deadlineISO": "2026-09-30",
-      "deadlineText": "2026.09.30",
-      "alwaysHire": false,
-      "popularRank": 17,
-      "popularScore": 2.165438
+      "popularRank": 11,
+      "popularScore": 2.326622
     },
     {
       "id": "522bb785534ed67465cc",
@@ -139,8 +124,23 @@
       "deadlineISO": "2026-09-04",
       "deadlineText": "2026.09.04",
       "alwaysHire": false,
-      "popularRank": 18,
-      "popularScore": 2.147091
+      "popularRank": 17,
+      "popularScore": 2.153261
+    },
+    {
+      "id": "dc573c0c1587bdd41aba",
+      "jobId": "49725696",
+      "companyName": "코드아이디어",
+      "title": "[IT] 해내는 PM/기획자 채용",
+      "preview": "경력 1년↑ · 정규직·계약직 · 서울 강서구 · 마감 D-53 · 접수마감 2026.09.30",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49725696",
+      "dateISO": "2026-08-05",
+      "dateText": "2026.08.05",
+      "deadlineISO": "2026-09-30",
+      "deadlineText": "2026.09.30",
+      "alwaysHire": false,
+      "popularRank": 19,
+      "popularScore": 2.138089
     },
     {
       "id": "165bd411aea39b534d26",
@@ -155,7 +155,7 @@
       "deadlineText": "2026.08.13",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 4.583242
+      "popularScore": 4.591251
     },
     {
       "id": "40c04c463d1729207506",
@@ -170,7 +170,7 @@
       "deadlineText": "2026.08.16",
       "alwaysHire": false,
       "popularRank": 5,
-      "popularScore": 3.357979
+      "popularScore": 3.361763
     },
     {
       "id": "f40907036afe640c5ffb",
@@ -184,8 +184,8 @@
       "deadlineISO": "2026-09-03",
       "deadlineText": "2026.09.03",
       "alwaysHire": false,
-      "popularRank": 9,
-      "popularScore": 2.460131
+      "popularRank": 8,
+      "popularScore": 2.464031
     },
     {
       "id": "cdd3b46c07e0236116a7",
@@ -199,8 +199,8 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 8,
-      "popularScore": 2.652183
+      "popularRank": 7,
+      "popularScore": 2.659119
     },
     {
       "id": "7f759a92c2a8f3e9be44",
@@ -215,22 +215,7 @@
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
       "popularRank": 12,
-      "popularScore": 2.316015
-    },
-    {
-      "id": "621244133718cacd4b65",
-      "jobId": "49706343",
-      "companyName": "㈜이카운트",
-      "title": "[이카운트] 서비스본부 신입 채용",
-      "preview": "신입 · 정규직 · 서울 강동구 · 마감 D-10 · 접수마감 2026.08.18",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49706343",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03",
-      "deadlineISO": "2026-08-18",
-      "deadlineText": "2026.08.18",
-      "alwaysHire": false,
-      "popularRank": 14,
-      "popularScore": 2.2404099
+      "popularScore": 2.2968931
     },
     {
       "id": "db62b6f15906cd88db83",
@@ -244,8 +229,23 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
+      "popularRank": 14,
+      "popularScore": 2.226054
+    },
+    {
+      "id": "621244133718cacd4b65",
+      "jobId": "49706343",
+      "companyName": "㈜이카운트",
+      "title": "[이카운트] 서비스본부 신입 채용",
+      "preview": "신입 · 정규직 · 서울 강동구 · 마감 D-10 · 접수마감 2026.08.18",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49706343",
+      "dateISO": "2026-08-03",
+      "dateText": "2026.08.03",
+      "deadlineISO": "2026-08-18",
+      "deadlineText": "2026.08.18",
+      "alwaysHire": false,
       "popularRank": 15,
-      "popularScore": 2.22978
+      "popularScore": 2.210437
     },
     {
       "id": "8c7b1b063c58f34fc010",
@@ -259,8 +259,8 @@
       "deadlineISO": "2026-08-22",
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
-      "popularRank": 11,
-      "popularScore": 2.404924
+      "popularRank": 10,
+      "popularScore": 2.368236
     },
     {
       "id": "b2daad0d3bdddc3e904b",
@@ -275,7 +275,7 @@
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
       "popularRank": 23,
-      "popularScore": 1.991629
+      "popularScore": 1.974179
     },
     {
       "id": "cb9a8f87ca6dfd53dfc4",
@@ -290,7 +290,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 16,
-      "popularScore": 2.199024
+      "popularScore": 2.2036939
     },
     {
       "id": "c4b6e2d9e1ed5272120e",
@@ -304,8 +304,23 @@
       "deadlineISO": "2026-09-27",
       "deadlineText": "2026.09.27",
       "alwaysHire": false,
-      "popularRank": 10,
-      "popularScore": 2.421099
+      "popularRank": 9,
+      "popularScore": 2.417007
+    },
+    {
+      "id": "036f8fc9662e29dbb23f",
+      "jobId": "49670450",
+      "companyName": "㈜미디어로그",
+      "title": "미디어로그(LG그룹) 채용연계형 인턴(신입) 채용",
+      "preview": "신입 · 인턴 · 서울 마포구 · 마감 D-3 · 접수마감 2026.08.11",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49670450",
+      "dateISO": "2026-07-29",
+      "dateText": "2026.07.29",
+      "deadlineISO": "2026-08-11",
+      "deadlineText": "2026.08.11",
+      "alwaysHire": false,
+      "popularRank": 24,
+      "popularScore": 1.793576
     },
     {
       "id": "3f28d4ebc0198319a0b7",
@@ -320,7 +335,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 4,
-      "popularScore": 3.797354
+      "popularScore": 3.795068
     },
     {
       "id": "f896f9c80364e0074e46",
@@ -335,7 +350,7 @@
       "deadlineText": "2026.08.09",
       "alwaysHire": false,
       "popularRank": 3,
-      "popularScore": 4.042445
+      "popularScore": 4.031829
     },
     {
       "id": "ece21208d32d2683d912",
@@ -350,22 +365,7 @@
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
       "popularRank": 21,
-      "popularScore": 2.113859
-    },
-    {
-      "id": "b2d647ba9dc240a68915",
-      "jobId": "49622309",
-      "companyName": "(주)키투웨이",
-      "title": "경영 컨설팅 임원 채용",
-      "preview": "경력 15년↑ · 정규직·계약직 · 서울 서초구 · 마감 D-12 · 접수마감 2026.08.20",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49622309",
-      "dateISO": "2026-07-21",
-      "dateText": "2026.07.21",
-      "deadlineISO": "2026-08-20",
-      "deadlineText": "2026.08.20",
-      "alwaysHire": false,
-      "popularRank": 24,
-      "popularScore": 1.791945
+      "popularScore": 2.115195
     }
   ],
   "stale": false,
