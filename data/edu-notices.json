@@ -67,10 +67,10 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-09T10:49:51.389329Z",
-  "checkedAt": "2026-08-09T10:49:51.389323Z",
+  "updatedAt": "2026-08-09T11:18:33.076171Z",
+  "checkedAt": "2026-08-09T11:18:33.076166Z",
   "today": "2026-08-09",
-  "count": 80,
+  "count": 72,
   "notices": [
     {
       "id": "e9bf31dae77c1e9de85b",
@@ -79,6 +79,26 @@
       "title": "서울교육미래정책 6차 포럼, 서울형 방과후 돌봄 체제 전환 방안 논의",
       "preview": "에듀프레스 소식",
       "url": "https://www.edupress.kr/news/articleView.html?idxno=30390",
+      "dateISO": "2026-08-09",
+      "dateText": "2026.08.09"
+    },
+    {
+      "id": "5c21348f71d8c9d9a55a",
+      "sourceId": "moe_blog",
+      "sourceName": "교육부블로그",
+      "title": "미래를 달릴 아이디어, 첨단산업 인재양성 부트캠프 미래차 경진대회에서 펼쳐지다",
+      "preview": "교육부(장관 최교진)와 한국산업기술진흥원(원장 전윤종), 한국전자정보통신산업진흥회(회장 용석우)는 8월 10일(월) 성균관대학교 반도체관(경기 수원)에서 ‘2026년 첨단산업 인재양성 부트캠프 미래차 인공지능(AI)",
+      "url": "https://blog.naver.com/moeblog/224373177549",
+      "dateISO": "2026-08-09",
+      "dateText": "2026.08.09"
+    },
+    {
+      "id": "26a3e012bf755e29a7a8",
+      "sourceId": "moe_blog",
+      "sourceName": "교육부블로그",
+      "title": "교육부, 재외교육기관장과 함께 ‘케이(K)-교육’의 미래를 논하다",
+      "preview": "교육부(장관 최교진)는 8월 10일(월) 코트야드 바이 메리어트 세종에서 ‘2026 재외교육기관장 역량 강화 연수’를 개최한다. < 2026년 재외교육기관장 역량 강화 연수 개요 > 이번 연수는 재외교육기관장의 전문",
+      "url": "https://blog.naver.com/moeblog/224373182995",
       "dateISO": "2026-08-09",
       "dateText": "2026.08.09"
     },
@@ -323,16 +343,6 @@
       "dateText": "2026.08.05"
     },
     {
-      "id": "ad968dd9343977fac20f",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2027학년도 대학원 정원조정 및 설치·운영 세부기준",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106856&lev=0&m=0303&s=moe",
-      "dateISO": "2026-08-05",
-      "dateText": "2026.08.05"
-    },
-    {
       "id": "da4fa5f412dd8e684f3a",
       "sourceId": "ebsi",
       "sourceName": "EBSi",
@@ -351,26 +361,6 @@
       "url": "https://blog.naver.com/moeblog/224368708035",
       "dateISO": "2026-08-05",
       "dateText": "2026.08.05"
-    },
-    {
-      "id": "1c535c0d92af75dbb109",
-      "sourceId": "moe_blog",
-      "sourceName": "교육부블로그",
-      "title": "사립대학의 건전한 발전을 위한 「사립대학구조개선법 시행령」 제정안, 국무회의 통과",
-      "preview": "📢사립대학의 건전한 발전을 위한 「사립대학구조개선법 시행령」 제정안, 국무회의 통과 ✅사립대학 구조개선의 전 과정에 대한 법령상 근거 및 세부 절차 마련 ✅사립대학의 자발적 구조개선을 촉진하기 위한 근거 마련 ✅교직",
-      "url": "https://blog.naver.com/moeblog/224367757456",
-      "dateISO": "2026-08-04",
-      "dateText": "2026.08.04"
-    },
-    {
-      "id": "cf1e657ae93b91a839e5",
-      "sourceId": "moe_blog",
-      "sourceName": "교육부블로그",
-      "title": "「사립대학구조개선법 시행령」 제정안 국무회의 통과",
-      "preview": "교육부(장관 최교진)는 8월 4일(화) 국무회의에서 「사립대학구조개선법 시행령」 제정안이 심의·의결되었다고 밝혔다. 이번 시행령은 「사립대학구조개선법」 시행(’26.8.15.)에 맞추어 법률에서 위임한 사항과 그 시",
-      "url": "https://blog.naver.com/moeblog/224367733343",
-      "dateISO": "2026-08-04",
-      "dateText": "2026.08.04"
     },
     {
       "id": "6dbcb230b90b3f21390c",
@@ -441,36 +431,6 @@
       "url": "https://www.sen.go.kr/user/bbs/BD_selectBbsList.do?q_bbsSn=1036",
       "dateISO": "2026-07-28",
       "dateText": "2026.07.28"
-    },
-    {
-      "id": "7a51baeb19e84fa8436a",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2026년도 산업교육 및 산학연협력 시행계획",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106791&lev=0&m=0303&s=moe",
-      "dateISO": "2026-07-27",
-      "dateText": "2026.07.27"
-    },
-    {
-      "id": "90eef674cdaee188ca91",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2026년도 법학전문대학원 취약계층 장학금 지원사업 기본계획",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106779&lev=0&m=0303&s=moe",
-      "dateISO": "2026-07-27",
-      "dateText": "2026.07.27"
-    },
-    {
-      "id": "3193c29867d87fba9a8c",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2026 대학 창업 운영 가이드 발간 안내",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106786&lev=0&m=0303&s=moe",
-      "dateISO": "2026-07-27",
-      "dateText": "2026.07.27"
     },
     {
       "id": "55fd2008f91571880899",
@@ -573,16 +533,6 @@
       "dateText": "2026.07.09"
     },
     {
-      "id": "1a93bd0002bdc262c36e",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2026년 전문대학 혁신지원사업 기본계획",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106665&lev=0&m=0303&s=moe",
-      "dateISO": "2026-07-09",
-      "dateText": "2026.07.09"
-    },
-    {
       "id": "0a6d6c9a7e12c53b89c4",
       "sourceId": "jongro",
       "sourceName": "종로학원",
@@ -601,26 +551,6 @@
       "url": "https://www.jongro.co.kr/reports/examAnalysisView.asp?idx=7688&page=1&s_academicyear=&s_option1=&s_option2=&s_option3=&s_option4=&s_key=&s_value=&s_intPageSize=12",
       "dateISO": "2026-07-09",
       "dateText": "2026.07.09"
-    },
-    {
-      "id": "f1cb8fe6cd24bc39097c",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2026학년도 전국 전문대학 현황",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106664&lev=0&m=0303&s=moe",
-      "dateISO": "2026-07-08",
-      "dateText": "2026.07.08"
-    },
-    {
-      "id": "ab224be6ad030a2dd9d6",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2026학년도 등록금 통계조사분석시스템 자료 입력 안내",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106660&lev=0&m=0303&s=moe",
-      "dateISO": "2026-07-08",
-      "dateText": "2026.07.08"
     },
     {
       "id": "fda266d28d71bb171f39",
@@ -669,16 +599,6 @@
       "title": "2027학년도 대학수학능력시험 시행...",
       "preview": "평가원보도 공지",
       "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095611&lev=0&m=0302&s=suneung",
-      "dateISO": "2026-07-01",
-      "dateText": "2026.07.01"
-    },
-    {
-      "id": "a0aa87a1e4180dd8cc5f",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2026학년도 2학기 학자금대출 기본계획",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106606&lev=0&m=0303&s=moe",
       "dateISO": "2026-07-01",
       "dateText": "2026.07.01"
     },
