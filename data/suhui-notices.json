@@ -1,10 +1,46 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-09T20:57:54.393578Z",
-  "checkedAt": "2026-08-09T20:57:54.393572Z",
+  "updatedAt": "2026-08-09T21:25:21.869476Z",
+  "checkedAt": "2026-08-09T21:25:21.869472Z",
   "today": "2026-08-10",
-  "count": 38,
+  "count": 39,
   "notices": [
+    {
+      "id": "1703d10f8dac0d432405",
+      "sourceName": "수만휘",
+      "title": "올해 수리논술 어떨까요??",
+      "preview": "[🔥이과 수능 자유게시판] 올해 확통런 급증하면서 미적분 선택자가 줄어들고 대부분 미적분 선택자가 수리논술 선택하니까 수리논술 경쟁률이 떨어질수밖에없다는 이야기가 있는데 올해 수리논술은 전반적으로 어떨것같나요..ㅠㅠ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29601048",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
+    {
+      "id": "358ecf4b8ff94ea8e68f",
+      "sourceName": "수만휘",
+      "title": "내신 5점초 모고 3후~4초 조언 부탁드려요",
+      "preview": "[🔥이과 수시 자유게시판] 안녕하세요. 공과 희망 고3입니다. 수시 원서 접수 예정 대학들을 보니 답이 없어서 질문드립니다. 제목 그대로 내신은 5점초에 모고는 3후~4초 정도 나옵니다. 정말 운이 좋게 찍은 게 맞",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29601047",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
+    {
+      "id": "85c7a8c70ed5f25a79d2",
+      "sourceName": "수만휘",
+      "title": "사관학교 수시 우선선발 합격후기",
+      "preview": "[광릉한샘 학원문의 및 진학상담] 수능 5,6등급 사관학교 수시 우선선발 합격후기 https://blog.naver.com/kdhactive/223367752525 https://youtu.be/I5BCaLHOgQY",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29601046",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
+    {
+      "id": "ad7317658864b7b4061d",
+      "sourceName": "수만휘",
+      "title": "예체능 고3 2학기",
+      "preview": "[┏Team08 수험생 게시판] 제목 그대로 예체능인 고3인데 곧 실기라 조퇴를 몇 번 해야 될 것 같아서요 혹시 다른 분들은 어떻게 빼셨나요??",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29601045",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
     {
       "id": "ee5f5a8ce5d31da48bf6",
       "sourceName": "수만휘",
@@ -317,33 +353,6 @@
       "title": "임정환 T->김종익T",
       "preview": "[😃수험생 일상글 게시판] 생윤 모고 1,2왔다 갔다 하는데 강의는 임정환lim it 들어습니다 ,김종익 선생님 기출 해설이 좋다고 하는데 괜찮을까요?",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29601006",
-      "dateISO": "2026-08-10",
-      "dateText": "2026.08.10"
-    },
-    {
-      "id": "52a72ca118f37b918071",
-      "sourceName": "수만휘",
-      "title": "학군지 사는 중3 한 번만 도와주세요ㅜㅜ",
-      "preview": "[┃Team11 수험생 게시판] 안녕하세요 학군지 사는 중3입니다 1.제가 중1때 영어학원을 끊고 여태까지 한번도 내신 공부 이외에 해본적이 없습니다.이제 슬슬 영어 공부해야할 것 같은데 어떤 교재로 보통 독해 공부",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29601005",
-      "dateISO": "2026-08-10",
-      "dateText": "2026.08.10"
-    },
-    {
-      "id": "94355ef5626b4a9300d5",
-      "sourceName": "수만휘",
-      "title": "1점댄데이거어디까지내려가는거에요…",
-      "preview": "[🔥문과 수시 자유게시판] 안녕하세요! 일반고 재학중인 현 고3학생입니다. 문과고 사범계열 희망합니다. 교과로 1.72 이고 전과목하면 1.81입니다. 모고는 7모기준으로 23222 입니다 6모도 비슷했어요 얼마전에",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29601004",
-      "dateISO": "2026-08-10",
-      "dateText": "2026.08.10"
-    },
-    {
-      "id": "9621349bc729d3f82e73",
-      "sourceName": "수만휘",
-      "title": "대학교 기숙사 관련 질문",
-      "preview": "[┏Team08 수험생 게시판] 학교마다 다른 건 알지만... 대학교 기숙사는 대략적으로 어떤 분위기이고 어떤 규칙이 있는지 궁금해서 여쭤봅니다 1. 보통 통금시간이 정해져있나요? 있다면 대략 몇시정도인가요? 2. ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29601002",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10"
     }
