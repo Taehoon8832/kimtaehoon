@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-09T15:49:29.410735Z",
-  "checkedAt": "2026-08-09T15:49:29.410732Z",
+  "updatedAt": "2026-08-09T17:15:12.173521Z",
+  "checkedAt": "2026-08-09T17:15:12.173517Z",
   "today": "2026-08-10",
   "count": 24,
   "notices": [
@@ -19,8 +19,8 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 20,
-      "popularScore": 1.821354
+      "popularRank": 19,
+      "popularScore": 1.853073
     },
     {
       "id": "a1fe7bd9977bbed907d5",
@@ -35,7 +35,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 4.30636
+      "popularScore": 4.33111
     },
     {
       "id": "5bdf117422a38ac42fd6",
@@ -50,22 +50,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 9,
-      "popularScore": 2.484937
-    },
-    {
-      "id": "65243abe3e6bf2a43e0c",
-      "jobId": "49741253",
-      "companyName": "㈜국제표준금거래소",
-      "title": "[국제표준금거래소 본사] 기획팀 사원급 채용",
-      "preview": "경력 1년↑ · 정규직 · 서울 종로구 · 상시채용",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49741253",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07",
-      "deadlineISO": "",
-      "deadlineText": "",
-      "alwaysHire": true,
-      "popularRank": 11,
-      "popularScore": 2.303158
+      "popularScore": 2.474526
     },
     {
       "id": "ae7e3a51be869a48c2cd",
@@ -79,8 +64,8 @@
       "deadlineISO": "2026-10-06",
       "deadlineText": "2026.10.06",
       "alwaysHire": false,
-      "popularRank": 15,
-      "popularScore": 2.232024
+      "popularRank": 14,
+      "popularScore": 2.221132
     },
     {
       "id": "a19b344837c8700e1a2e",
@@ -95,7 +80,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 5,
-      "popularScore": 3.111274
+      "popularScore": 3.130335
     },
     {
       "id": "c7fc0fb3d0784ba366ec",
@@ -109,8 +94,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 17,
-      "popularScore": 2.149179
+      "popularRank": 16,
+      "popularScore": 2.1504579
     },
     {
       "id": "94be55d131a72c4b3e55",
@@ -124,8 +109,8 @@
       "deadlineISO": "2026-09-05",
       "deadlineText": "2026.09.05",
       "alwaysHire": false,
-      "popularRank": 19,
-      "popularScore": 1.942523
+      "popularRank": 18,
+      "popularScore": 1.98038
     },
     {
       "id": "52e3de0f3e258ff8c87a",
@@ -140,7 +125,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 7,
-      "popularScore": 2.913157
+      "popularScore": 2.943877
     },
     {
       "id": "39ae2dd743e4cb55119a",
@@ -154,8 +139,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 21,
-      "popularScore": 1.783947
+      "popularRank": 22,
+      "popularScore": 1.742192
     },
     {
       "id": "165bd411aea39b534d26",
@@ -169,8 +154,8 @@
       "deadlineISO": "2026-08-13",
       "deadlineText": "2026.08.13",
       "alwaysHire": false,
-      "popularRank": 3,
-      "popularScore": 4.001132
+      "popularRank": 2,
+      "popularScore": 4.059418
     },
     {
       "id": "40c04c463d1729207506",
@@ -185,7 +170,7 @@
       "deadlineText": "2026.08.16",
       "alwaysHire": false,
       "popularRank": 4,
-      "popularScore": 3.323545
+      "popularScore": 3.352474
     },
     {
       "id": "6216a5e8a7b59a85d9de",
@@ -200,7 +185,7 @@
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
       "popularRank": 6,
-      "popularScore": 2.982346
+      "popularScore": 2.98961
     },
     {
       "id": "249b816cb5bf37f9927d",
@@ -214,8 +199,8 @@
       "deadlineISO": "2026-09-03",
       "deadlineText": "2026.09.03",
       "alwaysHire": false,
-      "popularRank": 13,
-      "popularScore": 2.267576
+      "popularRank": 11,
+      "popularScore": 2.260139
     },
     {
       "id": "cdd3b46c07e0236116a7",
@@ -230,7 +215,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 8,
-      "popularScore": 2.718751
+      "popularScore": 2.751579
     },
     {
       "id": "cac58faef283c6e518f7",
@@ -245,7 +230,7 @@
       "deadlineText": "2026.09.25",
       "alwaysHire": false,
       "popularRank": 10,
-      "popularScore": 2.381658
+      "popularScore": 2.363792
     },
     {
       "id": "7f759a92c2a8f3e9be44",
@@ -260,7 +245,7 @@
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
       "popularRank": 12,
-      "popularScore": 2.268054
+      "popularScore": 2.257621
     },
     {
       "id": "db62b6f15906cd88db83",
@@ -274,23 +259,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 18,
-      "popularScore": 2.1256762
-    },
-    {
-      "id": "0b5b75a6cfcb94e44f3f",
-      "jobId": "49705487",
-      "companyName": "엘씨(LC)푸드",
-      "title": "(주)엘씨푸드 ㅣ 본사 경영기획실 차장급 인재 모집",
-      "preview": "경력 5년↑ · 정규직·계약직 · 서울 마포구 · 마감 D-23 · 접수마감 2026.09.02",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49705487",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03",
-      "deadlineISO": "2026-09-02",
-      "deadlineText": "2026.09.02",
-      "alwaysHire": false,
-      "popularRank": 24,
-      "popularScore": 1.707073
+      "popularRank": 17,
+      "popularScore": 2.124743
     },
     {
       "id": "b2daad0d3bdddc3e904b",
@@ -304,8 +274,8 @@
       "deadlineISO": "2026-08-22",
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
-      "popularRank": 23,
-      "popularScore": 1.7700241
+      "popularRank": 21,
+      "popularScore": 1.7752819
     },
     {
       "id": "cb9a8f87ca6dfd53dfc4",
@@ -319,8 +289,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 16,
-      "popularScore": 2.196739
+      "popularRank": 15,
+      "popularScore": 2.190815
     },
     {
       "id": "c4b6e2d9e1ed5272120e",
@@ -334,8 +304,8 @@
       "deadlineISO": "2026-09-27",
       "deadlineText": "2026.09.27",
       "alwaysHire": false,
-      "popularRank": 14,
-      "popularScore": 2.262375
+      "popularRank": 13,
+      "popularScore": 2.256081
     },
     {
       "id": "036f8fc9662e29dbb23f",
@@ -349,8 +319,8 @@
       "deadlineISO": "2026-08-11",
       "deadlineText": "2026.08.11",
       "alwaysHire": false,
-      "popularRank": 22,
-      "popularScore": 1.783559
+      "popularRank": 20,
+      "popularScore": 1.81854
     },
     {
       "id": "3f28d4ebc0198319a0b7",
@@ -364,8 +334,38 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 2,
-      "popularScore": 4.068421
+      "popularRank": 3,
+      "popularScore": 4.055689
+    },
+    {
+      "id": "adcf486fcd01ebab62b1",
+      "jobId": "49666611",
+      "companyName": "㈔한국경영혁신중소기업협회",
+      "title": "메인비즈협회 혁신성장본부 직원 채용",
+      "preview": "신입·경력 · 계약직 · 서울 종로구 · 상시채용",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49666611",
+      "dateISO": "2026-07-28",
+      "dateText": "2026.07.28",
+      "deadlineISO": "",
+      "deadlineText": "",
+      "alwaysHire": true,
+      "popularRank": 23,
+      "popularScore": 1.688039
+    },
+    {
+      "id": "73bb15cd76d933bc580a",
+      "jobId": "49666858",
+      "companyName": "엔에이치엔커머스㈜",
+      "title": "NHN COMMERCE 서비스 운영기획 담당자 채용",
+      "preview": "경력 3년↑ · 정규직 · 서울 구로구 · 마감 D-17 · 접수마감 2026.08.27",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49666858",
+      "dateISO": "2026-07-28",
+      "dateText": "2026.07.28",
+      "deadlineISO": "2026-08-27",
+      "deadlineText": "2026.08.27",
+      "alwaysHire": false,
+      "popularRank": 24,
+      "popularScore": 1.6747781
     }
   ],
   "stale": false,
