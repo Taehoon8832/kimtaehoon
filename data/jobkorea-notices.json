@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-09T11:47:47.410316Z",
-  "checkedAt": "2026-08-09T11:47:47.410311Z",
+  "updatedAt": "2026-08-09T12:53:01.564479Z",
+  "checkedAt": "2026-08-09T12:53:01.564474Z",
   "today": "2026-08-09",
   "count": 24,
   "notices": [
@@ -19,8 +19,8 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 21,
-      "popularScore": 1.78161
+      "popularRank": 20,
+      "popularScore": 1.852404
     },
     {
       "id": "a1fe7bd9977bbed907d5",
@@ -35,7 +35,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 4.005754
+      "popularScore": 4.116815
     },
     {
       "id": "65243abe3e6bf2a43e0c",
@@ -49,8 +49,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 12,
-      "popularScore": 2.268372
+      "popularRank": 13,
+      "popularScore": 2.271944
     },
     {
       "id": "ae7e3a51be869a48c2cd",
@@ -65,7 +65,7 @@
       "deadlineText": "2026.10.06",
       "alwaysHire": false,
       "popularRank": 15,
-      "popularScore": 2.212694
+      "popularScore": 2.216962
     },
     {
       "id": "5bdf117422a38ac42fd6",
@@ -80,7 +80,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 17,
-      "popularScore": 2.1394339
+      "popularScore": 2.144781
     },
     {
       "id": "a19b344837c8700e1a2e",
@@ -95,7 +95,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 5,
-      "popularScore": 3.029628
+      "popularScore": 3.061388
     },
     {
       "id": "94be55d131a72c4b3e55",
@@ -110,7 +110,7 @@
       "deadlineText": "2026.09.05",
       "alwaysHire": false,
       "popularRank": 19,
-      "popularScore": 1.83002
+      "popularScore": 1.872077
     },
     {
       "id": "52e3de0f3e258ff8c87a",
@@ -124,8 +124,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 9,
-      "popularScore": 2.93628
+      "popularRank": 8,
+      "popularScore": 2.9435909
     },
     {
       "id": "39ae2dd743e4cb55119a",
@@ -139,23 +139,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 20,
-      "popularScore": 1.785507
-    },
-    {
-      "id": "628ca0f24672868a9c58",
-      "jobId": "49720053",
-      "companyName": "㈜바이널씨",
-      "title": "UX디자이너(기획자) 채용",
-      "preview": "경력 3년↑ · 정규직·계약직 · 서울 강남구 · 마감 D-56 · 접수마감 2026.10.04",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49720053",
-      "dateISO": "2026-08-05",
-      "dateText": "2026.08.05",
-      "deadlineISO": "2026-10-04",
-      "deadlineText": "2026.10.04",
-      "alwaysHire": false,
-      "popularRank": 23,
-      "popularScore": 1.6633741
+      "popularRank": 22,
+      "popularScore": 1.798649
     },
     {
       "id": "165bd411aea39b534d26",
@@ -169,8 +154,8 @@
       "deadlineISO": "2026-08-13",
       "deadlineText": "2026.08.13",
       "alwaysHire": false,
-      "popularRank": 3,
-      "popularScore": 3.869667
+      "popularRank": 2,
+      "popularScore": 4.003697
     },
     {
       "id": "40c04c463d1729207506",
@@ -185,7 +170,7 @@
       "deadlineText": "2026.08.16",
       "alwaysHire": false,
       "popularRank": 4,
-      "popularScore": 3.234628
+      "popularScore": 3.249466
     },
     {
       "id": "6216a5e8a7b59a85d9de",
@@ -199,8 +184,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 8,
-      "popularScore": 2.9602249
+      "popularRank": 7,
+      "popularScore": 2.972317
     },
     {
       "id": "cdd3b46c07e0236116a7",
@@ -214,23 +199,23 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 10,
-      "popularScore": 2.749716
+      "popularRank": 9,
+      "popularScore": 2.751549
     },
     {
-      "id": "0b5b75a6cfcb94e44f3f",
-      "jobId": "49705487",
-      "companyName": "엘씨(LC)푸드",
-      "title": "(주)엘씨푸드 ㅣ 본사 경영기획실 차장급 인재 모집",
-      "preview": "경력 5년↑ · 정규직·계약직 · 서울 마포구 · 마감 D-24 · 접수마감 2026.09.02",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49705487",
+      "id": "cac58faef283c6e518f7",
+      "jobId": "49707856",
+      "companyName": "펜타시큐리티㈜",
+      "title": "기획실 Product Manager 인재 모집 (신입/경력)",
+      "preview": "정규직·계약직 · 서울 영등포구 · 마감 D-47 · 접수마감 2026.09.25",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49707856",
       "dateISO": "2026-08-03",
       "dateText": "2026.08.03",
-      "deadlineISO": "2026-09-02",
-      "deadlineText": "2026.09.02",
+      "deadlineISO": "2026-09-25",
+      "deadlineText": "2026.09.25",
       "alwaysHire": false,
-      "popularRank": 11,
-      "popularScore": 2.523627
+      "popularRank": 10,
+      "popularScore": 2.4128711
     },
     {
       "id": "7f759a92c2a8f3e9be44",
@@ -244,8 +229,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 13,
-      "popularScore": 2.239778
+      "popularRank": 12,
+      "popularScore": 2.273047
     },
     {
       "id": "4352e8d6ee149c8515e7",
@@ -260,7 +245,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 14,
-      "popularScore": 2.2127159
+      "popularScore": 2.217398
     },
     {
       "id": "db62b6f15906cd88db83",
@@ -275,7 +260,22 @@
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
       "popularRank": 18,
-      "popularScore": 2.134315
+      "popularScore": 2.135634
+    },
+    {
+      "id": "0b5b75a6cfcb94e44f3f",
+      "jobId": "49705487",
+      "companyName": "엘씨(LC)푸드",
+      "title": "(주)엘씨푸드 ㅣ 본사 경영기획실 차장급 인재 모집",
+      "preview": "경력 5년↑ · 정규직·계약직 · 서울 마포구 · 마감 D-24 · 접수마감 2026.09.02",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49705487",
+      "dateISO": "2026-08-03",
+      "dateText": "2026.08.03",
+      "deadlineISO": "2026-09-02",
+      "deadlineText": "2026.09.02",
+      "alwaysHire": false,
+      "popularRank": 21,
+      "popularScore": 1.827678
     },
     {
       "id": "b2daad0d3bdddc3e904b",
@@ -289,8 +289,8 @@
       "deadlineISO": "2026-08-22",
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
-      "popularRank": 22,
-      "popularScore": 1.778969
+      "popularRank": 23,
+      "popularScore": 1.779799
     },
     {
       "id": "cb9a8f87ca6dfd53dfc4",
@@ -305,7 +305,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 16,
-      "popularScore": 2.1805
+      "popularScore": 2.214949
     },
     {
       "id": "c4b6e2d9e1ed5272120e",
@@ -319,8 +319,23 @@
       "deadlineISO": "2026-09-27",
       "deadlineText": "2026.09.27",
       "alwaysHire": false,
-      "popularRank": 7,
-      "popularScore": 2.9883192
+      "popularRank": 11,
+      "popularScore": 2.3091161
+    },
+    {
+      "id": "036f8fc9662e29dbb23f",
+      "jobId": "49670450",
+      "companyName": "㈜미디어로그",
+      "title": "미디어로그(LG그룹) 채용연계형 인턴(신입) 채용",
+      "preview": "신입 · 인턴 · 서울 마포구 · 마감 D-2 · 접수마감 2026.08.11",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49670450",
+      "dateISO": "2026-07-29",
+      "dateText": "2026.07.29",
+      "deadlineISO": "2026-08-11",
+      "deadlineText": "2026.08.11",
+      "alwaysHire": false,
+      "popularRank": 24,
+      "popularScore": 1.667651
     },
     {
       "id": "3f28d4ebc0198319a0b7",
@@ -334,8 +349,8 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 2,
-      "popularScore": 3.926907
+      "popularRank": 3,
+      "popularScore": 4.0020123
     },
     {
       "id": "f896f9c80364e0074e46",
@@ -350,22 +365,7 @@
       "deadlineText": "2026.08.09",
       "alwaysHire": false,
       "popularRank": 6,
-      "popularScore": 3.008411
-    },
-    {
-      "id": "3dfa549e3d8544c335e8",
-      "jobId": "49583471",
-      "companyName": "㈜패스트뷰",
-      "title": "AI FDE (Forward Deployed Engineer)",
-      "preview": "경력 1년↑ · 정규직 · 대한민국 서울특별시 · 마감 D-34 · 접수마감 2026.09.12",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49583471",
-      "dateISO": "2026-07-14",
-      "dateText": "2026.07.14",
-      "deadlineISO": "2026-09-12",
-      "deadlineText": "2026.09.12",
-      "alwaysHire": false,
-      "popularRank": 24,
-      "popularScore": 1.6456381
+      "popularScore": 2.999795
     }
   ],
   "stale": false,
