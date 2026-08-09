@@ -67,11 +67,31 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-09T23:17:47.487054Z",
-  "checkedAt": "2026-08-09T23:17:47.487048Z",
+  "updatedAt": "2026-08-09T23:53:59.181107Z",
+  "checkedAt": "2026-08-09T23:53:59.181101Z",
   "today": "2026-08-10",
   "count": 80,
   "notices": [
+    {
+      "id": "bd8124902a28f0bd6bd5",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "빛만 있으면 피부 상처 걱정 끝…포스텍 한세광 교수팀, 실내등/햇빛을 적색광으로 바꾸는 착용형 광치료 패치 개발",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622495",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
+    {
+      "id": "ceed9a8e2735b2a756a1",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "교육부×EBS '아이돌이 들려주는 수능 한국사' 라이즈 편 전편 공개",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622492",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
     {
       "id": "fb85a73e73c21871eb4e",
       "sourceId": "veritas",
@@ -89,6 +109,36 @@
       "title": "[재수 반수 대신 편입 96] 경찰대학 편입 '대학 1학년부터 선제적 준비'",
       "preview": "베리타스알파 소식",
       "url": "https://www.veritas-a.com/news/articleView.html?idxno=622336",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
+    {
+      "id": "59c396de124e6eb727f9",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "KAIST 제18대 배충식 총장 취임식..'기본이 강한 글로벌 혁신 선도대학' 비전 선포",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622496",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
+    {
+      "id": "6e15c18981f9dc0b3adc",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "EBS '처음 배우는 AI' '내 방에서 떠나는 지구 탐험! AI 여행 지도 만들기' 편 8월 13일 목요일 오전 9시 20분 EBS 1TV 방송",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622493",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
+    {
+      "id": "2f3c03fe5594013dca48",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "'전문가' 공유했더니 AI 몸집 줄어도 언어 이해 능력은 그대로!",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622494",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10"
     },
@@ -143,42 +193,12 @@
       "dateText": "2026.08.08"
     },
     {
-      "id": "1eacae0ecad5ea036351",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "충북대 K컬처의 미래를 그린다",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622470",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
-      "id": "a3c89c0c4814eb3d6b13",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "송언석 국회의원 꿈자람마을돌봄터 방문… 지역 돌봄 현장 살펴",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622468",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
       "id": "06da3a634b375e4b4110",
       "sourceId": "edupress",
       "sourceName": "에듀프레스",
       "title": "서울시교육청, 정책기획관 함영기 ..대변인 손성조 내정",
       "preview": "에듀프레스 소식",
       "url": "https://www.edupress.kr/news/articleView.html?idxno=30388",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
-      "id": "7bfd7a8ecc8c019c35e4",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국립공주대 2026학년도 1학기 한국어교육과정 수료식 개최",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622469",
       "dateISO": "2026-08-07",
       "dateText": "2026.08.07"
     },
@@ -203,32 +223,12 @@
       "dateText": "2026.08.07"
     },
     {
-      "id": "c2a844ec4cc5d871160b",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "[수능D-100] ‘개편 전 마지막 수능’ 역대최대 N수생/사탐런/지역의사제.. “흔들리지 말고 실전 완성”",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622417",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
       "id": "5c7600aaa3f862e9e0f7",
       "sourceId": "ebsi",
       "sourceName": "EBSi",
       "title": "2027년 EBS 교과 프로그램 강사 모집 공고 (~9.3까지)",
       "preview": "EBSi 알림",
       "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE&artclId=000000400497252",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
-      "id": "04a03f98331b7b2b9099",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "'수요자 무시 전범' 한과영이 6개교 늘어난다고?.. '최대 사교육 유발 입시' 영재학교 13개교 체제",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622446",
       "dateISO": "2026-08-07",
       "dateText": "2026.08.07"
     },
