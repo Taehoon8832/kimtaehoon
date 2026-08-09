@@ -67,21 +67,11 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-09T18:04:52.915542Z",
-  "checkedAt": "2026-08-09T18:04:52.915536Z",
+  "updatedAt": "2026-08-09T18:57:48.876659Z",
+  "checkedAt": "2026-08-09T18:57:48.876654Z",
   "today": "2026-08-10",
   "count": 80,
   "notices": [
-    {
-      "id": "1ad2dadcab59be805dd3",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "[재수 반수 대신 편입 96] 경찰대학 편입 '대학 1학년부터 선제적 준비'",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622336",
-      "dateISO": "2026-08-10",
-      "dateText": "2026.08.10"
-    },
     {
       "id": "e9bf31dae77c1e9de85b",
       "sourceId": "edupress",
@@ -123,16 +113,6 @@
       "dateText": "2026.08.09"
     },
     {
-      "id": "153849c37e4bd6f1c3f1",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "한림대 바이오메디컬학과 이원용 교수팀, 30년만에 자가염증질환 '가족성 지중해열' 발병 원리 규명",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622409",
-      "dateISO": "2026-08-08",
-      "dateText": "2026.08.08"
-    },
-    {
       "id": "1eacae0ecad5ea036351",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
@@ -153,6 +133,16 @@
       "dateText": "2026.08.07"
     },
     {
+      "id": "fa6cd387919ef7f13ab6",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "서울신학대 앵커사업단, 호텔관리자협의회와 상호협력업무협약 체결",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622463",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
+    {
       "id": "06da3a634b375e4b4110",
       "sourceId": "edupress",
       "sourceName": "에듀프레스",
@@ -163,12 +153,22 @@
       "dateText": "2026.08.07"
     },
     {
-      "id": "7bfd7a8ecc8c019c35e4",
+      "id": "f15a4345cdd77819cd0f",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "국립공주대 2026학년도 1학기 한국어교육과정 수료식 개최",
+      "title": "서울과기대 고덕종합건설 나기선 대표로부터 발전기금 1억원 기탁받아",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622469",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622460",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
+    {
+      "id": "ce00d0974809a416a6d6",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "삼육보건대학교–전국외국인근로자사회적협동조합, 인도네시아 유학생 지원 업무협약 체결",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622466",
       "dateISO": "2026-08-07",
       "dateText": "2026.08.07"
     },
@@ -189,6 +189,16 @@
       "title": "건양사이버대 제1기 외국인 요양보호사 합격자 배출",
       "preview": "베리타스알파 소식",
       "url": "https://www.veritas-a.com/news/articleView.html?idxno=622467",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
+    {
+      "id": "2920de0a8669b109bde1",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "건국대 글로컬캠퍼스 RISE사업단 'ISO 국제표준 인증 심사원 교육' 성료",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622454",
       "dateISO": "2026-08-07",
       "dateText": "2026.08.07"
     },
@@ -219,16 +229,6 @@
       "title": "2027년 EBS 교과 프로그램 강사 모집 공고 (~9.3까지)",
       "preview": "EBSi 알림",
       "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE&artclId=000000400497252",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
-      "id": "04a03f98331b7b2b9099",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "'수요자 무시 전범' 한과영이 6개교 늘어난다고?.. '최대 사교육 유발 입시' 영재학교 13개교 체제",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622446",
       "dateISO": "2026-08-07",
       "dateText": "2026.08.07"
     },
