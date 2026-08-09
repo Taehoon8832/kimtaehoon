@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-09T05:13:04.694604Z",
-  "checkedAt": "2026-08-09T05:13:04.694600Z",
+  "updatedAt": "2026-08-09T06:00:36.773620Z",
+  "checkedAt": "2026-08-09T06:00:36.773615Z",
   "today": "2026-08-09",
   "count": 24,
   "notices": [
@@ -19,8 +19,8 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 22,
-      "popularScore": 1.684989
+      "popularRank": 21,
+      "popularScore": 1.669013
     },
     {
       "id": "a1fe7bd9977bbed907d5",
@@ -34,8 +34,8 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 2,
-      "popularScore": 4.0919228
+      "popularRank": 1,
+      "popularScore": 4.127793
     },
     {
       "id": "5bdf117422a38ac42fd6",
@@ -50,22 +50,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 8,
-      "popularScore": 2.495782
-    },
-    {
-      "id": "ae7e3a51be869a48c2cd",
-      "jobId": "49737938",
-      "companyName": "지니언스(주)",
-      "title": "2026 지니언스 인재 채용",
-      "preview": "신입·경력 · 정규직 · 경기 안양시 · 마감 D-58 · 접수마감 2026.10.06",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49737938",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07",
-      "deadlineISO": "2026-10-06",
-      "deadlineText": "2026.10.06",
-      "alwaysHire": false,
-      "popularRank": 11,
-      "popularScore": 2.233854
+      "popularScore": 2.520031
     },
     {
       "id": "65243abe3e6bf2a43e0c",
@@ -79,8 +64,23 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 14,
-      "popularScore": 2.1764631
+      "popularRank": 11,
+      "popularScore": 2.241147
+    },
+    {
+      "id": "ae7e3a51be869a48c2cd",
+      "jobId": "49737938",
+      "companyName": "지니언스(주)",
+      "title": "2026 지니언스 인재 채용",
+      "preview": "신입·경력 · 정규직 · 경기 안양시 · 마감 D-58 · 접수마감 2026.10.06",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49737938",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07",
+      "deadlineISO": "2026-10-06",
+      "deadlineText": "2026.10.06",
+      "alwaysHire": false,
+      "popularRank": 13,
+      "popularScore": 2.177671
     },
     {
       "id": "a19b344837c8700e1a2e",
@@ -94,8 +94,8 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 5,
-      "popularScore": 3.105519
+      "popularRank": 6,
+      "popularScore": 3.099931
     },
     {
       "id": "94be55d131a72c4b3e55",
@@ -110,22 +110,7 @@
       "deadlineText": "2026.09.05",
       "alwaysHire": false,
       "popularRank": 16,
-      "popularScore": 1.834672
-    },
-    {
-      "id": "8e34ccbd9ddb7f5874e2",
-      "jobId": "49729149",
-      "companyName": "㈜싸이웍스",
-      "title": "2026년 하반기 (주)싸이웍스 신입/경력자 공개 채용(사업확장에 따른 충원)",
-      "preview": "정규직 · 서울 서초구 · 마감 D-27 · 접수마감 2026.09.05",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49729149",
-      "dateISO": "2026-08-06",
-      "dateText": "2026.08.06",
-      "deadlineISO": "2026-09-05",
-      "deadlineText": "2026.09.05",
-      "alwaysHire": false,
-      "popularRank": 19,
-      "popularScore": 1.708209
+      "popularScore": 1.838214
     },
     {
       "id": "165bd411aea39b534d26",
@@ -140,7 +125,22 @@
       "deadlineText": "2026.08.13",
       "alwaysHire": false,
       "popularRank": 3,
-      "popularScore": 3.988617
+      "popularScore": 4.008537
+    },
+    {
+      "id": "c7e3e361b566890e1b21",
+      "jobId": "49709576",
+      "companyName": "㈜블루스톤 자산개발",
+      "title": "신규사업 총괄 책임자 모집(개발·시행·시공 통합 리더)",
+      "preview": "경력 20년↑ · 정규직 · 서울 강남구 · 마감 D-25 · 접수마감 2026.09.03",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49709576",
+      "dateISO": "2026-08-04",
+      "dateText": "2026.08.04",
+      "deadlineISO": "2026-09-03",
+      "deadlineText": "2026.09.03",
+      "alwaysHire": false,
+      "popularRank": 23,
+      "popularScore": 1.650282
     },
     {
       "id": "cdd3b46c07e0236116a7",
@@ -155,7 +155,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 7,
-      "popularScore": 2.651491
+      "popularScore": 2.763555
     },
     {
       "id": "7f759a92c2a8f3e9be44",
@@ -170,7 +170,7 @@
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
       "popularRank": 9,
-      "popularScore": 2.452524
+      "popularScore": 2.49018
     },
     {
       "id": "4352e8d6ee149c8515e7",
@@ -185,7 +185,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 12,
-      "popularScore": 2.204158
+      "popularScore": 2.196665
     },
     {
       "id": "db62b6f15906cd88db83",
@@ -199,8 +199,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 13,
-      "popularScore": 2.180172
+      "popularRank": 14,
+      "popularScore": 2.166244
     },
     {
       "id": "0b5b75a6cfcb94e44f3f",
@@ -215,7 +215,7 @@
       "deadlineText": "2026.09.02",
       "alwaysHire": false,
       "popularRank": 17,
-      "popularScore": 1.758784
+      "popularScore": 1.797345
     },
     {
       "id": "7e12b5f868a108670798",
@@ -229,8 +229,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 18,
-      "popularScore": 1.7199711
+      "popularRank": 19,
+      "popularScore": 1.7142451
     },
     {
       "id": "621244133718cacd4b65",
@@ -244,8 +244,8 @@
       "deadlineISO": "2026-08-18",
       "deadlineText": "2026.08.18",
       "alwaysHire": false,
-      "popularRank": 23,
-      "popularScore": 1.668654
+      "popularRank": 24,
+      "popularScore": 1.641137
     },
     {
       "id": "b2daad0d3bdddc3e904b",
@@ -260,7 +260,22 @@
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
       "popularRank": 15,
-      "popularScore": 1.977613
+      "popularScore": 1.9312861
+    },
+    {
+      "id": "35c525bff4b482dc98fc",
+      "jobId": "49692385",
+      "companyName": "㈜한컴라이프케어",
+      "title": "[한컴자회사] 한컴라이프케어 경영지원본부장(CFO) 채용",
+      "preview": "경력 18년↑ · 정규직·계약직 · 경기 용인시 · 마감 D-21 · 접수마감 2026.08.30",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49692385",
+      "dateISO": "2026-07-31",
+      "dateText": "2026.07.31",
+      "deadlineISO": "2026-08-30",
+      "deadlineText": "2026.08.30",
+      "alwaysHire": false,
+      "popularRank": 22,
+      "popularScore": 1.6539149
     },
     {
       "id": "c4b6e2d9e1ed5272120e",
@@ -274,8 +289,8 @@
       "deadlineISO": "2026-09-27",
       "deadlineText": "2026.09.27",
       "alwaysHire": false,
-      "popularRank": 1,
-      "popularScore": 4.107769
+      "popularRank": 2,
+      "popularScore": 4.072524
     },
     {
       "id": "036f8fc9662e29dbb23f",
@@ -289,8 +304,8 @@
       "deadlineISO": "2026-08-11",
       "deadlineText": "2026.08.11",
       "alwaysHire": false,
-      "popularRank": 20,
-      "popularScore": 1.703157
+      "popularRank": 18,
+      "popularScore": 1.725101
     },
     {
       "id": "3f28d4ebc0198319a0b7",
@@ -305,7 +320,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 4,
-      "popularScore": 3.8996031
+      "popularScore": 3.890785
     },
     {
       "id": "adcf486fcd01ebab62b1",
@@ -319,8 +334,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 21,
-      "popularScore": 1.689459
+      "popularRank": 20,
+      "popularScore": 1.689342
     },
     {
       "id": "f896f9c80364e0074e46",
@@ -334,8 +349,8 @@
       "deadlineISO": "2026-08-09",
       "deadlineText": "2026.08.09",
       "alwaysHire": false,
-      "popularRank": 6,
-      "popularScore": 3.0606
+      "popularRank": 5,
+      "popularScore": 3.110208
     },
     {
       "id": "ece21208d32d2683d912",
@@ -350,22 +365,7 @@
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
       "popularRank": 10,
-      "popularScore": 2.35963
-    },
-    {
-      "id": "d5aa9dbc05ebb87dadde",
-      "jobId": "49640639",
-      "companyName": "㈜다이퀘스트",
-      "title": "[다이퀘스트] 공공 AX 제안/사업 PM (경력직)",
-      "preview": "경력 10년↑ · 정규직 · 서울 송파구 · 마감 D-14 · 접수마감 2026.08.23",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49640639",
-      "dateISO": "2026-07-23",
-      "dateText": "2026.07.23",
-      "deadlineISO": "2026-08-23",
-      "deadlineText": "2026.08.23",
-      "alwaysHire": false,
-      "popularRank": 24,
-      "popularScore": 1.6507261
+      "popularScore": 2.346109
     }
   ],
   "stale": false,
