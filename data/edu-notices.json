@@ -67,10 +67,10 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-09T05:16:43.749513Z",
-  "checkedAt": "2026-08-09T05:16:43.749507Z",
+  "updatedAt": "2026-08-09T06:05:28.677082Z",
+  "checkedAt": "2026-08-09T06:05:28.677075Z",
   "today": "2026-08-09",
-  "count": 64,
+  "count": 72,
   "notices": [
     {
       "id": "e9bf31dae77c1e9de85b",
@@ -583,6 +583,46 @@
       "dateText": "2026.07.08"
     },
     {
+      "id": "7dd0ca1bbf02af8ad52a",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 시행세부계획 공고문 및 보도자료",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095611&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-07-01",
+      "dateText": "2026.07.01"
+    },
+    {
+      "id": "cc4d1664e73360e239c0",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 시행...",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095611&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-07-01",
+      "dateText": "2026.07.01"
+    },
+    {
+      "id": "80a33a6ab6902a92dc55",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 6월 모의평가 채점 결과 보도자료",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095596&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-06-30",
+      "dateText": "2026.06.30"
+    },
+    {
+      "id": "9fce7ea1a078732c7f11",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 6월 ...",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095596&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-06-30",
+      "dateText": "2026.06.30"
+    },
+    {
       "id": "ebc9ec4d897a574f81cd",
       "sourceId": "adiga",
       "sourceName": "어디가",
@@ -661,6 +701,46 @@
       "url": "https://www.adiga.kr/cct/pbf/noticeDetail.do?menuId=PCCCTPBF1000&prtlBbsId=27162",
       "dateISO": "2026-06-19",
       "dateText": "2026.06.19"
+    },
+    {
+      "id": "4def09c640c82abcd550",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 9월 모의평가 시행계획 공고 보도자료",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095439&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-06-17",
+      "dateText": "2026.06.17"
+    },
+    {
+      "id": "506b1bfb204db49a3937",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 9월 ...",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095439&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-06-17",
+      "dateText": "2026.06.17"
+    },
+    {
+      "id": "0ac5b2fa2fb5a3ff716f",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 6월 모의평가 문제 및 정답 이의신청 심사 결과 보도...",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095435&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-06-16",
+      "dateText": "2026.06.16"
+    },
+    {
+      "id": "eb2db08f0cd9cc9dbb81",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 6월 ...",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095435&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-06-16",
+      "dateText": "2026.06.16"
     },
     {
       "id": "b6d40650a66f53bc6cfb",
