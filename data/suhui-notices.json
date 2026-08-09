@@ -1,10 +1,37 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-09T17:44:31.943359Z",
-  "checkedAt": "2026-08-09T17:44:31.943354Z",
+  "updatedAt": "2026-08-09T18:04:45.509386Z",
+  "checkedAt": "2026-08-09T18:04:45.509381Z",
   "today": "2026-08-10",
   "count": 39,
   "notices": [
+    {
+      "id": "0ffac5f7733e3a7554d0",
+      "sourceName": "수만휘",
+      "title": "서울여대 입결",
+      "preview": "[┃특성화고전형 모임] 작년 서울여대 특성화고 전형 입결 아시는 분 계신가요? 종합이라 살짝 걸리긴 한데 그래도 가능성 있으면 한 번 넣어보고 싶어서요.. 국영수사과 내신만 했을 때는 1.56정도 돼요 가능성 있을까",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29601015",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
+    {
+      "id": "e571816514b257c8b9fe",
+      "sourceName": "수만휘",
+      "title": "수시 카드",
+      "preview": "[┃미대 게시판] 수시 카드 중 하나가 사는 지역과 꽤나 거리가 있는 편인데요... 당일에 시험보러 가는 것도 힘들 것 같고 가다가 지쳐할 것 같은 컨디션 일 것 같은데 그냥 바꾸는 게 나을까요? 근데 안전권 카드가",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29601014",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
+    {
+      "id": "56eb6e999641569ca6f9",
+      "sourceName": "수만휘",
+      "title": "담임쌤과 상담하기 전 중점에 두면 좋은 점",
+      "preview": "[🔥이과 수시 자유게시판] '우리 학교에 나랑 비슷했던 선배들은 원서를 어떻게 써서 어디에 갔는가' 담임쌤이 컨설팅처럼 꼼꼼히 생기부 읽고 학과 전형 분석해주시면 좋겠지만, 쌤들은 반의 모든 학생들을 챙겨줘야 하고,",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29601013",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
     {
       "id": "a44b1593d5496b3b5cde",
       "sourceName": "수만휘",
@@ -326,33 +353,6 @@
       "title": "한국사나 제2외국어 성적 안 보는 대학교 있나요??ㅜ",
       "preview": "[🔥이과 수시 자유게시판] 종합전형에서 한국사나 제2외국어 성적을 안 보는 대학교가 있을까요?",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29600973",
-      "dateISO": "2026-08-10",
-      "dateText": "2026.08.10"
-    },
-    {
-      "id": "5d079bd6805cbc0e76aa",
-      "sourceName": "수만휘",
-      "title": "5등급제 고2 성적인데 남은 학기 얼마나 올려야 인서울 가능할까요??",
-      "preview": "[🔥문과 수시 자유게시판] 1학년 1학기 2.3 1학년 2학기 2.1 2학년 1학기 1.9 남은 두학기 최선을 다해서 1점 초반대 맞으면 인서울 가능할까요? 농어촌 수시 쓸수 있어요..",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29600972",
-      "dateISO": "2026-08-10",
-      "dateText": "2026.08.10"
-    },
-    {
-      "id": "abdc5c7cea9e1ca7a221",
-      "sourceName": "수만휘",
-      "title": "산출 성적 다를때",
-      "preview": "[┏Team08 수험생 게시판] 내신닷컴이랑 다른곳에서 본게 다 다르게 나오는데 나중에 쌤이랑 상담할때 쌤 컴퓨터로 나오는 (환산된) 성적으로 수시 카드 정리하면 되겠죠?",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29600971",
-      "dateISO": "2026-08-10",
-      "dateText": "2026.08.10"
-    },
-    {
-      "id": "919474b74b2fcfbf1b1f",
-      "sourceName": "수만휘",
-      "title": "학종 3.29 간호 대학",
-      "preview": "[┃간호 게시판] 대학 추천해주세요..",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29600970",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10"
     }
