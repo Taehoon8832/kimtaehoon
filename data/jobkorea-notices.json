@@ -2,25 +2,55 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-10T02:34:56.333334Z",
-  "checkedAt": "2026-08-10T02:34:56.333330Z",
+  "updatedAt": "2026-08-10T04:19:00.669952Z",
+  "checkedAt": "2026-08-10T04:19:00.669947Z",
   "today": "2026-08-10",
   "count": 24,
   "notices": [
     {
-      "id": "4dc3996bd794d9028ad1",
-      "jobId": "49731748",
-      "companyName": "세방그룹",
-      "title": "2026년 3분기 신입ㆍ채용연계형 인턴ㆍ경력 정기 채용",
-      "preview": "신입·경력 · 정규직·인턴 · 서울 강남구 · 마감 D-7 · 접수마감 2026.08.17",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49731748",
-      "dateISO": "2026-08-08",
-      "dateText": "2026.08.08",
-      "deadlineISO": "2026-08-17",
-      "deadlineText": "2026.08.17",
+      "id": "88a0735cd26b5ca6d82a",
+      "jobId": "49741210",
+      "companyName": "㈜네오플",
+      "title": "2026 네오플 집중채용",
+      "preview": "신입·경력 · 정규직 · 제주 제주시 · 마감 D-13 · 접수마감 2026.08.23",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49741210",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10",
+      "deadlineISO": "2026-08-23",
+      "deadlineText": "2026.08.23",
+      "alwaysHire": false,
+      "popularRank": 7,
+      "popularScore": 2.856462
+    },
+    {
+      "id": "cfc1e393775a21db0610",
+      "jobId": "49713928",
+      "companyName": "㈜신한저축은행",
+      "title": "신한저축은행 채용 (채용연계형 인턴)",
+      "preview": "신입 · 인턴 · 서울 중구 · 마감 D-13 · 접수마감 2026.08.23",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49713928",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10",
+      "deadlineISO": "2026-08-23",
+      "deadlineText": "2026.08.23",
+      "alwaysHire": false,
+      "popularRank": 19,
+      "popularScore": 2.194717
+    },
+    {
+      "id": "efb0a4e54d0c058c1929",
+      "jobId": "49740384",
+      "companyName": "㈜판타지오",
+      "title": "[판타지오] 각 분야 신입 및 경력 채용",
+      "preview": "신입·경력 1년↑ · 정규직 · 서울 강남구 · 마감 D-28 · 접수마감 2026.09.07",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49740384",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10",
+      "deadlineISO": "2026-09-07",
+      "deadlineText": "2026.09.07",
       "alwaysHire": false,
       "popularRank": 20,
-      "popularScore": 1.875031
+      "popularScore": 2.183609
     },
     {
       "id": "a1fe7bd9977bbed907d5",
@@ -34,8 +64,8 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 1,
-      "popularScore": 4.328977
+      "popularRank": 2,
+      "popularScore": 4.151017
     },
     {
       "id": "5bdf117422a38ac42fd6",
@@ -49,8 +79,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 8,
-      "popularScore": 2.459659
+      "popularRank": 11,
+      "popularScore": 2.330689
     },
     {
       "id": "65243abe3e6bf2a43e0c",
@@ -64,38 +94,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 13,
-      "popularScore": 2.253939
-    },
-    {
-      "id": "ae7e3a51be869a48c2cd",
-      "jobId": "49737938",
-      "companyName": "지니언스(주)",
-      "title": "2026 지니언스 인재 채용",
-      "preview": "신입·경력 · 정규직 · 경기 안양시 · 마감 D-57 · 접수마감 2026.10.06",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49737938",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07",
-      "deadlineISO": "2026-10-06",
-      "deadlineText": "2026.10.06",
-      "alwaysHire": false,
-      "popularRank": 16,
-      "popularScore": 2.207055
-    },
-    {
-      "id": "658a9d6752f2fad29333",
-      "jobId": "49735909",
-      "companyName": "㈜글로벌비전",
-      "title": "경영기획 · 전략수립 KPI. OKR. MBO 성과관리자 채용합니다.",
-      "preview": "신입·경력 3년↑ · 정규직·계약직 · 서울 강서구 · 마감 D-27 · 접수마감 2026.09.06",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49735909",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07",
-      "deadlineISO": "2026-09-06",
-      "deadlineText": "2026.09.06",
-      "alwaysHire": false,
-      "popularRank": 24,
-      "popularScore": 1.752278
+      "popularRank": 15,
+      "popularScore": 2.231859
     },
     {
       "id": "a19b344837c8700e1a2e",
@@ -109,8 +109,8 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 5,
-      "popularScore": 3.081481
+      "popularRank": 6,
+      "popularScore": 3.055886
     },
     {
       "id": "c7fc0fb3d0784ba366ec",
@@ -124,23 +124,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 17,
-      "popularScore": 2.193682
-    },
-    {
-      "id": "94be55d131a72c4b3e55",
-      "jobId": "49730817",
-      "companyName": "㈜제너시스BBQ",
-      "title": "[제너시스BBQ] 자사 앱 서비스 기획 (PO/PM)",
-      "preview": "경력 3년↑ · 정규직 · 서울 송파구 · 마감 D-26 · 접수마감 2026.09.05",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49730817",
-      "dateISO": "2026-08-06",
-      "dateText": "2026.08.06",
-      "deadlineISO": "2026-09-05",
-      "deadlineText": "2026.09.05",
-      "alwaysHire": false,
-      "popularRank": 23,
-      "popularScore": 1.830107
+      "popularRank": 21,
+      "popularScore": 2.171694
     },
     {
       "id": "52e3de0f3e258ff8c87a",
@@ -154,8 +139,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 6,
-      "popularScore": 2.98922
+      "popularRank": 5,
+      "popularScore": 3.062985
     },
     {
       "id": "165bd411aea39b534d26",
@@ -170,7 +155,7 @@
       "deadlineText": "2026.08.13",
       "alwaysHire": false,
       "popularRank": 3,
-      "popularScore": 4.031512
+      "popularScore": 4.03525
     },
     {
       "id": "40c04c463d1729207506",
@@ -185,7 +170,7 @@
       "deadlineText": "2026.08.16",
       "alwaysHire": false,
       "popularRank": 4,
-      "popularScore": 4.01013
+      "popularScore": 3.952973
     },
     {
       "id": "249b816cb5bf37f9927d",
@@ -199,8 +184,8 @@
       "deadlineISO": "2026-09-03",
       "deadlineText": "2026.09.03",
       "alwaysHire": false,
-      "popularRank": 10,
-      "popularScore": 2.309649
+      "popularRank": 13,
+      "popularScore": 2.263446
     },
     {
       "id": "6216a5e8a7b59a85d9de",
@@ -214,8 +199,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 12,
-      "popularScore": 2.281159
+      "popularRank": 16,
+      "popularScore": 2.212189
     },
     {
       "id": "cdd3b46c07e0236116a7",
@@ -229,8 +214,8 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 7,
-      "popularScore": 2.661525
+      "popularRank": 8,
+      "popularScore": 2.58699
     },
     {
       "id": "cac58faef283c6e518f7",
@@ -245,22 +230,7 @@
       "deadlineText": "2026.09.25",
       "alwaysHire": false,
       "popularRank": 9,
-      "popularScore": 2.416995
-    },
-    {
-      "id": "7f759a92c2a8f3e9be44",
-      "jobId": "49706481",
-      "companyName": "통로이미지㈜",
-      "title": "[클립아트코리아] AI 서비스 기획자 모집",
-      "preview": "경력 7년↑ · 정규직 · 서울 중구 · 마감 D-21 · 접수마감 2026.08.31",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49706481",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03",
-      "deadlineISO": "2026-08-31",
-      "deadlineText": "2026.08.31",
-      "alwaysHire": false,
-      "popularRank": 11,
-      "popularScore": 2.291814
+      "popularScore": 2.426776
     },
     {
       "id": "621244133718cacd4b65",
@@ -274,8 +244,38 @@
       "deadlineISO": "2026-08-18",
       "deadlineText": "2026.08.18",
       "alwaysHire": false,
-      "popularRank": 19,
-      "popularScore": 2.162335
+      "popularRank": 10,
+      "popularScore": 2.3483179
+    },
+    {
+      "id": "7f759a92c2a8f3e9be44",
+      "jobId": "49706481",
+      "companyName": "통로이미지㈜",
+      "title": "[클립아트코리아] AI 서비스 기획자 모집",
+      "preview": "경력 7년↑ · 정규직 · 서울 중구 · 마감 D-21 · 접수마감 2026.08.31",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49706481",
+      "dateISO": "2026-08-03",
+      "dateText": "2026.08.03",
+      "deadlineISO": "2026-08-31",
+      "deadlineText": "2026.08.31",
+      "alwaysHire": false,
+      "popularRank": 12,
+      "popularScore": 2.309706
+    },
+    {
+      "id": "7f2dd9899c2e60be7e76",
+      "jobId": "49701242",
+      "companyName": "에이지엣랩스",
+      "title": "[올더뮤] AI CX Product Manager",
+      "preview": "경력 5년↑ · 정규직 · 서울 중구 · 상시채용",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49701242",
+      "dateISO": "2026-08-03",
+      "dateText": "2026.08.03",
+      "deadlineISO": "",
+      "deadlineText": "",
+      "alwaysHire": true,
+      "popularRank": 18,
+      "popularScore": 2.20564
     },
     {
       "id": "b2daad0d3bdddc3e904b",
@@ -289,23 +289,23 @@
       "deadlineISO": "2026-08-22",
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
-      "popularRank": 21,
-      "popularScore": 1.8628349
+      "popularRank": 24,
+      "popularScore": 1.8505371
     },
     {
-      "id": "cb9a8f87ca6dfd53dfc4",
-      "jobId": "49684211",
-      "companyName": "카페24㈜",
-      "title": "[커머스플랫폼팀] 카페24 플랫폼 기획자(PO/PM) 모집",
-      "preview": "경력 3년↑ · 정규직 · 서울 동작구 · 상시채용",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49684211",
+      "id": "a0122bbf1dd817b4e251",
+      "jobId": "49687690",
+      "companyName": "㈜컨포트랩",
+      "title": "[신입/경력] 프로덕트 매니저(PM/PO)",
+      "preview": "신입·경력 · 정규직 · 서울 송파구 · 마감 D-19 · 접수마감 2026.08.29",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49687690",
       "dateISO": "2026-07-30",
       "dateText": "2026.07.30",
-      "deadlineISO": "",
-      "deadlineText": "",
-      "alwaysHire": true,
-      "popularRank": 18,
-      "popularScore": 2.164324
+      "deadlineISO": "2026-08-29",
+      "deadlineText": "2026.08.29",
+      "alwaysHire": false,
+      "popularRank": 22,
+      "popularScore": 2.111683
     },
     {
       "id": "c4b6e2d9e1ed5272120e",
@@ -320,7 +320,7 @@
       "deadlineText": "2026.09.27",
       "alwaysHire": false,
       "popularRank": 14,
-      "popularScore": 2.225244
+      "popularScore": 2.263321
     },
     {
       "id": "036f8fc9662e29dbb23f",
@@ -334,8 +334,8 @@
       "deadlineISO": "2026-08-11",
       "deadlineText": "2026.08.11",
       "alwaysHire": false,
-      "popularRank": 22,
-      "popularScore": 1.831441
+      "popularRank": 23,
+      "popularScore": 1.870418
     },
     {
       "id": "3f28d4ebc0198319a0b7",
@@ -349,23 +349,23 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 2,
-      "popularScore": 4.100488
+      "popularRank": 1,
+      "popularScore": 4.21969
     },
     {
-      "id": "d5aa9dbc05ebb87dadde",
-      "jobId": "49640639",
-      "companyName": "㈜다이퀘스트",
-      "title": "[다이퀘스트] 공공 AX 제안/사업 PM (경력직)",
-      "preview": "경력 10년↑ · 정규직 · 서울 송파구 · 마감 D-13 · 접수마감 2026.08.23",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49640639",
-      "dateISO": "2026-07-23",
-      "dateText": "2026.07.23",
-      "deadlineISO": "2026-08-23",
-      "deadlineText": "2026.08.23",
+      "id": "eee9955f04851a25aecc",
+      "jobId": "49404505",
+      "companyName": "㈜다음",
+      "title": "AI 검색 서비스 기획자",
+      "preview": "경력 5년↑ · 정규직 · 대한민국 경기도 · 마감 D-7 · 접수마감 2026.08.17",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49404505",
+      "dateISO": "2026-06-18",
+      "dateText": "2026.06.18",
+      "deadlineISO": "2026-08-17",
+      "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 15,
-      "popularScore": 2.219274
+      "popularRank": 17,
+      "popularScore": 2.206265
     }
   ],
   "stale": false,
