@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-10T19:12:03.008Z",
-  "checkedAt": "2026-08-10T19:12:03.008Z",
+  "updatedAt": "2026-08-10T20:45:11.978Z",
+  "checkedAt": "2026-08-10T20:45:11.978Z",
   "today": "2026-08-11",
   "count": 24,
   "notices": [
@@ -20,7 +20,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 5,
-      "popularScore": 3.505197
+      "popularScore": 3.501556
     },
     {
       "id": "cfc1e393775a21db0610",
@@ -35,7 +35,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 11,
-      "popularScore": 2.845896
+      "popularScore": 2.8463252
     },
     {
       "id": "4d49c686f19d67d20bdf",
@@ -49,8 +49,8 @@
       "deadlineISO": "2026-08-19",
       "deadlineText": "2026.08.19",
       "alwaysHire": false,
-      "popularRank": 15,
-      "popularScore": 2.339649
+      "popularRank": 16,
+      "popularScore": 2.328253
     },
     {
       "id": "efb0a4e54d0c058c1929",
@@ -65,7 +65,7 @@
       "deadlineText": "2026.10.07",
       "alwaysHire": false,
       "popularRank": 18,
-      "popularScore": 2.303864
+      "popularScore": 2.303309
     },
     {
       "id": "adce3b32741e3448d142",
@@ -79,8 +79,8 @@
       "deadlineISO": "2026-08-24",
       "deadlineText": "2026.08.24",
       "alwaysHire": false,
-      "popularRank": 20,
-      "popularScore": 2.238974
+      "popularRank": 19,
+      "popularScore": 2.247303
     },
     {
       "id": "a1fe7bd9977bbed907d5",
@@ -95,7 +95,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 3,
-      "popularScore": 4.066101
+      "popularScore": 4.061428
     },
     {
       "id": "65243abe3e6bf2a43e0c",
@@ -109,8 +109,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 19,
-      "popularScore": 2.242828
+      "popularRank": 20,
+      "popularScore": 2.241133
     },
     {
       "id": "7ff497d619edbb2ccb79",
@@ -125,7 +125,7 @@
       "deadlineText": "2026.09.06",
       "alwaysHire": false,
       "popularRank": 22,
-      "popularScore": 2.207156
+      "popularScore": 2.205885
     },
     {
       "id": "a19b344837c8700e1a2e",
@@ -140,7 +140,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 8,
-      "popularScore": 2.989501
+      "popularScore": 2.984745
     },
     {
       "id": "1aa8c0230dacd1a4220b",
@@ -170,7 +170,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 6,
-      "popularScore": 3.1622841
+      "popularScore": 3.160831
     },
     {
       "id": "165bd411aea39b534d26",
@@ -185,7 +185,7 @@
       "deadlineText": "2026.08.13",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 4.861623
+      "popularScore": 4.854958
     },
     {
       "id": "40c04c463d1729207506",
@@ -200,7 +200,7 @@
       "deadlineText": "2026.08.16",
       "alwaysHire": false,
       "popularRank": 4,
-      "popularScore": 3.908477
+      "popularScore": 3.909555
     },
     {
       "id": "f1a84bc9efc9e5a33183",
@@ -215,7 +215,7 @@
       "deadlineText": "2026.08.12",
       "alwaysHire": false,
       "popularRank": 13,
-      "popularScore": 2.417427
+      "popularScore": 2.416761
     },
     {
       "id": "0418043578b2910c04e5",
@@ -230,7 +230,7 @@
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
       "popularRank": 7,
-      "popularScore": 3.051716
+      "popularScore": 3.04805
     },
     {
       "id": "cdd3b46c07e0236116a7",
@@ -245,22 +245,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 12,
-      "popularScore": 2.510469
-    },
-    {
-      "id": "621244133718cacd4b65",
-      "jobId": "49706343",
-      "companyName": "㈜이카운트",
-      "title": "[이카운트] 서비스본부 신입 채용",
-      "preview": "신입 · 정규직 · 마감 D-7 · 접수마감 2026.08.18",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49706343",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03",
-      "deadlineISO": "2026-08-18",
-      "deadlineText": "2026.08.18",
-      "alwaysHire": false,
-      "popularRank": 14,
-      "popularScore": 2.342264
+      "popularScore": 2.501915
     },
     {
       "id": "cac58faef283c6e518f7",
@@ -274,8 +259,23 @@
       "deadlineISO": "2026-09-25",
       "deadlineText": "2026.09.25",
       "alwaysHire": false,
-      "popularRank": 16,
-      "popularScore": 2.334922
+      "popularRank": 14,
+      "popularScore": 2.3556569
+    },
+    {
+      "id": "621244133718cacd4b65",
+      "jobId": "49706343",
+      "companyName": "㈜이카운트",
+      "title": "[이카운트] 서비스본부 신입 채용",
+      "preview": "신입 · 정규직 · 마감 D-7 · 접수마감 2026.08.18",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49706343",
+      "dateISO": "2026-08-03",
+      "dateText": "2026.08.03",
+      "deadlineISO": "2026-08-18",
+      "deadlineText": "2026.08.18",
+      "alwaysHire": false,
+      "popularRank": 15,
+      "popularScore": 2.339486
     },
     {
       "id": "a0122bbf1dd817b4e251",
@@ -305,7 +305,7 @@
       "deadlineText": "2026.09.27",
       "alwaysHire": false,
       "popularRank": 9,
-      "popularScore": 2.964747
+      "popularScore": 2.964748
     },
     {
       "id": "3f28d4ebc0198319a0b7",
@@ -320,7 +320,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 2,
-      "popularScore": 4.1114798
+      "popularScore": 4.110004
     },
     {
       "id": "f8d921312d78c82be904",
@@ -335,7 +335,7 @@
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
       "popularRank": 10,
-      "popularScore": 2.867892
+      "popularScore": 2.867891
     },
     {
       "id": "ba3f3ab1ddfbcb0aea55",
@@ -350,7 +350,7 @@
       "deadlineText": "2026.08.20",
       "alwaysHire": false,
       "popularRank": 21,
-      "popularScore": 2.212462
+      "popularScore": 2.212461
     },
     {
       "id": "5c0025af3c2e66ee1211",
@@ -365,7 +365,7 @@
       "deadlineText": "2026.08.15",
       "alwaysHire": false,
       "popularRank": 17,
-      "popularScore": 2.311124
+      "popularScore": 2.311063
     }
   ],
   "stale": false,
