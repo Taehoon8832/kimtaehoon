@@ -1,10 +1,100 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-10T23:22:46.267167Z",
-  "checkedAt": "2026-08-10T23:22:46.267163Z",
+  "updatedAt": "2026-08-10T23:56:03.310790Z",
+  "checkedAt": "2026-08-10T23:56:03.310786Z",
   "today": "2026-08-11",
   "count": 39,
   "notices": [
+    {
+      "id": "1a03f71fc5bf7ee116cf",
+      "sourceName": "수만휘",
+      "title": "지금이 아니면 지구에서 사라져 못보게 되는 것들",
+      "preview": "[😃수험생 일상글 게시판] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602266",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
+      "id": "37018ea505075e52f500",
+      "sourceName": "수만휘",
+      "title": "강기본 22개정 독서만 팝니다",
+      "preview": "[교재/문구/자료 마켓] 강기본 22개정 독서만 팝니다 문학은 누가 필요해서 줬고요. 문제편 해설편 두 권입니다",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602265",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
+      "id": "5e27b0577cbab68bb161",
+      "sourceName": "수만휘",
+      "title": "(꽁트5) AI 면접관과 고3 영수의 멸망의 대화",
+      "preview": "[🔥학부모님 자유게시판] [등장인물] 김영수 (19세, 고3): 모의고사 전교 꼴찌지만, 면접 대본만 쓰면 스티브 잡스 영혼이 빙의되는 허세 만렙 수험생. AI 면접관 (목소리): 감정도 영혼도 없고 오직 차가운 알",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602264",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
+      "id": "14ff01fe027b502e779b",
+      "sourceName": "수만휘",
+      "title": "탐구 기출문제집 추천부탁드려요~",
+      "preview": "[🔥재/반/N수 자유게시판] 세계지리, 사회문화입니다. 기출 많이 풀수있는거 추천부탁드려요.. 반수시작해서 이제 시작이네요... 수특,수완은 하고있어요.",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602263",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
+      "id": "067d39bd2ba492961b61",
+      "sourceName": "수만휘",
+      "title": "안녕하세요",
+      "preview": "[티키타카페 게시판] 다들 파이팅",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602262",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
+      "id": "4bad1f300f3d8fc42e0b",
+      "sourceName": "수만휘",
+      "title": "2026 수도권·지거국 수시·정시 경쟁률 비교",
+      "preview": "[🔥학부모님 자유게시판] 출처: 서초입시설명회 학생들이 어딜 가고 싶어하는지 어딜 목표로 하는지 보이네요. 전국 수시카드의 상당부분이 인서울 특히 중상위대학으로 몰린다고 보면 됩니다",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602261",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
+      "id": "e32a0a88735eaa405c11",
+      "sourceName": "수만휘",
+      "title": "정⁠말⁠ ⁠답⁠답⁠해⁠서⁠ ⁠글⁠ ⁠남⁠겨⁠보⁠네⁠요",
+      "preview": "[🔥학부모님 자유게시판] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602260",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
+      "id": "6f18eec1993281aafe77",
+      "sourceName": "수만휘",
+      "title": "육군사관학교 학교장/일반적성 우선선발 합격자 성적 분포",
+      "preview": "[광릉한샘 학원문의 및 진학상담] https://youtu.be/ILwwoHSRGzQ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602259",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
+      "id": "cd89b84c6be871b6da0f",
+      "sourceName": "수만휘",
+      "title": "외고에서 이 성적으로 수시가 가능한가요?",
+      "preview": "[┃Team09 수험생 게시판] 수도권 외고 재학 중이고 내신 5등급제 기준 3점 초반 나옵니다 현재 2-1까지 성적 나와있는 상태인데 이 정도면 하위권인거고 외고라는 거 감안해도 수시를 쓸 수 없는 성적 같아서요 ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602257",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
+      "id": "545d7cfee6c0ba0a235c",
+      "sourceName": "수만휘",
+      "title": "공대 동아대 ㄷ 한밭대",
+      "preview": "[🔥이과 수시 자유게시판] 한밭대식으로 2점후반인데 안정카드로 동아대나 한밭대 쓰려하는데 뭐가 나을까요 대전 거주중인데 부산에서 살아보고 싶기도해서.. 취업 등등 고려하면 어디가 나을까요??",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602256",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
     {
       "id": "a368424971bc8810cfdc",
       "sourceName": "수만휘",
@@ -135,7 +225,7 @@
       "id": "d4a5a35f561ba711f1a4",
       "sourceName": "수만휘",
       "title": "수시 교과 추천부탁드립니다.",
-      "preview": "[┏Team08 수험생 게시판] 안정교과 찾아보고있는데 쉽지가 않네요 일반고 이과 총내신 2.18 국영수탐 2.2 국영수사과 2.260 국영수사 2.140 국영수과 2.220 담임선생님께서는 안정교과로 국민대 행정 ",
+      "preview": "[┏Team08 수험생 게시판] 안정교과 찾아보고있는데 쉽지가 않네요 일반고 이과 총내신 2.18 국영수탐 2.2 국영수사과 2.260 국영수사 2.140 국영수과 2.220 담임선생님께서는 안정교과로 교차지원 국민",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602239",
       "dateISO": "2026-08-11",
       "dateText": "2026.08.11"
@@ -180,7 +270,7 @@
       "id": "2e7282df3b4ddd244a18",
       "sourceName": "수만휘",
       "title": "도와주세요 정부24 (나이스) 암호 푸는법 ??",
-      "preview": "[😃수험생 일상글 게시판] 안녕하세요 고3 학부모입니다 컨설팅 업체에 성적과 생기부 업로드 하라는네 암호가 걸려 있데요",
+      "preview": "[😃수험생 일상글 게시판] 안녕하세요 고3 학부모입니다 컨설팅 업체에 성적과 생기부 업로드(제출) 해야합니다 암호가 있데요(암호알고 있슴) 열람용 파일이라 제출 못하고 있습니다 암호를 제거해야하나요? 도와주세요~~",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602233",
       "dateISO": "2026-08-11",
       "dateText": "2026.08.11"
@@ -263,96 +353,6 @@
       "title": "지방외고 성균관대 합격 질문 받아요",
       "preview": "[┏Team08 수험생 게시판] 지방외고에서 성균관대학교 글로벌(글리/글제/글경) 과 중 하나 합격했습니다. 원서 작성을 고민할 때 수만휘에서 도움을 많이 받았었는데, 조금이나마 도움 드릴 수 있도록 질문에 답변해드",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602224",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "b8fbb23d505d3e1e96b0",
-      "sourceName": "수만휘",
-      "title": "2027 강대 국어 백환 언매 특강 시즌1 + 시즌2 교재 세트",
-      "preview": "[교재/문구/자료 마켓] 시즌1 언매치드 본교재 시즌2 언매치드 필기노트 기출문제집 (이름만 쓰고 필기X) 시즌1 5분컷 시즌2 5분컷 환생 I, II 권 배송비 미포함 일괄 60000원 배송비는 반택 +3000원 ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602223",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "1d7cfa7250f172007e3f",
-      "sourceName": "수만휘",
-      "title": "국밥집 8대 죄악.jpg",
-      "preview": "[😃수험생 일상글 게시판] 수만휘 카페 글",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602222",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "9c331c62fe459e8362d6",
-      "sourceName": "수만휘",
-      "title": "오늘도 화이팅",
-      "preview": "[티키타카페 게시판] 오늘도 열심히 공부~",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602221",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "c0a0a1fd753a54ca81bd",
-      "sourceName": "수만휘",
-      "title": "얘들아 대학가자",
-      "preview": "[┃Team06 수험생 게시판] 성불하자🔥",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602220",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "c144167d35b57929c885",
-      "sourceName": "수만휘",
-      "title": "전년도불수능·마지막수능·지역의사제…N수생 급증 전망",
-      "preview": "[🔥학부모님 자유게시판] https://n.news.naver.com/article/421/0009106782?sid=102 올해 사탐 어렵게 나와야 할 거 같네요. 아니면 난리날 듯 합니다. 대입 전략의 핵심은 높",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602219",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "48255f19abd967cfcba2",
-      "sourceName": "수만휘",
-      "title": "사관학교2차 면접 체력/수능을 한방에",
-      "preview": "[광릉한샘 경찰사관반] 사관학교2차 면접체력과 수능을 한곳에서 준비한다 https://youtube.com/shorts/5f7jGsOgYuc",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602218",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "32616fe9430309111a90",
-      "sourceName": "수만휘",
-      "title": "영어추천..",
-      "preview": "[🔥재/반/N수 자유게시판] 영어추천좀제발... 유기시키다가 점점 점수떨어져서심각해짐.. 3-4왓다갓다가하다가 점점 4-5로내려가는거같음...",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602216",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "e0e150197d1d206b3c27",
-      "sourceName": "수만휘",
-      "title": "생윤커리",
-      "preview": "[🔥재/반/N수 자유게시판] 사문은 윤성훈샘 풀커리 타는 중인데 생윤 김종익샘 잘생긴개념 듣고 기시감 다ㅜ풀고 선지 정리하고쫙하고 5개년 평가원 그냥 쭉 모아서도 어제 다 풀엇고 킬쿼모 풀고 잇고 다음 뭐 풀죠.. ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602215",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "486b37561391ed3c29eb",
-      "sourceName": "수만휘",
-      "title": "한양대 데이터사이언스 교과",
-      "preview": "[┏Team08 수험생 게시판] 한양대 교과 10프로 정성평가 한다는데 세특은 안보고 이수 과목 등만 보는건가요? 제가 물리 기하는 안했고 화생1,2랑 확통 미적 했는데 영향있을까요",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602213",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "7ac2393930caab43f6c1",
-      "sourceName": "수만휘",
-      "title": "한국에 비해 일본에서는 별로 인기가 없었던 옛날 애니메이션",
-      "preview": "[😃수험생 일상글 게시판] 수만휘 카페 글",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602212",
       "dateISO": "2026-08-11",
       "dateText": "2026.08.11"
     }
