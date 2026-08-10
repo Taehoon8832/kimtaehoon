@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-10",
-  "updatedAt": "2026-08-10T06:08:05.526Z",
-  "checkedAt": "2026-08-10T06:08:05.526Z",
+  "updatedAt": "2026-08-10T12:20:01.911Z",
+  "checkedAt": "2026-08-10T12:20:01.911Z",
   "sources": [
     {
       "id": "u001",
@@ -1549,6 +1549,28 @@
       "dateText": "2026.08.10"
     },
     {
+      "id": "9303896772ed9f2c8684",
+      "univId": "u209",
+      "univName": "경북대(대구)",
+      "title": "2027학년도 재외국민 특별전형 지원자격 심사결과 공고",
+      "preview": "경북대(대구) 입학 공지사항 미리보기",
+      "url": "https://ipsi1.knu.ac.kr/view.php?r=FxlcTxxBU0FHA30JDgFYHA",
+      "homeUrl": "http://ipsi1.knu.ac.kr/",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
+    {
+      "id": "5f843d5aa65e356cfaef",
+      "univId": "u215",
+      "univName": "경북대(상주)",
+      "title": "2027학년도 재외국민 특별전형 지원자격 심사결과 공고",
+      "preview": "경북대(대구) 입학 공지사항 미리보기",
+      "url": "https://ipsi1.knu.ac.kr/view.php?r=FxlcTxxBU0FHA30JDgFYHA",
+      "homeUrl": "http://ipsi1.knu.ac.kr/",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
+    {
       "id": "9c0d4f54e98f8f63ce00",
       "univId": "u044",
       "univName": "한예종",
@@ -1858,6 +1880,17 @@
       "dateText": "2026.08.03"
     },
     {
+      "id": "95a767cfc2567e879db5",
+      "univId": "u062",
+      "univName": "수원대",
+      "title": "434 [수시] 2027학년도 논술고사 가이드북(모의문제 및 해설 포함) 작성자 : 입학처 작성일 : 조회수 : 1,019",
+      "preview": "수원대 입학 공지사항 미리보기",
+      "url": "http://ipsi.suwon.ac.kr/board/notice/read/5666",
+      "homeUrl": "http://ipsi.suwon.ac.kr/",
+      "dateISO": "2026-08-03",
+      "dateText": "2026.08.03"
+    },
+    {
       "id": "e565d0cd7cc31dd502e4",
       "univId": "u062",
       "univName": "수원대",
@@ -2005,6 +2038,17 @@
       "univId": "u062",
       "univName": "수원대",
       "title": "434 [수시] 2027학년도 논술고사 가이드북(모의문제 및 해설 포함) 작성자 : 입학처 작성일 : 조회수 : 887",
+      "preview": "수원대 입학 공지사항 미리보기",
+      "url": "http://ipsi.suwon.ac.kr/board/notice/read/5666",
+      "homeUrl": "http://ipsi.suwon.ac.kr/",
+      "dateISO": "2026-08-03",
+      "dateText": "2026.08.03"
+    },
+    {
+      "id": "abc4de7b3337e54f1634",
+      "univId": "u062",
+      "univName": "수원대",
+      "title": "434 [수시] 2027학년도 논술고사 가이드북(모의문제 및 해설 포함) 작성자 : 입학처 작성일 : 조회수 : 995",
       "preview": "수원대 입학 공지사항 미리보기",
       "url": "http://ipsi.suwon.ac.kr/board/notice/read/5666",
       "homeUrl": "http://ipsi.suwon.ac.kr/",
@@ -2313,5 +2357,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=6 empty=8 fail=202 fresh=51"
+  "statusReason": "ok=11 empty=25 fail=180 fresh=55"
 }
