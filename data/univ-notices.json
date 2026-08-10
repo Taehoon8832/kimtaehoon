@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-11",
-  "updatedAt": "2026-08-10T17:43:39.545Z",
-  "checkedAt": "2026-08-10T17:43:39.545Z",
+  "updatedAt": "2026-08-10T18:42:22.990Z",
+  "checkedAt": "2026-08-10T18:42:22.990Z",
   "sources": [
     {
       "id": "u001",
@@ -1714,6 +1714,28 @@
       "dateText": "2026.08.06"
     },
     {
+      "id": "0c55d5b4646630aa6a6f",
+      "univId": "u128",
+      "univName": "유원대",
+      "title": "취업공지 2026년 충청남도개발공사 체험형 청년인턴 모집 (~8/10) ※ 자세한 사항은 첨부된 공고문을 확인바랍니다.",
+      "preview": "유원대 입학 공지사항 미리보기",
+      "url": "https://ipsi.u1.ac.kr/u1/community/employment.do?mode=view&articleNo=77183",
+      "homeUrl": "https://ipsi.u1.ac.kr/html/ipsi/index.html",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
+      "id": "706eee0d78dfd30f4d27",
+      "univId": "u153",
+      "univName": "유원대(아산)",
+      "title": "취업공지 2026년 충청남도개발공사 체험형 청년인턴 모집 (~8/10) ※ 자세한 사항은 첨부된 공고문을 확인바랍니다.",
+      "preview": "유원대 입학 공지사항 미리보기",
+      "url": "https://ipsi.u1.ac.kr/u1/community/employment.do?mode=view&articleNo=77183",
+      "homeUrl": "https://ipsi.u1.ac.kr/html/ipsi/index.html",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
       "id": "16fdce45155e092562a0",
       "univId": "u130",
       "univName": "청주교대",
@@ -2357,5 +2379,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=14 empty=37 fail=165 fresh=55"
+  "statusReason": "ok=12 empty=36 fail=168 fresh=57"
 }
