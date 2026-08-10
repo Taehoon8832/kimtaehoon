@@ -67,8 +67,8 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-10T08:49:32.406066Z",
-  "checkedAt": "2026-08-10T08:49:32.406059Z",
+  "updatedAt": "2026-08-10T10:06:22.779831Z",
+  "checkedAt": "2026-08-10T10:06:22.779825Z",
   "today": "2026-08-10",
   "count": 80,
   "notices": [
@@ -149,6 +149,16 @@
       "title": "경남대 창원기계공고 3학년 대상 '사회 첫걸음' 지원",
       "preview": "베리타스알파 소식",
       "url": "https://www.veritas-a.com/news/articleView.html?idxno=622670",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
+    {
+      "id": "13921c115069c8d6baac",
+      "sourceId": "ebsi",
+      "sourceName": "EBSi",
+      "title": "【EBSi 꿈포인트】 한눈에 보기ㅣ매일매일 쌓이는 현금 포인트 💰",
+      "preview": "EBSi 알림",
+      "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE&artclId=000000400498340",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10"
     },
@@ -411,16 +421,6 @@
       "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE&artclId=000000400497235",
       "dateISO": "2026-08-04",
       "dateText": "2026.08.04"
-    },
-    {
-      "id": "28d9c55bb57c82bb7a53",
-      "sourceId": "ebsi",
-      "sourceName": "EBSi",
-      "title": "단기간에 끝내는 실전 공략 <2027 약점공략>",
-      "preview": "EBSi 알림",
-      "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE_01&artclId=000000400494559",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03"
     },
     {
       "id": "00801a3b0b64c5657ace",
