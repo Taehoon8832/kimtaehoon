@@ -1449,6 +1449,7 @@
       font-weight: 700;
       color: #fff;
       letter-spacing: -0.03em;
+      font-variant-numeric: tabular-nums;
       text-shadow: 0 0 18px rgba(61, 255, 240, 0.35);
     }
 
@@ -1528,13 +1529,14 @@
     }
 
     .visit-stats-bar-val {
-      font-family: "Space Grotesk", var(--font);
-      font-size: 12px;
+      font-family: var(--font);
+      font-size: 11px;
       line-height: 1.2;
-      font-weight: 700;
+      font-weight: 750;
       color: #ffffff;
       font-variant-numeric: tabular-nums;
       flex-shrink: 0;
+      white-space: nowrap;
       text-shadow: 0 0 8px rgba(61, 255, 240, 0.35);
     }
 
@@ -4574,7 +4576,7 @@
       }
 
       function formatVisit(n) {
-        return Number(n || 0).toLocaleString("ko-KR");
+        return `${Number(n || 0).toLocaleString("ko-KR")}명`;
       }
 
       function animateVisitNum(el, to) {
@@ -4836,7 +4838,7 @@
           const delay = `${Math.min(i * 0.045, 0.35)}s`;
           return (
             `<div class="visit-stats-bar-wrap" title="${escapeHtml(s.title)}">` +
-            `<span class="visit-stats-bar-val">${s.value}</span>` +
+            `<span class="visit-stats-bar-val">${Number(s.value || 0).toLocaleString("ko-KR")}명</span>` +
             `<div class="visit-stats-bar${s.active ? " is-today" : ""}" style="height:${h}px;animation-delay:${delay}"></div>` +
             `<span class="visit-stats-bar-label">${escapeHtml(s.label)}</span>` +
             `</div>`
