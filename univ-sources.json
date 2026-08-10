@@ -1066,7 +1066,8 @@
     "id": "u173",
     "name": "군산대",
     "homeUrl": "https://www.kunsan.ac.kr/iphak/index.kunsan",
-    "boardUrl": "https://www.kunsan.ac.kr/iphak/board/list.kunsan?boardId=BBS_0000041&menuCd=DOM_000001218001000000&paging=ok&startPage=1"
+    "boardUrl": "https://www.kunsan.ac.kr/iphak/board/list.kunsan?boardId=BBS_0000041&menuCd=DOM_000001218001000000&paging=ok&startPage=1",
+    "priority": true
   },
   {
     "id": "u174",
