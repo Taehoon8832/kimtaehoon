@@ -1,10 +1,19 @@
 {
   "source": "https://cafe.daum.net/applymate/Alvz",
-  "updatedAt": "2026-08-10T04:26:21.424619Z",
-  "checkedAt": "2026-08-10T04:26:21.424613Z",
+  "updatedAt": "2026-08-10T05:52:20.952746Z",
+  "checkedAt": "2026-08-10T05:52:20.952741Z",
   "today": "2026-08-10",
   "count": 40,
   "notices": [
+    {
+      "id": "13ce2778f15b4e7fe991",
+      "sourceName": "사립학교 정교사",
+      "title": "[전남광주] 수일학원 - 국어",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
     {
       "id": "ba67f9a26926536a8740",
       "sourceName": "사립학교 정교사",
@@ -351,15 +360,6 @@
       "id": "05ec06edd9acdb945289",
       "sourceName": "사립학교 정교사",
       "title": "[서울] 은곡학원 - 체육 디자인 음악 (예정)",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-10",
-      "dateText": "2026.08.10"
-    },
-    {
-      "id": "16d7073929a188b9e809",
-      "sourceName": "사립학교 정교사",
-      "title": "[서울] 원석학원 - 국어 영어 수학 사회 (예정)",
       "preview": "",
       "url": "",
       "dateISO": "2026-08-10",
