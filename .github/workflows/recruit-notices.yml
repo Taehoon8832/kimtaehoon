@@ -1,65 +1,63 @@
-name: Refresh JobKorea board
+name: Refresh recruit board (석박 채용)
 
 on:
   schedule:
-    # 15분마다 (UTC)
-    - cron: "*/15 * * * *"
+    # 10분마다 (UTC) — 석박 채용 빠른 갱신
+    - cron: "*/10 * * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: refresh-boards
+  group: recruit-board-data
   cancel-in-progress: false
 
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 8
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
       - uses: actions/setup-node@v4
         with:
           node-version: "20"
 
-      - name: Scrape JobKorea
-        id: jobkorea
-        continue-on-error: true
-        run: python scripts/build_jobkorea.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
-      - name: Node fallback (JobKorea only)
-        if: steps.jobkorea.outcome != 'success'
+      - name: Scrape recruit (Node, fast)
+        id: node
         continue-on-error: true
         env:
           NODE_TLS_REJECT_UNAUTHORIZED: "0"
-        run: node scripts/refresh_boards.mjs --only=jobkorea
+        run: node scripts/refresh_boards.mjs --only=recruit
 
-      - name: Validate board JSON
-        run: |
-          node scripts/validate_board_json.mjs \
-            data/jobkorea-notices.json jobkorea-board-data.js
+      - name: Fallback scrape (Python)
+        if: steps.node.outcome != 'success'
+        continue-on-error: true
+        run: python scripts/build_recruit.py
 
-      - name: Commit board data
+      - name: Validate recruit JSON
+        run: node scripts/validate_board_json.mjs data/recruit-notices.json recruit-board-data.js
+
+      - name: Commit recruit data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add jobkorea-board-data.js data/jobkorea-notices.json
+          git add recruit-board-data.js data/recruit-notices.json
           if git diff --staged --quiet; then
-            echo "No board data changes"
+            echo "No recruit data changes"
             exit 0
           fi
-          git commit -m "chore: refresh jobkorea board"
+          git commit -m "chore: refresh recruit board"
           for i in 1 2 3 4 5; do
             if git pull --rebase --autostash origin main; then
-              if grep -R "<<<<<<<" -n jobkorea-board-data.js data/jobkorea-notices.json >/dev/null 2>&1; then
+              if grep -R "<<<<<<<" -n recruit-board-data.js data/recruit-notices.json >/dev/null 2>&1; then
                 echo "Conflict markers after rebase; aborting push"
                 git rebase --abort || true
                 exit 0

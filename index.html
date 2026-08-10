@@ -3587,7 +3587,7 @@
       const recruitLiveLabel = document.getElementById("recruitLiveLabel");
       const recruitSearch = document.getElementById("recruitSearch");
       const RECRUIT_DATA_URL = "data/recruit-notices.json";
-      const RECRUIT_POLL_MS = 60000;
+      const RECRUIT_POLL_MS = 30000;
       let recruitBoardData = window.RECRUIT_BOARD_DATA || {};
       let recruitPool = Array.isArray(recruitBoardData.notices) ? recruitBoardData.notices.slice() : [];
       let recruitUpdatedAt = String(recruitBoardData.updatedAt || "");

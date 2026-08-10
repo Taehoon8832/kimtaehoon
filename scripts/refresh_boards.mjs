@@ -276,20 +276,45 @@ function parseCards(html) {
   return items;
 }
 
+async function fetchRecruitHtml() {
+  const LIST_URL = "https://www.jinhakpro.com/recruit/list";
+  const headers = {
+    "User-Agent": UA,
+    Accept: "text/html,application/xhtml+xml",
+    "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.8",
+    Referer: "https://www.jinhakpro.com/",
+  };
+  try {
+    const res = await fetch(LIST_URL, { headers, redirect: "follow" });
+    if (res.ok) {
+      const html = await res.text();
+      if (
+        html.length > 800 &&
+        (html.includes("__NUXT_DATA__") || /href="\/recruit\/\d+"/.test(html)) &&
+        !(html.includes("Security Check") && html.length < 5000)
+      ) {
+        return html;
+      }
+      console.warn("recruit: thin/blocked direct html, trying jina");
+    } else {
+      console.warn(`recruit: direct http_${res.status}, trying jina`);
+    }
+  } catch (e) {
+    console.warn("recruit: direct fetch failed", e?.message || e);
+  }
+  const mirror = await fetch("https://r.jina.ai/" + LIST_URL, {
+    headers: { "User-Agent": UA, Accept: "text/plain,*/*" },
+    redirect: "follow",
+  });
+  if (!mirror.ok) throw new Error(`recruit jina http_${mirror.status}`);
+  const text = await mirror.text();
+  if (text.length < 400) throw new Error("recruit jina empty");
+  return text;
+}
+
 async function refreshRecruit() {
   const LIST_URL = "https://www.jinhakpro.com/recruit/list";
-  const res = await fetch(LIST_URL, {
-    headers: {
-      "User-Agent": UA,
-      Accept: "text/html,application/xhtml+xml",
-      "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.8",
-    },
-  });
-  if (!res.ok) throw new Error(`recruit http_${res.status}`);
-  const html = await res.text();
-  if (html.includes("Security Check") && html.length < 5000) {
-    throw new Error("blocked by security check");
-  }
+  const html = await fetchRecruitHtml();
   const today = seoulToday();
   const nuxt = parseNuxtRecruits(html);
   const cards = parseCards(html);
@@ -325,19 +350,27 @@ async function refreshRecruit() {
     });
   }
 
+  if (!notices.length) throw new Error("recruit empty parse");
+
   notices.sort((a, b) => {
     if (a.dateISO !== b.dateISO) return b.dateISO.localeCompare(a.dateISO);
     return b.listOrder - a.listOrder;
   });
   notices.forEach((n) => delete n.listOrder);
 
+  const now = new Date().toISOString();
   writeBoard("recruit-board-data.js", "RECRUIT_BOARD_DATA", "data/recruit-notices.json", {
     source: LIST_URL,
-    updatedAt: new Date().toISOString(),
+    updatedAt: now,
+    checkedAt: now,
     today,
     count: notices.length,
     notices,
+    stale: false,
+    status: "fresh",
+    statusReason: "ok",
   });
+  console.log(`wrote ${notices.length} → recruit-board-data.js`);
   notices.slice(0, 5).forEach((n) => {
     console.log(n.dateISO, n.deadlineISO, n.univName, "|", n.title.slice(0, 42));
   });
@@ -367,7 +400,16 @@ async function safeRefresh(name, fn, jsonRel) {
   }
 }
 
-console.log("ROOT=", ROOT);
-await safeRefresh("jobkorea", refreshJobkorea, "data/jobkorea-notices.json");
-await safeRefresh("recruit", refreshRecruit, "data/recruit-notices.json");
+const only = (() => {
+  const arg = process.argv.find((a) => a.startsWith("--only="));
+  return arg ? arg.slice("--only=".length).trim() : "";
+})();
+
+console.log("ROOT=", ROOT, only ? `only=${only}` : "all");
+if (!only || only === "jobkorea") {
+  await safeRefresh("jobkorea", refreshJobkorea, "data/jobkorea-notices.json");
+}
+if (!only || only === "recruit") {
+  await safeRefresh("recruit", refreshRecruit, "data/recruit-notices.json");
+}
 console.log("done");
