@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-10",
-  "updatedAt": "2026-08-10T07:31:10.530Z",
-  "checkedAt": "2026-08-10T07:31:10.530Z",
+  "updatedAt": "2026-08-10T09:08:02.348Z",
+  "checkedAt": "2026-08-10T09:08:02.348Z",
   "sources": [
     {
       "id": "u001",
@@ -2034,6 +2034,17 @@
       "dateText": "2026.08.03"
     },
     {
+      "id": "abc4de7b3337e54f1634",
+      "univId": "u062",
+      "univName": "수원대",
+      "title": "434 [수시] 2027학년도 논술고사 가이드북(모의문제 및 해설 포함) 작성자 : 입학처 작성일 : 조회수 : 995",
+      "preview": "수원대 입학 공지사항 미리보기",
+      "url": "http://ipsi.suwon.ac.kr/board/notice/read/5666",
+      "homeUrl": "http://ipsi.suwon.ac.kr/",
+      "dateISO": "2026-08-03",
+      "dateText": "2026.08.03"
+    },
+    {
       "id": "6a614aff14388f3afe12",
       "univId": "u030",
       "univName": "숭실대",
@@ -2335,5 +2346,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=12 empty=34 fail=170 fresh=53"
+  "statusReason": "ok=15 empty=16 fail=185 fresh=54"
 }
