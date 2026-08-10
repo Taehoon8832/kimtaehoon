@@ -1,14 +1,41 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-10T20:00:02.003932Z",
-  "checkedAt": "2026-08-10T20:00:02.003926Z",
+  "updatedAt": "2026-08-10T20:41:51.231052Z",
+  "checkedAt": "2026-08-10T20:41:51.231047Z",
   "today": "2026-08-11",
   "count": 38,
   "notices": [
     {
-      "id": "e887c4c1294e0ca23a1e",
+      "id": "4036907adf2d3ac4e5b7",
       "sourceName": "수만휘",
-      "title": "명지대 상명대",
+      "title": "睡眠 記錄·起牀",
+      "preview": "[🔥재/반/N수 자유게시판] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602199",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
+      "id": "4f4a3ccbe280920888e5",
+      "sourceName": "수만휘",
+      "title": "끝까지 화이팅",
+      "preview": "[티키타카페 게시판] 입추가 지나니 좀 시원해진것 같아 좋네요ㅎ 수험생 여러분도 힘내서 유종의미를 거둘수 있으면 좋겠습니다 화이팅!",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602198",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
+      "id": "4f5e1db29a0e243de679",
+      "sourceName": "수만휘",
+      "title": "서울예대 방송영상과 입시 과외 선생님 구해요",
+      "preview": "[티키타카페 게시판] 서울예술대학교 방송영상과 입시 과외 선생님 구해요! 고등학교 3학년 학생입니다!",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602197",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
+      "id": "1a37dee5da14adc54fc8",
+      "sourceName": "수만휘",
+      "title": "명지대 삼육대",
       "preview": "[🔥문과 수시 자유게시판] 일반고 내신 3.3정도입니다 1. 명지대 최저가 없어졌는데 입결이 상승할까요 2. 삼육대 교과성적 환산방식이 완전 바뀌었는데 작년컷 참고해도 될까요 3. 우리아이 점수대가 두 학교 적정카드",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602196",
       "dateISO": "2026-08-11",
@@ -317,33 +344,6 @@
       "title": "해사 진학 고민",
       "preview": "[┃경찰대+사관학교] 고2 이고요 해양쪽으로 진로를 잡은 학생입니다 지금 생기부 방향도 해양, 항해쪽으로 적혀져있는데 갑자기 해군사관학교가 너무 가고싶어요 그래서 한번 도전해보고 싶은데 해사에 관한 정보를 하나도 몰",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602156",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "55780acc1defc53334af",
-      "sourceName": "수만휘",
-      "title": "연세대 미래캠 자율융합계열은 뭘 배우나요?",
-      "preview": "[🔥문과 수시 자유게시판] 학과가 중요하다고 생각하는 학생입니다 ! 연세대 미래캠 자율융합계열에 들어가면 무엇을 배우는지, 추후에 어떤 학과를 선택할 수 있는지 궁금합니다",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602155",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "b3ec0b05b87a98b05f32",
-      "sourceName": "수만휘",
-      "title": "안녕하세요! 잘 부탁드립니다~",
-      "preview": "[😃가입인사+규정확인] 수만휘 카페 글",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602154",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "4fc43c847b2d80a8e43a",
-      "sourceName": "수만휘",
-      "title": "수능 미적 80점 목표인데 조언해주세요ㅠ.ㅠ",
-      "preview": "[┏Team08 수험생 게시판] 평소에 72~76점 정도 나오는데 어떤식으로 공부해야될까요…. 미적은 양이 많다보니 그냥 28,29,30 버릴 생각입니다 뉴런은 완전 새거인데 100일밖에 안 남았다보니…차마 건들 수",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29602153",
       "dateISO": "2026-08-11",
       "dateText": "2026.08.11"
     }
