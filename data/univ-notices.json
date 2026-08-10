@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-11",
-  "updatedAt": "2026-08-10T19:53:25.923Z",
-  "checkedAt": "2026-08-10T19:53:25.923Z",
+  "updatedAt": "2026-08-10T20:29:21.793Z",
+  "checkedAt": "2026-08-10T20:29:21.793Z",
   "sources": [
     {
       "id": "u001",
@@ -1538,6 +1538,17 @@
       "dateText": "2026.08.10"
     },
     {
+      "id": "be78d83ccf3892f95bdf",
+      "univId": "u170",
+      "univName": "호남대",
+      "title": "2027학년도 드림라이프학부(성인학습자) 등록 안내",
+      "preview": "호남대 입학 공지사항 미리보기",
+      "url": "http://enter.honam.ac.kr/notice/1/read/321",
+      "homeUrl": "http://enter.honam.ac.kr/",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
+    {
       "id": "e525d7b24fade9fe6add",
       "univId": "u157",
       "univName": "한국전통문화대",
@@ -1835,17 +1846,6 @@
       "dateText": "2026.08.04"
     },
     {
-      "id": "0d7f7ece4f7575104a29",
-      "univId": "u127",
-      "univName": "우석대(진천)",
-      "title": "수시/정시 2027학년도 예비신입생을 위한 특별혜택 안내",
-      "preview": "우석대(진천) 입학 공지사항 미리보기",
-      "url": "https://www.woosuk.ac.kr/?menu=42&mode=view&no=362226",
-      "homeUrl": "https://www.woosuk.ac.kr/WoosukEntrance.do",
-      "dateISO": "2026-08-04",
-      "dateText": "2026.08.04"
-    },
-    {
       "id": "d44c9321d197383a1292",
       "univId": "u176",
       "univName": "우석대(전주)",
@@ -1853,6 +1853,17 @@
       "preview": "우석대(전주) 입학 공지사항 미리보기",
       "url": "http://www.woosuk.ac.kr/?menu=42&mode=view&no=362226",
       "homeUrl": "http://www.woosuk.ac.kr/WoosukEntrance.do",
+      "dateISO": "2026-08-04",
+      "dateText": "2026.08.04"
+    },
+    {
+      "id": "0d7f7ece4f7575104a29",
+      "univId": "u127",
+      "univName": "우석대(진천)",
+      "title": "수시/정시 2027학년도 예비신입생을 위한 특별혜택 안내",
+      "preview": "우석대(진천) 입학 공지사항 미리보기",
+      "url": "https://www.woosuk.ac.kr/?menu=42&mode=view&no=362226",
+      "homeUrl": "https://www.woosuk.ac.kr/WoosukEntrance.do",
       "dateISO": "2026-08-04",
       "dateText": "2026.08.04"
     },
@@ -2379,5 +2390,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=10 empty=16 fail=190 fresh=57"
+  "statusReason": "ok=13 empty=40 fail=163 fresh=58"
 }
