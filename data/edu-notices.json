@@ -67,11 +67,31 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-10T22:53:46.507690Z",
-  "checkedAt": "2026-08-10T22:53:46.507684Z",
+  "updatedAt": "2026-08-10T23:22:53.681892Z",
+  "checkedAt": "2026-08-10T23:22:53.681888Z",
   "today": "2026-08-11",
   "count": 80,
   "notices": [
+    {
+      "id": "7f3b1d6ff42c5bbfe397",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "EBS 파주지역 주민 대상 2026년 하반기 교육/문화 프로그램 운영",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622680",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
+      "id": "26c2588873330846f134",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "EBS 김유열 사장, 영유아 사교육 인식 개선 릴레이 챌린지 동참",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622679",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
     {
       "id": "a11c6c09c3af27f071ad",
       "sourceId": "moe_blog",
@@ -103,16 +123,6 @@
       "dateText": "2026.08.10"
     },
     {
-      "id": "a78624aa42c012daf730",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국립한밭대 '2026년 6시그마 BB 자격과정' 운영",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622671",
-      "dateISO": "2026-08-10",
-      "dateText": "2026.08.10"
-    },
-    {
       "id": "a2374d53baeac7b278e3",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
@@ -139,16 +149,6 @@
       "title": "과년도 제작 강좌 서비스 종료 안내",
       "preview": "EBSi 알림",
       "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE_11&artclId=000000400497272",
-      "dateISO": "2026-08-10",
-      "dateText": "2026.08.10"
-    },
-    {
-      "id": "c5461a07728a5443bed6",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "경남대 창원기계공고 3학년 대상 '사회 첫걸음' 지원",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622670",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10"
     },
