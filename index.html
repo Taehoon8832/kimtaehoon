@@ -1247,129 +1247,231 @@
       inset: 0;
       z-index: 90;
       display: none;
-      align-items: flex-end;
+      align-items: center;
       justify-content: center;
-      padding: 16px;
-      background: rgba(20, 18, 28, 0.28);
-      backdrop-filter: blur(4px);
+      padding: 20px;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 45%, rgba(0, 220, 255, 0.08), transparent 55%),
+        rgba(4, 6, 12, 0.72);
+      backdrop-filter: blur(8px) saturate(1.2);
     }
 
     .visit-stats-modal.is-open {
       display: flex;
+      animation: visitModalIn 0.28s ease-out;
+    }
+
+    @keyframes visitModalIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     .visit-stats-card {
-      width: min(420px, 100%);
-      margin-bottom: 28px;
-      padding: 14px 14px 16px;
-      border-radius: 16px;
-      border: 1px solid rgba(120, 130, 160, 0.16);
+      --vs-cyan: #3dfff0;
+      --vs-amber: #ffb020;
+      --vs-coral: #ff4d6d;
+      position: relative;
+      width: min(440px, 100%);
+      margin: 0;
+      padding: 18px 16px 18px;
+      border-radius: 18px;
+      border: 3px solid #000;
       background:
-        radial-gradient(80% 60% at 10% 0%, rgba(255, 214, 228, 0.45), transparent 55%),
-        radial-gradient(70% 50% at 100% 0%, rgba(214, 228, 255, 0.4), transparent 50%),
-        #fff;
-      box-shadow: 0 18px 40px rgba(25, 25, 25, 0.18);
-      overflow: visible;
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 40%),
+        linear-gradient(135deg, #10141f 0%, #0a0d14 48%, #12101a 100%);
+      box-shadow:
+        0 0 0 1px rgba(61, 255, 240, 0.22),
+        0 24px 60px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      color: #e8eef8;
+      animation: visitCardPop 0.34s cubic-bezier(0.2, 0.9, 0.2, 1.1);
+    }
+
+    @keyframes visitCardPop {
+      from { opacity: 0; transform: translateY(14px) scale(0.96); }
+      to { opacity: 1; transform: none; }
+    }
+
+    .visit-stats-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(61, 255, 240, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(61, 255, 240, 0.04) 1px, transparent 1px);
+      background-size: 22px 22px;
+      mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
+      opacity: 0.7;
+    }
+
+    .visit-stats-card::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--vs-cyan), var(--vs-amber), transparent);
+      opacity: 0.85;
+      pointer-events: none;
     }
 
     .visit-stats-card-head {
+      position: relative;
+      z-index: 1;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 8px;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .visit-stats-card-head strong {
-      font-size: 14px;
-      font-weight: 750;
-      letter-spacing: -0.02em;
-      color: #2a2d3a;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: "Space Grotesk", var(--font);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #f4f7ff;
+    }
+
+    .visit-stats-card-head strong::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      background: var(--vs-cyan);
+      box-shadow: 0 0 10px rgba(61, 255, 240, 0.85);
+      animation: visitPulse 1.4s ease-in-out infinite;
+    }
+
+    @keyframes visitPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.55; transform: scale(0.85); }
     }
 
     .visit-stats-close {
-      border: 0;
-      background: rgba(120, 130, 160, 0.1);
-      color: #5c5f6e;
-      width: 28px;
-      height: 28px;
-      border-radius: 8px;
+      border: 2px solid #000;
+      background: linear-gradient(180deg, #2a3142, #171b26);
+      color: #d7deec;
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
       cursor: pointer;
       font-size: 16px;
       line-height: 1;
+      box-shadow: 0 0 0 1px rgba(61, 255, 240, 0.2);
+      transition: transform 0.15s ease, color 0.15s ease;
+    }
+
+    .visit-stats-close:hover {
+      color: var(--vs-cyan);
+      transform: scale(1.05);
     }
 
     .visit-stats-tabs {
+      position: relative;
+      z-index: 1;
       display: flex;
       gap: 4px;
-      margin-bottom: 10px;
-      padding: 3px;
-      border-radius: 10px;
-      background: rgba(120, 130, 160, 0.08);
+      margin-bottom: 12px;
+      padding: 4px;
+      border-radius: 12px;
+      border: 2px solid #000;
+      background: rgba(0, 0, 0, 0.35);
     }
 
     .visit-stats-tab {
       flex: 1;
       border: 0;
       border-radius: 8px;
-      padding: 6px 4px;
+      padding: 7px 4px;
       background: transparent;
-      color: #8a8798;
-      font-size: 10.5px;
-      font-weight: 650;
-      letter-spacing: -0.02em;
+      color: rgba(210, 220, 240, 0.45);
+      font-family: "Space Grotesk", var(--font);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
       cursor: pointer;
       line-height: 1.2;
+      transition: color 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
     }
 
     .visit-stats-tab:hover {
-      color: #5c5f6e;
-      background: rgba(255, 255, 255, 0.55);
+      color: #e8eef8;
+      background: rgba(61, 255, 240, 0.08);
     }
 
     .visit-stats-tab.is-active {
-      background: #fff;
-      color: #2a2d3a;
-      box-shadow: 0 1px 3px rgba(25, 25, 25, 0.08);
+      background: linear-gradient(180deg, rgba(61, 255, 240, 0.22), rgba(61, 255, 240, 0.08));
+      color: var(--vs-cyan);
+      box-shadow: inset 0 0 0 1px rgba(61, 255, 240, 0.35);
     }
 
     .visit-stats-summary {
+      position: relative;
+      z-index: 1;
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 8px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     .visit-stats-pill {
-      padding: 8px 10px;
+      padding: 10px 12px;
       border-radius: 12px;
-      background: rgba(243, 238, 248, 0.9);
-      border: 1px solid rgba(201, 184, 224, 0.45);
+      background: rgba(8, 10, 16, 0.65);
+      border: 2px solid #000;
+      box-shadow: inset 0 0 0 1px rgba(61, 255, 240, 0.14);
+    }
+
+    .visit-stats-pill:last-child {
+      box-shadow: inset 0 0 0 1px rgba(255, 176, 32, 0.2);
     }
 
     .visit-stats-pill span {
       display: block;
       font-size: 10px;
-      font-weight: 650;
-      color: #8a8798;
-      margin-bottom: 3px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(210, 220, 240, 0.5);
+      margin-bottom: 4px;
     }
 
     .visit-stats-pill b {
       font-family: "Space Grotesk", var(--font);
-      font-size: 18px;
+      font-size: 22px;
       font-weight: 700;
-      color: #1c1c1e;
+      color: #fff;
       letter-spacing: -0.03em;
+      text-shadow: 0 0 18px rgba(61, 255, 240, 0.35);
+    }
+
+    .visit-stats-pill:last-child b {
+      text-shadow: 0 0 18px rgba(255, 176, 32, 0.35);
     }
 
     .visit-stats-chart {
+      position: relative;
+      z-index: 1;
       display: grid;
       grid-template-columns: repeat(var(--visit-cols, 7), 1fr);
-      gap: 6px;
+      gap: 7px;
       align-items: end;
-      min-height: 124px;
-      padding: 8px 2px 2px;
+      min-height: 148px;
+      padding: 14px 8px 8px;
+      border-radius: 14px;
+      border: 2px solid #000;
+      background:
+        linear-gradient(180deg, rgba(61, 255, 240, 0.04), transparent 40%),
+        rgba(0, 0, 0, 0.35);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
       overflow: visible;
     }
 
@@ -1378,42 +1480,63 @@
       flex-direction: column;
       align-items: center;
       justify-content: flex-end;
-      gap: 4px;
-      min-height: 116px;
+      gap: 5px;
+      min-height: 132px;
     }
 
     .visit-stats-bar {
       width: 100%;
-      max-width: 28px;
-      border-radius: 6px 6px 3px 3px;
-      background: linear-gradient(180deg, #f2a0b6 0%, #c45b7a 100%);
-      min-height: 4px;
+      max-width: 26px;
+      border-radius: 999px;
+      border: 1.5px solid #000;
+      background: linear-gradient(180deg, #7fffd8 0%, #1ec8b0 45%, #0a6f68 100%);
+      box-shadow:
+        0 0 12px rgba(61, 255, 240, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+      min-height: 6px;
       flex-shrink: 0;
-      transition: height 0.35s ease;
+      transform-origin: bottom center;
+      animation: visitBarRise 0.55s cubic-bezier(0.2, 0.9, 0.2, 1) both;
+    }
+
+    @keyframes visitBarRise {
+      from { transform: scaleY(0.08); opacity: 0.35; }
+      to { transform: scaleY(1); opacity: 1; }
     }
 
     .visit-stats-bar.is-today {
-      background: linear-gradient(180deg, #ffd08a 0%, #e8a23a 100%);
+      background: linear-gradient(180deg, #ffd56a 0%, #ff9a1a 42%, #e85d2a 100%);
+      box-shadow:
+        0 0 16px rgba(255, 176, 32, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
     }
 
     .visit-stats-bar-label {
       display: block;
-      font-size: 9px;
+      font-family: "Space Grotesk", var(--font);
+      font-size: 9.5px;
       line-height: 1.25;
-      font-weight: 650;
-      color: #8a8798;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: rgba(210, 220, 240, 0.55);
       white-space: nowrap;
       flex-shrink: 0;
       padding-bottom: 1px;
     }
 
+    .visit-stats-bar-wrap:has(.is-today) .visit-stats-bar-label {
+      color: var(--vs-amber);
+    }
+
     .visit-stats-bar-val {
-      font-size: 9px;
+      font-family: "Space Grotesk", var(--font);
+      font-size: 10px;
       line-height: 1.2;
       font-weight: 700;
-      color: #5c5f6e;
+      color: rgba(232, 238, 248, 0.88);
       font-variant-numeric: tabular-nums;
       flex-shrink: 0;
+      text-shadow: 0 0 8px rgba(61, 255, 240, 0.25);
     }
 
     .visit-kicker {
@@ -2844,14 +2967,14 @@
         <button type="button" class="visit-stats-close" id="visitStatsClose" aria-label="닫기">×</button>
       </div>
       <div class="visit-stats-tabs" role="tablist" aria-label="통계 기간">
-        <button type="button" class="visit-stats-tab is-active" role="tab" aria-selected="true" data-visit-range="day">일간</button>
-        <button type="button" class="visit-stats-tab" role="tab" aria-selected="false" data-visit-range="week">주간</button>
-        <button type="button" class="visit-stats-tab" role="tab" aria-selected="false" data-visit-range="month">월간</button>
-        <button type="button" class="visit-stats-tab" role="tab" aria-selected="false" data-visit-range="year">연간</button>
+        <button type="button" class="visit-stats-tab is-active" role="tab" aria-selected="true" data-visit-range="day">DAY</button>
+        <button type="button" class="visit-stats-tab" role="tab" aria-selected="false" data-visit-range="week">WEEK</button>
+        <button type="button" class="visit-stats-tab" role="tab" aria-selected="false" data-visit-range="month">MONTH</button>
+        <button type="button" class="visit-stats-tab" role="tab" aria-selected="false" data-visit-range="year">YEAR</button>
       </div>
       <div class="visit-stats-summary">
         <div class="visit-stats-pill"><span id="visitStatsPeriodLabel">오늘</span><b id="visitStatsToday">0</b></div>
-        <div class="visit-stats-pill"><span>누적</span><b id="visitStatsTotal">0</b></div>
+        <div class="visit-stats-pill"><span>누적 TOTAL</span><b id="visitStatsTotal">0</b></div>
       </div>
       <div class="visit-stats-chart" id="visitStatsChart" aria-label="방문자 추이"></div>
     </div>
@@ -4709,12 +4832,13 @@
         const series = buildVisitSeries(visitRange, today);
         visitStatsChart.style.setProperty("--visit-cols", String(Math.max(1, series.length)));
         const max = Math.max(1, ...series.map((s) => s.value));
-        visitStatsChart.innerHTML = series.map((s) => {
-          const h = Math.max(4, Math.round((s.value / max) * 72));
+        visitStatsChart.innerHTML = series.map((s, i) => {
+          const h = Math.max(8, Math.round((s.value / max) * 96));
+          const delay = `${Math.min(i * 0.045, 0.35)}s`;
           return (
             `<div class="visit-stats-bar-wrap" title="${escapeHtml(s.title)}">` +
             `<span class="visit-stats-bar-val">${s.value}</span>` +
-            `<div class="visit-stats-bar${s.active ? " is-today" : ""}" style="height:${h}px"></div>` +
+            `<div class="visit-stats-bar${s.active ? " is-today" : ""}" style="height:${h}px;animation-delay:${delay}"></div>` +
             `<span class="visit-stats-bar-label">${escapeHtml(s.label)}</span>` +
             `</div>`
           );
