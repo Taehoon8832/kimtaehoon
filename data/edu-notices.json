@@ -67,8 +67,8 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-10T07:02:43.843960Z",
-  "checkedAt": "2026-08-10T07:02:43.843952Z",
+  "updatedAt": "2026-08-10T08:49:32.406066Z",
+  "checkedAt": "2026-08-10T08:49:32.406059Z",
   "today": "2026-08-10",
   "count": 80,
   "notices": [
@@ -83,32 +83,12 @@
       "dateText": "2026.08.10"
     },
     {
-      "id": "3a34b97a76098f1347e1",
+      "id": "d39813fb4a55c76b274f",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "충북대 미래자동차 혁신융합대학사업단 'ROS2 및 자율주행 기초교육(LIMO PRO)' 성료",
+      "title": "전남대 'AI 교육 장벽' 허문다...대학 노하우 지역사회 전면 개방",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622650",
-      "dateISO": "2026-08-10",
-      "dateText": "2026.08.10"
-    },
-    {
-      "id": "83922017c8bb667ce2c9",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "충북대 농업생명환경대학 학술림 취약계층 대상 산림치유프로그램 성료",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622653",
-      "dateISO": "2026-08-10",
-      "dateText": "2026.08.10"
-    },
-    {
-      "id": "9a7f7b3d0e988d2a066f",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "안양대학교/스미스 창업기업 역량 강화 위한 협업체계 조성을 위한 업무협약 체결!",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622645",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622675",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10"
     },
@@ -123,22 +103,32 @@
       "dateText": "2026.08.10"
     },
     {
-      "id": "30393edf46ec0763f314",
+      "id": "a78624aa42c012daf730",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "서경대 '뮤지컬 영어캠프' 성료…원어민 교육/무대 결합",
+      "title": "국립한밭대 '2026년 6시그마 BB 자격과정' 운영",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622646",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622671",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10"
     },
     {
-      "id": "3b7f4d548f1da7ee8cae",
+      "id": "a2374d53baeac7b278e3",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "광주여대 앵커사업단 중국 항저우 AI/뷰티 융합산업 현장 체험으로 글로벌 미래인재 역량 강화",
+      "title": "국립부경대 이태윤 부산녹색환경지원센터장 '2026 네이처 인덱스(Nature Index)' 등재",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622644",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622673",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
+    {
+      "id": "c24947f1d992c8d8a1fa",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "국립공주대 기계자동차공학부 이동경 교수 SCI(E)논문 게재(JCR상위 4.8%)",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622672",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10"
     },
@@ -153,12 +143,12 @@
       "dateText": "2026.08.10"
     },
     {
-      "id": "da891f84d209518b8341",
+      "id": "c5461a07728a5443bed6",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "경북대 박사후연구원․학술연구교수 대규모 채용… 박사급 연구 인력 지역 정착 지원 본격화",
+      "title": "경남대 창원기계공고 3학년 대상 '사회 첫걸음' 지원",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622643",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622670",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10"
     },
@@ -173,16 +163,6 @@
       "dateText": "2026.08.10"
     },
     {
-      "id": "ee7c0c5c3245af09a923",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "[신간산책] '어쩌면 동화는 어른을 위한 것 2' - 지친 영혼을 위한 동심 처방",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622647",
-      "dateISO": "2026-08-10",
-      "dateText": "2026.08.10"
-    },
-    {
       "id": "ea0f2b4373e28aa4fb72",
       "sourceId": "ebsi",
       "sourceName": "EBSi",
@@ -193,12 +173,32 @@
       "dateText": "2026.08.10"
     },
     {
-      "id": "a9be06277b0366d34df7",
+      "id": "bf0902927f8f5a8a6ec6",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "AX 시대 이끌 미래 인재 120명 양성… 건양대-논산시 ‘AI·SW 교육캠프’ 성료",
+      "title": "[2027전문대수시특집] ‘보건의료 직업교육 혁신대학’ 춘해보건대 589명(95.9%).. 간호학과 264명 ‘10명 증원’",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622652",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622648",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
+    {
+      "id": "2afacc8ad13aaf785c6d",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "[2027수시] ‘서울 최상위권 비상’ 서울학생 의대 문호 1757명(50.1%) ‘역대 최소’.. 지방학생 전용 문호 1729명 ‘역대 최대’",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622546",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
+    {
+      "id": "20327b4d8c638a768d1e",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "AI 교육 선도 지역 자리매김... 전남대, '제1회 지역대학 AI 교육 아카데미' 성료",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622676",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10"
     },
