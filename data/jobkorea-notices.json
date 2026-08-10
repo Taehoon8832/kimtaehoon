@@ -2,12 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-<<<<<<< HEAD
-  "updatedAt": "2026-08-10T13:26:07.921Z",
-=======
-  "updatedAt": "2026-08-10T12:32:31.861031Z",
-  "checkedAt": "2026-08-10T12:32:31.861027Z",
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
+  "updatedAt": "2026-08-10T13:29:56.279Z",
+  "checkedAt": "2026-08-10T13:29:56.279Z",
   "today": "2026-08-10",
   "count": 24,
   "notices": [
@@ -24,11 +20,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 5,
-<<<<<<< HEAD
       "popularScore": 3.371877
-=======
-      "popularScore": 3.344392
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
     },
     {
       "id": "cfc1e393775a21db0610",
@@ -43,46 +35,29 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 11,
-<<<<<<< HEAD
       "popularScore": 2.760664
-=======
-      "popularScore": 2.76067
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
     },
     {
       "id": "4d49c686f19d67d20bdf",
       "jobId": "49731867",
       "companyName": "(유)사조씨피케이",
       "title": "사조씨피케이 각 부문별 인재 채용",
-<<<<<<< HEAD
       "preview": "신입·경력 · 정규직·계약직 · 마감 D-9 · 접수마감 2026.08.19",
-=======
-      "preview": "신입·경력 · 정규직·계약직 · 서울 서초구 · 마감 D-9 · 접수마감 2026.08.19",
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
       "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49731867",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10",
       "deadlineISO": "2026-08-19",
       "deadlineText": "2026.08.19",
       "alwaysHire": false,
-<<<<<<< HEAD
       "popularRank": 16,
       "popularScore": 2.295031
-=======
-      "popularRank": 17,
-      "popularScore": 2.281449
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
     },
     {
       "id": "efb0a4e54d0c058c1929",
       "jobId": "49740384",
       "companyName": "㈜판타지오",
       "title": "[판타지오] 각 분야 신입 및 경력 채용",
-<<<<<<< HEAD
       "preview": "신입·경력 · 정규직 · 마감 D-58 · 접수마감 2026.10.07",
-=======
-      "preview": "신입·경력 1년↑ · 정규직 · 서울 강남구 · 마감 D-58 · 접수마감 2026.10.07",
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
       "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49740384",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10",
@@ -90,22 +65,14 @@
       "deadlineText": "2026.10.07",
       "alwaysHire": false,
       "popularRank": 20,
-<<<<<<< HEAD
       "popularScore": 2.230854
-=======
-      "popularScore": 2.233032
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
     },
     {
       "id": "adce3b32741e3448d142",
       "jobId": "49740515",
       "companyName": "㈜다우데이타",
       "title": "[경력] IT 기획 담당자 채용",
-<<<<<<< HEAD
       "preview": "경력 · 정규직 · 마감 D-14 · 접수마감 2026.08.24",
-=======
-      "preview": "경력 5년↑ · 정규직 · 서울 마포구 · 마감 D-14 · 접수마감 2026.08.24",
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
       "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49740515",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10",
@@ -113,11 +80,7 @@
       "deadlineText": "2026.08.24",
       "alwaysHire": false,
       "popularRank": 22,
-<<<<<<< HEAD
       "popularScore": 2.2182598
-=======
-      "popularScore": 2.210638
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
     },
     {
       "id": "a1fe7bd9977bbed907d5",
@@ -132,26 +95,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 3,
-<<<<<<< HEAD
       "popularScore": 4.04808
-=======
-      "popularScore": 4.107851
-    },
-    {
-      "id": "5bdf117422a38ac42fd6",
-      "jobId": "49739796",
-      "companyName": "㈜미니게이트",
-      "title": "(경력4년이상) 서비스 기획자 모집",
-      "preview": "경력 4년↑ · 계약직 · 서울 강남구 · 상시채용",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49739796",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07",
-      "deadlineISO": "",
-      "deadlineText": "",
-      "alwaysHire": true,
-      "popularRank": 18,
-      "popularScore": 2.279535
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
     },
     {
       "id": "65243abe3e6bf2a43e0c",
@@ -166,11 +110,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 19,
-<<<<<<< HEAD
       "popularScore": 2.24687
-=======
-      "popularScore": 2.2514381
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
     },
     {
       "id": "ae7e3a51be869a48c2cd",
@@ -185,11 +125,7 @@
       "deadlineText": "2026.10.06",
       "alwaysHire": false,
       "popularRank": 24,
-<<<<<<< HEAD
       "popularScore": 2.170152
-=======
-      "popularScore": 2.1750212
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
     },
     {
       "id": "a19b344837c8700e1a2e",
@@ -204,11 +140,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 8,
-<<<<<<< HEAD
       "popularScore": 3.04009
-=======
-      "popularScore": 3.0478048
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
     },
     {
       "id": "c7fc0fb3d0784ba366ec",
@@ -223,11 +155,7 @@
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
       "popularRank": 21,
-<<<<<<< HEAD
       "popularScore": 2.224535
-=======
-      "popularScore": 2.212364
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
     },
     {
       "id": "52e3de0f3e258ff8c87a",
@@ -242,11 +170,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 6,
-<<<<<<< HEAD
       "popularScore": 3.166156
-=======
-      "popularScore": 3.183637
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
     },
     {
       "id": "165bd411aea39b534d26",
@@ -261,11 +185,7 @@
       "deadlineText": "2026.08.13",
       "alwaysHire": false,
       "popularRank": 1,
-<<<<<<< HEAD
       "popularScore": 4.92391
-=======
-      "popularScore": 4.925793
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
     },
     {
       "id": "40c04c463d1729207506",
@@ -280,35 +200,22 @@
       "deadlineText": "2026.08.16",
       "alwaysHire": false,
       "popularRank": 4,
-<<<<<<< HEAD
       "popularScore": 3.386346
-=======
-      "popularScore": 3.9880729
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
     },
     {
       "id": "f1a84bc9efc9e5a33183",
       "jobId": "49714841",
       "companyName": "㈜큐로드",
       "title": "[큐로드] 공공사업 PM 채용",
-<<<<<<< HEAD
       "preview": "ANY · 계약직 · 마감 D-2 · 접수마감 2026.08.12",
-=======
-      "preview": "계약직 · 서울 영등포구 · 마감 D-2 · 접수마감 2026.08.12",
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
       "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49714841",
       "dateISO": "2026-08-04",
       "dateText": "2026.08.04",
       "deadlineISO": "2026-08-12",
       "deadlineText": "2026.08.12",
       "alwaysHire": false,
-<<<<<<< HEAD
       "popularRank": 13,
       "popularScore": 2.418959
-=======
-      "popularRank": 14,
-      "popularScore": 2.37901
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
     },
     {
       "id": "0418043578b2910c04e5",
@@ -323,7 +230,6 @@
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
       "popularRank": 7,
-<<<<<<< HEAD
       "popularScore": 3.071733
     },
     {
@@ -370,54 +276,6 @@
       "alwaysHire": false,
       "popularRank": 15,
       "popularScore": 2.336219
-=======
-      "popularScore": 3.084724
-    },
-    {
-      "id": "cdd3b46c07e0236116a7",
-      "jobId": "49692350",
-      "companyName": "㈜YG엔터테인먼트",
-      "title": "2026년 3분기 YG엔터테인먼트 정기채용",
-      "preview": "신입·경력 · 정규직·계약직 · 서울 마포구 · 마감 D-7 · 접수마감 2026.08.17",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49692350",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03",
-      "deadlineISO": "2026-08-17",
-      "deadlineText": "2026.08.17",
-      "alwaysHire": false,
-      "popularRank": 12,
-      "popularScore": 2.576459
-    },
-    {
-      "id": "cac58faef283c6e518f7",
-      "jobId": "49707856",
-      "companyName": "펜타시큐리티㈜",
-      "title": "기획실 Product Manager 인재 모집 (신입/경력)",
-      "preview": "정규직·계약직 · 서울 영등포구 · 마감 D-46 · 접수마감 2026.09.25",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49707856",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03",
-      "deadlineISO": "2026-09-25",
-      "deadlineText": "2026.09.25",
-      "alwaysHire": false,
-      "popularRank": 13,
-      "popularScore": 2.405085
-    },
-    {
-      "id": "621244133718cacd4b65",
-      "jobId": "49706343",
-      "companyName": "㈜이카운트",
-      "title": "[이카운트] 서비스본부 신입 채용",
-      "preview": "신입 · 정규직 · 서울 강동구 · 마감 D-8 · 접수마감 2026.08.18",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49706343",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03",
-      "deadlineISO": "2026-08-18",
-      "deadlineText": "2026.08.18",
-      "alwaysHire": false,
-      "popularRank": 16,
-      "popularScore": 2.319757
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
     },
     {
       "id": "c4b6e2d9e1ed5272120e",
@@ -432,11 +290,7 @@
       "deadlineText": "2026.09.27",
       "alwaysHire": false,
       "popularRank": 9,
-<<<<<<< HEAD
       "popularScore": 2.938159
-=======
-      "popularScore": 2.933654
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
     },
     {
       "id": "3f28d4ebc0198319a0b7",
@@ -451,22 +305,14 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 2,
-<<<<<<< HEAD
       "popularScore": 4.138718
-=======
-      "popularScore": 4.155743
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
     },
     {
       "id": "5d72e3dd02179b6b3e3f",
       "jobId": "49669691",
       "companyName": "㈜위펀",
       "title": "[위펀] 서비스기획/PO (플랫폼 Product Owner)",
-<<<<<<< HEAD
       "preview": "경력 · 정규직 · 상시채용",
-=======
-      "preview": "경력 5년↑ · 정규직 · 서울 강남구 · 상시채용",
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
       "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49669691",
       "dateISO": "2026-07-28",
       "dateText": "2026.07.28",
@@ -474,28 +320,19 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 23,
-<<<<<<< HEAD
       "popularScore": 2.201114
-=======
-      "popularScore": 2.195424
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
     },
     {
       "id": "f8d921312d78c82be904",
       "jobId": "49641786",
       "companyName": "로민",
       "title": "프로젝트 매니저 (PM) 모집",
-<<<<<<< HEAD
       "preview": "경력 · 정규직 · 마감 D-21 · 접수마감 2026.08.31",
-=======
-      "preview": "경력 10년↑ · 정규직 · 서울 서초구 · 마감 D-21 · 접수마감 2026.08.31",
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
       "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49641786",
       "dateISO": "2026-07-23",
       "dateText": "2026.07.23",
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
-<<<<<<< HEAD
       "alwaysHire": false,
       "popularRank": 10,
       "popularScore": 2.8707871
@@ -529,26 +366,9 @@
       "alwaysHire": false,
       "popularRank": 17,
       "popularScore": 2.272792
-=======
-      "alwaysHire": false,
-      "popularRank": 10,
-      "popularScore": 2.87853
-    },
-    {
-      "id": "5c0025af3c2e66ee1211",
-      "jobId": "49596308",
-      "companyName": "㈜아티언스",
-      "title": "[AX팀] AI 서비스 기획자 (PM/PO)",
-      "preview": "신입·경력 3년↑ · 정규직 · 서울 마포구 · 마감 D-5 · 접수마감 2026.08.15",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49596308",
-      "dateISO": "2026-07-16",
-      "dateText": "2026.07.16",
-      "deadlineISO": "2026-08-15",
-      "deadlineText": "2026.08.15",
-      "alwaysHire": false,
-      "popularRank": 15,
-      "popularScore": 2.3215659
->>>>>>> 6ebe1a1383f209a26dafd1dc0ece8e8be5572a20
     }
-  ]
+  ],
+  "stale": false,
+  "status": "fresh",
+  "statusReason": "ok"
 }

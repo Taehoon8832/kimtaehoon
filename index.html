@@ -3806,7 +3806,7 @@
       const jobkoreaLiveLabel = document.getElementById("jobkoreaLiveLabel");
       const jobkoreaSearch = document.getElementById("jobkoreaSearch");
       const JOBKOREA_DATA_URL = "data/jobkorea-notices.json";
-      const JOBKOREA_POLL_MS = 60000;
+      const JOBKOREA_POLL_MS = 30000;
       let jobkoreaBoardData = window.JOBKOREA_BOARD_DATA || {};
       let jobkoreaPool = Array.isArray(jobkoreaBoardData.notices) ? jobkoreaBoardData.notices.slice() : [];
       let jobkoreaUpdatedAt = String(jobkoreaBoardData.updatedAt || "");

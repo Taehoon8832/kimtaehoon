@@ -86,17 +86,34 @@ function writeBoard(jsName, globalName, jsonRel, payload) {
   console.log(`wrote ${payload.count} → ${jsName}, ${jsonRel}`);
 }
 
+async function fetchJobkoreaPayload() {
+  const API = "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729";
+  const headers = {
+    "User-Agent": UA,
+    Accept: "application/json",
+    Referer: "https://www.jobkorea.co.kr/",
+  };
+  let lastErr = null;
+  for (let i = 0; i < 3; i++) {
+    try {
+      const res = await fetch(API, { headers, redirect: "follow" });
+      if (!res.ok) throw new Error(`http_${res.status}`);
+      const payload = await res.json();
+      if (!Array.isArray(payload?.jobList) || !payload.jobList.length) {
+        throw new Error("empty jobList");
+      }
+      return payload;
+    } catch (e) {
+      lastErr = e;
+      await new Promise((r) => setTimeout(r, 400 * (i + 1)));
+    }
+  }
+  throw lastErr || new Error("jobkorea fetch failed");
+}
+
 async function refreshJobkorea() {
   const API = "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729";
-  const res = await fetch(API, {
-    headers: {
-      "User-Agent": UA,
-      Accept: "application/json",
-      Referer: "https://www.jobkorea.co.kr/",
-    },
-  });
-  if (!res.ok) throw new Error(`jobkorea http_${res.status}`);
-  const payload = await res.json();
+  const payload = await fetchJobkoreaPayload();
   const today = seoulToday();
   const jobList = Array.isArray(payload.jobList) ? payload.jobList : [];
   const notices = [];
@@ -153,20 +170,28 @@ async function refreshJobkorea() {
     });
   });
 
+  if (!notices.length) throw new Error("jobkorea empty parse");
+
   notices.sort((a, b) => {
     if (a.dateISO !== b.dateISO) return b.dateISO.localeCompare(a.dateISO);
     return a.popularRank - b.popularRank;
   });
 
+  const now = new Date().toISOString();
   writeBoard("jobkorea-board-data.js", "JOBKOREA_BOARD_DATA", "data/jobkorea-notices.json", {
     source: "https://www.jobkorea.co.kr/",
     api: API,
     section: "인기 JOB",
-    updatedAt: new Date().toISOString(),
+    updatedAt: now,
+    checkedAt: now,
     today,
     count: notices.length,
     notices,
+    stale: false,
+    status: "fresh",
+    statusReason: "ok",
   });
+  console.log(`wrote ${notices.length} → jobkorea-board-data.js`);
   notices.slice(0, 5).forEach((n) => {
     console.log(n.dateISO, `#${n.popularRank}`, n.companyName, "|", n.title.slice(0, 40));
   });
