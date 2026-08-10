@@ -67,10 +67,10 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-10T20:41:58.050898Z",
-  "checkedAt": "2026-08-10T20:41:58.050893Z",
+  "updatedAt": "2026-08-10T21:24:54.056680Z",
+  "checkedAt": "2026-08-10T21:24:54.056675Z",
   "today": "2026-08-11",
-  "count": 72,
+  "count": 80,
   "notices": [
     {
       "id": "a11c6c09c3af27f071ad",
@@ -491,6 +491,86 @@
       "url": "https://www.adiga.kr/cct/pbf/noticeDetail.do?menuId=PCCCTPBF1000&prtlBbsId=27317",
       "dateISO": "2026-07-21",
       "dateText": "2026.07.21"
+    },
+    {
+      "id": "bd186982c064c1e0fbc8",
+      "sourceId": "kice_notice",
+      "sourceName": "평가원공지",
+      "title": "2027학년도 대학수학능력시험 직업계열 전문교과 이수 확인서(양식)",
+      "preview": "평가원공지 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500229&boardSeq=5095722&lev=0&m=0301&s=suneung",
+      "dateISO": "2026-07-09",
+      "dateText": "2026.07.09"
+    },
+    {
+      "id": "346112eb7e9104e57b77",
+      "sourceId": "kice_notice",
+      "sourceName": "평가원공지",
+      "title": "2027학년도 대학수학능력시험 직업...",
+      "preview": "평가원공지 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500229&boardSeq=5095722&lev=0&m=0301&s=suneung",
+      "dateISO": "2026-07-09",
+      "dateText": "2026.07.09"
+    },
+    {
+      "id": "130b9b56488a8054934d",
+      "sourceId": "kice_notice",
+      "sourceName": "평가원공지",
+      "title": "2027학년도 대학수학능력시험 응시원서(기록용) 양식 및 작성 요령",
+      "preview": "평가원공지 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500229&boardSeq=5095719&lev=0&m=0301&s=suneung",
+      "dateISO": "2026-07-09",
+      "dateText": "2026.07.09"
+    },
+    {
+      "id": "f367c6d06908cbb04820",
+      "sourceId": "kice_notice",
+      "sourceName": "평가원공지",
+      "title": "2027학년도 대학수학능력시험 응시원서 온라인 사전입력 안내(시범운영 포함)",
+      "preview": "평가원공지 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500229&boardSeq=5095723&lev=0&m=0301&s=suneung",
+      "dateISO": "2026-07-09",
+      "dateText": "2026.07.09"
+    },
+    {
+      "id": "f47b349b3b09998b7e6d",
+      "sourceId": "kice_notice",
+      "sourceName": "평가원공지",
+      "title": "2027학년도 대학수학능력시험 응시...",
+      "preview": "평가원공지 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500229&boardSeq=5095723&lev=0&m=0301&s=suneung",
+      "dateISO": "2026-07-09",
+      "dateText": "2026.07.09"
+    },
+    {
+      "id": "812c9cbc2a9630c744a6",
+      "sourceId": "kice_notice",
+      "sourceName": "평가원공지",
+      "title": "2027학년도 대학수학능력시험 실시요강",
+      "preview": "평가원공지 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500229&boardSeq=5095717&lev=0&m=0301&s=suneung",
+      "dateISO": "2026-07-09",
+      "dateText": "2026.07.09"
+    },
+    {
+      "id": "e1fe1a8458c5520155dd",
+      "sourceId": "kice_notice",
+      "sourceName": "평가원공지",
+      "title": "2027학년도 대학수학능력시험 수험생 원서접수 가이드 동영상 자료",
+      "preview": "평가원공지 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500229&boardSeq=5095718&lev=0&m=0301&s=suneung",
+      "dateISO": "2026-07-09",
+      "dateText": "2026.07.09"
+    },
+    {
+      "id": "2fa080c4000e65bd68be",
+      "sourceId": "kice_notice",
+      "sourceName": "평가원공지",
+      "title": "2027학년도 대학수학능력시험 대리접수 안내 및 서약서 양식",
+      "preview": "평가원공지 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500229&boardSeq=5095721&lev=0&m=0301&s=suneung",
+      "dateISO": "2026-07-09",
+      "dateText": "2026.07.09"
     },
     {
       "id": "1a93bd0002bdc262c36e",
