@@ -67,78 +67,68 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-10T02:58:29.624550Z",
-  "checkedAt": "2026-08-10T02:58:29.624544Z",
+  "updatedAt": "2026-08-10T04:26:30.657639Z",
+  "checkedAt": "2026-08-10T04:26:30.657633Z",
   "today": "2026-08-10",
   "count": 80,
   "notices": [
     {
-      "id": "95dce8a66849f5c62e9f",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "전북대 신문방송사 김제 지역아동센터 아동과 신문/영상 제작 멘토링.. '지역현안 콘텐츠 공동제작'",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622569",
+      "id": "a11c6c09c3af27f071ad",
+      "sourceId": "moe_blog",
+      "sourceName": "교육부블로그",
+      "title": "학생 창업 가능성을 잇고, 미래를 함께 만든다",
+      "preview": "교육부(장관 최교진)와 한국청년기업가정신재단(이사장 한정화)은 8월 11일(화) 에이티(aT)센터(서울)에서 「2026 학생 창업유망팀 300+ 만남의 날(네트워킹데이)」를 개최한다고 밝혔다. 이번 행사는 ‘학생 창",
+      "url": "https://blog.naver.com/moeblog/224373810665",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10"
     },
     {
-      "id": "0e198974508488db1042",
+      "id": "f178d94d23df1697faba",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "숭실대 캠퍼스타운사업단.. '2026 숭실 스타트업 아카데미'로 실전 창업역량 키운다",
+      "title": "제주대 동물생명공학전공 장찬우 학생 제주마 혈통 분석 연구로 한국축산학회 포스터 발표 장려상 수상",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622573",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622593",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10"
     },
     {
-      "id": "1b5945db72b0252b2cda",
+      "id": "c08feb306379cb87b104",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "성신여대 바이오식품공학과 일진웰바이오/영월산업진흥원과 산학협력.. '영월지역 자원 공동연구/인재양성'",
+      "title": "제주대 AI로 '자원 선순환' 길 텄다... '이음' 플랫폼 10일 오픈",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622568",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622594",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10"
     },
     {
-      "id": "2e9e4670a47f1e5dc460",
+      "id": "3b1aeffe0310f2ed56f7",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "부산가톨릭대 운동건강관리융합전공 제10회 부산시조정협회장배 전국비치조정대회에서 우수한 성적 거둬",
+      "title": "연세대 ‘LG디스플레이 계약학과’ 디스플레이융합공학과 설명회 24일.. ‘인사담당자/선배와의 만남’",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622576",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622596",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10"
     },
     {
-      "id": "aec6efcc120825834868",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국립군산대 PSAT 기본 특강 운영",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622575",
+      "id": "883c2bf5ea3dd1d2471e",
+      "sourceId": "edupress",
+      "sourceName": "에듀프레스",
+      "title": "서울시교육청 1.2조 추경.. 2학기, 3세 유아 3만 5천 명 무상교육",
+      "preview": "에듀프레스 소식",
+      "url": "https://www.edupress.kr/news/articleView.html?idxno=30391",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10"
     },
     {
-      "id": "e3f5e516cebab5353d76",
+      "id": "34f2d6d3ea1f8c694706",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "교원창업 동문기업 마이스프로 한남대 호텔항공경영학과에 발전기금 기탁",
+      "title": "동국대 참사람사회공헌센터 몽골 봉사단 파견..'다르이히 희망교실'서 교육봉사",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622574",
-      "dateISO": "2026-08-10",
-      "dateText": "2026.08.10"
-    },
-    {
-      "id": "87671f1650c25a8dda8d",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "교류25주년, 일본 난잔대학 한남대 방문",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622572",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622606",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10"
     },
@@ -153,12 +143,22 @@
       "dateText": "2026.08.10"
     },
     {
-      "id": "4e6ebb3f8298dd50a576",
+      "id": "3651b938fb58073dc1b6",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "경북보건대 신중년 노인돌봄 생활지원사 자격과정 성공 마무리.. 'RISE 사업'",
+      "title": "고려대 국제하계대학(ISC) 6주 일정 마무리.. 50개국 2000여명 참가",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622571",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622605",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
+    {
+      "id": "1c0598017eb379e95e4e",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "가톨릭관동대 의과대학 교수/학생 공동기획 세미나 'CKU Med-Dream' 개최",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622604",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10"
     },
@@ -169,6 +169,36 @@
       "title": "[인사] 세종시교육청 교원 · 교육전문직 인사",
       "preview": "에듀프레스 소식",
       "url": "https://www.edupress.kr/news/articleView.html?idxno=30392",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
+    {
+      "id": "f40fac322219f80e031a",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "[인사] 대구한의대",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622607",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
+    {
+      "id": "90c7c14e96f0b6db1e93",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "[단독] [2027전국자사고] 상산고 2027요강 '최초공개'.. 정원내 336명 '동일'",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622599",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
+    {
+      "id": "a9b05c72cf9ccea935ba",
+      "sourceId": "moe_blog",
+      "sourceName": "교육부블로그",
+      "title": "15개 한국교육원 연합, 제1회 일본 고등학생 한국어 말하기 대회 개최",
+      "preview": "교육부(장관 최교진)는 8월 9일(일) 일본 동경 메지로 대학교에서, ‘2026년 제1회 일본 고등학생 한국어 말하기 대회’를 성황리에 개최했다고 밝혔다. ※ 메지로 대학교 : 일본 내 한국어교육과 종합적인 한국 문",
+      "url": "https://blog.naver.com/moeblog/224373815508",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10"
     },
@@ -293,32 +323,12 @@
       "dateText": "2026.08.05"
     },
     {
-      "id": "4b4444d1f42630dd3d4c",
-      "sourceId": "moe_blog",
-      "sourceName": "교육부블로그",
-      "title": "시도 학생 대표가 한자리에 모인다, 전국 단위 학생 자치 운영의 첫걸음",
-      "preview": "교육부(장관 최교진)는 시도교육청, 한국교육개발원(원장 고영선)과 함께 8월 6일(목)부터 8월 7일(금)까지 소노벨 천안, 독립기념관, 광덕산 환경교육센터 에서 ‘2026년 전국 단위 학교연합학생회 공동연수(워크숍",
-      "url": "https://blog.naver.com/moeblog/224368720036",
-      "dateISO": "2026-08-05",
-      "dateText": "2026.08.05"
-    },
-    {
       "id": "2a48a7546cc298dbf264",
       "sourceId": "adiga",
       "sourceName": "어디가",
       "title": "대입 화상상담 신청 기간 안내(2027학년도)",
       "preview": "어디가 공지",
       "url": "https://www.adiga.kr/cct/pbf/noticeDetail.do?menuId=PCCCTPBF1000&prtlBbsId=27398",
-      "dateISO": "2026-08-05",
-      "dateText": "2026.08.05"
-    },
-    {
-      "id": "4ad81c536f2c4fbbf628",
-      "sourceId": "edupress",
-      "sourceName": "에듀프레스",
-      "title": "교육부, 평가전문교사 국가인증제 도입.. 모든 학교 내신 모니터링 추진",
-      "preview": "에듀프레스 소식",
-      "url": "https://www.edupress.kr/news/articleView.html?idxno=30382",
       "dateISO": "2026-08-05",
       "dateText": "2026.08.05"
     },
@@ -369,16 +379,6 @@
       "title": "2027 수능 대비 ⟪EBSi 실전 훈련 패키지⟫ 오픈🔥 ㅣ 압도적 1위 훈련으로 몰아붙여라!",
       "preview": "EBSi 알림",
       "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE_01&artclId=000000400488623",
-      "dateISO": "2026-08-05",
-      "dateText": "2026.08.05"
-    },
-    {
-      "id": "10533dfbbc7f6cea8cd2",
-      "sourceId": "moe_blog",
-      "sourceName": "교육부블로그",
-      "title": "2026년 인공지능(AI) 활용 교육 및 대한민국 과학·수학·정보 교사 콘퍼런스 개최",
-      "preview": "교육부(장관 최교진)는 8월 6일(목)부터 7일(금)까지 벡스코(부산)에서 ‘2026년 인공지능(AI) 활용 교육 콘퍼런스’ 및 ‘대한민국 과학·수학·정보 교사 콘퍼런스’를 연계 개최한다. 초·중등 교원 약 1만 명",
-      "url": "https://blog.naver.com/moeblog/224368708035",
       "dateISO": "2026-08-05",
       "dateText": "2026.08.05"
     },
