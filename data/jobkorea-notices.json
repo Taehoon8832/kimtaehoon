@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-10T09:23:44.617893Z",
-  "checkedAt": "2026-08-10T09:23:44.617889Z",
+  "updatedAt": "2026-08-10T10:43:30.224451Z",
+  "checkedAt": "2026-08-10T10:43:30.224446Z",
   "today": "2026-08-10",
   "count": 24,
   "notices": [
@@ -20,7 +20,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 5,
-      "popularScore": 3.191811
+      "popularScore": 3.238408
     },
     {
       "id": "cfc1e393775a21db0610",
@@ -34,8 +34,8 @@
       "deadlineISO": "2026-08-23",
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
-      "popularRank": 10,
-      "popularScore": 2.5467029
+      "popularRank": 11,
+      "popularScore": 2.599029
     },
     {
       "id": "4d49c686f19d67d20bdf",
@@ -49,8 +49,8 @@
       "deadlineISO": "2026-08-19",
       "deadlineText": "2026.08.19",
       "alwaysHire": false,
-      "popularRank": 19,
-      "popularScore": 2.219559
+      "popularRank": 18,
+      "popularScore": 2.242178
     },
     {
       "id": "efb0a4e54d0c058c1929",
@@ -64,8 +64,8 @@
       "deadlineISO": "2026-10-07",
       "deadlineText": "2026.10.07",
       "alwaysHire": false,
-      "popularRank": 21,
-      "popularScore": 2.199347
+      "popularRank": 20,
+      "popularScore": 2.228641
     },
     {
       "id": "adce3b32741e3448d142",
@@ -79,8 +79,8 @@
       "deadlineISO": "2026-08-24",
       "deadlineText": "2026.08.24",
       "alwaysHire": false,
-      "popularRank": 22,
-      "popularScore": 2.198769
+      "popularRank": 21,
+      "popularScore": 2.220895
     },
     {
       "id": "a1fe7bd9977bbed907d5",
@@ -95,7 +95,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 3,
-      "popularScore": 3.993696
+      "popularScore": 4.089495
     },
     {
       "id": "5bdf117422a38ac42fd6",
@@ -110,7 +110,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 17,
-      "popularScore": 2.275771
+      "popularScore": 2.302966
     },
     {
       "id": "65243abe3e6bf2a43e0c",
@@ -124,8 +124,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 18,
-      "popularScore": 2.220059
+      "popularRank": 19,
+      "popularScore": 2.236836
     },
     {
       "id": "7ff497d619edbb2ccb79",
@@ -140,7 +140,7 @@
       "deadlineText": "2026.09.06",
       "alwaysHire": false,
       "popularRank": 24,
-      "popularScore": 2.1650681
+      "popularScore": 2.173006
     },
     {
       "id": "a19b344837c8700e1a2e",
@@ -154,8 +154,8 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 7,
-      "popularScore": 3.028865
+      "popularRank": 8,
+      "popularScore": 3.025117
     },
     {
       "id": "c7fc0fb3d0784ba366ec",
@@ -169,8 +169,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 23,
-      "popularScore": 2.185761
+      "popularRank": 22,
+      "popularScore": 2.211474
     },
     {
       "id": "52e3de0f3e258ff8c87a",
@@ -185,7 +185,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 6,
-      "popularScore": 3.068829
+      "popularScore": 3.145434
     },
     {
       "id": "165bd411aea39b534d26",
@@ -200,7 +200,7 @@
       "deadlineText": "2026.08.13",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 4.770657
+      "popularScore": 4.8244357
     },
     {
       "id": "40c04c463d1729207506",
@@ -215,7 +215,7 @@
       "deadlineText": "2026.08.16",
       "alwaysHire": false,
       "popularRank": 4,
-      "popularScore": 3.759281
+      "popularScore": 3.771531
     },
     {
       "id": "f1a84bc9efc9e5a33183",
@@ -229,53 +229,8 @@
       "deadlineISO": "2026-08-12",
       "deadlineText": "2026.08.12",
       "alwaysHire": false,
-      "popularRank": 13,
-      "popularScore": 2.350158
-    },
-    {
-      "id": "cdd3b46c07e0236116a7",
-      "jobId": "49692350",
-      "companyName": "㈜YG엔터테인먼트",
-      "title": "2026년 3분기 YG엔터테인먼트 정기채용",
-      "preview": "신입·경력 · 정규직·계약직 · 서울 마포구 · 마감 D-7 · 접수마감 2026.08.17",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49692350",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03",
-      "deadlineISO": "2026-08-17",
-      "deadlineText": "2026.08.17",
-      "alwaysHire": false,
-      "popularRank": 11,
-      "popularScore": 2.51717
-    },
-    {
-      "id": "cac58faef283c6e518f7",
-      "jobId": "49707856",
-      "companyName": "펜타시큐리티㈜",
-      "title": "기획실 Product Manager 인재 모집 (신입/경력)",
-      "preview": "정규직·계약직 · 서울 영등포구 · 마감 D-46 · 접수마감 2026.09.25",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49707856",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03",
-      "deadlineISO": "2026-09-25",
-      "deadlineText": "2026.09.25",
-      "alwaysHire": false,
-      "popularRank": 12,
-      "popularScore": 2.433199
-    },
-    {
-      "id": "621244133718cacd4b65",
-      "jobId": "49706343",
-      "companyName": "㈜이카운트",
-      "title": "[이카운트] 서비스본부 신입 채용",
-      "preview": "신입 · 정규직 · 서울 강동구 · 마감 D-8 · 접수마감 2026.08.18",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49706343",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03",
-      "deadlineISO": "2026-08-18",
-      "deadlineText": "2026.08.18",
-      "alwaysHire": false,
       "popularRank": 14,
-      "popularScore": 2.317859
+      "popularScore": 2.357887
     },
     {
       "id": "0418043578b2910c04e5",
@@ -289,8 +244,53 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
+      "popularRank": 7,
+      "popularScore": 3.07937
+    },
+    {
+      "id": "cdd3b46c07e0236116a7",
+      "jobId": "49692350",
+      "companyName": "㈜YG엔터테인먼트",
+      "title": "2026년 3분기 YG엔터테인먼트 정기채용",
+      "preview": "신입·경력 · 정규직·계약직 · 서울 마포구 · 마감 D-7 · 접수마감 2026.08.17",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49692350",
+      "dateISO": "2026-08-03",
+      "dateText": "2026.08.03",
+      "deadlineISO": "2026-08-17",
+      "deadlineText": "2026.08.17",
+      "alwaysHire": false,
+      "popularRank": 12,
+      "popularScore": 2.5240529
+    },
+    {
+      "id": "cac58faef283c6e518f7",
+      "jobId": "49707856",
+      "companyName": "펜타시큐리티㈜",
+      "title": "기획실 Product Manager 인재 모집 (신입/경력)",
+      "preview": "정규직·계약직 · 서울 영등포구 · 마감 D-46 · 접수마감 2026.09.25",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49707856",
+      "dateISO": "2026-08-03",
+      "dateText": "2026.08.03",
+      "deadlineISO": "2026-09-25",
+      "deadlineText": "2026.09.25",
+      "alwaysHire": false,
+      "popularRank": 13,
+      "popularScore": 2.438869
+    },
+    {
+      "id": "621244133718cacd4b65",
+      "jobId": "49706343",
+      "companyName": "㈜이카운트",
+      "title": "[이카운트] 서비스본부 신입 채용",
+      "preview": "신입 · 정규직 · 서울 강동구 · 마감 D-8 · 접수마감 2026.08.18",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49706343",
+      "dateISO": "2026-08-03",
+      "dateText": "2026.08.03",
+      "deadlineISO": "2026-08-18",
+      "deadlineText": "2026.08.18",
+      "alwaysHire": false,
       "popularRank": 15,
-      "popularScore": 2.310389
+      "popularScore": 2.325435
     },
     {
       "id": "c4b6e2d9e1ed5272120e",
@@ -304,8 +304,8 @@
       "deadlineISO": "2026-09-27",
       "deadlineText": "2026.09.27",
       "alwaysHire": false,
-      "popularRank": 8,
-      "popularScore": 2.900964
+      "popularRank": 9,
+      "popularScore": 2.939242
     },
     {
       "id": "3f28d4ebc0198319a0b7",
@@ -320,7 +320,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 2,
-      "popularScore": 4.126935
+      "popularScore": 4.137966
     },
     {
       "id": "5d72e3dd02179b6b3e3f",
@@ -334,8 +334,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 20,
-      "popularScore": 2.200695
+      "popularRank": 23,
+      "popularScore": 2.1993499
     },
     {
       "id": "f8d921312d78c82be904",
@@ -349,8 +349,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 9,
-      "popularScore": 2.8038049
+      "popularRank": 10,
+      "popularScore": 2.878552
     },
     {
       "id": "5c0025af3c2e66ee1211",
@@ -365,7 +365,7 @@
       "deadlineText": "2026.08.15",
       "alwaysHire": false,
       "popularRank": 16,
-      "popularScore": 2.290087
+      "popularScore": 2.322342
     }
   ],
   "stale": false,
