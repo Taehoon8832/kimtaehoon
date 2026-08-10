@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="google-site-verification" content="UW-HayU2GS5s-fU_usvWZxn4NfjAJe814wUPX-z8ioc" />
+  <meta name="naver-site-verification" content="9b28708b0979fe77e27ad666070bd14a1fda9b69" />
   <meta name="description" content="김태훈닷컴 — 대입정보·학급 진학관리·오픈채팅 바로가기와 실시간 대화" />
   <meta name="theme-color" content="#FA2D48" />
   <title>김태훈닷컴</title>
@@ -4530,6 +4531,31 @@
         return n;
       }
 
+      /** CountAPI 일별 키에서 과거 방문자 수를 읽어 days에 병합 (GET만, 증가 없음) */
+      async function hydrateVisitHistory(data, today, lookbackDays) {
+        const days = { ...(data.days || {}) };
+        const keys = lastNDays(today, Math.max(7, lookbackDays || 186));
+        const CHUNK = 16;
+        for (let i = 0; i < keys.length; i += CHUNK) {
+          const chunk = keys.slice(i, i + CHUNK);
+          const pairs = await Promise.all(
+            chunk.map(async (d) => {
+              const n = await readCount(`${VISIT_NS}-day-${d}`);
+              return [d, n];
+            })
+          );
+          for (const [d, n] of pairs) {
+            if (n == null) continue;
+            days[d] = Math.max(Number(days[d]) || 0, n);
+          }
+        }
+        data.days = days;
+        if (days[today] != null) {
+          data.today = Math.max(Number(data.today) || 0, Number(days[today]) || 0);
+        }
+        return data;
+      }
+
       function applyVisitDisplay(todayN, totalN) {
         animateVisitNum(visitTodayEl, todayN);
         animateVisitNum(visitTotalEl, totalN);
@@ -4706,12 +4732,43 @@
         renderVisitChart();
       }
 
-      function openVisitStats() {
+      let visitHydrateBusy = false;
+
+      async function refreshVisitStatsFromApi(lookbackDays) {
+        const today = seoulDateKey();
+        const totalKey = VISIT_NS + "-total-v1";
+        let data = syncVisitDay(readVisitState(), today);
+        try {
+          data = await hydrateVisitHistory(data, today, lookbackDays);
+          const totalN = await readCount(totalKey);
+          if (totalN != null) data.total = Math.max(Number(data.total) || 0, totalN);
+          data.date = today;
+          if (data.days[today] != null) data.today = Number(data.days[today]) || data.today;
+          writeVisitState(data);
+          applyVisitDisplay(data.today, data.total);
+          renderVisitChart();
+        } catch {
+          writeVisitState(data);
+          renderVisitChart();
+        }
+        return data;
+      }
+
+      async function openVisitStats() {
         if (!visitStatsModal) return;
         setVisitRange(visitRange);
         if (visitStatsTotalEl) visitStatsTotalEl.textContent = formatVisit(visitState.total);
         visitStatsModal.hidden = false;
         visitStatsModal.classList.add("is-open");
+        // 모달을 열 때 CountAPI에서 과거 일·주·월 집계를 다시 읽어 정확히 표시
+        if (!visitHydrateBusy) {
+          visitHydrateBusy = true;
+          try {
+            await refreshVisitStatsFromApi(186);
+          } finally {
+            visitHydrateBusy = false;
+          }
+        }
       }
 
       function closeVisitStats() {
@@ -4753,6 +4810,19 @@
           writeVisitState(data);
           applyVisitDisplay(data.today, data.total);
         }
+
+        // 과거 일별 카운트는 백그라운드로 CountAPI에서 복원 (차트·주간·월간용)
+        hydrateVisitHistory(readVisitState(), today, 93)
+          .then((next) => {
+            const cur = syncVisitDay(next, today);
+            // 오늘 값은 hit 직후 값을 유지
+            cur.days[today] = Math.max(Number(cur.days[today]) || 0, Number(visitState.days[today]) || 0, cur.today);
+            cur.today = Math.max(cur.today, Number(visitState.today) || 0);
+            cur.total = Math.max(cur.total, Number(visitState.total) || 0);
+            writeVisitState(cur);
+            if (visitStatsModal && !visitStatsModal.hidden) renderVisitChart();
+          })
+          .catch(() => {});
       }
 
       if (visitStatsBtn) {
