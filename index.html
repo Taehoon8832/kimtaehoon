@@ -3805,8 +3805,14 @@
       const jobkoreaLive = document.getElementById("jobkoreaLive");
       const jobkoreaLiveLabel = document.getElementById("jobkoreaLiveLabel");
       const jobkoreaSearch = document.getElementById("jobkoreaSearch");
-      const JOBKOREA_DATA_URL = "data/jobkorea-notices.json";
-      const JOBKOREA_POLL_MS = 30000;
+      const JOBKOREA_POLL_MS = 15000;
+      const JOBKOREA_CACHE_KEY = "kimtaehoon_jobkorea_v1";
+      const JOBKOREA_DATA_URLS = [
+        "data/jobkorea-notices.json",
+        "https://cdn.jsdelivr.net/gh/Taehoon8832/kimtaehoon@main/data/jobkorea-notices.json",
+        "https://raw.githubusercontent.com/Taehoon8832/kimtaehoon/main/data/jobkorea-notices.json",
+        "https://xn--4k0b996d77d.com/data/jobkorea-notices.json",
+      ];
       let jobkoreaBoardData = window.JOBKOREA_BOARD_DATA || {};
       let jobkoreaPool = Array.isArray(jobkoreaBoardData.notices) ? jobkoreaBoardData.notices.slice() : [];
       let jobkoreaUpdatedAt = String(jobkoreaBoardData.updatedAt || "");
@@ -3817,6 +3823,27 @@
         if (!jobkoreaLive || !jobkoreaLiveLabel) return;
         jobkoreaLive.classList.toggle("is-offline", !online);
         jobkoreaLiveLabel.textContent = label;
+      }
+
+      function readJobkoreaCache() {
+        try {
+          const raw = localStorage.getItem(JOBKOREA_CACHE_KEY);
+          if (!raw || raw.includes("<<<<<<<")) return null;
+          const payload = JSON.parse(raw);
+          if (!payload || !Array.isArray(payload.notices) || !payload.notices.length) return null;
+          return payload;
+        } catch {
+          return null;
+        }
+      }
+
+      function writeJobkoreaCache(payload) {
+        try {
+          if (!payload || !Array.isArray(payload.notices) || !payload.notices.length) return;
+          localStorage.setItem(JOBKOREA_CACHE_KEY, JSON.stringify(payload));
+        } catch {
+          /* quota / private mode */
+        }
       }
 
       function jobkoreaDday(deadlineISO, today, alwaysHire) {
@@ -3838,12 +3865,20 @@
         const dateISO = String(it.dateISO || "").slice(0, 10);
         const deadlineISO = String(it.deadlineISO || "").slice(0, 10);
         const alwaysHire = Boolean(it.alwaysHire);
-        const url = String(it.url || "").trim();
+        let url = String(it.url || "").trim();
+        const jobId = String(it.jobId || "").trim();
         const popularRank = Number(it.popularRank) || 0;
         const today = seoulTodayISO();
         if (!companyName || !title || title.length < 2) return null;
+        if (!url && jobId) url = `https://www.jobkorea.co.kr/Recruit/GI_Read/${jobId}`;
         if (!/^https?:\/\/(?:www\.)?jobkorea\.co\.kr\/Recruit\/GI_Read\/\d+/i.test(url)) return null;
-        if (!dateISO || dateISO < "2020-01-01" || dateISO > today) return null;
+        if (!dateISO || dateISO < "2020-01-01") return null;
+        // 미래 등록일만 제외 (시계 오차·자정 직전 대비로 today+1일까지 허용)
+        if (dateISO > today) {
+          const t0 = Date.parse(`${today}T12:00:00+09:00`);
+          const t1 = Date.parse(`${dateISO}T12:00:00+09:00`);
+          if (Number.isNaN(t0) || Number.isNaN(t1) || t1 - t0 > 86400000) return null;
+        }
 
         let preview = String(it.preview || "")
           .replace(/\s+/g, " ")
@@ -3880,11 +3915,25 @@
         if (!payload || typeof payload !== "object") return false;
         if (!Array.isArray(payload.notices)) return false;
         if (!payload.notices.length && jobkoreaPool.length) return false;
+        // 충돌 마커·깨진 페이로드는 무시
+        try {
+          if (JSON.stringify(payload).includes("<<<<<<<")) return false;
+        } catch {
+          return false;
+        }
         jobkoreaBoardData = payload;
         window.JOBKOREA_BOARD_DATA = payload;
         jobkoreaPool = payload.notices.slice();
         jobkoreaUpdatedAt = String(payload.updatedAt || jobkoreaUpdatedAt || "");
+        writeJobkoreaCache(payload);
         return true;
+      }
+
+      function hydrateJobkoreaFromCache() {
+        if (jobkoreaPool.length) return false;
+        const cached = readJobkoreaCache();
+        if (!cached) return false;
+        return applyJobkoreaPayload(cached);
       }
 
       function buildJobkoreaRows() {
@@ -3922,14 +3971,16 @@
               ? `오늘 ${todayCount.toLocaleString("ko-KR")}건 · 인기 ${list.length.toLocaleString("ko-KR")}건`
               : `인기 ${list.length.toLocaleString("ko-KR")}건`;
         }
-        setJobkoreaLive(true, formatUpdatedLabel(jobkoreaUpdatedAt));
 
         if (!list.length) {
+          if (jobkoreaPool.length) setJobkoreaLive(true, formatUpdatedLabel(jobkoreaUpdatedAt));
+          else setJobkoreaLive(false, "불러오는 중");
           jobkoreaListEl.innerHTML =
-            `<div class="univ-notice-empty">등록된 인기 채용 공고가 없습니다.<br>잡코리아 인기 JOB을 주기적으로 갱신합니다.</div>`;
+            `<div class="univ-notice-empty">인기 채용 공고를 불러오는 중입니다…<br>잠시 후 자동으로 갱신됩니다.</div>`;
           return;
         }
 
+        setJobkoreaLive(true, formatUpdatedLabel(jobkoreaUpdatedAt));
         let lastDate = null;
         jobkoreaListEl.innerHTML = list.map((r) => {
           const title = escapeHtml(r.title);
@@ -3961,25 +4012,99 @@
         }).join("");
       }
 
+      function parseJobkoreaScriptText(text) {
+        const t = String(text || "");
+        if (!t || t.includes("<<<<<<<")) return null;
+        const eq = t.indexOf("=");
+        if (eq < 0) return null;
+        let body = t.slice(eq + 1).trim();
+        if (body.endsWith(";")) body = body.slice(0, -1);
+        try {
+          const payload = JSON.parse(body);
+          if (!payload || !Array.isArray(payload.notices) || !payload.notices.length) return null;
+          return payload;
+        } catch {
+          return null;
+        }
+      }
+
+      async function fetchJobkoreaPayloadOnce(url) {
+        const sep = url.includes("?") ? "&" : "?";
+        const res = await fetch(`${url}${sep}t=${Date.now()}`, { cache: "no-store", mode: "cors" });
+        if (!res.ok) throw new Error(`http_${res.status}`);
+        const ct = String(res.headers.get("content-type") || "");
+        const text = await res.text();
+        if (!text || text.includes("<<<<<<<")) throw new Error("conflict");
+        if (ct.includes("javascript") || /window\.JOBKOREA_BOARD_DATA\s*=/.test(text)) {
+          const fromJs = parseJobkoreaScriptText(text);
+          if (fromJs) return fromJs;
+        }
+        const payload = JSON.parse(text);
+        if (!payload || !Array.isArray(payload.notices) || !payload.notices.length) {
+          throw new Error("empty");
+        }
+        return payload;
+      }
+
+      function loadJobkoreaScriptTag() {
+        return new Promise((resolve, reject) => {
+          const s = document.createElement("script");
+          s.src = `jobkorea-board-data.js?t=${Date.now()}`;
+          s.async = true;
+          s.onload = () => {
+            const payload = window.JOBKOREA_BOARD_DATA;
+            if (payload && Array.isArray(payload.notices) && payload.notices.length) resolve(payload);
+            else reject(new Error("script_empty"));
+            s.remove();
+          };
+          s.onerror = () => {
+            s.remove();
+            reject(new Error("script_error"));
+          };
+          document.head.appendChild(s);
+        });
+      }
+
+      async function pullJobkoreaPayload() {
+        const errors = [];
+        for (const url of JOBKOREA_DATA_URLS) {
+          try {
+            return await fetchJobkoreaPayloadOnce(url);
+          } catch (e) {
+            errors.push(`${url}:${e?.message || e}`);
+          }
+        }
+        try {
+          return await loadJobkoreaScriptTag();
+        } catch (e) {
+          errors.push(`script:${e?.message || e}`);
+        }
+        const cached = readJobkoreaCache();
+        if (cached) return cached;
+        throw new Error(errors.slice(0, 3).join(" | ") || "jobkorea_pull_failed");
+      }
+
       async function refreshJobkoreaFromGithub(opts) {
         if (jobkoreaPollBusy) return;
         jobkoreaPollBusy = true;
         const silent = Boolean(opts && opts.silent);
         try {
           const prevFp = noticeFingerprint(jobkoreaPool, ["jobId", "title", "dateISO"]);
-          const res = await fetch(`${JOBKOREA_DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
-          if (!res.ok) throw new Error(`http_${res.status}`);
-          const payload = await res.json();
-          applyJobkoreaPayload(payload);
+          const payload = await pullJobkoreaPayload();
+          if (!applyJobkoreaPayload(payload)) throw new Error("apply_failed");
           renderJobkoreaBoard(jobkoreaQuery);
-          setJobkoreaLive(true, formatUpdatedLabel(jobkoreaUpdatedAt));
           const nextFp = noticeFingerprint(jobkoreaPool, ["jobId", "title", "dateISO"]);
           if (nextFp !== prevFp && !silent) {
             toastBoardRefresh("채용 공고", countTodayRows(buildJobkoreaRows(), seoulTodayISO()));
           }
         } catch {
-          if (jobkoreaPool.length) setJobkoreaLive(true, formatUpdatedLabel(jobkoreaUpdatedAt));
-          else setJobkoreaLive(false, "대기");
+          if (jobkoreaPool.length) {
+            renderJobkoreaBoard(jobkoreaQuery);
+          } else if (hydrateJobkoreaFromCache()) {
+            renderJobkoreaBoard(jobkoreaQuery);
+          } else {
+            setJobkoreaLive(false, "재시도 중");
+          }
         } finally {
           jobkoreaPollBusy = false;
         }
@@ -4008,14 +4133,24 @@
 
       function bootJobkoreaBoard() {
         if (!jobkoreaListEl) return;
-        if (!jobkoreaPool.length) {
-          setJobkoreaLive(false, "대기");
-          renderJobkoreaBoard("");
-        } else {
-          setJobkoreaLive(true, formatUpdatedLabel(jobkoreaUpdatedAt));
-          renderJobkoreaBoard(jobkoreaSearch ? jobkoreaSearch.value : "");
+        if (!jobkoreaPool.length) hydrateJobkoreaFromCache();
+        if (!jobkoreaPool.length && window.JOBKOREA_BOARD_DATA?.notices?.length) {
+          applyJobkoreaPayload(window.JOBKOREA_BOARD_DATA);
         }
-        setTimeout(() => refreshJobkoreaFromGithub({ silent: true }), 500);
+        if (jobkoreaPool.length) {
+          renderJobkoreaBoard(jobkoreaSearch ? jobkoreaSearch.value : "");
+        } else {
+          setJobkoreaLive(false, "불러오는 중");
+          jobkoreaListEl.innerHTML =
+            `<div class="univ-notice-empty">인기 채용 공고를 불러오는 중입니다…</div>`;
+        }
+        // 즉시·짧은 재시도로 빈 화면을 빠르게 채움
+        refreshJobkoreaFromGithub({ silent: true });
+        [800, 2500, 6000].forEach((ms) => {
+          setTimeout(() => {
+            if (!jobkoreaPool.length) refreshJobkoreaFromGithub({ silent: true });
+          }, ms);
+        });
         setInterval(() => {
           ensureBoardDay();
           refreshJobkoreaFromGithub();
