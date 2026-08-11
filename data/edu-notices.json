@@ -67,11 +67,31 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-11T22:59:53.699228Z",
-  "checkedAt": "2026-08-11T22:59:53.699222Z",
+  "updatedAt": "2026-08-11T23:37:37.361149Z",
+  "checkedAt": "2026-08-11T23:37:37.361143Z",
   "today": "2026-08-12",
   "count": 72,
   "notices": [
+    {
+      "id": "c94a8c92fa9882940148",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "어둠 속 숨은 표적, '빛의 쌍둥이'가 한눈에 찾아낸다",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622842",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "d2b3f4a62b25d350bc30",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "EBS 'AI 드라마 - 부활수업' '정약용 편', 8월 16일 밤 11시 EBS 1TV 방송",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622840",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
     {
       "id": "a7fedc972d5a9a8b2304",
       "sourceId": "moe_blog",
@@ -103,16 +123,6 @@
       "dateText": "2026.08.11"
     },
     {
-      "id": "11184ebdbb018a281819",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "호남대 국제교류본부 해남 대흥사서 외국인 유학생 한국문화 체험",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622832",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
       "id": "f45b820f5f76869d765d",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
@@ -129,16 +139,6 @@
       "title": "국립한밭대 지역협력센터, 이노폴리스벤처협회와 AI/인문/창업 인프라 조성 업무협약 체결",
       "preview": "베리타스알파 소식",
       "url": "https://www.veritas-a.com/news/articleView.html?idxno=622833",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "5663263d5585832330b9",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국립공주대 플로리다대 GCREC 방문…첨단 농생명 분야 공동연구 협의",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622831",
       "dateISO": "2026-08-11",
       "dateText": "2026.08.11"
     },
