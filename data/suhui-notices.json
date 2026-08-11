@@ -1,10 +1,28 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-11T19:42:56.619393Z",
-  "checkedAt": "2026-08-11T19:42:56.619388Z",
+  "updatedAt": "2026-08-11T20:23:08.302936Z",
+  "checkedAt": "2026-08-11T20:23:08.302931Z",
   "today": "2026-08-12",
   "count": 40,
   "notices": [
+    {
+      "id": "adf09256b63abb163857",
+      "sourceName": "수만휘",
+      "title": "가천대 간호학과 교직이 폐지되네요",
+      "preview": "[┃간호 게시판] 2026학년도 이후 부터 가천대학교 간호학과 교직과정이 폐지된다고 합니다. 참고로.... 출처 : 공지사항",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29603427",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "6fef03ec171fa36880fc",
+      "sourceName": "수만휘",
+      "title": "여름방학 날린 정시러",
+      "preview": "[┃Team09 수험생 게시판] 정시러인데 여름방학 채로 날려버렸어요 학원은 영어만 다니고 국어랑 수학은 강기분이랑 현우진 시발점 들으려고 했는데 하나도 안 들었어요 이미 방학은 지나버렸고 앞으로 제가 어떻게 해야될",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29603426",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
     {
       "id": "6377d8304810382e53da",
       "sourceName": "수만휘",
@@ -51,29 +69,11 @@
       "dateText": "2026.08.12"
     },
     {
-      "id": "ff5b1de43cda8dcd95ef",
-      "sourceName": "수만휘",
-      "title": "표준편차 20~25되는 곳은 다른 곳에 비해 1.0 많아질 것이라고 보는데요. 비판 좀요.",
-      "preview": "[🔥학부모님 자유게시판] https://cafe.naver.com/heritage18/188",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29603419",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
       "id": "70cdc1d5ad18a5c99450",
       "sourceName": "수만휘",
       "title": "외대 서울캠 *자연계*VS 덕성여대 공대",
       "preview": "[┏서울지역 대학교] 수만휘 카페 글",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29603418",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "a1600de5367708032253",
-      "sourceName": "수만휘",
-      "title": "28 대입 서울권 상위 대학 중에 수능최저 강화된 곳이 많을까? 완화된 곳이 많을까?",
-      "preview": "[🔥학부모님 자유게시판] https://cafe.naver.com/heritage18/189 상담 준비 중인데 틀린곳 있으면 지적질 좀요",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29603417",
       "dateISO": "2026-08-12",
       "dateText": "2026.08.12"
     },
