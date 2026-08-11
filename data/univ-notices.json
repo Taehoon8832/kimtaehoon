@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
-  "today": "2026-08-11",
-  "updatedAt": "2026-08-11T14:06:51.743Z",
-  "checkedAt": "2026-08-11T14:06:51.743Z",
+  "today": "2026-08-12",
+  "updatedAt": "2026-08-11T15:14:51.920Z",
+  "checkedAt": "2026-08-11T15:14:51.920Z",
   "sources": [
     {
       "id": "u001",
@@ -1748,17 +1748,6 @@
       "dateText": "2026.08.07"
     },
     {
-      "id": "577d50059058a2357b4a",
-      "univId": "u044",
-      "univName": "한예종",
-      "title": "2027학년도 11월입시 예술전문사과정 정원 외 전형 전형료 납부 계좌 안내...",
-      "preview": "한예종 입학 공지사항 미리보기",
-      "url": "https://www.karts.ac.kr/cop/bbs/selectBoardArticle.do?bbsId=BBSMSTR_000000000007&nttNo=70320",
-      "homeUrl": "https://www.karts.ac.kr/main/appl.do",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
       "id": "561ff8a9ef02a795db7b",
       "univId": "u009",
       "univName": "국민대",
@@ -2577,5 +2566,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=22 empty=25 fail=169 fresh=75"
+  "statusReason": "ok=19 empty=29 fail=168 fresh=74"
 }
