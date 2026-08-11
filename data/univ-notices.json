@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-11",
-  "updatedAt": "2026-08-11T06:41:18.148Z",
-  "checkedAt": "2026-08-11T06:41:18.148Z",
+  "updatedAt": "2026-08-11T07:56:48.605Z",
+  "checkedAt": "2026-08-11T07:56:48.605Z",
   "sources": [
     {
       "id": "u001",
@@ -1550,6 +1550,28 @@
       "dateText": "2026.08.11"
     },
     {
+      "id": "57b12ed4f99168d510b1",
+      "univId": "u078",
+      "univName": "한경국립대",
+      "title": "2027학년도 재외국민 특별전형 합격자 조회 및 등록 안내 수시",
+      "preview": "2027학년도 입학전형 비대면 맞춤형 상담프로그램 신청 안내 수시 2026.08 .",
+      "url": "https://ipsi.hknu.ac.kr/help/notice_view.php?bn=5169&nPage=1",
+      "homeUrl": "https://ipsi.hknu.ac.kr/",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
+      "id": "970cf1ab319a03b70644",
+      "univId": "u078",
+      "univName": "한경국립대",
+      "title": "2027학년도 재외국민 특별전형 합격자 조회 및 등록 안내 수시",
+      "preview": "한경국립대 입학 공지사항 미리보기",
+      "url": "https://ipsi.hknu.ac.kr/help/notice_view.php?bn=5169&m_type=&nPage=1&f=&s=",
+      "homeUrl": "https://ipsi.hknu.ac.kr/",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
       "id": "4db75e388b7c6880fa9e",
       "univId": "u033",
       "univName": "이화여대",
@@ -1909,6 +1931,17 @@
       "preview": "숙명여대 입학 공지사항 미리보기",
       "url": "https://admission.sookmyung.ac.kr/admission/html/counsel/noticeView.asp?p_board_idx=54305",
       "homeUrl": "https://admission.sookmyung.ac.kr/admission/html/main/main.asp",
+      "dateISO": "2026-08-04",
+      "dateText": "2026.08.04"
+    },
+    {
+      "id": "92940dee6dc419c781e2",
+      "univId": "u078",
+      "univName": "한경국립대",
+      "title": "2027학년도 수시 모집요강 배송 신청 안내 수시",
+      "preview": "한경국립대 입학 공지사항 미리보기",
+      "url": "https://ipsi.hknu.ac.kr/help/notice_view.php?bn=5155&nPage=1",
+      "homeUrl": "https://ipsi.hknu.ac.kr/",
       "dateISO": "2026-08-04",
       "dateText": "2026.08.04"
     },
@@ -2533,5 +2566,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=16 empty=9 fail=191 fresh=71"
+  "statusReason": "ok=22 empty=25 fail=169 fresh=74"
 }
