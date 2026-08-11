@@ -54,8 +54,8 @@
   {
     "id": "u009",
     "name": "국민대",
-    "homeUrl": "http://admission.kookmin.ac.kr/index.php?noMobile=1",
-    "boardUrl": "https://admission.kookmin.ac.kr/",
+    "homeUrl": "https://admission.kookmin.ac.kr/main.php",
+    "boardUrl": "https://admission.kookmin.ac.kr/nonschedule/notice.php",
     "priority": true
   },
   {
@@ -190,14 +190,14 @@
     "id": "u030",
     "name": "숭실대",
     "homeUrl": "https://iphak.ssu.ac.kr/",
-    "boardUrl": "https://iphak.ssu.ac.kr/",
+    "boardUrl": "https://iphak.ssu.ac.kr/board/notice_list.asp?page=1&page_no=1_1_1",
     "priority": true
   },
   {
     "id": "u031",
     "name": "연세대(서울)",
     "homeUrl": "https://admission.yonsei.ac.kr/seoul/admission/html/main/main.asp",
-    "boardUrl": "https://admission.yonsei.ac.kr/seoul/admission/html/main/main.asp",
+    "boardUrl": "https://admission.yonsei.ac.kr/seoul/admission/html/counsel/notice.asp",
     "priority": true
   },
   {
@@ -210,8 +210,8 @@
   {
     "id": "u033",
     "name": "이화여대",
-    "homeUrl": "http://admission.ewha.ac.kr/",
-    "boardUrl": "http://admission.ewha.ac.kr/",
+    "homeUrl": "https://admission.ewha.ac.kr/admission/html/main/intro.asp",
+    "boardUrl": "https://admission.ewha.ac.kr/admission/html/ewharo/notice.asp",
     "priority": true
   },
   {
@@ -267,8 +267,8 @@
   {
     "id": "u042",
     "name": "한양대(서울)",
-    "homeUrl": "https://go.hanyang.ac.kr/",
-    "boardUrl": "https://go.hanyang.ac.kr/",
+    "homeUrl": "https://go.hanyang.ac.kr/gate.do",
+    "boardUrl": "https://go.hanyang.ac.kr/web/notice/notice_list.do?m_type=IPSI",
     "priority": true
   },
   {
@@ -532,8 +532,9 @@
   {
     "id": "u085",
     "name": "한양대(에리카)",
-    "homeUrl": "http://goerica.hanyang.ac.kr/",
-    "boardUrl": "https://goerica.hanyang.ac.kr/new/notice"
+    "homeUrl": "https://goerica.hanyang.ac.kr/admission/intro.asp",
+    "boardUrl": "https://goerica.hanyang.ac.kr/admission/html/counsel/all_notice.asp",
+    "priority": true
   },
   {
     "id": "u086",

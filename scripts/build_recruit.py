@@ -312,11 +312,7 @@ def main():
             raise SystemExit(f"recruit scrape failed with no previous data: {e}")
 
     day_changed = bool(previous) and previous.get("today") != today
-
-    # 동일 목록이어도 자정 이후에는 today·checkedAt을 갱신해 프론트가 살아 있게
-    if kept_prev and previous and previous.get("notices") == notices and not day_changed:
-        print(f"unchanged {len(notices)} items (kept previous: {reason})")
-        return
+    # 목록이 같아도 checkedAt/today는 매번 갱신해 Actions·프론트 생존 신호를 유지
 
     if day_changed:
         refreshed = []

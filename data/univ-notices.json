@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-11",
-  "updatedAt": "2026-08-11T02:23:01.074Z",
-  "checkedAt": "2026-08-11T02:23:01.074Z",
+  "updatedAt": "2026-08-11T02:38:55.084Z",
+  "checkedAt": "2026-08-11T02:38:55.084Z",
   "sources": [
     {
       "id": "u001",
@@ -59,8 +59,8 @@
     {
       "id": "u009",
       "name": "국민대",
-      "homeUrl": "http://admission.kookmin.ac.kr/index.php?noMobile=1",
-      "boardUrl": "https://admission.kookmin.ac.kr/",
+      "homeUrl": "https://admission.kookmin.ac.kr/main.php",
+      "boardUrl": "https://admission.kookmin.ac.kr/nonschedule/notice.php",
       "priority": true
     },
     {
@@ -195,14 +195,14 @@
       "id": "u030",
       "name": "숭실대",
       "homeUrl": "https://iphak.ssu.ac.kr/",
-      "boardUrl": "https://iphak.ssu.ac.kr/",
+      "boardUrl": "https://iphak.ssu.ac.kr/board/notice_list.asp?page=1&page_no=1_1_1",
       "priority": true
     },
     {
       "id": "u031",
       "name": "연세대(서울)",
       "homeUrl": "https://admission.yonsei.ac.kr/seoul/admission/html/main/main.asp",
-      "boardUrl": "https://admission.yonsei.ac.kr/seoul/admission/html/main/main.asp",
+      "boardUrl": "https://admission.yonsei.ac.kr/seoul/admission/html/counsel/notice.asp",
       "priority": true
     },
     {
@@ -215,8 +215,8 @@
     {
       "id": "u033",
       "name": "이화여대",
-      "homeUrl": "http://admission.ewha.ac.kr/",
-      "boardUrl": "http://admission.ewha.ac.kr/",
+      "homeUrl": "https://admission.ewha.ac.kr/admission/html/main/intro.asp",
+      "boardUrl": "https://admission.ewha.ac.kr/admission/html/ewharo/notice.asp",
       "priority": true
     },
     {
@@ -272,8 +272,8 @@
     {
       "id": "u042",
       "name": "한양대(서울)",
-      "homeUrl": "https://go.hanyang.ac.kr/",
-      "boardUrl": "https://go.hanyang.ac.kr/",
+      "homeUrl": "https://go.hanyang.ac.kr/gate.do",
+      "boardUrl": "https://go.hanyang.ac.kr/web/notice/notice_list.do?m_type=IPSI",
       "priority": true
     },
     {
@@ -537,8 +537,9 @@
     {
       "id": "u085",
       "name": "한양대(에리카)",
-      "homeUrl": "http://goerica.hanyang.ac.kr/",
-      "boardUrl": "https://goerica.hanyang.ac.kr/new/notice"
+      "homeUrl": "https://goerica.hanyang.ac.kr/admission/intro.asp",
+      "boardUrl": "https://goerica.hanyang.ac.kr/admission/html/counsel/all_notice.asp",
+      "priority": true
     },
     {
       "id": "u086",
@@ -1527,17 +1528,6 @@
   ],
   "notices": [
     {
-      "id": "d71be707e9747a2b8382",
-      "univId": "u033",
-      "univName": "이화여대",
-      "title": "--> --> 재외국민 공지사항 2027학년도 재외국민 특별전형(3월 입학) 면접고사 수험생 유의사항",
-      "preview": "이화여대 입학 공지사항 미리보기",
-      "url": "http://admission.ewha.ac.kr/ewharo/noticeView.asp?idx=14299",
-      "homeUrl": "http://admission.ewha.ac.kr/",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
       "id": "ac4fe9731c08025d7157",
       "univId": "u044",
       "univName": "한예종",
@@ -1549,13 +1539,46 @@
       "dateText": "2026.08.11"
     },
     {
-      "id": "376b7ced1f9382d3917d",
+      "id": "5f28c7cc898092ba8c3e",
+      "univId": "u085",
+      "univName": "한양대(에리카)",
+      "title": "2027학년도 수시 조기취업형계약학과 예비대학 안내",
+      "preview": "한양대(에리카) 입학 공지사항 미리보기",
+      "url": "https://goerica.hanyang.ac.kr/admission/html/counsel/all_notice_view.asp?idx=2203",
+      "homeUrl": "https://goerica.hanyang.ac.kr/admission/intro.asp",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
+      "id": "4db75e388b7c6880fa9e",
       "univId": "u033",
       "univName": "이화여대",
-      "title": "--> --> 재외국민 공지사항 2027학년도 재외국민 특별전형(3월 입학) 지원자격 관련 서류 제출 안내(추가 서류 제출 안내 전화받은 수험생에 한함)",
+      "title": "2027학년도 재외국민 특별전형(3월 입학) 면접고사 대상자 발표",
       "preview": "이화여대 입학 공지사항 미리보기",
-      "url": "http://admission.ewha.ac.kr/ewharo/noticeView.asp?idx=14299",
-      "homeUrl": "http://admission.ewha.ac.kr/",
+      "url": "https://admission.ewha.ac.kr/admission/html/ewharo/noticeView.asp?idx=15417",
+      "homeUrl": "https://admission.ewha.ac.kr/admission/html/main/intro.asp",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
+      "id": "295cb97579885e460d0e",
+      "univId": "u033",
+      "univName": "이화여대",
+      "title": "2027학년도 재외국민 특별전형(3월 입학) 면접고사 수험생 유의사항",
+      "preview": "이화여대 입학 공지사항 미리보기",
+      "url": "https://admission.ewha.ac.kr/admission/html/ewharo/noticeView.asp?idx=15418",
+      "homeUrl": "https://admission.ewha.ac.kr/admission/html/main/intro.asp",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
+      "id": "aeb894e28e691c9f535a",
+      "univId": "u030",
+      "univName": "숭실대",
+      "title": "2026학년도 2학기 캠퍼스투어 신청 안내",
+      "preview": "숭실대 입학 공지사항 미리보기",
+      "url": "https://iphak.ssu.ac.kr/board/notice_view.asp?number=2315&page_no=1_1_1&page=1",
+      "homeUrl": "https://iphak.ssu.ac.kr/",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10"
     },
@@ -1600,6 +1623,28 @@
       "preview": "경북대(대구) 입학 공지사항 미리보기",
       "url": "https://ipsi1.knu.ac.kr/view.php?r=FxlcTxxBU0FHA30JDgFYHA",
       "homeUrl": "http://ipsi1.knu.ac.kr/",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
+    {
+      "id": "6f6116efa9bf2f6b35ee",
+      "univId": "u033",
+      "univName": "이화여대",
+      "title": "2027학년도 재외국민 특별전형(3월 입학) 지원자격 관련 서류 제출 안내(추가 서류 제출 안내 전화받은 수험생에 한함)",
+      "preview": "이화여대 입학 공지사항 미리보기",
+      "url": "https://admission.ewha.ac.kr/admission/html/ewharo/noticeView.asp?idx=15420",
+      "homeUrl": "https://admission.ewha.ac.kr/admission/html/main/intro.asp",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10"
+    },
+    {
+      "id": "ff3d40c2858d14f225ac",
+      "univId": "u031",
+      "univName": "연세대(서울)",
+      "title": "연세대학교 디스플레이융합공학과 설명회 신청 안내",
+      "preview": "연세대(서울) 입학 공지사항 미리보기",
+      "url": "https://admission.yonsei.ac.kr/seoul/admission/html/counsel/noticeView.asp?BBS_NO=3515",
+      "homeUrl": "https://admission.yonsei.ac.kr/seoul/admission/html/main/main.asp",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10"
     },
@@ -1670,6 +1715,28 @@
       "dateText": "2026.08.07"
     },
     {
+      "id": "130e94ee3fee8c2a8f64",
+      "univId": "u009",
+      "univName": "국민대",
+      "title": "2027학년도 수시 주요사항 안내 (testpage)",
+      "preview": "국민대 입학 공지사항 미리보기",
+      "url": "https://admission.kookmin.ac.kr/nonschedule/notice.php?ctype=view&no=1081",
+      "homeUrl": "https://admission.kookmin.ac.kr/main.php",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
+    {
+      "id": "9f3a992193bbe601dbe6",
+      "univId": "u029",
+      "univName": "숙명여대",
+      "title": "2027학년도 온라인 모의논술 결과 조회 [~9/4(금)까지]",
+      "preview": "숙명여대 입학 공지사항 미리보기",
+      "url": "https://admission.sookmyung.ac.kr/admission/html/counsel/noticeView.asp?p_board_idx=54316",
+      "homeUrl": "https://admission.sookmyung.ac.kr/admission/html/main/main.asp",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
+    {
       "id": "459e8823a8f750dbc6bb",
       "univId": "u157",
       "univName": "한국전통문화대",
@@ -1699,6 +1766,17 @@
       "preview": "해군사관학교 입학 공지사항 미리보기",
       "url": "https://www.navy.ac.kr:4443/bbs/iphak/142/841488/artclView.do",
       "homeUrl": "https://www.navy.ac.kr:4443/sites/iphak/index.do",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
+      "id": "bf05ef4d5beb9df3e66c",
+      "univId": "u009",
+      "univName": "국민대",
+      "title": "2027학년도 수시모집 대입전형자료(학생부, 검정고시) 온라인 생성(제공) 신청 안내",
+      "preview": "국민대 입학 공지사항 미리보기",
+      "url": "https://admission.kookmin.ac.kr/nonschedule/notice.php?ctype=view&no=1080",
+      "homeUrl": "https://admission.kookmin.ac.kr/main.php",
       "dateISO": "2026-08-06",
       "dateText": "2026.08.06"
     },
@@ -1813,6 +1891,17 @@
       "dateText": "2026.08.04"
     },
     {
+      "id": "43d74014f7d2b402793c",
+      "univId": "u029",
+      "univName": "숙명여대",
+      "title": "2027학년도 대입전형 안내 영상",
+      "preview": "숙명여대 입학 공지사항 미리보기",
+      "url": "https://admission.sookmyung.ac.kr/admission/html/counsel/noticeView.asp?p_board_idx=54305",
+      "homeUrl": "https://admission.sookmyung.ac.kr/admission/html/main/main.asp",
+      "dateISO": "2026-08-04",
+      "dateText": "2026.08.04"
+    },
+    {
       "id": "e1d15bc522830796e7b0",
       "univId": "u078",
       "univName": "한경국립대",
@@ -1857,17 +1946,6 @@
       "dateText": "2026.08.04"
     },
     {
-      "id": "b998fba104315a82f5a8",
-      "univId": "u029",
-      "univName": "숙명여대",
-      "title": "공통 2027학년도 대입전형 안내 영상",
-      "preview": "숙명여대 입학 공지사항 미리보기",
-      "url": "https://admission.sookmyung.ac.kr/admission/html/counsel/noticeView.asp?p_board_idx=54305",
-      "homeUrl": "https://admission.sookmyung.ac.kr/admission/html/main/main.asp",
-      "dateISO": "2026-08-04",
-      "dateText": "2026.08.04"
-    },
-    {
       "id": "d44c9321d197383a1292",
       "univId": "u176",
       "univName": "우석대(전주)",
@@ -1901,18 +1979,6 @@
       "dateText": "2026.08.04"
     },
     {
-      "univId": "u029",
-      "univName": "숙명여대",
-      "title": "정시 2027학년도 정시모집 안내 영상",
-      "preview": "숙명여대 입학 공지사항 미리보기",
-      "url": "https://admission.sookmyung.ac.kr/admission/html/counsel/noticeView.asp?p_board_idx=54305",
-      "homeUrl": "https://admission.sookmyung.ac.kr/admission/html/main/main.asp",
-      "dateISO": "2026-08-04",
-      "dateText": "2026.08.04",
-      "priority": true,
-      "id": "b50d7c764b41c54335fd"
-    },
-    {
       "id": "119df1725df06250c657",
       "univId": "u062",
       "univName": "수원대",
@@ -1931,6 +1997,17 @@
       "preview": "수원대 입학 공지사항 미리보기",
       "url": "https://ipsi.suwon.ac.kr/board/notice/read/5666",
       "homeUrl": "http://ipsi.suwon.ac.kr/",
+      "dateISO": "2026-08-03",
+      "dateText": "2026.08.03"
+    },
+    {
+      "id": "934e3bf54140ab56b7ff",
+      "univId": "u030",
+      "univName": "숭실대",
+      "title": "2026-2학기 순수외국인(3차 모집) 등록금 납부확인서 조회",
+      "preview": "숭실대 입학 공지사항 미리보기",
+      "url": "https://iphak.ssu.ac.kr/board/notice_view.asp?number=2314&page_no=1_1_1&page=1",
+      "homeUrl": "https://iphak.ssu.ac.kr/",
       "dateISO": "2026-08-03",
       "dateText": "2026.08.03"
     },
@@ -2118,17 +2195,6 @@
       "preview": "수원대 입학 공지사항 미리보기",
       "url": "http://ipsi.suwon.ac.kr/board/notice/read/5666",
       "homeUrl": "http://ipsi.suwon.ac.kr/",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03"
-    },
-    {
-      "id": "6a614aff14388f3afe12",
-      "univId": "u030",
-      "univName": "숭실대",
-      "title": "순수외국인 2026-2학기 순수외국인(3차 모집) 등록금 납부확인서 조회 03 --> 자세히 보기",
-      "preview": "숭실대 입학 공지사항 미리보기",
-      "url": "https://iphak.ssu.ac.kr/board/notice_view.asp?flag=7&page=1&number=2314&page_no=10__",
-      "homeUrl": "https://iphak.ssu.ac.kr/",
       "dateISO": "2026-08-03",
       "dateText": "2026.08.03"
     },
@@ -2423,5 +2489,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=13 empty=18 fail=185 fresh=61"
+  "statusReason": "ok=6 empty=1 fail=0 fresh=67"
 }

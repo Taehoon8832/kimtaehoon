@@ -2,8 +2,8 @@ name: Refresh university notices
 
 on:
   schedule:
-    # 매 15분 (UTC) — 전국 입학처 공지
-    - cron: "*/15 * * * *"
+    # 매 10분 (UTC) — 전국 입학처 공지 빠른 갱신
+    - cron: "*/10 * * * *"
   workflow_dispatch:
 
 permissions:

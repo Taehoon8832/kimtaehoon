@@ -144,6 +144,67 @@ const SPECIAL = {
     allow: /kunsan\.ac\.kr\/iphak\/board\/view\.kunsan\?.*boardId=BBS_0000041.*dataSid=\d+/i,
     parser: "kunsan",
   },
+  // —— 주요 수도권 대학 (입학처 전체 공지) ——
+  u031: {
+    homeUrl: "https://admission.yonsei.ac.kr/seoul/admission/html/main/main.asp",
+    boardUrl: "https://admission.yonsei.ac.kr/seoul/admission/html/counsel/notice.asp",
+    allow: /admission\.yonsei\.ac\.kr\/seoul\/admission\/html\/counsel\/noticeView\.asp\?.*BBS_NO=\d+/i,
+    parser: "yonsei",
+    encoding: "euc-kr",
+    maxPer: 30,
+  },
+  u042: {
+    homeUrl: "https://go.hanyang.ac.kr/gate.do",
+    boardUrl: "https://go.hanyang.ac.kr/web/notice/notice_list.do?m_type=IPSI",
+    boards: [
+      "https://go.hanyang.ac.kr/web/notice/notice_list.do?m_type=IPSI",
+      "https://go.hanyang.ac.kr/web/notice/notice_list.do?m_type=SUSI",
+      "https://go.hanyang.ac.kr/web/notice/notice_list.do?m_type=COMMON",
+      "https://go.hanyang.ac.kr/web/notice/notice_list.do?m_type=JEOEGUK",
+    ],
+    allow: /go\.hanyang\.ac\.kr\/web\/notice\/notice_view\.do\?.*bn=\d+/i,
+    parser: "hanyang",
+    maxPer: 40,
+  },
+  u030: {
+    homeUrl: "https://iphak.ssu.ac.kr/",
+    boardUrl: "https://iphak.ssu.ac.kr/board/notice_list.asp?page=1&page_no=1_1_1",
+    allow: /iphak\.ssu\.ac\.kr\/board\/notice_view\.asp\?.*number=\d+/i,
+    parser: "ssu",
+    encoding: "euc-kr",
+    maxPer: 30,
+  },
+  u009: {
+    homeUrl: "https://admission.kookmin.ac.kr/main.php",
+    boardUrl: "https://admission.kookmin.ac.kr/nonschedule/notice.php",
+    allow: /admission\.kookmin\.ac\.kr\/nonschedule\/notice\.php\?.*ctype=view.*no=\d+/i,
+    parser: "kookmin",
+    maxPer: 30,
+  },
+  u033: {
+    homeUrl: "https://admission.ewha.ac.kr/admission/html/main/intro.asp",
+    boardUrl: "https://admission.ewha.ac.kr/admission/html/ewharo/notice.asp",
+    allow: /admission\.ewha\.ac\.kr\/admission\/html\/ewharo\/noticeView\.asp\?.*idx=\d+/i,
+    parser: "ewha",
+    encoding: "euc-kr",
+    maxPer: 30,
+  },
+  u029: {
+    homeUrl: "https://admission.sookmyung.ac.kr/admission/html/main/main.asp",
+    boardUrl: "https://admission.sookmyung.ac.kr/admission/html/counsel/notice.asp",
+    allow: /admission\.sookmyung\.ac\.kr\/admission\/html\/counsel\/noticeView\.asp\?.*p_board_idx=\d+/i,
+    parser: "sook",
+    encoding: "euc-kr",
+    maxPer: 30,
+  },
+  u085: {
+    homeUrl: "https://goerica.hanyang.ac.kr/admission/intro.asp",
+    boardUrl: "https://goerica.hanyang.ac.kr/admission/html/counsel/all_notice.asp",
+    allow: /goerica\.hanyang\.ac\.kr\/admission\/html\/counsel\/all_notice_view\.asp\?.*idx=\d+/i,
+    parser: "erica",
+    encoding: "euc-kr",
+    maxPer: 30,
+  },
 };
 
 function sha20(s) {
@@ -248,7 +309,7 @@ function isWeakUrl(absu, pageUrl) {
   if (BROKEN.test(absu) || /javascript:|void\(0\)/i.test(absu)) return true;
   const low = absu.toLowerCase().split("#")[0];
   const hasId =
-    /[?&](id|no|seq|idx|bbsidx|ntt|article|artcl|brdIdx|dataSid|uid|num|p_board_idx|wr_id|nttSn|bn)=/i.test(
+    /[?&](id|no|seq|idx|bbsidx|ntt|article|artcl|brdIdx|dataSid|uid|num|number|p_board_idx|wr_id|nttSn|bn|BBS_NO)=/i.test(
       absu
     ) || /\/\d+\/artclView\.do/i.test(absu) || /\/read\/\d+/i.test(absu);
   if (hasId) return false;
@@ -259,8 +320,13 @@ function isWeakUrl(absu, pageUrl) {
 function makeItem(src, titleRaw, preview, absu, dateISO, pageUrl, minDate) {
   const today = seoulToday();
   let title = stripTags(titleRaw)
+    .replace(/-->/g, " ")
+    .replace(/작성일\s*[:：]?\s*/gi, " ")
+    .replace(/조회수\s*[:：]?\s*[\d,]+/gi, " ")
     .replace(/^(새글|N|NEW|공지)\s*/i, "")
+    .replace(/^\[(?:공통|수시|정시|재외국민|편입학|수시모집|정시모집|International Students|고교대학연계|시간제|순수외국인)\]\s*/i, "")
     .replace(/(20\d{2})\s*[.\-/년]\s*(\d{1,2})\s*[.\-/월]\s*(\d{1,2})/g, " ")
+    .replace(/[|｜ㅣ]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
   if (!title || title.length < 8 || title.length > 140) return null;
@@ -323,14 +389,21 @@ async function fetchTextOnce(url, opts = {}) {
     });
     if (!r.ok) throw new Error(`http_${r.status}`);
     const buf = Buffer.from(await r.arrayBuffer());
-    if (opts.encoding === "euc-kr") {
+    const utf8 = buf.toString("utf8");
+    const metaEuc = /charset\s*=\s*['"]?euc-kr/i.test(utf8.slice(0, 2500));
+    const wantEuc = opts.encoding === "euc-kr" || metaEuc;
+    if (wantEuc) {
       try {
-        return new TextDecoder("euc-kr").decode(buf);
+        const euc = new TextDecoder("euc-kr").decode(buf);
+        const eucHangul = (euc.match(/[가-힣]/g) || []).length;
+        const utfHangul = (utf8.match(/[가-힣]/g) || []).length;
+        // meta가 euc-kr이어도 실제 UTF-8인 페이지가 있어 한글 밀도로 선택
+        if (eucHangul >= utfHangul && eucHangul >= 8) return euc;
       } catch {
-        return buf.toString("utf8");
+        /* keep utf8 */
       }
     }
-    return buf.toString("utf8");
+    return utf8;
   } finally {
     clearTimeout(t);
   }
@@ -412,10 +485,125 @@ function parseKunsan(html, src, cfg, minDate) {
   return out;
 }
 
+function parseYonsei(html, src, cfg, minDate) {
+  const out = [];
+  const re =
+    /href="([^"]*noticeView\.asp\?[^"]*BBS_NO=(\d+)[^"]*)"[^>]*>([\s\S]*?)<\/a>/gi;
+  for (const m of html.matchAll(re)) {
+    const block = m[3];
+    const dateISO = extractIso(block);
+    const title = stripTags(block)
+      .replace(/작성일\s*:\s*20\d{2}[./-]\d{1,2}[./-]\d{1,2}.*/i, "")
+      .replace(/조회수\s*:?\s*[\d,]+.*/i, "")
+      .replace(/\|/g, " ")
+      .trim();
+    const href = absUrl(
+      "https://admission.yonsei.ac.kr/seoul/admission/html/counsel/",
+      `noticeView.asp?BBS_NO=${m[2]}`
+    );
+    const it = makeItem(src, title, "", href, dateISO, cfg.boardUrl, minDate);
+    if (it && cfg.allow.test(it.url)) out.push(it);
+  }
+  return out;
+}
+
+function parseHanyang(html, src, cfg, minDate) {
+  const out = [];
+  const re =
+    /js_encode_view\('notice_view\.do\?bn=(\d+)&m_type=([A-Z]+)&nPage=\d+'\)[\s\S]{0,700}?<strong>([\s\S]*?)<\/strong>[\s\S]{0,200}?<span class="date">([^<]+)<\/span>/gi;
+  for (const m of html.matchAll(re)) {
+    const href = `https://go.hanyang.ac.kr/web/notice/notice_view.do?bn=${m[1]}&m_type=${m[2]}`;
+    const title = stripTags(m[3]).replace(/첨부파일/g, "").trim();
+    const it = makeItem(src, title, "", href, extractIso(m[4]), cfg.boardUrl, minDate);
+    if (it && cfg.allow.test(it.url)) out.push(it);
+  }
+  return out;
+}
+
+function parseSsu(html, src, cfg, minDate) {
+  const out = [];
+  const re =
+    /href="([^"]*notice_view\.asp\?number=(\d+)[^"]*)"[^>]*>([\s\S]*?)<\/a>[\s\S]{0,280}?(20\d{2}\.\d{2}\.\d{2})/gi;
+  for (const m of html.matchAll(re)) {
+    const href = `https://iphak.ssu.ac.kr/board/notice_view.asp?number=${m[2]}&page_no=1_1_1&page=1`;
+    let title = stripTags(m[3]);
+    // 목록 셀에 "[공통] 제목 [공통] 제목"처럼 중복 렌더되는 경우 정리
+    const cat =
+      "공통|수시|정시|재외국민|편입학|International Students|고교대학연계|시간제|순수외국인|기타";
+    title = title.replace(new RegExp(`^\\[(?:${cat})\\]\\s*`, "i"), "").trim();
+    title = title.replace(new RegExp(`\\s*\\[(?:${cat})\\][\\s\\S]*$`, "i"), "").trim();
+    const half = Math.floor(title.length / 2);
+    if (half > 12 && title.slice(0, half).replace(/\s+/g, "") === title.slice(half).replace(/\s+/g, "")) {
+      title = title.slice(0, half).trim();
+    }
+    const it = makeItem(src, title, "", href, extractIso(m[4]), cfg.boardUrl, minDate);
+    if (it && cfg.allow.test(it.url)) out.push(it);
+  }
+  return out;
+}
+
+function parseKookmin(html, src, cfg, minDate) {
+  const out = [];
+  const re =
+    /href="(\?ctype=view[^"]*?no=(\d+)[^"]*)"[^>]*>([\s\S]*?)<\/a>[\s\S]{0,220}?작성일\s*:\s*(20\d{2}-\d{2}-\d{2})/gi;
+  for (const m of html.matchAll(re)) {
+    const href = `https://admission.kookmin.ac.kr/nonschedule/notice.php?ctype=view&no=${m[2]}`;
+    const it = makeItem(src, m[3], "", href, m[4], cfg.boardUrl, minDate);
+    if (it && cfg.allow.test(it.url)) out.push(it);
+  }
+  return out;
+}
+
+function parseEwha(html, src, cfg, minDate) {
+  const out = [];
+  const re =
+    /onclick="viewData\('(\d+)'\);\s*return false;"[\s\S]*?<p class="title">([\s\S]*?)<\/p>[\s\S]*?<span class="date">(20\d{2}\.\d{2}\.\d{2})<\/span>/gi;
+  for (const m of html.matchAll(re)) {
+    const href = `https://admission.ewha.ac.kr/admission/html/ewharo/noticeView.asp?idx=${m[1]}`;
+    const it = makeItem(src, m[2], "", href, extractIso(m[3]), cfg.boardUrl, minDate);
+    if (it && cfg.allow.test(it.url)) out.push(it);
+  }
+  return out;
+}
+
+function parseSook(html, src, cfg, minDate) {
+  const out = [];
+  const re =
+    /viewBoardProcess\('(\d+)'\)[\s\S]{0,200}?class="subject">([\s\S]*?)<\/span>[\s\S]{0,280}?(20\d{2}\.\d{2}\.\d{2})/gi;
+  for (const m of html.matchAll(re)) {
+    const href = `https://admission.sookmyung.ac.kr/admission/html/counsel/noticeView.asp?p_board_idx=${m[1]}`;
+    const it = makeItem(src, m[2], "", href, extractIso(m[3]), cfg.boardUrl, minDate);
+    if (it && cfg.allow.test(it.url)) out.push(it);
+  }
+  return out;
+}
+
+function parseErica(html, src, cfg, minDate) {
+  const out = [];
+  const seen = new Set();
+  const re =
+    /viewData\('(\d+)'\)[\s\S]{0,900}?table_title[\s\S]{0,400}?<a[^>]*>([\s\S]*?)<\/a>[\s\S]{0,500}?table_date[^>]*>\s*(20\d{2}\.\d{2}\.\d{2})/gi;
+  for (const m of html.matchAll(re)) {
+    if (seen.has(m[1])) continue;
+    seen.add(m[1]);
+    const href = `https://goerica.hanyang.ac.kr/admission/html/counsel/all_notice_view.asp?idx=${m[1]}`;
+    const it = makeItem(src, m[2], "", href, extractIso(m[3]), cfg.boardUrl, minDate);
+    if (it && cfg.allow.test(it.url)) out.push(it);
+  }
+  return out;
+}
+
 function parseSpecial(html, src, cfg, minDate) {
   if (cfg.parser === "afa") return parseAfa(html, src, cfg, minDate);
   if (cfg.parser === "kafna") return parseKafna(html, src, cfg, minDate);
   if (cfg.parser === "kunsan") return parseKunsan(html, src, cfg, minDate);
+  if (cfg.parser === "yonsei") return parseYonsei(html, src, cfg, minDate);
+  if (cfg.parser === "hanyang") return parseHanyang(html, src, cfg, minDate);
+  if (cfg.parser === "ssu") return parseSsu(html, src, cfg, minDate);
+  if (cfg.parser === "kookmin") return parseKookmin(html, src, cfg, minDate);
+  if (cfg.parser === "ewha") return parseEwha(html, src, cfg, minDate);
+  if (cfg.parser === "sook") return parseSook(html, src, cfg, minDate);
+  if (cfg.parser === "erica") return parseErica(html, src, cfg, minDate);
   if (cfg.k2Path) return parseK2(html, src, cfg, minDate);
 
   const out = [];
@@ -581,21 +769,25 @@ function pagedUrl(board, page, pageParam) {
 
 async function scrapeSpecial(src, cfg, minDate) {
   const limit = cfg.maxPer || MAX_PER;
+  const boards = Array.isArray(cfg.boards) && cfg.boards.length ? cfg.boards : [cfg.boardUrl];
   let items = [];
-  if (cfg.maxPages) {
-    for (let page = 1; page <= cfg.maxPages; page++) {
-      const pageUrl = pagedUrl(cfg.boardUrl, page, cfg.pageParam || "pageIndex");
-      const html = await fetchText(pageUrl, { curl: cfg.curl, encoding: cfg.encoding });
-      if (is404(html)) break;
-      const pageItems = parseSpecial(html, src, cfg, minDate);
-      if (!pageItems.length) break;
-      items.push(...pageItems);
-      const oldest = pageItems.map((x) => x.dateISO).sort()[0] || "";
-      if (oldest && oldest < minDate) break;
+  for (const board of boards) {
+    const local = { ...cfg, boardUrl: board };
+    if (cfg.maxPages) {
+      for (let page = 1; page <= cfg.maxPages; page++) {
+        const pageUrl = pagedUrl(board, page, cfg.pageParam || "pageIndex");
+        const html = await fetchText(pageUrl, { curl: cfg.curl, encoding: cfg.encoding });
+        if (is404(html)) break;
+        const pageItems = parseSpecial(html, src, local, minDate);
+        if (!pageItems.length) break;
+        items.push(...pageItems);
+        const oldest = pageItems.map((x) => x.dateISO).sort()[0] || "";
+        if (oldest && oldest < minDate) break;
+      }
+    } else {
+      const html = await fetchText(board, { curl: cfg.curl, encoding: cfg.encoding });
+      if (!is404(html)) items.push(...parseSpecial(html, src, local, minDate));
     }
-  } else {
-    const html = await fetchText(cfg.boardUrl, { curl: cfg.curl, encoding: cfg.encoding });
-    if (!is404(html)) items = parseSpecial(html, src, cfg, minDate);
   }
   const map = new Map(items.map((it) => [`${it.url}|${it.title}`, it]));
   items = [...map.values()]
@@ -712,20 +904,30 @@ async function main() {
     loadJsonSafe(path.join(ROOT, "univ-board-data.js")) ||
     loadJsonSafe(path.join(ROOT, "data", "univ-notices.json")) ||
     {};
-  let sources = applySpecialSources(
+  const sources = applySpecialSources(
     old.sources ||
       JSON.parse(fs.readFileSync(path.join(ROOT, "univ-sources.json"), "utf8"))
   );
+  const only = String(process.env.UNIV_ONLY || "")
+    .split(/[,:\s]+/)
+    .map((s) => s.trim())
+    .filter(Boolean);
+  const scrapeSources = only.length
+    ? sources.filter((s) => only.includes(s.id) || only.includes(s.name))
+    : sources;
+  if (only.length) {
+    console.log(`UNIV_ONLY → ${scrapeSources.map((s) => s.name).join(", ")}`);
+  }
 
   // group by home|board
   const groups = new Map();
-  for (const s of sources) {
+  for (const s of scrapeSources) {
     const key = `${s.homeUrl || ""}|${s.boardUrl || ""}`.replace(/^\|$/, s.id);
     if (!groups.has(key)) groups.set(key, []);
     groups.get(key).push(s);
   }
   const groupList = [...groups.values()];
-  console.log(`sources=${sources.length} groups=${groupList.length}`);
+  console.log(`sources=${sources.length} scrape=${scrapeSources.length} groups=${groupList.length}`);
 
   const results = new Map();
   const specialDone = new Set();
@@ -815,8 +1017,15 @@ async function main() {
   }
 
   // merge previous valid notices (지정 대학은 이번 수집 성공 시 이전 글 재병합 안 함)
+  // UNIV_ONLY 모드에서는 대상 대학만 갱신하고 나머지 대학 글은 유지
+  const onlyIds = only.length ? new Set(scrapeSources.map((s) => s.id)) : null;
   for (const n of old.notices || []) {
     if (!n?.dateISO || n.dateISO < minDate || !n.title || !n.url) continue;
+    if (onlyIds && !onlyIds.has(n.univId)) {
+      const k = `${n.univId}|${n.url}|${n.title}`;
+      if (!results.has(k)) results.set(k, n);
+      continue;
+    }
     if (specialDone.has(n.univId)) continue;
     if (BAD_TITLE.test(n.title) && !(n.title.includes("분실물") && SPECIAL[n.univId])) continue;
     const cfg = SPECIAL[n.univId];
