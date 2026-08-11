@@ -67,8 +67,8 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-11T07:33:51.149102Z",
-  "checkedAt": "2026-08-11T07:33:51.149096Z",
+  "updatedAt": "2026-08-11T09:38:34.093721Z",
+  "checkedAt": "2026-08-11T09:38:34.093716Z",
   "today": "2026-08-11",
   "count": 80,
   "notices": [
@@ -83,62 +83,72 @@
       "dateText": "2026.08.11"
     },
     {
-      "id": "cc563f463ca03c136644",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "호남대 반려동물보건산업학과, 에버랜드서 사육사 진로 체험 교육",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622825",
+      "id": "cfc93941b2b97818eb49",
+      "sourceId": "moe_blog",
+      "sourceName": "교육부블로그",
+      "title": "📢 ⌜국립대학병원 설치법 시행령⌟ 및 ⌜국립대학치과병원 설치법 시행령⌟ 일부개정령안 국무회의 통과",
+      "preview": "📢 ⌜국립대학병원 설치법 시행령⌟ 및 ⌜국립대학치과병원 설치법 시행령⌟ 일부개정령안 국무회의 통과 ✅ 대학병원장 추천 서류 등 주요 서류의 제출처를 교육부 장관에서 보건복지부 장관으로 변경 ✅ 법령에 명시된 하부조직",
+      "url": "https://blog.naver.com/moeblog/224375331018",
       "dateISO": "2026-08-11",
       "dateText": "2026.08.11"
     },
     {
-      "id": "655c3bcf42c983bad73c",
+      "id": "11184ebdbb018a281819",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "호남대 '2026 HNU VALORANT 고교최강전' 한국게임과학고 ReSunZ 팀 우승",
+      "title": "호남대 국제교류본부 해남 대흥사서 외국인 유학생 한국문화 체험",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622827",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622832",
       "dateISO": "2026-08-11",
       "dateText": "2026.08.11"
     },
     {
-      "id": "c6a1c680af483cae962d",
+      "id": "f45b820f5f76869d765d",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "한림대 라이프사이언스 스타트업 투자유치 세미나 개최… '성장전략' 공유",
+      "title": "김영일교육컨설팅 2027수시 모집요강 요약본 공개.. '수시 비중 80.3%로 역대 최고'",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622822",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622817",
       "dateISO": "2026-08-11",
       "dateText": "2026.08.11"
     },
     {
-      "id": "94cea81c29e28a470dc2",
+      "id": "9a4f1eb881f3538d102e",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "한림대 2026 대학혁신지원사업 최우수 성과…AI교육 선도대학 2년 연속 'S등급'",
+      "title": "국립한밭대 지역협력센터, 이노폴리스벤처협회와 AI/인문/창업 인프라 조성 업무협약 체결",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622821",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622833",
       "dateISO": "2026-08-11",
       "dateText": "2026.08.11"
     },
     {
-      "id": "043aec05824518cddce6",
+      "id": "5663263d5585832330b9",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "중원대 스마트농산림학과–서울대 그린바이오 혁신융합대학사업단, 미래인재 양성 위한 교육혁신 협약 체결",
+      "title": "국립공주대 플로리다대 GCREC 방문…첨단 농생명 분야 공동연구 협의",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622823",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622831",
       "dateISO": "2026-08-11",
       "dateText": "2026.08.11"
     },
     {
-      "id": "ba88e656cd4a85f639dc",
+      "id": "63c22bb20df140e15739",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "국립창원대 문찬혁 석사과정생 한국소음진동공학회 '우수논문상' 수상",
+      "title": "국립공주대 생물교육과 김희선 대학원생 (지도교수 곽희진), 생물과학협회 우수포스터상 수상",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622826",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622837",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
+      "id": "81ea3317752cbac88899",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "경남대 대학혁신지원사업 성과평가 'SA등급' 3년 연속 획득",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622834",
       "dateISO": "2026-08-11",
       "dateText": "2026.08.11"
     },
@@ -163,12 +173,22 @@
       "dateText": "2026.08.11"
     },
     {
-      "id": "16fa4375316962283cba",
+      "id": "9e10ac5999f884b94f1c",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "[2027전문대수시특집] ‘AI겨냥 구조개편' 영남이공대 1781명(96.7%).. AI물류자동화과 50명 ’신설‘",
+      "title": "[단독] 서울대 고려대 등 11개 상위대학 입학처가 공개한 2027 면접 대비법.. ‘학생부 숙지부터 질문 의도 파악까지’",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622788",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622828",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
+      "id": "eb10122a16f52b2bb237",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "[2027전문대수시특집] ‘수도권 유일 보건의료 특성화’ 동남보건대 1164명(89.5%).. '고교유형 무관' 일반전형 298명 '신설'",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622836",
       "dateISO": "2026-08-11",
       "dateText": "2026.08.11"
     },
@@ -199,16 +219,6 @@
       "title": "2027학년도 대학수학능력시험 응시...",
       "preview": "평가원보도 공지",
       "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095891&lev=0&m=0302&s=suneung",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "ac4a4ee5aa097f6b58d1",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "\"오래된 삶의 지혜가 탄소중립으로\" 원주시 탄소중립지원센터, 시니어 탄소중립 아카데미 운영",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622824",
       "dateISO": "2026-08-11",
       "dateText": "2026.08.11"
     },
@@ -329,16 +339,6 @@
       "title": "서울시교육청, 정책기획관 함영기 ..대변인 손성조 내정",
       "preview": "에듀프레스 소식",
       "url": "https://www.edupress.kr/news/articleView.html?idxno=30388",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
-      "id": "7e7ddcb20d34f8d9ee69",
-      "sourceId": "moe_blog",
-      "sourceName": "교육부블로그",
-      "title": "국내외 학생들이 협력하여 직접 개발한 ‘건강과 웰빙 증진’을 위한 웹앱 선보여",
-      "preview": "교육부(장관 최교진)와 한국디지털교육협회(회장 이형세)는 8월 7일(금) 스탠포드호텔(서울)에서 ‘제16회 이아이콘(e-ICON*) 세계대회’ 시상식을 개최한다. * 이아이콘(e-ICON, e-learning Int",
-      "url": "https://blog.naver.com/moeblog/224370461046",
       "dateISO": "2026-08-07",
       "dateText": "2026.08.07"
     },
