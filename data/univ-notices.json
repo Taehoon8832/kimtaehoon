@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-11",
-  "updatedAt": "2026-08-11T02:38:55.084Z",
-  "checkedAt": "2026-08-11T02:38:55.084Z",
+  "updatedAt": "2026-08-11T04:19:52.630Z",
+  "checkedAt": "2026-08-11T04:19:52.630Z",
   "sources": [
     {
       "id": "u001",
@@ -2012,6 +2012,17 @@
       "dateText": "2026.08.03"
     },
     {
+      "id": "491d55269e86b03a7c5a",
+      "univId": "u062",
+      "univName": "수원대",
+      "title": "2027학년도 논술고사 가이드북(모의문제 및 해설 포함) new",
+      "preview": "수원대 입학 공지사항 미리보기",
+      "url": "http://ipsi.suwon.ac.kr/board/notice/read/5666",
+      "homeUrl": "http://ipsi.suwon.ac.kr/",
+      "dateISO": "2026-08-03",
+      "dateText": "2026.08.03"
+    },
+    {
       "id": "95a767cfc2567e879db5",
       "univId": "u062",
       "univName": "수원대",
@@ -2489,5 +2500,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=6 empty=1 fail=0 fresh=67"
+  "statusReason": "ok=16 empty=16 fail=184 fresh=68"
 }
