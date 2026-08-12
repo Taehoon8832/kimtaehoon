@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-12",
-  "updatedAt": "2026-08-12T07:53:19.743Z",
-  "checkedAt": "2026-08-12T07:53:19.743Z",
+  "updatedAt": "2026-08-12T09:03:49.838Z",
+  "checkedAt": "2026-08-12T09:03:49.838Z",
   "sources": [
     {
       "id": "u001",
@@ -1528,6 +1528,17 @@
   ],
   "notices": [
     {
+      "id": "1d64ef34d37438951cfa",
+      "univId": "u109",
+      "univName": "국군간호사관학교",
+      "title": "★2027학년도 2차 시험 등록 및 서류제출 안내★",
+      "preview": "국군간호사관학교 입학 공지사항 미리보기",
+      "url": "https://tapply.tonc.net/kafna/?doc=bbs/board.php&bo_table=notice&wr_id=375",
+      "homeUrl": "https://tapply.tonc.net/kafna/",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
       "id": "0fbe4bab47b00fd9aea5",
       "univId": "u059",
       "univName": "서울장신대",
@@ -1590,6 +1601,28 @@
       "preview": "가천대(글로벌) 입학 공지사항 미리보기",
       "url": "http://admission.gachon.ac.kr/admission/html/counsel/noticeView.asp?BOARD_IDX=31903&s_cate=BBS0405",
       "homeUrl": "http://admission.gachon.ac.kr/admission/html/main/main.asp",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "fcd2cb3a593ffcf50957",
+      "univId": "u138",
+      "univName": "고려대(세종)",
+      "title": "재외국민/새터민 공지사항 2027학년도 재외국민(정원외2%) 특별전형 약학과 1단계 합격자 발표 및 면접고사 안내",
+      "preview": "해외 전 과정 공지사항 2027학년도 전기 전 교육과정 해외이수자 특별전형 모집요강",
+      "url": "https://oku.korea.ac.kr/sejong/cms/CMN_CON/MainLink.do?GBN=BA&TEMP_CODE=IPSI_D&BASE_SITE_NO=3&CONFIG_CD=C1435&CONFIG_SEQ=1&SUB_SEQ=1&SITE_NO=3&BOARD_SEQ=8&BBS_SEQ=1969",
+      "homeUrl": "https://oku.korea.ac.kr/sejong/index.do",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "0ce26f15d53f4252862b",
+      "univId": "u138",
+      "univName": "고려대(세종)",
+      "title": "재외국민/새터민 공지사항 2027학년도 재외국민(정원외2%) 특별전형 약학과 1단계 합격자 발표 및 면접고사 안내",
+      "preview": "고려대(세종) 입학 공지사항 미리보기",
+      "url": "https://oku.korea.ac.kr/sejong/cms/CMN_CON/MainLink.do?GBN=BA&TEMP_CODE=IPSI_D&BASE_SITE_NO=3&CONFIG_CD=C1435&CONFIG_SEQ=1&SUB_SEQ=4&SITE_NO=3&BOARD_SEQ=8&BBS_SEQ=1969",
+      "homeUrl": "https://oku.korea.ac.kr/sejong/index.do",
       "dateISO": "2026-08-12",
       "dateText": "2026.08.12"
     },
@@ -2654,5 +2687,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=21 empty=35 fail=160 fresh=82"
+  "statusReason": "ok=22 empty=26 fail=168 fresh=85"
 }
