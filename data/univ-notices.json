@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
-  "today": "2026-08-12",
-  "updatedAt": "2026-08-12T14:54:15.136Z",
-  "checkedAt": "2026-08-12T14:54:15.136Z",
+  "today": "2026-08-13",
+  "updatedAt": "2026-08-12T15:55:15.915Z",
+  "checkedAt": "2026-08-12T15:55:15.915Z",
   "sources": [
     {
       "id": "u001",
@@ -1649,6 +1649,28 @@
       "dateText": "2026.08.12"
     },
     {
+      "id": "db29e6a87231df9c94f9",
+      "univId": "u046",
+      "univName": "가천대(글로벌)",
+      "title": "재외국민 2027학년도 재외국민 전형 합격자 발표",
+      "preview": "가천대(글로벌) 입학 공지사항 미리보기",
+      "url": "http://admission.gachon.ac.kr/admission/html/counsel/noticeView.asp?BOARD_IDX=31903&s_cate=BBS0405",
+      "homeUrl": "http://admission.gachon.ac.kr/admission/html/main/main.asp",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "e0570a53997bf8648545",
+      "univId": "u087",
+      "univName": "가천대(메디컬)",
+      "title": "재외국민 2027학년도 재외국민 전형 합격자 발표",
+      "preview": "가천대(글로벌) 입학 공지사항 미리보기",
+      "url": "http://admission.gachon.ac.kr/admission/html/counsel/noticeView.asp?BOARD_IDX=31903&s_cate=BBS0405",
+      "homeUrl": "http://admission.gachon.ac.kr/admission/html/main/main.asp",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
       "id": "6bee6174dca135a7bc76",
       "univId": "u046",
       "univName": "가천대(글로벌)",
@@ -2764,5 +2786,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=22 empty=33 fail=161 fresh=92"
+  "statusReason": "ok=21 empty=15 fail=180 fresh=94"
 }
