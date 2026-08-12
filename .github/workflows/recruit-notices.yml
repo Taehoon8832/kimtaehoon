@@ -1,71 +1,91 @@
-name: Refresh recruit board (석박 채용)
-
-on:
-  schedule:
-    # 5분마다 (UTC) — 석박 채용 거의 실시간 갱신
-    - cron: "*/5 * * * *"
-  workflow_dispatch:
-
-permissions:
-  contents: write
-
-concurrency:
-  group: recruit-board-data
-  cancel-in-progress: false
-
-jobs:
-  scrape:
-    runs-on: ubuntu-latest
-    timeout-minutes: 8
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Scrape recruit (Node, fast)
-        id: node
-        continue-on-error: true
-        env:
-          NODE_TLS_REJECT_UNAUTHORIZED: "0"
-        run: node scripts/refresh_boards.mjs --only=recruit
-
-      - name: Fallback scrape (Python)
-        if: steps.node.outcome != 'success'
-        continue-on-error: true
-        run: python scripts/build_recruit.py
-
-      - name: Validate recruit JSON
-        run: node scripts/validate_board_json.mjs data/recruit-notices.json recruit-board-data.js
-
-      - name: Commit recruit data
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add recruit-board-data.js data/recruit-notices.json
-          if git diff --staged --quiet; then
-            echo "No recruit data changes"
-            exit 0
-          fi
-          git commit -m "chore: refresh recruit board"
-          for i in 1 2 3 4 5; do
-            if git pull --rebase --autostash origin main; then
-              if grep -R "<<<<<<<" -n recruit-board-data.js data/recruit-notices.json >/dev/null 2>&1; then
-                echo "Conflict markers after rebase; aborting push"
-                git rebase --abort || true
-                exit 0
-              fi
-              git push && exit 0
-            fi
-            sleep $((i * 4))
-            git fetch origin main || true
-          done
-          echo "Push retries exhausted; leaving commit for next run"
-          exit 0
+name: Refresh recruit board (석박 채용)
+
+on:
+  schedule:
+    # 5분마다 (UTC) — 석박 채용 거의 실시간 갱신
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: recruit-board-data
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Scrape recruit (API, Node)
+        id: node
+        continue-on-error: true
+        env:
+          NODE_TLS_REJECT_UNAUTHORIZED: "0"
+        run: node scripts/refresh_boards.mjs --only=recruit --strict
+
+      - name: Fallback scrape (Python API)
+        id: py
+        if: steps.node.outcome != 'success'
+        continue-on-error: true
+        run: python scripts/build_recruit.py --strict
+
+      - name: Require fresh scrape
+        run: |
+          if [ "${{ steps.node.outcome }}" != "success" ] && [ "${{ steps.py.outcome }}" != "success" ]; then
+            echo "Both Node and Python recruit scrapes failed"
+            exit 1
+          fi
+          node -e "
+          const fs=require('fs');
+          const j=JSON.parse(fs.readFileSync('data/recruit-notices.json','utf8'));
+          if(!Array.isArray(j.notices)||!j.notices.length) throw new Error('empty notices');
+          if(j.stale) throw new Error('stale payload');
+          const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
+          if(j.today!==today) throw new Error('today mismatch '+j.today+'!='+today);
+          const checked=Date.parse(j.checkedAt||j.updatedAt||0);
+          if(!checked||Date.now()-checked>30*60*1000) throw new Error('checkedAt too old');
+          console.log('fresh ok', j.count, j.today, j.statusReason||'');
+          "
+
+      - name: Validate recruit JSON
+        run: node scripts/validate_board_json.mjs data/recruit-notices.json recruit-board-data.js
+
+      - name: Commit recruit data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add recruit-board-data.js data/recruit-notices.json
+          if git diff --staged --quiet; then
+            echo "No recruit data changes"
+            exit 0
+          fi
+          git commit -m "chore: refresh recruit board"
+          for i in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main; then
+              if grep -R "<<<<<<<" -n recruit-board-data.js data/recruit-notices.json >/dev/null 2>&1; then
+                echo "Conflict markers after rebase; aborting push"
+                git rebase --abort || true
+                exit 1
+              fi
+              git push && exit 0
+            fi
+            sleep $((i * 4))
+            git fetch origin main || true
+          done
+          echo "Push retries exhausted"
+          exit 1
+

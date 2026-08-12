@@ -3850,10 +3850,14 @@
         } catch {
           return false;
         }
+        const nextScore = recruitPayloadScore(payload);
+        const curScore = recruitPayloadScore(recruitBoardData);
+        // CDN 등 더 오래된 미러는 무시(현재 데이터 유지)
+        if (curScore > 0 && nextScore > 0 && nextScore < curScore) return true;
         recruitBoardData = payload;
         window.RECRUIT_BOARD_DATA = payload;
         recruitPool = payload.notices.slice();
-        recruitUpdatedAt = String(payload.updatedAt || recruitUpdatedAt || "");
+        recruitUpdatedAt = String(payload.updatedAt || payload.checkedAt || recruitUpdatedAt || "");
         writeRecruitCache(payload);
         return true;
       }
@@ -3995,22 +3999,31 @@
         });
       }
 
+      function recruitPayloadScore(payload) {
+        if (!payload || !Array.isArray(payload.notices) || !payload.notices.length) return -1;
+        const t = Date.parse(payload.checkedAt || payload.updatedAt || 0);
+        return Number.isFinite(t) ? t : 0;
+      }
+
       async function pullRecruitPayload() {
         const errors = [];
-        for (const url of RECRUIT_DATA_URLS) {
-          try {
-            return await fetchRecruitPayloadOnce(url);
-          } catch (e) {
-            errors.push(`${url}:${e?.message || e}`);
-          }
-        }
+        const candidates = [];
+        const results = await Promise.allSettled(
+          RECRUIT_DATA_URLS.map((url) => fetchRecruitPayloadOnce(url))
+        );
+        results.forEach((r, i) => {
+          if (r.status === "fulfilled") candidates.push(r.value);
+          else errors.push(`${RECRUIT_DATA_URLS[i]}:${r.reason?.message || r.reason}`);
+        });
         try {
-          return await loadRecruitScriptTag();
+          candidates.push(await loadRecruitScriptTag());
         } catch (e) {
           errors.push(`script:${e?.message || e}`);
         }
         const cached = readRecruitCache();
-        if (cached) return cached;
+        if (cached) candidates.push(cached);
+        candidates.sort((a, b) => recruitPayloadScore(b) - recruitPayloadScore(a));
+        if (candidates.length) return candidates[0];
         throw new Error(errors.slice(0, 3).join(" | ") || "recruit_pull_failed");
       }
 

@@ -217,92 +217,218 @@ function shortUniv(name) {
   return n;
 }
 
+const RECRUIT_LIST_URL = "https://www.jinhakpro.com/recruit/list";
+const RECRUIT_API_URL =
+  "https://www.jinhakpro.com/api/applicant/recruit/sub-list?isOnlyOnlineApply=false&bookmarkSortType=1&majorCategoryCode=&sortType=1";
+const RECRUIT_TYPE = { RS: "연구원", L: "강사", T: "비전임교원", P: "전임교원" };
+const RECRUIT_METHOD = {
+  H: "홈페이지지원",
+  E: "이메일지원",
+  P: "우편지원",
+  V: "방문지원",
+  O: "즉시지원",
+};
+const RECRUIT_ORGAN = {
+  UNIV: "대학교",
+  UNIV1: "대학교",
+  UNIV2: "전문대학",
+  UNIV3: "사이버대학교",
+  RS1: "연구기관",
+  CO: "기업",
+  HOSP: "병원",
+  GOV: "정부/공공/지자체",
+};
+
+function seoulDateFromIso(val) {
+  const s = String(val || "").trim();
+  if (!s) return "";
+  const d = new Date(s);
+  if (!Number.isNaN(d.getTime())) {
+    return new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Asia/Seoul",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).format(d);
+  }
+  return dateOnly(s);
+}
+
+function addDaysISO(iso, delta) {
+  const m = String(iso || "").match(/^(20\d{2})-(\d{2})-(\d{2})$/);
+  if (!m) return "";
+  const dt = new Date(Date.UTC(Number(m[1]), Number(m[2]) - 1, Number(m[3])));
+  dt.setUTCDate(dt.getUTCDate() + delta);
+  return dt.toISOString().slice(0, 10);
+}
+
+function recruitPreviewFromApi(item, deadlineISO, today) {
+  const type = RECRUIT_TYPE[String(item.recruitTypeCode || "").toUpperCase()] || "";
+  const regions = (Array.isArray(item.regionData) ? item.regionData : [])
+    .map((r) => String(r?.region || "").trim())
+    .filter(Boolean);
+  let region = "";
+  if (regions.length === 1) region = regions[0];
+  else if (regions.length > 1) region = `${regions[0]} 외 ${regions.length - 1}`;
+  const methods = (Array.isArray(item.applyMethodCode) ? item.applyMethodCode : [])
+    .map((c) => RECRUIT_METHOD[String(c || "").toUpperCase()] || "")
+    .filter(Boolean);
+  const organ =
+    RECRUIT_ORGAN[String(item.organCode || "").toUpperCase()] ||
+    RECRUIT_ORGAN[String(item.organTypeCode || "").toUpperCase()] ||
+    "";
+  const parts = [];
+  if (type) parts.push(type);
+  if (region) parts.push(region);
+  if (methods.length) parts.push(methods.slice(0, 3).join("/"));
+  if (organ) parts.push(organ);
+  const dd = dday(deadlineISO, today);
+  if (dd && !String(dd).startsWith("마감+")) parts.push(`마감 ${dd}`);
+  if (deadlineISO) parts.push(`접수마감 ${deadlineISO.replace(/-/g, ".")}`);
+  return parts.join(" · ") || "석·박사 채용 정보";
+}
+
+function noticesFromRecruitApi(items, today) {
+  const rows = [];
+  for (const item of items || []) {
+    const rid = item?.recruitIdx;
+    if (rid == null) continue;
+    const id = String(rid);
+    const title = String(item.recruitTitle || "").replace(/\s+/g, " ").trim();
+    const organ = String(item.organName || "").replace(/\s+/g, " ").trim();
+    if (!title || title.length < 4) continue;
+    const registerISO = seoulDateFromIso(item.registerTime);
+    const publishISO = seoulDateFromIso(item.publishStartTime);
+    const applyStartISO = seoulDateFromIso(item.applyStartTime);
+    const dateISO = registerISO || publishISO || applyStartISO;
+    if (!dateISO || dateISO > today) continue;
+    const deadlineISO =
+      seoulDateFromIso(item.applyEndTime) || seoulDateFromIso(item.applyEarlyEndTime) || "";
+    const univName = shortUniv(organ) || organ || "기관";
+    const key = `${id}|${title}|${dateISO}`;
+    rows.push({
+      id: sha20(key),
+      recruitId: id,
+      univName,
+      univFull: organ || univName,
+      title,
+      preview: recruitPreviewFromApi(item, deadlineISO, today).slice(0, 160),
+      url: `https://www.jinhakpro.com/recruit/${id}`,
+      dateISO,
+      dateText: dateISO.replace(/-/g, "."),
+      deadlineISO,
+      deadlineText: deadlineISO ? deadlineISO.replace(/-/g, ".") : "",
+      registerAt: String(item.registerTime || ""),
+    });
+  }
+  rows.sort((a, b) => {
+    if (a.dateISO !== b.dateISO) return b.dateISO.localeCompare(a.dateISO);
+    return String(b.registerAt).localeCompare(String(a.registerAt));
+  });
+  const minDate = addDaysISO(today, -3) || today;
+  const recent = rows.filter((r) => r.dateISO >= minDate);
+  const picked = (recent.length >= 12 ? recent : rows).slice(0, 48);
+  picked.forEach((n) => delete n.registerAt);
+  return picked;
+}
+
 function parseNuxtRecruits(html) {
   const m = html.match(/<script[^>]+id="__NUXT_DATA__"[^>]*>([\s\S]*?)<\/script>/i);
-  if (!m) return {};
+  if (!m) return [];
   let data;
   try {
     data = JSON.parse(m[1]);
   } catch {
-    return {};
+    return [];
   }
-  if (!Array.isArray(data)) return {};
+  if (!Array.isArray(data)) return [];
 
   const resolve = (ref) => {
     if (typeof ref === "number" && ref >= 0 && ref < data.length) return data[ref];
     return ref;
   };
 
-  const out = {};
+  // Prefer the sub-list payload order (matches https://www.jinhakpro.com/recruit/list)
+  for (const item of data) {
+    if (!item || typeof item !== "object" || Array.isArray(item)) continue;
+    for (const [k, v] of Object.entries(item)) {
+      if (!String(k).includes("/applicant/recruit/sub-list")) continue;
+      const arr = resolve(v);
+      if (!Array.isArray(arr) || !arr.length) continue;
+      const out = [];
+      for (const ref of arr) {
+        const obj = resolve(ref);
+        if (!obj || typeof obj !== "object") continue;
+        out.push({
+          recruitIdx: resolve(obj.recruitIdx),
+          recruitTitle: resolve(obj.recruitTitle),
+          recruitTypeCode: resolve(obj.recruitTypeCode),
+          registerTime: resolve(obj.registerTime),
+          publishStartTime: resolve(obj.publishStartTime),
+          applyStartTime: resolve(obj.applyStartTime),
+          applyEndTime: resolve(obj.applyEndTime),
+          applyEarlyEndTime: resolve(obj.applyEarlyEndTime),
+          applyMethodCode: resolve(obj.applyMethodCode),
+          regionData: resolve(obj.regionData),
+          organName: resolve(obj.organName),
+          organTypeCode: resolve(obj.organTypeCode),
+          organCode: resolve(obj.organCode),
+        });
+      }
+      if (out.length) return out;
+    }
+  }
+
+  const loose = [];
   for (const item of data) {
     if (!item || typeof item !== "object" || Array.isArray(item)) continue;
     if (!("recruitIdx" in item)) continue;
     const ridVal = resolve(item.recruitIdx);
     if (typeof ridVal !== "number") continue;
-    const title = String(resolve(item.recruitTitle) || "").replace(/\s+/g, " ").trim();
-    const organ = String(resolve(item.organName) || "").replace(/\s+/g, " ").trim();
-    const register = dateOnly(resolve(item.registerTime));
-    const publishStart = dateOnly(resolve(item.publishStartTime));
-    const applyStart = dateOnly(resolve(item.applyStartTime));
-    const applyEnd = dateOnly(resolve(item.applyEndTime) || resolve(item.applyEarlyEndTime));
-    const dateISO = register || publishStart || applyStart;
-    if (!dateISO || !title) continue;
-    out[String(ridVal)] = {
-      title,
-      univFull: organ,
-      univName: shortUniv(organ) || organ || "기관",
-      dateISO,
-      deadlineISO: applyEnd || "",
-    };
-  }
-  return out;
-}
-
-function parseCards(html) {
-  const blocks = String(html || "").split(/(?=<a[^>]+href="\/recruit\/\d+")/);
-  const items = [];
-  const seen = new Set();
-  for (const b of blocks) {
-    const hm = b.match(/href="(\/recruit\/(\d+))"/i);
-    if (!hm) continue;
-    const rid = hm[2];
-    if (seen.has(rid)) continue;
-    seen.add(rid);
-
-    let infoBits = [];
-    const infoM = b.match(/class="card_recr_info"[^>]*>([\s\S]*?)<\/p>/i);
-    if (infoM) {
-      infoBits = [...infoM[1].matchAll(/<span[^>]*>([\s\S]*?)<\/span>/gi)]
-        .map((x) => stripTags(x[1]))
-        .filter((x) => x && x !== "스크랩" && x !== "관심 스크랩");
-    }
-    const tags = [...b.matchAll(/class="card_ctg"[^>]*>([\s\S]*?)<\/p>/gi)]
-      .map((x) => stripTags(x[1]))
-      .filter((x) => x && x !== "마감임박");
-    const periodM = b.match(/class="card_period"[^>]*>([\s\S]*?)<\/p>/i);
-    let deadlineISO = "";
-    if (periodM) {
-      const dm = stripTags(periodM[1]).match(
-        /(20\d{2})\s*[.\-/]\s*(\d{1,2})\s*[.\-/]\s*(\d{1,2})/
-      );
-      if (dm) {
-        deadlineISO = `${dm[1]}-${dm[2].padStart(2, "0")}-${dm[3].padStart(2, "0")}`;
-      }
-    }
-    items.push({
-      id: rid,
-      url: `https://www.jinhakpro.com/recruit/${rid}`,
-      tags,
-      infoBits,
-      deadlineISO,
-      listOrder: items.length,
+    loose.push({
+      recruitIdx: ridVal,
+      recruitTitle: resolve(item.recruitTitle),
+      recruitTypeCode: resolve(item.recruitTypeCode),
+      registerTime: resolve(item.registerTime),
+      publishStartTime: resolve(item.publishStartTime),
+      applyStartTime: resolve(item.applyStartTime),
+      applyEndTime: resolve(item.applyEndTime),
+      applyEarlyEndTime: resolve(item.applyEarlyEndTime),
+      applyMethodCode: resolve(item.applyMethodCode),
+      regionData: resolve(item.regionData),
+      organName: resolve(item.organName),
+      organTypeCode: resolve(item.organTypeCode),
+      organCode: resolve(item.organCode),
     });
   }
-  return items;
+  return loose;
 }
 
-async function fetchRecruitHtml() {
-  const LIST_URL = "https://www.jinhakpro.com/recruit/list";
+async function fetchRecruitApi() {
+  const headers = {
+    "User-Agent": UA,
+    Accept: "application/json,text/plain,*/*",
+    "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.8",
+    Referer: RECRUIT_LIST_URL,
+  };
+  let lastErr = null;
+  for (let i = 0; i < 3; i++) {
+    try {
+      const res = await fetch(RECRUIT_API_URL, { headers, redirect: "follow" });
+      if (!res.ok) throw new Error(`http_${res.status}`);
+      const data = await res.json();
+      if (!Array.isArray(data) || !data.length) throw new Error("api_empty");
+      if (!data[0]?.recruitIdx || !data[0]?.recruitTitle) throw new Error("api_shape");
+      return data;
+    } catch (e) {
+      lastErr = e;
+      await new Promise((r) => setTimeout(r, 400 * (i + 1)));
+    }
+  }
+  throw lastErr || new Error("recruit api failed");
+}
+
+async function fetchRecruitHtmlFallback() {
   const headers = {
     "User-Agent": UA,
     Accept: "text/html,application/xhtml+xml",
@@ -310,12 +436,12 @@ async function fetchRecruitHtml() {
     Referer: "https://www.jinhakpro.com/",
   };
   try {
-    const res = await fetch(LIST_URL, { headers, redirect: "follow" });
+    const res = await fetch(RECRUIT_LIST_URL, { headers, redirect: "follow" });
     if (res.ok) {
       const html = await res.text();
       if (
         html.length > 800 &&
-        (html.includes("__NUXT_DATA__") || /href="\/recruit\/\d+"/.test(html)) &&
+        html.includes("__NUXT_DATA__") &&
         !(html.includes("Security Check") && html.length < 5000)
       ) {
         return html;
@@ -327,7 +453,7 @@ async function fetchRecruitHtml() {
   } catch (e) {
     console.warn("recruit: direct fetch failed", e?.message || e);
   }
-  const mirror = await fetch("https://r.jina.ai/" + LIST_URL, {
+  const mirror = await fetch("https://r.jina.ai/" + RECRUIT_LIST_URL, {
     headers: { "User-Agent": UA, Accept: "text/plain,*/*" },
     redirect: "follow",
   });
@@ -338,54 +464,27 @@ async function fetchRecruitHtml() {
 }
 
 async function refreshRecruit() {
-  const LIST_URL = "https://www.jinhakpro.com/recruit/list";
-  const html = await fetchRecruitHtml();
   const today = seoulToday();
-  const nuxt = parseNuxtRecruits(html);
-  const cards = parseCards(html);
-  console.log(`cards=${cards.length} nuxt=${Object.keys(nuxt).length}`);
-
-  const notices = [];
-  for (const c of cards) {
-    const meta = nuxt[c.id];
-    if (!meta) continue;
-    if (meta.dateISO > today) continue;
-    if (meta.title.length < 4) continue;
-    const deadline = meta.deadlineISO || c.deadlineISO || "";
-    const parts = [];
-    if (c.tags?.length) parts.push(c.tags.slice(0, 3).join(" · "));
-    if (c.infoBits?.length) parts.push(c.infoBits.slice(0, 3).join(" · "));
-    const dd = dday(deadline, today);
-    if (dd) parts.push(`마감 ${dd}`);
-    if (deadline) parts.push(`접수마감 ${deadline.replace(/-/g, ".")}`);
-    const key = `${c.id}|${meta.title}|${meta.dateISO}`;
-    notices.push({
-      id: sha20(key),
-      recruitId: c.id,
-      univName: meta.univName,
-      univFull: meta.univFull || meta.univName,
-      title: meta.title,
-      preview: (parts.join(" · ") || "석·박사 채용 정보").slice(0, 160),
-      url: c.url,
-      dateISO: meta.dateISO,
-      dateText: meta.dateISO.replace(/-/g, "."),
-      deadlineISO: deadline,
-      deadlineText: deadline ? deadline.replace(/-/g, ".") : "",
-      listOrder: c.listOrder,
-    });
+  let items = null;
+  let sourceMode = "api";
+  try {
+    items = await fetchRecruitApi();
+    console.log(`recruit api items=${items.length}`);
+  } catch (e) {
+    console.warn("recruit api failed, falling back to list html:", e?.message || e);
+    const html = await fetchRecruitHtmlFallback();
+    items = parseNuxtRecruits(html);
+    sourceMode = "html_nuxt";
+    console.log(`recruit html/nuxt items=${items.length}`);
   }
 
+  const notices = noticesFromRecruitApi(items, today);
   if (!notices.length) throw new Error("recruit empty parse");
-
-  notices.sort((a, b) => {
-    if (a.dateISO !== b.dateISO) return b.dateISO.localeCompare(a.dateISO);
-    return b.listOrder - a.listOrder;
-  });
-  notices.forEach((n) => delete n.listOrder);
 
   const now = new Date().toISOString();
   writeBoard("recruit-board-data.js", "RECRUIT_BOARD_DATA", "data/recruit-notices.json", {
-    source: LIST_URL,
+    source: RECRUIT_LIST_URL,
+    api: RECRUIT_API_URL,
     updatedAt: now,
     checkedAt: now,
     today,
@@ -393,9 +492,9 @@ async function refreshRecruit() {
     notices,
     stale: false,
     status: "fresh",
-    statusReason: "ok",
+    statusReason: `ok:${sourceMode}`,
   });
-  console.log(`wrote ${notices.length} → recruit-board-data.js`);
+  console.log(`wrote ${notices.length} → recruit-board-data.js (${sourceMode})`);
   notices.slice(0, 5).forEach((n) => {
     console.log(n.dateISO, n.deadlineISO, n.univName, "|", n.title.slice(0, 42));
   });
@@ -412,10 +511,11 @@ function loadPrevNotices(jsonRel) {
   }
 }
 
-async function safeRefresh(name, fn, jsonRel) {
+async function safeRefresh(name, fn, jsonRel, strict) {
   try {
     await fn();
   } catch (err) {
+    if (strict) throw err;
     const prev = loadPrevNotices(jsonRel);
     if (prev) {
       console.error(`${name} failed, keeping previous ${prev.notices.length} items:`, err?.message || err);
@@ -429,12 +529,13 @@ const only = (() => {
   const arg = process.argv.find((a) => a.startsWith("--only="));
   return arg ? arg.slice("--only=".length).trim() : "";
 })();
+const strict = process.argv.includes("--strict");
 
-console.log("ROOT=", ROOT, only ? `only=${only}` : "all");
+console.log("ROOT=", ROOT, only ? `only=${only}` : "all", strict ? "strict" : "");
 if (!only || only === "jobkorea") {
-  await safeRefresh("jobkorea", refreshJobkorea, "data/jobkorea-notices.json");
+  await safeRefresh("jobkorea", refreshJobkorea, "data/jobkorea-notices.json", strict && only === "jobkorea");
 }
 if (!only || only === "recruit") {
-  await safeRefresh("recruit", refreshRecruit, "data/recruit-notices.json");
+  await safeRefresh("recruit", refreshRecruit, "data/recruit-notices.json", strict || only === "recruit");
 }
 console.log("done");

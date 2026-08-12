@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 """진학프로 석박 채용 정보 수집 → recruit-board-data.js / data/recruit-notices.json
 
-정확성 우선:
-- 등록일·마감일·기관명·제목은 목록 페이지 __NUXT_DATA__에서 해석
-- HTML 카드는 미리보기(유형·지역·지원방법) 보조
-- 이웃 날짜 보간·추측 날짜 사용 금지
+우선순위:
+1) /api/applicant/recruit/sub-list (목록과 동일 소스, Actions에서 안정)
+2) https://www.jinhakpro.com/recruit/list 의 __NUXT_DATA__ 폴백
 """
 from __future__ import annotations
 
@@ -12,74 +11,65 @@ import hashlib
 import json
 import re
 import sys
+import urllib.error
+import urllib.request
 from datetime import datetime, timedelta, timezone
-from html import unescape
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
-from _board_io import (  # noqa: E402
-    fetch_text,
-    keep_previous_if_weak,
-    load_previous,
-    utc_now_iso,
-    write_board,
-)
+from _board_io import load_previous, utc_now_iso, write_board  # noqa: E402
 
 LIST_URL = "https://www.jinhakpro.com/recruit/list"
-DATE_DOT = re.compile(r"(20\d{2})\s*[.\-/]\s*(\d{1,2})\s*[.\-/]\s*(\d{1,2})")
+API_URL = (
+    "https://www.jinhakpro.com/api/applicant/recruit/sub-list"
+    "?isOnlyOnlineApply=false&bookmarkSortType=1&majorCategoryCode=&sortType=1"
+)
+UA = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36"
+)
+RECRUIT_TYPE = {"RS": "연구원", "L": "강사", "T": "비전임교원", "P": "전임교원"}
+RECRUIT_METHOD = {
+    "H": "홈페이지지원",
+    "E": "이메일지원",
+    "P": "우편지원",
+    "V": "방문지원",
+    "O": "즉시지원",
+}
+RECRUIT_ORGAN = {
+    "UNIV": "대학교",
+    "UNIV1": "대학교",
+    "UNIV2": "전문대학",
+    "UNIV3": "사이버대학교",
+    "RS1": "연구기관",
+    "CO": "기업",
+    "HOSP": "병원",
+    "GOV": "정부/공공/지자체",
+}
 
 
-def fetch(url: str) -> str:
-    return fetch_text(
-        url,
-        headers={
-            "Accept": "text/html,application/xhtml+xml",
-            "Referer": "https://www.jinhakpro.com/",
-        },
-        timeout=45,
-        retries=4,
-    )
+def seoul_today() -> str:
+    return (datetime.now(timezone.utc) + timedelta(hours=9)).strftime("%Y-%m-%d")
 
 
-def fetch_list_html() -> str:
-    """직접 접속 실패·보안차단 시 Jina 미러로 폴백."""
-    try:
-        html = fetch(LIST_URL)
-        if "Security Check" in html and len(html) < 5000:
-            print("warn: security check on direct fetch, trying jina")
-        elif len(html) > 800 and ("__NUXT_DATA__" in html or "/recruit/" in html):
-            return html
-        else:
-            print("warn: thin direct html, trying jina")
-    except Exception as e:
-        print(f"warn: direct fetch failed: {e}")
-
-    try:
-        mirror = fetch_text(
-            "https://r.jina.ai/" + LIST_URL,
-            headers={"Accept": "text/plain,*/*"},
-            timeout=60,
-            retries=3,
-        )
-        if len(mirror) > 400:
-            return mirror
-    except Exception as e:
-        print(f"warn: jina fetch failed: {e}")
-    return ""
-
-
-def strip_tags(html: str) -> str:
-    s = unescape(html or "")
-    s = re.sub(r"<[^>]+>", " ", s)
-    return re.sub(r"\s+", " ", s).strip()
-
-
-def to_iso(y, mo, d) -> str:
-    try:
-        return f"{int(y):04d}-{int(mo):02d}-{int(d):02d}"
-    except Exception:
+def seoul_date_from_iso(val) -> str:
+    s = str(val or "").strip()
+    if not s:
         return ""
+    try:
+        if s.endswith("Z"):
+            dt = datetime.fromisoformat(s.replace("Z", "+00:00"))
+        elif re.match(r"20\d{2}-\d{2}-\d{2}$", s):
+            return s
+        else:
+            dt = datetime.fromisoformat(s)
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return (dt.astimezone(timezone(timedelta(hours=9)))).strftime("%Y-%m-%d")
+    except Exception:
+        m = re.match(r"(20\d{2}-\d{2}-\d{2})", s)
+        return m.group(1) if m else ""
 
 
 def short_univ(name: str) -> str:
@@ -89,17 +79,6 @@ def short_univ(name: str) -> str:
         compact = compact.replace("대학교", "대").replace("대학", "대")
         return compact
     return n
-
-
-def date_only(val) -> str:
-    """'2026-08-04T03:00:47.692Z' / '2026-08-04 03:00:47' → YYYY-MM-DD"""
-    s = str(val or "").strip()
-    m = re.match(r"(20\d{2}-\d{2}-\d{2})", s)
-    return m.group(1) if m else ""
-
-
-def seoul_today() -> str:
-    return (datetime.now(timezone.utc) + timedelta(hours=9)).strftime("%Y-%m-%d")
 
 
 def dday_label(deadline_iso: str, today: str) -> str:
@@ -115,20 +94,63 @@ def dday_label(deadline_iso: str, today: str) -> str:
         return f"D-{diff}"
     if diff == 0:
         return "D-Day"
-    return f"마감+{abs(diff)}"
+    return ""
 
 
-def load_nuxt_data(html: str):
-    m = re.search(
-        r'<script[^>]+id="__NUXT_DATA__"[^>]*>([\s\S]*?)</script>',
-        html or "",
-    )
-    if not m:
-        return None
+def add_days(iso: str, delta: int) -> str:
     try:
-        return json.loads(m.group(1))
-    except json.JSONDecodeError:
-        return None
+        d = datetime.strptime(iso, "%Y-%m-%d").date() + timedelta(days=delta)
+        return d.strftime("%Y-%m-%d")
+    except Exception:
+        return iso
+
+
+def http_get(url: str, accept: str, timeout: int = 45) -> str:
+    req = urllib.request.Request(
+        url,
+        headers={
+            "User-Agent": UA,
+            "Accept": accept,
+            "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.8",
+            "Referer": LIST_URL,
+        },
+        method="GET",
+    )
+    with urllib.request.urlopen(req, timeout=timeout) as res:
+        return res.read().decode("utf-8", "replace")
+
+
+def fetch_api_items() -> list:
+    last_err: Exception | None = None
+    for i in range(3):
+        try:
+            raw = http_get(url=API_URL, accept="application/json,text/plain,*/*")
+            data = json.loads(raw)
+            if not isinstance(data, list) or not data:
+                raise RuntimeError("api_empty")
+            if not data[0].get("recruitIdx") or not data[0].get("recruitTitle"):
+                raise RuntimeError("api_shape")
+            return data
+        except Exception as e:
+            last_err = e
+            print(f"warn: api attempt {i + 1} failed: {e}")
+    raise RuntimeError(f"recruit api failed: {last_err}")
+
+
+def fetch_list_html() -> str:
+    try:
+        html = http_get(url=LIST_URL, accept="text/html,application/xhtml+xml")
+        if len(html) > 800 and "__NUXT_DATA__" in html and not (
+            "Security Check" in html and len(html) < 5000
+        ):
+            return html
+        print("warn: thin/blocked direct html, trying jina")
+    except Exception as e:
+        print(f"warn: direct html failed: {e}")
+    mirror = http_get(url="https://r.jina.ai/" + LIST_URL, accept="text/plain,*/*", timeout=60)
+    if len(mirror) < 400:
+        raise RuntimeError("jina empty")
+    return mirror
 
 
 def resolve(data, ref):
@@ -137,97 +159,87 @@ def resolve(data, ref):
     return ref
 
 
-def parse_nuxt_recruits(html: str) -> dict:
-    """recruitId(str) → 정확한 메타데이터."""
-    data = load_nuxt_data(html)
-    if not data:
-        return {}
-    out = {}
+def parse_nuxt_items(html: str) -> list:
+    m = re.search(
+        r'<script[^>]+id="__NUXT_DATA__"[^>]*>([\s\S]*?)</script>',
+        html or "",
+    )
+    if not m:
+        return []
+    try:
+        data = json.loads(m.group(1))
+    except json.JSONDecodeError:
+        return []
+    if not isinstance(data, list):
+        return []
+
     for item in data:
-        if not isinstance(item, dict) or "recruitIdx" not in item:
+        if not isinstance(item, dict):
             continue
-        rid = resolve(data, item.get("recruitIdx"))
-        if not isinstance(rid, int):
-            continue
-        title = resolve(data, item.get("recruitTitle"))
-        organ = resolve(data, item.get("organName"))
-        register = date_only(resolve(data, item.get("registerTime")))
-        publish_start = date_only(resolve(data, item.get("publishStartTime")))
-        apply_start = date_only(resolve(data, item.get("applyStartTime")))
-        apply_end = date_only(
-            resolve(data, item.get("applyEndTime") or item.get("applyEarlyEndTime"))
-        )
-        # 게시일 = 등록일(registerTime). 없으면 publishStart.
-        date_iso = register or publish_start or apply_start
-        if not date_iso or not title:
-            continue
-        out[str(rid)] = {
-            "title": str(title).strip(),
-            "univFull": str(organ or "").strip(),
-            "univName": short_univ(str(organ or "")) or str(organ or "").strip() or "기관",
-            "dateISO": date_iso,
-            "deadlineISO": apply_end or "",
-            "registerISO": register,
-            "publishStartISO": publish_start,
-        }
-    return out
+        for k, v in item.items():
+            if "/applicant/recruit/sub-list" not in str(k):
+                continue
+            arr = resolve(data, v)
+            if not isinstance(arr, list) or not arr:
+                continue
+            out = []
+            for ref in arr:
+                obj = resolve(data, ref)
+                if not isinstance(obj, dict):
+                    continue
+                out.append(
+                    {
+                        "recruitIdx": resolve(data, obj.get("recruitIdx")),
+                        "recruitTitle": resolve(data, obj.get("recruitTitle")),
+                        "recruitTypeCode": resolve(data, obj.get("recruitTypeCode")),
+                        "registerTime": resolve(data, obj.get("registerTime")),
+                        "publishStartTime": resolve(data, obj.get("publishStartTime")),
+                        "applyStartTime": resolve(data, obj.get("applyStartTime")),
+                        "applyEndTime": resolve(data, obj.get("applyEndTime")),
+                        "applyEarlyEndTime": resolve(data, obj.get("applyEarlyEndTime")),
+                        "applyMethodCode": resolve(data, obj.get("applyMethodCode")),
+                        "regionData": resolve(data, obj.get("regionData")),
+                        "organName": resolve(data, obj.get("organName")),
+                        "organTypeCode": resolve(data, obj.get("organTypeCode")),
+                        "organCode": resolve(data, obj.get("organCode")),
+                    }
+                )
+            if out:
+                return out
+    return []
 
 
-def parse_cards(html: str) -> list:
-    """HTML 카드에서 목록 순서·미리보기 보조 정보."""
-    blocks = re.split(r'(?=<a[^>]+href="/recruit/\d+")', html or "")
-    items = []
-    seen = set()
-    for b in blocks:
-        hm = re.search(r'href="(/recruit/(\d+))"', b)
-        if not hm:
-            continue
-        href, rid = hm.group(1), hm.group(2)
-        if rid in seen:
-            continue
-        seen.add(rid)
-
-        info_bits = []
-        info_m = re.search(r'class="card_recr_info"[^>]*>([\s\S]*?)</p>', b, re.I)
-        if info_m:
-            info_bits = [
-                strip_tags(x)
-                for x in re.findall(r"<span[^>]*>([\s\S]*?)</span>", info_m.group(1), re.I)
-            ]
-            info_bits = [x for x in info_bits if x and x not in ("스크랩", "관심 스크랩")]
-
-        tags = [
-            strip_tags(x)
-            for x in re.findall(r'class="card_ctg"[^>]*>([\s\S]*?)</p>', b, re.I)
-        ]
-        tags = [x for x in tags if x and x != "마감임박"]
-
-        period_m = re.search(r'class="card_period"[^>]*>([\s\S]*?)</p>', b, re.I)
-        period_raw = period_m.group(1) if period_m else ""
-        deadline_dot = ""
-        pm = DATE_DOT.search(period_raw)
-        if pm:
-            deadline_dot = to_iso(pm.group(1), pm.group(2), pm.group(3))
-
-        items.append(
-            {
-                "id": rid,
-                "url": "https://www.jinhakpro.com" + href,
-                "tags": tags,
-                "infoBits": info_bits,
-                "deadlineISO": deadline_dot,
-                "listOrder": len(items),
-            }
-        )
-    return items
-
-
-def build_preview(tags, info_bits, deadline_iso: str, today: str) -> str:
+def preview_from_item(item: dict, deadline_iso: str, today: str) -> str:
+    typ = RECRUIT_TYPE.get(str(item.get("recruitTypeCode") or "").upper(), "")
+    regions = []
+    for r in item.get("regionData") or []:
+        if isinstance(r, dict):
+            name = str(r.get("region") or "").strip()
+            if name:
+                regions.append(name)
+    if len(regions) == 1:
+        region = regions[0]
+    elif len(regions) > 1:
+        region = f"{regions[0]} 외 {len(regions) - 1}"
+    else:
+        region = ""
+    methods = [
+        RECRUIT_METHOD.get(str(c or "").upper(), "")
+        for c in (item.get("applyMethodCode") or [])
+    ]
+    methods = [m for m in methods if m]
+    organ = RECRUIT_ORGAN.get(str(item.get("organCode") or "").upper()) or RECRUIT_ORGAN.get(
+        str(item.get("organTypeCode") or "").upper(), ""
+    )
     parts = []
-    if tags:
-        parts.append(" · ".join(tags[:3]))
-    if info_bits:
-        parts.append(" · ".join(info_bits[:3]))
+    if typ:
+        parts.append(typ)
+    if region:
+        parts.append(region)
+    if methods:
+        parts.append("/".join(methods[:3]))
+    if organ:
+        parts.append(organ)
     dd = dday_label(deadline_iso, today)
     if dd:
         parts.append(f"마감 {dd}")
@@ -236,115 +248,103 @@ def build_preview(tags, info_bits, deadline_iso: str, today: str) -> str:
     return " · ".join(parts) if parts else "석·박사 채용 정보"
 
 
-def build_notices(html: str, today: str) -> list:
-    nuxt = parse_nuxt_recruits(html)
-    cards = parse_cards(html)
-    print(f"cards={len(cards)} nuxt_recruits={len(nuxt)}")
-
-    notices = []
-    missing = []
-    for c in cards:
-        rid = c["id"]
-        meta = nuxt.get(rid)
-        if not meta:
-            missing.append(rid)
+def notices_from_items(items: list, today: str) -> list:
+    rows = []
+    for item in items or []:
+        rid = item.get("recruitIdx")
+        if rid is None:
             continue
-        date_iso = meta["dateISO"]
-        if date_iso > today:
-            print(f"skip future date {rid} {date_iso}")
-            continue
-        deadline = meta.get("deadlineISO") or c.get("deadlineISO") or ""
-        title = meta["title"]
+        rid_s = str(rid)
+        title = re.sub(r"\s+", " ", str(item.get("recruitTitle") or "")).strip()
+        organ = re.sub(r"\s+", " ", str(item.get("organName") or "")).strip()
         if len(title) < 4:
             continue
-        preview = build_preview(c.get("tags") or [], c.get("infoBits") or [], deadline, today)
-        key = f"{rid}|{title}|{date_iso}"
-        notices.append(
+        register_iso = seoul_date_from_iso(item.get("registerTime"))
+        publish_iso = seoul_date_from_iso(item.get("publishStartTime"))
+        apply_start = seoul_date_from_iso(item.get("applyStartTime"))
+        date_iso = register_iso or publish_iso or apply_start
+        if not date_iso or date_iso > today:
+            continue
+        deadline = seoul_date_from_iso(item.get("applyEndTime")) or seoul_date_from_iso(
+            item.get("applyEarlyEndTime")
+        )
+        univ_name = short_univ(organ) or organ or "기관"
+        key = f"{rid_s}|{title}|{date_iso}"
+        rows.append(
             {
                 "id": hashlib.sha1(key.encode()).hexdigest()[:20],
-                "recruitId": rid,
-                "univName": meta["univName"],
-                "univFull": meta["univFull"] or meta["univName"],
+                "recruitId": rid_s,
+                "univName": univ_name,
+                "univFull": organ or univ_name,
                 "title": title,
-                "preview": preview[:160],
-                "url": c["url"],
+                "preview": preview_from_item(item, deadline, today)[:160],
+                "url": f"https://www.jinhakpro.com/recruit/{rid_s}",
                 "dateISO": date_iso,
                 "dateText": date_iso.replace("-", "."),
                 "deadlineISO": deadline,
                 "deadlineText": deadline.replace("-", ".") if deadline else "",
-                "listOrder": c["listOrder"],
+                "registerAt": str(item.get("registerTime") or ""),
             }
         )
+    rows.sort(key=lambda x: (x["dateISO"], x["registerAt"]), reverse=True)
+    min_date = add_days(today, -3)
+    recent = [r for r in rows if r["dateISO"] >= min_date]
+    picked = (recent if len(recent) >= 12 else rows)[:48]
+    for n in picked:
+        n.pop("registerAt", None)
+    return picked
 
-    if missing:
-        print(f"warning: {len(missing)} cards without nuxt meta:", missing)
 
-    notices.sort(key=lambda x: (x["dateISO"], -x["listOrder"]), reverse=True)
-    for n in notices:
-        n.pop("listOrder", None)
-    return notices
-
-
-def main():
+def main() -> None:
+    strict = "--strict" in sys.argv
     js_path = ROOT / "recruit-board-data.js"
     json_path = ROOT / "data" / "recruit-notices.json"
     previous = load_previous(json_path, js_path)
     today = seoul_today()
-    kept_prev = False
-    reason = "ok"
+    source_mode = "api"
 
     try:
-        html = fetch_list_html()
-        if not html:
-            raise RuntimeError("empty list html")
-        if "Security Check" in html and len(html) < 5000 and "__NUXT_DATA__" not in html:
-            raise RuntimeError("blocked by security check")
-        notices = build_notices(html, today)
-        notices, reason = keep_previous_if_weak(new_notices=notices, previous=previous)
-        kept_prev = reason.startswith("keep_prev")
+        try:
+            items = fetch_api_items()
+            print(f"recruit api items={len(items)}")
+        except Exception as e:
+            print(f"warn: api failed, html/nuxt fallback: {e}")
+            html = fetch_list_html()
+            items = parse_nuxt_items(html)
+            source_mode = "html_nuxt"
+            print(f"recruit html/nuxt items={len(items)}")
+        notices = notices_from_items(items, today)
+        if not notices:
+            raise RuntimeError("recruit empty parse")
+        payload = {
+            "source": LIST_URL,
+            "api": API_URL,
+            "updatedAt": utc_now_iso(),
+            "checkedAt": utc_now_iso(),
+            "today": today,
+            "count": len(notices),
+            "notices": notices,
+            "stale": False,
+            "status": "fresh",
+            "statusReason": f"ok:{source_mode}",
+        }
     except Exception as e:
         print(f"error: recruit scrape failed: {e}")
-        if previous and isinstance(previous.get("notices"), list) and previous["notices"]:
-            notices = previous["notices"]
-            kept_prev = True
-            reason = f"keep_prev_exception:{type(e).__name__}"
-        else:
-            raise SystemExit(f"recruit scrape failed with no previous data: {e}")
-
-    day_changed = bool(previous) and previous.get("today") != today
-    # 목록이 같아도 checkedAt/today는 매번 갱신해 Actions·프론트 생존 신호를 유지
-
-    if day_changed:
-        refreshed = []
-        for n in notices:
-            item = dict(n)
-            deadline = str(item.get("deadlineISO") or "")
-            # 미리보기 꼬리의 D-day만 오늘 기준으로 다시 붙임
-            base = re.sub(r"(?:^|\s*·\s*)마감\s+(?:D-\d+|D-Day|마감\+\d+)\s*", " · ", str(item.get("preview") or ""))
-            base = re.sub(r"\s*·\s*·\s*", " · ", base).strip(" ·")
-            dd = dday_label(deadline, today)
-            bits = [p for p in re.split(r"\s*·\s*", base) if p]
-            if dd:
-                bits.append(f"마감 {dd}")
-            if deadline and not any(p.startswith("접수마감") for p in bits):
-                bits.append(f"접수마감 {deadline.replace('-', '.')}")
-            item["preview"] = " · ".join(bits)[:160] if bits else str(item.get("preview") or "석·박사 채용 정보")
-            refreshed.append(item)
-        notices = refreshed
-
-    payload = {
-        "source": LIST_URL,
-        "updatedAt": previous.get("updatedAt") if kept_prev and previous else utc_now_iso(),
-        "checkedAt": utc_now_iso(),
-        "today": today,
-        "count": len(notices),
-        "notices": notices,
-        "stale": bool(kept_prev),
-        "status": "cached" if kept_prev else "fresh",
-        "statusReason": reason if not day_changed else f"{reason};day_rollover",
-    }
-    if not kept_prev:
-        payload["updatedAt"] = utc_now_iso()
+        if strict or not previous or not previous.get("notices"):
+            raise SystemExit(f"recruit scrape failed: {e}")
+        notices = previous["notices"]
+        payload = {
+            "source": LIST_URL,
+            "api": API_URL,
+            "updatedAt": previous.get("updatedAt") or utc_now_iso(),
+            "checkedAt": utc_now_iso(),
+            "today": today,
+            "count": len(notices),
+            "notices": notices,
+            "stale": True,
+            "status": "cached",
+            "statusReason": f"keep_prev_exception:{type(e).__name__}",
+        }
 
     write_board(
         js_path=js_path,
@@ -352,21 +352,12 @@ def main():
         global_name="RECRUIT_BOARD_DATA",
         payload=payload,
     )
-    print(f"wrote {len(notices)} items → {js_path.name}, {json_path.as_posix()} ({payload['statusReason']})")
-    for n in notices[:8]:
+    print(
+        f"wrote {payload['count']} items → {js_path.name}, {json_path.as_posix()} ({payload['statusReason']})"
+    )
+    for n in payload["notices"][:8]:
         print(n["dateISO"], n.get("deadlineISO", ""), n["univName"], "|", n["title"][:42])
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except SystemExit:
-        raise
-    except Exception as e:
-        js_path = ROOT / "recruit-board-data.js"
-        json_path = ROOT / "data" / "recruit-notices.json"
-        for path in (json_path, js_path):
-            if path.exists() and path.stat().st_size > 100:
-                print(f"fatal retained previous board data after error: {e}")
-                raise SystemExit(0)
-        raise
+    main()
