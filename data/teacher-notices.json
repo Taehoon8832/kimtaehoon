@@ -1,10 +1,19 @@
 {
   "source": "https://cafe.daum.net/applymate/Alvz",
-  "updatedAt": "2026-08-12T04:57:42.317777Z",
-  "checkedAt": "2026-08-12T04:57:42.317773Z",
+  "updatedAt": "2026-08-12T06:08:34.303852Z",
+  "checkedAt": "2026-08-12T06:08:34.303848Z",
   "today": "2026-08-12",
   "count": 40,
   "notices": [
+    {
+      "id": "5314b50cb172099ccf70",
+      "sourceName": "사립학교 정교사",
+      "title": "[경북] 문경학원(문경여고) - 수학,역사",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
     {
       "id": "1d2acb0c009d7ba5fac7",
       "sourceName": "사립학교 정교사",
@@ -351,15 +360,6 @@
       "id": "d2d178642d3211995900",
       "sourceName": "사립학교 정교사",
       "title": "[서울] 중산학원 - 국어2 체육1 (예정)",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "cb3e8001fc678fe25df2",
-      "sourceName": "사립학교 정교사",
-      "title": "[서울] 종근당고촌학원 - 상업 정보 화학 (예정)",
       "preview": "",
       "url": "",
       "dateISO": "2026-08-12",
