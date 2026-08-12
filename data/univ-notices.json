@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-12",
-  "updatedAt": "2026-08-12T06:11:00.671Z",
-  "checkedAt": "2026-08-12T06:11:00.671Z",
+  "updatedAt": "2026-08-12T07:53:19.743Z",
+  "checkedAt": "2026-08-12T07:53:19.743Z",
   "sources": [
     {
       "id": "u001",
@@ -1528,6 +1528,17 @@
   ],
   "notices": [
     {
+      "id": "0fbe4bab47b00fd9aea5",
+      "univId": "u059",
+      "univName": "서울장신대",
+      "title": "2026학년도 후기 목회연구과정 추가모집 안내",
+      "preview": "2026.08.12 대학원 2026학년도 후기대학원 추가모집 전형안내",
+      "url": "http://www.sjs.ac.kr/admission/w_05ed/5100.php?bbsid=site5100&bbs_idx=50112&pagekind=c&gopage=/admission/w_05ed/5100.php",
+      "homeUrl": "http://www.sjs.ac.kr/admission/main/index.php",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
       "id": "9d0c3fee71a0041fa9f6",
       "univId": "u209",
       "univName": "경북대(대구)",
@@ -1557,6 +1568,28 @@
       "preview": "재외국민 2027학년도 3월 재외국민 전교육과정해외이수자 (북한이탈주민 포함) 원서접수 안내 2026.07.03 </",
       "url": "http://ibhak.kau.ac.kr/admission/html/guide/noticeView.asp?p_board_idx=6137",
       "homeUrl": "http://ibhak.kau.ac.kr/",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "6bee6174dca135a7bc76",
+      "univId": "u046",
+      "univName": "가천대(글로벌)",
+      "title": "재외국민 2027학년도 재외국민 전형 합격자 발표 NEW",
+      "preview": "가천대(글로벌) 입학 공지사항 미리보기",
+      "url": "http://admission.gachon.ac.kr/admission/html/counsel/noticeView.asp?BOARD_IDX=31903&s_cate=BBS0405",
+      "homeUrl": "http://admission.gachon.ac.kr/admission/html/main/main.asp",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "42204cad18ef01d57806",
+      "univId": "u087",
+      "univName": "가천대(메디컬)",
+      "title": "재외국민 2027학년도 재외국민 전형 합격자 발표 NEW",
+      "preview": "가천대(글로벌) 입학 공지사항 미리보기",
+      "url": "http://admission.gachon.ac.kr/admission/html/counsel/noticeView.asp?BOARD_IDX=31903&s_cate=BBS0405",
+      "homeUrl": "http://admission.gachon.ac.kr/admission/html/main/main.asp",
       "dateISO": "2026-08-12",
       "dateText": "2026.08.12"
     },
@@ -1744,6 +1777,17 @@
       "preview": "한국전통문화대 입학 공지사항 미리보기",
       "url": "https://www.knuh.ac.kr/admission/brd/view.do?mnuBaseId=MNU0000210&topBaseId=MNU0000209&tplSer=29&atcSer=46569",
       "homeUrl": "https://www.knuh.ac.kr/admission/main.do",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07"
+    },
+    {
+      "id": "d47f2ce1b786d0a34ac3",
+      "univId": "u059",
+      "univName": "서울장신대",
+      "title": "2026학년도 후기대학원 추가모집 전형안내",
+      "preview": "서울장신대 입학 공지사항 미리보기",
+      "url": "http://www.sjs.ac.kr/admission/w_05ed/5100.php?bbsid=Array&bbs_idx=50085&pagekind=c&gopage=/admission/w_05ed/5100.php",
+      "homeUrl": "http://www.sjs.ac.kr/admission/main/index.php",
       "dateISO": "2026-08-07",
       "dateText": "2026.08.07"
     },
@@ -2610,5 +2654,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=19 empty=29 fail=168 fresh=78"
+  "statusReason": "ok=21 empty=35 fail=160 fresh=82"
 }
