@@ -1895,6 +1895,81 @@
       font-family: "Space Grotesk", var(--font);
     }
 
+    .sagwan-vote {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      margin-top: 5px;
+      padding: 3px 9px 3px 6px;
+      border-radius: 999px;
+      border: 1px solid rgba(61, 43, 31, 0.14);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(245, 238, 228, 0.95));
+      color: #2a1c12;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      line-height: 1;
+      min-width: 58px;
+    }
+
+    .sagwan-vote .vote-ic {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #6b4f3a 0%, #3d2b1f 100%);
+      color: #f5e6c8;
+      flex-shrink: 0;
+    }
+
+    .sagwan-vote .vote-ic svg {
+      width: 10px;
+      height: 10px;
+    }
+
+    .sagwan-vote .vote-num {
+      font-family: "Space Grotesk", var(--font);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #1f1a16;
+      min-width: 1.1em;
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .sagwan-vote .vote-unit {
+      font-size: 9.5px;
+      font-weight: 700;
+      color: #7a6554;
+      letter-spacing: -0.02em;
+    }
+
+    .sagwan-vote.is-loading .vote-num {
+      opacity: 0.35;
+    }
+
+    .sagwan-vote.is-bump {
+      animation: sagwanVoteBump 0.55s var(--ease-out);
+    }
+
+    .sagwan-vote.is-bump .vote-ic {
+      animation: sagwanVoteGlow 0.55s var(--ease-out);
+    }
+
+    @keyframes sagwanVoteBump {
+      0% { transform: scale(1); }
+      35% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes sagwanVoteGlow {
+      0% { filter: brightness(1); }
+      40% { filter: brightness(1.25); }
+      100% { filter: brightness(1); }
+    }
+
     .sagwan-divider {
       width: 1.5px;
       align-self: stretch;
@@ -2155,6 +2230,15 @@
 
       .sagwan-dday-card:last-child {
         grid-column: 1 / -1;
+      }
+
+      .sagwan-vote {
+        min-width: 54px;
+        padding: 3px 8px 3px 5px;
+      }
+
+      .sagwan-vote .vote-num {
+        font-size: 11.5px;
       }
     }
 
@@ -3016,6 +3100,7 @@
           dateLabel: "8/14",
           tone: "yellow",
           url: "https://docs.google.com/forms/d/e/1FAIpQLSeASqEDnFL2CZbdC7sY1HTRECKLNhMceSMcb_3KBUKlZHDk2Q/viewform?usp=dialog",
+          sheetGid: "1074275662",
         },
         {
           name: "미국인",
@@ -3023,6 +3108,7 @@
           dateLabel: "9/28",
           tone: "teal",
           url: "https://docs.google.com/forms/d/e/1FAIpQLSePIYfta06LVZOinxt0PouH2dZLLn9w2B-0l2u2E5HeadWYkA/viewform?usp=dialog",
+          sheetGid: "1854094162",
         },
         {
           name: "해사",
@@ -3030,6 +3116,7 @@
           dateLabel: "8/13",
           tone: "red",
           url: "https://docs.google.com/forms/d/e/1FAIpQLSecMOVFlu2aLEgz8DA3txE_XonT1_GCaddTwHwPT632eHFDtw/viewform",
+          sheetGid: "1625112783",
         },
         {
           name: "공사",
@@ -3037,6 +3124,7 @@
           dateLabel: "8/13",
           tone: "red",
           url: "https://docs.google.com/forms/d/e/1FAIpQLScuKtRplNwYsH4AoXoON-rSTjcX2wANAa1Ci3BG5hWvaZd5Vg/viewform",
+          sheetGid: "1416990262",
         },
         {
           name: "국간사",
@@ -3044,8 +3132,15 @@
           dateLabel: "8/14",
           tone: "yellow",
           url: "https://docs.google.com/forms/d/e/1FAIpQLScIU2WxJb4awQWPPEg15mDLxlNYoiFd17AHrZfl0R-A-GzIVA/viewform",
+          sheetGid: "1389400431",
         },
       ];
+      const SAGWAN_SHEET_ID = "1u7sJWO0-ItaTWl_xwgkNPmMyYxgvOYDtuKn_RXlNTCE";
+      const SAGWAN_VOTE_POLL_MS = 15000;
+      const SAGWAN_VOTE_CACHE_KEY = "kimtaehoon_sagwan_votes_v1";
+      let sagwanVoteCounts = Object.fromEntries(SAGWAN_POINTS.map((p) => [p.sheetGid, 0]));
+      let sagwanVoteReady = false;
+      let sagwanVoteBusy = false;
       // 면접 후기집 URL — 추후 연결
       const SAGWAN_REVIEW_URL = "";
 
@@ -5255,6 +5350,146 @@
         return { text: `D+${Math.abs(diff)}`, toneClass: "is-past" };
       }
 
+      function parseSagwanCsv(text) {
+        const rows = [];
+        let row = [];
+        let cur = "";
+        let q = false;
+        for (let i = 0; i < text.length; i++) {
+          const c = text[i];
+          const n = text[i + 1];
+          if (q) {
+            if (c === '"' && n === '"') {
+              cur += '"';
+              i++;
+            } else if (c === '"') q = false;
+            else cur += c;
+          } else if (c === '"') q = true;
+          else if (c === ",") {
+            row.push(cur);
+            cur = "";
+          } else if (c === "\n") {
+            row.push(cur);
+            rows.push(row);
+            row = [];
+            cur = "";
+          } else if (c !== "\r") cur += c;
+        }
+        if (cur.length || row.length) {
+          row.push(cur);
+          rows.push(row);
+        }
+        return rows.filter((r) => r.some((c) => String(c).trim()));
+      }
+
+      function countSagwanVotes(csvText) {
+        const rows = parseSagwanCsv(csvText);
+        if (rows.length <= 1) return 0;
+        return rows.slice(1).filter((r) => {
+          const ts = String(r[0] || "").trim();
+          if (!ts) return false;
+          return /20\d{2}/.test(ts) || /오전|오후|\d{1,2}:\d{2}/.test(ts) || ts.length >= 8;
+        }).length;
+      }
+
+      function readSagwanVoteCache() {
+        try {
+          const raw = localStorage.getItem(SAGWAN_VOTE_CACHE_KEY);
+          if (!raw) return null;
+          const data = JSON.parse(raw);
+          return data && typeof data === "object" ? data : null;
+        } catch {
+          return null;
+        }
+      }
+
+      function writeSagwanVoteCache(counts) {
+        try {
+          localStorage.setItem(
+            SAGWAN_VOTE_CACHE_KEY,
+            JSON.stringify({ updatedAt: Date.now(), counts })
+          );
+        } catch {
+          /* ignore */
+        }
+      }
+
+      function sagwanVoteIcon() {
+        return (
+          `<span class="vote-ic" aria-hidden="true">` +
+          `<svg viewBox="0 0 24 24" fill="none">` +
+          `<path d="M7.5 4.8h9a2 2 0 0 1 2 2v12.1l-4.4-2.2-4.6 2.2V6.8a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>` +
+          `<path d="M10.2 11.2h3.6M10.2 14h2.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>` +
+          `</svg></span>`
+        );
+      }
+
+      function updateSagwanVoteDom(bumpedGids) {
+        const bumped = new Set(bumpedGids || []);
+        document.querySelectorAll("[data-sagwan-vote]").forEach((el) => {
+          const gid = el.getAttribute("data-sagwan-vote");
+          const numEl = el.querySelector(".vote-num");
+          if (!numEl || !gid) return;
+          const next = Number(sagwanVoteCounts[gid] || 0);
+          const prev = Number(numEl.textContent || 0);
+          numEl.textContent = String(next);
+          el.classList.toggle("is-loading", !sagwanVoteReady);
+          el.setAttribute("aria-label", `점공 응답 ${next}명`);
+          if (bumped.has(gid) && next > prev) {
+            el.classList.remove("is-bump");
+            void el.offsetWidth;
+            el.classList.add("is-bump");
+          }
+        });
+      }
+
+      async function fetchSagwanVoteCount(gid) {
+        const url =
+          `https://docs.google.com/spreadsheets/d/${SAGWAN_SHEET_ID}/export?format=csv&gid=${gid}` +
+          `&t=${Date.now()}`;
+        const res = await fetch(url, { cache: "no-store", mode: "cors" });
+        if (!res.ok) throw new Error(`http_${res.status}`);
+        const text = await res.text();
+        if (!text || /sign in|accounts\.google/i.test(text.slice(0, 400))) {
+          throw new Error("sheet_private");
+        }
+        return countSagwanVotes(text);
+      }
+
+      async function refreshSagwanVotes(opts) {
+        if (sagwanVoteBusy) return;
+        sagwanVoteBusy = true;
+        const silent = Boolean(opts && opts.silent);
+        const bumped = [];
+        try {
+          const results = await Promise.all(
+            SAGWAN_POINTS.map(async (item) => {
+              try {
+                const n = await fetchSagwanVoteCount(item.sheetGid);
+                return { gid: item.sheetGid, n, ok: true };
+              } catch {
+                return { gid: item.sheetGid, n: sagwanVoteCounts[item.sheetGid] || 0, ok: false };
+              }
+            })
+          );
+          let anyOk = false;
+          for (const r of results) {
+            if (r.ok) anyOk = true;
+            const prev = Number(sagwanVoteCounts[r.gid] || 0);
+            if (r.ok && r.n > prev && sagwanVoteReady) bumped.push(r.gid);
+            if (r.ok) sagwanVoteCounts[r.gid] = r.n;
+          }
+          if (anyOk) {
+            sagwanVoteReady = true;
+            writeSagwanVoteCache(sagwanVoteCounts);
+            updateSagwanVoteDom(bumped);
+            if (!silent && bumped.length) showToast("점공 응답 수가 갱신되었습니다");
+          }
+        } finally {
+          sagwanVoteBusy = false;
+        }
+      }
+
       function renderSagwanDday() {
         const grid = document.getElementById("sagwanDdayGrid");
         if (!grid) return;
@@ -5267,6 +5502,8 @@
         grid.innerHTML = SAGWAN_POINTS.map((item) => {
           const dd = sagwanDdayLabel(item.dateISO, today);
           const tone = dd.toneClass || `tone-${item.tone}`;
+          const votes = Number(sagwanVoteCounts[item.sheetGid] || 0);
+          const loadingClass = sagwanVoteReady ? "" : " is-loading";
           return (
             `<a class="sagwan-dday-card" href="${item.url}" target="_blank" rel="noopener noreferrer" title="${item.name} 점공 참여">` +
             `<span class="card-top">` +
@@ -5276,6 +5513,11 @@
             `<span class="card-foot">` +
             `<span class="label">[${item.name} 점공]</span>` +
             `<span class="date">${item.dateLabel}</span>` +
+            `<span class="sagwan-vote${loadingClass}" data-sagwan-vote="${item.sheetGid}" aria-label="점공 응답 ${votes}명">` +
+            sagwanVoteIcon() +
+            `<span class="vote-num">${votes}</span>` +
+            `<span class="vote-unit">명</span>` +
+            `</span>` +
             `</span>` +
             `</a>`
           );
@@ -5365,8 +5607,18 @@
         });
 
         applyScheduleZoom();
+        const cachedVotes = readSagwanVoteCache();
+        if (cachedVotes?.counts) {
+          sagwanVoteCounts = { ...sagwanVoteCounts, ...cachedVotes.counts };
+          sagwanVoteReady = true;
+        }
         renderSagwanDday();
+        refreshSagwanVotes({ silent: true });
         setInterval(renderSagwanDday, 60 * 60 * 1000);
+        setInterval(() => refreshSagwanVotes({ silent: true }), SAGWAN_VOTE_POLL_MS);
+        document.addEventListener("visibilitychange", () => {
+          if (document.visibilityState === "visible") refreshSagwanVotes({ silent: true });
+        });
       }
 
       bootSagwanStrip();
