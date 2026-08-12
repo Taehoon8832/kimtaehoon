@@ -1896,78 +1896,139 @@
     }
 
     .sagwan-vote {
+      --vote-ink: #1c140e;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 5px;
-      margin-top: 5px;
-      padding: 3px 9px 3px 6px;
+      gap: 6px;
+      margin-top: 6px;
+      padding: 4px 10px 4px 5px;
       border-radius: 999px;
-      border: 1px solid rgba(61, 43, 31, 0.14);
+      border: 1px solid rgba(168, 126, 72, 0.38);
       background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(245, 238, 228, 0.95));
-      color: #2a1c12;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+        linear-gradient(115deg, rgba(255, 248, 232, 0.95) 0%, rgba(255, 255, 255, 0.98) 42%, rgba(245, 232, 210, 0.92) 100%);
+      color: var(--vote-ink);
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.65) inset,
+        0 4px 10px rgba(80, 50, 20, 0.12);
       line-height: 1;
-      min-width: 58px;
+      min-width: 64px;
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .sagwan-vote::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, transparent 35%, rgba(255, 236, 190, 0.45) 50%, transparent 65%);
+      transform: translateX(-120%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .sagwan-vote > * {
+      position: relative;
+      z-index: 1;
     }
 
     .sagwan-vote .vote-ic {
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
       border-radius: 50%;
       display: grid;
       place-items: center;
-      background: linear-gradient(145deg, #6b4f3a 0%, #3d2b1f 100%);
-      color: #f5e6c8;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(255, 236, 200, 0.45), transparent 55%),
+        linear-gradient(145deg, #8b6914 0%, #5a3f28 48%, #2a1c12 100%);
+      color: #ffe9b8;
       flex-shrink: 0;
+      box-shadow:
+        0 0 0 1px rgba(201, 164, 106, 0.45),
+        0 2px 6px rgba(42, 28, 18, 0.28);
+    }
+
+    .sagwan-vote.is-live .vote-ic {
+      animation: sagwanVotePulse 2.4s var(--ease-out) infinite;
     }
 
     .sagwan-vote .vote-ic svg {
-      width: 10px;
-      height: 10px;
+      width: 11px;
+      height: 11px;
     }
 
     .sagwan-vote .vote-num {
       font-family: "Space Grotesk", var(--font);
-      font-size: 12px;
+      font-size: 13px;
       font-weight: 800;
-      letter-spacing: -0.03em;
-      color: #1f1a16;
-      min-width: 1.1em;
+      letter-spacing: -0.04em;
+      min-width: 1.15em;
       text-align: right;
       font-variant-numeric: tabular-nums;
+      background: linear-gradient(180deg, #3d2b1f 0%, #8b6914 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
     .sagwan-vote .vote-unit {
-      font-size: 9.5px;
-      font-weight: 700;
-      color: #7a6554;
+      font-size: 10px;
+      font-weight: 800;
+      color: #8b6914;
       letter-spacing: -0.02em;
     }
 
-    .sagwan-vote.is-loading .vote-num {
-      opacity: 0.35;
+    .sagwan-vote.is-loading .vote-num,
+    .sagwan-vote.is-loading .vote-unit {
+      opacity: 0.38;
     }
 
     .sagwan-vote.is-bump {
-      animation: sagwanVoteBump 0.55s var(--ease-out);
+      animation: sagwanVoteBump 0.6s var(--ease-out);
+      border-color: rgba(201, 164, 106, 0.7);
+      box-shadow:
+        0 0 0 1px rgba(255, 255, 255, 0.7) inset,
+        0 0 0 3px rgba(201, 164, 106, 0.18),
+        0 6px 14px rgba(80, 50, 20, 0.16);
+    }
+
+    .sagwan-vote.is-bump::before {
+      animation: sagwanVoteSheen 0.65s var(--ease-out);
     }
 
     .sagwan-vote.is-bump .vote-ic {
-      animation: sagwanVoteGlow 0.55s var(--ease-out);
+      animation: sagwanVoteGlow 0.6s var(--ease-out);
     }
 
     @keyframes sagwanVoteBump {
       0% { transform: scale(1); }
-      35% { transform: scale(1.08); }
+      30% { transform: scale(1.07); }
       100% { transform: scale(1); }
     }
 
     @keyframes sagwanVoteGlow {
-      0% { filter: brightness(1); }
-      40% { filter: brightness(1.25); }
-      100% { filter: brightness(1); }
+      0%, 100% { filter: brightness(1); transform: scale(1); }
+      40% { filter: brightness(1.22); transform: scale(1.08); }
+    }
+
+    @keyframes sagwanVoteSheen {
+      0% { transform: translateX(-120%); }
+      100% { transform: translateX(120%); }
+    }
+
+    @keyframes sagwanVotePulse {
+      0%, 100% { box-shadow: 0 0 0 1px rgba(201, 164, 106, 0.45), 0 2px 6px rgba(42, 28, 18, 0.28); }
+      50% { box-shadow: 0 0 0 2px rgba(201, 164, 106, 0.55), 0 0 10px rgba(201, 164, 106, 0.28); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .sagwan-vote.is-live .vote-ic,
+      .sagwan-vote.is-bump,
+      .sagwan-vote.is-bump::before,
+      .sagwan-vote.is-bump .vote-ic {
+        animation: none;
+      }
     }
 
     .sagwan-divider {
@@ -2233,12 +2294,18 @@
       }
 
       .sagwan-vote {
-        min-width: 54px;
-        padding: 3px 8px 3px 5px;
+        min-width: 60px;
+        padding: 4px 9px 4px 5px;
+        gap: 5px;
+      }
+
+      .sagwan-vote .vote-ic {
+        width: 17px;
+        height: 17px;
       }
 
       .sagwan-vote .vote-num {
-        font-size: 11.5px;
+        font-size: 12.5px;
       }
     }
 
@@ -3136,7 +3203,7 @@
         },
       ];
       const SAGWAN_SHEET_ID = "1u7sJWO0-ItaTWl_xwgkNPmMyYxgvOYDtuKn_RXlNTCE";
-      const SAGWAN_VOTE_POLL_MS = 15000;
+      const SAGWAN_VOTE_POLL_MS = 10000;
       const SAGWAN_VOTE_CACHE_KEY = "kimtaehoon_sagwan_votes_v1";
       let sagwanVoteCounts = Object.fromEntries(SAGWAN_POINTS.map((p) => [p.sheetGid, 0]));
       let sagwanVoteReady = false;
@@ -5432,9 +5499,10 @@
           if (!numEl || !gid) return;
           const next = Number(sagwanVoteCounts[gid] || 0);
           const prev = Number(numEl.textContent || 0);
-          numEl.textContent = String(next);
+          if (String(next) !== numEl.textContent) numEl.textContent = String(next);
           el.classList.toggle("is-loading", !sagwanVoteReady);
-          el.setAttribute("aria-label", `점공 응답 ${next}명`);
+          el.classList.toggle("is-live", sagwanVoteReady);
+          el.setAttribute("aria-label", `점공 응답 ${next}건`);
           if (bumped.has(gid) && next > prev) {
             el.classList.remove("is-bump");
             void el.offsetWidth;
@@ -5443,11 +5511,11 @@
         });
       }
 
-      async function fetchSagwanVoteCount(gid) {
+      async function fetchSagwanVoteCount(gid, signal) {
         const url =
           `https://docs.google.com/spreadsheets/d/${SAGWAN_SHEET_ID}/export?format=csv&gid=${gid}` +
           `&t=${Date.now()}`;
-        const res = await fetch(url, { cache: "no-store", mode: "cors" });
+        const res = await fetch(url, { cache: "no-store", mode: "cors", signal });
         if (!res.ok) throw new Error(`http_${res.status}`);
         const text = await res.text();
         if (!text || /sign in|accounts\.google/i.test(text.slice(0, 400))) {
@@ -5458,14 +5526,17 @@
 
       async function refreshSagwanVotes(opts) {
         if (sagwanVoteBusy) return;
+        if (document.visibilityState === "hidden" && !(opts && opts.force)) return;
         sagwanVoteBusy = true;
         const silent = Boolean(opts && opts.silent);
         const bumped = [];
+        const ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
+        const timer = ctrl ? setTimeout(() => ctrl.abort(), 8000) : null;
         try {
           const results = await Promise.all(
             SAGWAN_POINTS.map(async (item) => {
               try {
-                const n = await fetchSagwanVoteCount(item.sheetGid);
+                const n = await fetchSagwanVoteCount(item.sheetGid, ctrl ? ctrl.signal : undefined);
                 return { gid: item.sheetGid, n, ok: true };
               } catch {
                 return { gid: item.sheetGid, n: sagwanVoteCounts[item.sheetGid] || 0, ok: false };
@@ -5486,6 +5557,7 @@
             if (!silent && bumped.length) showToast("점공 응답 수가 갱신되었습니다");
           }
         } finally {
+          if (timer) clearTimeout(timer);
           sagwanVoteBusy = false;
         }
       }
@@ -5503,7 +5575,7 @@
           const dd = sagwanDdayLabel(item.dateISO, today);
           const tone = dd.toneClass || `tone-${item.tone}`;
           const votes = Number(sagwanVoteCounts[item.sheetGid] || 0);
-          const loadingClass = sagwanVoteReady ? "" : " is-loading";
+          const loadingClass = sagwanVoteReady ? " is-live" : " is-loading";
           return (
             `<a class="sagwan-dday-card" href="${item.url}" target="_blank" rel="noopener noreferrer" title="${item.name} 점공 참여">` +
             `<span class="card-top">` +
@@ -5513,10 +5585,10 @@
             `<span class="card-foot">` +
             `<span class="label">[${item.name} 점공]</span>` +
             `<span class="date">${item.dateLabel}</span>` +
-            `<span class="sagwan-vote${loadingClass}" data-sagwan-vote="${item.sheetGid}" aria-label="점공 응답 ${votes}명">` +
+            `<span class="sagwan-vote${loadingClass}" data-sagwan-vote="${item.sheetGid}" aria-label="점공 응답 ${votes}건">` +
             sagwanVoteIcon() +
             `<span class="vote-num">${votes}</span>` +
-            `<span class="vote-unit">명</span>` +
+            `<span class="vote-unit">건</span>` +
             `</span>` +
             `</span>` +
             `</a>`
@@ -5613,11 +5685,11 @@
           sagwanVoteReady = true;
         }
         renderSagwanDday();
-        refreshSagwanVotes({ silent: true });
+        refreshSagwanVotes({ silent: true, force: true });
         setInterval(renderSagwanDday, 60 * 60 * 1000);
         setInterval(() => refreshSagwanVotes({ silent: true }), SAGWAN_VOTE_POLL_MS);
         document.addEventListener("visibilitychange", () => {
-          if (document.visibilityState === "visible") refreshSagwanVotes({ silent: true });
+          if (document.visibilityState === "visible") refreshSagwanVotes({ silent: true, force: true });
         });
       }
 
