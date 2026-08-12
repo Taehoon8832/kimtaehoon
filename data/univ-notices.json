@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-12",
-  "updatedAt": "2026-08-12T11:22:35.527Z",
-  "checkedAt": "2026-08-12T11:22:35.527Z",
+  "updatedAt": "2026-08-12T12:11:56.715Z",
+  "checkedAt": "2026-08-12T12:11:56.715Z",
   "sources": [
     {
       "id": "u001",
@@ -1572,6 +1572,17 @@
       "dateText": "2026.08.12"
     },
     {
+      "id": "3c8e3723c3e9668f58f6",
+      "univId": "u021",
+      "univName": "서울대",
+      "title": "2026학년도 대학원 신입생 후기모집 충원합격자 발표 및 등록금고지서 출력",
+      "preview": "2026.08.12. 일반대학원 2026학년도 대학원 신입생 후기모집 합격자",
+      "url": "http://admission.snu.ac.kr/graduate/general/notice?md=v&bbsidx=173768",
+      "homeUrl": "http://admission.snu.ac.kr/",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
       "id": "0fbe4bab47b00fd9aea5",
       "univId": "u059",
       "univName": "서울장신대",
@@ -1997,6 +2008,17 @@
       "preview": "대전신대 입학 공지사항 미리보기",
       "url": "https://www.daejeon.ac.kr/bbs/board.php?bo_table=N01_07&wr_id=345",
       "homeUrl": "https://www.daejeon.ac.kr/",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
+      "id": "0ba17f9271787b956167",
+      "univId": "u208",
+      "univName": "국립한국해양대",
+      "title": "재외국민 외국민 2027학년도 재외국민 특별전형 지원자격 서류심사 결과 공고",
+      "preview": "재외국민</b",
+      "url": "http://ipsi.kmou.ac.kr/ipsi/na/ntt/selectNttInfo.do?nttSn=10377567",
+      "homeUrl": "http://ipsi.kmou.ac.kr/",
       "dateISO": "2026-08-06",
       "dateText": "2026.08.06"
     },
@@ -2742,5 +2764,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=25 empty=12 fail=179 fresh=90"
+  "statusReason": "ok=27 empty=22 fail=167 fresh=92"
 }
