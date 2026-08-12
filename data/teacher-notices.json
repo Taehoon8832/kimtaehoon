@@ -1,10 +1,46 @@
 {
   "source": "https://cafe.daum.net/applymate/Alvz",
-  "updatedAt": "2026-08-12T10:47:26.666048Z",
-  "checkedAt": "2026-08-12T10:47:26.666043Z",
+  "updatedAt": "2026-08-12T11:36:28.395189Z",
+  "checkedAt": "2026-08-12T11:36:28.395184Z",
   "today": "2026-08-12",
   "count": 40,
   "notices": [
+    {
+      "id": "424c351e392d461c4965",
+      "sourceName": "사립학교 정교사",
+      "title": "[경남] 창신기독학원(창신고) - 물리,생물,지구과학,일반사회,윤리,영어,정보",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "5bbd2988218937c77af5",
+      "sourceName": "사립학교 정교사",
+      "title": "[경남] 창원학원(창원고) - 영어,전문상담",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "37554f4c85638d82236a",
+      "sourceName": "사립학교 정교사",
+      "title": "[경남] 지성학원(거제중·고) - 국어,윤리,보건,물리,영어,보건",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "6263c43d5dde9b56e227",
+      "sourceName": "사립학교 정교사",
+      "title": "[경남] 해성학원(남해해성고) - 보건",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
     {
       "id": "b91328fdc24431776417",
       "sourceName": "사립학교 정교사",
@@ -324,42 +360,6 @@
       "id": "2eb0ef31270a993c2ed1",
       "sourceName": "사립학교 정교사",
       "title": "[서울] 혜원학원 - 과학(물리) 체육2 수학 보건 (예정)",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "0a6afe436d9da570edf0",
-      "sourceName": "사립학교 정교사",
-      "title": "[서울] 현강학원 - 전문상담 (예정)",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "b7fbfae95fd215499124",
-      "sourceName": "사립학교 정교사",
-      "title": "[서울] 해성학원 - 일반사회 특수 음악(실용보컬) (예정)",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "a34b5085996880ee1dcc",
-      "sourceName": "사립학교 정교사",
-      "title": "[서울] 청암학원 - 국어 수학 영어 물리 (예정)",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "9df5639eb0c59db3d891",
-      "sourceName": "사립학교 정교사",
-      "title": "[서울] 진명학원 - 3과목 (예정)",
       "preview": "",
       "url": "",
       "dateISO": "2026-08-12",
