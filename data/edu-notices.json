@@ -67,8 +67,8 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-12T20:23:15.743097Z",
-  "checkedAt": "2026-08-12T20:23:15.743091Z",
+  "updatedAt": "2026-08-12T21:10:33.903442Z",
+  "checkedAt": "2026-08-12T21:10:33.903437Z",
   "today": "2026-08-13",
   "count": 72,
   "notices": [
@@ -103,6 +103,16 @@
       "dateText": "2026.08.12"
     },
     {
+      "id": "2b49a235a176cb86bab0",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "인제대 한/일 대학생 평화/문화유산 국제교류 캠프 성료",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623005",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
       "id": "02bc62257f5d83f4936f",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
@@ -119,6 +129,16 @@
       "title": "실업팀 꺾었다… 인제대 조정 류준/유재협, 포항 영일만 비치스프린트 조정 '우승'",
       "preview": "베리타스알파 소식",
       "url": "https://www.veritas-a.com/news/articleView.html?idxno=623006",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "25a71c847f9423c099e3",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "상명대 발달장애 작가/지역기업 잇는 디자인 협업 성과 선보여",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623004",
       "dateISO": "2026-08-12",
       "dateText": "2026.08.12"
     },
@@ -169,16 +189,6 @@
       "title": "국립공주대 박용진 교수 연구팀 국제학술지 Plant Communications 'Best of 2025' 선정",
       "preview": "베리타스알파 소식",
       "url": "https://www.veritas-a.com/news/articleView.html?idxno=623014",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "e18ec0b6178e25414b94",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "광주여대 마음교육학과 다올사회적협동조합과 실천형 인재양성 협력체계 구축",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623007",
       "dateISO": "2026-08-12",
       "dateText": "2026.08.12"
     },
@@ -249,16 +259,6 @@
       "title": "2학기 마지막 신청을 놓치지 마세요! 국가장학금 2학기 2차 통합 신청",
       "preview": "교육부(장관 최교진)와 한국장학재단(이사장 박창달, 이하 재단)은 8월 12일(수)부터 9월 9일(수)까지 2026학년도 국가장학금 2학기 2차 신청을 받는다. 국가장학금은 누구나 능력과 의지에 따라 대학 교육을 받",
       "url": "https://blog.naver.com/moeblog/224375453037",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "31ce3543ce8a4c0a86a7",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "'영남이공대 AI 기반 디지털 헬스케어 해외교류특강 개최'",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623015",
       "dateISO": "2026-08-12",
       "dateText": "2026.08.12"
     },
