@@ -1,10 +1,19 @@
 {
   "source": "https://cafe.daum.net/applymate/Alvz",
-  "updatedAt": "2026-08-12T08:56:56.834954Z",
-  "checkedAt": "2026-08-12T08:56:56.834948Z",
+  "updatedAt": "2026-08-12T09:53:58.418710Z",
+  "checkedAt": "2026-08-12T09:53:58.418705Z",
   "today": "2026-08-12",
   "count": 40,
   "notices": [
+    {
+      "id": "b91328fdc24431776417",
+      "sourceName": "사립학교 정교사",
+      "title": "[충북] 신명학원(충원고 외) - 영어,생물",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
     {
       "id": "5314b50cb172099ccf70",
       "sourceName": "사립학교 정교사",
@@ -351,15 +360,6 @@
       "id": "9df5639eb0c59db3d891",
       "sourceName": "사립학교 정교사",
       "title": "[서울] 진명학원 - 3과목 (예정)",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "d2d178642d3211995900",
-      "sourceName": "사립학교 정교사",
-      "title": "[서울] 중산학원 - 국어2 체육1 (예정)",
       "preview": "",
       "url": "",
       "dateISO": "2026-08-12",
