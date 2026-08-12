@@ -1,10 +1,73 @@
 {
   "source": "https://cafe.daum.net/applymate/Alvz",
-  "updatedAt": "2026-08-12T11:36:28.395189Z",
-  "checkedAt": "2026-08-12T11:36:28.395184Z",
+  "updatedAt": "2026-08-12T12:29:40.629100Z",
+  "checkedAt": "2026-08-12T12:29:40.629096Z",
   "today": "2026-08-12",
   "count": 40,
   "notices": [
+    {
+      "id": "09a88dabd31367ed5f1d",
+      "sourceName": "사립학교 정교사",
+      "title": "[전남광주] 춘광학원(경신중,경신여고) - 일반사회,미술,체육,보건,지구과학",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "3bcc735bf03d5664d98f",
+      "sourceName": "사립학교 정교사",
+      "title": "[전남광주] 무양서원(비아고) - 역사",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "e4470e2406ba9bfb6537",
+      "sourceName": "사립학교 정교사",
+      "title": "[충남] 충남삼성학원(충남삼성고) - 물리,화학",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "f0bbe866b8caf9c07bcc",
+      "sourceName": "사립학교 정교사",
+      "title": "[경북] 수봉교육재단(경주중·고) - 기술",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "d83ec6920401440bc623",
+      "sourceName": "사립학교 정교사",
+      "title": "[경남] 창선학원(창선중·고) - 국어,수학,역사,일반사회",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "5fa900ba327afd164189",
+      "sourceName": "사립학교 정교사",
+      "title": "[경남] 정천학원(진주동명고) - 전문상담",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "ab41954e12f6462b3b87",
+      "sourceName": "사립학교 정교사",
+      "title": "[경남] 하동육영원(하동중,하동여고) - 국어,화학,일반사회",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
     {
       "id": "424c351e392d461c4965",
       "sourceName": "사립학교 정교사",
@@ -105,9 +168,9 @@
       "dateText": "2026.08.12"
     },
     {
-      "id": "eeaaa53599c2eb795b4a",
+      "id": "4b7f29196af250c8d369",
       "sourceName": "사립학교 정교사",
-      "title": "[경북,전남광주] 포스크교육재단 - 영어 外",
+      "title": "[경북,전남광주] 포스코교육재단 - 영어 外",
       "preview": "",
       "url": "",
       "dateISO": "2026-08-12",
@@ -297,69 +360,6 @@
       "id": "e737ad19bc69ecad2ce9",
       "sourceName": "사립학교 정교사",
       "title": "[인천] 동광학원 - 비공개",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "ab4ebdc5b667258f9f40",
-      "sourceName": "사립학교 정교사",
-      "title": "[인천] 덕신학원 - 비공개",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "10823bb5461ccc5dafc0",
-      "sourceName": "사립학교 정교사",
-      "title": "[인천] 대인학원 - 수학 윤리 물리 정보 (예정)",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "30b498bb5caa32c0e755",
-      "sourceName": "사립학교 정교사",
-      "title": "[서울] 휘경학원 - 수학 영어 정보 일반사회 (예정)",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "13a7a0e420a64a5a3bc5",
-      "sourceName": "사립학교 정교사",
-      "title": "[서울] 효송학원 - 정보ㆍ컴퓨터 화학 (예정)",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "1d52e934c7bf604dcb3d",
-      "sourceName": "사립학교 정교사",
-      "title": "[서울] 홍익학원 - 물리 수학 지구과학 정보 (예정)",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "0e3e3ddc130325f2e211",
-      "sourceName": "사립학교 정교사",
-      "title": "[서울] 홍신학원 - 국어3 수학2 역사2 물리1 공통과학1 (예정)",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "2eb0ef31270a993c2ed1",
-      "sourceName": "사립학교 정교사",
-      "title": "[서울] 혜원학원 - 과학(물리) 체육2 수학 보건 (예정)",
       "preview": "",
       "url": "",
       "dateISO": "2026-08-12",
