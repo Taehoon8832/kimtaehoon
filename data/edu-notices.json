@@ -67,28 +67,78 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-11T23:37:37.361149Z",
-  "checkedAt": "2026-08-11T23:37:37.361143Z",
+  "updatedAt": "2026-08-12T00:40:51.164896Z",
+  "checkedAt": "2026-08-12T00:40:51.164890Z",
   "today": "2026-08-12",
-  "count": 72,
+  "count": 80,
   "notices": [
     {
-      "id": "c94a8c92fa9882940148",
+      "id": "6321a40d6fead8716df8",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "어둠 속 숨은 표적, '빛의 쌍둥이'가 한눈에 찾아낸다",
+      "title": "연세대 문과대학 '1996년 8월 연세대 사건' 30주년 전시 및 학술대회 개최",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622842",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622867",
       "dateISO": "2026-08-12",
       "dateText": "2026.08.12"
     },
     {
-      "id": "d2b3f4a62b25d350bc30",
+      "id": "3a05950d6d517782bebf",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "EBS 'AI 드라마 - 부활수업' '정약용 편', 8월 16일 밤 11시 EBS 1TV 방송",
+      "title": "국립군산대 전북지역에너지클러스터인재양성사업단 'AI 도구 활용 취업역량 강화 교육' 운영",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622840",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622862",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "bbebf158e5b7d57728d6",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "국립군산대 AI부트캠프사업단 전국 대학생 AI 자율주행 경진대회 수상",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622869",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "2571bafbcdc5889ee248",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "국립공주대 UKC 2026 참가…글로벌 과학기술 네트워크 확대",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622868",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "a53d4e7903c52c63940f",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "경상국립대 한글날 기념 '노래로 피어나는 우리말'/'다채로운 순우리말 달력 문구' 공모전 개최",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622858",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "d9a7c674ea0d860c0651",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "경상국립대 박동규 교수/박민석 주무관 부자(父子), 발전기금 2000만원 기부",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622856",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "6a7ea6d2f32f768e6624",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "가톨릭대 '학생/학부모/교사 대상' 2027수시 1대1 입시상담 31일.. '전화 상담'",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622866",
       "dateISO": "2026-08-12",
       "dateText": "2026.08.12"
     },
@@ -99,6 +149,16 @@
       "title": "2학기 마지막 신청을 놓치지 마세요! 국가장학금 2학기 2차 통합 신청",
       "preview": "교육부(장관 최교진)와 한국장학재단(이사장 박창달, 이하 재단)은 8월 12일(수)부터 9월 9일(수)까지 2026학년도 국가장학금 2학기 2차 신청을 받는다. 국가장학금은 누구나 능력과 의지에 따라 대학 교육을 받",
       "url": "https://blog.naver.com/moeblog/224375453037",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "fb88a2e1a78eb4fbfaa7",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "\"10일 걸리던 업무가 1~2일로\" GIST '2026 행정 AX 혁신대회' 개최",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622853",
       "dateISO": "2026-08-12",
       "dateText": "2026.08.12"
     },
@@ -123,52 +183,12 @@
       "dateText": "2026.08.11"
     },
     {
-      "id": "f45b820f5f76869d765d",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "김영일교육컨설팅 2027수시 모집요강 요약본 공개.. '수시 비중 80.3%로 역대 최고'",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622817",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "9a4f1eb881f3538d102e",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국립한밭대 지역협력센터, 이노폴리스벤처협회와 AI/인문/창업 인프라 조성 업무협약 체결",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622833",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "63c22bb20df140e15739",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국립공주대 생물교육과 김희선 대학원생 (지도교수 곽희진), 생물과학협회 우수포스터상 수상",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622837",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
       "id": "8b4e74d0ea1dd63dd9db",
       "sourceId": "edupress",
       "sourceName": "에듀프레스",
       "title": "국교위, ‘수업-내신-수능 일체화’ 대입개편 공론화 돌입",
       "preview": "에듀프레스 소식",
       "url": "https://www.edupress.kr/news/articleView.html?idxno=30395",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "81ea3317752cbac88899",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "경남대 대학혁신지원사업 성과평가 'SA등급' 3년 연속 획득",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622834",
       "dateISO": "2026-08-11",
       "dateText": "2026.08.11"
     },
@@ -189,26 +209,6 @@
       "title": "[백승진 칼럼] 교육교부금 개편 논쟁 교착, 열쇠는 교육감이 쥐고있다",
       "preview": "에듀프레스 소식",
       "url": "https://www.edupress.kr/news/articleView.html?idxno=30394",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "9e10ac5999f884b94f1c",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "[단독] 서울대 고려대 등 11개 상위대학 입학처가 공개한 2027 면접 대비법.. ‘학생부 숙지부터 질문 의도 파악까지’",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622828",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "eb10122a16f52b2bb237",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "[2027전문대수시특집] ‘수도권 유일 보건의료 특성화’ 동남보건대 1164명(89.5%).. '고교유형 무관' 일반전형 298명 '신설'",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=622836",
       "dateISO": "2026-08-11",
       "dateText": "2026.08.11"
     },
@@ -403,6 +403,16 @@
       "dateText": "2026.08.05"
     },
     {
+      "id": "ad968dd9343977fac20f",
+      "sourceId": "moe",
+      "sourceName": "교육부",
+      "title": "2027학년도 대학원 정원조정 및 설치·운영 세부기준",
+      "preview": "교육부 정책",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106856&lev=0&m=0303&s=moe",
+      "dateISO": "2026-08-05",
+      "dateText": "2026.08.05"
+    },
+    {
       "id": "da4fa5f412dd8e684f3a",
       "sourceId": "ebsi",
       "sourceName": "EBSi",
@@ -451,6 +461,36 @@
       "url": "https://www.sen.go.kr/user/bbs/BD_selectBbsList.do?q_bbsSn=1036",
       "dateISO": "2026-07-28",
       "dateText": "2026.07.28"
+    },
+    {
+      "id": "7a51baeb19e84fa8436a",
+      "sourceId": "moe",
+      "sourceName": "교육부",
+      "title": "2026년도 산업교육 및 산학연협력 시행계획",
+      "preview": "교육부 정책",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106791&lev=0&m=0303&s=moe",
+      "dateISO": "2026-07-27",
+      "dateText": "2026.07.27"
+    },
+    {
+      "id": "90eef674cdaee188ca91",
+      "sourceId": "moe",
+      "sourceName": "교육부",
+      "title": "2026년도 법학전문대학원 취약계층 장학금 지원사업 기본계획",
+      "preview": "교육부 정책",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106779&lev=0&m=0303&s=moe",
+      "dateISO": "2026-07-27",
+      "dateText": "2026.07.27"
+    },
+    {
+      "id": "3193c29867d87fba9a8c",
+      "sourceId": "moe",
+      "sourceName": "교육부",
+      "title": "2026 대학 창업 운영 가이드 발간 안내",
+      "preview": "교육부 정책",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106786&lev=0&m=0303&s=moe",
+      "dateISO": "2026-07-27",
+      "dateText": "2026.07.27"
     },
     {
       "id": "55fd2008f91571880899",
@@ -553,6 +593,16 @@
       "dateText": "2026.07.09"
     },
     {
+      "id": "1a93bd0002bdc262c36e",
+      "sourceId": "moe",
+      "sourceName": "교육부",
+      "title": "2026년 전문대학 혁신지원사업 기본계획",
+      "preview": "교육부 정책",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106665&lev=0&m=0303&s=moe",
+      "dateISO": "2026-07-09",
+      "dateText": "2026.07.09"
+    },
+    {
       "id": "0a6d6c9a7e12c53b89c4",
       "sourceId": "jongro",
       "sourceName": "종로학원",
@@ -571,6 +621,26 @@
       "url": "https://www.jongro.co.kr/reports/examAnalysisView.asp?idx=7688&page=1&s_academicyear=&s_option1=&s_option2=&s_option3=&s_option4=&s_key=&s_value=&s_intPageSize=12",
       "dateISO": "2026-07-09",
       "dateText": "2026.07.09"
+    },
+    {
+      "id": "f1cb8fe6cd24bc39097c",
+      "sourceId": "moe",
+      "sourceName": "교육부",
+      "title": "2026학년도 전국 전문대학 현황",
+      "preview": "교육부 정책",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106664&lev=0&m=0303&s=moe",
+      "dateISO": "2026-07-08",
+      "dateText": "2026.07.08"
+    },
+    {
+      "id": "ab224be6ad030a2dd9d6",
+      "sourceId": "moe",
+      "sourceName": "교육부",
+      "title": "2026학년도 등록금 통계조사분석시스템 자료 입력 안내",
+      "preview": "교육부 정책",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106660&lev=0&m=0303&s=moe",
+      "dateISO": "2026-07-08",
+      "dateText": "2026.07.08"
     },
     {
       "id": "fda266d28d71bb171f39",
@@ -619,6 +689,16 @@
       "title": "2027학년도 대학수학능력시험 시행...",
       "preview": "평가원보도 공지",
       "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095611&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-07-01",
+      "dateText": "2026.07.01"
+    },
+    {
+      "id": "a0aa87a1e4180dd8cc5f",
+      "sourceId": "moe",
+      "sourceName": "교육부",
+      "title": "2026학년도 2학기 학자금대출 기본계획",
+      "preview": "교육부 정책",
+      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106606&lev=0&m=0303&s=moe",
       "dateISO": "2026-07-01",
       "dateText": "2026.07.01"
     },
