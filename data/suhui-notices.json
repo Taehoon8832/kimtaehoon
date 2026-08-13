@@ -1,10 +1,91 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-13T18:04:37.945339Z",
-  "checkedAt": "2026-08-13T18:04:37.945333Z",
+  "updatedAt": "2026-08-13T19:16:43.527103Z",
+  "checkedAt": "2026-08-13T19:16:43.527098Z",
   "today": "2026-08-14",
   "count": 40,
   "notices": [
+    {
+      "id": "e813963b248183b7c9e3",
+      "sourceName": "수만휘",
+      "title": "중앙대 생명과학과",
+      "preview": "[🔥이과 수시 자유게시판] 일반고 내신 2.96이고 생기부는 1~3학년까지 쭉 생명과학계열로 채워져 있어요. 탐구인재형 학종으로 상향카드로 써볼생각인데 어떤가요?",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605955",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
+      "id": "1c6ae7216bd1251331a3",
+      "sourceName": "수만휘",
+      "title": "논술 대비",
+      "preview": "[논술구술Q&A] 논술 첨삭 받기 좋은 사이트나 온라인 과외 같은 거 추천 좀 해 주세요ㅠ!",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605954",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
+      "id": "96d1607f4d9ceb5856a4",
+      "sourceName": "수만휘",
+      "title": "MBC 대학가요제+미스터트롯4 접수 기간이네요",
+      "preview": "[티키타카페 게시판] 요즘 보니까 MBC 대학가요제도, TV조선 미스터트롯도 접수 받는 기간이네요. 국내외 대학(원) 재학생·휴학생이면 팀이나 솔로로 지원할 수 있고, 장르도 제한이 없다고 합니다. 음악을 좋아하는 ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605953",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
+      "id": "fbf1ea7f574c6dafabbe",
+      "sourceName": "수만휘",
+      "title": "'정시 40% 폐지하라' 서울 16개대 공동 대응 나선다, '전형별 중도이탈율 & 학업성취도 국교위 제출' 예정",
+      "preview": "[🔥학부모님 자유게시판] 출처:https://www.veritas-a.com/news/articleView.html?idxno=623068 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605952",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
+      "id": "35e51345495ba34467ad",
+      "sourceName": "수만휘",
+      "title": "부산대 대기업 계약학과 2027 스마트가전공학과(LG전자) & 2028 첨단기계시스템공학과(한화그룹) 모집",
+      "preview": "[🔥학부모님 자유게시판] 출처:https://www.veritas-a.com/news/articleView.html?idxno=623167",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605951",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
+      "id": "8de24d658d3cd60fe720",
+      "sourceName": "수만휘",
+      "title": "수시재수",
+      "preview": "[🔥재/반/N수 자유게시판] 안녕하세요 3-1학기까지 1.58이고 총 내신은 1.64입니다 현재 중앙대를 다니고 있고 한양대나 서강대 기균을 쓸슈있어서 쓰고싶은데 노려볼만 할까요.. 성대는 없어졌다 들어서.. 조언부",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605950",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
+      "id": "e7999202ac078a54a6c3",
+      "sourceName": "수만휘",
+      "title": "미대 재수 실기 가망 없으면 그냥 전문대 갔다가 편입하는 게 나을까요",
+      "preview": "[┃미대 게시판] 미대 입시 재수 중인데 실기로 대학 가는 게 생각보다 너무 어렵고 주변애들 보면 다 너무 잘하고 저는 가망도 없어보여요 이번에도 원하는 학교에 갈 수 있을지 자신이 없어요 ㅠㅠ 계속 안 맞는 실기 ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605949",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
+      "id": "28e86457536f64d87da9",
+      "sourceName": "수만휘",
+      "title": "과기원 자소서냐 수능이냐..",
+      "preview": "[🔥학부모님 자유게시판] 여러분들은 자소서와 수능 모두 잘 준비하고계신가요...? 요즘 과기원 준비하면서 자소서에 시간을 얼마나 써야 할지 고민하는 분들이 많은 것 같아요. 수능도 챙겨야 하고, 자소서도 써야 하고,",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605948",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
+      "id": "d23bd573fa651af0b377",
+      "sourceName": "수만휘",
+      "title": "식품공학과 선택과목 뭐할까요..",
+      "preview": "[┃Team10 수험생 게시판] 식품공학고ㅏ 희망하는 학생입니다 일단 화학 생명은 당연히 선택했는데 물리랑 기하,인공지능수학을 할지믈지가 넘 고민이에요….그리고 기술가정을 선택하긴했는데 기술가정 선택자가 한 50명 ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605947",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
     {
       "id": "bdc66290483411909060",
       "sourceName": "수만휘",
@@ -281,87 +362,6 @@
       "title": "사문 n제",
       "preview": "[🔥재/반/N수 자유게시판] 사문n제 사만다 시멘트 vs 나르샤 어댑터 vs 메가 최적쌤옵티마n제 풀어보신분들있으면.. 뭐가제일괜찮나요",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605915",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
-      "id": "ece2ced0f1be452b69e1",
-      "sourceName": "수만휘",
-      "title": "부산대 한화 계약학과 설립이네요.",
-      "preview": "[🔥학부모님 자유게시판] 부산대 LG전자 계약학과에 이어 두번째 한화 계약학과 설립입니다. 올해 대박 예상입니다! https://naver.me/xAfElL8u",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605914",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
-      "id": "5697520366cc650e30df",
-      "sourceName": "수만휘",
-      "title": "의외로 엄청난 공항",
-      "preview": "[😃수험생 일상글 게시판] 수만휘 카페 글",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605912",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
-      "id": "cb0f80c53e2a57e5695b",
-      "sourceName": "수만휘",
-      "title": "중3 수학 선행",
-      "preview": "[┃Team11 수험생 게시판] 학교에서는 중2때 수학 교과우수상도 받고 그랬는데 학원에서 진도를 한학기 정도만 나가는게 좋다고 해서 거의 현행 하듯이 학원을 다녔습니다. 주변 아이들과 비교해보니 너무 뒤쳐지는것 같",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605911",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
-      "id": "da322aa531d1919781bc",
-      "sourceName": "수만휘",
-      "title": "수학 3 언제쯤 안정적으로 나올까요",
-      "preview": "[🔥재/반/N수 자유게시판] 반수생이고 작년에는 수학으로 최저를 맞추지 않아 얼마전에 개념 한바퀴 돌렸고 반수를 늦게 시작해서 아직 기출은 거의 시작도 못했습니다(작년에도 기출돌리지 않음) 모고성적은 4등급인데(미적",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605908",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
-      "id": "66537533273773119dbe",
-      "sourceName": "수만휘",
-      "title": "내신2.6 치위생학과",
-      "preview": "[🔥이과 수시 자유게시판] 빨리 취업하고싶다는 마음이 요새 들어서 치위생을 교과로 넣어보려해요 단대 치위생을 하향으로 써볼까 해요 치위생도 학교네임이 중요한지, 간호학과처럼 모병원유무가 중요한지 궁금합니다 +치위생이",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605907",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
-      "id": "d4eaedb5400c29db4639",
-      "sourceName": "수만휘",
-      "title": "수시 일정 앱이야 . 박기호논술 쌤이 만든거야.",
-      "preview": "[🔥문과 수시 자유게시판] 박기호 선생님이 직접 만든 수험생 선물2 - 수시원서접수 일정표 2027 수시 원서접수 일정 · 박기호논술",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605906",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
-      "id": "5d9037c9ec36f413fc78",
-      "sourceName": "수만휘",
-      "title": "2028입시에서 융합(등급안나옴)과목",
-      "preview": "[🔥학부모님 자유게시판] a b c로 절대평가되는 융합과목은 등급계산시 아예 제외되나요 수시 교과로 지망시 융합과목은 어떻게 처리되는지 궁굼합니다",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605905",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
-      "id": "b498090ed514c0e5d141",
-      "sourceName": "수만휘",
-      "title": "학벌콤플렉스 때문에 미치겠슴다…따끔하게 고민상담 부탁드립니다",
-      "preview": "[🔥재/반/N수 자유게시판] 안녕하세요 작수 망치고 가까운 전문대간 스무살입니다. 작년에 7월까지 관독다니면서 평균 2등급은 항상 받았었습니다. 그런데 어느순간 관독 같이 다니던 친구들이 다같이 미쳐서 연애하고 저는",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605904",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
-      "id": "69432a2865f5364adc28",
-      "sourceName": "수만휘",
-      "title": "부산대 기계공학부 지역인재 학종 가능성 어느 정도로 보시나요?",
-      "preview": "[🔥이과 수시 자유게시판] 현재 부산에 있는 고등학교에 재학 중인 고3입니다. 부산대 기계공학부 지역인재 학생부종합전형을 생각하고 있는데, 제 성적과 생기부를 봤을 때 어느 정도 가능성이 있는지 현실적으로 의견을 듣",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605903",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
     }
