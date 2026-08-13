@@ -1,10 +1,73 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-13T20:02:31.915533Z",
-  "checkedAt": "2026-08-13T20:02:31.915528Z",
+  "updatedAt": "2026-08-13T20:59:13.089906Z",
+  "checkedAt": "2026-08-13T20:59:13.089901Z",
   "today": "2026-08-14",
   "count": 40,
   "notices": [
+    {
+      "id": "bba86d19d0767a62aefc",
+      "sourceName": "수만휘",
+      "title": "영어 모의고사 등급 올리기ㅠㅠ",
+      "preview": "[┃Team09 수험생 게시판] 현재 고2 인데 고1 때는 2-3등급 와리가리했어요 그런데 이번 고2 올라오는 겨울방학부터 영어를 손을 거의 놨어요.. 모의고사랑 단어랑 다.. 고2 모의고사 보니까 등급이ㅠㅠ당연히 ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605965",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
+      "id": "5dae118f604fd8366dd3",
+      "sourceName": "수만휘",
+      "title": "사관학교 수시 우선선발 합격후기",
+      "preview": "[광릉한샘 학원문의 및 진학상담] 수능 5,6등급 사관학교 수시 우선선발 합격후기 https://blog.naver.com/kdhactive/223367752525 https://youtu.be/I5BCaLHOgQY",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605964",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
+      "id": "aa21a02c50972536044b",
+      "sourceName": "수만휘",
+      "title": "고3 4점극초반 수시원서 체크해주세요ㅠㅠ",
+      "preview": "[┏Team08 수험생 게시판] 안녕하세요. 고3 공학계열 희망하고있는 학생입니다. 총 내신 4.03으로 마무리했습니다. 1학년 1학기가 3.22로 제일 높고 2학년 1학기가 4.6으로 제일 낮아요.. 1-1빼고는 ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605963",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
+      "id": "9eb62a61ebac14026c3b",
+      "sourceName": "수만휘",
+      "title": "睡眠 記錄·起牀",
+      "preview": "[🔥재/반/N수 자유게시판] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605962",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
+      "id": "3dcc847ca91251de80d0",
+      "sourceName": "수만휘",
+      "title": "올해는 역대 최초로 직업탐구영역 수능 만점자도 나왔으면 좋겠어요",
+      "preview": "[티키타카페 게시판] 수능이 다가오다 보니 이런저런 생각을 하다가 문득 이런 생각이 들었습니다. 수능이라고 하면 보통 국어·수학·영어·사회탐구·과학탐구 이야기가 많이 나오지만, 직업탐구를 선택해서 열심히 준비하고 계",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605961",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
+      "id": "e8c4f9fa1c1504270464",
+      "sourceName": "수만휘",
+      "title": "고2 수학 인강 추천",
+      "preview": "[┃Team09 수험생 게시판] 내년에 칠 수능을 학원 안 다니고 인강 들으면서 혼자 공부할 생각인데 수학이 많이 부족해요 그냥 아예 노베고 쉬워보이면서도 어려운 문제를 풀지도 못해요 대수, 미적1, 확통 인강 추천",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605960",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
+      "id": "bb4ea28c0d4c62f45cfa",
+      "sourceName": "수만휘",
+      "title": "지방 일반고 내신 4.66 간호학과 현실 조언 부탁드립니다 ㅠㅠ",
+      "preview": "[😃수험생 일상글 게시판] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605959",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
     {
       "id": "eb28b56480b2ee5a76e6",
       "sourceName": "수만휘",
@@ -299,69 +362,6 @@
       "title": "3초반 내신 지거국 대학 내신카드 봐주세요",
       "preview": "[🔥문과 수능 자유게시판] 애매한 인서울 인경기를 갈바에야 지거국 가서 공기업 들어가는게 저에게 훨씬 좋다고 판단했습니다..! 3.34의 내신에 강원대 전북대 전남대 충북대는 어떤가요?? (전부 교과전형) 많이들 쓰",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605924",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
-      "id": "5baff069df0ec1e9319e",
-      "sourceName": "수만휘",
-      "title": "일반고 3.9 경영 수시카드 도와주세요",
-      "preview": "[🔥문과 수시 자유게시판] 1-1 : 4.5 1-2 : 4.3 2-1 : 3.9 2-2 : 3.7 3-1 : 2.8 최종 전교과 :3.9 국영수사 (주요교과) :3.7 수학이 좀 낮고 영어가 제일 높게나와요 생기부는",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605923",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
-      "id": "ead3d3ebd755281caade",
-      "sourceName": "수만휘",
-      "title": "단국대 치위생",
-      "preview": "[┗보건 계열 게시판] 단국대 치위생은 인기가 많은걸로 아는데 지원하는 사람 대부분 1-3학년 생기부가 치위생일까요? 제가 1학년1 방송 1학년 2학기~2학년 보건,간호계열 3학년 치위생 으로 채웠습니다. 제 등급이",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605922",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
-      "id": "8bf9a4bdf16d69d6d3fd",
-      "sourceName": "수만휘",
-      "title": "기균,장애인,사배자 전형에서 입결이 0.5 정도 차이난다하면 넣음?",
-      "preview": "[┏Team08 수험생 게시판] 기균이나 장애인이나 사배자 전형 같은 경우에는 1~2명만 뽑잖아요 근데 만약 여러분 내신이 아래로 0.5 정도 차이난다 하면 넣으실 거에요 안 넣으실 거에요? 학생부종합 일때요",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605921",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
-      "id": "9f7abf56bbd5eb5b9bf1",
-      "sourceName": "수만휘",
-      "title": "핸드폰 중독 고1",
-      "preview": "[┃Team10 수험생 게시판] 안녕하세요 핸드폰 중독 고1 입니다.. 고등학교 입학하고 첫 방학인만큼 열심히 의미있게 보내고 싶었는데.. 공부는 안 하고 하루종일 핸드폰만 하다보니 벌써 다음주가 개학이에요.... ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605920",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
-      "id": "018f2d80cb55d0264099",
-      "sourceName": "수만휘",
-      "title": "이과 1점대",
-      "preview": "[🔥이과 수시 자유게시판] 내신은 1.5고 물화생12 미기확 전부 이수했는데 미적,물리 등급이 3등급입니다 반도체 공학과 지망하는데 불리할까요? 과학등급은 1.5입니다",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605919",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
-      "id": "c47b59d3bc4cd5722d64",
-      "sourceName": "수만휘",
-      "title": "논술 시험 하루 2탕 가능한가? 박기호논술 강사가 직접 만든 앱입니다.",
-      "preview": "[🔥학부모님 자유게시판] https://partner.kihoedu.com/travel/ 박기호선생님이 직접 만든 수험생 선물3 - 논술 하루 두탕 가능한가? 논술 이동 가이드 · 박기호논술",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605918",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
-      "id": "764c1de100b963ecff74",
-      "sourceName": "수만휘",
-      "title": "강원 일반고 내신 3.00카드 봐주데욤ㅠㅠ",
-      "preview": "[😃수험생 일상글 게시판] 상향- 가천 간호 지역균형 면접 건양 간호 면접 (건양대식 2.8) 적정- 공주대 간호학과 (작년 입결 50%가 3.2) 한림대 간호학과 지역인재 면접( 신설이라 작년 정 보가 없어 도박일",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29605917",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
     }
