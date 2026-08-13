@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-13",
-  "updatedAt": "2026-08-13T06:14:17.310Z",
-  "checkedAt": "2026-08-13T06:14:17.310Z",
+  "updatedAt": "2026-08-13T08:01:31.687Z",
+  "checkedAt": "2026-08-13T08:01:31.687Z",
   "sources": [
     {
       "id": "u001",
@@ -1539,6 +1539,17 @@
       "dateText": "2026.08.13"
     },
     {
+      "id": "e82d7a16ada01fb22b58",
+      "univId": "u044",
+      "univName": "한예종",
+      "title": "2027학년도 11월입시 예술사과정 정원외전형 지원 현황",
+      "preview": "한예종 입학 공지사항 미리보기",
+      "url": "https://www.karts.ac.kr/cop/bbs/selectBoardArticle.do?bbsId=BBSMSTR_000000000007&nttNo=70328",
+      "homeUrl": "https://www.karts.ac.kr/main/appl.do",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13"
+    },
+    {
       "id": "15f8c6fa2b2b7e9a4822",
       "univId": "u042",
       "univName": "한양대(서울)",
@@ -1554,6 +1565,17 @@
       "univId": "u123",
       "univName": "공군사관학교",
       "title": "2027학년도 제79기 공군사관생도 1차시험 합격자 발표 및 2차시험 등록 안내",
+      "preview": "공군사관학교 입학 공지사항 미리보기",
+      "url": "https://rokaf.airforce.mil.kr/bbs/afaadmission/2089/43146/artclView.do",
+      "homeUrl": "https://rokaf.airforce.mil.kr/sites/afaadmission/index.do",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13"
+    },
+    {
+      "id": "5a8d6f705b0bf062baa2",
+      "univId": "u123",
+      "univName": "공군사관학교",
+      "title": "2027학년도 제79기 공군사관생도 1차시험 합격자 발표 및 2차시험 등록 안내(수정)",
       "preview": "공군사관학교 입학 공지사항 미리보기",
       "url": "https://rokaf.airforce.mil.kr/bbs/afaadmission/2089/43146/artclView.do",
       "homeUrl": "https://rokaf.airforce.mil.kr/sites/afaadmission/index.do",
@@ -2830,5 +2852,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=26 empty=13 fail=177 fresh=98"
+  "statusReason": "ok=25 empty=7 fail=184 fresh=100"
 }
