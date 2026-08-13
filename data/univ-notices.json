@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-13",
-  "updatedAt": "2026-08-13T04:43:36.595Z",
-  "checkedAt": "2026-08-13T04:43:36.595Z",
+  "updatedAt": "2026-08-13T06:14:17.310Z",
+  "checkedAt": "2026-08-13T06:14:17.310Z",
   "sources": [
     {
       "id": "u001",
@@ -1539,6 +1539,17 @@
       "dateText": "2026.08.13"
     },
     {
+      "id": "15f8c6fa2b2b7e9a4822",
+      "univId": "u042",
+      "univName": "한양대(서울)",
+      "title": "2027학년도 정시 작곡과 청음 예시문제",
+      "preview": "한양대(서울) 입학 공지사항 미리보기",
+      "url": "https://go.hanyang.ac.kr/web/notice/notice_view.do?bn=21616&m_type=IPSI",
+      "homeUrl": "https://go.hanyang.ac.kr/gate.do",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13"
+    },
+    {
       "id": "a87b6eac8907ee12399c",
       "univId": "u123",
       "univName": "공군사관학교",
@@ -2819,5 +2830,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=21 empty=20 fail=175 fresh=97"
+  "statusReason": "ok=26 empty=13 fail=177 fresh=98"
 }
