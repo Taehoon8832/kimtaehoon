@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-13",
-  "updatedAt": "2026-08-13T08:01:31.687Z",
-  "checkedAt": "2026-08-13T08:01:31.687Z",
+  "updatedAt": "2026-08-13T09:08:34.247Z",
+  "checkedAt": "2026-08-13T09:08:34.247Z",
   "sources": [
     {
       "id": "u001",
@@ -1759,6 +1759,17 @@
       "dateText": "2026.08.12"
     },
     {
+      "id": "0ce26f15d53f4252862b",
+      "univId": "u138",
+      "univName": "고려대(세종)",
+      "title": "재외국민/새터민 공지사항 2027학년도 재외국민(정원외2%) 특별전형 약학과 1단계 합격자 발표 및 면접고사 안내",
+      "preview": "고려대(세종) 입학 공지사항 미리보기",
+      "url": "https://oku.korea.ac.kr/sejong/cms/CMN_CON/MainLink.do?GBN=BA&TEMP_CODE=IPSI_D&BASE_SITE_NO=3&CONFIG_CD=C1435&CONFIG_SEQ=1&SUB_SEQ=4&SITE_NO=3&BOARD_SEQ=8&BBS_SEQ=1969",
+      "homeUrl": "https://oku.korea.ac.kr/sejong/index.do",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
       "id": "fcd2cb3a593ffcf50957",
       "univId": "u138",
       "univName": "고려대(세종)",
@@ -1770,12 +1781,23 @@
       "dateText": "2026.08.12"
     },
     {
-      "id": "0ce26f15d53f4252862b",
+      "id": "2c87880e6279ac5cb997",
       "univId": "u138",
       "univName": "고려대(세종)",
-      "title": "재외국민/새터민 공지사항 2027학년도 재외국민(정원외2%) 특별전형 약학과 1단계 합격자 발표 및 면접고사 안내",
-      "preview": "고려대(세종) 입학 공지사항 미리보기",
-      "url": "https://oku.korea.ac.kr/sejong/cms/CMN_CON/MainLink.do?GBN=BA&TEMP_CODE=IPSI_D&BASE_SITE_NO=3&CONFIG_CD=C1435&CONFIG_SEQ=1&SUB_SEQ=4&SITE_NO=3&BOARD_SEQ=8&BBS_SEQ=1969",
+      "title": "해외 전 과정 공지사항 2027학년도 전기 전 교육과정 해외이수자 특별전형 약학과 면접고사 안내",
+      "preview": "재외국민/새터민 공지사항 2027학년도 재외국민(정원외2%) 특별전형 약학과 1단계",
+      "url": "https://oku.korea.ac.kr/sejong/cms/CMN_CON/MainLink.do?GBN=BA&TEMP_CODE=IPSI_D&BASE_SITE_NO=3&CONFIG_CD=C1435&CONFIG_SEQ=1&SUB_SEQ=1&SITE_NO=3&BOARD_SEQ=8&BBS_SEQ=1970",
+      "homeUrl": "https://oku.korea.ac.kr/sejong/index.do",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
+      "id": "623fbd1e1da8ba09bd24",
+      "univId": "u138",
+      "univName": "고려대(세종)",
+      "title": "해외 전 과정 공지사항 2027학년도 전기 전 교육과정 해외이수자 특별전형 약학과 면접고사 안내",
+      "preview": "해외 전 과정 공지사항 2027학년도 전기 전 교육과정 해외이수자 특별전형 모집요강",
+      "url": "https://oku.korea.ac.kr/sejong/cms/CMN_CON/MainLink.do?GBN=BA&TEMP_CODE=IPSI_D&BASE_SITE_NO=3&CONFIG_CD=C1435&CONFIG_SEQ=1&SUB_SEQ=7&SITE_NO=3&BOARD_SEQ=8&BBS_SEQ=1970",
       "homeUrl": "https://oku.korea.ac.kr/sejong/index.do",
       "dateISO": "2026-08-12",
       "dateText": "2026.08.12"
@@ -2852,5 +2874,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=25 empty=7 fail=184 fresh=100"
+  "statusReason": "ok=21 empty=25 fail=170 fresh=102"
 }
