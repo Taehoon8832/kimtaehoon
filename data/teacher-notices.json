@@ -1,10 +1,127 @@
 {
   "source": "https://cafe.daum.net/applymate/Alvz",
-  "updatedAt": "2026-08-13T12:30:31.741108Z",
-  "checkedAt": "2026-08-13T12:30:31.741103Z",
+  "updatedAt": "2026-08-13T14:06:08.232536Z",
+  "checkedAt": "2026-08-13T14:06:08.232531Z",
   "today": "2026-08-13",
   "count": 40,
   "notices": [
+    {
+      "id": "898a44e6d2999229dbef",
+      "sourceName": "사립학교 정교사",
+      "title": "[인천] 가천학원(신명여고) - 국어,수학,도덕윤리,화학",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13"
+    },
+    {
+      "id": "e267d603d875c9485183",
+      "sourceName": "사립학교 정교사",
+      "title": "[경기] 신한학원(신한중·고) - 미술,물리",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13"
+    },
+    {
+      "id": "118123198de826e5522e",
+      "sourceName": "사립학교 정교사",
+      "title": "[충남] 영명학원(영명중·고) - 생물,국어,수학",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13"
+    },
+    {
+      "id": "996a1e0bba47494d90dd",
+      "sourceName": "사립학교 정교사",
+      "title": "[서울] 서울현대학원(현대고) - 국어 外",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13"
+    },
+    {
+      "id": "c1eaf125705ed46beed2",
+      "sourceName": "사립학교 정교사",
+      "title": "[서울] 상문학원(상문고) - 영어 外",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13"
+    },
+    {
+      "id": "d187df8f717af0521432",
+      "sourceName": "사립학교 정교사",
+      "title": "[서울] 리라학원(리라아트고) - 음악(실용음악)",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13"
+    },
+    {
+      "id": "eb9378fe5d11a3d1e311",
+      "sourceName": "사립학교 정교사",
+      "title": "[서울] 한영학원(한영외고 外) - 수학 外",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13"
+    },
+    {
+      "id": "10e52938c7d37a0b9421",
+      "sourceName": "사립학교 정교사",
+      "title": "[서울] 대원학원(대원국제중 外) - 수학 外",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13"
+    },
+    {
+      "id": "98f823fb8e390f7ea111",
+      "sourceName": "사립학교 정교사",
+      "title": "[서울] 꿈이있는미래(영훈고) - 역사 外",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13"
+    },
+    {
+      "id": "bfa8470b368f672632c5",
+      "sourceName": "사립학교 정교사",
+      "title": "[서울] 경희학원(경희고 外) - 수학 外",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13"
+    },
+    {
+      "id": "54b4ce47caa8e70402ce",
+      "sourceName": "사립학교 정교사",
+      "title": "[서울] 홍익학원(홍대부속여고 外) - 수학 外",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13"
+    },
+    {
+      "id": "8cc790503cc0312e8941",
+      "sourceName": "사립학교 정교사",
+      "title": "[서울] 중앙대학교(중대부고) - 국어 外",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13"
+    },
+    {
+      "id": "a17e0e7af5d95104bae1",
+      "sourceName": "사립학교 정교사",
+      "title": "[서울] 단국대학(단대부고 外) - 수학 外",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13"
+    },
     {
       "id": "e4126fabe4202ed9cd93",
       "sourceName": "사립학교 정교사",
@@ -243,123 +360,6 @@
       "id": "0cf8b6186f6f50079a55",
       "sourceName": "사립학교 정교사",
       "title": "[부산] 해룡학숙 - 사회 (예정)",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13"
-    },
-    {
-      "id": "9a26a9a125c3756bb4dd",
-      "sourceName": "사립학교 정교사",
-      "title": "[부산] 훈성학원 - 국어 수학 (예정)",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13"
-    },
-    {
-      "id": "f205dd8a760b4aca3611",
-      "sourceName": "사립학교 정교사",
-      "title": "[충남] 남양학원(한국미래문화고) - 영어, 일반사회, 정보컴퓨터(1, 2차 전체 위탁)",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13"
-    },
-    {
-      "id": "25e96ee2f4ecfc15b70d",
-      "sourceName": "사립학교 정교사",
-      "title": "[전북] 백화학원(백화고) - 일반사회,수학",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13"
-    },
-    {
-      "id": "ba09392bf1d8920db821",
-      "sourceName": "사립학교 정교사",
-      "title": "[서울] 영파학원(영파여중, 영파여고) - 일반사회2, 수학1, 물리1",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13"
-    },
-    {
-      "id": "b51c1c202d1d3ab48059",
-      "sourceName": "사립학교 정교사",
-      "title": "송곡학원 - 영어1 수학1 조리1 체육2",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13"
-    },
-    {
-      "id": "63033d5049febfac61e3",
-      "sourceName": "사립학교 정교사",
-      "title": "건국대학교 - 물리 지리 국어",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13"
-    },
-    {
-      "id": "b104d73fc92662a7529f",
-      "sourceName": "사립학교 정교사",
-      "title": "[인천] 제일학원 - 국어 (예정)",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13"
-    },
-    {
-      "id": "cbcc169f49c0664d1e4e",
-      "sourceName": "사립학교 정교사",
-      "title": "[인천] 정석인하학원 - 국 생 정 기술 / 체육 / 국 영 기계 전기 전자 (예정)",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13"
-    },
-    {
-      "id": "fdb6b001ceb4fc91f945",
-      "sourceName": "사립학교 정교사",
-      "title": "[인천] 인항학원 - 국어 수학 (예정)",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13"
-    },
-    {
-      "id": "1d63623d9864ea845a6e",
-      "sourceName": "사립학교 정교사",
-      "title": "[인천] 우림교육재단 - 비공개",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13"
-    },
-    {
-      "id": "93181f65c0a36d0fe6fd",
-      "sourceName": "사립학교 정교사",
-      "title": "[인천] 신호학원 - 비공개",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13"
-    },
-    {
-      "id": "4e8a97512e1c8fa9c793",
-      "sourceName": "사립학교 정교사",
-      "title": "[인천] 신성학원 - 국어 영어 사회 일본어 (예정)",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13"
-    },
-    {
-      "id": "3fc48c231f22b1934f55",
-      "sourceName": "사립학교 정교사",
-      "title": "[인천] 송도학원 - 물리 화학 미술 (예정)",
       "preview": "",
       "url": "",
       "dateISO": "2026-08-13",
