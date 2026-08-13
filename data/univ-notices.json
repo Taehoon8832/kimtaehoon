@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-13",
-  "updatedAt": "2026-08-13T00:13:44.562Z",
-  "checkedAt": "2026-08-13T00:13:44.562Z",
+  "updatedAt": "2026-08-13T02:51:52.258Z",
+  "checkedAt": "2026-08-13T02:51:52.258Z",
   "sources": [
     {
       "id": "u001",
@@ -1528,6 +1528,17 @@
   ],
   "notices": [
     {
+      "id": "4f9afaf9da7f63ac4750",
+      "univId": "u032",
+      "univName": "육군사관학교",
+      "title": "★ 2027학년도(제87기) 1차시험 합격자 발표 및 2차시험 접수 관련 안내 ★",
+      "preview": "육군사관학교 입학 공지사항 미리보기",
+      "url": "https://www.kma.ac.kr:461/bbs/kma/160/29260/artclView.do",
+      "homeUrl": "https://www.kma.ac.kr:461/",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13"
+    },
+    {
       "id": "a87b6eac8907ee12399c",
       "univId": "u123",
       "univName": "공군사관학교",
@@ -1535,6 +1546,17 @@
       "preview": "공군사관학교 입학 공지사항 미리보기",
       "url": "https://rokaf.airforce.mil.kr/bbs/afaadmission/2089/43146/artclView.do",
       "homeUrl": "https://rokaf.airforce.mil.kr/sites/afaadmission/index.do",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13"
+    },
+    {
+      "id": "0b47010aee3662db3376",
+      "univId": "u044",
+      "univName": "한예종",
+      "title": "입시정보 확인 시 유의사항 안내!!!",
+      "preview": "한예종 입학 공지사항 미리보기",
+      "url": "https://www.karts.ac.kr/cop/bbs/selectBoardArticle.do?bbsId=BBSMSTR_000000000007&nttNo=70327",
+      "homeUrl": "https://www.karts.ac.kr/main/appl.do",
       "dateISO": "2026-08-13",
       "dateText": "2026.08.13"
     },
@@ -1737,10 +1759,10 @@
       "dateText": "2026.08.11"
     },
     {
-      "id": "78bdda9bf91b962e1542",
+      "id": "a8949b7b3f2f1f02f959",
       "univId": "u044",
       "univName": "한예종",
-      "title": "2027학년도 10월입시 일반전형 예술사과정 지원자 현황 안내(26.8.12...",
+      "title": "2027학년도 10월입시 일반전형 예술사과정 지원자 현황 안내(26.8.13...",
       "preview": "한예종 입학 공지사항 미리보기",
       "url": "https://www.karts.ac.kr/cop/bbs/selectBoardArticle.do?bbsId=BBSMSTR_000000000007&nttNo=70324",
       "homeUrl": "https://www.karts.ac.kr/main/appl.do",
@@ -2797,5 +2819,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=25 empty=4 fail=187 fresh=95"
+  "statusReason": "ok=26 empty=27 fail=163 fresh=97"
 }
