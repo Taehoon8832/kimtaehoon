@@ -67,10 +67,10 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-13T22:23:40.754235Z",
-  "checkedAt": "2026-08-13T22:23:40.754231Z",
+  "updatedAt": "2026-08-13T23:09:15.958055Z",
+  "checkedAt": "2026-08-13T23:09:15.958050Z",
   "today": "2026-08-14",
-  "count": 80,
+  "count": 72,
   "notices": [
     {
       "id": "60ad0c9713f794ef1d9d",
@@ -79,6 +79,16 @@
       "title": "교육부, 아셈-듀오 장학생 대상 수기 공모전 우수작 8개 선정",
       "preview": "교육부(장관 최교진)와 아셈-듀오(ASEM-DUO) 사무국*(사무국장 성극제, 이하 ‘사무국’)은 ‘제2회 수기 공모전’의 최종 우수작 8편을 선정하였다. * 아셈(ASEM) 회원국(아시아 21개국, 유럽 30개국)",
       "url": "https://blog.naver.com/moeblog/224377766710",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
+      "id": "1bb666e57a7de82e15c8",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "'첨단학과 인기 속 편입 대세' 김영편입 '2028 대비 상위권 대학 편입 전략 설명회'",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623087",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
     },
@@ -179,16 +189,6 @@
       "title": "“수학 어려울 땐 '서울셈'이 찾아가요”…서울시교육청, 난산 학생 지원 프로그램 운영",
       "preview": "에듀프레스 소식",
       "url": "https://www.edupress.kr/news/articleView.html?idxno=30398",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13"
-    },
-    {
-      "id": "c82a2dbef4212bddffbb",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "[단독] ‘정시40% 폐지하라’ 서울16개대 공동 대응 나선다.. ‘중도이탈률/학업성취도 국교위 제출’",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623068",
       "dateISO": "2026-08-13",
       "dateText": "2026.08.13"
     },
@@ -433,16 +433,6 @@
       "dateText": "2026.08.05"
     },
     {
-      "id": "ad968dd9343977fac20f",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2027학년도 대학원 정원조정 및 설치·운영 세부기준",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106856&lev=0&m=0303&s=moe",
-      "dateISO": "2026-08-05",
-      "dateText": "2026.08.05"
-    },
-    {
       "id": "00801a3b0b64c5657ace",
       "sourceId": "sen",
       "sourceName": "서울시교육청",
@@ -461,36 +451,6 @@
       "url": "https://www.sen.go.kr/user/bbs/BD_selectBbsList.do?q_bbsSn=1036",
       "dateISO": "2026-07-28",
       "dateText": "2026.07.28"
-    },
-    {
-      "id": "7a51baeb19e84fa8436a",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2026년도 산업교육 및 산학연협력 시행계획",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106791&lev=0&m=0303&s=moe",
-      "dateISO": "2026-07-27",
-      "dateText": "2026.07.27"
-    },
-    {
-      "id": "90eef674cdaee188ca91",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2026년도 법학전문대학원 취약계층 장학금 지원사업 기본계획",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106779&lev=0&m=0303&s=moe",
-      "dateISO": "2026-07-27",
-      "dateText": "2026.07.27"
-    },
-    {
-      "id": "3193c29867d87fba9a8c",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2026 대학 창업 운영 가이드 발간 안내",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106786&lev=0&m=0303&s=moe",
-      "dateISO": "2026-07-27",
-      "dateText": "2026.07.27"
     },
     {
       "id": "55fd2008f91571880899",
@@ -593,16 +553,6 @@
       "dateText": "2026.07.09"
     },
     {
-      "id": "1a93bd0002bdc262c36e",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2026년 전문대학 혁신지원사업 기본계획",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106665&lev=0&m=0303&s=moe",
-      "dateISO": "2026-07-09",
-      "dateText": "2026.07.09"
-    },
-    {
       "id": "0a6d6c9a7e12c53b89c4",
       "sourceId": "jongro",
       "sourceName": "종로학원",
@@ -621,26 +571,6 @@
       "url": "https://www.jongro.co.kr/reports/examAnalysisView.asp?idx=7688&page=1&s_academicyear=&s_option1=&s_option2=&s_option3=&s_option4=&s_key=&s_value=&s_intPageSize=12",
       "dateISO": "2026-07-09",
       "dateText": "2026.07.09"
-    },
-    {
-      "id": "f1cb8fe6cd24bc39097c",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2026학년도 전국 전문대학 현황",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106664&lev=0&m=0303&s=moe",
-      "dateISO": "2026-07-08",
-      "dateText": "2026.07.08"
-    },
-    {
-      "id": "ab224be6ad030a2dd9d6",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2026학년도 등록금 통계조사분석시스템 자료 입력 안내",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106660&lev=0&m=0303&s=moe",
-      "dateISO": "2026-07-08",
-      "dateText": "2026.07.08"
     },
     {
       "id": "fda266d28d71bb171f39",
@@ -689,16 +619,6 @@
       "title": "2027학년도 대학수학능력시험 시행...",
       "preview": "평가원보도 공지",
       "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095611&lev=0&m=0302&s=suneung",
-      "dateISO": "2026-07-01",
-      "dateText": "2026.07.01"
-    },
-    {
-      "id": "a0aa87a1e4180dd8cc5f",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2026학년도 2학기 학자금대출 기본계획",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106606&lev=0&m=0303&s=moe",
       "dateISO": "2026-07-01",
       "dateText": "2026.07.01"
     },
