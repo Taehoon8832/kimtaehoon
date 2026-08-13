@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-14",
-  "updatedAt": "2026-08-13T17:52:50.243Z",
-  "checkedAt": "2026-08-13T17:52:50.243Z",
+  "updatedAt": "2026-08-13T18:50:47.992Z",
+  "checkedAt": "2026-08-13T18:50:47.992Z",
   "sources": [
     {
       "id": "u001",
@@ -1704,6 +1704,17 @@
       "dateText": "2026.08.12"
     },
     {
+      "id": "f557e496a4dc0fb08e2c",
+      "univId": "u127",
+      "univName": "우석대(진천)",
+      "title": "수시/정시 2027학년도 수시모집 안내자료",
+      "preview": "우석대(진천) 입학 공지사항 미리보기",
+      "url": "https://www.woosuk.ac.kr/?menu=42&mode=view&no=362227",
+      "homeUrl": "https://www.woosuk.ac.kr/WoosukEntrance.do",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
       "id": "61f91597641b667c74e4",
       "univId": "u232",
       "univName": "육군3사관학교",
@@ -2298,17 +2309,6 @@
       "dateText": "2026.08.04"
     },
     {
-      "id": "d44c9321d197383a1292",
-      "univId": "u176",
-      "univName": "우석대(전주)",
-      "title": "수시/정시 2027학년도 예비신입생을 위한 특별혜택 안내",
-      "preview": "우석대(전주) 입학 공지사항 미리보기",
-      "url": "http://www.woosuk.ac.kr/?menu=42&mode=view&no=362226",
-      "homeUrl": "http://www.woosuk.ac.kr/WoosukEntrance.do",
-      "dateISO": "2026-08-04",
-      "dateText": "2026.08.04"
-    },
-    {
       "id": "0d7f7ece4f7575104a29",
       "univId": "u127",
       "univName": "우석대(진천)",
@@ -2316,6 +2316,17 @@
       "preview": "우석대(진천) 입학 공지사항 미리보기",
       "url": "https://www.woosuk.ac.kr/?menu=42&mode=view&no=362226",
       "homeUrl": "https://www.woosuk.ac.kr/WoosukEntrance.do",
+      "dateISO": "2026-08-04",
+      "dateText": "2026.08.04"
+    },
+    {
+      "id": "d44c9321d197383a1292",
+      "univId": "u176",
+      "univName": "우석대(전주)",
+      "title": "수시/정시 2027학년도 예비신입생을 위한 특별혜택 안내",
+      "preview": "우석대(전주) 입학 공지사항 미리보기",
+      "url": "http://www.woosuk.ac.kr/?menu=42&mode=view&no=362226",
+      "homeUrl": "http://www.woosuk.ac.kr/WoosukEntrance.do",
       "dateISO": "2026-08-04",
       "dateText": "2026.08.04"
     },
@@ -2874,5 +2885,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=21 empty=30 fail=165 fresh=102"
+  "statusReason": "ok=23 empty=25 fail=168 fresh=103"
 }
