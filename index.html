@@ -3533,12 +3533,10 @@
         <div class="career-api-panel is-active" id="careerPanelSchool" role="tabpanel" data-career-panel="school">
           <div class="career-api-toolbar">
             <select id="careerSchoolGubun" aria-label="학교 분류">
-              <option value="대학교" selected>대학교</option>
-              <option value="고등학교">고등학교</option>
-              <option value="중학교">중학교</option>
-              <option value="초등학교">초등학교</option>
-              <option value="특수학교">특수학교</option>
-              <option value="기타">기타</option>
+              <option value="univ_list" selected>대학교</option>
+              <option value="high_list">고등학교</option>
+              <option value="midd_list">중학교</option>
+              <option value="elem_list">초등학교</option>
             </select>
             <input type="search" id="careerSchoolQ" placeholder="학교명 검색…" autocomplete="off" spellcheck="false" />
             <button type="button" id="careerSchoolBtn">조회</button>
@@ -3552,8 +3550,8 @@
         <div class="career-api-panel" id="careerPanelMajor" role="tabpanel" data-career-panel="major" hidden>
           <div class="career-api-toolbar">
             <select id="careerMajorGubun" aria-label="학과 학교 분류">
-              <option value="대학교" selected>대학교</option>
-              <option value="고등학교">고등학교</option>
+              <option value="univ_list" selected>대학교</option>
+              <option value="high_list">고등학교</option>
             </select>
             <input type="search" id="careerMajorQ" placeholder="학과명 검색…" autocomplete="off" spellcheck="false" />
             <button type="button" id="careerMajorBtn">조회</button>
@@ -6249,7 +6247,11 @@
 
         // 인증키는 화면에 절대 표시하지 않음 (DOM/상태문구/결과 링크에 넣지 않음)
         const TOKEN = atob("NTNjOGE5YmFlOTVlM2ZjNDM2YTY4YWY2NmNkODM4YzE=");
-        const BASE = "https://www.career.go.kr/cnet/openapi/getOpenApi";
+        const API = {
+          school: "https://www.career.go.kr/cnet/openapi/getOpenApi",
+          major: "https://www.career.go.kr/cnet/openapi/getOpenApi",
+          job: "https://www.career.go.kr/cnet/front/openapi/jobs.json",
+        };
 
         const tabs = Array.from(root.querySelectorAll("[data-career-tab]"));
         const panels = Array.from(root.querySelectorAll("[data-career-panel]"));
@@ -6283,6 +6285,7 @@
         function asList(payload) {
           if (!payload) return [];
           if (Array.isArray(payload)) return payload;
+          if (Array.isArray(payload.jobs)) return payload.jobs;
           const dataSearch = payload.dataSearch || payload.datasearch || payload;
           const content = dataSearch?.content ?? dataSearch?.Content ?? payload.content;
           if (Array.isArray(content)) return content;
@@ -6339,7 +6342,7 @@
 
         async function runSchool() {
           const q = String(document.getElementById("careerSchoolQ")?.value || "").trim();
-          const gubun = document.getElementById("careerSchoolGubun")?.value || "대학교";
+          const gubun = document.getElementById("careerSchoolGubun")?.value || "univ_list";
           const status = document.getElementById("careerSchoolStatus");
           const box = document.getElementById("careerSchoolResults");
           if (!q) {
@@ -6350,7 +6353,7 @@
           if (status) status.textContent = "조회 중…";
           if (box) box.innerHTML = `<div class="career-api-empty">결과를 불러오는 중입니다…</div>`;
           const url =
-            `${BASE}?apiKey=${encodeURIComponent(TOKEN)}` +
+            `${API.school}?apiKey=${encodeURIComponent(TOKEN)}` +
             `&svcType=api&svcCode=SCHOOL&contentType=json` +
             `&gubun=${encodeURIComponent(gubun)}` +
             `&searchSchulNm=${encodeURIComponent(q)}` +
@@ -6388,7 +6391,7 @@
 
         async function runMajor() {
           const q = String(document.getElementById("careerMajorQ")?.value || "").trim();
-          const gubun = document.getElementById("careerMajorGubun")?.value || "대학교";
+          const gubun = document.getElementById("careerMajorGubun")?.value || "univ_list";
           const status = document.getElementById("careerMajorStatus");
           const box = document.getElementById("careerMajorResults");
           if (!q) {
@@ -6399,7 +6402,7 @@
           if (status) status.textContent = "조회 중…";
           if (box) box.innerHTML = `<div class="career-api-empty">결과를 불러오는 중입니다…</div>`;
           const url =
-            `${BASE}?apiKey=${encodeURIComponent(TOKEN)}` +
+            `${API.major}?apiKey=${encodeURIComponent(TOKEN)}` +
             `&svcType=api&svcCode=MAJOR&contentType=json` +
             `&gubun=${encodeURIComponent(gubun)}` +
             `&searchTitle=${encodeURIComponent(q)}` +
@@ -6442,8 +6445,7 @@
           if (status) status.textContent = "조회 중…";
           if (box) box.innerHTML = `<div class="career-api-empty">결과를 불러오는 중입니다…</div>`;
           const url =
-            `${BASE}.json?apiKey=${encodeURIComponent(TOKEN)}` +
-            `&svcType=api&svcCode=JOB&gubun=job_dic_list` +
+            `${API.job}?apiKey=${encodeURIComponent(TOKEN)}` +
             `&searchJobNm=${encodeURIComponent(q)}` +
             `&thisPage=1&perPage=30`;
           try {
@@ -6452,10 +6454,16 @@
             renderList(
               box,
               rows.map((it) => {
-                const name = safeText(it.job || it.jobNm || it.jobName || "직업");
-                const bits = [it.profession, it.prospect, it.salery || it.salary, it.similarJob]
+                const name = safeText(it.job_nm || it.job || it.jobNm || it.jobName || "직업");
+                const bits = [
+                  it.aptit_name || it.profession,
+                  it.wage || it.salery || it.salary,
+                  it.rel_job_nm || it.similarJob,
+                  it.work,
+                ]
                   .map((x) => String(x || "").trim())
-                  .filter(Boolean);
+                  .filter(Boolean)
+                  .map((x) => (x.length > 80 ? `${x.slice(0, 80)}…` : x));
                 const sub = safeText(bits.join(" · "));
                 return (
                   `<div class="career-api-item">` +
