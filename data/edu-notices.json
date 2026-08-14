@@ -67,78 +67,98 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-14T00:50:42.710295Z",
-  "checkedAt": "2026-08-14T00:50:42.710289Z",
+  "updatedAt": "2026-08-14T03:17:24.075149Z",
+  "checkedAt": "2026-08-14T03:17:24.075145Z",
   "today": "2026-08-14",
   "count": 80,
   "notices": [
     {
-      "id": "458a47007f04e527866c",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "한국기술교육대학교 김강두 교수팀 독립기념관 진입경관 옥외광고물 디자인 개선.. '역사성 담은 새 이미지'",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623244",
+      "id": "0f3b895d5addb54925a1",
+      "sourceId": "moe_blog",
+      "sourceName": "교육부블로그",
+      "title": "📢 교육분야 인공지능 윤리원칙 의견수렴 간담회를 개최합니다!",
+      "preview": "📢 교육분야 인공지능 윤리원칙 의견수렴 간담회를 개최합니다! 22년 제정 이후 최초로 개정되는 교육분야 인공지능 윤리원칙에 대해 많은 의견을 듣기 위해 개최하는 간담회에 많은 관심 부탁드립니다! 🗓️ 일시: 2026",
+      "url": "https://blog.naver.com/moeblog/224378246527",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
     },
     {
-      "id": "144dd0109b6c2a2e2475",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "진로 목표 세우고 직접 실행까지... 전남대 대학일자리플러스센터, '어나더레벨' 성과발표회 성료",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623237",
+      "id": "6039041d2388902e1ff0",
+      "sourceId": "moe_blog",
+      "sourceName": "교육부블로그",
+      "title": "📢 8월 15일, 제81주년을 맞이하는 광복절",
+      "preview": "📢 8월 15일, 제81주년을 맞이하는 광복절 그날의 희생을 잊지 않겠다는 다짐으로 태극기를 게양해 주세요! 우리 아이들이 광복의 역사를 올바르게 기억하고, 감사의 마음을 이어갈 수 있도록 교육부가 함께하겠습니다.",
+      "url": "https://blog.naver.com/moeblog/224378363293",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
     },
     {
-      "id": "97cee447db23708021f5",
+      "id": "0a9fb0298ac3c23584a1",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "전남대 중국인문연구소, 2026년도 '차이나는 데이터 리터러시' 개최",
+      "title": "카자흐스탄 사야사트 누르벡 교육부장관, 서울사이버대 방문",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623239",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623298",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
     },
     {
-      "id": "d1b04f15640238bf8777",
+      "id": "0fac9a680b429374b557",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "전남대 김장호 교수팀 반도체 칩을 활용한 미니장기 대량화 기술 개발",
+      "title": "제주도 어린이/사회복지급식관리지원센터 2026년도 식습관 개선 프로그램 – 냠냠쑥쑥 홈 프로젝트 실시",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623238",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623293",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
     },
     {
-      "id": "0f050565613057850631",
+      "id": "ce738e2fe685b1445861",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "서강대 미래교육원 중고교생 게임/애니/만화 공모전 시상식 개최.. '제12회'",
+      "title": "제주대 의과대학, 지역 의료기관과 '협력기관 현판식' 개최... 지역 완결형 의료인재 양성 가속화",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623242",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623295",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
     },
     {
-      "id": "b9fd26aa7abf3634a7ae",
+      "id": "44030dc705d75ef740cf",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "동명대 엔터테인먼트·뮤직학과 다국적 고교생 전공체험 프로그램 운영.. K-POP 공연도 선봬",
+      "title": "제주대 글로컬대학사업단, '2026 JNU JEJU 창업리그' 개최",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623240",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623296",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
     },
     {
-      "id": "c57a84b12df327f9e43e",
+      "id": "b38d6424445a7b790b45",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "국립창원대 기술지주 자회사 렉손 '산학협력 우수기업' 선정",
+      "title": "제주 말산업과 재활·치유 융합한 5일간의 체험...도내·외 참가자 큰 호응",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623243",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623294",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
+      "id": "76a92a1002237b749a10",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "국립순천대 그린바이오 지산학캠퍼스, 中 절강수인대 초청 'SCNU 그린바이오 글로벌 오픈랩 캠프' 열어",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623299",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
+      "id": "7ed1ca0b5f4c83dd7ef7",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "국립부경대 국립대학육성사업 최상위 등급…192억 확보",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623292",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
     },
@@ -153,12 +173,22 @@
       "dateText": "2026.08.14"
     },
     {
-      "id": "19144e16bf129cc9ad06",
+      "id": "68bf4c148870bad03fe2",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "경북보건대학교 스마트팜과 김천 농업기계 산업체 간담회 개최.. '농업 AX 혁신센터' 중심 산/학/관 협력체계 구축",
+      "title": "건양사이버대 김희수 설립자 나눔 정신 실천하며 지역 복지기관 등에 쌀 250kg 기탁",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623241",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623300",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
+      "id": "138c7d92b736561fa6b0",
+      "sourceId": "edupress",
+      "sourceName": "에듀프레스",
+      "title": "[박남기 칼럼] 교원 스스로 아이언 돔 만들어야 하나",
+      "preview": "에듀프레스 소식",
+      "url": "https://www.edupress.kr/news/articleView.html?idxno=30399",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
     },
@@ -323,26 +353,6 @@
       "dateText": "2026.08.12"
     },
     {
-      "id": "a7fedc972d5a9a8b2304",
-      "sourceId": "moe_blog",
-      "sourceName": "교육부블로그",
-      "title": "2학기 마지막 신청을 놓치지 마세요! 국가장학금 2학기 2차 통합 신청",
-      "preview": "교육부(장관 최교진)와 한국장학재단(이사장 박창달, 이하 재단)은 8월 12일(수)부터 9월 9일(수)까지 2026학년도 국가장학금 2학기 2차 신청을 받는다. 국가장학금은 누구나 능력과 의지에 따라 대학 교육을 받",
-      "url": "https://blog.naver.com/moeblog/224375453037",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "cfc93941b2b97818eb49",
-      "sourceId": "moe_blog",
-      "sourceName": "교육부블로그",
-      "title": "📢 ⌜국립대학병원 설치법 시행령⌟ 및 ⌜국립대학치과병원 설치법 시행령⌟ 일부개정령안 국무회의 통과",
-      "preview": "📢 ⌜국립대학병원 설치법 시행령⌟ 및 ⌜국립대학치과병원 설치법 시행령⌟ 일부개정령안 국무회의 통과 ✅ 대학병원장 추천 서류 등 주요 서류의 제출처를 교육부 장관에서 보건복지부 장관으로 변경 ✅ 법령에 명시된 하부조직",
-      "url": "https://blog.naver.com/moeblog/224375331018",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
       "id": "8b4e74d0ea1dd63dd9db",
       "sourceId": "edupress",
       "sourceName": "에듀프레스",
@@ -401,16 +411,6 @@
       "url": "https://www.edupress.kr/news/articleView.html?idxno=30392",
       "dateISO": "2026-08-10",
       "dateText": "2026.08.10"
-    },
-    {
-      "id": "e9bf31dae77c1e9de85b",
-      "sourceId": "edupress",
-      "sourceName": "에듀프레스",
-      "title": "서울교육미래정책 6차 포럼, 서울형 방과후 돌봄 체제 전환 방안 논의",
-      "preview": "에듀프레스 소식",
-      "url": "https://www.edupress.kr/news/articleView.html?idxno=30390",
-      "dateISO": "2026-08-09",
-      "dateText": "2026.08.09"
     },
     {
       "id": "71bea3947aac43cbd715",
