@@ -1716,6 +1716,8 @@
       display: flex;
       align-items: center;
       justify-content: flex-start;
+      gap: 12px;
+      min-width: 0;
     }
 
     .sagwan-schedule-btn {
@@ -1729,6 +1731,7 @@
       color: #2a1c12;
       box-shadow: 0 4px 12px rgba(80, 50, 20, 0.1);
       cursor: pointer;
+      flex: 0 0 auto;
       transition: transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
       font: inherit;
     }
@@ -1761,6 +1764,49 @@
       font-weight: 800;
       letter-spacing: -0.03em;
       line-height: 1.2;
+    }
+
+    .sagwan-score-note {
+      min-width: 0;
+      flex: 1 1 auto;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 14px 7px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(61, 43, 31, 0.14);
+      background:
+        linear-gradient(90deg, rgba(255, 253, 248, 0.95) 0%, rgba(246, 240, 230, 0.72) 100%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+      color: #3a2a1c;
+    }
+
+    .sagwan-score-note::before {
+      content: "";
+      width: 3px;
+      align-self: stretch;
+      min-height: 1.8em;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #8b6914 0%, #6b4f3a 100%);
+      flex: 0 0 auto;
+      opacity: 0.85;
+    }
+
+    .sagwan-score-note p {
+      margin: 0;
+      min-width: 0;
+      font-size: 12px;
+      font-weight: 650;
+      letter-spacing: -0.025em;
+      line-height: 1.45;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+      color: #3a2a1c;
+    }
+
+    .sagwan-score-note strong {
+      font-weight: 800;
+      color: #2a1c12;
     }
 
     .sagwan-main-row {
@@ -2260,6 +2306,25 @@
     }
 
     @media (max-width: 980px) {
+      .sagwan-schedule-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+
+      .sagwan-schedule-btn {
+        align-self: flex-start;
+      }
+
+      .sagwan-score-note {
+        padding: 8px 12px;
+      }
+
+      .sagwan-score-note p {
+        font-size: 11.5px;
+        line-height: 1.5;
+      }
+
       .sagwan-main-row {
         grid-template-columns: 1fr;
         gap: 8px;
@@ -2818,6 +2883,12 @@
           </span>
           <strong>2027 사관학교 일정</strong>
         </button>
+        <aside class="sagwan-score-note" aria-label="1차 필기시험 점수 공유 안내">
+          <p>
+            <strong>2026년 8월 30일까지</strong> 1차 필기시험 점수 공유를 진행합니다.
+            점수를 인증해 주신 분들께는 인증 시 남겨주신 이메일 주소를 통해 추후 관련 자료를 우선 공유드릴 예정입니다.
+          </p>
+        </aside>
       </div>
 
       <div class="sagwan-main-row">
