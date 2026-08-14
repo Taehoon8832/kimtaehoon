@@ -886,10 +886,10 @@
       grid-column: span 6;
       height: 38px;
       padding: 0 12px;
-      border: 1px solid rgba(61, 43, 31, 0.16);
+      border: 1px solid #d0d5dd;
       border-radius: 11px;
       background: #fff;
-      color: #2a1c12;
+      color: #1f2937;
       font: inherit;
       font-size: 13px;
       font-weight: 600;
@@ -897,17 +897,17 @@
 
     .career-api-toolbar input[type="search"]:focus {
       outline: none;
-      border-color: rgba(139, 105, 20, 0.55);
-      box-shadow: 0 0 0 3px rgba(166, 124, 82, 0.16);
+      border-color: #94a3b8;
+      box-shadow: 0 0 0 3px rgba(148, 163, 184, 0.25);
     }
 
     .career-api-toolbar select {
       height: 38px;
       padding: 0 10px;
-      border: 1px solid rgba(61, 43, 31, 0.16);
+      border: 1px solid #d0d5dd;
       border-radius: 11px;
       background: #fff;
-      color: #2a1c12;
+      color: #1f2937;
       font: inherit;
       font-size: 12.5px;
       font-weight: 650;
@@ -919,20 +919,20 @@
       padding: 0 14px;
       border: 0;
       border-radius: 11px;
-      background: linear-gradient(145deg, #6b4f3a 0%, #3d2b1f 100%);
-      color: #f8efd8;
+      background: #334155;
+      color: #ffffff;
       font: inherit;
       font-size: 13px;
       font-weight: 750;
       letter-spacing: -0.02em;
       cursor: pointer;
-      transition: transform 0.15s ease, filter 0.15s ease;
+      transition: transform 0.15s ease, background 0.15s ease;
     }
 
     .career-api-toolbar button:hover,
     .career-api-toolbar button:focus-visible {
       transform: translateY(-1px);
-      filter: brightness(1.06);
+      background: #1e293b;
       outline: none;
     }
 
@@ -940,14 +940,13 @@
       opacity: 0.65;
       cursor: wait;
       transform: none;
-      filter: none;
     }
 
     .career-api-filters-hint {
       margin: -4px 0 10px;
       font-size: 11px;
       font-weight: 650;
-      color: #8a7360;
+      color: #64748b;
       line-height: 1.4;
       word-break: keep-all;
     }
@@ -957,7 +956,7 @@
       margin: 0 0 10px;
       font-size: 12px;
       font-weight: 700;
-      color: #6a5646;
+      color: #475569;
       letter-spacing: -0.02em;
     }
 
@@ -978,16 +977,16 @@
     .career-api-item {
       display: grid;
       gap: 0;
-      border: 1px solid rgba(61, 43, 31, 0.12);
+      border: 1px solid #e2e8f0;
       border-radius: 16px;
       background: #fff;
-      box-shadow: 0 6px 18px rgba(40, 28, 16, 0.04);
+      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
       overflow: hidden;
       color: inherit;
     }
 
     .career-api-item:last-child {
-      border-bottom: 1px solid rgba(61, 43, 31, 0.12);
+      border-bottom: 1px solid #e2e8f0;
     }
 
     .career-api-item-main {
@@ -1009,7 +1008,7 @@
     .career-api-item-main:hover,
     .career-api-item-main:focus-visible,
     .career-api-item.is-open > .career-api-item-main {
-      background: linear-gradient(180deg, #f3f9ff 0%, #eaf5ff 100%);
+      background: #f8fafc;
       outline: none;
     }
 
@@ -1025,7 +1024,7 @@
       font-size: 16px;
       font-weight: 700;
       letter-spacing: -0.03em;
-      color: #1f140c;
+      color: #0f172a;
       line-height: 1.3;
       word-break: keep-all;
     }
@@ -1042,9 +1041,9 @@
       max-width: 100%;
       padding: 4px 9px;
       border-radius: 999px;
-      border: 1px solid rgba(61, 43, 31, 0.1);
-      background: #f7f2ea;
-      color: #4d3a2c;
+      border: 1px solid #e2e8f0;
+      background: #f1f5f9;
+      color: #475569;
       font-size: 11.5px;
       font-weight: 700;
       line-height: 1.3;
@@ -1052,15 +1051,15 @@
     }
 
     .career-api-item .career-chip.is-accent {
-      background: rgba(139, 105, 20, 0.12);
-      border-color: rgba(139, 105, 20, 0.22);
-      color: #6b4f14;
+      background: #eef2f7;
+      border-color: #d0d7e2;
+      color: #334155;
     }
 
     .career-api-item .career-sub {
       font-size: 12.5px;
       font-weight: 500;
-      color: #6e5a4a;
+      color: #64748b;
       line-height: 1.55;
       word-break: keep-all;
       display: -webkit-box;
@@ -1074,8 +1073,8 @@
       margin-top: 1px;
       padding: 5px 10px;
       border-radius: 999px;
-      background: rgba(61, 43, 31, 0.06);
-      color: #5c4636;
+      background: #eef2f7;
+      color: #475569;
       font-size: 11px;
       font-weight: 750;
       letter-spacing: -0.01em;
@@ -1083,19 +1082,16 @@
     }
 
     .career-api-item.is-open .career-hint {
-      background: #1d4f7a;
-      color: #f4fbff;
+      background: #334155;
+      color: #f8fafc;
     }
 
     .career-api-detail {
       display: none;
       gap: 12px;
       padding: 8px 16px 16px;
-      background:
-        radial-gradient(120% 80% at 12% 0%, rgba(186, 230, 253, 0.55) 0%, transparent 58%),
-        radial-gradient(90% 70% at 100% 20%, rgba(125, 211, 252, 0.35) 0%, transparent 55%),
-        linear-gradient(180deg, #e8f5ff 0%, #d9efff 42%, #eef7ff 100%);
-      border-top: 1px solid rgba(56, 128, 180, 0.18);
+      background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
+      border-top: 1px solid #e2e8f0;
     }
 
     .career-api-item.is-open > .career-api-detail {
@@ -1103,8 +1099,8 @@
     }
 
     .career-api-item.is-open {
-      border-color: rgba(56, 128, 180, 0.28);
-      box-shadow: 0 10px 26px rgba(37, 99, 140, 0.1);
+      border-color: #cbd5e1;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.08);
     }
 
     .career-kv {
@@ -1118,9 +1114,9 @@
       gap: 3px;
       padding: 10px 12px;
       border-radius: 12px;
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px solid rgba(56, 128, 180, 0.14);
-      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      box-shadow: none;
       min-width: 0;
     }
 
@@ -1133,14 +1129,14 @@
       font-size: 11px;
       font-weight: 800;
       letter-spacing: -0.01em;
-      color: #8a7360;
+      color: #64748b;
     }
 
     .career-kv-row dd {
       margin: 0;
       font-size: 13px;
       font-weight: 650;
-      color: #2a1c12;
+      color: #1e293b;
       line-height: 1.45;
       word-break: keep-all;
     }
@@ -1156,16 +1152,16 @@
       gap: 4px;
       padding: 12px 12px;
       border-radius: 14px;
-      background: linear-gradient(160deg, #ffffff 0%, #f2f9ff 100%);
-      border: 1px solid rgba(56, 128, 180, 0.16);
-      box-shadow: 0 4px 12px rgba(37, 99, 140, 0.06);
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      box-shadow: none;
       min-width: 0;
     }
 
     .career-stat span {
       font-size: 11px;
       font-weight: 750;
-      color: #4a6f8a;
+      color: #64748b;
       letter-spacing: -0.01em;
     }
 
@@ -1173,7 +1169,7 @@
       font-family: "Space Grotesk", var(--font);
       font-size: 15px;
       font-weight: 700;
-      color: #2a1c12;
+      color: #0f172a;
       letter-spacing: -0.03em;
       line-height: 1.25;
       word-break: keep-all;
@@ -1184,17 +1180,17 @@
       gap: 8px;
       padding: 12px 14px;
       border-radius: 14px;
-      background: rgba(255, 255, 255, 0.94);
-      border: 1px solid rgba(56, 128, 180, 0.14);
-      border-left: 3px solid #3b82c4;
-      box-shadow: 0 4px 14px rgba(37, 99, 140, 0.05);
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-left: 3px solid #64748b;
+      box-shadow: none;
     }
 
     .career-section > b {
       font-size: 12.5px;
       font-weight: 800;
       letter-spacing: -0.02em;
-      color: #3d2b1f;
+      color: #0f172a;
     }
 
     .career-section p {
@@ -1290,8 +1286,8 @@
       min-height: 36px;
       padding: 0 14px;
       border-radius: 11px;
-      background: linear-gradient(145deg, #6b4f3a 0%, #3d2b1f 100%);
-      color: #f8efd8;
+      background: #334155;
+      color: #ffffff;
       font-size: 12.5px;
       font-weight: 750;
       text-decoration: none;
@@ -1300,7 +1296,7 @@
 
     .career-api-detail-link:hover,
     .career-api-detail-link:focus-visible {
-      filter: brightness(1.06);
+      background: #1e293b;
       outline: none;
     }
 
@@ -1315,12 +1311,12 @@
       text-align: center;
       font-size: 13px;
       font-weight: 650;
-      color: #8a7360;
+      color: #64748b;
       line-height: 1.55;
       word-break: keep-all;
       border-radius: 14px;
-      border: 1px dashed rgba(61, 43, 31, 0.16);
-      background: rgba(255, 253, 248, 0.8);
+      border: 1px dashed #d0d5dd;
+      background: #f8fafc;
     }
 
     @media (max-width: 980px) {
@@ -1402,7 +1398,7 @@
       .career-api-filters-hint {
         display: block;
         font-size: 12px;
-        color: #5c6b7a;
+        color: #64748b;
         line-height: 1.45;
       }
 
@@ -3041,6 +3037,66 @@
       outline: none;
     }
 
+    /* D-day 종료(D+n): 글자·아이콘 흐리게 */
+    .sagwan-dday-card.is-ended {
+      color: #8b919a;
+      background: #f4f5f7;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      filter: grayscale(0.35);
+    }
+
+    .sagwan-dday-card.is-ended:hover,
+    .sagwan-dday-card.is-ended:focus-visible {
+      transform: none;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .sagwan-dday-card.is-ended .name {
+      color: #9aa0a8;
+    }
+
+    .sagwan-dday-card.is-ended .sagwan-dday-badge {
+      background: linear-gradient(180deg, #d5d8dd 0%, #b4b9c1 55%, #9aa1ab 100%) !important;
+      color: #4b5563 !important;
+      box-shadow: none;
+      filter: none;
+      opacity: 0.9;
+    }
+
+    .sagwan-dday-card.is-ended .sagwan-dday-badge svg {
+      opacity: 0.7;
+    }
+
+    .sagwan-dday-card.is-ended .card-foot {
+      background: #e8eaee;
+    }
+
+    .sagwan-dday-card.is-ended .card-foot .label,
+    .sagwan-dday-card.is-ended .card-foot .date {
+      color: #9aa0a8;
+    }
+
+    .sagwan-dday-card.is-ended .sagwan-vote {
+      opacity: 0.55;
+      filter: grayscale(0.5);
+    }
+
+    .sagwan-dday-card.is-ended .sagwan-vote .vote-num,
+    .sagwan-dday-card.is-ended .sagwan-vote .vote-unit {
+      color: #8b919a;
+    }
+
+    .sagwan-dday-card.is-ended .sagwan-vote .vote-ic {
+      background: linear-gradient(145deg, #c5c9d0 0%, #8b919a 55%, #6b7280 100%);
+      color: #f3f4f6;
+      box-shadow: none;
+      animation: none;
+    }
+
+    .sagwan-dday-card.is-ended .sagwan-vote::before {
+      display: none;
+    }
+
     .sagwan-dday-card .card-top {
       display: flex;
       flex-direction: column;
@@ -3098,12 +3154,9 @@
       color: #06240f;
     }
 
-    /* 경과 후에도 D+n 카운트 유지 — 학교 톤 색을 살리되 살짝 구분 */
+    /* 경과 후에도 D+n 카운트 유지 — 카드 is-ended에서 흐림 처리 */
     .sagwan-dday-badge.is-elapsed {
-      box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, 0.35),
-        0 2px 8px rgba(0, 0, 0, 0.18);
-      filter: saturate(0.92) brightness(0.97);
+      box-shadow: none;
     }
 
     .sagwan-dday-card .card-foot {
@@ -4187,7 +4240,7 @@
               <option value="100335">사립</option>
               <option value="100336">공립</option>
             </select>
-            <input type="search" id="careerSchoolQ" placeholder="학교명 검색 (예: 보인고, 서울대)" autocomplete="off" spellcheck="false" enterkeyhint="search" />
+            <input type="search" id="careerSchoolQ" placeholder="학교명 검색 (예: 성균관대, 가천대)" autocomplete="off" spellcheck="false" enterkeyhint="search" />
             <button type="button" id="careerSchoolBtn">조회</button>
           </div>
           <p class="career-api-filters-hint">지역·학교유형을 고르면 더 빠르게 좁혀집니다. 항목을 누르면 주소·홈페이지 등 상세가 펼쳐집니다.</p>
@@ -7320,8 +7373,9 @@
           }
           const votes = Number(sagwanVoteCounts[item.sheetGid] || 0);
           const loadingClass = sagwanVoteReady ? " is-live" : " is-loading";
+          const endedClass = dd.kind === "elapsed" ? " is-ended" : "";
           return (
-            `<a class="sagwan-dday-card" href="${item.url}" target="_blank" rel="noopener noreferrer" title="${item.name} 점공 참여">` +
+            `<a class="sagwan-dday-card${endedClass}" href="${item.url}" target="_blank" rel="noopener noreferrer" title="${item.name} 점공 참여">` +
             `<span class="card-top">` +
             `<span class="name">${item.name}</span>` +
             `<span class="sagwan-dday-badge ${tone}" title="${badgeTitle}">${calIcon}${dd.text}</span>` +
