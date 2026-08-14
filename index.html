@@ -753,86 +753,51 @@
       word-break: keep-all;
     }
 
-    .career-api-urls {
-      display: grid;
-      gap: 8px;
-      margin-bottom: 12px;
-    }
-
-    .career-api-url {
-      display: grid;
-      gap: 4px;
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(61, 43, 31, 0.1);
-      background: rgba(255, 255, 255, 0.72);
-    }
-
-    .career-api-url b {
-      font-size: 11px;
-      font-weight: 800;
-      color: #6a5646;
-      letter-spacing: -0.01em;
-    }
-
-    .career-api-url a,
-    .career-api-url .url-text {
-      color: #3d2b1f;
-      font-size: 11.5px;
-      font-weight: 600;
-      line-height: 1.45;
-      word-break: break-all;
-      text-decoration: none;
-    }
-
-    .career-api-url a[href] {
-      border-bottom: 1px solid rgba(139, 105, 20, 0.28);
-    }
-
-    .career-api-url a[href]:hover,
-    .career-api-url a[href]:focus-visible {
-      color: #8b6914;
-      outline: none;
-    }
-
     .career-api-status {
       min-height: 18px;
-      margin: 0 0 8px;
-      font-size: 11.5px;
-      font-weight: 650;
-      color: #8a7360;
+      margin: 0 0 10px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #6a5646;
+      letter-spacing: -0.02em;
     }
 
     .career-api-results {
       display: grid;
-      gap: 0;
-      max-height: min(560px, 58vh);
+      gap: 10px;
+      max-height: min(640px, 62vh);
       overflow: auto;
-      border: 1px solid rgba(61, 43, 31, 0.1);
-      border-radius: 14px;
-      background: #fff;
+      padding: 2px;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
       overscroll-behavior: contain;
       -webkit-overflow-scrolling: touch;
+      scrollbar-gutter: stable;
     }
 
     .career-api-item {
       display: grid;
       gap: 0;
-      border-bottom: 1px solid rgba(61, 43, 31, 0.08);
+      border: 1px solid rgba(61, 43, 31, 0.12);
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 6px 18px rgba(40, 28, 16, 0.04);
+      overflow: hidden;
       color: inherit;
     }
 
     .career-api-item:last-child {
-      border-bottom: 0;
+      border-bottom: 1px solid rgba(61, 43, 31, 0.12);
     }
 
     .career-api-item-main {
       appearance: none;
       display: grid;
-      gap: 4px;
+      gap: 8px;
       width: 100%;
       margin: 0;
-      padding: 12px 14px;
+      padding: 14px 16px;
       border: 0;
       background: transparent;
       text-align: left;
@@ -845,116 +810,308 @@
     .career-api-item-main:hover,
     .career-api-item-main:focus-visible,
     .career-api-item.is-open > .career-api-item-main {
-      background: #faf6f0;
+      background: #faf7f2;
       outline: none;
     }
 
+    .career-api-item-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
     .career-api-item strong {
-      font-size: 13.5px;
-      font-weight: 780;
-      letter-spacing: -0.02em;
-      color: #2a1c12;
-      line-height: 1.35;
+      font-family: "Space Grotesk", var(--font);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      color: #1f140c;
+      line-height: 1.3;
       word-break: keep-all;
     }
 
     .career-api-item .career-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 5px 8px;
+      gap: 6px;
     }
 
     .career-api-item .career-chip {
       display: inline-flex;
       align-items: center;
       max-width: 100%;
-      padding: 2px 7px;
+      padding: 4px 9px;
       border-radius: 999px;
-      background: rgba(107, 79, 58, 0.08);
-      color: #5c4636;
-      font-size: 11px;
+      border: 1px solid rgba(61, 43, 31, 0.1);
+      background: #f7f2ea;
+      color: #4d3a2c;
+      font-size: 11.5px;
       font-weight: 700;
-      line-height: 1.35;
+      line-height: 1.3;
       word-break: keep-all;
+    }
+
+    .career-api-item .career-chip.is-accent {
+      background: rgba(139, 105, 20, 0.12);
+      border-color: rgba(139, 105, 20, 0.22);
+      color: #6b4f14;
     }
 
     .career-api-item .career-sub {
-      font-size: 12px;
-      font-weight: 600;
-      color: #7a6554;
-      line-height: 1.45;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: #6e5a4a;
+      line-height: 1.55;
       word-break: keep-all;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     .career-api-item .career-hint {
+      flex: 0 0 auto;
+      margin-top: 1px;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(61, 43, 31, 0.06);
+      color: #5c4636;
       font-size: 11px;
-      font-weight: 700;
-      color: #8b6914;
+      font-weight: 750;
       letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .career-api-item.is-open .career-hint {
+      background: #3d2b1f;
+      color: #f8efd8;
     }
 
     .career-api-detail {
       display: none;
-      gap: 10px;
-      padding: 0 14px 14px;
-      background: linear-gradient(180deg, #faf6f0 0%, #fffdf8 100%);
-      border-top: 1px dashed rgba(61, 43, 31, 0.1);
+      gap: 12px;
+      padding: 4px 16px 16px;
+      background:
+        linear-gradient(180deg, rgba(250, 246, 240, 0.95) 0%, #fffdf9 100%);
+      border-top: 1px solid rgba(61, 43, 31, 0.08);
     }
 
     .career-api-item.is-open > .career-api-detail {
       display: grid;
     }
 
-    .career-api-detail-block {
+    .career-kv {
       display: grid;
-      gap: 4px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
     }
 
-    .career-api-detail-block b {
+    .career-kv-row {
+      display: grid;
+      gap: 3px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid rgba(61, 43, 31, 0.08);
+      min-width: 0;
+    }
+
+    .career-kv-row.is-wide {
+      grid-column: 1 / -1;
+    }
+
+    .career-kv-row dt {
+      margin: 0;
       font-size: 11px;
       font-weight: 800;
       letter-spacing: -0.01em;
-      color: #6a5646;
+      color: #8a7360;
     }
 
-    .career-api-detail-block p,
-    .career-api-detail-block li {
+    .career-kv-row dd {
       margin: 0;
+      font-size: 13px;
+      font-weight: 650;
+      color: #2a1c12;
+      line-height: 1.45;
+      word-break: keep-all;
+    }
+
+    .career-stat-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .career-stat {
+      display: grid;
+      gap: 4px;
+      padding: 12px 12px;
+      border-radius: 14px;
+      background: linear-gradient(160deg, #fff 0%, #f8f3eb 100%);
+      border: 1px solid rgba(61, 43, 31, 0.1);
+      min-width: 0;
+    }
+
+    .career-stat span {
+      font-size: 11px;
+      font-weight: 750;
+      color: #8a7360;
+      letter-spacing: -0.01em;
+    }
+
+    .career-stat strong {
+      font-family: "Space Grotesk", var(--font);
+      font-size: 15px;
+      font-weight: 700;
+      color: #2a1c12;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      word-break: keep-all;
+    }
+
+    .career-section {
+      display: grid;
+      gap: 8px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(61, 43, 31, 0.08);
+      border-left: 3px solid #8b6914;
+    }
+
+    .career-section > b {
       font-size: 12.5px;
-      font-weight: 600;
+      font-weight: 800;
+      letter-spacing: -0.02em;
       color: #3d2b1f;
-      line-height: 1.55;
+    }
+
+    .career-section p {
+      margin: 0;
+      font-size: 13px;
+      font-weight: 500;
+      color: #3f2f22;
+      line-height: 1.7;
       word-break: keep-all;
       white-space: pre-wrap;
     }
 
-    .career-api-detail-block ul {
+    .career-section ul {
       margin: 0;
-      padding-left: 1.1em;
+      padding: 0;
+      list-style: none;
       display: grid;
-      gap: 4px;
+      gap: 7px;
+    }
+
+    .career-section li {
+      position: relative;
+      padding-left: 14px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #3f2f22;
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+
+    .career-section li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.55em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #8b6914;
+    }
+
+    .career-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .career-tags span {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: rgba(107, 79, 58, 0.08);
+      color: #4a3728;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.3;
+      word-break: keep-all;
+    }
+
+    .career-uni-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+    }
+
+    .career-uni-table th,
+    .career-uni-table td {
+      padding: 8px 6px;
+      border-bottom: 1px solid rgba(61, 43, 31, 0.08);
+      text-align: left;
+      vertical-align: top;
+      word-break: keep-all;
+      line-height: 1.4;
+    }
+
+    .career-uni-table th {
+      width: 34%;
+      color: #6a5646;
+      font-weight: 750;
+    }
+
+    .career-uni-table td {
+      color: #2a1c12;
+      font-weight: 600;
     }
 
     .career-api-detail-link {
       display: inline-flex;
       align-items: center;
-      gap: 4px;
-      width: fit-content;
-      color: #8b6914;
+      justify-content: center;
+      gap: 6px;
+      min-height: 36px;
+      padding: 0 14px;
+      border-radius: 11px;
+      background: linear-gradient(145deg, #6b4f3a 0%, #3d2b1f 100%);
+      color: #f8efd8;
       font-size: 12.5px;
       font-weight: 750;
       text-decoration: none;
-      border-bottom: 1px solid rgba(139, 105, 20, 0.35);
+      border: 0;
+    }
+
+    .career-api-detail-link:hover,
+    .career-api-detail-link:focus-visible {
+      filter: brightness(1.06);
+      outline: none;
+    }
+
+    .career-api-detail-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
     .career-api-empty {
       padding: 28px 16px;
       text-align: center;
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 650;
       color: #8a7360;
-      line-height: 1.5;
+      line-height: 1.55;
       word-break: keep-all;
+      border-radius: 14px;
+      border: 1px dashed rgba(61, 43, 31, 0.16);
+      background: rgba(255, 253, 248, 0.8);
     }
 
     @media (max-width: 980px) {
@@ -976,11 +1133,15 @@
       }
 
       .career-api-toolbar input[type="search"] {
-        grid-column: span 12;
+        grid-column: span 8;
       }
 
       .career-api-toolbar button {
-        grid-column: span 12;
+        grid-column: span 4;
+      }
+
+      .career-stat-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
     }
 
@@ -1024,12 +1185,37 @@
         grid-column: span 12;
       }
 
+      .career-api-filters-hint {
+        display: none;
+      }
+
       .career-api-results {
-        max-height: min(68vh, 640px);
+        max-height: min(72vh, 680px);
+        gap: 8px;
       }
 
       .career-api-item-main {
-        padding: 12px;
+        padding: 12px 13px;
+      }
+
+      .career-api-item strong {
+        font-size: 15px;
+      }
+
+      .career-kv,
+      .career-stat-row {
+        grid-template-columns: 1fr;
+      }
+
+      .career-api-detail {
+        padding: 2px 12px 14px;
+        gap: 10px;
+      }
+
+      .career-section p,
+      .career-section li {
+        font-size: 12.5px;
+        line-height: 1.65;
       }
     }
 
@@ -1037,6 +1223,11 @@
       .career-api-tab {
         font-size: 12px;
         padding: 10px 4px;
+      }
+
+      .career-api-item .career-hint {
+        padding: 4px 8px;
+        font-size: 10.5px;
       }
     }
 
@@ -6574,32 +6765,111 @@
           return escapeHtml(plain(v));
         }
 
-        function chips(values) {
+        function chips(values, accentIndex) {
           const parts = values
             .map((x) => plain(x))
             .filter(Boolean)
             .filter((v, i, arr) => arr.indexOf(v) === i);
           if (!parts.length) return "";
-          return `<div class="career-meta">${parts.map((p) => `<span class="career-chip">${escapeHtml(p)}</span>`).join("")}</div>`;
+          return `<div class="career-meta">${parts
+            .map(
+              (p, i) =>
+                `<span class="career-chip${accentIndex === i ? " is-accent" : ""}">${escapeHtml(p)}</span>`
+            )
+            .join("")}</div>`;
         }
 
-        function detailBlock(title, body) {
+        function splitCsv(text) {
+          return plain(text)
+            .split(/[,，、/\n|·]+/)
+            .map((x) => x.trim())
+            .filter((x) => x.length >= 2);
+        }
+
+        function bulletize(text) {
+          const raw = plain(text);
+          if (!raw) return [];
+          const byLine = raw
+            .split(/\n+/)
+            .map((x) => x.replace(/^[-•·▪◦*]+\s*/, "").trim())
+            .filter(Boolean);
+          if (byLine.length > 1) return byLine;
+          const byDash = raw
+            .split(/\s+-\s+/)
+            .map((x) => x.replace(/^[-•·]+\s*/, "").trim())
+            .filter((x) => x.length > 8);
+          if (byDash.length > 1) return byDash;
+          return [raw];
+        }
+
+        function kvTable(rows) {
+          const cells = (rows || [])
+            .map(([k, v, wide]) => {
+              const val = plain(v);
+              if (!val) return "";
+              return (
+                `<div class="career-kv-row${wide ? " is-wide" : ""}">` +
+                `<dt>${escapeHtml(k)}</dt><dd>${escapeHtml(val)}</dd></div>`
+              );
+            })
+            .filter(Boolean);
+          if (!cells.length) return "";
+          return `<div class="career-kv">${cells.join("")}</div>`;
+        }
+
+        function statRow(items) {
+          const cards = (items || [])
+            .map(([label, value]) => {
+              const val = plain(value);
+              if (!val) return "";
+              return (
+                `<div class="career-stat"><span>${escapeHtml(label)}</span>` +
+                `<strong>${escapeHtml(val)}</strong></div>`
+              );
+            })
+            .filter(Boolean);
+          if (!cards.length) return "";
+          return `<div class="career-stat-row">${cards.join("")}</div>`;
+        }
+
+        function proseSection(title, body) {
           const text = plain(body);
           if (!text) return "";
           return (
-            `<div class="career-api-detail-block"><b>${escapeHtml(title)}</b>` +
-            `<p>${escapeHtml(text)}</p></div>`
+            `<section class="career-section"><b>${escapeHtml(title)}</b>` +
+            `<p>${escapeHtml(text)}</p></section>`
           );
         }
 
-        function detailList(title, items) {
+        function listSection(title, items) {
           const rows = (items || []).map((x) => plain(x)).filter(Boolean);
           if (!rows.length) return "";
           return (
-            `<div class="career-api-detail-block"><b>${escapeHtml(title)}</b><ul>` +
-            rows.slice(0, 12).map((r) => `<li>${escapeHtml(r)}</li>`).join("") +
-            `</ul></div>`
+            `<section class="career-section"><b>${escapeHtml(title)}</b><ul>` +
+            rows.slice(0, 14).map((r) => `<li>${escapeHtml(r)}</li>`).join("") +
+            `</ul></section>`
           );
+        }
+
+        function tagSection(title, values) {
+          const parts = Array.isArray(values) ? values.map(plain) : splitCsv(values);
+          const uniq = parts.filter(Boolean).filter((v, i, arr) => arr.indexOf(v) === i);
+          if (!uniq.length) return "";
+          return (
+            `<section class="career-section"><b>${escapeHtml(title)}</b>` +
+            `<div class="career-tags">${uniq
+              .slice(0, 24)
+              .map((p) => `<span>${escapeHtml(p)}</span>`)
+              .join("")}</div></section>`
+          );
+        }
+
+        function detailBlock(title, body) {
+          return proseSection(title, body);
+        }
+
+        function detailList(title, items) {
+          return listSection(title, items);
         }
 
         function asList(payload) {
@@ -6807,7 +7077,7 @@
           const links = [];
           if (/^https?:\/\//i.test(href)) {
             links.push(
-              `<a class="career-api-detail-link" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">학교 홈페이지</a>`
+              `<a class="career-api-detail-link" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">학교 홈페이지 바로가기</a>`
             );
           }
           if (/^https?:\/\//i.test(college) && college !== href) {
@@ -6816,22 +7086,30 @@
             );
           }
           return (
-            detailBlock("학교종류", it.schoolGubun) +
-            detailBlock("학교유형", it.schoolType) +
-            detailBlock("설립유형", it.estType) +
-            detailBlock("지역", it.region) +
-            detailBlock("캠퍼스", it.campusName) +
-            detailBlock("주소", it.adres) +
-            detailBlock("식별번호(seq)", it.seq) +
-            (links.length ? `<div class="career-api-detail-block"><b>바로가기</b>${links.join(" · ")}</div>` : "")
+            kvTable([
+              ["주소", it.adres, true],
+              ["캠퍼스", it.campusName],
+              ["학교종류", it.schoolGubun],
+              ["학교유형", it.schoolType],
+              ["설립유형", it.estType],
+              ["지역", it.region],
+            ]) +
+            (links.length ? `<div class="career-api-detail-actions">${links.join("")}</div>` : "")
           );
         }
 
         function majorDetailHtml(it) {
           const unis = nestList(it, ["university", "content"]).map((u) => {
-            const bits = [u.schoolName, u.campus_nm, u.area, u.majorName].map(plain).filter(Boolean);
-            return bits.join(" · ");
-          });
+            const school = plain(u.schoolName);
+            const campus = plain(u.campus_nm);
+            const area = plain(u.area);
+            const major = plain(u.majorName);
+            if (!school) return "";
+            return (
+              `<tr><th>${escapeHtml(school)}${campus ? `<br><span style="font-weight:600;color:#8a7360">${escapeHtml(campus)}</span>` : ""}</th>` +
+              `<td>${escapeHtml([area, major].filter(Boolean).join(" · "))}</td></tr>`
+            );
+          }).filter(Boolean);
           const fields = nestList(it, ["enter_field", "content"]).map((f) => {
             const a = plain(f.gradeuate || f.graduate);
             const b = plain(f.description);
@@ -6848,21 +7126,27 @@
           const schools = nestList(it, ["setshl", "content"]).map((s) => {
             return [s.schoolName, s.majorName, s.area].map(plain).filter(Boolean).join(" · ");
           });
+          const salary = plain(it.salary).replace(/<\/?strong>/gi, "");
+          const employment = plain(it.employment).replace(/<\/?strong>/gi, "");
           return (
-            detailBlock("학과개요", it.summary) +
-            detailBlock("세부관련학과", it.department) +
-            detailBlock("관련직업", it.job || it.relatedjob) +
-            detailBlock("관련자격", it.qualifications) +
-            detailBlock("흥미와 적성", it.interest) +
-            detailBlock("학과특성", it.property) +
-            detailBlock("주요교육내용", it.purpose) +
-            detailBlock("졸업 후 직장임금", it.salary) +
-            detailBlock("취업률", it.employment) +
-            detailList("졸업 후 진출분야", fields) +
-            detailList("진로 탐색 활동", acts) +
-            detailList("주요 교과목", subjects) +
-            detailList("개설대학", unis) +
-            detailList("설치학교", schools)
+            statRow([
+              ["졸업 후 직장임금", salary],
+              ["취업률", employment],
+            ]) +
+            proseSection("학과개요", it.summary) +
+            tagSection("관련직업", it.job || it.relatedjob) +
+            tagSection("관련자격", it.qualifications) +
+            proseSection("흥미와 적성", it.interest) +
+            proseSection("학과특성", it.property) +
+            proseSection("주요교육내용", it.purpose) +
+            tagSection("세부관련학과", it.department) +
+            listSection("졸업 후 진출분야", fields) +
+            listSection("진로 탐색 활동", acts) +
+            listSection("주요 교과목", subjects) +
+            (unis.length
+              ? `<section class="career-section"><b>개설대학</b><table class="career-uni-table">${unis.slice(0, 10).join("")}</table></section>`
+              : "") +
+            listSection("설치학교", schools)
           );
         }
 
@@ -6882,24 +7166,29 @@
               ? it.job_possibility?.possibility
               : it.possibility || it.job_possibility
           );
+          const workBullets = bulletize(it.summary || it.work);
           return (
-            detailBlock("하는 일", it.summary || it.work) +
-            detailBlock("직업분야", it.profession || it.aptit_name || it.top_nm) +
-            detailBlock("유사직업", it.similarJob || it.similarjob || it.rel_job_nm) +
-            detailBlock("핵심능력", it.ability) +
-            detailBlock("적성 및 흥미", it.aptitude) +
-            detailBlock("연봉/임금", it.salery || it.wage || it.salary) +
-            detailBlock("일자리전망", it.prospect) +
-            detailBlock("발전가능성", possibility) +
-            detailBlock("고용평등", it.equalemployment) +
-            detailBlock("관련자격", it.capacity_major?.capacity || it.prepareway?.certification) +
-            detailBlock("정규교육과정", it.prepareway?.preparation) +
-            detailBlock("직업훈련", it.prepareway?.training) +
-            detailBlock("취업방법", it.stateofemp?.empway) +
-            detailBlock("고용현황", it.stateofemp?.employment) +
-            detailBlock("임금수준(상세)", it.stateofemp?.salery) +
-            detailList("관련학과", majors) +
-            detailList("문의기관", contacts)
+            statRow([
+              ["연봉/임금", it.salery || it.wage || it.salary],
+              ["일자리전망", it.prospect],
+              ["고용평등", it.equalemployment],
+            ]) +
+            (workBullets.length > 1
+              ? listSection("하는 일", workBullets)
+              : proseSection("하는 일", it.summary || it.work)) +
+            tagSection("유사직업", it.similarJob || it.similarjob || it.rel_job_nm) +
+            tagSection("핵심능력", it.ability) +
+            proseSection("적성 및 흥미", it.aptitude) +
+            proseSection("발전가능성", possibility) +
+            kvTable([["직업분야", it.profession || it.aptit_name || it.top_nm]]) +
+            tagSection("관련자격", it.capacity_major?.capacity || it.prepareway?.certification) +
+            proseSection("정규교육과정", it.prepareway?.preparation) +
+            proseSection("직업훈련", it.prepareway?.training) +
+            proseSection("취업방법", it.stateofemp?.empway) +
+            proseSection("고용현황", it.stateofemp?.employment) +
+            proseSection("임금수준(상세)", it.stateofemp?.salery) +
+            tagSection("관련학과", majors) +
+            listSection("문의기관", contacts)
           );
         }
 
@@ -6943,13 +7232,13 @@
               box,
               rows.map((it, idx) => {
                 const name = safeText(it.schoolName || "학교");
+                const openHint = "상세";
                 return (
                   `<article class="career-api-item" data-career-kind="school" data-idx="${idx}">` +
                   `<button type="button" class="career-api-item-main">` +
-                  `<strong>${name}</strong>` +
-                  chips([it.region, it.schoolGubun, it.schoolType, it.estType, it.campusName]) +
+                  `<div class="career-api-item-top"><strong>${name}</strong><span class="career-hint">${openHint}</span></div>` +
+                  chips([it.region, it.schoolGubun || it.schoolType, it.estType, it.campusName], 0) +
                   (plain(it.adres) ? `<div class="career-sub">${safeText(it.adres)}</div>` : "") +
-                  `<div class="career-hint">상세 보기</div>` +
                   `</button>` +
                   `<div class="career-api-detail">${schoolDetailHtml(it)}</div>` +
                   `</article>`
@@ -7009,13 +7298,15 @@
               rows.map((it) => {
                 const name = safeText(it.mClass || it.major || "학과");
                 const seq = plain(it.majorSeq);
+                const facil = plain(it.facilName);
+                const facilShort =
+                  facil.length > 90 ? `${facil.slice(0, 90)}…` : facil;
                 return (
                   `<article class="career-api-item" data-career-kind="major" data-seq="${escapeHtml(seq)}">` +
                   `<button type="button" class="career-api-item-main">` +
-                  `<strong>${name}</strong>` +
-                  chips([it.lClass, it.facilName ? String(it.facilName).split(",")[0] : ""]) +
-                  (plain(it.facilName) ? `<div class="career-sub">${safeText(it.facilName)}</div>` : "") +
-                  `<div class="career-hint">상세 불러오기</div>` +
+                  `<div class="career-api-item-top"><strong>${name}</strong><span class="career-hint">상세</span></div>` +
+                  chips([it.lClass], 0) +
+                  (facilShort ? `<div class="career-sub">${escapeHtml(facilShort)}</div>` : "") +
                   `</button>` +
                   `<div class="career-api-detail"><div class="career-api-empty">상세 정보를 불러오는 중…</div></div>` +
                   `</article>`
@@ -7085,15 +7376,18 @@
                 return (
                   `<article class="career-api-item" data-career-kind="job" data-seq="${escapeHtml(seq)}">` +
                   `<button type="button" class="career-api-item-main">` +
-                  `<strong>${name}</strong>` +
-                  chips([
-                    it.profession || it.aptit_name || it.top_nm,
-                    it.salery || it.wage,
-                    it.prospect,
-                    it.possibility,
-                  ]) +
-                  (summary ? `<div class="career-sub">${escapeHtml(summary.length > 140 ? `${summary.slice(0, 140)}…` : summary)}</div>` : "") +
-                  `<div class="career-hint">상세 불러오기</div>` +
+                  `<div class="career-api-item-top"><strong>${name}</strong><span class="career-hint">상세</span></div>` +
+                  chips(
+                    [
+                      it.profession || it.aptit_name || it.top_nm,
+                      it.salery || it.wage,
+                      it.prospect,
+                    ],
+                    1
+                  ) +
+                  (summary
+                    ? `<div class="career-sub">${escapeHtml(summary.length > 110 ? `${summary.slice(0, 110)}…` : summary)}</div>`
+                    : "") +
                   `</button>` +
                   `<div class="career-api-detail"><div class="career-api-empty">상세 정보를 불러오는 중…</div></div>` +
                   `</article>`
@@ -7186,6 +7480,8 @@
             if (!item) return;
             const open = !item.classList.contains("is-open");
             item.classList.toggle("is-open", open);
+            const hint = item.querySelector(".career-hint");
+            if (hint) hint.textContent = open ? "접기" : "상세";
             if (!open) return;
             const kind = item.getAttribute("data-career-kind");
             if (kind === "major") void loadMajorDetail(item);
