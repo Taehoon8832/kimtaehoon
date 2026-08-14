@@ -953,7 +953,9 @@
 
     .career-api-status {
       min-height: 18px;
-      margin: 0 0 10px;
+      margin: 0 0 12px;
+      padding: 0 0 12px;
+      border-bottom: 3px solid #191919;
       font-size: 12px;
       font-weight: 700;
       color: #475569;
@@ -1056,16 +1058,46 @@
       color: #334155;
     }
 
+    .career-api-item .career-chip.is-wage {
+      gap: 6px;
+      padding: 4px 11px 4px 5px;
+      background: linear-gradient(180deg, #fff8e6 0%, #fce7b8 100%);
+      border-color: #e2b84e;
+      color: #7a4a08;
+      font-weight: 800;
+      box-shadow: 0 1px 0 rgba(255, 255, 255, 0.75) inset;
+    }
+
+    .career-api-item .career-chip.is-wage .wage-ic {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #f6d56a 0%, #d4a017 55%, #b8860b 100%);
+      color: #fff8e8;
+      box-shadow: 0 1px 3px rgba(120, 80, 10, 0.28);
+    }
+
+    .career-api-item .career-chip.is-wage .wage-ic svg {
+      width: 11px;
+      height: 11px;
+      display: block;
+    }
+
     .career-api-item .career-sub {
       font-size: 12.5px;
       font-weight: 500;
       color: #64748b;
       line-height: 1.55;
       word-break: keep-all;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+      white-space: pre-wrap;
+    }
+
+    .career-api-item.is-open .career-sub {
+      display: none;
     }
 
     .career-api-item .career-hint {
@@ -1176,6 +1208,41 @@
       word-break: keep-all;
     }
 
+    .career-stat.is-wage {
+      background: linear-gradient(180deg, #fff9eb 0%, #fff2d4 100%);
+      border-color: #e2b84e;
+      box-shadow: 0 2px 8px rgba(180, 130, 30, 0.12);
+    }
+
+    .career-stat.is-wage span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #8a5a10;
+    }
+
+    .career-stat.is-wage span .wage-ic {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, #f6d56a 0%, #d4a017 55%, #b8860b 100%);
+      color: #fff8e8;
+      box-shadow: 0 1px 3px rgba(120, 80, 10, 0.28);
+    }
+
+    .career-stat.is-wage span .wage-ic svg {
+      width: 11px;
+      height: 11px;
+      display: block;
+    }
+
+    .career-stat.is-wage strong {
+      color: #6b3f05;
+    }
+
     .career-section {
       display: grid;
       gap: 8px;
@@ -1231,6 +1298,20 @@
       height: 6px;
       border-radius: 50%;
       background: #2a8ab8;
+    }
+
+    .career-section a.career-ext-link {
+      color: #1a6ea0;
+      font-weight: 650;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      word-break: break-all;
+    }
+
+    .career-section a.career-ext-link:hover,
+    .career-section a.career-ext-link:focus-visible {
+      color: #0f4f76;
+      outline: none;
     }
 
     .career-tags {
@@ -7582,6 +7663,22 @@
           return escapeHtml(plain(v));
         }
 
+        function wageIconHtml() {
+          return (
+            `<span class="wage-ic" aria-hidden="true">` +
+            `<svg viewBox="0 0 24 24" fill="none" focusable="false">` +
+            `<path d="M12 3.5c-3.2 0-5.5 1.55-5.5 3.7S8.8 10.9 12 10.9s5.5-1.55 5.5-3.7S15.2 3.5 12 3.5Z" fill="currentColor" opacity=".92"/>` +
+            `<path d="M6.5 7.2v3.6c0 2.15 2.3 3.7 5.5 3.7s5.5-1.55 5.5-3.7V7.2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>` +
+            `<path d="M6.5 10.8v3.6c0 2.15 2.3 3.7 5.5 3.7s5.5-1.55 5.5-3.7v-3.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>` +
+            `<path d="M6.5 14.4v2.9c0 2.15 2.3 3.7 5.5 3.7s5.5-1.55 5.5-3.7v-2.9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>` +
+            `</svg></span>`
+          );
+        }
+
+        function looksLikeWage(text) {
+          return /만원|연봉|급여|임금|salary|wage|￦|₩|천\s*만|억\s*원/i.test(String(text || ""));
+        }
+
         function chips(values, accentIndex) {
           const parts = values
             .map((x) => plain(x))
@@ -7589,10 +7686,12 @@
             .filter((v, i, arr) => arr.indexOf(v) === i);
           if (!parts.length) return "";
           return `<div class="career-meta">${parts
-            .map(
-              (p, i) =>
-                `<span class="career-chip${accentIndex === i ? " is-accent" : ""}">${escapeHtml(p)}</span>`
-            )
+            .map((p, i) => {
+              const wage = looksLikeWage(p);
+              const cls = wage ? " is-wage" : accentIndex === i ? " is-accent" : "";
+              const icon = wage ? wageIconHtml() : "";
+              return `<span class="career-chip${cls}">${icon}${escapeHtml(p)}</span>`;
+            })
             .join("")}</div>`;
         }
 
@@ -7639,8 +7738,10 @@
             .map(([label, value]) => {
               const val = plain(value);
               if (!val) return "";
+              const wage = /연봉|임금|급여|salary|wage/i.test(String(label || "")) || looksLikeWage(val);
+              const icon = wage ? wageIconHtml() : "";
               return (
-                `<div class="career-stat"><span>${escapeHtml(label)}</span>` +
+                `<div class="career-stat${wage ? " is-wage" : ""}"><span>${icon}${escapeHtml(label)}</span>` +
                 `<strong>${escapeHtml(val)}</strong></div>`
               );
             })
@@ -7663,7 +7764,46 @@
           if (!rows.length) return "";
           return (
             `<section class="career-section"><b>${escapeHtml(title)}</b><ul>` +
-            rows.slice(0, 14).map((r) => `<li>${escapeHtml(r)}</li>`).join("") +
+            rows.map((r) => `<li>${escapeHtml(r)}</li>`).join("") +
+            `</ul></section>`
+          );
+        }
+
+        function toHttpUrl(raw) {
+          const u = plain(raw);
+          if (!u) return "";
+          if (/^https?:\/\//i.test(u)) return u;
+          if (/^www\./i.test(u)) return `http://${u}`;
+          if (/^[a-z0-9][a-z0-9.-]*\.[a-z]{2,}([/:?#].*)?$/i.test(u)) return `http://${u}`;
+          return "";
+        }
+
+        function contactListSection(title, entries) {
+          const rows = (entries || [])
+            .map((row) => {
+              if (!row) return "";
+              if (typeof row === "string") {
+                const m = plain(row).match(/^(.*?)(?:\s*[\(·]\s*)(https?:\/\/[^\s\)]+|www\.[^\s\)]+)\)?\s*$/i);
+                if (m) return { name: plain(m[1]), url: plain(m[2]) };
+                return { name: plain(row), url: "" };
+              }
+              return { name: plain(row.name), url: plain(row.url) };
+            })
+            .filter((row) => row.name);
+          if (!rows.length) return "";
+          return (
+            `<section class="career-section"><b>${escapeHtml(title)}</b><ul>` +
+            rows
+              .map((row) => {
+                const href = toHttpUrl(row.url);
+                if (!href) return `<li>${escapeHtml(row.name)}</li>`;
+                return (
+                  `<li>${escapeHtml(row.name)} ` +
+                  `(<a class="career-ext-link" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(row.url || href)}</a>)` +
+                  `</li>`
+                );
+              })
+              .join("") +
             `</ul></section>`
           );
         }
@@ -7974,10 +8114,12 @@
           let contacts = nestList(it, ["contact"]).map((c) => {
             const name = plain(c.MAPNG_NM);
             const url = plain(c.MAPNG_URL);
-            if (!name) return "";
-            return url ? `${name} (${url})` : name;
+            if (!name) return null;
+            return { name, url };
           }).filter(Boolean);
-          if (!contacts.length) contacts = pairedFields(it.contact, "MAPNG_NM", ["MAPNG_URL"]);
+          if (!contacts.length) {
+            contacts = pairedFields(it.contact, "MAPNG_NM", ["MAPNG_URL"]);
+          }
           const possibility = plain(
             typeof it.job_possibility === "object"
               ? it.job_possibility?.possibility
@@ -8005,7 +8147,7 @@
             proseSection("고용현황", it.stateofemp?.employment) +
             proseSection("임금수준(상세)", it.stateofemp?.salery) +
             tagSection("관련학과", majors) +
-            listSection("문의기관", contacts)
+            contactListSection("문의기관", contacts)
           );
         }
 
@@ -8203,7 +8345,7 @@
                     1
                   ) +
                   (summary
-                    ? `<div class="career-sub">${escapeHtml(summary.length > 110 ? `${summary.slice(0, 110)}…` : summary)}</div>`
+                    ? `<div class="career-sub">${escapeHtml(summary)}</div>`
                     : "") +
                   `</button>` +
                   `<div class="career-api-detail"><div class="career-api-empty">상세 정보를 불러오는 중…</div></div>` +
@@ -8280,6 +8422,11 @@
             detail.innerHTML = one
               ? jobDetailHtml(one)
               : `<div class="career-api-empty">상세 정보가 없습니다.</div>`;
+            if (one) {
+              const fullSummary = plain(one.summary || one.work || "");
+              const sub = item.querySelector(".career-sub");
+              if (sub && fullSummary) sub.textContent = fullSummary;
+            }
             item.dataset.loaded = "1";
           } catch {
             detail.innerHTML = `<div class="career-api-empty">상세를 불러오지 못했습니다.</div>`;
@@ -8289,7 +8436,7 @@
         function bindResults(box) {
           if (!box) return;
           box.addEventListener("click", (e) => {
-            const link = e.target.closest("a.career-api-detail-link");
+            const link = e.target.closest("a.career-api-detail-link, a.career-ext-link");
             if (link) return;
             const main = e.target.closest(".career-api-item-main");
             if (!main) return;
