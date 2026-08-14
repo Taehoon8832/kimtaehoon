@@ -511,11 +511,31 @@
       cursor: pointer;
     }
 
+    .nav-item.is-placeholder em {
+      color: #9a9aa3;
+      font-weight: 650;
+    }
+
+    .nav-item.is-placeholder .ic {
+      opacity: 0.72;
+      filter: saturate(0.85);
+    }
+
     .nav-item.is-placeholder:hover,
     .nav-item.is-placeholder:focus-visible {
       background: color-mix(in srgb, var(--color-primary-500) 8%, transparent);
       transform: translateY(-1px);
       outline: none;
+    }
+
+    .nav-item.is-placeholder:hover em,
+    .nav-item.is-placeholder:focus-visible em {
+      color: #7a7a85;
+    }
+
+    .nav-item.is-placeholder:hover .ic,
+    .nav-item.is-placeholder:focus-visible .ic {
+      opacity: 0.88;
     }
 
     .nav-item.is-active {
@@ -790,22 +810,22 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0;
       border-bottom: 3px solid #191919;
-      background: #e8ebef;
+      background: #f0f1f3;
     }
 
     .career-api-tab {
       appearance: none;
       border: 0;
-      border-right: 1px solid #d0d5dc;
-      background: transparent;
-      color: #6b7582;
+      border-right: 1.5px solid #b8bec8;
+      background: #f0f1f3;
+      color: #5a6270;
       padding: 13px 10px;
       font: inherit;
       font-size: 13px;
       font-weight: 700;
       letter-spacing: -0.02em;
       cursor: pointer;
-      transition: color 0.15s ease, background 0.15s ease, font-weight 0.15s ease;
+      transition: color 0.15s ease, background 0.15s ease;
     }
 
     .career-api-tab:last-child {
@@ -814,18 +834,16 @@
 
     .career-api-tab:hover,
     .career-api-tab:focus-visible {
-      color: #2f3a46;
-      background: rgba(255, 255, 255, 0.55);
+      color: #1f2937;
+      background: #e6e8ec;
       outline: none;
     }
 
     .career-api-tab.is-active {
-      color: #111827;
+      color: #111111;
       background: #ffffff;
       font-weight: 800;
-      box-shadow:
-        inset 0 -3px 0 #191919,
-        0 -1px 0 #ffffff;
+      box-shadow: inset 0 -3px 0 #191919;
     }
 
     .career-api-panel {
@@ -1348,7 +1366,7 @@
       }
 
       .career-api-tab {
-        border-right: 1px solid #d0d5dc;
+        border-right: 1.5px solid #b8bec8;
         border-bottom: 0;
         text-align: center;
         padding: 12px 6px;
@@ -1361,9 +1379,7 @@
       }
 
       .career-api-tab.is-active {
-        box-shadow:
-          inset 0 -3px 0 #191919,
-          0 -1px 0 #ffffff;
+        box-shadow: inset 0 -3px 0 #191919;
       }
 
       .career-api-panel {
@@ -4171,7 +4187,7 @@
               <option value="100335">사립</option>
               <option value="100336">공립</option>
             </select>
-            <input type="search" id="careerSchoolQ" placeholder="학교명 검색 (예: 보인, 서울대)" autocomplete="off" spellcheck="false" enterkeyhint="search" />
+            <input type="search" id="careerSchoolQ" placeholder="학교명 검색 (예: 보인고, 서울대)" autocomplete="off" spellcheck="false" enterkeyhint="search" />
             <button type="button" id="careerSchoolBtn">조회</button>
           </div>
           <p class="career-api-filters-hint">지역·학교유형을 고르면 더 빠르게 좁혀집니다. 항목을 누르면 주소·홈페이지 등 상세가 펼쳐집니다.</p>
