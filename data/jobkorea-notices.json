@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-14T05:01:53.189Z",
-  "checkedAt": "2026-08-14T05:01:53.189Z",
+  "updatedAt": "2026-08-14T06:19:28.721Z",
+  "checkedAt": "2026-08-14T06:19:28.721Z",
   "today": "2026-08-14",
   "count": 24,
   "notices": [
@@ -19,8 +19,8 @@
       "deadlineISO": "2026-09-12",
       "deadlineText": "2026.09.12",
       "alwaysHire": false,
-      "popularRank": 10,
-      "popularScore": 2.40819
+      "popularRank": 11,
+      "popularScore": 2.3885481
     },
     {
       "id": "f4aebd6330a249f3a9f7",
@@ -35,7 +35,7 @@
       "deadlineText": "2026.10.12",
       "alwaysHire": false,
       "popularRank": 15,
-      "popularScore": 2.200081
+      "popularScore": 2.181897
     },
     {
       "id": "96c43df035f2b96d79e0",
@@ -50,7 +50,22 @@
       "deadlineText": "2026.09.12",
       "alwaysHire": false,
       "popularRank": 20,
-      "popularScore": 2.144139
+      "popularScore": 2.142871
+    },
+    {
+      "id": "94ba4f049464b0af21eb",
+      "jobId": "49768434",
+      "companyName": "광동제약㈜",
+      "title": "광동제약 2026년 하반기 신입사원 공개채용",
+      "preview": "신입·경력 · 정규직·계약직 · 마감 D-5 · 접수마감 2026.08.19",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49768434",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13",
+      "deadlineISO": "2026-08-19",
+      "deadlineText": "2026.08.19",
+      "alwaysHire": false,
+      "popularRank": 24,
+      "popularScore": 1.828672
     },
     {
       "id": "5c58602021c8343a372a",
@@ -64,8 +79,8 @@
       "deadlineISO": "2026-09-10",
       "deadlineText": "2026.09.10",
       "alwaysHire": false,
-      "popularRank": 24,
-      "popularScore": 1.904184
+      "popularRank": 22,
+      "popularScore": 1.892048
     },
     {
       "id": "88a0735cd26b5ca6d82a",
@@ -80,7 +95,22 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 3,
-      "popularScore": 3.262275
+      "popularScore": 3.17782
+    },
+    {
+      "id": "12bf98b40800dd3a7915",
+      "jobId": "49754884",
+      "companyName": "㈜케이디엘",
+      "title": "[2026년]공공 시스템 구축 PM 경력직 채용공고.",
+      "preview": "경력 · 정규직·계약직 · 마감 D-3 · 접수마감 2026.08.17",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49754884",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10",
+      "deadlineISO": "2026-08-17",
+      "deadlineText": "2026.08.17",
+      "alwaysHire": false,
+      "popularRank": 7,
+      "popularScore": 2.5308108
     },
     {
       "id": "cfc1e393775a21db0610",
@@ -95,7 +125,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 9,
-      "popularScore": 2.474209
+      "popularScore": 2.4433548
     },
     {
       "id": "68c4a721b6baf77b0337",
@@ -109,23 +139,8 @@
       "deadlineISO": "2026-08-23",
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
-      "popularRank": 16,
-      "popularScore": 2.185105
-    },
-    {
-      "id": "4d49c686f19d67d20bdf",
-      "jobId": "49731867",
-      "companyName": "(유)사조씨피케이",
-      "title": "사조씨피케이 각 부문별 인재 채용",
-      "preview": "신입·경력 · 정규직·계약직 · 마감 D-5 · 접수마감 2026.08.19",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49731867",
-      "dateISO": "2026-08-10",
-      "dateText": "2026.08.10",
-      "deadlineISO": "2026-08-19",
-      "deadlineText": "2026.08.19",
-      "alwaysHire": false,
       "popularRank": 17,
-      "popularScore": 2.17523
+      "popularScore": 2.17703
     },
     {
       "id": "efb0a4e54d0c058c1929",
@@ -139,23 +154,8 @@
       "deadlineISO": "2026-10-07",
       "deadlineText": "2026.10.07",
       "alwaysHire": false,
-      "popularRank": 22,
-      "popularScore": 2.12723
-    },
-    {
-      "id": "adce3b32741e3448d142",
-      "jobId": "49740515",
-      "companyName": "㈜다우데이타",
-      "title": "[경력] IT 기획 담당자 채용",
-      "preview": "경력 · 정규직 · 마감 D-10 · 접수마감 2026.08.24",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49740515",
-      "dateISO": "2026-08-10",
-      "dateText": "2026.08.10",
-      "deadlineISO": "2026-08-24",
-      "deadlineText": "2026.08.24",
-      "alwaysHire": false,
-      "popularRank": 23,
-      "popularScore": 2.099727
+      "popularRank": 21,
+      "popularScore": 2.127355
     },
     {
       "id": "a1fe7bd9977bbed907d5",
@@ -169,8 +169,8 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 1,
-      "popularScore": 3.867407
+      "popularRank": 2,
+      "popularScore": 3.7685819
     },
     {
       "id": "e8edd83d0f5b54809dd6",
@@ -184,8 +184,8 @@
       "deadlineISO": "2026-09-06",
       "deadlineText": "2026.09.06",
       "alwaysHire": false,
-      "popularRank": 13,
-      "popularScore": 2.253097
+      "popularRank": 10,
+      "popularScore": 2.433889
     },
     {
       "id": "65243abe3e6bf2a43e0c",
@@ -199,8 +199,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 18,
-      "popularScore": 2.173233
+      "popularRank": 16,
+      "popularScore": 2.180227
     },
     {
       "id": "a19b344837c8700e1a2e",
@@ -214,8 +214,8 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 5,
-      "popularScore": 2.900207
+      "popularRank": 4,
+      "popularScore": 2.869855
     },
     {
       "id": "c7fc0fb3d0784ba366ec",
@@ -229,8 +229,23 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 21,
-      "popularScore": 2.1334748
+      "popularRank": 18,
+      "popularScore": 2.155744
+    },
+    {
+      "id": "94be55d131a72c4b3e55",
+      "jobId": "49730817",
+      "companyName": "㈜제너시스BBQ",
+      "title": "[제너시스BBQ] 자사 앱 서비스 기획 (PO/PM)",
+      "preview": "경력 · 정규직 · 마감 D-22 · 접수마감 2026.09.05",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49730817",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06",
+      "deadlineISO": "2026-09-05",
+      "deadlineText": "2026.09.05",
+      "alwaysHire": false,
+      "popularRank": 23,
+      "popularScore": 1.8346779
     },
     {
       "id": "52e3de0f3e258ff8c87a",
@@ -244,8 +259,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 4,
-      "popularScore": 3.035266
+      "popularRank": 14,
+      "popularScore": 2.251644
     },
     {
       "id": "40c04c463d1729207506",
@@ -259,23 +274,8 @@
       "deadlineISO": "2026-08-16",
       "deadlineText": "2026.08.16",
       "alwaysHire": false,
-      "popularRank": 2,
-      "popularScore": 3.321564
-    },
-    {
-      "id": "c0b191a7d6e2946fe4c2",
-      "jobId": "49699995",
-      "companyName": "아이엠파인",
-      "title": "인터렉티브 컨텐츠 기획 및 PM 담당자",
-      "preview": "신입·경력 · 정규직 · 마감 D-49 · 접수마감 2026.10.02",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49699995",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03",
-      "deadlineISO": "2026-10-02",
-      "deadlineText": "2026.10.02",
-      "alwaysHire": false,
-      "popularRank": 7,
-      "popularScore": 2.572501
+      "popularRank": 1,
+      "popularScore": 3.939332
     },
     {
       "id": "cac58faef283c6e518f7",
@@ -289,8 +289,23 @@
       "deadlineISO": "2026-09-25",
       "deadlineText": "2026.09.25",
       "alwaysHire": false,
+      "popularRank": 6,
+      "popularScore": 2.5675719
+    },
+    {
+      "id": "c0b191a7d6e2946fe4c2",
+      "jobId": "49699995",
+      "companyName": "아이엠파인",
+      "title": "인터렉티브 컨텐츠 기획 및 PM 담당자",
+      "preview": "신입·경력 · 정규직 · 마감 D-49 · 접수마감 2026.10.02",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49699995",
+      "dateISO": "2026-08-03",
+      "dateText": "2026.08.03",
+      "deadlineISO": "2026-10-02",
+      "deadlineText": "2026.10.02",
+      "alwaysHire": false,
       "popularRank": 8,
-      "popularScore": 2.520265
+      "popularScore": 2.5038722
     },
     {
       "id": "cdd3b46c07e0236116a7",
@@ -304,8 +319,8 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 11,
-      "popularScore": 2.389389
+      "popularRank": 12,
+      "popularScore": 2.3794641
     },
     {
       "id": "3f28d4ebc0198319a0b7",
@@ -320,7 +335,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 19,
-      "popularScore": 2.168042
+      "popularScore": 2.146359
     },
     {
       "id": "ece21208d32d2683d912",
@@ -334,8 +349,8 @@
       "deadlineISO": "2026-08-22",
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
-      "popularRank": 12,
-      "popularScore": 2.384895
+      "popularRank": 13,
+      "popularScore": 2.2849422
     },
     {
       "id": "50681cf6ac76954ab4e8",
@@ -349,23 +364,8 @@
       "deadlineISO": "2026-08-20",
       "deadlineText": "2026.08.20",
       "alwaysHire": false,
-      "popularRank": 6,
-      "popularScore": 2.633101
-    },
-    {
-      "id": "51bae11410ca1bad97c7",
-      "jobId": "49606891",
-      "companyName": "서울평가정보㈜",
-      "title": "개인정보사업부문 대표(임원급) 채용",
-      "preview": "ANY · 정규직·계약직 · 마감 D-5 · 접수마감 2026.08.19",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49606891",
-      "dateISO": "2026-07-20",
-      "dateText": "2026.07.20",
-      "deadlineISO": "2026-08-19",
-      "deadlineText": "2026.08.19",
-      "alwaysHire": false,
-      "popularRank": 14,
-      "popularScore": 2.2004209
+      "popularRank": 5,
+      "popularScore": 2.582462
     }
   ],
   "stale": false,
