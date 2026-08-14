@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-14T11:27:41.025Z",
-  "checkedAt": "2026-08-14T11:27:41.025Z",
+  "updatedAt": "2026-08-14T12:06:32.334Z",
+  "checkedAt": "2026-08-14T12:06:32.334Z",
   "today": "2026-08-14",
   "count": 24,
   "notices": [
@@ -20,7 +20,7 @@
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
       "popularRank": 4,
-      "popularScore": 2.8348699
+      "popularScore": 2.844177
     },
     {
       "id": "d32297f0bdf130b7578a",
@@ -34,8 +34,8 @@
       "deadlineISO": "2026-09-13",
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
-      "popularRank": 16,
-      "popularScore": 2.223481
+      "popularRank": 14,
+      "popularScore": 2.2172952
     },
     {
       "id": "e1e87ce35739315d63b3",
@@ -49,8 +49,23 @@
       "deadlineISO": "2026-09-12",
       "deadlineText": "2026.09.12",
       "alwaysHire": false,
-      "popularRank": 11,
-      "popularScore": 2.3528469
+      "popularRank": 8,
+      "popularScore": 2.386631
+    },
+    {
+      "id": "1f89ddb8e103ed17b7c4",
+      "jobId": "49779534",
+      "companyName": "미스터픽",
+      "title": "[첫차]와 함께 할 프로덕트 매니저(PM)를 찾습니다.",
+      "preview": "경력 · 정규직 · 마감 D-30 · 접수마감 2026.09.13",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49779534",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13",
+      "deadlineISO": "2026-09-13",
+      "deadlineText": "2026.09.13",
+      "alwaysHire": false,
+      "popularRank": 22,
+      "popularScore": 1.813476
     },
     {
       "id": "94ba4f049464b0af21eb",
@@ -65,7 +80,7 @@
       "deadlineText": "2026.08.19",
       "alwaysHire": false,
       "popularRank": 23,
-      "popularScore": 1.7945889
+      "popularScore": 1.786938
     },
     {
       "id": "57d895795df74dbe0caa",
@@ -80,7 +95,7 @@
       "deadlineText": "2026.09.12",
       "alwaysHire": false,
       "popularRank": 24,
-      "popularScore": 1.785674
+      "popularScore": 1.780283
     },
     {
       "id": "51066d1dd642abac1011",
@@ -94,8 +109,8 @@
       "deadlineISO": "2026-10-11",
       "deadlineText": "2026.10.11",
       "alwaysHire": false,
-      "popularRank": 15,
-      "popularScore": 2.288599
+      "popularRank": 13,
+      "popularScore": 2.315051
     },
     {
       "id": "5c58602021c8343a372a",
@@ -109,8 +124,8 @@
       "deadlineISO": "2026-09-10",
       "deadlineText": "2026.09.10",
       "alwaysHire": false,
-      "popularRank": 22,
-      "popularScore": 1.815274
+      "popularRank": 21,
+      "popularScore": 1.830486
     },
     {
       "id": "88a0735cd26b5ca6d82a",
@@ -125,7 +140,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 3,
-      "popularScore": 3.033661
+      "popularScore": 3.039694
     },
     {
       "id": "12bf98b40800dd3a7915",
@@ -139,8 +154,8 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 6,
-      "popularScore": 2.526033
+      "popularRank": 5,
+      "popularScore": 2.519055
     },
     {
       "id": "cfc1e393775a21db0610",
@@ -154,8 +169,8 @@
       "deadlineISO": "2026-08-23",
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
-      "popularRank": 8,
-      "popularScore": 2.39243
+      "popularRank": 7,
+      "popularScore": 2.387241
     },
     {
       "id": "68c4a721b6baf77b0337",
@@ -169,8 +184,8 @@
       "deadlineISO": "2026-08-23",
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
-      "popularRank": 19,
-      "popularScore": 2.151999
+      "popularRank": 17,
+      "popularScore": 2.1495261
     },
     {
       "id": "efb0a4e54d0c058c1929",
@@ -184,8 +199,8 @@
       "deadlineISO": "2026-10-07",
       "deadlineText": "2026.10.07",
       "alwaysHire": false,
-      "popularRank": 21,
-      "popularScore": 2.13603
+      "popularRank": 19,
+      "popularScore": 2.1382
     },
     {
       "id": "a1fe7bd9977bbed907d5",
@@ -200,7 +215,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 2,
-      "popularScore": 3.593563
+      "popularScore": 3.591976
     },
     {
       "id": "e8edd83d0f5b54809dd6",
@@ -214,8 +229,8 @@
       "deadlineISO": "2026-09-06",
       "deadlineText": "2026.09.06",
       "alwaysHire": false,
-      "popularRank": 13,
-      "popularScore": 2.3458219
+      "popularRank": 11,
+      "popularScore": 2.335466
     },
     {
       "id": "5bdf117422a38ac42fd6",
@@ -229,8 +244,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 18,
-      "popularScore": 2.167818
+      "popularRank": 16,
+      "popularScore": 2.177993
     },
     {
       "id": "a19b344837c8700e1a2e",
@@ -244,8 +259,8 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 20,
-      "popularScore": 2.141174
+      "popularRank": 18,
+      "popularScore": 2.140897
     },
     {
       "id": "52e3de0f3e258ff8c87a",
@@ -259,8 +274,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 14,
-      "popularScore": 2.302425
+      "popularRank": 12,
+      "popularScore": 2.328527
     },
     {
       "id": "40c04c463d1729207506",
@@ -275,7 +290,7 @@
       "deadlineText": "2026.08.16",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 3.93689
+      "popularScore": 3.946379
     },
     {
       "id": "cac58faef283c6e518f7",
@@ -289,8 +304,8 @@
       "deadlineISO": "2026-09-25",
       "deadlineText": "2026.09.25",
       "alwaysHire": false,
-      "popularRank": 7,
-      "popularScore": 2.4439151
+      "popularRank": 6,
+      "popularScore": 2.486987
     },
     {
       "id": "cdd3b46c07e0236116a7",
@@ -305,7 +320,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 9,
-      "popularScore": 2.367657
+      "popularScore": 2.3644412
     },
     {
       "id": "36411c5580bf3a0a03ef",
@@ -319,38 +334,23 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 17,
-      "popularScore": 2.169904
+      "popularRank": 15,
+      "popularScore": 2.184345
     },
     {
-      "id": "c4b6e2d9e1ed5272120e",
-      "jobId": "49674594",
-      "companyName": "피크닉",
-      "title": "2026 피크닉 UX 기획 / UI 디자인 / PM 경력직 채용 (정규직)",
-      "preview": "경력 · 정규직 · 마감 D-44 · 접수마감 2026.09.27",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49674594",
-      "dateISO": "2026-07-29",
-      "dateText": "2026.07.29",
-      "deadlineISO": "2026-09-27",
-      "deadlineText": "2026.09.27",
+      "id": "d5aa9dbc05ebb87dadde",
+      "jobId": "49640639",
+      "companyName": "㈜다이퀘스트",
+      "title": "[다이퀘스트] 공공 AX 제안/사업 PM (경력직)",
+      "preview": "경력 · 정규직 · 마감 D-9 · 접수마감 2026.08.23",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49640639",
+      "dateISO": "2026-07-23",
+      "dateText": "2026.07.23",
+      "deadlineISO": "2026-08-23",
+      "deadlineText": "2026.08.23",
       "alwaysHire": false,
-      "popularRank": 12,
-      "popularScore": 2.345965
-    },
-    {
-      "id": "50681cf6ac76954ab4e8",
-      "jobId": "49622313",
-      "companyName": "(주)키투웨이",
-      "title": "경영 컨설팅 경력직 컨설턴트 채용",
-      "preview": "경력 · 정규직·계약직 · 마감 D-6 · 접수마감 2026.08.20",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49622313",
-      "dateISO": "2026-07-21",
-      "dateText": "2026.07.21",
-      "deadlineISO": "2026-08-20",
-      "deadlineText": "2026.08.20",
-      "alwaysHire": false,
-      "popularRank": 5,
-      "popularScore": 2.609053
+      "popularRank": 20,
+      "popularScore": 2.134768
     },
     {
       "id": "b2d647ba9dc240a68915",
@@ -365,7 +365,7 @@
       "deadlineText": "2026.08.20",
       "alwaysHire": false,
       "popularRank": 10,
-      "popularScore": 2.354775
+      "popularScore": 2.355079
     }
   ],
   "stale": false,
