@@ -503,16 +503,6 @@
       margin-bottom: 2px;
     }
 
-    /* 게시판 하단 → 커리어넷 Open API (갈색 경계선) */
-    .career-api-rule {
-      width: min(1560px, calc(100% - 24px));
-      margin: 18px auto 0;
-      border: 0;
-      border-top: 3px solid #3d2b1f;
-      height: 0;
-      box-shadow: 0 1px 0 rgba(166, 124, 82, 0.35);
-    }
-
     .career-api-section {
       width: min(1560px, 100%);
       margin: 0 auto;
@@ -763,18 +753,22 @@
       letter-spacing: -0.01em;
     }
 
-    .career-api-url a {
+    .career-api-url a,
+    .career-api-url .url-text {
       color: #3d2b1f;
       font-size: 11.5px;
       font-weight: 600;
       line-height: 1.45;
       word-break: break-all;
       text-decoration: none;
+    }
+
+    .career-api-url a[href] {
       border-bottom: 1px solid rgba(139, 105, 20, 0.28);
     }
 
-    .career-api-url a:hover,
-    .career-api-url a:focus-visible {
+    .career-api-url a[href]:hover,
+    .career-api-url a[href]:focus-visible {
       color: #8b6914;
       outline: none;
     }
@@ -861,11 +855,6 @@
     }
 
     @media (max-width: 720px) {
-      .career-api-rule {
-        margin-top: 12px;
-        border-top-width: 2.5px;
-      }
-
       .career-api-section {
         padding-top: 12px;
         padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
@@ -3517,9 +3506,9 @@
       </div>
     </section>
 
-    <hr class="career-api-rule" aria-hidden="true" />
+    <hr class="stage-rule sagwan-board-rule" aria-hidden="true" />
 
-    <section class="career-api-section" id="careerApi" aria-label="커리어넷 오픈 API">
+    <section class="career-api-section" id="careerApi" aria-label="커리어넷">
       <div class="career-api-shell">
         <header class="career-api-head">
           <div class="career-api-title">
@@ -3530,13 +3519,8 @@
               </svg>
             </span>
             <div>
-              <h2>커리어넷 Open API</h2>
-              <p>커리어넷 오픈 API의 인증키는 이미지와 같습니다.</p>
+              <h2>커리어넷</h2>
             </div>
-          </div>
-          <div class="career-api-key">
-            <span>API Key</span>
-            <code id="careerApiKey">53c8a9bae95e3fc436a68af66cd838c1</code>
           </div>
         </header>
 
@@ -6293,8 +6277,9 @@
         const root = document.getElementById("careerApi");
         if (!root) return;
 
-        const KEY = String(document.getElementById("careerApiKey")?.textContent || "").trim();
+        // 인증키는 클라이언트/저장소에 두지 않음. URL은 공식 문서와 같이 '인증키' 자리표시만 사용.
         const BASE = "https://www.career.go.kr/cnet/openapi/getOpenApi";
+        const KEY_PLACEHOLDER = "인증키";
 
         const tabs = Array.from(root.querySelectorAll("[data-career-tab]"));
         const panels = Array.from(root.querySelectorAll("[data-career-panel]"));
@@ -6317,208 +6302,94 @@
           btn.addEventListener("click", () => setTab(btn.getAttribute("data-career-tab")));
         });
 
-        function setLink(el, url) {
+        function setDocUrl(el, url) {
           if (!el) return;
-          el.href = url;
+          el.removeAttribute("href");
+          el.setAttribute("role", "text");
           el.textContent = url;
+          el.style.cursor = "default";
+          el.style.borderBottom = "0";
+          el.onclick = (e) => e.preventDefault();
         }
 
-        function schoolUrls() {
-          const gubun = document.getElementById("careerSchoolGubun")?.value || "고등학교";
+        function paintDocUrls() {
+          setDocUrl(
+            document.getElementById("careerSchoolXml"),
+            `${BASE}?apiKey=${KEY_PLACEHOLDER}&contentType=xml`
+          );
+          setDocUrl(
+            document.getElementById("careerSchoolJson"),
+            `${BASE}?apiKey=${KEY_PLACEHOLDER}&contentType=json`
+          );
+          setDocUrl(
+            document.getElementById("careerMajorXml"),
+            `${BASE}?apiKey=${KEY_PLACEHOLDER}&contentType=xml`
+          );
+          setDocUrl(
+            document.getElementById("careerMajorJson"),
+            `${BASE}?apiKey=${KEY_PLACEHOLDER}&contentType=json`
+          );
+          setDocUrl(
+            document.getElementById("careerJobXml"),
+            `https://www.career.go.kr/cnet/openapi/getOpenApi.xml?apiKey=${KEY_PLACEHOLDER}`
+          );
+          setDocUrl(
+            document.getElementById("careerJobJson"),
+            `https://www.career.go.kr/cnet/openapi/getOpenApi.json?apiKey=${KEY_PLACEHOLDER}`
+          );
+        }
+
+        function openPublic(url) {
+          window.open(url, "_blank", "noopener,noreferrer");
+        }
+
+        function runSchool() {
           const q = String(document.getElementById("careerSchoolQ")?.value || "").trim();
-          const common =
-            `apiKey=${encodeURIComponent(KEY)}` +
-            `&svcType=api&svcCode=SCHOOL` +
-            `&gubun=${encodeURIComponent(gubun)}` +
-            `&thisPage=1&perPage=20` +
-            (q ? `&searchSchulNm=${encodeURIComponent(q)}` : "");
-          // 문서 표기 형태(기본) + 조회용(파라미터 포함)
-          const xmlDoc = `${BASE}?apiKey=${encodeURIComponent(KEY)}&contentType=xml`;
-          const jsonDoc = `${BASE}?apiKey=${encodeURIComponent(KEY)}&contentType=json`;
-          const jsonLive = `${BASE}?${common}&contentType=json`;
-          const xmlLive = `${BASE}?${common}&contentType=xml`;
-          setLink(document.getElementById("careerSchoolXml"), xmlDoc);
-          setLink(document.getElementById("careerSchoolJson"), jsonDoc);
-          return { xmlLive, jsonLive, xmlDoc, jsonDoc };
-        }
-
-        function majorUrls() {
-          const gubun = document.getElementById("careerMajorGubun")?.value || "대학교";
-          const q = String(document.getElementById("careerMajorQ")?.value || "").trim();
-          const common =
-            `apiKey=${encodeURIComponent(KEY)}` +
-            `&svcType=api&svcCode=MAJOR` +
-            `&gubun=${encodeURIComponent(gubun)}` +
-            `&thisPage=1&perPage=20` +
-            (q ? `&searchTitle=${encodeURIComponent(q)}` : "");
-          const xmlDoc = `${BASE}?apiKey=${encodeURIComponent(KEY)}&contentType=xml`;
-          const jsonDoc = `${BASE}?apiKey=${encodeURIComponent(KEY)}&contentType=json`;
-          const jsonLive = `${BASE}?${common}&contentType=json`;
-          const xmlLive = `${BASE}?${common}&contentType=xml`;
-          setLink(document.getElementById("careerMajorXml"), xmlDoc);
-          setLink(document.getElementById("careerMajorJson"), jsonDoc);
-          return { xmlLive, jsonLive, xmlDoc, jsonDoc };
-        }
-
-        function jobUrls() {
-          const q = String(document.getElementById("careerJobQ")?.value || "").trim();
-          const xmlDoc = `https://www.career.go.kr/cnet/openapi/getOpenApi.xml?apiKey=${encodeURIComponent(KEY)}`;
-          const jsonDoc = `https://www.career.go.kr/cnet/openapi/getOpenApi.json?apiKey=${encodeURIComponent(KEY)}`;
-          const common =
-            `apiKey=${encodeURIComponent(KEY)}` +
-            `&svcType=api&svcCode=JOB&gubun=job_dic_list` +
-            `&thisPage=1&perPage=20` +
-            (q ? `&searchJobNm=${encodeURIComponent(q)}` : "");
-          const jsonLive = `${BASE}.json?${common}`;
-          const xmlLive = `${BASE}.xml?${common}`;
-          setLink(document.getElementById("careerJobXml"), xmlDoc);
-          setLink(document.getElementById("careerJobJson"), jsonDoc);
-          return { xmlLive, jsonLive, xmlDoc, jsonDoc };
-        }
-
-        function asList(payload) {
-          if (!payload) return [];
-          if (Array.isArray(payload)) return payload;
-          const dataSearch = payload.dataSearch || payload.datasearch || payload;
-          const content = dataSearch?.content ?? dataSearch?.Content ?? payload.content;
-          if (Array.isArray(content)) return content;
-          if (content && typeof content === "object") return [content];
-          return [];
-        }
-
-        function renderItems(box, items, mapFn) {
-          if (!box) return;
-          if (!items.length) {
-            box.innerHTML = `<div class="career-api-empty">검색 결과가 없습니다.</div>`;
-            return;
-          }
-          box.innerHTML = items.map(mapFn).join("");
-        }
-
-        async function fetchJson(url) {
-          const res = await fetch(url, {
-            method: "GET",
-            headers: { Accept: "application/json,text/plain,*/*" },
-            cache: "no-store",
-          });
-          if (!res.ok) throw new Error(`http_${res.status}`);
-          const text = await res.text();
-          try {
-            return JSON.parse(text);
-          } catch {
-            throw new Error("json_parse");
-          }
-        }
-
-        async function runSchool() {
           const status = document.getElementById("careerSchoolStatus");
           const box = document.getElementById("careerSchoolResults");
-          const { jsonLive } = schoolUrls();
-          if (status) status.textContent = "조회 중…";
-          try {
-            const data = await fetchJson(jsonLive);
-            const rows = asList(data).slice(0, 40);
-            renderItems(box, rows, (it) => {
-              const name = escapeHtml(it.schoolName || it.schoolNm || it.schulNm || it.name || "학교");
-              const region = escapeHtml(it.region || it.adres || it.address || it.schoolGubun || "");
-              const type = escapeHtml(it.schoolType || it.sch1 || it.estType || "");
-              const sub = [region, type].filter(Boolean).join(" · ");
-              return (
-                `<div class="career-api-item">` +
-                `<strong>${name}</strong>` +
-                (sub ? `<span>${sub}</span>` : "") +
-                `</div>`
-              );
-            });
-            if (status) status.textContent = rows.length ? `${rows.length}건 표시` : "결과 없음";
-          } catch {
-            if (status) status.textContent = "브라우저에서 직접 호출이 제한될 수 있습니다. 아래 URL을 새 창에서 열어 확인하세요.";
-            if (box) {
-              box.innerHTML =
-                `<div class="career-api-empty">CORS 제한으로 목록을 불러오지 못했습니다.<br>` +
-                `<a href="${escapeHtml(jsonLive)}" target="_blank" rel="noopener noreferrer">JSON 결과 새 창에서 보기</a></div>`;
-            }
+          const url =
+            "https://www.career.go.kr/cnet/front/school/schoolIntroList.do" +
+            (q ? `?searchSchulNm=${encodeURIComponent(q)}` : "");
+          if (status) status.textContent = q ? `「${q}」 학교정보로 이동합니다.` : "학교정보 페이지로 이동합니다.";
+          if (box) {
+            box.innerHTML = `<div class="career-api-empty">커리어넷 학교정보 페이지에서 확인하세요.</div>`;
           }
+          openPublic(url);
         }
 
-        async function runMajor() {
+        function runMajor() {
+          const q = String(document.getElementById("careerMajorQ")?.value || "").trim();
           const status = document.getElementById("careerMajorStatus");
           const box = document.getElementById("careerMajorResults");
-          const { jsonLive } = majorUrls();
-          if (status) status.textContent = "조회 중…";
-          try {
-            const data = await fetchJson(jsonLive);
-            const rows = asList(data).slice(0, 40);
-            renderItems(box, rows, (it) => {
-              const name = escapeHtml(it.major || it.majorName || it.mClass || it.title || "학과");
-              const sub = escapeHtml(
-                [it.lClass, it.facilName, it.university, it.univName, it.schoolName]
-                  .filter(Boolean)
-                  .join(" · ")
-              );
-              return (
-                `<div class="career-api-item">` +
-                `<strong>${name}</strong>` +
-                (sub ? `<span>${sub}</span>` : "") +
-                `</div>`
-              );
-            });
-            if (status) status.textContent = rows.length ? `${rows.length}건 표시` : "결과 없음";
-          } catch {
-            if (status) status.textContent = "브라우저에서 직접 호출이 제한될 수 있습니다. 아래 URL을 새 창에서 열어 확인하세요.";
-            if (box) {
-              box.innerHTML =
-                `<div class="career-api-empty">CORS 제한으로 목록을 불러오지 못했습니다.<br>` +
-                `<a href="${escapeHtml(jsonLive)}" target="_blank" rel="noopener noreferrer">JSON 결과 새 창에서 보기</a></div>`;
-            }
+          const url =
+            "https://www.career.go.kr/cnet/front/major/majorIntroList.do" +
+            (q ? `?searchTitle=${encodeURIComponent(q)}` : "");
+          if (status) status.textContent = q ? `「${q}」 학과정보로 이동합니다.` : "학과정보 페이지로 이동합니다.";
+          if (box) {
+            box.innerHTML = `<div class="career-api-empty">커리어넷 학과정보 페이지에서 확인하세요.</div>`;
           }
+          openPublic(url);
         }
 
-        async function runJob() {
+        function runJob() {
+          const q = String(document.getElementById("careerJobQ")?.value || "").trim();
           const status = document.getElementById("careerJobStatus");
           const box = document.getElementById("careerJobResults");
-          const { jsonLive } = jobUrls();
-          if (status) status.textContent = "조회 중…";
-          try {
-            const data = await fetchJson(jsonLive);
-            const rows = asList(data).slice(0, 40);
-            renderItems(box, rows, (it) => {
-              const name = escapeHtml(it.job || it.jobNm || it.jobName || it.name || "직업");
-              const sub = escapeHtml(
-                [it.job_prospect || it.prospect, it.sal || it.salary, it.aptd_type || it.apti]
-                  .filter(Boolean)
-                  .join(" · ")
-              );
-              return (
-                `<div class="career-api-item">` +
-                `<strong>${name}</strong>` +
-                (sub ? `<span>${sub}</span>` : "") +
-                `</div>`
-              );
-            });
-            if (status) status.textContent = rows.length ? `${rows.length}건 표시` : "결과 없음";
-          } catch {
-            if (status) status.textContent = "브라우저에서 직접 호출이 제한될 수 있습니다. 아래 URL을 새 창에서 열어 확인하세요.";
-            if (box) {
-              box.innerHTML =
-                `<div class="career-api-empty">CORS 제한으로 목록을 불러오지 못했습니다.<br>` +
-                `<a href="${escapeHtml(jsonLive)}" target="_blank" rel="noopener noreferrer">JSON 결과 새 창에서 보기</a></div>`;
-            }
+          const url =
+            "https://www.career.go.kr/cnet/front/job/jobIntroList.do" +
+            (q ? `?searchJobNm=${encodeURIComponent(q)}` : "");
+          if (status) status.textContent = q ? `「${q}」 직업정보로 이동합니다.` : "직업정보 페이지로 이동합니다.";
+          if (box) {
+            box.innerHTML = `<div class="career-api-empty">커리어넷 직업정보 페이지에서 확인하세요.</div>`;
           }
+          openPublic(url);
         }
 
-        schoolUrls();
-        majorUrls();
-        jobUrls();
+        paintDocUrls();
 
         document.getElementById("careerSchoolBtn")?.addEventListener("click", runSchool);
         document.getElementById("careerMajorBtn")?.addEventListener("click", runMajor);
         document.getElementById("careerJobBtn")?.addEventListener("click", runJob);
-        document.getElementById("careerSchoolGubun")?.addEventListener("change", schoolUrls);
-        document.getElementById("careerMajorGubun")?.addEventListener("change", majorUrls);
-        document.getElementById("careerSchoolQ")?.addEventListener("input", schoolUrls);
-        document.getElementById("careerMajorQ")?.addEventListener("input", majorUrls);
-        document.getElementById("careerJobQ")?.addEventListener("input", jobUrls);
 
         [["careerSchoolQ", runSchool], ["careerMajorQ", runMajor], ["careerJobQ", runJob]].forEach(
           ([id, fn]) => {
