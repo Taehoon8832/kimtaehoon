@@ -503,6 +503,402 @@
       margin-bottom: 2px;
     }
 
+    /* 게시판 하단 → 커리어넷 Open API (갈색 경계선) */
+    .career-api-rule {
+      width: min(1560px, calc(100% - 24px));
+      margin: 18px auto 0;
+      border: 0;
+      border-top: 3px solid #3d2b1f;
+      height: 0;
+      box-shadow: 0 1px 0 rgba(166, 124, 82, 0.35);
+    }
+
+    .career-api-section {
+      width: min(1560px, 100%);
+      margin: 0 auto;
+      padding: 18px clamp(12px, 3vw, 20px) calc(72px + env(safe-area-inset-bottom, 0px));
+      content-visibility: auto;
+      contain-intrinsic-size: 480px;
+    }
+
+    .career-api-shell {
+      border: 1.5px solid rgba(61, 43, 31, 0.22);
+      border-radius: 22px;
+      background:
+        linear-gradient(180deg, #fbfaf7 0%, #f7f4ef 42%, #ffffff 100%);
+      box-shadow: 0 16px 36px rgba(40, 28, 16, 0.08);
+      overflow: hidden;
+    }
+
+    .career-api-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px 20px;
+      padding: 16px 18px 14px;
+      border-bottom: 1px solid rgba(61, 43, 31, 0.12);
+      background: linear-gradient(180deg, #f3ebe0 0%, #f8f3ec 100%);
+    }
+
+    .career-api-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+
+    .career-api-title .ic {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      color: #f5e6c8;
+      background: linear-gradient(145deg, #6b4f3a 0%, #3d2b1f 100%);
+      box-shadow: 0 4px 10px rgba(61, 43, 31, 0.2);
+    }
+
+    .career-api-title .ic svg {
+      width: 17px;
+      height: 17px;
+    }
+
+    .career-api-title h2 {
+      margin: 0;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #2a1c12;
+      line-height: 1.25;
+    }
+
+    .career-api-title p {
+      margin: 3px 0 0;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #6a5646;
+      line-height: 1.4;
+      word-break: keep-all;
+    }
+
+    .career-api-key {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+      min-width: 0;
+    }
+
+    .career-api-key span {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #8a7360;
+      text-transform: uppercase;
+    }
+
+    .career-api-key code {
+      display: inline-block;
+      max-width: min(100%, 34rem);
+      padding: 6px 10px;
+      border-radius: 10px;
+      border: 1px solid rgba(61, 43, 31, 0.16);
+      background: rgba(255, 253, 248, 0.95);
+      color: #2a1c12;
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 11.5px;
+      font-weight: 650;
+      letter-spacing: -0.01em;
+      line-height: 1.35;
+      word-break: break-all;
+      user-select: all;
+    }
+
+    .career-api-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0;
+      border-bottom: 1px solid rgba(61, 43, 31, 0.1);
+      background: #f5f1ea;
+    }
+
+    .career-api-tab {
+      appearance: none;
+      border: 0;
+      border-right: 1px solid rgba(61, 43, 31, 0.08);
+      background: transparent;
+      color: #6a5646;
+      padding: 12px 10px;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: -0.02em;
+      cursor: pointer;
+      transition: color 0.15s ease, background 0.15s ease;
+    }
+
+    .career-api-tab:last-child {
+      border-right: 0;
+    }
+
+    .career-api-tab:hover,
+    .career-api-tab:focus-visible {
+      color: #2a1c12;
+      background: rgba(255, 253, 248, 0.7);
+      outline: none;
+    }
+
+    .career-api-tab.is-active {
+      color: #2a1c12;
+      background: #fffdf8;
+      box-shadow: inset 0 -2px 0 #8b6914;
+    }
+
+    .career-api-panel {
+      display: none;
+      padding: 14px 16px 16px;
+      background: #fffdf8;
+    }
+
+    .career-api-panel.is-active {
+      display: block;
+      animation: careerApiIn 0.22s var(--ease-out) both;
+    }
+
+    @keyframes careerApiIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .career-api-panel.is-active {
+        animation: none;
+      }
+    }
+
+    .career-api-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .career-api-toolbar input[type="search"] {
+      flex: 1 1 180px;
+      min-width: 0;
+      height: 36px;
+      padding: 0 12px;
+      border: 1px solid rgba(61, 43, 31, 0.16);
+      border-radius: 11px;
+      background: #fff;
+      color: #2a1c12;
+      font: inherit;
+      font-size: 12.5px;
+      font-weight: 600;
+    }
+
+    .career-api-toolbar input[type="search"]:focus {
+      outline: none;
+      border-color: rgba(139, 105, 20, 0.55);
+      box-shadow: 0 0 0 3px rgba(166, 124, 82, 0.16);
+    }
+
+    .career-api-toolbar select {
+      height: 36px;
+      padding: 0 10px;
+      border: 1px solid rgba(61, 43, 31, 0.16);
+      border-radius: 11px;
+      background: #fff;
+      color: #2a1c12;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .career-api-toolbar button {
+      height: 36px;
+      padding: 0 14px;
+      border: 0;
+      border-radius: 11px;
+      background: linear-gradient(145deg, #6b4f3a 0%, #3d2b1f 100%);
+      color: #f8efd8;
+      font: inherit;
+      font-size: 12.5px;
+      font-weight: 750;
+      letter-spacing: -0.02em;
+      cursor: pointer;
+      transition: transform 0.15s ease, filter 0.15s ease;
+    }
+
+    .career-api-toolbar button:hover,
+    .career-api-toolbar button:focus-visible {
+      transform: translateY(-1px);
+      filter: brightness(1.06);
+      outline: none;
+    }
+
+    .career-api-urls {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .career-api-url {
+      display: grid;
+      gap: 4px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(61, 43, 31, 0.1);
+      background: rgba(255, 255, 255, 0.72);
+    }
+
+    .career-api-url b {
+      font-size: 11px;
+      font-weight: 800;
+      color: #6a5646;
+      letter-spacing: -0.01em;
+    }
+
+    .career-api-url a {
+      color: #3d2b1f;
+      font-size: 11.5px;
+      font-weight: 600;
+      line-height: 1.45;
+      word-break: break-all;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(139, 105, 20, 0.28);
+    }
+
+    .career-api-url a:hover,
+    .career-api-url a:focus-visible {
+      color: #8b6914;
+      outline: none;
+    }
+
+    .career-api-status {
+      min-height: 18px;
+      margin: 0 0 8px;
+      font-size: 11.5px;
+      font-weight: 650;
+      color: #8a7360;
+    }
+
+    .career-api-results {
+      display: grid;
+      gap: 0;
+      max-height: min(360px, 46vh);
+      overflow: auto;
+      border: 1px solid rgba(61, 43, 31, 0.1);
+      border-radius: 14px;
+      background: #fff;
+      overscroll-behavior: contain;
+    }
+
+    .career-api-item {
+      display: grid;
+      gap: 3px;
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(61, 43, 31, 0.08);
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.12s ease;
+    }
+
+    .career-api-item:last-child {
+      border-bottom: 0;
+    }
+
+    .career-api-item:hover,
+    .career-api-item:focus-visible {
+      background: #faf6f0;
+      outline: none;
+    }
+
+    .career-api-item strong {
+      font-size: 13px;
+      font-weight: 780;
+      letter-spacing: -0.02em;
+      color: #2a1c12;
+      line-height: 1.35;
+      word-break: keep-all;
+    }
+
+    .career-api-item span {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #7a6554;
+      line-height: 1.4;
+      word-break: keep-all;
+    }
+
+    .career-api-empty {
+      padding: 28px 16px;
+      text-align: center;
+      font-size: 12.5px;
+      font-weight: 650;
+      color: #8a7360;
+      line-height: 1.5;
+      word-break: keep-all;
+    }
+
+    @media (max-width: 980px) {
+      .career-api-head {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .career-api-key {
+        align-items: flex-start;
+      }
+
+      .career-api-key code {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .career-api-rule {
+        margin-top: 12px;
+        border-top-width: 2.5px;
+      }
+
+      .career-api-section {
+        padding-top: 12px;
+        padding-bottom: calc(80px + env(safe-area-inset-bottom, 0px));
+      }
+
+      .career-api-shell {
+        border-radius: 18px;
+      }
+
+      .career-api-tabs {
+        grid-template-columns: 1fr;
+      }
+
+      .career-api-tab {
+        border-right: 0;
+        border-bottom: 1px solid rgba(61, 43, 31, 0.08);
+        text-align: left;
+        padding-left: 14px;
+      }
+
+      .career-api-tab:last-child {
+        border-bottom: 0;
+      }
+
+      .career-api-tab.is-active {
+        box-shadow: inset 3px 0 0 #8b6914;
+      }
+
+      .career-api-results {
+        max-height: min(420px, 52vh);
+      }
+    }
+
     .lower-layout {
       background:
         radial-gradient(70% 55% at 50% -8%, rgba(250, 45, 72, 0.1), transparent 62%),
@@ -511,7 +907,7 @@
     }
 
     .chat-section {
-      padding: clamp(8px, 1.5vw, 14px) clamp(12px, 3vw, 20px) clamp(48px, 8vw, 88px);
+      padding: clamp(8px, 1.5vw, 14px) clamp(12px, 3vw, 20px) clamp(18px, 3vw, 28px);
       width: min(1560px, 100%);
       margin: 0 auto;
     }
@@ -1809,6 +2205,16 @@
       color: #2a1c12;
     }
 
+    .sagwan-score-note .u {
+      font-weight: 800;
+      color: #2a1c12;
+      text-decoration: underline;
+      text-decoration-color: rgba(139, 105, 20, 0.72);
+      text-decoration-thickness: 1.5px;
+      text-underline-offset: 2.5px;
+      text-decoration-skip-ink: auto;
+    }
+
     .sagwan-main-row {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 14px minmax(148px, 168px);
@@ -2885,8 +3291,8 @@
         </button>
         <aside class="sagwan-score-note" aria-label="1차 필기시험 점수 공유 안내">
           <p>
-            <strong>2026년 8월 30일까지</strong> 1차 필기시험 점수 공유를 진행합니다.
-            점수를 인증해 주신 분들께는 인증 시 남겨주신 이메일 주소를 통해 추후 관련 자료를 우선 공유드릴 예정입니다.
+            <span class="u">2026년 8월 30일까지 1차 필기시험 점수 공유를 진행</span>합니다.
+            점수를 인증해 주신 분들께는 인증 시 남겨주신 <span class="u">이메일 주소를 통해 추후 관련 자료를 우선 공유</span>드릴 예정입니다.
           </p>
         </aside>
       </div>
@@ -3108,6 +3514,112 @@
             <div class="univ-notice-empty">교육 정책·정보를 불러오는 중입니다…</div>
           </div>
         </aside>
+      </div>
+    </section>
+
+    <hr class="career-api-rule" aria-hidden="true" />
+
+    <section class="career-api-section" id="careerApi" aria-label="커리어넷 오픈 API">
+      <div class="career-api-shell">
+        <header class="career-api-head">
+          <div class="career-api-title">
+            <span class="ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none">
+                <path d="M5 7.5h14M5 12h14M5 16.5h9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <rect x="4" y="4.5" width="16" height="15" rx="2.2" stroke="currentColor" stroke-width="1.7"/>
+              </svg>
+            </span>
+            <div>
+              <h2>커리어넷 Open API</h2>
+              <p>커리어넷 오픈 API의 인증키는 이미지와 같습니다.</p>
+            </div>
+          </div>
+          <div class="career-api-key">
+            <span>API Key</span>
+            <code id="careerApiKey">53c8a9bae95e3fc436a68af66cd838c1</code>
+          </div>
+        </header>
+
+        <div class="career-api-tabs" role="tablist" aria-label="커리어넷 정보 구분">
+          <button type="button" class="career-api-tab is-active" role="tab" aria-selected="true" data-career-tab="school">학교정보</button>
+          <button type="button" class="career-api-tab" role="tab" aria-selected="false" data-career-tab="major">학과정보</button>
+          <button type="button" class="career-api-tab" role="tab" aria-selected="false" data-career-tab="job">직업정보</button>
+        </div>
+
+        <div class="career-api-panel is-active" id="careerPanelSchool" role="tabpanel" data-career-panel="school">
+          <div class="career-api-toolbar">
+            <select id="careerSchoolGubun" aria-label="학교 분류">
+              <option value="고등학교" selected>고등학교</option>
+              <option value="대학교">대학교</option>
+              <option value="중학교">중학교</option>
+              <option value="초등학교">초등학교</option>
+              <option value="특수학교">특수학교</option>
+              <option value="기타">기타</option>
+            </select>
+            <input type="search" id="careerSchoolQ" placeholder="학교명 검색…" autocomplete="off" spellcheck="false" />
+            <button type="button" id="careerSchoolBtn">조회</button>
+          </div>
+          <div class="career-api-urls">
+            <div class="career-api-url">
+              <b>XML 형태 URL</b>
+              <a id="careerSchoolXml" href="#" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+            <div class="career-api-url">
+              <b>JSON 형태 URL</b>
+              <a id="careerSchoolJson" href="#" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+          </div>
+          <p class="career-api-status" id="careerSchoolStatus">학교 정보를 조회해 보세요.</p>
+          <div class="career-api-results" id="careerSchoolResults" aria-live="polite">
+            <div class="career-api-empty">검색어를 입력한 뒤 조회하면 결과가 표시됩니다.</div>
+          </div>
+        </div>
+
+        <div class="career-api-panel" id="careerPanelMajor" role="tabpanel" data-career-panel="major" hidden>
+          <div class="career-api-toolbar">
+            <select id="careerMajorGubun" aria-label="학과 학교 분류">
+              <option value="대학교" selected>대학교</option>
+              <option value="고등학교">고등학교</option>
+            </select>
+            <input type="search" id="careerMajorQ" placeholder="학과명 검색…" autocomplete="off" spellcheck="false" />
+            <button type="button" id="careerMajorBtn">조회</button>
+          </div>
+          <div class="career-api-urls">
+            <div class="career-api-url">
+              <b>XML 형태 URL</b>
+              <a id="careerMajorXml" href="#" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+            <div class="career-api-url">
+              <b>JSON 형태 URL</b>
+              <a id="careerMajorJson" href="#" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+          </div>
+          <p class="career-api-status" id="careerMajorStatus">학과 정보를 조회해 보세요.</p>
+          <div class="career-api-results" id="careerMajorResults" aria-live="polite">
+            <div class="career-api-empty">검색어를 입력한 뒤 조회하면 결과가 표시됩니다.</div>
+          </div>
+        </div>
+
+        <div class="career-api-panel" id="careerPanelJob" role="tabpanel" data-career-panel="job" hidden>
+          <div class="career-api-toolbar">
+            <input type="search" id="careerJobQ" placeholder="직업명 검색…" autocomplete="off" spellcheck="false" />
+            <button type="button" id="careerJobBtn">조회</button>
+          </div>
+          <div class="career-api-urls">
+            <div class="career-api-url">
+              <b>XML 형태 URL</b>
+              <a id="careerJobXml" href="#" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+            <div class="career-api-url">
+              <b>JSON 형태 URL</b>
+              <a id="careerJobJson" href="#" target="_blank" rel="noopener noreferrer"></a>
+            </div>
+          </div>
+          <p class="career-api-status" id="careerJobStatus">직업 정보를 조회해 보세요.</p>
+          <div class="career-api-results" id="careerJobResults" aria-live="polite">
+            <div class="career-api-empty">검색어를 입력한 뒤 조회하면 결과가 표시됩니다.</div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -5777,6 +6289,249 @@
         });
       }
 
+      function bootCareerApi() {
+        const root = document.getElementById("careerApi");
+        if (!root) return;
+
+        const KEY = String(document.getElementById("careerApiKey")?.textContent || "").trim();
+        const BASE = "https://www.career.go.kr/cnet/openapi/getOpenApi";
+
+        const tabs = Array.from(root.querySelectorAll("[data-career-tab]"));
+        const panels = Array.from(root.querySelectorAll("[data-career-panel]"));
+
+        function setTab(name) {
+          tabs.forEach((btn) => {
+            const on = btn.getAttribute("data-career-tab") === name;
+            btn.classList.toggle("is-active", on);
+            btn.setAttribute("aria-selected", on ? "true" : "false");
+          });
+          panels.forEach((panel) => {
+            const on = panel.getAttribute("data-career-panel") === name;
+            panel.classList.toggle("is-active", on);
+            if (on) panel.removeAttribute("hidden");
+            else panel.setAttribute("hidden", "");
+          });
+        }
+
+        tabs.forEach((btn) => {
+          btn.addEventListener("click", () => setTab(btn.getAttribute("data-career-tab")));
+        });
+
+        function setLink(el, url) {
+          if (!el) return;
+          el.href = url;
+          el.textContent = url;
+        }
+
+        function schoolUrls() {
+          const gubun = document.getElementById("careerSchoolGubun")?.value || "고등학교";
+          const q = String(document.getElementById("careerSchoolQ")?.value || "").trim();
+          const common =
+            `apiKey=${encodeURIComponent(KEY)}` +
+            `&svcType=api&svcCode=SCHOOL` +
+            `&gubun=${encodeURIComponent(gubun)}` +
+            `&thisPage=1&perPage=20` +
+            (q ? `&searchSchulNm=${encodeURIComponent(q)}` : "");
+          // 문서 표기 형태(기본) + 조회용(파라미터 포함)
+          const xmlDoc = `${BASE}?apiKey=${encodeURIComponent(KEY)}&contentType=xml`;
+          const jsonDoc = `${BASE}?apiKey=${encodeURIComponent(KEY)}&contentType=json`;
+          const jsonLive = `${BASE}?${common}&contentType=json`;
+          const xmlLive = `${BASE}?${common}&contentType=xml`;
+          setLink(document.getElementById("careerSchoolXml"), xmlDoc);
+          setLink(document.getElementById("careerSchoolJson"), jsonDoc);
+          return { xmlLive, jsonLive, xmlDoc, jsonDoc };
+        }
+
+        function majorUrls() {
+          const gubun = document.getElementById("careerMajorGubun")?.value || "대학교";
+          const q = String(document.getElementById("careerMajorQ")?.value || "").trim();
+          const common =
+            `apiKey=${encodeURIComponent(KEY)}` +
+            `&svcType=api&svcCode=MAJOR` +
+            `&gubun=${encodeURIComponent(gubun)}` +
+            `&thisPage=1&perPage=20` +
+            (q ? `&searchTitle=${encodeURIComponent(q)}` : "");
+          const xmlDoc = `${BASE}?apiKey=${encodeURIComponent(KEY)}&contentType=xml`;
+          const jsonDoc = `${BASE}?apiKey=${encodeURIComponent(KEY)}&contentType=json`;
+          const jsonLive = `${BASE}?${common}&contentType=json`;
+          const xmlLive = `${BASE}?${common}&contentType=xml`;
+          setLink(document.getElementById("careerMajorXml"), xmlDoc);
+          setLink(document.getElementById("careerMajorJson"), jsonDoc);
+          return { xmlLive, jsonLive, xmlDoc, jsonDoc };
+        }
+
+        function jobUrls() {
+          const q = String(document.getElementById("careerJobQ")?.value || "").trim();
+          const xmlDoc = `https://www.career.go.kr/cnet/openapi/getOpenApi.xml?apiKey=${encodeURIComponent(KEY)}`;
+          const jsonDoc = `https://www.career.go.kr/cnet/openapi/getOpenApi.json?apiKey=${encodeURIComponent(KEY)}`;
+          const common =
+            `apiKey=${encodeURIComponent(KEY)}` +
+            `&svcType=api&svcCode=JOB&gubun=job_dic_list` +
+            `&thisPage=1&perPage=20` +
+            (q ? `&searchJobNm=${encodeURIComponent(q)}` : "");
+          const jsonLive = `${BASE}.json?${common}`;
+          const xmlLive = `${BASE}.xml?${common}`;
+          setLink(document.getElementById("careerJobXml"), xmlDoc);
+          setLink(document.getElementById("careerJobJson"), jsonDoc);
+          return { xmlLive, jsonLive, xmlDoc, jsonDoc };
+        }
+
+        function asList(payload) {
+          if (!payload) return [];
+          if (Array.isArray(payload)) return payload;
+          const dataSearch = payload.dataSearch || payload.datasearch || payload;
+          const content = dataSearch?.content ?? dataSearch?.Content ?? payload.content;
+          if (Array.isArray(content)) return content;
+          if (content && typeof content === "object") return [content];
+          return [];
+        }
+
+        function renderItems(box, items, mapFn) {
+          if (!box) return;
+          if (!items.length) {
+            box.innerHTML = `<div class="career-api-empty">검색 결과가 없습니다.</div>`;
+            return;
+          }
+          box.innerHTML = items.map(mapFn).join("");
+        }
+
+        async function fetchJson(url) {
+          const res = await fetch(url, {
+            method: "GET",
+            headers: { Accept: "application/json,text/plain,*/*" },
+            cache: "no-store",
+          });
+          if (!res.ok) throw new Error(`http_${res.status}`);
+          const text = await res.text();
+          try {
+            return JSON.parse(text);
+          } catch {
+            throw new Error("json_parse");
+          }
+        }
+
+        async function runSchool() {
+          const status = document.getElementById("careerSchoolStatus");
+          const box = document.getElementById("careerSchoolResults");
+          const { jsonLive } = schoolUrls();
+          if (status) status.textContent = "조회 중…";
+          try {
+            const data = await fetchJson(jsonLive);
+            const rows = asList(data).slice(0, 40);
+            renderItems(box, rows, (it) => {
+              const name = escapeHtml(it.schoolName || it.schoolNm || it.schulNm || it.name || "학교");
+              const region = escapeHtml(it.region || it.adres || it.address || it.schoolGubun || "");
+              const type = escapeHtml(it.schoolType || it.sch1 || it.estType || "");
+              const sub = [region, type].filter(Boolean).join(" · ");
+              return (
+                `<div class="career-api-item">` +
+                `<strong>${name}</strong>` +
+                (sub ? `<span>${sub}</span>` : "") +
+                `</div>`
+              );
+            });
+            if (status) status.textContent = rows.length ? `${rows.length}건 표시` : "결과 없음";
+          } catch {
+            if (status) status.textContent = "브라우저에서 직접 호출이 제한될 수 있습니다. 아래 URL을 새 창에서 열어 확인하세요.";
+            if (box) {
+              box.innerHTML =
+                `<div class="career-api-empty">CORS 제한으로 목록을 불러오지 못했습니다.<br>` +
+                `<a href="${escapeHtml(jsonLive)}" target="_blank" rel="noopener noreferrer">JSON 결과 새 창에서 보기</a></div>`;
+            }
+          }
+        }
+
+        async function runMajor() {
+          const status = document.getElementById("careerMajorStatus");
+          const box = document.getElementById("careerMajorResults");
+          const { jsonLive } = majorUrls();
+          if (status) status.textContent = "조회 중…";
+          try {
+            const data = await fetchJson(jsonLive);
+            const rows = asList(data).slice(0, 40);
+            renderItems(box, rows, (it) => {
+              const name = escapeHtml(it.major || it.majorName || it.mClass || it.title || "학과");
+              const sub = escapeHtml(
+                [it.lClass, it.facilName, it.university, it.univName, it.schoolName]
+                  .filter(Boolean)
+                  .join(" · ")
+              );
+              return (
+                `<div class="career-api-item">` +
+                `<strong>${name}</strong>` +
+                (sub ? `<span>${sub}</span>` : "") +
+                `</div>`
+              );
+            });
+            if (status) status.textContent = rows.length ? `${rows.length}건 표시` : "결과 없음";
+          } catch {
+            if (status) status.textContent = "브라우저에서 직접 호출이 제한될 수 있습니다. 아래 URL을 새 창에서 열어 확인하세요.";
+            if (box) {
+              box.innerHTML =
+                `<div class="career-api-empty">CORS 제한으로 목록을 불러오지 못했습니다.<br>` +
+                `<a href="${escapeHtml(jsonLive)}" target="_blank" rel="noopener noreferrer">JSON 결과 새 창에서 보기</a></div>`;
+            }
+          }
+        }
+
+        async function runJob() {
+          const status = document.getElementById("careerJobStatus");
+          const box = document.getElementById("careerJobResults");
+          const { jsonLive } = jobUrls();
+          if (status) status.textContent = "조회 중…";
+          try {
+            const data = await fetchJson(jsonLive);
+            const rows = asList(data).slice(0, 40);
+            renderItems(box, rows, (it) => {
+              const name = escapeHtml(it.job || it.jobNm || it.jobName || it.name || "직업");
+              const sub = escapeHtml(
+                [it.job_prospect || it.prospect, it.sal || it.salary, it.aptd_type || it.apti]
+                  .filter(Boolean)
+                  .join(" · ")
+              );
+              return (
+                `<div class="career-api-item">` +
+                `<strong>${name}</strong>` +
+                (sub ? `<span>${sub}</span>` : "") +
+                `</div>`
+              );
+            });
+            if (status) status.textContent = rows.length ? `${rows.length}건 표시` : "결과 없음";
+          } catch {
+            if (status) status.textContent = "브라우저에서 직접 호출이 제한될 수 있습니다. 아래 URL을 새 창에서 열어 확인하세요.";
+            if (box) {
+              box.innerHTML =
+                `<div class="career-api-empty">CORS 제한으로 목록을 불러오지 못했습니다.<br>` +
+                `<a href="${escapeHtml(jsonLive)}" target="_blank" rel="noopener noreferrer">JSON 결과 새 창에서 보기</a></div>`;
+            }
+          }
+        }
+
+        schoolUrls();
+        majorUrls();
+        jobUrls();
+
+        document.getElementById("careerSchoolBtn")?.addEventListener("click", runSchool);
+        document.getElementById("careerMajorBtn")?.addEventListener("click", runMajor);
+        document.getElementById("careerJobBtn")?.addEventListener("click", runJob);
+        document.getElementById("careerSchoolGubun")?.addEventListener("change", schoolUrls);
+        document.getElementById("careerMajorGubun")?.addEventListener("change", majorUrls);
+        document.getElementById("careerSchoolQ")?.addEventListener("input", schoolUrls);
+        document.getElementById("careerMajorQ")?.addEventListener("input", majorUrls);
+        document.getElementById("careerJobQ")?.addEventListener("input", jobUrls);
+
+        [["careerSchoolQ", runSchool], ["careerMajorQ", runMajor], ["careerJobQ", runJob]].forEach(
+          ([id, fn]) => {
+            document.getElementById(id)?.addEventListener("keydown", (e) => {
+              if (e.key === "Enter") {
+                e.preventDefault();
+                fn();
+              }
+            });
+          }
+        );
+      }
+
       bootSagwanStrip();
       bootUnivNotices();
       bootRecruitBoard();
@@ -5784,6 +6539,7 @@
       bootTeacherBoard();
       bootSuhuiBoard();
       bootEduBoard();
+      bootCareerApi();
       boardDayISO = seoulTodayISO();
       scheduleSeoulMidnightRollover();
       setInterval(() => {
