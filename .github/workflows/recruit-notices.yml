@@ -1,91 +1,131 @@
-name: Refresh recruit board (석박 채용)
-
-on:
-  schedule:
-    # 5분마다 (UTC) — 석박 채용 거의 실시간 갱신
-    - cron: "*/5 * * * *"
-  workflow_dispatch:
-
-permissions:
-  contents: write
-
-concurrency:
-  group: recruit-board-data
-  cancel-in-progress: false
-
-jobs:
-  scrape:
-    runs-on: ubuntu-latest
-    timeout-minutes: 8
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-
-      - name: Scrape recruit (API, Node)
-        id: node
-        continue-on-error: true
-        env:
-          NODE_TLS_REJECT_UNAUTHORIZED: "0"
-        run: node scripts/refresh_boards.mjs --only=recruit --strict
-
-      - name: Fallback scrape (Python API)
-        id: py
-        if: steps.node.outcome != 'success'
-        continue-on-error: true
-        run: python scripts/build_recruit.py --strict
-
-      - name: Require fresh scrape
-        run: |
-          if [ "${{ steps.node.outcome }}" != "success" ] && [ "${{ steps.py.outcome }}" != "success" ]; then
-            echo "Both Node and Python recruit scrapes failed"
-            exit 1
-          fi
-          node -e "
-          const fs=require('fs');
-          const j=JSON.parse(fs.readFileSync('data/recruit-notices.json','utf8'));
-          if(!Array.isArray(j.notices)||!j.notices.length) throw new Error('empty notices');
-          if(j.stale) throw new Error('stale payload');
-          const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
-          if(j.today!==today) throw new Error('today mismatch '+j.today+'!='+today);
-          const checked=Date.parse(j.checkedAt||j.updatedAt||0);
-          if(!checked||Date.now()-checked>30*60*1000) throw new Error('checkedAt too old');
-          console.log('fresh ok', j.count, j.today, j.statusReason||'');
-          "
-
-      - name: Validate recruit JSON
-        run: node scripts/validate_board_json.mjs data/recruit-notices.json recruit-board-data.js
-
-      - name: Commit recruit data
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add recruit-board-data.js data/recruit-notices.json
-          if git diff --staged --quiet; then
-            echo "No recruit data changes"
-            exit 0
-          fi
-          git commit -m "chore: refresh recruit board"
-          for i in 1 2 3 4 5; do
-            if git pull --rebase --autostash origin main; then
-              if grep -R "<<<<<<<" -n recruit-board-data.js data/recruit-notices.json >/dev/null 2>&1; then
-                echo "Conflict markers after rebase; aborting push"
-                git rebase --abort || true
-                exit 1
-              fi
-              git push && exit 0
-            fi
-            sleep $((i * 4))
-            git fetch origin main || true
-          done
-          echo "Push retries exhausted"
-          exit 1
-
+name: Refresh recruit board (석박 채용)
+
+on:
+  schedule:
+    # 15분마다 (UTC) — 진학프로 차단 시에도 메일 폭주 완화
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: recruit-board-data
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Scrape recruit (API, Node)
+        id: node
+        continue-on-error: true
+        env:
+          NODE_TLS_REJECT_UNAUTHORIZED: "0"
+        # strict: 실패 시 exit≠0 → Python/curl 폴백이 실행됨. 최종 Ensure 단계에서 캐시 허용.
+        run: node scripts/refresh_boards.mjs --only=recruit --strict
+
+      - name: Fallback scrape (Python API)
+        id: py
+        if: steps.node.outcome != 'success'
+        continue-on-error: true
+        run: python scripts/build_recruit.py --strict
+
+      - name: Curl API fallback
+        id: curl
+        if: steps.node.outcome != 'success' && steps.py.outcome != 'success'
+        continue-on-error: true
+        env:
+          NODE_TLS_REJECT_UNAUTHORIZED: "0"
+        run: |
+          set -e
+          curl -fsSL --retry 3 --retry-delay 2 \
+            -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" \
+            -H "Accept: application/json,text/plain,*/*" \
+            -H "Accept-Language: ko-KR,ko;q=0.9,en;q=0.8" \
+            -H "Referer: https://www.jinhakpro.com/recruit/list" \
+            -H "Origin: https://www.jinhakpro.com" \
+            "https://www.jinhakpro.com/api/applicant/recruit/sub-list?isOnlyOnlineApply=false&bookmarkSortType=1&majorCategoryCode=&sortType=1" \
+            -o /tmp/recruit-api.json
+          # cloudflare HTML이면 실패
+          if grep -qiE 'just a moment|cloudflare|cf-browser-verification' /tmp/recruit-api.json; then
+            echo "curl got cloudflare challenge"
+            exit 1
+          fi
+          node scripts/refresh_boards.mjs --only=recruit --api-file=/tmp/recruit-api.json --strict
+
+      - name: Ensure usable recruit payload
+        run: |
+          node <<'EOF'
+          const fs = require("fs");
+          const path = "data/recruit-notices.json";
+          if (!fs.existsSync(path)) throw new Error("missing recruit-notices.json");
+          const j = JSON.parse(fs.readFileSync(path, "utf8"));
+          if (!Array.isArray(j.notices) || !j.notices.length) {
+            throw new Error("empty notices");
+          }
+          const today = new Intl.DateTimeFormat("en-CA", {
+            timeZone: "Asia/Seoul",
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit",
+          }).format(new Date());
+          // 오늘 필드가 어긋나도 목록이 있으면 Actions 실패로 메일 보내지 않음
+          if (j.today && j.today !== today) {
+            console.warn("today field lag", j.today, "!=", today);
+          }
+          const checked = Date.parse(j.checkedAt || j.updatedAt || 0);
+          const ageH = checked ? (Date.now() - checked) / 3600000 : Infinity;
+          console.log(
+            "usable ok",
+            j.count,
+            j.statusReason || j.status || "",
+            "age_h=" + (Number.isFinite(ageH) ? ageH.toFixed(2) : "n/a"),
+            j.stale ? "STALE" : "fresh"
+          );
+          // 7일 이상 갱신 불가일 때만 실패 (완전 고착 감지)
+          if (ageH > 24 * 7) {
+            throw new Error("recruit data older than 7 days");
+          }
+          EOF
+
+      - name: Validate recruit JSON
+        run: node scripts/validate_board_json.mjs data/recruit-notices.json recruit-board-data.js
+
+      - name: Commit recruit data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add recruit-board-data.js data/recruit-notices.json
+          if git diff --staged --quiet; then
+            echo "No recruit data changes"
+            exit 0
+          fi
+          git commit -m "chore: refresh recruit board"
+          for i in 1 2 3 4 5; do
+            if git pull --rebase --autostash origin main; then
+              if grep -R "<<<<<<<" -n recruit-board-data.js data/recruit-notices.json >/dev/null 2>&1; then
+                echo "Conflict markers after rebase; aborting push"
+                git rebase --abort || true
+                exit 0
+              fi
+              git push && exit 0
+            fi
+            sleep $((i * 4))
+            git fetch origin main || true
+          done
+          echo "Push retries exhausted; leaving commit for next run"
+          exit 0

@@ -6,6 +6,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+// GitHub Actions / 일부 환경에서 대상 사이트 인증서·TLS 이슈 회피
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const UA =
   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36";
@@ -410,19 +413,29 @@ async function fetchRecruitApi() {
     Accept: "application/json,text/plain,*/*",
     "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.8",
     Referer: RECRUIT_LIST_URL,
+    Origin: "https://www.jinhakpro.com",
+    "Cache-Control": "no-cache",
+    Pragma: "no-cache",
+    "Sec-Fetch-Dest": "empty",
+    "Sec-Fetch-Mode": "cors",
+    "Sec-Fetch-Site": "same-origin",
   };
   let lastErr = null;
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 5; i++) {
     try {
       const res = await fetch(RECRUIT_API_URL, { headers, redirect: "follow" });
-      if (!res.ok) throw new Error(`http_${res.status}`);
-      const data = await res.json();
+      const text = await res.text();
+      if (!res.ok) throw new Error(`http_${res.status}:${text.slice(0, 120)}`);
+      if (/just a moment|cloudflare|cf-browser-verification/i.test(text)) {
+        throw new Error("cloudflare_challenge");
+      }
+      const data = JSON.parse(text);
       if (!Array.isArray(data) || !data.length) throw new Error("api_empty");
       if (!data[0]?.recruitIdx || !data[0]?.recruitTitle) throw new Error("api_shape");
       return data;
     } catch (e) {
       lastErr = e;
-      await new Promise((r) => setTimeout(r, 400 * (i + 1)));
+      await new Promise((r) => setTimeout(r, 700 * (i + 1)));
     }
   }
   throw lastErr || new Error("recruit api failed");
@@ -463,19 +476,23 @@ async function fetchRecruitHtmlFallback() {
   return text;
 }
 
-async function refreshRecruit() {
+async function refreshRecruit(apiItems = null) {
   const today = seoulToday();
-  let items = null;
-  let sourceMode = "api";
-  try {
-    items = await fetchRecruitApi();
-    console.log(`recruit api items=${items.length}`);
-  } catch (e) {
-    console.warn("recruit api failed, falling back to list html:", e?.message || e);
-    const html = await fetchRecruitHtmlFallback();
-    items = parseNuxtRecruits(html);
-    sourceMode = "html_nuxt";
-    console.log(`recruit html/nuxt items=${items.length}`);
+  let items = apiItems;
+  let sourceMode = apiItems ? "api_file" : "api";
+  if (!items) {
+    try {
+      items = await fetchRecruitApi();
+      console.log(`recruit api items=${items.length}`);
+    } catch (e) {
+      console.warn("recruit api failed, falling back to list html:", e?.message || e);
+      const html = await fetchRecruitHtmlFallback();
+      items = parseNuxtRecruits(html);
+      sourceMode = "html_nuxt";
+      console.log(`recruit html/nuxt items=${items.length}`);
+    }
+  } else {
+    console.log(`recruit api file items=${items.length}`);
   }
 
   const notices = noticesFromRecruitApi(items, today);
@@ -515,8 +532,16 @@ async function safeRefresh(name, fn, jsonRel, strict) {
   try {
     await fn();
   } catch (err) {
-    if (strict) throw err;
     const prev = loadPrevNotices(jsonRel);
+    if (strict) {
+      if (prev) {
+        console.error(
+          `${name} failed (strict) but previous cache exists (${prev.notices.length}):`,
+          err?.message || err
+        );
+      }
+      throw err;
+    }
     if (prev) {
       console.error(`${name} failed, keeping previous ${prev.notices.length} items:`, err?.message || err);
       return;
@@ -530,12 +555,32 @@ const only = (() => {
   return arg ? arg.slice("--only=".length).trim() : "";
 })();
 const strict = process.argv.includes("--strict");
+const apiFile = (() => {
+  const arg = process.argv.find((a) => a.startsWith("--api-file="));
+  return arg ? arg.slice("--api-file=".length).trim() : "";
+})();
 
-console.log("ROOT=", ROOT, only ? `only=${only}` : "all", strict ? "strict" : "");
+console.log("ROOT=", ROOT, only ? `only=${only}` : "all", strict ? "strict" : "", apiFile ? `api-file=${apiFile}` : "");
 if (!only || only === "jobkorea") {
-  await safeRefresh("jobkorea", refreshJobkorea, "data/jobkorea-notices.json", strict && only === "jobkorea");
+  await safeRefresh("jobkorea", refreshJobkorea, "data/jobkorea-notices.json", strict);
 }
 if (!only || only === "recruit") {
-  await safeRefresh("recruit", refreshRecruit, "data/recruit-notices.json", strict || only === "recruit");
+  if (apiFile) {
+    const raw = fs.readFileSync(apiFile, "utf8");
+    if (/just a moment|cloudflare/i.test(raw)) {
+      throw new Error("api-file cloudflare_challenge");
+    }
+    const data = JSON.parse(raw);
+    if (!Array.isArray(data) || !data.length) throw new Error("api-file empty");
+    await safeRefresh(
+      "recruit",
+      () => refreshRecruit(data),
+      "data/recruit-notices.json",
+      strict
+    );
+  } else {
+    // JobKorea와 동일: --strict 가 있을 때만 실패 전파. --only=recruit 만으로는 캐시 유지 허용.
+    await safeRefresh("recruit", () => refreshRecruit(null), "data/recruit-notices.json", strict);
+  }
 }
 console.log("done");

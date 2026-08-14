@@ -11,6 +11,7 @@ import hashlib
 import json
 import re
 import sys
+import time
 import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
@@ -106,6 +107,9 @@ def add_days(iso: str, delta: int) -> str:
 
 
 def http_get(url: str, accept: str, timeout: int = 45) -> str:
+    # Actions 환경 TLS/인증서 이슈 회피 (_board_io.CTX)
+    from _board_io import CTX  # local import keeps module side-effects minimal
+
     req = urllib.request.Request(
         url,
         headers={
@@ -113,18 +117,22 @@ def http_get(url: str, accept: str, timeout: int = 45) -> str:
             "Accept": accept,
             "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.8",
             "Referer": LIST_URL,
+            "Origin": "https://www.jinhakpro.com",
+            "Cache-Control": "no-cache",
         },
         method="GET",
     )
-    with urllib.request.urlopen(req, timeout=timeout) as res:
+    with urllib.request.urlopen(req, context=CTX, timeout=timeout) as res:
         return res.read().decode("utf-8", "replace")
 
 
 def fetch_api_items() -> list:
     last_err: Exception | None = None
-    for i in range(3):
+    for i in range(5):
         try:
             raw = http_get(url=API_URL, accept="application/json,text/plain,*/*")
+            if re.search(r"just a moment|cloudflare|cf-browser-verification", raw, re.I):
+                raise RuntimeError("cloudflare_challenge")
             data = json.loads(raw)
             if not isinstance(data, list) or not data:
                 raise RuntimeError("api_empty")
@@ -134,6 +142,7 @@ def fetch_api_items() -> list:
         except Exception as e:
             last_err = e
             print(f"warn: api attempt {i + 1} failed: {e}")
+            time.sleep(0.7 * (i + 1))
     raise RuntimeError(f"recruit api failed: {last_err}")
 
 
@@ -150,6 +159,8 @@ def fetch_list_html() -> str:
     mirror = http_get(url="https://r.jina.ai/" + LIST_URL, accept="text/plain,*/*", timeout=60)
     if len(mirror) < 400:
         raise RuntimeError("jina empty")
+    if "just a moment" in mirror.lower():
+        raise RuntimeError("jina cloudflare")
     return mirror
 
 
