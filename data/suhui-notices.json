@@ -1,10 +1,37 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-14T20:18:54.788916Z",
-  "checkedAt": "2026-08-14T20:18:54.788911Z",
+  "updatedAt": "2026-08-14T20:51:29.559032Z",
+  "checkedAt": "2026-08-14T20:51:29.559027Z",
   "today": "2026-08-15",
   "count": 39,
   "notices": [
+    {
+      "id": "e21d267ff01dac424dad",
+      "sourceName": "수만휘",
+      "title": "睡眠 記錄·起牀",
+      "preview": "[🔥재/반/N수 자유게시판] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29607220",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "4db8b3fdcc7a406088b7",
+      "sourceName": "수만휘",
+      "title": "제2외국어의 휘발성에 대하여",
+      "preview": "[티키타카페 게시판] 요즘 제2외국어(독일어) 공부를 다시 시작하면서 문득 이런 생각이 들었습니다. \"제2외국어는 왜 이렇게 빨리 잊어버릴까\" 분명 열심히 외웠던 단어인데 며칠 지나서 다시 보면 가물가물하고, 문법도",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29607219",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "1c538babbfdd4845d9ba",
+      "sourceName": "수만휘",
+      "title": "일어일문 대학",
+      "preview": "[┏Team08 수험생 게시판] 일본 취업을 최종 목표로 두고 대학 진학을 생각 중인데 일본 취업에 유리한 해외 프로그램이 많은 대학이 어디있나요?? 성적이 3점 후반-4점 초반이라 높은 대학은 못써요 ㅠㅠ 부산외대",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29607218",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
     {
       "id": "f7cd55788992c7f7e1a9",
       "sourceName": "수만휘",
@@ -326,33 +353,6 @@
       "title": "이동준 선생님 수업 경험 조교 과외쌤 구합니다.",
       "preview": "[┏과외 샘/강사님 찾아요] 서초구/수학 2. 원하는 선생님 조건 / 과외비 이동준 선생님 강의 듣고 공부 하셨던 분 구합니다. 3. 연락처 등(이메일 등) cutiej0104@naver.com 4. 과외 과목/ 본",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29607177",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "03d00d0ae2c8507d03d6",
-      "sourceName": "수만휘",
-      "title": "고3 망쳤는데 대학 합격하신 분 계신가요!!",
-      "preview": "[🔥이과 수시 자유게시판] 1,2학년은 그래도 잘 보냈는데 3학년때 번아웃 와서 공부를 놔버렸어요 3학년 1학기 까지 내신이 2.5 (3학년 내신은 바닥입니다 ㅠ) 생기부는 관리 한다고 했는데 수능도 망칠거 같아 수",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29607176",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "05c55bc557beb97c17ab",
-      "sourceName": "수만휘",
-      "title": "지리학과 권장과목",
-      "preview": "[🔥문과 수시 자유게시판] 지리학과 희망하는데 사문 지구 안들으면 불리한가요?? 한지 세지 여지 다 들었는데 사문 지구는 둘 다 안들었습니다..많이불리할까요ㅠㅠ?",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29607175",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "e8ff566ca67c30a6acaa",
-      "sourceName": "수만휘",
-      "title": "고3 수시준비중 학원 옮기기",
-      "preview": "[┃미대 게시판] 지금 수시특강에서 기디하면서 덕성여대 기소도 같이 준비하고있는데 기디를 너무 못해서 기디를 그만두고 발상 합격률 좋은 학원으로 옮겨서 발상이랑 기소를 준비를 하고싶은데 괜찮을까요?? 이렇게 바꾸면 ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29607174",
       "dateISO": "2026-08-15",
       "dateText": "2026.08.15"
     }
