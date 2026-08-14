@@ -67,58 +67,78 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-13T23:54:34.472731Z",
-  "checkedAt": "2026-08-13T23:54:34.472726Z",
+  "updatedAt": "2026-08-14T00:50:42.710295Z",
+  "checkedAt": "2026-08-14T00:50:42.710289Z",
   "today": "2026-08-14",
   "count": 80,
   "notices": [
     {
-      "id": "924287be57d3e1adbae0",
+      "id": "458a47007f04e527866c",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "한국공학대 이강원 교수 세계 최대 해커 컨퍼런스 'DEF CON 34'서 EV충전 펌웨어 안전성 연구 발표.. '컴파일러 검증 공백' 짚어",
+      "title": "한국기술교육대학교 김강두 교수팀 독립기념관 진입경관 옥외광고물 디자인 개선.. '역사성 담은 새 이미지'",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623209",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623244",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
     },
     {
-      "id": "b281e6962d8dd61e55e6",
+      "id": "144dd0109b6c2a2e2475",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "포스텍 노준석 교수 올해 국내 유일 국제광공학회(SPIE) 석학회원(Fellow) 선정",
+      "title": "진로 목표 세우고 직접 실행까지... 전남대 대학일자리플러스센터, '어나더레벨' 성과발표회 성료",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623213",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623237",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
     },
     {
-      "id": "c80920d0378558bbd050",
+      "id": "97cee447db23708021f5",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "숙명여대 김병규 교수팀 대화 맥락과 개인 특성 반영하는 공감형 AI 모델 '케어디프' 개발",
+      "title": "전남대 중국인문연구소, 2026년도 '차이나는 데이터 리터러시' 개최",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623215",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623239",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
     },
     {
-      "id": "bf0357913ab4dbe7e3ad",
+      "id": "d1b04f15640238bf8777",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "서울대-한화에어로스페이스, 교육⋅연구⋅산학협력 등 국방AI 통합 플랫폼 구축 관련 협약 체결",
+      "title": "전남대 김장호 교수팀 반도체 칩을 활용한 미니장기 대량화 기술 개발",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623212",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623238",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
     },
     {
-      "id": "6a521bbd5fdeb3e2f857",
+      "id": "0f050565613057850631",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "부산대 美 장학생 대상 국무부 'CLS 한국어 교육' 성료",
+      "title": "서강대 미래교육원 중고교생 게임/애니/만화 공모전 시상식 개최.. '제12회'",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623211",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623242",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
+      "id": "b9fd26aa7abf3634a7ae",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "동명대 엔터테인먼트·뮤직학과 다국적 고교생 전공체험 프로그램 운영.. K-POP 공연도 선봬",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623240",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
+      "id": "c57a84b12df327f9e43e",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "국립창원대 기술지주 자회사 렉손 '산학협력 우수기업' 선정",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623243",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
     },
@@ -133,32 +153,12 @@
       "dateText": "2026.08.14"
     },
     {
-      "id": "a525f76be9607c3854c7",
+      "id": "19144e16bf129cc9ad06",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "강동대 RISE사업단 '음성 지혜의 숲' 생활학교 인문교양 특강 개최",
+      "title": "경북보건대학교 스마트팜과 김천 농업기계 산업체 간담회 개최.. '농업 AX 혁신센터' 중심 산/학/관 협력체계 구축",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623216",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
-      "id": "ceb68160443d23f78dd7",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "KAIST 윤인수 교수와 학생/동문들 세계 최고 해킹대회'DEF CON CTF(데프콘 CTF) 2026'준우승",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623210",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
-      "id": "506ba14cfa3d398b6780",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "KAIST 복잡한 신소재 없이 빛의 회전 방향을 마음대로 제어한다",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623214",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623241",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
     },
