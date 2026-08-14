@@ -1,10 +1,28 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-14T20:51:29.559032Z",
-  "checkedAt": "2026-08-14T20:51:29.559027Z",
+  "updatedAt": "2026-08-14T21:13:11.577196Z",
+  "checkedAt": "2026-08-14T21:13:11.577192Z",
   "today": "2026-08-15",
   "count": 39,
   "notices": [
+    {
+      "id": "c58c9b36196f867b9e85",
+      "sourceName": "수만휘",
+      "title": "고3 남아인데 힘들어요",
+      "preview": "[🔥이과 수능 자유게시판] 수능 백일 남아도 공부 안하고 오후 3~4시까지 자네요 ㅠ 어긋날까봐 그냥 놔두고 있지만 제속이 썩어 가고 있어요 내시등급은 6~9이라 약논술과 정시준비하고 있어요 수학 1~2또는 3등급(",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29607222",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "7ff669687c5b5b0cf2fe",
+      "sourceName": "수만휘",
+      "title": "사관학교 수시 우선선발 합격후기",
+      "preview": "[광릉한샘 학원문의 및 진학상담] 수능 5,6등급 사관학교 수시 우선선발 합격후기 https://blog.naver.com/kdhactive/223367752525",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29607221",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
     {
       "id": "e21d267ff01dac424dad",
       "sourceName": "수만휘",
@@ -335,24 +353,6 @@
       "title": "3학년 2학기 내신 챙김 ??",
       "preview": "[┏Team08 수험생 게시판] 수만휘 카페 글",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29607179",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "6e5aafaaabbb3745d1c8",
-      "sourceName": "수만휘",
-      "title": "한양대 응용미술교육과/에리카 출결",
-      "preview": "[┃미대 게시판] 내신: 3.4 생기부: 모든과목, 동아리,방과후활동, 모두 챙겼고 미술 중점 학교라 생기부는 내용 많음 출결: 미인정지각 3회 1차 합격 가능할까요?? ㅜㅜㅜ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29607178",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "cd37a40ecc7e6a8b5a26",
-      "sourceName": "수만휘",
-      "title": "이동준 선생님 수업 경험 조교 과외쌤 구합니다.",
-      "preview": "[┏과외 샘/강사님 찾아요] 서초구/수학 2. 원하는 선생님 조건 / 과외비 이동준 선생님 강의 듣고 공부 하셨던 분 구합니다. 3. 연락처 등(이메일 등) cutiej0104@naver.com 4. 과외 과목/ 본",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29607177",
       "dateISO": "2026-08-15",
       "dateText": "2026.08.15"
     }

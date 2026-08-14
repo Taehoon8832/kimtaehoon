@@ -67,8 +67,8 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-14T20:51:36.058097Z",
-  "checkedAt": "2026-08-14T20:51:36.058091Z",
+  "updatedAt": "2026-08-14T21:13:18.919620Z",
+  "checkedAt": "2026-08-14T21:13:18.919616Z",
   "today": "2026-08-15",
   "count": 80,
   "notices": [
@@ -113,16 +113,6 @@
       "dateText": "2026.08.14"
     },
     {
-      "id": "de48d0cf45fb59ca1231",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "연성대학교 '2026년 소상공인×지역대학 앵커 동행 Challenge'",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623368",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
       "id": "9df454f3dae77de7b069",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
@@ -133,12 +123,22 @@
       "dateText": "2026.08.14"
     },
     {
-      "id": "c9cc8ed016dbad6d565a",
+      "id": "2ecaa73763540da0602f",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "서울신학대 인템포레 이건영 대표 회화 작품 기부 전달식 진행",
+      "title": "만리현교회 장학회 서울신학대에 대학발전기금 1억원 전달",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623367",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623364",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
+      "id": "94050085fe8aa9e26c11",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "국립군산대 몽골국립대와 함께한'잇다 프로젝트'성과보고회 성료",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623363",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
     },
