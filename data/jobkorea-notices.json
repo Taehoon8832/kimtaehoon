@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-14T10:43:11.039Z",
-  "checkedAt": "2026-08-14T10:43:11.039Z",
+  "updatedAt": "2026-08-14T11:27:41.025Z",
+  "checkedAt": "2026-08-14T11:27:41.025Z",
   "today": "2026-08-14",
   "count": 24,
   "notices": [
@@ -19,8 +19,8 @@
       "deadlineISO": "2026-08-30",
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
-      "popularRank": 5,
-      "popularScore": 2.819571
+      "popularRank": 4,
+      "popularScore": 2.8348699
     },
     {
       "id": "d32297f0bdf130b7578a",
@@ -34,8 +34,8 @@
       "deadlineISO": "2026-09-13",
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
-      "popularRank": 17,
-      "popularScore": 2.186628
+      "popularRank": 16,
+      "popularScore": 2.223481
     },
     {
       "id": "e1e87ce35739315d63b3",
@@ -49,8 +49,38 @@
       "deadlineISO": "2026-09-12",
       "deadlineText": "2026.09.12",
       "alwaysHire": false,
-      "popularRank": 13,
-      "popularScore": 2.341717
+      "popularRank": 11,
+      "popularScore": 2.3528469
+    },
+    {
+      "id": "94ba4f049464b0af21eb",
+      "jobId": "49768434",
+      "companyName": "광동제약㈜",
+      "title": "광동제약 2026년 하반기 신입사원 공개채용",
+      "preview": "신입·경력 · 정규직·계약직 · 마감 D-5 · 접수마감 2026.08.19",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49768434",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13",
+      "deadlineISO": "2026-08-19",
+      "deadlineText": "2026.08.19",
+      "alwaysHire": false,
+      "popularRank": 23,
+      "popularScore": 1.7945889
+    },
+    {
+      "id": "57d895795df74dbe0caa",
+      "jobId": "49774224",
+      "companyName": "㈜심비즈코리아",
+      "title": "AI 개발 프로젝트 PM 경력직 채용",
+      "preview": "경력 · 정규직·계약직·프리랜서 · 마감 D-29 · 접수마감 2026.09.12",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49774224",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13",
+      "deadlineISO": "2026-09-12",
+      "deadlineText": "2026.09.12",
+      "alwaysHire": false,
+      "popularRank": 24,
+      "popularScore": 1.785674
     },
     {
       "id": "51066d1dd642abac1011",
@@ -65,7 +95,22 @@
       "deadlineText": "2026.10.11",
       "alwaysHire": false,
       "popularRank": 15,
-      "popularScore": 2.274108
+      "popularScore": 2.288599
+    },
+    {
+      "id": "5c58602021c8343a372a",
+      "jobId": "49734924",
+      "companyName": "라바웨이브",
+      "title": "[주 4일 근무] 2026년 하반기 채용 (경력)",
+      "preview": "경력 · 정규직 · 마감 D-27 · 접수마감 2026.09.10",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49734924",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11",
+      "deadlineISO": "2026-09-10",
+      "deadlineText": "2026.09.10",
+      "alwaysHire": false,
+      "popularRank": 22,
+      "popularScore": 1.815274
     },
     {
       "id": "88a0735cd26b5ca6d82a",
@@ -80,7 +125,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 3,
-      "popularScore": 3.040605
+      "popularScore": 3.033661
     },
     {
       "id": "12bf98b40800dd3a7915",
@@ -94,8 +139,8 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 7,
-      "popularScore": 2.547994
+      "popularRank": 6,
+      "popularScore": 2.526033
     },
     {
       "id": "cfc1e393775a21db0610",
@@ -109,8 +154,8 @@
       "deadlineISO": "2026-08-23",
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
-      "popularRank": 10,
-      "popularScore": 2.386678
+      "popularRank": 8,
+      "popularScore": 2.39243
     },
     {
       "id": "68c4a721b6baf77b0337",
@@ -124,8 +169,8 @@
       "deadlineISO": "2026-08-23",
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
-      "popularRank": 20,
-      "popularScore": 2.143444
+      "popularRank": 19,
+      "popularScore": 2.151999
     },
     {
       "id": "efb0a4e54d0c058c1929",
@@ -139,8 +184,8 @@
       "deadlineISO": "2026-10-07",
       "deadlineText": "2026.10.07",
       "alwaysHire": false,
-      "popularRank": 23,
-      "popularScore": 2.127629
+      "popularRank": 21,
+      "popularScore": 2.13603
     },
     {
       "id": "a1fe7bd9977bbed907d5",
@@ -155,7 +200,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 2,
-      "popularScore": 3.59591
+      "popularScore": 3.593563
     },
     {
       "id": "e8edd83d0f5b54809dd6",
@@ -169,8 +214,8 @@
       "deadlineISO": "2026-09-06",
       "deadlineText": "2026.09.06",
       "alwaysHire": false,
-      "popularRank": 9,
-      "popularScore": 2.415191
+      "popularRank": 13,
+      "popularScore": 2.3458219
     },
     {
       "id": "5bdf117422a38ac42fd6",
@@ -185,22 +230,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 18,
-      "popularScore": 2.162336
-    },
-    {
-      "id": "65243abe3e6bf2a43e0c",
-      "jobId": "49741253",
-      "companyName": "㈜국제표준금거래소",
-      "title": "[국제표준금거래소 본사] 기획팀 사원급 채용",
-      "preview": "경력 · 정규직 · 상시채용",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49741253",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07",
-      "deadlineISO": "",
-      "deadlineText": "",
-      "alwaysHire": true,
-      "popularRank": 24,
-      "popularScore": 2.1112041
+      "popularScore": 2.167818
     },
     {
       "id": "a19b344837c8700e1a2e",
@@ -214,23 +244,8 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 19,
-      "popularScore": 2.146
-    },
-    {
-      "id": "c7fc0fb3d0784ba366ec",
-      "jobId": "49725055",
-      "companyName": "㈜모백스",
-      "title": "2026년 하반기 공개채용 [경영관리/프로젝트관리/디자이너/설계/연구소/공무/시공]",
-      "preview": "신입·경력 · 정규직 · 마감 D-17 · 접수마감 2026.08.31",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49725055",
-      "dateISO": "2026-08-06",
-      "dateText": "2026.08.06",
-      "deadlineISO": "2026-08-31",
-      "deadlineText": "2026.08.31",
-      "alwaysHire": false,
-      "popularRank": 22,
-      "popularScore": 2.132032
+      "popularRank": 20,
+      "popularScore": 2.141174
     },
     {
       "id": "52e3de0f3e258ff8c87a",
@@ -245,7 +260,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 14,
-      "popularScore": 2.292335
+      "popularScore": 2.302425
     },
     {
       "id": "40c04c463d1729207506",
@@ -260,7 +275,7 @@
       "deadlineText": "2026.08.16",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 3.933138
+      "popularScore": 3.93689
     },
     {
       "id": "cac58faef283c6e518f7",
@@ -274,8 +289,8 @@
       "deadlineISO": "2026-09-25",
       "deadlineText": "2026.09.25",
       "alwaysHire": false,
-      "popularRank": 8,
-      "popularScore": 2.511246
+      "popularRank": 7,
+      "popularScore": 2.4439151
     },
     {
       "id": "cdd3b46c07e0236116a7",
@@ -289,23 +304,8 @@
       "deadlineISO": "2026-08-17",
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
-      "popularRank": 11,
-      "popularScore": 2.366351
-    },
-    {
-      "id": "c0b191a7d6e2946fe4c2",
-      "jobId": "49699995",
-      "companyName": "아이엠파인",
-      "title": "인터렉티브 컨텐츠 기획 및 PM 담당자",
-      "preview": "신입·경력 · 정규직 · 마감 D-49 · 접수마감 2026.10.02",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49699995",
-      "dateISO": "2026-08-03",
-      "dateText": "2026.08.03",
-      "deadlineISO": "2026-10-02",
-      "deadlineText": "2026.10.02",
-      "alwaysHire": false,
-      "popularRank": 16,
-      "popularScore": 2.247595
+      "popularRank": 9,
+      "popularScore": 2.367657
     },
     {
       "id": "36411c5580bf3a0a03ef",
@@ -319,8 +319,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 21,
-      "popularScore": 2.138174
+      "popularRank": 17,
+      "popularScore": 2.169904
     },
     {
       "id": "c4b6e2d9e1ed5272120e",
@@ -334,8 +334,8 @@
       "deadlineISO": "2026-09-27",
       "deadlineText": "2026.09.27",
       "alwaysHire": false,
-      "popularRank": 4,
-      "popularScore": 2.946121
+      "popularRank": 12,
+      "popularScore": 2.345965
     },
     {
       "id": "50681cf6ac76954ab4e8",
@@ -349,8 +349,8 @@
       "deadlineISO": "2026-08-20",
       "deadlineText": "2026.08.20",
       "alwaysHire": false,
-      "popularRank": 6,
-      "popularScore": 2.563723
+      "popularRank": 5,
+      "popularScore": 2.609053
     },
     {
       "id": "b2d647ba9dc240a68915",
@@ -364,8 +364,8 @@
       "deadlineISO": "2026-08-20",
       "deadlineText": "2026.08.20",
       "alwaysHire": false,
-      "popularRank": 12,
-      "popularScore": 2.353514
+      "popularRank": 10,
+      "popularScore": 2.354775
     }
   ],
   "stale": false,
