@@ -626,6 +626,30 @@
       display: block;
     }
 
+    /* 커리어넷 포커스: 검색 UI만 남기고 하단(사관학교·게시판 등) 숨김 */
+    body.career-focus .lower-layout,
+    body.career-focus .footer {
+      display: none !important;
+    }
+
+    body.career-focus .expand-panel {
+      display: none !important;
+    }
+
+    body.career-focus .upper-stage {
+      width: min(1560px, 100%);
+      padding-top: clamp(12px, 2vw, 20px);
+      padding-bottom: calc(28px + env(safe-area-inset-bottom, 0px));
+    }
+
+    body.career-focus .career-api-shell {
+      min-height: min(calc(100dvh - var(--nav-offset, 72px) - 40px), 900px);
+    }
+
+    body.career-focus .career-api-results {
+      max-height: min(58vh, 620px);
+    }
+
     @keyframes careerExpandIn {
       from {
         opacity: 0;
@@ -640,9 +664,8 @@
     .career-api-shell {
       border: 4px solid #191919;
       border-radius: 28px;
-      background:
-        linear-gradient(165deg, #e8f4ff 0%, #d7ecff 28%, #f0f7ff 62%, #ffffff 100%);
-      box-shadow: 0 24px 50px rgba(25, 25, 25, 0.16);
+      background: #f7f8fa;
+      box-shadow: 0 24px 50px rgba(25, 25, 25, 0.14);
       overflow: hidden;
       min-height: 0;
     }
@@ -654,8 +677,8 @@
       justify-content: space-between;
       gap: 12px 20px;
       padding: 14px 16px 12px;
-      border-bottom: 1px solid rgba(14, 116, 144, 0.16);
-      background: linear-gradient(180deg, #cfe9ff 0%, #e4f3ff 100%);
+      border-bottom: 1px solid #e2e6eb;
+      background: #eef1f5;
     }
 
     .career-api-title {
@@ -672,9 +695,9 @@
       display: grid;
       place-items: center;
       flex: 0 0 auto;
-      color: #f0f9ff;
-      background: linear-gradient(145deg, #38bdf8 0%, #0284c7 100%);
-      box-shadow: 0 4px 10px rgba(2, 132, 199, 0.28);
+      color: #fff;
+      background: linear-gradient(145deg, #5b6b7c 0%, #2f3a46 100%);
+      box-shadow: 0 4px 10px rgba(47, 58, 70, 0.22);
     }
 
     .career-api-title .ic svg {
@@ -687,7 +710,7 @@
       font-size: 15px;
       font-weight: 800;
       letter-spacing: -0.03em;
-      color: #0c4a6e;
+      color: #1c2430;
       line-height: 1.25;
     }
 
@@ -696,7 +719,7 @@
       font-size: 12px;
       font-weight: 600;
       letter-spacing: -0.02em;
-      color: #35657a;
+      color: #5c6b7a;
       line-height: 1.4;
       word-break: keep-all;
     }
@@ -704,10 +727,10 @@
     .career-api-close {
       appearance: none;
       margin-left: auto;
-      border: 1px solid rgba(3, 105, 161, 0.28);
+      border: 1px solid #c9d2dc;
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.82);
-      color: #0c4a6e;
+      background: #ffffff;
+      color: #2f3a46;
       padding: 8px 14px;
       font: inherit;
       font-size: 13px;
@@ -720,7 +743,7 @@
 
     .career-api-close:hover,
     .career-api-close:focus-visible {
-      background: #fff;
+      background: #f3f5f7;
       outline: none;
       transform: translateY(-1px);
     }
@@ -766,23 +789,23 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0;
-      border-bottom: 1px solid rgba(14, 116, 144, 0.14);
-      background: rgba(224, 242, 254, 0.72);
+      border-bottom: 3px solid #191919;
+      background: #e8ebef;
     }
 
     .career-api-tab {
       appearance: none;
       border: 0;
-      border-right: 1px solid rgba(14, 116, 144, 0.1);
+      border-right: 1px solid #d0d5dc;
       background: transparent;
-      color: #35657a;
-      padding: 12px 10px;
+      color: #6b7582;
+      padding: 13px 10px;
       font: inherit;
       font-size: 13px;
-      font-weight: 750;
+      font-weight: 700;
       letter-spacing: -0.02em;
       cursor: pointer;
-      transition: color 0.15s ease, background 0.15s ease;
+      transition: color 0.15s ease, background 0.15s ease, font-weight 0.15s ease;
     }
 
     .career-api-tab:last-child {
@@ -791,21 +814,24 @@
 
     .career-api-tab:hover,
     .career-api-tab:focus-visible {
-      color: #0c4a6e;
+      color: #2f3a46;
       background: rgba(255, 255, 255, 0.55);
       outline: none;
     }
 
     .career-api-tab.is-active {
-      color: #0c4a6e;
-      background: rgba(255, 255, 255, 0.92);
-      box-shadow: inset 0 -2px 0 #0284c7;
+      color: #111827;
+      background: #ffffff;
+      font-weight: 800;
+      box-shadow:
+        inset 0 -3px 0 #191919,
+        0 -1px 0 #ffffff;
     }
 
     .career-api-panel {
       display: none;
       padding: 14px 16px 16px;
-      background: #fffdf8;
+      background: #ffffff;
     }
 
     .career-api-panel.is-active {
@@ -1322,7 +1348,7 @@
       }
 
       .career-api-tab {
-        border-right: 1px solid rgba(14, 116, 144, 0.1);
+        border-right: 1px solid #d0d5dc;
         border-bottom: 0;
         text-align: center;
         padding: 12px 6px;
@@ -1335,7 +1361,9 @@
       }
 
       .career-api-tab.is-active {
-        box-shadow: inset 0 -2px 0 #0284c7;
+        box-shadow:
+          inset 0 -3px 0 #191919,
+          0 -1px 0 #ffffff;
       }
 
       .career-api-panel {
@@ -1358,7 +1386,7 @@
       .career-api-filters-hint {
         display: block;
         font-size: 12px;
-        color: #355a6e;
+        color: #5c6b7a;
         line-height: 1.45;
       }
 
@@ -2592,16 +2620,14 @@
       align-items: center;
       justify-content: center;
       padding: max(16px, env(safe-area-inset-top)) 16px max(16px, env(safe-area-inset-bottom));
-      background:
-        radial-gradient(ellipse 55% 45% at 50% 42%, rgba(201, 164, 106, 0.14), transparent 58%),
-        rgba(8, 7, 6, 0.72);
-      backdrop-filter: blur(14px) saturate(1.15);
-      -webkit-backdrop-filter: blur(14px) saturate(1.15);
+      background: rgba(15, 23, 42, 0.42);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
     }
 
     .access-gate.is-open {
       display: flex;
-      animation: accessGateIn 0.32s var(--ease-out) both;
+      animation: accessGateIn 0.22s var(--ease-out) both;
     }
 
     @keyframes accessGateIn {
@@ -2611,35 +2637,20 @@
 
     .access-gate-card {
       position: relative;
-      width: min(400px, 100%);
-      padding: 28px 26px 24px;
-      border-radius: 22px;
-      border: 1px solid rgba(212, 175, 120, 0.42);
-      background:
-        linear-gradient(165deg, rgba(255, 248, 235, 0.07) 0%, transparent 42%),
-        linear-gradient(180deg, #1a1714 0%, #100e0c 55%, #0c0a09 100%);
-      box-shadow:
-        0 0 0 1px rgba(0, 0, 0, 0.45),
-        0 28px 60px rgba(0, 0, 0, 0.45),
-        inset 0 1px 0 rgba(255, 236, 200, 0.12);
-      color: #f5efe6;
-      overflow: hidden;
-      animation: accessCardIn 0.38s var(--ease-out) both;
-    }
-
-    .access-gate-card::before {
-      content: "";
-      position: absolute;
-      inset: 0 0 auto;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #d4af78 20%, #f0e0bc 50%, #d4af78 80%, transparent);
-      opacity: 0.9;
+      width: min(520px, 100%);
+      padding: 22px 24px 20px;
+      border-radius: 14px;
+      border: 1px solid #d7e3ef;
+      background: #ffffff;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.14);
+      color: #1e293b;
+      animation: accessCardIn 0.26s var(--ease-out) both;
     }
 
     @keyframes accessCardIn {
       from {
         opacity: 0;
-        transform: translateY(14px) scale(0.97);
+        transform: translateY(8px);
       }
       to {
         opacity: 1;
@@ -2648,28 +2659,27 @@
     }
 
     .access-gate-card.is-shake {
-      animation: accessShake 0.45s var(--ease-out);
+      animation: accessShake 0.4s var(--ease-out);
     }
 
     @keyframes accessShake {
       0%, 100% { transform: translateX(0); }
-      20% { transform: translateX(-8px); }
-      40% { transform: translateX(7px); }
-      60% { transform: translateX(-5px); }
-      80% { transform: translateX(3px); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(4px); }
+      75% { transform: translateX(-2px); }
     }
 
     .access-gate-close {
       position: absolute;
-      top: 12px;
-      right: 12px;
-      width: 36px;
-      height: 36px;
+      top: 10px;
+      right: 10px;
+      width: 32px;
+      height: 32px;
       border: 0;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.06);
-      color: #c9b8a0;
-      font-size: 22px;
+      border-radius: 8px;
+      background: transparent;
+      color: #94a3b8;
+      font-size: 20px;
       line-height: 1;
       cursor: pointer;
       transition: background 0.15s ease, color 0.15s ease;
@@ -2677,111 +2687,83 @@
 
     .access-gate-close:hover,
     .access-gate-close:focus-visible {
-      background: rgba(255, 255, 255, 0.12);
-      color: #fff;
+      background: #f1f5f9;
+      color: #475569;
       outline: none;
-    }
-
-    .access-gate-mark {
-      width: 52px;
-      height: 52px;
-      margin: 0 auto 16px;
-      border-radius: 16px;
-      display: grid;
-      place-items: center;
-      color: #1a140c;
-      background: linear-gradient(145deg, #f3e2c0 0%, #d4af78 48%, #a67c42 100%);
-      box-shadow:
-        0 10px 24px rgba(166, 124, 66, 0.35),
-        inset 0 1px 0 rgba(255, 255, 255, 0.45);
-    }
-
-    .access-gate-mark svg {
-      width: 24px;
-      height: 24px;
-    }
-
-    .access-gate-kicker {
-      margin: 0 0 6px;
-      text-align: center;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #d4af78;
     }
 
     .access-gate-title {
-      margin: 0 0 8px;
-      text-align: center;
-      font-size: clamp(17px, 4.2vw, 19px);
+      margin: 0 28px 6px 0;
+      font-size: clamp(15px, 3.6vw, 17px);
       font-weight: 800;
       letter-spacing: -0.03em;
-      color: #fffaf2;
-      line-height: 1.3;
-    }
-
-    .access-gate-desc {
-      margin: 0 0 22px;
-      text-align: center;
-      font-size: 13.5px;
-      font-weight: 600;
-      line-height: 1.55;
-      color: #c4b5a2;
+      color: #0f172a;
+      line-height: 1.35;
       word-break: keep-all;
     }
 
-    .access-gate-field {
-      display: grid;
-      gap: 8px;
-      margin-bottom: 14px;
+    .access-gate-desc {
+      margin: 0 28px 18px 0;
+      font-size: 13px;
+      font-weight: 550;
+      line-height: 1.5;
+      color: #64748b;
+      word-break: keep-all;
     }
 
-    .access-gate-field label {
-      font-size: 12px;
-      font-weight: 750;
-      letter-spacing: 0.04em;
-      color: #e6d5b8;
+    .access-gate-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
     }
 
-    .access-gate-field input {
-      width: 100%;
-      min-height: 48px;
-      padding: 0 16px;
-      border-radius: 14px;
-      border: 1px solid rgba(212, 175, 120, 0.35);
-      background: rgba(0, 0, 0, 0.35);
-      color: #fffaf2;
+    .access-gate-row label {
+      flex: 0 0 auto;
+      font-size: 13px;
+      font-weight: 700;
+      color: #334155;
+      white-space: nowrap;
+    }
+
+    .access-gate-row input {
+      flex: 1 1 auto;
+      min-width: 0;
+      min-height: 42px;
+      padding: 0 12px;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      color: #0f172a;
       font: inherit;
       font-size: 16px;
-      font-weight: 650;
-      letter-spacing: 0.04em;
+      font-weight: 550;
       outline: none;
-      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
     }
 
-    .access-gate-field input::placeholder {
-      color: rgba(196, 181, 162, 0.55);
-      letter-spacing: 0;
+    .access-gate-row input::placeholder {
+      color: #94a3b8;
       font-weight: 500;
     }
 
-    .access-gate-field input:focus {
-      border-color: rgba(212, 175, 120, 0.85);
-      box-shadow: 0 0 0 3px rgba(212, 175, 120, 0.18);
+    .access-gate-row input:focus {
+      border-color: #38bdf8;
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
     }
 
-    .access-gate-card.is-error .access-gate-field input {
-      border-color: rgba(250, 90, 90, 0.7);
-      box-shadow: 0 0 0 3px rgba(250, 90, 90, 0.15);
+    .access-gate-card.is-error .access-gate-row input {
+      border-color: #f87171;
+      box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.16);
     }
 
     .access-gate-error {
-      min-height: 18px;
-      margin: -6px 0 12px;
+      min-height: 16px;
+      margin: 0 0 10px;
       font-size: 12px;
       font-weight: 650;
-      color: #ff8f8f;
+      color: #dc2626;
       opacity: 0;
       transition: opacity 0.15s ease;
     }
@@ -2791,33 +2773,29 @@
     }
 
     .access-gate-actions {
-      display: grid;
-      gap: 10px;
+      display: flex;
+      justify-content: flex-end;
     }
 
     .access-gate-submit {
       appearance: none;
-      min-height: 48px;
+      min-height: 38px;
       border: 0;
-      border-radius: 999px;
-      padding: 0 20px;
+      border-radius: 10px;
+      padding: 0 18px;
       font: inherit;
-      font-size: 14px;
-      font-weight: 800;
+      font-size: 13px;
+      font-weight: 700;
       letter-spacing: -0.02em;
       cursor: pointer;
-      color: #1a140c;
-      background: linear-gradient(180deg, #f3e2c0 0%, #d4af78 55%, #b8924e 100%);
-      box-shadow:
-        0 10px 22px rgba(166, 124, 66, 0.32),
-        inset 0 1px 0 rgba(255, 255, 255, 0.4);
-      transition: transform 0.15s ease, filter 0.15s ease;
+      color: #fff;
+      background: #0ea5e9;
+      transition: background 0.15s ease, transform 0.12s ease;
     }
 
     .access-gate-submit:hover,
     .access-gate-submit:focus-visible {
-      filter: brightness(1.05);
-      transform: translateY(-1px);
+      background: #0284c7;
       outline: none;
     }
 
@@ -2825,10 +2803,31 @@
       transform: scale(0.98);
     }
 
-    @media (max-width: 420px) {
+    @media (max-width: 520px) {
       .access-gate-card {
-        padding: 24px 18px 20px;
-        border-radius: 18px;
+        padding: 18px 16px 16px;
+      }
+
+      .access-gate-row {
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .access-gate-row label {
+        width: 100%;
+      }
+
+      .access-gate-row input {
+        width: 100%;
+      }
+
+      .access-gate-actions {
+        justify-content: stretch;
+      }
+
+      .access-gate-submit {
+        width: 100%;
+        min-height: 42px;
       }
     }
 
@@ -3953,7 +3952,6 @@
           </span>
           <em>2026 입결 검색기</em>
         </a>
-        <span class="nav-sep" aria-hidden="true"></span>
         <a class="nav-item card-g" href="https://script.google.com/macros/s/AKfycbzlvdwuLrIzPfjnAjNkodW3NaQ09bewTLjqOtawSQAFT-kFDV3ZZk7UwV4_8KBE11zMzw/exec" target="_blank" rel="noopener noreferrer" title="6논술 장바구니">
           <span class="ic" aria-hidden="true">
             <svg viewBox="0 0 48 48" fill="none">
@@ -4046,7 +4044,6 @@
           </span>
           <em>진로·진학 지원 콘텐츠</em>
         </button>
-        <span class="nav-sep" aria-hidden="true"></span>
         <button type="button" class="nav-item card-i is-placeholder" title="진학 인사이트 V1.1" aria-label="진학 인사이트 V1.1" data-restricted-nav data-restricted-title="진학 인사이트 V1.1">
           <span class="ic" aria-hidden="true">
             <svg viewBox="0 0 48 48" fill="none">
@@ -4057,6 +4054,7 @@
           </span>
           <em>진학 인사이트<br>V1.1</em>
         </button>
+        <span class="nav-sep" aria-hidden="true"></span>
         <button type="button" class="nav-item card-l" id="careerNav" title="커리어넷" aria-expanded="false" aria-controls="careerApi">
           <span class="ic" aria-hidden="true">
             <svg viewBox="0 0 48 48" fill="none">
@@ -4610,24 +4608,16 @@
   <div class="access-gate" id="accessGate" hidden>
     <div class="access-gate-card" id="accessGateCard" role="dialog" aria-modal="true" aria-labelledby="accessGateTitle" aria-describedby="accessGateDesc">
       <button type="button" class="access-gate-close" id="accessGateClose" aria-label="닫기">×</button>
-      <div class="access-gate-mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none">
-          <rect x="5" y="10.5" width="14" height="10" rx="2.2" stroke="currentColor" stroke-width="1.8"/>
-          <path d="M8.2 10.5V7.8a3.8 3.8 0 0 1 7.6 0v2.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          <circle cx="12" cy="15.2" r="1.35" fill="currentColor"/>
-        </svg>
-      </div>
-      <p class="access-gate-kicker">Restricted</p>
       <h2 class="access-gate-title" id="accessGateTitle">접근 제한 콘텐츠</h2>
       <p class="access-gate-desc" id="accessGateDesc">접근 제한 콘텐츠입니다. 승인된 접근 코드를 입력해 주세요.</p>
       <form class="access-gate-form" id="accessGateForm" autocomplete="off">
-        <div class="access-gate-field">
+        <div class="access-gate-row">
           <label for="accessGateCode">접근 코드</label>
           <input
             type="password"
             id="accessGateCode"
             name="accessCode"
-            placeholder="접근 코드를 입력하세요"
+            placeholder="코드를 입력하세요"
             autocomplete="off"
             spellcheck="false"
             enterkeyhint="go"
@@ -4711,11 +4701,12 @@
         },
       ];
       const SAGWAN_SHEET_ID = "1u7sJWO0-ItaTWl_xwgkNPmMyYxgvOYDtuKn_RXlNTCE";
-      const SAGWAN_VOTE_POLL_MS = 60000;
+      const SAGWAN_VOTE_POLL_MS = 10000;
       const SAGWAN_VOTE_CACHE_KEY = "kimtaehoon_sagwan_votes_v1";
       let sagwanVoteCounts = Object.fromEntries(SAGWAN_POINTS.map((p) => [p.sheetGid, 0]));
       let sagwanVoteReady = false;
       let sagwanVoteBusy = false;
+      let sagwanVoteLastOkAt = 0;
       // 면접 후기집 URL — 추후 연결
       const SAGWAN_REVIEW_URL = "";
 
@@ -6524,6 +6515,7 @@
       function closeCareerExpand() {
         if (!careerApiEl) return;
         careerApiEl.classList.remove("is-open");
+        document.body.classList.remove("career-focus");
         if (careerNav) {
           careerNav.classList.remove("is-active");
           careerNav.setAttribute("aria-expanded", "false");
@@ -6547,10 +6539,11 @@
           }
         }
         careerApiEl.classList.add("is-open");
+        document.body.classList.add("career-focus");
         careerNav.classList.add("is-active");
         careerNav.setAttribute("aria-expanded", "true");
         requestAnimationFrame(() => {
-          careerApiEl.scrollIntoView({ behavior: "smooth", block: "start" });
+          window.scrollTo({ top: 0, behavior: "smooth" });
           const focusEl =
             careerApiEl.querySelector(".career-api-panel.is-active input[type='search']") ||
             careerApiEl.querySelector("input[type='search']");
@@ -7154,10 +7147,14 @@
       function countSagwanVotes(csvText) {
         const rows = parseSagwanCsv(csvText);
         if (rows.length <= 1) return 0;
+        // Google 설문 응답: 헤더 제외, 타임스탬프(1열)가 있는 행 = 1건
         return rows.slice(1).filter((r) => {
           const ts = String(r[0] || "").trim();
           if (!ts) return false;
-          return /20\d{2}/.test(ts) || /오전|오후|\d{1,2}:\d{2}/.test(ts) || ts.length >= 8;
+          // 타임스탬프·날짜 형태 우선, 그 외 의미 있는 값도 포함
+          if (/20\d{2}/.test(ts) || /오전|오후|\d{1,2}:\d{2}/.test(ts)) return true;
+          if (/^\d{1,2}[./-]\d{1,2}/.test(ts)) return true;
+          return ts.length >= 8 && !/^timestamp$/i.test(ts);
         }).length;
       }
 
@@ -7205,7 +7202,7 @@
           el.classList.toggle("is-loading", !sagwanVoteReady);
           el.classList.toggle("is-live", sagwanVoteReady);
           el.setAttribute("aria-label", `점공 응답 ${next}건`);
-          if (bumped.has(gid) && next > prev) {
+          if (bumped.has(gid) && next !== prev) {
             el.classList.remove("is-bump");
             requestAnimationFrame(() => {
               el.classList.add("is-bump");
@@ -7215,32 +7212,49 @@
       }
 
       async function fetchSagwanVoteCount(gid, signal) {
-        const url =
-          `https://docs.google.com/spreadsheets/d/${SAGWAN_SHEET_ID}/export?format=csv&gid=${gid}` +
-          `&t=${Date.now()}`;
-        const res = await fetch(url, { cache: "no-store", mode: "cors", signal });
-        if (!res.ok) throw new Error(`http_${res.status}`);
-        const text = await res.text();
-        if (!text || /sign in|accounts\.google/i.test(text.slice(0, 400))) {
-          throw new Error("sheet_private");
+        const stamp = Date.now();
+        const urls = [
+          `https://docs.google.com/spreadsheets/d/${SAGWAN_SHEET_ID}/export?format=csv&gid=${gid}&t=${stamp}`,
+          `https://docs.google.com/spreadsheets/d/${SAGWAN_SHEET_ID}/gviz/tq?tqx=out:csv&gid=${gid}&tq=&t=${stamp}`,
+        ];
+        let lastErr = null;
+        for (const url of urls) {
+          try {
+            const res = await fetch(url, {
+              cache: "no-store",
+              mode: "cors",
+              credentials: "omit",
+              signal,
+            });
+            if (!res.ok) throw new Error(`http_${res.status}`);
+            const text = await res.text();
+            if (!text || /sign in|accounts\.google|unauthorized/i.test(text.slice(0, 500))) {
+              throw new Error("sheet_private");
+            }
+            return countSagwanVotes(text);
+          } catch (err) {
+            lastErr = err;
+            if (signal && signal.aborted) throw err;
+          }
         }
-        return countSagwanVotes(text);
+        throw lastErr || new Error("vote_fetch_failed");
       }
 
       async function refreshSagwanVotes(opts) {
-        if (sagwanVoteBusy) return;
-        if (document.visibilityState === "hidden" && !(opts && opts.force)) return;
+        const force = Boolean(opts && opts.force);
+        if (sagwanVoteBusy && !force) return;
+        if (document.visibilityState === "hidden" && !force) return;
         sagwanVoteBusy = true;
         const silent = Boolean(opts && opts.silent);
         const bumped = [];
         const ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
-        const timer = ctrl ? setTimeout(() => ctrl.abort(), 8000) : null;
+        const timer = ctrl ? setTimeout(() => ctrl.abort(), 12000) : null;
         try {
           const results = await Promise.all(
             SAGWAN_POINTS.map(async (item) => {
               try {
                 const n = await fetchSagwanVoteCount(item.sheetGid, ctrl ? ctrl.signal : undefined);
-                return { gid: item.sheetGid, n, ok: true };
+                return { gid: item.sheetGid, n: Math.max(0, Number(n) || 0), ok: true };
               } catch {
                 return { gid: item.sheetGid, n: sagwanVoteCounts[item.sheetGid] || 0, ok: false };
               }
@@ -7250,11 +7264,12 @@
           for (const r of results) {
             if (r.ok) anyOk = true;
             const prev = Number(sagwanVoteCounts[r.gid] || 0);
-            if (r.ok && r.n > prev && sagwanVoteReady) bumped.push(r.gid);
+            if (r.ok && r.n !== prev && sagwanVoteReady) bumped.push(r.gid);
             if (r.ok) sagwanVoteCounts[r.gid] = r.n;
           }
           if (anyOk) {
             sagwanVoteReady = true;
+            sagwanVoteLastOkAt = Date.now();
             writeSagwanVoteCache(sagwanVoteCounts);
             updateSagwanVoteDom(bumped);
             if (!silent && bumped.length) showToast("점공 응답 수가 갱신되었습니다");
@@ -7307,6 +7322,7 @@
             `</a>`
           );
         }).join("");
+        updateSagwanVoteDom();
       }
 
       function bootSagwanStrip() {
@@ -7399,13 +7415,24 @@
         }
         renderSagwanDday();
         refreshSagwanVotes({ silent: true, force: true });
-        setInterval(renderSagwanDday, 60 * 60 * 1000);
+        setInterval(() => {
+          renderSagwanDday();
+          refreshSagwanVotes({ silent: true });
+        }, 60 * 60 * 1000);
         setInterval(() => {
           if (document.visibilityState === "hidden") return;
           refreshSagwanVotes({ silent: true });
         }, SAGWAN_VOTE_POLL_MS);
         document.addEventListener("visibilitychange", () => {
-          if (document.visibilityState === "visible") refreshSagwanVotes({ silent: true, force: true });
+          if (document.visibilityState === "visible") {
+            refreshSagwanVotes({ silent: true, force: true });
+          }
+        });
+        window.addEventListener("focus", () => {
+          refreshSagwanVotes({ silent: true, force: true });
+        });
+        window.addEventListener("pageshow", () => {
+          refreshSagwanVotes({ silent: true, force: true });
         });
       }
 
