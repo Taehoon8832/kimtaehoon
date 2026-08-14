@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-14",
-  "updatedAt": "2026-08-14T00:08:30.026Z",
-  "checkedAt": "2026-08-14T00:08:30.026Z",
+  "updatedAt": "2026-08-14T02:41:46.279Z",
+  "checkedAt": "2026-08-14T02:41:46.279Z",
   "sources": [
     {
       "id": "u001",
@@ -1550,6 +1550,17 @@
       "dateText": "2026.08.14"
     },
     {
+      "id": "cadceec7a03e72ce095c",
+      "univId": "u032",
+      "univName": "육군사관학교",
+      "title": "★ 2차시험 우편접수 서류 등기발송용 표지 ★",
+      "preview": "육군사관학교 입학 공지사항 미리보기",
+      "url": "https://www.kma.ac.kr:461/bbs/kma/160/29271/artclView.do",
+      "homeUrl": "https://www.kma.ac.kr:461/",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
       "id": "27fd3a58f3a05be2b0fb",
       "univId": "u245",
       "univName": "해군사관학교",
@@ -1999,17 +2010,6 @@
       "homeUrl": "https://www.karts.ac.kr/main/appl.do",
       "dateISO": "2026-08-08",
       "dateText": "2026.08.08"
-    },
-    {
-      "id": "d1cf9d7a876c9dfd4660",
-      "univId": "u032",
-      "univName": "육군사관학교",
-      "title": "★ 2027학년도(제87기) 육군사관생도 선발 1차시험 원점수 공개 및 이의신청 안내 ★",
-      "preview": "육군사관학교 입학 공지사항 미리보기",
-      "url": "https://www.kma.ac.kr:461/bbs/kma/160/29211/artclView.do",
-      "homeUrl": "https://www.kma.ac.kr:461/",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
     },
     {
       "id": "e7cd3ad884092a26a495",
@@ -2896,5 +2896,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=24 empty=13 fail=179 fresh=104"
+  "statusReason": "ok=26 empty=12 fail=178 fresh=104"
 }
