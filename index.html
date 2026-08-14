@@ -670,24 +670,29 @@
     }
 
     .career-api-toolbar {
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
       gap: 8px;
-      align-items: center;
+      align-items: stretch;
       margin-bottom: 12px;
     }
 
-    .career-api-toolbar input[type="search"] {
-      flex: 1 1 180px;
+    .career-api-toolbar > * {
+      grid-column: span 3;
       min-width: 0;
-      height: 36px;
+      width: 100%;
+    }
+
+    .career-api-toolbar input[type="search"] {
+      grid-column: span 6;
+      height: 38px;
       padding: 0 12px;
       border: 1px solid rgba(61, 43, 31, 0.16);
       border-radius: 11px;
       background: #fff;
       color: #2a1c12;
       font: inherit;
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 600;
     }
 
@@ -698,26 +703,27 @@
     }
 
     .career-api-toolbar select {
-      height: 36px;
+      height: 38px;
       padding: 0 10px;
       border: 1px solid rgba(61, 43, 31, 0.16);
       border-radius: 11px;
       background: #fff;
       color: #2a1c12;
       font: inherit;
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 650;
     }
 
     .career-api-toolbar button {
-      height: 36px;
+      grid-column: span 3;
+      height: 38px;
       padding: 0 14px;
       border: 0;
       border-radius: 11px;
       background: linear-gradient(145deg, #6b4f3a 0%, #3d2b1f 100%);
       color: #f8efd8;
       font: inherit;
-      font-size: 12.5px;
+      font-size: 13px;
       font-weight: 750;
       letter-spacing: -0.02em;
       cursor: pointer;
@@ -729,6 +735,22 @@
       transform: translateY(-1px);
       filter: brightness(1.06);
       outline: none;
+    }
+
+    .career-api-toolbar button:disabled {
+      opacity: 0.65;
+      cursor: wait;
+      transform: none;
+      filter: none;
+    }
+
+    .career-api-filters-hint {
+      margin: -4px 0 10px;
+      font-size: 11px;
+      font-weight: 650;
+      color: #8a7360;
+      line-height: 1.4;
+      word-break: keep-all;
     }
 
     .career-api-urls {
@@ -784,36 +806,51 @@
     .career-api-results {
       display: grid;
       gap: 0;
-      max-height: min(360px, 46vh);
+      max-height: min(560px, 58vh);
       overflow: auto;
       border: 1px solid rgba(61, 43, 31, 0.1);
       border-radius: 14px;
       background: #fff;
       overscroll-behavior: contain;
+      -webkit-overflow-scrolling: touch;
     }
 
     .career-api-item {
       display: grid;
-      gap: 3px;
-      padding: 10px 12px;
+      gap: 0;
       border-bottom: 1px solid rgba(61, 43, 31, 0.08);
-      text-decoration: none;
       color: inherit;
-      transition: background 0.12s ease;
     }
 
     .career-api-item:last-child {
       border-bottom: 0;
     }
 
-    .career-api-item:hover,
-    .career-api-item:focus-visible {
+    .career-api-item-main {
+      appearance: none;
+      display: grid;
+      gap: 4px;
+      width: 100%;
+      margin: 0;
+      padding: 12px 14px;
+      border: 0;
+      background: transparent;
+      text-align: left;
+      font: inherit;
+      color: inherit;
+      cursor: pointer;
+      transition: background 0.12s ease;
+    }
+
+    .career-api-item-main:hover,
+    .career-api-item-main:focus-visible,
+    .career-api-item.is-open > .career-api-item-main {
       background: #faf6f0;
       outline: none;
     }
 
     .career-api-item strong {
-      font-size: 13px;
+      font-size: 13.5px;
       font-weight: 780;
       letter-spacing: -0.02em;
       color: #2a1c12;
@@ -821,12 +858,93 @@
       word-break: keep-all;
     }
 
-    .career-api-item span {
-      font-size: 11.5px;
+    .career-api-item .career-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px 8px;
+    }
+
+    .career-api-item .career-chip {
+      display: inline-flex;
+      align-items: center;
+      max-width: 100%;
+      padding: 2px 7px;
+      border-radius: 999px;
+      background: rgba(107, 79, 58, 0.08);
+      color: #5c4636;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.35;
+      word-break: keep-all;
+    }
+
+    .career-api-item .career-sub {
+      font-size: 12px;
       font-weight: 600;
       color: #7a6554;
-      line-height: 1.4;
+      line-height: 1.45;
       word-break: keep-all;
+    }
+
+    .career-api-item .career-hint {
+      font-size: 11px;
+      font-weight: 700;
+      color: #8b6914;
+      letter-spacing: -0.01em;
+    }
+
+    .career-api-detail {
+      display: none;
+      gap: 10px;
+      padding: 0 14px 14px;
+      background: linear-gradient(180deg, #faf6f0 0%, #fffdf8 100%);
+      border-top: 1px dashed rgba(61, 43, 31, 0.1);
+    }
+
+    .career-api-item.is-open > .career-api-detail {
+      display: grid;
+    }
+
+    .career-api-detail-block {
+      display: grid;
+      gap: 4px;
+    }
+
+    .career-api-detail-block b {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: #6a5646;
+    }
+
+    .career-api-detail-block p,
+    .career-api-detail-block li {
+      margin: 0;
+      font-size: 12.5px;
+      font-weight: 600;
+      color: #3d2b1f;
+      line-height: 1.55;
+      word-break: keep-all;
+      white-space: pre-wrap;
+    }
+
+    .career-api-detail-block ul {
+      margin: 0;
+      padding-left: 1.1em;
+      display: grid;
+      gap: 4px;
+    }
+
+    .career-api-detail-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      width: fit-content;
+      color: #8b6914;
+      font-size: 12.5px;
+      font-weight: 750;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(139, 105, 20, 0.35);
     }
 
     .career-api-empty {
@@ -852,6 +970,18 @@
       .career-api-key code {
         max-width: 100%;
       }
+
+      .career-api-toolbar > * {
+        grid-column: span 6;
+      }
+
+      .career-api-toolbar input[type="search"] {
+        grid-column: span 12;
+      }
+
+      .career-api-toolbar button {
+        grid-column: span 12;
+      }
     }
 
     @media (max-width: 720px) {
@@ -865,26 +995,48 @@
       }
 
       .career-api-tabs {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
       .career-api-tab {
-        border-right: 0;
-        border-bottom: 1px solid rgba(61, 43, 31, 0.08);
-        text-align: left;
-        padding-left: 14px;
+        border-right: 1px solid rgba(61, 43, 31, 0.08);
+        border-bottom: 0;
+        text-align: center;
+        padding: 11px 6px;
+        font-size: 12.5px;
       }
 
       .career-api-tab:last-child {
-        border-bottom: 0;
+        border-right: 0;
       }
 
       .career-api-tab.is-active {
-        box-shadow: inset 3px 0 0 #8b6914;
+        box-shadow: inset 0 -2px 0 #8b6914;
+      }
+
+      .career-api-panel {
+        padding: 12px 12px 14px;
+      }
+
+      .career-api-toolbar > *,
+      .career-api-toolbar input[type="search"],
+      .career-api-toolbar button {
+        grid-column: span 12;
       }
 
       .career-api-results {
-        max-height: min(420px, 52vh);
+        max-height: min(68vh, 640px);
+      }
+
+      .career-api-item-main {
+        padding: 12px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .career-api-tab {
+        font-size: 12px;
+        padding: 10px 4px;
       }
     }
 
@@ -2204,6 +2356,11 @@
       text-decoration-skip-ink: auto;
     }
 
+    .sagwan-score-note .u-red {
+      color: #d32f2f;
+      text-decoration-color: rgba(211, 47, 47, 0.8);
+    }
+
     .sagwan-main-row {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 14px minmax(148px, 168px);
@@ -3280,7 +3437,7 @@
         </button>
         <aside class="sagwan-score-note" aria-label="1차 필기시험 점수 공유 안내">
           <p>
-            <span class="u">2026년 8월 30일까지 1차 필기시험 점수 공유를 진행</span>합니다.
+            <span class="u u-red">2026년 8월 30일까지 1차 필기시험 점수 공유를 진행</span>합니다.
             점수를 인증해 주신 분들께는 인증 시 남겨주신 <span class="u">이메일 주소를 통해 추후 관련 자료를 우선 공유</span>드릴 예정입니다.
           </p>
         </aside>
@@ -3538,9 +3695,38 @@
               <option value="midd_list">중학교</option>
               <option value="elem_list">초등학교</option>
             </select>
-            <input type="search" id="careerSchoolQ" placeholder="학교명 검색…" autocomplete="off" spellcheck="false" />
+            <select id="careerSchoolRegion" aria-label="지역">
+              <option value="">지역 전체</option>
+              <option value="100260">서울특별시</option>
+              <option value="100267">부산광역시</option>
+              <option value="100269">인천광역시</option>
+              <option value="100271">대전광역시</option>
+              <option value="100272">대구광역시</option>
+              <option value="100273">울산광역시</option>
+              <option value="100704">세종특별자치시</option>
+              <option value="100276">경기도</option>
+              <option value="100278">강원도</option>
+              <option value="100280">충청북도</option>
+              <option value="100281">충청남도</option>
+              <option value="100282">전북특별자치도</option>
+              <option value="112691">전남광주통합특별시</option>
+              <option value="100285">경상북도</option>
+              <option value="100291">경상남도</option>
+              <option value="100292">제주도</option>
+            </select>
+            <select id="careerSchoolSch1" aria-label="학교유형" hidden>
+              <option value="">학교유형 전체</option>
+            </select>
+            <select id="careerSchoolEst" aria-label="설립유형" hidden>
+              <option value="">설립유형 전체</option>
+              <option value="100334">국립</option>
+              <option value="100335">사립</option>
+              <option value="100336">공립</option>
+            </select>
+            <input type="search" id="careerSchoolQ" placeholder="학교명 검색 (예: 보인, 서울대)" autocomplete="off" spellcheck="false" enterkeyhint="search" />
             <button type="button" id="careerSchoolBtn">조회</button>
           </div>
+          <p class="career-api-filters-hint">지역·학교유형을 고르면 더 빠르게 좁혀집니다. 항목을 누르면 주소·홈페이지 등 상세가 펼쳐집니다.</p>
           <p class="career-api-status" id="careerSchoolStatus">학교 정보를 조회해 보세요.</p>
           <div class="career-api-results" id="careerSchoolResults" aria-live="polite">
             <div class="career-api-empty">검색어를 입력한 뒤 조회하면 결과가 표시됩니다.</div>
@@ -3549,13 +3735,29 @@
 
         <div class="career-api-panel" id="careerPanelMajor" role="tabpanel" data-career-panel="major" hidden>
           <div class="career-api-toolbar">
-            <select id="careerMajorGubun" aria-label="학과 학교 분류">
+            <select id="careerMajorGubun" aria-label="학교 분류">
               <option value="univ_list" selected>대학교</option>
               <option value="high_list">고등학교</option>
             </select>
-            <input type="search" id="careerMajorQ" placeholder="학과명 검색…" autocomplete="off" spellcheck="false" />
+            <select id="careerMajorSubject" aria-label="학과 계열">
+              <option value="">계열 전체</option>
+              <option value="100391">인문계열</option>
+              <option value="100392">사회계열</option>
+              <option value="100393">교육계열</option>
+              <option value="100394">공학계열</option>
+              <option value="100395">자연계열</option>
+              <option value="100396">의약계열</option>
+              <option value="100397">예체능계열</option>
+            </select>
+            <select id="careerMajorUnivSe" aria-label="대학 분류">
+              <option value="">대학 분류 전체</option>
+              <option value="univ">대학</option>
+              <option value="college">전문대학</option>
+            </select>
+            <input type="search" id="careerMajorQ" placeholder="학과명 검색 (예: 컴퓨터, 간호)" autocomplete="off" spellcheck="false" enterkeyhint="search" />
             <button type="button" id="careerMajorBtn">조회</button>
           </div>
+          <p class="career-api-filters-hint">목록에서 학과를 누르면 개요·관련직업·자격·개설대학 등 상세를 불러옵니다.</p>
           <p class="career-api-status" id="careerMajorStatus">학과 정보를 조회해 보세요.</p>
           <div class="career-api-results" id="careerMajorResults" aria-live="polite">
             <div class="career-api-empty">검색어를 입력한 뒤 조회하면 결과가 표시됩니다.</div>
@@ -3564,9 +3766,52 @@
 
         <div class="career-api-panel" id="careerPanelJob" role="tabpanel" data-career-panel="job" hidden>
           <div class="career-api-toolbar">
-            <input type="search" id="careerJobQ" placeholder="직업명 검색…" autocomplete="off" spellcheck="false" />
+            <select id="careerJobGubun" aria-label="직업 분류 형태">
+              <option value="job_dic_list" selected>커리어넷직업분류별</option>
+              <option value="job_apti_list">적성유형별</option>
+            </select>
+            <select id="careerJobCategory" aria-label="직업분류">
+              <option value="">직업분류 전체</option>
+              <option value="100041">관리직(임원·부서장)</option>
+              <option value="100042">경영·행정·사무직</option>
+              <option value="100043">금융·보험직</option>
+              <option value="105096">인문·사회과학 연구직</option>
+              <option value="105097">자연·생명과학 연구직</option>
+              <option value="105098">정보통신 연구개발직 및 공학기술직</option>
+              <option value="105099">건설·채굴 연구개발직 및 공학기술직</option>
+              <option value="105100">제조 연구개발직 및 공학기술직</option>
+              <option value="105101">교육직</option>
+              <option value="105102">법률직</option>
+              <option value="100047">사회복지·종교직</option>
+              <option value="105103">경찰·소방·교도직</option>
+              <option value="100064">군인</option>
+              <option value="100046">보건·의료직</option>
+              <option value="100048">예술·디자인·방송직</option>
+              <option value="105104">스포츠·레크리에이션직</option>
+              <option value="105105">미용·예식 서비스직</option>
+              <option value="105106">여행·숙박·오락 서비스직</option>
+              <option value="100053">음식 서비스직</option>
+              <option value="105107">경호·경비직</option>
+              <option value="105108">돌봄 서비스직(간병·육아)</option>
+              <option value="105109">청소 및 기타 개인서비스직</option>
+              <option value="100050">영업·판매직</option>
+              <option value="100049">운전·운송직</option>
+              <option value="105110">건설·채굴직</option>
+              <option value="105111">기계 설치·정비·생산직</option>
+              <option value="105112">금속·재료 설치·정비·생산직</option>
+              <option value="105113">전기·전자 설치·정비·생산직</option>
+              <option value="105114">정보통신 설치·정비직</option>
+              <option value="105115">화학·환경 설치·정비·생산직</option>
+              <option value="105116">섬유·의복 생산직</option>
+              <option value="100061">식품 가공·생산직</option>
+              <option value="105117">인쇄·목재·공예 및 기타 설치·정비·생산직</option>
+              <option value="105118">제조 단순직</option>
+              <option value="100063">농림어업직</option>
+            </select>
+            <input type="search" id="careerJobQ" placeholder="직업명 검색 (예: 간호사, 교사)" autocomplete="off" spellcheck="false" enterkeyhint="search" />
             <button type="button" id="careerJobBtn">조회</button>
           </div>
+          <p class="career-api-filters-hint">직업을 누르면 하는 일·전망·임금·관련학과·준비방법 등 상세가 펼쳐집니다.</p>
           <p class="career-api-status" id="careerJobStatus">직업 정보를 조회해 보세요.</p>
           <div class="career-api-results" id="careerJobResults" aria-live="polite">
             <div class="career-api-empty">검색어를 입력한 뒤 조회하면 결과가 표시됩니다.</div>
@@ -3959,7 +4204,7 @@
         const board = String((cfg && cfg.boardUrl) || it.boardUrl || "").trim();
         const url = String(it.url || "").trim();
         const broken = /\/admission\/html\/notice\/notice\.asp$/i;
-        const badHostPath = /error404|404\.html/i;
+        const badHostPath = /error404|404\.html|error_page\.do/i;
         const candidates = [url, board, home].filter((u) => /^https?:\/\//i.test(u));
         for (const u of candidates) {
           if (broken.test(u) || badHostPath.test(u)) continue;
@@ -4012,18 +4257,27 @@
         u123: /rokaf\.airforce\.mil\.kr\/bbs\/afaadmission\/2089\/\d+\/artclView\.do/i, // 공사
         u109: /tapply\.tonc\.net\/kafna\/\?doc=bbs\/board\.php&.*bo_table=notice.*wr_id=\d+/i, // 국간사
         u173: /kunsan\.ac\.kr\/iphak\/board\/view\.kunsan\?.*boardId=BBS_0000041.*dataSid=\d+/i, // 군산대 전체공지
+        u016: /admission\.sogang\.ac\.kr\/enter\/html\/counsel\/noticeView\.asp\?idx=\d+/i, // 서강대
+        u025: /admission\.skku\.edu\/admission\/html\/ipsi\/noticeView\.html\?idx=\d+/i, // 성균관대
+        u093: /admission\.inha\.ac\.kr\/cms\/FR_BBS_CON\/BoardView\.do\?.*BBS_SEQ=\d+/i, // 인하대
+        u005: /enter\.kyonggi\.ac\.kr\/cms\/FR_BBS_CON\/BoardView\.do\?.*BBS_SEQ=\d+/i, // 경기대(서울)
+        u049: /enter\.kyonggi\.ac\.kr\/cms\/FR_BBS_CON\/BoardView\.do\?.*BBS_SEQ=\d+/i, // 경기대(수원)
       };
 
       function isWeakNoticeUrl(url) {
         const u = String(url || "").trim();
         if (!/^https?:\/\//i.test(u)) return true;
         if (/javascript:|void\(0\)|#\s*$/i.test(u)) return true;
-        if (/\/admission\/html\/notice\/notice\.asp$/i.test(u) || /error404|404\.html/i.test(u)) return true;
+        if (/\/admission\/html\/notice\/notice\.asp$/i.test(u) || /error404|404\.html|error_page\.do/i.test(u)) return true;
+        // 경기대 구경로 /notice 는 error_page
+        if (/enter\.kyonggi\.ac\.kr\/notice\/?$/i.test(u)) return true;
+        // 인하대 구 Board.do?mCode= 빈 오류 페이지
+        if (/admission\.inha\.ac\.kr\/cms\/FR_CON\/Board\/Board\.do/i.test(u)) return true;
         // 숙명여대: /counsel/ 루트 경로는 500 — 약한/깨진 URL
         if (/admission\.sookmyung\.ac\.kr\/counsel\//i.test(u)) return true;
         // 공군사관학교: Q&A 게시판(1041) 제외 — 공지사항(2089)만
         if (/rokaf\.airforce\.mil\.kr/i.test(u) && /\/bbs\/afaadmission\/1041\//i.test(u)) return true;
-        const hasId = /[?&](id|no|seq|idx|bbsidx|ntt|article|artcl|brdIdx|dataSid|uid|num|p_board_idx|wr_id|nttSn)=/i.test(u)
+        const hasId = /[?&](id|no|seq|idx|bbsidx|ntt|article|artcl|brdIdx|dataSid|uid|num|p_board_idx|wr_id|nttSn|BBS_SEQ)=/i.test(u)
           || /\/bbs\/(?:afaadmission\/2089|kma\/160|iphak\/142|kaay\/152)\/\d+\/artclView\.do/i.test(u);
         if (hasId) return false;
         if (/\/(main|index|intro)(\.(asp|do|php|html?))?\/?$/i.test(u)) return true;
@@ -6248,13 +6502,35 @@
         // 인증키는 화면에 절대 표시하지 않음 (DOM/상태문구/결과 링크에 넣지 않음)
         const TOKEN = atob("NTNjOGE5YmFlOTVlM2ZjNDM2YTY4YWY2NmNkODM4YzE=");
         const API = {
-          school: "https://www.career.go.kr/cnet/openapi/getOpenApi",
-          major: "https://www.career.go.kr/cnet/openapi/getOpenApi",
-          job: "https://www.career.go.kr/cnet/front/openapi/jobs.json",
+          open: "https://www.career.go.kr/cnet/openapi/getOpenApi",
+          jobFast: "https://www.career.go.kr/cnet/front/openapi/jobs.json",
         };
+        const HIGH_SCH1 = [
+          ["", "학교유형 전체"],
+          ["100362", "일반고"],
+          ["100363", "특성화고"],
+          ["100364", "특수목적고"],
+          ["100365", "자율고"],
+          ["100366", "기타"],
+        ];
+        const UNIV_SCH1 = [
+          ["", "학교유형 전체"],
+          ["100322", "전문대학"],
+          ["100323", "대학(4년제)"],
+        ];
+        const cache = new Map();
+        const inflight = new Map();
+        let schoolAbort = null;
+        let majorAbort = null;
+        let jobAbort = null;
 
         const tabs = Array.from(root.querySelectorAll("[data-career-tab]"));
         const panels = Array.from(root.querySelectorAll("[data-career-panel]"));
+        const schoolGubunEl = document.getElementById("careerSchoolGubun");
+        const schoolSch1El = document.getElementById("careerSchoolSch1");
+        const schoolEstEl = document.getElementById("careerSchoolEst");
+        const majorGubunEl = document.getElementById("careerMajorGubun");
+        const majorUnivSeEl = document.getElementById("careerMajorUnivSe");
 
         function setTab(name) {
           tabs.forEach((btn) => {
@@ -6278,8 +6554,52 @@
           return String(text || "").split(TOKEN).join("");
         }
 
+        function plain(v) {
+          return scrub(String(v || ""))
+            .replace(/<br\s*\/?>/gi, "\n")
+            .replace(/<\/p>/gi, "\n")
+            .replace(/<[^>]+>/g, " ")
+            .replace(/&amp;/g, "&")
+            .replace(/&lt;/g, "<")
+            .replace(/&gt;/g, ">")
+            .replace(/&quot;/g, '"')
+            .replace(/&#39;/g, "'")
+            .replace(/\s+\n/g, "\n")
+            .replace(/\n{3,}/g, "\n\n")
+            .replace(/[ \t]{2,}/g, " ")
+            .trim();
+        }
+
         function safeText(v) {
-          return escapeHtml(scrub(v));
+          return escapeHtml(plain(v));
+        }
+
+        function chips(values) {
+          const parts = values
+            .map((x) => plain(x))
+            .filter(Boolean)
+            .filter((v, i, arr) => arr.indexOf(v) === i);
+          if (!parts.length) return "";
+          return `<div class="career-meta">${parts.map((p) => `<span class="career-chip">${escapeHtml(p)}</span>`).join("")}</div>`;
+        }
+
+        function detailBlock(title, body) {
+          const text = plain(body);
+          if (!text) return "";
+          return (
+            `<div class="career-api-detail-block"><b>${escapeHtml(title)}</b>` +
+            `<p>${escapeHtml(text)}</p></div>`
+          );
+        }
+
+        function detailList(title, items) {
+          const rows = (items || []).map((x) => plain(x)).filter(Boolean);
+          if (!rows.length) return "";
+          return (
+            `<div class="career-api-detail-block"><b>${escapeHtml(title)}</b><ul>` +
+            rows.slice(0, 12).map((r) => `<li>${escapeHtml(r)}</li>`).join("") +
+            `</ul></div>`
+          );
         }
 
         function asList(payload) {
@@ -6291,6 +6611,48 @@
           if (Array.isArray(content)) return content;
           if (content && typeof content === "object") return [content];
           return [];
+        }
+
+        function asOne(payload) {
+          const rows = asList(payload);
+          return rows[0] || null;
+        }
+
+        function nestList(node, keys) {
+          if (!node) return [];
+          let cur = node;
+          for (const key of keys) {
+            if (!cur) return [];
+            cur = cur[key];
+          }
+          if (Array.isArray(cur)) return cur;
+          if (cur && typeof cur === "object") {
+            if (Array.isArray(cur.content)) return cur.content;
+            return [cur];
+          }
+          return [];
+        }
+
+        function pairedFields(obj, nameKey, extraKeys) {
+          if (!obj || typeof obj !== "object") return [];
+          const names = obj[nameKey];
+          const nameArr = Array.isArray(names) ? names : names != null ? [names] : [];
+          if (!nameArr.length && !Array.isArray(names)) {
+            // already normalized object / list of objects
+            if (Array.isArray(obj)) {
+              return obj.map((row) => plain(row?.[nameKey] || row)).filter(Boolean);
+            }
+            return [];
+          }
+          return nameArr.map((name, i) => {
+            const bits = [plain(name)];
+            (extraKeys || []).forEach((k) => {
+              const vals = obj[k];
+              const v = Array.isArray(vals) ? vals[i] : vals;
+              if (v) bits.push(plain(v));
+            });
+            return bits.filter(Boolean).join(" · ");
+          }).filter(Boolean);
         }
 
         function extractJson(text) {
@@ -6308,199 +6670,532 @@
           }
         }
 
-        async function fetchCareerJson(url) {
-          try {
-            const res = await fetch(url, {
-              method: "GET",
-              headers: { Accept: "application/json,text/plain,*/*" },
-              cache: "no-store",
-            });
-            if (res.ok) {
-              return extractJson(await res.text());
-            }
-          } catch {
-            /* fall through */
-          }
-          // 브라우저 직접 호출이 막힐 때 공개 리더로 본문만 읽기 (화면에는 키 미표시)
-          const mirror = await fetch(`https://r.jina.ai/${url}`, {
+        function buildUrl(base, params) {
+          const q = Object.entries(params)
+            .filter(([, v]) => v !== undefined && v !== null && String(v) !== "")
+            .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(String(v))}`)
+            .join("&");
+          return `${base}?${q}`;
+        }
+
+        async function fetchOnce(url, signal) {
+          const res = await fetch(url, {
             method: "GET",
-            headers: { Accept: "text/plain,*/*" },
-            cache: "no-store",
+            headers: { Accept: "application/json,text/plain,*/*" },
+            cache: "default",
+            signal,
           });
-          if (!mirror.ok) throw new Error("fetch");
-          return extractJson(await mirror.text());
+          if (!res.ok) throw new Error(`http ${res.status}`);
+          return extractJson(await res.text());
+        }
+
+        async function fetchCareerJson(url, signal) {
+          const hit = cache.get(url);
+          if (hit) return hit;
+          if (inflight.has(url)) return inflight.get(url);
+
+          const task = (async () => {
+            try {
+              const data = await fetchOnce(url, signal);
+              cache.set(url, data);
+              if (cache.size > 48) {
+                const first = cache.keys().next().value;
+                cache.delete(first);
+              }
+              return data;
+            } catch (err) {
+              if (err && err.name === "AbortError") throw err;
+              const mirror = await fetch(`https://r.jina.ai/${url}`, {
+                method: "GET",
+                headers: { Accept: "text/plain,*/*" },
+                cache: "no-store",
+                signal,
+              });
+              if (!mirror.ok) throw new Error("fetch");
+              const data = extractJson(await mirror.text());
+              cache.set(url, data);
+              return data;
+            } finally {
+              inflight.delete(url);
+            }
+          })();
+
+          inflight.set(url, task);
+          return task;
+        }
+
+        async function raceCareerJson(urls, signal) {
+          const unique = [...new Set(urls.filter(Boolean))];
+          if (!unique.length) throw new Error("empty");
+          if (unique.length === 1) return fetchCareerJson(unique[0], signal);
+
+          return await new Promise((resolve, reject) => {
+            let pending = unique.length;
+            let lastErr = null;
+            let settled = false;
+            unique.forEach((url) => {
+              fetchCareerJson(url, signal)
+                .then((data) => {
+                  if (settled) return;
+                  const rows = asList(data);
+                  if (rows.length) {
+                    settled = true;
+                    resolve(data);
+                    return;
+                  }
+                  pending -= 1;
+                  if (!pending) {
+                    settled = true;
+                    resolve(data);
+                  }
+                })
+                .catch((err) => {
+                  lastErr = err;
+                  pending -= 1;
+                  if (!pending && !settled) {
+                    settled = true;
+                    reject(lastErr || err);
+                  }
+                });
+            });
+          });
         }
 
         function renderList(box, htmlItems) {
           if (!box) return;
           if (!htmlItems.length) {
-            box.innerHTML = `<div class="career-api-empty">검색 결과가 없습니다. 검색어를 바꿔 다시 시도해 주세요.</div>`;
+            box.innerHTML = `<div class="career-api-empty">검색 결과가 없습니다. 검색어·필터를 바꿔 다시 시도해 주세요.</div>`;
             return;
           }
           box.innerHTML = htmlItems.join("");
         }
 
+        function syncSchoolFilters() {
+          const gubun = schoolGubunEl?.value || "univ_list";
+          const isHigh = gubun === "high_list";
+          const isUniv = gubun === "univ_list";
+          if (schoolSch1El) {
+            const opts = isHigh ? HIGH_SCH1 : isUniv ? UNIV_SCH1 : null;
+            if (opts) {
+              schoolSch1El.hidden = false;
+              schoolSch1El.innerHTML = opts
+                .map(([v, label]) => `<option value="${v}">${label}</option>`)
+                .join("");
+            } else {
+              schoolSch1El.hidden = true;
+              schoolSch1El.value = "";
+            }
+          }
+          if (schoolEstEl) {
+            schoolEstEl.hidden = !isUniv;
+            if (!isUniv) schoolEstEl.value = "";
+          }
+          if (majorUnivSeEl) {
+            const show = (majorGubunEl?.value || "univ_list") === "univ_list";
+            majorUnivSeEl.hidden = !show;
+            if (!show) majorUnivSeEl.value = "";
+          }
+        }
+
+        schoolGubunEl?.addEventListener("change", syncSchoolFilters);
+        majorGubunEl?.addEventListener("change", syncSchoolFilters);
+        syncSchoolFilters();
+
+        function schoolDetailHtml(it) {
+          const href = plain(it.link || "");
+          const college = plain(it.collegeinfourl || "");
+          const links = [];
+          if (/^https?:\/\//i.test(href)) {
+            links.push(
+              `<a class="career-api-detail-link" href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">학교 홈페이지</a>`
+            );
+          }
+          if (/^https?:\/\//i.test(college) && college !== href) {
+            links.push(
+              `<a class="career-api-detail-link" href="${escapeHtml(college)}" target="_blank" rel="noopener noreferrer">마이칼리지 정보</a>`
+            );
+          }
+          return (
+            detailBlock("학교종류", it.schoolGubun) +
+            detailBlock("학교유형", it.schoolType) +
+            detailBlock("설립유형", it.estType) +
+            detailBlock("지역", it.region) +
+            detailBlock("캠퍼스", it.campusName) +
+            detailBlock("주소", it.adres) +
+            detailBlock("식별번호(seq)", it.seq) +
+            (links.length ? `<div class="career-api-detail-block"><b>바로가기</b>${links.join(" · ")}</div>` : "")
+          );
+        }
+
+        function majorDetailHtml(it) {
+          const unis = nestList(it, ["university", "content"]).map((u) => {
+            const bits = [u.schoolName, u.campus_nm, u.area, u.majorName].map(plain).filter(Boolean);
+            return bits.join(" · ");
+          });
+          const fields = nestList(it, ["enter_field", "content"]).map((f) => {
+            const a = plain(f.gradeuate || f.graduate);
+            const b = plain(f.description);
+            return [a, b].filter(Boolean).join(" — ");
+          });
+          const subjects = nestList(it, ["main_subject", "content"]).map((s) => {
+            const a = plain(s.SBJECT_NM || s.subject_name);
+            const b = plain(s.SBJECT_SUMRY || s.subject_description);
+            return [a, b].filter(Boolean).join(" — ");
+          });
+          const acts = nestList(it, ["career_act", "content"]).map((a) => {
+            return [plain(a.act_name), plain(a.act_description)].filter(Boolean).join(" — ");
+          });
+          const schools = nestList(it, ["setshl", "content"]).map((s) => {
+            return [s.schoolName, s.majorName, s.area].map(plain).filter(Boolean).join(" · ");
+          });
+          return (
+            detailBlock("학과개요", it.summary) +
+            detailBlock("세부관련학과", it.department) +
+            detailBlock("관련직업", it.job || it.relatedjob) +
+            detailBlock("관련자격", it.qualifications) +
+            detailBlock("흥미와 적성", it.interest) +
+            detailBlock("학과특성", it.property) +
+            detailBlock("주요교육내용", it.purpose) +
+            detailBlock("졸업 후 직장임금", it.salary) +
+            detailBlock("취업률", it.employment) +
+            detailList("졸업 후 진출분야", fields) +
+            detailList("진로 탐색 활동", acts) +
+            detailList("주요 교과목", subjects) +
+            detailList("개설대학", unis) +
+            detailList("설치학교", schools)
+          );
+        }
+
+        function jobDetailHtml(it) {
+          const majorNode = it.capacity_major?.major;
+          let majors = nestList(it, ["capacity_major", "major"]).map((m) => plain(m.MAJOR_NM)).filter(Boolean);
+          if (!majors.length) majors = pairedFields(majorNode, "MAJOR_NM");
+          let contacts = nestList(it, ["contact"]).map((c) => {
+            const name = plain(c.MAPNG_NM);
+            const url = plain(c.MAPNG_URL);
+            if (!name) return "";
+            return url ? `${name} (${url})` : name;
+          }).filter(Boolean);
+          if (!contacts.length) contacts = pairedFields(it.contact, "MAPNG_NM", ["MAPNG_URL"]);
+          const possibility = plain(
+            typeof it.job_possibility === "object"
+              ? it.job_possibility?.possibility
+              : it.possibility || it.job_possibility
+          );
+          return (
+            detailBlock("하는 일", it.summary || it.work) +
+            detailBlock("직업분야", it.profession || it.aptit_name || it.top_nm) +
+            detailBlock("유사직업", it.similarJob || it.similarjob || it.rel_job_nm) +
+            detailBlock("핵심능력", it.ability) +
+            detailBlock("적성 및 흥미", it.aptitude) +
+            detailBlock("연봉/임금", it.salery || it.wage || it.salary) +
+            detailBlock("일자리전망", it.prospect) +
+            detailBlock("발전가능성", possibility) +
+            detailBlock("고용평등", it.equalemployment) +
+            detailBlock("관련자격", it.capacity_major?.capacity || it.prepareway?.certification) +
+            detailBlock("정규교육과정", it.prepareway?.preparation) +
+            detailBlock("직업훈련", it.prepareway?.training) +
+            detailBlock("취업방법", it.stateofemp?.empway) +
+            detailBlock("고용현황", it.stateofemp?.employment) +
+            detailBlock("임금수준(상세)", it.stateofemp?.salery) +
+            detailList("관련학과", majors) +
+            detailList("문의기관", contacts)
+          );
+        }
+
         async function runSchool() {
           const q = String(document.getElementById("careerSchoolQ")?.value || "").trim();
-          const gubun = document.getElementById("careerSchoolGubun")?.value || "univ_list";
+          const gubun = schoolGubunEl?.value || "univ_list";
+          const region = document.getElementById("careerSchoolRegion")?.value || "";
+          const sch1 = schoolSch1El?.hidden ? "" : schoolSch1El?.value || "";
+          const estType = schoolEstEl?.hidden ? "" : schoolEstEl?.value || "";
           const status = document.getElementById("careerSchoolStatus");
           const box = document.getElementById("careerSchoolResults");
+          const btn = document.getElementById("careerSchoolBtn");
           if (!q) {
             if (status) status.textContent = "학교명을 입력해 주세요.";
             if (box) box.innerHTML = `<div class="career-api-empty">검색어를 입력한 뒤 조회하면 결과가 표시됩니다.</div>`;
             return;
           }
+          if (schoolAbort) schoolAbort.abort();
+          schoolAbort = new AbortController();
           if (status) status.textContent = "조회 중…";
+          if (btn) btn.disabled = true;
           if (box) box.innerHTML = `<div class="career-api-empty">결과를 불러오는 중입니다…</div>`;
-          const url =
-            `${API.school}?apiKey=${encodeURIComponent(TOKEN)}` +
-            `&svcType=api&svcCode=SCHOOL&contentType=json` +
-            `&gubun=${encodeURIComponent(gubun)}` +
-            `&searchSchulNm=${encodeURIComponent(q)}` +
-            `&thisPage=1&perPage=30`;
+          const url = buildUrl(API.open, {
+            apiKey: TOKEN,
+            svcType: "api",
+            svcCode: "SCHOOL",
+            contentType: "json",
+            gubun,
+            region,
+            sch1,
+            estType,
+            searchSchulNm: q,
+            thisPage: "1",
+            perPage: "20",
+          });
           try {
-            const data = await fetchCareerJson(url);
-            const rows = asList(data).slice(0, 40);
+            const data = await fetchCareerJson(url, schoolAbort.signal);
+            const rows = asList(data).slice(0, 30);
+            const total = rows[0]?.totalCount || rows.length;
             renderList(
               box,
-              rows.map((it) => {
-                const name = safeText(it.schoolName || it.schoolNm || it.schulNm || "학교");
-                const bits = [it.region, it.schoolGubun || it.schoolType, it.estType, it.campusName, it.adres]
-                  .map((x) => String(x || "").trim())
-                  .filter(Boolean);
-                const sub = safeText(bits.join(" · "));
-                const href = scrub(it.link || it.collegeinfourl || "");
-                const open =
-                  href && /^https?:\/\//i.test(href)
-                    ? ` data-href="${escapeHtml(href)}" role="link" tabindex="0"`
-                    : "";
+              rows.map((it, idx) => {
+                const name = safeText(it.schoolName || "학교");
                 return (
-                  `<div class="career-api-item"${open}>` +
+                  `<article class="career-api-item" data-career-kind="school" data-idx="${idx}">` +
+                  `<button type="button" class="career-api-item-main">` +
                   `<strong>${name}</strong>` +
-                  (sub ? `<span>${sub}</span>` : "") +
-                  `</div>`
+                  chips([it.region, it.schoolGubun, it.schoolType, it.estType, it.campusName]) +
+                  (plain(it.adres) ? `<div class="career-sub">${safeText(it.adres)}</div>` : "") +
+                  `<div class="career-hint">상세 보기</div>` +
+                  `</button>` +
+                  `<div class="career-api-detail">${schoolDetailHtml(it)}</div>` +
+                  `</article>`
                 );
               })
             );
-            if (status) status.textContent = rows.length ? `검색 결과 ${rows.length}건` : "검색 결과가 없습니다.";
-          } catch {
+            if (status) {
+              status.textContent = rows.length
+                ? `검색 결과 ${rows.length}건 표시 · 전체 ${total}건`
+                : "검색 결과가 없습니다.";
+            }
+          } catch (err) {
+            if (err && err.name === "AbortError") return;
             if (status) status.textContent = "잠시 후 다시 시도해 주세요.";
             if (box) box.innerHTML = `<div class="career-api-empty">검색 결과를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.</div>`;
+          } finally {
+            if (btn) btn.disabled = false;
           }
         }
 
         async function runMajor() {
           const q = String(document.getElementById("careerMajorQ")?.value || "").trim();
-          const gubun = document.getElementById("careerMajorGubun")?.value || "univ_list";
+          const gubun = majorGubunEl?.value || "univ_list";
+          const subject = document.getElementById("careerMajorSubject")?.value || "";
+          const univSe = majorUnivSeEl?.hidden ? "" : majorUnivSeEl?.value || "";
           const status = document.getElementById("careerMajorStatus");
           const box = document.getElementById("careerMajorResults");
+          const btn = document.getElementById("careerMajorBtn");
           if (!q) {
             if (status) status.textContent = "학과명을 입력해 주세요.";
             if (box) box.innerHTML = `<div class="career-api-empty">검색어를 입력한 뒤 조회하면 결과가 표시됩니다.</div>`;
             return;
           }
+          if (majorAbort) majorAbort.abort();
+          majorAbort = new AbortController();
           if (status) status.textContent = "조회 중…";
+          if (btn) btn.disabled = true;
           if (box) box.innerHTML = `<div class="career-api-empty">결과를 불러오는 중입니다…</div>`;
-          const url =
-            `${API.major}?apiKey=${encodeURIComponent(TOKEN)}` +
-            `&svcType=api&svcCode=MAJOR&contentType=json` +
-            `&gubun=${encodeURIComponent(gubun)}` +
-            `&searchTitle=${encodeURIComponent(q)}` +
-            `&thisPage=1&perPage=30`;
+          const url = buildUrl(API.open, {
+            apiKey: TOKEN,
+            svcType: "api",
+            svcCode: "MAJOR",
+            contentType: "json",
+            gubun,
+            subject,
+            univSe,
+            searchTitle: q,
+            thisPage: "1",
+            perPage: "20",
+          });
           try {
-            const data = await fetchCareerJson(url);
-            const rows = asList(data).slice(0, 40);
+            const data = await fetchCareerJson(url, majorAbort.signal);
+            const rows = asList(data).slice(0, 30);
+            const total = rows[0]?.totalCount || rows.length;
             renderList(
               box,
               rows.map((it) => {
-                const name = safeText(it.mClass || it.major || it.majorName || it.facilName || "학과");
-                const bits = [it.lClass, it.facilName, it.schoolName, it.university]
-                  .map((x) => String(x || "").trim())
-                  .filter(Boolean);
-                const sub = safeText([...new Set(bits)].join(" · "));
+                const name = safeText(it.mClass || it.major || "학과");
+                const seq = plain(it.majorSeq);
                 return (
-                  `<div class="career-api-item">` +
+                  `<article class="career-api-item" data-career-kind="major" data-seq="${escapeHtml(seq)}">` +
+                  `<button type="button" class="career-api-item-main">` +
                   `<strong>${name}</strong>` +
-                  (sub ? `<span>${sub}</span>` : "") +
-                  `</div>`
+                  chips([it.lClass, it.facilName ? String(it.facilName).split(",")[0] : ""]) +
+                  (plain(it.facilName) ? `<div class="career-sub">${safeText(it.facilName)}</div>` : "") +
+                  `<div class="career-hint">상세 불러오기</div>` +
+                  `</button>` +
+                  `<div class="career-api-detail"><div class="career-api-empty">상세 정보를 불러오는 중…</div></div>` +
+                  `</article>`
                 );
               })
             );
-            if (status) status.textContent = rows.length ? `검색 결과 ${rows.length}건` : "검색 결과가 없습니다.";
-          } catch {
+            if (status) {
+              status.textContent = rows.length
+                ? `검색 결과 ${rows.length}건 표시 · 전체 ${total}건`
+                : "검색 결과가 없습니다.";
+            }
+          } catch (err) {
+            if (err && err.name === "AbortError") return;
             if (status) status.textContent = "잠시 후 다시 시도해 주세요.";
             if (box) box.innerHTML = `<div class="career-api-empty">검색 결과를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.</div>`;
+          } finally {
+            if (btn) btn.disabled = false;
           }
         }
 
         async function runJob() {
           const q = String(document.getElementById("careerJobQ")?.value || "").trim();
+          const gubun = document.getElementById("careerJobGubun")?.value || "job_dic_list";
+          const category = document.getElementById("careerJobCategory")?.value || "";
           const status = document.getElementById("careerJobStatus");
           const box = document.getElementById("careerJobResults");
+          const btn = document.getElementById("careerJobBtn");
           if (!q) {
             if (status) status.textContent = "직업명을 입력해 주세요.";
             if (box) box.innerHTML = `<div class="career-api-empty">검색어를 입력한 뒤 조회하면 결과가 표시됩니다.</div>`;
             return;
           }
+          if (jobAbort) jobAbort.abort();
+          jobAbort = new AbortController();
           if (status) status.textContent = "조회 중…";
+          if (btn) btn.disabled = true;
           if (box) box.innerHTML = `<div class="career-api-empty">결과를 불러오는 중입니다…</div>`;
-          const url =
-            `${API.job}?apiKey=${encodeURIComponent(TOKEN)}` +
-            `&searchJobNm=${encodeURIComponent(q)}` +
-            `&thisPage=1&perPage=30`;
+
+          const official = buildUrl(`${API.open}.json`, {
+            apiKey: TOKEN,
+            svcType: "api",
+            svcCode: "JOB",
+            contentType: "json",
+            gubun,
+            category,
+            searchJobNm: q,
+            thisPage: "1",
+            perPage: "20",
+          });
+          const fast = buildUrl(API.jobFast, {
+            apiKey: TOKEN,
+            searchJobNm: q,
+            thisPage: "1",
+            perPage: "20",
+          });
+
           try {
-            const data = await fetchCareerJson(url);
-            const rows = asList(data).slice(0, 40);
+            const data = await raceCareerJson([official, fast], jobAbort.signal);
+            const rows = asList(data).slice(0, 30);
+            const total = data?.count || rows[0]?.totalCount || rows.length;
             renderList(
               box,
               rows.map((it) => {
-                const name = safeText(it.job_nm || it.job || it.jobNm || it.jobName || "직업");
-                const bits = [
-                  it.aptit_name || it.profession,
-                  it.wage || it.salery || it.salary,
-                  it.rel_job_nm || it.similarJob,
-                  it.work,
-                ]
-                  .map((x) => String(x || "").trim())
-                  .filter(Boolean)
-                  .map((x) => (x.length > 80 ? `${x.slice(0, 80)}…` : x));
-                const sub = safeText(bits.join(" · "));
+                const name = safeText(it.job || it.job_nm || it.jobNm || "직업");
+                const seq = plain(it.jobdicSeq || it.seq || it.job_cd || "");
+                const summary = plain(it.summary || it.work || "");
                 return (
-                  `<div class="career-api-item">` +
+                  `<article class="career-api-item" data-career-kind="job" data-seq="${escapeHtml(seq)}">` +
+                  `<button type="button" class="career-api-item-main">` +
                   `<strong>${name}</strong>` +
-                  (sub ? `<span>${sub}</span>` : "") +
-                  `</div>`
+                  chips([
+                    it.profession || it.aptit_name || it.top_nm,
+                    it.salery || it.wage,
+                    it.prospect,
+                    it.possibility,
+                  ]) +
+                  (summary ? `<div class="career-sub">${escapeHtml(summary.length > 140 ? `${summary.slice(0, 140)}…` : summary)}</div>` : "") +
+                  `<div class="career-hint">상세 불러오기</div>` +
+                  `</button>` +
+                  `<div class="career-api-detail"><div class="career-api-empty">상세 정보를 불러오는 중…</div></div>` +
+                  `</article>`
                 );
               })
             );
-            if (status) status.textContent = rows.length ? `검색 결과 ${rows.length}건` : "검색 결과가 없습니다.";
-          } catch {
+            if (status) {
+              status.textContent = rows.length
+                ? `검색 결과 ${rows.length}건 표시 · 전체 ${total}건`
+                : "검색 결과가 없습니다.";
+            }
+          } catch (err) {
+            if (err && err.name === "AbortError") return;
             if (status) status.textContent = "잠시 후 다시 시도해 주세요.";
             if (box) box.innerHTML = `<div class="career-api-empty">검색 결과를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.</div>`;
+          } finally {
+            if (btn) btn.disabled = false;
           }
         }
 
-        function bindResultClicks(box) {
+        async function loadMajorDetail(item) {
+          const seq = item.getAttribute("data-seq") || "";
+          const detail = item.querySelector(".career-api-detail");
+          if (!detail || !seq) {
+            if (detail) detail.innerHTML = `<div class="career-api-empty">상세 코드가 없습니다.</div>`;
+            return;
+          }
+          if (item.dataset.loaded === "1") return;
+          detail.innerHTML = `<div class="career-api-empty">상세 정보를 불러오는 중…</div>`;
+          const gubun = majorGubunEl?.value || "univ_list";
+          const url = buildUrl(API.open, {
+            apiKey: TOKEN,
+            svcType: "api",
+            svcCode: "MAJOR_VIEW",
+            contentType: "json",
+            gubun,
+            majorSeq: seq,
+          });
+          try {
+            const data = await fetchCareerJson(url);
+            const one = asOne(data);
+            detail.innerHTML = one
+              ? majorDetailHtml(one)
+              : `<div class="career-api-empty">상세 정보가 없습니다.</div>`;
+            item.dataset.loaded = "1";
+          } catch {
+            detail.innerHTML = `<div class="career-api-empty">상세를 불러오지 못했습니다.</div>`;
+          }
+        }
+
+        async function loadJobDetail(item) {
+          const seq = item.getAttribute("data-seq") || "";
+          const detail = item.querySelector(".career-api-detail");
+          if (!detail) return;
+          if (item.dataset.loaded === "1") return;
+          detail.innerHTML = `<div class="career-api-empty">상세 정보를 불러오는 중…</div>`;
+          if (!seq) {
+            detail.innerHTML = `<div class="career-api-empty">상세 코드가 없어 목록 정보만 표시합니다.</div>`;
+            item.dataset.loaded = "1";
+            return;
+          }
+          const url = buildUrl(`${API.open}.json`, {
+            apiKey: TOKEN,
+            svcType: "api",
+            svcCode: "JOB_VIEW",
+            contentType: "json",
+            gubun: "job_dic_list",
+            jobdicSeq: seq,
+          });
+          try {
+            const data = await fetchCareerJson(url);
+            const one = asOne(data);
+            detail.innerHTML = one
+              ? jobDetailHtml(one)
+              : `<div class="career-api-empty">상세 정보가 없습니다.</div>`;
+            item.dataset.loaded = "1";
+          } catch {
+            detail.innerHTML = `<div class="career-api-empty">상세를 불러오지 못했습니다.</div>`;
+          }
+        }
+
+        function bindResults(box) {
           if (!box) return;
           box.addEventListener("click", (e) => {
-            const row = e.target.closest(".career-api-item[data-href]");
-            if (!row) return;
-            const href = scrub(row.getAttribute("data-href") || "");
-            if (/^https?:\/\//i.test(href)) window.open(href, "_blank", "noopener,noreferrer");
-          });
-          box.addEventListener("keydown", (e) => {
-            if (e.key !== "Enter" && e.key !== " ") return;
-            const row = e.target.closest(".career-api-item[data-href]");
-            if (!row) return;
-            e.preventDefault();
-            const href = scrub(row.getAttribute("data-href") || "");
-            if (/^https?:\/\//i.test(href)) window.open(href, "_blank", "noopener,noreferrer");
+            const link = e.target.closest("a.career-api-detail-link");
+            if (link) return;
+            const main = e.target.closest(".career-api-item-main");
+            if (!main) return;
+            const item = main.closest(".career-api-item");
+            if (!item) return;
+            const open = !item.classList.contains("is-open");
+            item.classList.toggle("is-open", open);
+            if (!open) return;
+            const kind = item.getAttribute("data-career-kind");
+            if (kind === "major") void loadMajorDetail(item);
+            if (kind === "job") void loadJobDetail(item);
           });
         }
 
-        bindResultClicks(document.getElementById("careerSchoolResults"));
-        bindResultClicks(document.getElementById("careerMajorResults"));
-        bindResultClicks(document.getElementById("careerJobResults"));
+        bindResults(document.getElementById("careerSchoolResults"));
+        bindResults(document.getElementById("careerMajorResults"));
+        bindResults(document.getElementById("careerJobResults"));
 
         document.getElementById("careerSchoolBtn")?.addEventListener("click", () => {
           void runSchool();

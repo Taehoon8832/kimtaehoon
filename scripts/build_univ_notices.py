@@ -58,7 +58,10 @@ SKIP = re.compile(
     r"^(더보기|more|이전|다음|목록|home|로그인|전체|공지사항|공지|뉴스|새글|N|NEW)$",
     re.I,
 )
-BROKEN = re.compile(r"/admission/html/notice/notice\.asp$|error404|404\.html", re.I)
+BROKEN = re.compile(
+    r"/admission/html/notice/notice\.asp$|error404|404\.html|error_page\.do|/notice/?$",
+    re.I,
+)
 MD_LINK = re.compile(
     r"\[([^\]]{6,180})\]\((https?://[^)\s]+)\)([\s\S]{0,160}?)"
     r"(20\d{2})\s*[.\-/년]\s*(\d{1,2})\s*[.\-/월]\s*(\d{1,2})"
@@ -193,6 +196,61 @@ SPECIAL_UNIV = {
             re.I,
         ),
         "parser": "kunsan",
+    },
+    # 서강·성균·인하·경기 — 입학처 공지 게시판 고정
+    "u016": {  # 서강대
+        "homeUrl": "https://admission.sogang.ac.kr/enter/html/main/index.asp",
+        "boardUrl": "https://admission.sogang.ac.kr/enter/html/counsel/notice.asp",
+        "allow": re.compile(r"admission\.sogang\.ac\.kr/enter/html/counsel/noticeView\.asp\?idx=\d+", re.I),
+        "parser": "sogang",
+    },
+    "u025": {  # 성균관대
+        "homeUrl": "https://admission.skku.edu/admission/html/main/main.html",
+        "boardUrl": "https://admission.skku.edu/admission/html/ipsi/notice.html",
+        "allow": re.compile(r"admission\.skku\.edu/admission/html/ipsi/noticeView\.html\?idx=\d+", re.I),
+        "parser": "skku",
+    },
+    "u093": {  # 인하대 통합공지
+        "homeUrl": "https://admission.inha.ac.kr/index.do",
+        "boardUrl": "https://admission.inha.ac.kr/cms/FR_CON/index.do?MENU_ID=240",
+        "allow": re.compile(
+            r"admission\.inha\.ac\.kr/cms/FR_BBS_CON/BoardView\.do\?.*BBS_SEQ=\d+",
+            re.I,
+        ),
+        "parser": "cms_bbs",
+        "origin": "https://admission.inha.ac.kr",
+        "menuId": "240",
+        "contentsNo": "1",
+        "pagePerCnt": "15",
+        "maxPer": 12,
+    },
+    "u005": {  # 경기대(서울)
+        "homeUrl": "https://enter.kyonggi.ac.kr/index.do",
+        "boardUrl": "https://enter.kyonggi.ac.kr/cms/FR_CON/index.do?MENU_ID=210",
+        "allow": re.compile(
+            r"enter\.kyonggi\.ac\.kr/cms/FR_BBS_CON/BoardView\.do\?.*BBS_SEQ=\d+",
+            re.I,
+        ),
+        "parser": "cms_bbs",
+        "origin": "https://enter.kyonggi.ac.kr",
+        "menuId": "210",
+        "contentsNo": "3",
+        "pagePerCnt": "10",
+        "maxPer": 12,
+    },
+    "u049": {  # 경기대(수원) — 동일 입학처 공지
+        "homeUrl": "https://enter.kyonggi.ac.kr/index.do",
+        "boardUrl": "https://enter.kyonggi.ac.kr/cms/FR_CON/index.do?MENU_ID=210",
+        "allow": re.compile(
+            r"enter\.kyonggi\.ac\.kr/cms/FR_BBS_CON/BoardView\.do\?.*BBS_SEQ=\d+",
+            re.I,
+        ),
+        "parser": "cms_bbs",
+        "origin": "https://enter.kyonggi.ac.kr",
+        "menuId": "210",
+        "contentsNo": "3",
+        "pagePerCnt": "10",
+        "maxPer": 12,
     },
 }
 
@@ -375,7 +433,7 @@ def is_weak_article_url(absu: str, page_url: str) -> bool:
     # 게시글 id 파라미터가 없고 메인/인덱스면 약함
     has_id = bool(
         re.search(
-            r"[?&](id|no|seq|idx|bbsidx|ntt|article|artcl|brdIdx|dataSid|uid|num|p_board_idx)=",
+            r"[?&](id|no|seq|idx|bbsidx|ntt|article|artcl|brdIdx|dataSid|uid|num|p_board_idx|BBS_SEQ)=",
             absu,
             re.I,
         )
@@ -547,6 +605,152 @@ def parse_kunsan_notice_board(html: str, page_url: str, src: dict):
         if it:
             items.append(it)
     return items
+
+
+def parse_sogang_notice_board(html: str, page_url: str, src: dict):
+    """서강대 입학자료실 공지 — viewData(idx) + 작성일."""
+    items = []
+    chunks = re.split(r"(?=<li\b|<tr\b)", html or "", flags=re.I)
+    for block in chunks:
+        vm = re.search(r"viewData\('(\d+)'\)", block)
+        if not vm:
+            continue
+        idx = vm.group(1)
+        dm = re.search(r"작성일\s*:\s*(20\d{2}\.\d{2}\.\d{2})", block)
+        if not dm:
+            dm = re.search(r"(20\d{2}\.\d{2}\.\d{2})", block)
+        if not dm:
+            continue
+        date_iso = extract_date(dm.group(1))
+        title = ""
+        for tm in re.finditer(
+            r"(?:font-weight\s*:\s*Bold[^>]*>|>)([^<]{8,140})<",
+            block,
+            re.I,
+        ):
+            cand = strip_tags(tm.group(1))
+            if TITLE_HINT.search(cand) and len(re.findall(r"[가-힣]", cand)) >= 4:
+                title = cand
+                break
+        if not title:
+            plain = strip_tags(block)
+            tm = re.search(
+                r"((?:\[.*?\]\s*)?(?:20\d{2}학년도|[가-힣]).{6,100}?)(?:작성일|조회|$)",
+                plain,
+            )
+            title = (tm.group(1) if tm else plain)[:140]
+        absu = f"https://admission.sogang.ac.kr/enter/html/counsel/noticeView.asp?idx={idx}"
+        it = make_item(src, title, f"{src['name']} 입학 공지사항 미리보기", absu, date_iso, page_url)
+        if it:
+            items.append(it)
+    return items
+
+
+def parse_skku_notice_board(html: str, page_url: str, src: dict):
+    """성균관대 통합공지 — viewData(idx) + 작성일."""
+    items = []
+    for block in re.finditer(r"<tr[\s\S]*?</tr>", html or "", re.I):
+        row = block.group(0)
+        vm = re.search(r"viewData\('(\d+)'\)", row)
+        if not vm:
+            continue
+        idx = vm.group(1)
+        dm = re.search(r"작성일\s*:\s*(20\d{2}-\d{2}-\d{2})", row)
+        if not dm:
+            continue
+        date_iso = extract_date(dm.group(1))
+        title = ""
+        tm = re.search(
+            r"<p>\s*<span[^>]*>\s*([^<]{8,140})\s*</span>",
+            row,
+            re.I,
+        )
+        if tm:
+            title = strip_tags(tm.group(1))
+        if not title:
+            title = strip_tags(row)
+        cate = ""
+        cm = re.search(r"class=['\"]cate[^'\"]*['\"][^>]*>([^<]+)<", row, re.I)
+        if cm:
+            cate = strip_tags(cm.group(1))
+        if cate and not title.startswith(cate):
+            title = f"{cate} {title}".strip()
+        absu = f"https://admission.skku.edu/admission/html/ipsi/noticeView.html?idx={idx}"
+        it = make_item(src, title, f"{src['name']} 입학 공지사항 미리보기", absu, date_iso, page_url)
+        if it:
+            items.append(it)
+    return items
+
+
+def fetch_cms_bbs_list(cfg: dict, src: dict):
+    """인하대·경기대 등 CMS BBSViewList AJAX."""
+    from http.cookiejar import CookieJar
+    from urllib.parse import urlencode
+    from urllib.request import HTTPCookieProcessor, HTTPSHandler, build_opener
+
+    origin = (cfg.get("origin") or "").rstrip("/")
+    menu = str(cfg.get("menuId") or "")
+    contents = str(cfg.get("contentsNo") or "1")
+    per = str(cfg.get("pagePerCnt") or "15")
+    if not origin or not menu:
+        return []
+    board = cfg["boardUrl"]
+    op = build_opener(HTTPSHandler(context=CTX), HTTPCookieProcessor(CookieJar()))
+    # warm session
+    try:
+        req = Request(board, headers={"User-Agent": UA, "Accept": "text/html,*/*", "Accept-Language": "ko"})
+        with op.open(req, timeout=20) as res:
+            res.read()
+    except Exception:
+        pass
+    form = {
+        "MENU_ID": menu,
+        "BOARD_SEQ": "1",
+        "SITE_NO": "2",
+        "CONTENTS_NO": contents,
+        "pageNo": "1",
+        "pagePerCnt": per,
+    }
+    req = Request(
+        f"{origin}/ajaxf/FR_BBS_SVC/BBSViewList.do",
+        data=urlencode(form).encode(),
+        headers={
+            "User-Agent": UA,
+            "Accept": "application/json, text/javascript, */*; q=0.01",
+            "Accept-Language": "ko",
+            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+            "X-Requested-With": "XMLHttpRequest",
+            "Referer": board,
+        },
+    )
+    try:
+        with op.open(req, timeout=20) as res:
+            raw = res.read().decode("utf-8", "ignore")
+        data = json.loads(raw)
+    except Exception:
+        return []
+    rows = (((data or {}).get("data") or {}).get("list")) or []
+    items = []
+    for row in rows:
+        if not isinstance(row, dict):
+            continue
+        bbs = str(row.get("BBS_SEQ") or "").strip()
+        title = str(row.get("SUBJECT") or "").strip()
+        date_iso = extract_date(str(row.get("WRITE_DATE") or row.get("REG_DT") or ""))
+        if not bbs or not title or not date_iso:
+            continue
+        absu = (
+            f"{origin}/cms/FR_BBS_CON/BoardView.do?"
+            f"BBS_SEQ={bbs}&BOARD_SEQ=1&CONTENTS_NO={contents}&MENU_ID={menu}&SITE_NO=2"
+        )
+        it = make_item(src, title, f"{src['name']} 입학 공지사항 미리보기", absu, date_iso, board)
+        if it and cfg.get("allow") and cfg["allow"].search(it["url"]):
+            items.append(it)
+        elif it and not cfg.get("allow"):
+            items.append(it)
+    uniq = {f"{it['url']}|{it['title']}": it for it in items}
+    limit = int(cfg.get("maxPer") or MAX_PER)
+    return sorted(uniq.values(), key=lambda x: x["dateISO"], reverse=True)[:limit]
 
 
 def parse_html(html: str, page_url: str, src: dict):
@@ -780,6 +984,10 @@ def parse_special(html: str, src: dict):
         items.extend(parse_kafna_notice_board(html, cfg["boardUrl"], src))
     elif cfg.get("parser") == "kunsan" or uid == "u173":
         items.extend(parse_kunsan_notice_board(html, cfg["boardUrl"], src))
+    elif cfg.get("parser") == "sogang" or uid == "u016":
+        items.extend(parse_sogang_notice_board(html, cfg["boardUrl"], src))
+    elif cfg.get("parser") == "skku" or uid == "u025":
+        items.extend(parse_skku_notice_board(html, cfg["boardUrl"], src))
     elif cfg.get("k2Path"):
         items.extend(
             parse_k2_artcl_board(html, cfg["boardUrl"], src, cfg["k2Path"], cfg.get("allow"))
@@ -804,6 +1012,10 @@ def scrape_one(src, use_jina=False):
     if special:
         board = special["boardUrl"]
         try:
+            if special.get("parser") == "cms_bbs":
+                items = fetch_cms_bbs_list(special, src)
+                return items, ("ok" if items else "empty")
+
             # 다중 페이지 게시판: MIN_DATE 이전 글이 나오면 중단
             if special.get("maxPages"):
                 all_items = []

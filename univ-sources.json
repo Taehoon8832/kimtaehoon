@@ -28,8 +28,9 @@
   {
     "id": "u005",
     "name": "경기대(서울)",
-    "homeUrl": "http://enter.kyonggi.ac.kr/",
-    "boardUrl": "https://enter.kyonggi.ac.kr/notice"
+    "homeUrl": "https://enter.kyonggi.ac.kr/index.do",
+    "boardUrl": "https://enter.kyonggi.ac.kr/cms/FR_CON/index.do?MENU_ID=210",
+    "priority": true
   },
   {
     "id": "u006",
@@ -98,8 +99,8 @@
   {
     "id": "u016",
     "name": "서강대",
-    "homeUrl": "http://admission.sogang.ac.kr/",
-    "boardUrl": "https://admission.sogang.ac.kr/",
+    "homeUrl": "https://admission.sogang.ac.kr/enter/html/main/index.asp",
+    "boardUrl": "https://admission.sogang.ac.kr/enter/html/counsel/notice.asp",
     "priority": true
   },
   {
@@ -156,8 +157,8 @@
   {
     "id": "u025",
     "name": "성균관대",
-    "homeUrl": "https://admission.skku.edu/",
-    "boardUrl": "https://admission.skku.edu/",
+    "homeUrl": "https://admission.skku.edu/admission/html/main/main.html",
+    "boardUrl": "https://admission.skku.edu/admission/html/ipsi/notice.html",
     "priority": true
   },
   {
@@ -313,8 +314,9 @@
   {
     "id": "u049",
     "name": "경기대(수원)",
-    "homeUrl": "http://enter.kyonggi.ac.kr/",
-    "boardUrl": "https://enter.kyonggi.ac.kr/notice"
+    "homeUrl": "https://enter.kyonggi.ac.kr/index.do",
+    "boardUrl": "https://enter.kyonggi.ac.kr/cms/FR_CON/index.do?MENU_ID=210",
+    "priority": true
   },
   {
     "id": "u050",
@@ -581,8 +583,8 @@
   {
     "id": "u093",
     "name": "인하대",
-    "homeUrl": "http://admission.inha.ac.kr/",
-    "boardUrl": "https://admission.inha.ac.kr/cms/FR_CON/Board/Board.do?mCode=MN031",
+    "homeUrl": "https://admission.inha.ac.kr/index.do",
+    "boardUrl": "https://admission.inha.ac.kr/cms/FR_CON/index.do?MENU_ID=240",
     "priority": true
   },
   {
