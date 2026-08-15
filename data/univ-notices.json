@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-15",
-  "updatedAt": "2026-08-15T00:03:55.578Z",
-  "checkedAt": "2026-08-15T00:03:55.578Z",
+  "updatedAt": "2026-08-15T01:34:28.072Z",
+  "checkedAt": "2026-08-15T01:34:28.072Z",
   "sources": [
     {
       "id": "u001",
@@ -2091,17 +2091,6 @@
       "dateText": "2026.08.10"
     },
     {
-      "id": "ff3d40c2858d14f225ac",
-      "univId": "u031",
-      "univName": "연세대(서울)",
-      "title": "연세대학교 디스플레이융합공학과 설명회 신청 안내",
-      "preview": "연세대(서울) 입학 공지사항 미리보기",
-      "url": "https://admission.yonsei.ac.kr/seoul/admission/html/counsel/noticeView.asp?BBS_NO=3515",
-      "homeUrl": "https://admission.yonsei.ac.kr/seoul/admission/html/main/main.asp",
-      "dateISO": "2026-08-10",
-      "dateText": "2026.08.10"
-    },
-    {
       "id": "9c0d4f54e98f8f63ce00",
       "univId": "u044",
       "univName": "한예종",
@@ -3096,5 +3085,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=23 empty=23 fail=170 fresh=121"
+  "statusReason": "ok=18 empty=19 fail=179 fresh=120"
 }
