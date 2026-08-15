@@ -1,10 +1,208 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-15T14:36:16.782674Z",
-  "checkedAt": "2026-08-15T14:36:16.782670Z",
+  "updatedAt": "2026-08-15T14:56:15.727843Z",
+  "checkedAt": "2026-08-15T14:56:15.727838Z",
   "today": "2026-08-15",
   "count": 40,
   "notices": [
+    {
+      "id": "33442d024d3904f35d52",
+      "sourceName": "수만휘",
+      "title": "이명학 리앤로 수강후기 궁금해요!!",
+      "preview": "[🔥재/반/N수 자유게시판] 현재 3 중반 나오는데 빈순삽 전멸이라서요 ㅠ 리앤로 괜찮나요?!",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608144",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "c0fa2966b08a29a1dac1",
+      "sourceName": "수만휘",
+      "title": "일반고 3.47 원서 봐주세요!!",
+      "preview": "[🔥문과 수시 자유게시판] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608143",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "1ce3d4aa011aa6cd6d2e",
+      "sourceName": "수만휘",
+      "title": "오랜만에 비가 내리네요",
+      "preview": "[티키타카페 게시판] 저희 지역에는 얼마만에 내리는 비인지 모르겠어요 빗소리 들으니까 잠도 잘올것 같은 기분입니다 모두 편안한 밤 보내세요😊😊",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608142",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "cb8baad8f7ef5a37582d",
+      "sourceName": "수만휘",
+      "title": "3수해서 부산대 가는거 괜찮나요",
+      "preview": "[🔥재/반/N수 자유게시판] 수시 3학년 2학기까지 포함하면 2.7정도이고 현역때 1학기만 들어갈때는 2.5였고 최저떨했습니다.. 그냥 붙은 학교 계속 다니다가 이번에 다시 준비해보고 있는데 최저 맞춰서 제 성적대로",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608141",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "734bef59052f38794518",
+      "sourceName": "수만휘",
+      "title": "日日 學習事項",
+      "preview": "[🔥재/반/N수 자유게시판] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608140",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "0f8260a42b7f8b428ab8",
+      "sourceName": "수만휘",
+      "title": "부산대 복수지원",
+      "preview": "[🔥이과 수시 자유게시판] 같은 학과에 학생부교과전형, 학생부종합(사회배려자) 총 2개를 쓸 수 있나요?",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608139",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "82442ce6701f87be9e47",
+      "sourceName": "수만휘",
+      "title": "경희대 국제캠 미대 비실기생도 수업 할만한가요",
+      "preview": "[🔥문과 수시 자유게시판] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608138",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "46b3e4903a09984fad0a",
+      "sourceName": "수만휘",
+      "title": "수시카드쓰는법",
+      "preview": "[🔥문과 수시 자유게시판] 수시카드 쓸 때 내신 말고도 경쟁률,추합률 등등 이런건 어떻게 고려해서 짜야하는건가요? 그리고 컨설팅 받아보는 게 좋나요.. 학교에서 상담라면 내신+최저만 보고 짜는데 이렇게 하는 게 맞는",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608137",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "c386099c23206e44c8c6",
+      "sourceName": "수만휘",
+      "title": "인서울 불어불문 갈수있을까요",
+      "preview": "[🔥문과 수시 자유게시판] 안녕하세요. 지방 일반고 다니고 있는 고1 입니다.. 한국외대 프랑스어학부가 정말 너무 가고싶습니다🥹🥹 근데 성적이 1학년 1학기가 전체 2.7등급이 나왔어요.. 주요과목만 보면 2.47입",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608136",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "7d48fe95a23286f57a3c",
+      "sourceName": "수만휘",
+      "title": "삼육 충북 충남 중에서 하나 쓰려면 어디가 좋을까요",
+      "preview": "[🔥이과 수시 자유게시판] 1. 삼육대식 3.14 작년비교 건축적정 화학소신 2. 충북대식 3.2 작년비교 토목공학, 도시공학, 건축공학적정 건축학 상향 3. 충남대식 3.05 작년비교 자연과학융합적정, 건축소신 여",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608135",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "bb0fd7028e96c4869cc3",
+      "sourceName": "수만휘",
+      "title": "원서 컨설팅 22일 29일",
+      "preview": "[┏Team08 수험생 게시판] 수시 원서 컨설팅 받으려고 하는데 22일 29일중은 언제가 더 괜찮을까요? 빨리 받는게 낫을까요?",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608134",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "5f1d651450c2ecde429f",
+      "sourceName": "수만휘",
+      "title": "이과 3.1 수시카드",
+      "preview": "[┏Team08 수험생 게시판] 광역시 평반고 다니는 이과생입니다 성적은 전과목 3.14 국영수과 2.79 국영수사과2.97 국3.42 수1.78 영 3.81 사4.25 과2.38로 수과 성적이 높은 편이에요(근데 ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608133",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "b2427ef7e7f587f84c59",
+      "sourceName": "수만휘",
+      "title": "외대 글캠vs서울여대vs가천대",
+      "preview": "[┏Team08 수험생 게시판] 외대 글캠 산업경영공학과 서울여대 데이터사이언스 가천대 스마트팩토리 이중 한 곳 쓰려고 하는데 어디로 써야 할지 고민됩니다.. 만약 3개 다 붙는다고 가정할 때 여러분이라면 어디를 선",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608132",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "8214f82a0fb4bfc69852",
+      "sourceName": "수만휘",
+      "title": "학교서 수능공부",
+      "preview": "[😃수험생 일상글 게시판] 개학하고 학교서 공부하려니 이동수업도 계속 있고 분위기도 어수선하고 공부가 잘 안되는거 같은데요ㅠㅜ 뭔가 좀 방법이 있으려나요",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608131",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "b03c5737a952f5f7862d",
+      "sourceName": "수만휘",
+      "title": "지방 일반고 2후 문과 수시카드 봐주세요",
+      "preview": "[🔥문과 수시 자유게시판] 진로가 심리로 잡아버려서 생기부는 심리로 채우긴 했는데 생기부가 그렇게 강점이 있는 것 같진 않아요.. 심리학과 치고 책 활동을 안하고 ㅜ 확통도 낮은편이라 잘 모르겠습니다 그렇다고 3학년",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608130",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "5fb9d7806ced9daeb7fd",
+      "sourceName": "수만휘",
+      "title": "학과 적성 검사? 같은 건 어디서 받을 수 있나요??",
+      "preview": "[🔥문과 수시 자유게시판] 추천 학과라던지 관심 분야같은걸 상담받고 싶은데 어디서 받을 수 있을까요?",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608129",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "687fb867d126e79c5ae8",
+      "sourceName": "수만휘",
+      "title": "불확실함을 싫어하는 걸까",
+      "preview": "[😃수험생 일상글 게시판] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608128",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "5e8b7c8ac1643a68c93f",
+      "sourceName": "수만휘",
+      "title": "일반고 내신 3.6 수시카드 도와주세요ㅠㅠ",
+      "preview": "[┏Team08 수험생 게시판] 1학년 때부터 임상심리사가 꿈이여서 심리로 시작했는데(1, 2학년때 진로인터뷰 활동이 있었는데 희망 직업이 임상심리사로 들어갔어요ㅠㅠ) 2~3학년에 소비자학과에 미친듯이 가고싶어져서 ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608127",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "683ba9cdf48a564e0802",
+      "sourceName": "수만휘",
+      "title": "가천대 지역균형 어려울까요",
+      "preview": "[┏Team08 수험생 게시판] 가천대식으로 환산해보았을때 999.02~999.11정도 사이로 점수가 나오는데 올해 지균 1차 뚫기 어려울까요ㅜㅜ 과는 간호학과 희망하고 있습니다",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608126",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "b37a980a9d27ad8940f5",
+      "sourceName": "수만휘",
+      "title": "안양 평촌에서 더프 주말응시 가능한곳 있을까요?",
+      "preview": "[┏Team08 수험생 게시판] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608125",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "ff147a81110632398c64",
+      "sourceName": "수만휘",
+      "title": "환산점수 계산 어디서하나요",
+      "preview": "[┏Team08 수험생 게시판] 건국대요 ㅠㅠㅜ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608124",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
+    {
+      "id": "485cd0b085a2adda9c3d",
+      "sourceName": "수만휘",
+      "title": "수도권4년제와 서울이나 인천에 있는 전문대",
+      "preview": "[🔥학부모님 자유게시판] 지원하는것도 낫다고 생각하시나요? 전 계속4년제가 낫다생각했는데 막상 아이개학후 수시정할때되니 4년제대학이 맘에안들고 가고싶은과가 전문대에있다면 전문대도 지원하는게 나은건가요? 4년제와 전문",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608122",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
     {
       "id": "26e8078ec160380ebb3c",
       "sourceName": "수만휘",
@@ -164,204 +362,6 @@
       "title": "경기대 수리논술 많이 어렵나요?",
       "preview": "[┏Team08 수험생 게시판] 가천대 약술논술보다 어려운가요? 아이가. 약술학원 다니는중인데 6논술중에 경기대도 한번 넣어볼까싶어서요~",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608103",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "f2e91d3fd1591b032e43",
-      "sourceName": "수만휘",
-      "title": "스마트시티공학 vs 사회에너지시스템공학",
-      "preview": "[🔥이과 수시 자유게시판] 취업시 어떤 전공이 더 좋은가요?",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608102",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "f4da1bc3f04b76123626",
-      "sourceName": "수만휘",
-      "title": "건국대단국대",
-      "preview": "[😃수험생 일상글 게시판] 위 대학들에 자사고 외고 지원 많이 하나요?",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608101",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "59916018b675f6f7d170",
-      "sourceName": "수만휘",
-      "title": "환경공학과 희망학생들이 확인해야할 원서쓰는 알고리즘",
-      "preview": "[칼럼+수기+자료 기고] 1. 본인 생기부가 어느 계열인지부터 확인하고, 무슨 학교가 있는지 확인하기 - 칼럼 1편 2. 일단 6지망은 하늘이 두쪽나도 무조건 붙는 내신도 최저도 안정적인 안정-하향 대학쓰기 내신 산",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608100",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "dc42d39d9e782ccaf8e0",
-      "sourceName": "수만휘",
-      "title": "2026 ARWU 세계대학순위",
-      "preview": "[┃서강+성균+한양대] https://www.veritas-a.com/news/articleView.html?idxno=623366",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608099",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "ea2967e88ac867a9c5e4",
-      "sourceName": "수만휘",
-      "title": "인문논술 과외 구합니다!!!!!!",
-      "preview": "[🔥문과 수시 자유게시판] 인문논술 독학으로 준비하고있는 현역입니다 계속 고민하다가 논술 몇 장 쓰고싶어져서요🥹 시작한지는 2주 정도 기출 몇 개 풀어본 정도예요ㅜㅡㅜ 급하게 과외 선생님 구합니다 지방이라 비대면이 ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608098",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "0455d7a06465b83d46e2",
-      "sourceName": "수만휘",
-      "title": "진학사 및 어디가 3학년 2학기 성적",
-      "preview": "[┃Team07 수험생 게시판] 보니까 3학년 2학기꺼 까지는 적용이 안되어있는거 같은데 언제 될까요? 아님 계속 적용 안되는건지...",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608097",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "358f69fe4a1e320f2b90",
-      "sourceName": "수만휘",
-      "title": "경희대 정시 현역",
-      "preview": "[😃수험생 일상글 게시판] 현역 고삼인데 경희대가 너무 가고싶어요… 근데 갈내신이 안되고 모고로는 더 택도없어요… 내신이 모고보다 더 좋은상황이라 최저공부만 하고있었는데 지금부터 시작해서 정시로 경희대 가능할까요 6",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608096",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "6da0099287aa1441c1ec",
-      "sourceName": "수만휘",
-      "title": "내신 3.86 대학 추천해 주세요",
-      "preview": "[🔥문과 수시 자유게시판] 내신 3.86 대학 추천해 주세요 정시 점수 안좋아서 수시로 가야해요... 과는 아무 상관 없지만 문과예요 생기부 좋은 편 아니고 평균 정도래요 비교과는 좀 떨어진대요 반장 부반장도 안 해",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608095",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "ac941d3fdde92d83474f",
-      "sourceName": "수만휘",
-      "title": "조기입학생",
-      "preview": "[┏Team08 수험생 게시판] 저는 조기입학한 고3 09년생인데요 수시 원서 접수가 얼마 안 남은 지금 너무 복잡해서.. 총 내신이 2.2로 마무리했는데 진짜 너무 애매한 내신이라 너무 후회돼요 저희 학년에 07도",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608093",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "19ead3ff4cdec469f4d5",
-      "sourceName": "수만휘",
-      "title": "일반고 내신 2점 중후반 사범대 희망 수시카드 도와주세요",
-      "preview": "[┏Team08 수험생 게시판] 안녕하세요! 경기 일반고3 남학생입니다! 먼저 저의 내신은 전교과 1학년: 2.37 2학년 2.98 3학년2.5 평균:2.65 국영수사과 1학년 2.5 2학년 2.88 3학년 2.5 ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608092",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "71106942c865f69eb525",
-      "sourceName": "수만휘",
-      "title": "서울대 에자공 재학생이나 졸업생분들께 질문드려요",
-      "preview": "[┏서울대학교(가나다순)] 수만휘 카페 글",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608091",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "2d7af447c2a6587ed8a3",
-      "sourceName": "수만휘",
-      "title": "가천대 간호 약술",
-      "preview": "[논술구술Q&A] 가천대 간호학과 몇문제까지 틀려도되고 몇문제 맞아야 안전빵인가요 이번에 15문제에서 13문제로 줄고 난이도는 그대로라고 했는데 그래도 난이도 조금 올라가겠죠...??",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608090",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "0b69dd3a909bea7aacbf",
-      "sourceName": "수만휘",
-      "title": "고1 정시생 언매",
-      "preview": "[🔥문과 수능 자유게시판] 수만휘 카페 글",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608089",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "4e393ae5f8e72f4b8793",
-      "sourceName": "수만휘",
-      "title": "자소서 및 면접 과외 모집",
-      "preview": "[🔥이과 수시 자유게시판] 여기서 모집해도 되나요? 😃인증, 자랑, 직접 해본 것을 인증하거나 자랑해 주세요. 😃여러 사람이 보면 재미있어야 할 만한 글을 올려주세요. 🔥다른 분들의 글에 댓글로 호응을 해주세요.",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608088",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "08d3532a64c8cdf8cfa3",
-      "sourceName": "수만휘",
-      "title": "수원대 화공•신소재공학과, 강원대 전기전자공학과 교과",
-      "preview": "[🔥이과 수시 자유게시판] 안녕하세요 내신 4.02이고 1-2장 정도 교과로 쓰려는데 수원대나 강원대 중에 어디를 써야할까요..? ㅠㅠ 둘다 다자녀 전형 지원 가능하고, 일반 전형도 가능합니다 (둘다 환산 등급이 3",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608087",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "3a214e9ebc374c8f795b",
-      "sourceName": "수만휘",
-      "title": "질병결석 학종",
-      "preview": "[🔥학부모님 자유게시판] 총 내신은 일반고 3.64입니다 질병 결석지각조퇴 순으로 1학년 6,7,3 2학년 9,1,1 3학년 1,1,0 이에요 1학년은 미인정 지각 2개 있고 2,3학년은 없습니다 생기부에는 성실성,",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608086",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "7a5e352a415ba7905b70",
-      "sourceName": "수만휘",
-      "title": "동덕여대 학고",
-      "preview": "[🔥재/반/N수 자유게시판] 안녕하세요 제가 이번에 동덕여대를 가게 되어서 재수를 하는데 학교를 한달 정도 다니고 그 후로 아예 못나가고, 지금 1학기 학사경고를 받은 상태입니다. 수강신청 기간도 기숙사라서 놓쳤는데",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608085",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "2c4969b0531816f88142",
-      "sourceName": "수만휘",
-      "title": "부산대 스마트시티전공",
-      "preview": "[🔥재/반/N수 자유게시판] 부산대 공과대학 스마트시티전공이 올해 생긴 신설학과라고 하던데 도시공학과랑은 뭐가 다른건가요?",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608084",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "8ba0fe9bab14fc8da839",
-      "sourceName": "수만휘",
-      "title": "수능국어 시간ㅜㅜ",
-      "preview": "[┏Team08 수험생 게시판] 수능 국어 4등급이였어서 여름방학동안 공부한 뒤에 오늘 모고를 쳐봤는데요..ㅜㅜ , 목표는 4>2입니다ㅜㅜ 총80분 중 수능날 긴장할것을 감안하여 65분 제한을 두고 문제를 풀었더니 ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608083",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "ec906fdeb472123db205",
-      "sourceName": "수만휘",
-      "title": "동국대 열린전공 자연",
-      "preview": "[🔥이과 수시 자유게시판] 안녕하세요 이과고 미기확 물화생 화2생2 약대 생기부로 채웠어요 동대식1.0이지만 의미는 없는 거 같고요 ㅜ 전체 내신 1.61이고요 국어 1.8 수학 1.6(미적 인원40후밙 2등급) 영",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608082",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "da6b2f56b85fa9ccfcbb",
-      "sourceName": "수만휘",
-      "title": "사관학교 수시 우선선발 합격후기",
-      "preview": "[광릉한샘 학원문의 및 진학상담] 수능 5,6등급 사관학교 수시 우선선발 합격후기 https://blog.naver.com/kdhactive/223367752525",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608081",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
-      "id": "9ad7aa98f1e2bcdf4f81",
-      "sourceName": "수만휘",
-      "title": "정시인데 학교수업",
-      "preview": "[티키타카페 게시판] 학교수업 듣기 싫은데 수능과목이면 몰라도 심리학 한문 이런 과목들이 딴짓 못하게하고 집중 안하면 혼나고 왜 배우는지 이해도 안됨 😃인증, 자랑, 직접 해본 것을 인증하거나 자랑해 주세요. 😃여러",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608080",
       "dateISO": "2026-08-15",
       "dateText": "2026.08.15"
     }
