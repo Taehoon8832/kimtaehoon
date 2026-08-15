@@ -1,10 +1,19 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-15T19:52:42.709066Z",
-  "checkedAt": "2026-08-15T19:52:42.709061Z",
+  "updatedAt": "2026-08-15T20:07:58.083951Z",
+  "checkedAt": "2026-08-15T20:07:58.083947Z",
   "today": "2026-08-16",
   "count": 39,
   "notices": [
+    {
+      "id": "fbcac88e8ed090fb491e",
+      "sourceName": "수만휘",
+      "title": "전남대vs단국대 천안",
+      "preview": "[┏Team08 수험생 게시판] 둘다 그냥 인문계열인데 전남대는 3시간 걸리고 단천은 1시간걸려요 어디로 가는게 좋을까요?",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608323",
+      "dateISO": "2026-08-16",
+      "dateText": "2026.08.16"
+    },
     {
       "id": "13fc5f50a2edb03bc641",
       "sourceName": "수만휘",
@@ -344,15 +353,6 @@
       "title": "유튜브 촬영시 입국 금지",
       "preview": "[😃수험생 일상글 게시판] 수만휘 카페 글",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608280",
-      "dateISO": "2026-08-16",
-      "dateText": "2026.08.16"
-    },
-    {
-      "id": "0dbda74be02069a6ede5",
-      "sourceName": "수만휘",
-      "title": "진학사 7칸이면",
-      "preview": "[😃수험생 일상글 게시판] 진학사에서 교과로 7칸이면 합격가능성 많나요? 아님 8칸이상이 확실한 안정일까요? 불안하네요~~",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608279",
       "dateISO": "2026-08-16",
       "dateText": "2026.08.16"
     }
