@@ -1,15 +1,42 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-15T20:07:58.083951Z",
-  "checkedAt": "2026-08-15T20:07:58.083947Z",
+  "updatedAt": "2026-08-15T20:36:08.222550Z",
+  "checkedAt": "2026-08-15T20:36:08.222546Z",
   "today": "2026-08-16",
-  "count": 39,
+  "count": 38,
   "notices": [
+    {
+      "id": "89fd790d03348aa9cd1b",
+      "sourceName": "수만휘",
+      "title": "睡眠 記錄·起牀",
+      "preview": "[🔥재/반/N수 자유게시판] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608326",
+      "dateISO": "2026-08-16",
+      "dateText": "2026.08.16"
+    },
+    {
+      "id": "91077540c9f60f05b2e5",
+      "sourceName": "수만휘",
+      "title": "일반고 전교과 2.69 주요과목 2.36 수시카드봐주세요",
+      "preview": "[🔥이과 수시 자유게시판] 지역에서 유명한 낮반고고 생기부 맘에걸리는 부분으로는 고3 영어 미이수, 고1 수학 생기부 복붙, 물리 4등급 미적4등급, 일본어, 기술가정 6등급입니다.. 국어 1.86 수학 2.82 영",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608325",
+      "dateISO": "2026-08-16",
+      "dateText": "2026.08.16"
+    },
+    {
+      "id": "71324ceda2532dd8f788",
+      "sourceName": "수만휘",
+      "title": "원룸얻을때 여자아이 대부분 여성전용으로 얻나요?",
+      "preview": "[🔥학부모님 자유게시판] 방이 많이 없는듯해서요. 원룸얻을 여대생들은 거의 여성들만 거주하는곳으로 얻는지 궁금하네요.",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608324",
+      "dateISO": "2026-08-16",
+      "dateText": "2026.08.16"
+    },
     {
       "id": "fbcac88e8ed090fb491e",
       "sourceName": "수만휘",
       "title": "전남대vs단국대 천안",
-      "preview": "[┏Team08 수험생 게시판] 둘다 그냥 인문계열인데 전남대는 3시간 걸리고 단천은 1시간걸려요 어디로 가는게 좋을까요?",
+      "preview": "[┏Team08 수험생 게시판] 둘다 그냥 인문계열인데 전남대는 3시간 걸리고 단천은 1시간반정도걸려요 어디로 가는게 좋을까요? 기숙사 알아볼 생각이 있긴있는데 확실하지가 않아서요",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608323",
       "dateISO": "2026-08-16",
       "dateText": "2026.08.16"
@@ -317,42 +344,6 @@
       "title": "점수가 갑자기 오르기도 하나요?",
       "preview": "[🔥재/반/N수 자유게시판] 현재 반수생이고, 6모 기준으로 언미영생화 11223인데… 궁금한 점이 있어서요… (현상황) 국어 : 보통 2등급, 괜찮을 때 1등급, 평가원 국어가 사설 국어보다 조금 더 잘 맞는 편 ",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608284",
-      "dateISO": "2026-08-16",
-      "dateText": "2026.08.16"
-    },
-    {
-      "id": "d433e7ea098b82b7ab70",
-      "sourceName": "수만휘",
-      "title": "경기 일반고 내신 2점대 대학라인 질문",
-      "preview": "[🔥이과 수시 자유게시판] 경기도 일반고 현역이고요 내신은 전교과 평균 2.9 국영수과 2.63 국영수사과 2.74 입니다 생기부는 3년내내 전자 반도체 쪽으로 채웠습니다. 제가 생각해놓은 대학라인은 1.광운대(광운",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608283",
-      "dateISO": "2026-08-16",
-      "dateText": "2026.08.16"
-    },
-    {
-      "id": "44cd5de0b90e1d4dfbfd",
-      "sourceName": "수만휘",
-      "title": "신소재공학과랑 유사한 학과",
-      "preview": "[┃Team09 수험생 게시판] 신소재공학과랑 유사한 학과 있을까요..? 제 내신으로 입결 감당 불가인데 학종은 포기 못해서 ㅜ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608282",
-      "dateISO": "2026-08-16",
-      "dateText": "2026.08.16"
-    },
-    {
-      "id": "e88e3de978ef377221dc",
-      "sourceName": "수만휘",
-      "title": "세특 어떤가요",
-      "preview": "[┏Team08 수험생 게시판] 독서를 통해 식물생장촉진세균(PGPB)인 바실러스균이 유기산을 분비해 중금속 이온을 포집할 수 있음을 접한 뒤, 실제 산성화된 토양에서도 이러한 능력이 유지되는지 의문을 가짐. 이를 ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608281",
-      "dateISO": "2026-08-16",
-      "dateText": "2026.08.16"
-    },
-    {
-      "id": "8c1129e000d23a0e5195",
-      "sourceName": "수만휘",
-      "title": "유튜브 촬영시 입국 금지",
-      "preview": "[😃수험생 일상글 게시판] 수만휘 카페 글",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608280",
       "dateISO": "2026-08-16",
       "dateText": "2026.08.16"
     }
