@@ -30,6 +30,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install Python scrape deps
+        run: pip install --quiet "curl_cffi>=0.7.0"
+
       - name: Scrape recruit (API, Node)
         id: node
         continue-on-error: true
@@ -38,7 +41,7 @@ jobs:
         # strict: 실패 시 exit≠0 → Python/curl 폴백이 실행됨. 최종 Ensure 단계에서 캐시 허용.
         run: node scripts/refresh_boards.mjs --only=recruit --strict
 
-      - name: Fallback scrape (Python API)
+      - name: Fallback scrape (Python API + curl_cffi)
         id: py
         if: steps.node.outcome != 'success'
         continue-on-error: true
@@ -67,6 +70,38 @@ jobs:
           fi
           node scripts/refresh_boards.mjs --only=recruit --api-file=/tmp/recruit-api.json --strict
 
+      - name: Mark stale if scrape failed
+        if: steps.node.outcome != 'success' && steps.py.outcome != 'success' && steps.curl.outcome != 'success'
+        run: |
+          python <<'EOF'
+          import json
+          from datetime import datetime, timedelta, timezone
+          from pathlib import Path
+          p = Path("data/recruit-notices.json")
+          js = Path("recruit-board-data.js")
+          if not p.exists():
+              raise SystemExit("missing recruit-notices.json")
+          data = json.loads(p.read_text(encoding="utf-8"))
+          if not isinstance(data.get("notices"), list) or not data["notices"]:
+              raise SystemExit("empty notices")
+          now = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+          today = (datetime.now(timezone.utc) + timedelta(hours=9)).strftime("%Y-%m-%d")
+          data["checkedAt"] = now
+          data["today"] = today
+          data["stale"] = True
+          data["status"] = "cached"
+          data["statusReason"] = "keep_prev_actions_blocked"
+          text = json.dumps(data, ensure_ascii=False, indent=2)
+          p.write_text(text, encoding="utf-8")
+          js.write_text(
+              "window.RECRUIT_BOARD_DATA="
+              + json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+              + ";\n",
+              encoding="utf-8",
+          )
+          print("marked stale", data["count"], data["updatedAt"])
+          EOF
+
       - name: Ensure usable recruit payload
         run: |
           node <<'EOF'
@@ -83,22 +118,24 @@ jobs:
             month: "2-digit",
             day: "2-digit",
           }).format(new Date());
-          // 오늘 필드가 어긋나도 목록이 있으면 Actions 실패로 메일 보내지 않음
           if (j.today && j.today !== today) {
             console.warn("today field lag", j.today, "!=", today);
           }
           const checked = Date.parse(j.checkedAt || j.updatedAt || 0);
           const ageH = checked ? (Date.now() - checked) / 3600000 : Infinity;
+          const freshAt = Date.parse(j.updatedAt || 0);
+          const freshAgeH = freshAt ? (Date.now() - freshAt) / 3600000 : Infinity;
           console.log(
             "usable ok",
             j.count,
             j.statusReason || j.status || "",
-            "age_h=" + (Number.isFinite(ageH) ? ageH.toFixed(2) : "n/a"),
+            "checked_age_h=" + (Number.isFinite(ageH) ? ageH.toFixed(2) : "n/a"),
+            "fresh_age_h=" + (Number.isFinite(freshAgeH) ? freshAgeH.toFixed(2) : "n/a"),
             j.stale ? "STALE" : "fresh"
           );
-          // 7일 이상 갱신 불가일 때만 실패 (완전 고착 감지)
-          if (ageH > 24 * 7) {
-            throw new Error("recruit data older than 7 days");
+          // 실제 목록 갱신이 3일 이상 막히면 실패(알림)
+          if (freshAgeH > 24 * 3) {
+            throw new Error("recruit data older than 3 days (source blocked?)");
           }
           EOF
 

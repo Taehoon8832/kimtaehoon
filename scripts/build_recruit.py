@@ -107,21 +107,39 @@ def add_days(iso: str, delta: int) -> str:
 
 
 def http_get(url: str, accept: str, timeout: int = 45) -> str:
-    # Actions 환경 TLS/인증서 이슈 회피 (_board_io.CTX)
-    from _board_io import CTX  # local import keeps module side-effects minimal
+    """GET with Chrome-impersonation fallback (Actions/Cloudflare 우회)."""
+    headers = {
+        "User-Agent": UA,
+        "Accept": accept,
+        "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.8",
+        "Referer": LIST_URL,
+        "Origin": "https://www.jinhakpro.com",
+        "Cache-Control": "no-cache",
+    }
 
-    req = urllib.request.Request(
-        url,
-        headers={
-            "User-Agent": UA,
-            "Accept": accept,
-            "Accept-Language": "ko-KR,ko;q=0.9,en;q=0.8",
-            "Referer": LIST_URL,
-            "Origin": "https://www.jinhakpro.com",
-            "Cache-Control": "no-cache",
-        },
-        method="GET",
-    )
+    # 1) curl_cffi — GitHub Actions IP에서 Cloudflare 우회에 유리
+    try:
+        from curl_cffi import requests as cf_requests  # type: ignore
+
+        res = cf_requests.get(
+            url,
+            headers=headers,
+            timeout=timeout,
+            impersonate="chrome124",
+            allow_redirects=True,
+        )
+        if res.status_code >= 400:
+            raise RuntimeError(f"http_{res.status_code}")
+        text = res.text or ""
+        if text:
+            return text
+    except Exception as e:
+        print(f"warn: curl_cffi fetch failed: {e}")
+
+    # 2) 표준 urllib
+    from _board_io import CTX
+
+    req = urllib.request.Request(url, headers=headers, method="GET")
     with urllib.request.urlopen(req, context=CTX, timeout=timeout) as res:
         return res.read().decode("utf-8", "replace")
 
