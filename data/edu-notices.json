@@ -67,11 +67,21 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-15T03:51:08.908521Z",
-  "checkedAt": "2026-08-15T03:51:08.908516Z",
+  "updatedAt": "2026-08-15T04:16:56.190062Z",
+  "checkedAt": "2026-08-15T04:16:56.190057Z",
   "today": "2026-08-15",
   "count": 80,
   "notices": [
+    {
+      "id": "0cb653697aa50fe6df01",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "[단독] 2026 ARWU 국내톱 서울대 세계 87위 ‘하락’.. 연대 2위, 고대/성대/KAIST 공동3위",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623366",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
     {
       "id": "0f3b895d5addb54925a1",
       "sourceId": "moe_blog",
@@ -119,16 +129,6 @@
       "title": "연성대학교 '2026년 소상공인×지역대학 앵커 동행 Challenge'",
       "preview": "베리타스알파 소식",
       "url": "https://www.veritas-a.com/news/articleView.html?idxno=623368",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
-      "id": "9df454f3dae77de7b069",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "서울신학대 총학생회 '2026 복음의 단비' 통해 다음세대 복음 사역 펼쳐 -",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623365",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
     },
