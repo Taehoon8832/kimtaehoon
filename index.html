@@ -670,6 +670,49 @@
       max-height: min(58vh, 620px);
     }
 
+    /* 모바일: 커리어넷 열면 상단 아이콘 그리드 접기 → 검색 공간 확보 */
+    @media (max-width: 900px) {
+      body.career-focus .nav {
+        grid-template-columns: 1fr auto;
+        grid-template-areas: "brand actions";
+        gap: 8px;
+        padding: 8px 12px;
+        min-height: 0;
+        align-items: center;
+      }
+
+      body.career-focus .nav-links {
+        display: none !important;
+      }
+
+      body.career-focus .nav-brand {
+        grid-area: brand;
+      }
+
+      body.career-focus .nav-actions {
+        grid-area: actions;
+      }
+
+      body.career-focus .brand-name {
+        display: block;
+      }
+
+      body.career-focus .upper-stage {
+        padding-top: 8px;
+        padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+        gap: 8px;
+      }
+
+      body.career-focus .career-api-shell {
+        min-height: min(calc(100dvh - var(--nav-offset, 52px) - 20px), 960px);
+        border-radius: 18px;
+      }
+
+      body.career-focus .career-api-results {
+        max-height: min(72dvh, 780px);
+      }
+    }
+
     @keyframes careerExpandIn {
       from {
         opacity: 0;
@@ -6667,6 +6710,9 @@
           careerNav.classList.remove("is-active");
           careerNav.setAttribute("aria-expanded", "false");
         }
+        requestAnimationFrame(() => {
+          if (typeof syncNavOffset === "function") syncNavOffset();
+        });
       }
 
       function openCareerExpand() {
@@ -6690,6 +6736,7 @@
         careerNav.classList.add("is-active");
         careerNav.setAttribute("aria-expanded", "true");
         requestAnimationFrame(() => {
+          if (typeof syncNavOffset === "function") syncNavOffset();
           window.scrollTo({ top: 0, behavior: "smooth" });
           const focusEl =
             careerApiEl.querySelector(".career-api-panel.is-active input[type='search']") ||
