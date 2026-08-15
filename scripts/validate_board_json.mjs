@@ -10,6 +10,18 @@ if (!files.length) {
   process.exit(1);
 }
 
+/** 실제 git 충돌 마커만 감지 (본문의 ======= 오탐 방지) */
+function hasConflictMarkers(text) {
+  return /^(<<<<<<<|>>>>>>>|=======)\s/m.test(text) || /^(<<<<<<<|>>>>>>>|=======)$/m.test(text);
+}
+
+function extractJson(text, file) {
+  if (!file.endsWith(".js")) return text;
+  const m = text.match(/^[^=\n]+=\s*([\s\S]*)$/);
+  if (!m) throw new Error("js assignment not found");
+  return m[1].trim().replace(/;\s*$/, "");
+}
+
 let failed = false;
 for (const f of files) {
   if (!fs.existsSync(f)) {
@@ -17,17 +29,14 @@ for (const f of files) {
     failed = true;
     continue;
   }
-  let t = fs.readFileSync(f, "utf8");
-  if (t.includes("<<<<<<<") || t.includes(">>>>>>>") || t.includes("=======")) {
+  const raw = fs.readFileSync(f, "utf8");
+  if (hasConflictMarkers(raw)) {
     console.error("conflict markers in", f);
     failed = true;
     continue;
   }
   try {
-    if (f.endsWith(".js")) {
-      t = t.split("=").slice(1).join("=").trim().replace(/;$/, "");
-    }
-    const j = JSON.parse(t);
+    const j = JSON.parse(extractJson(raw, f));
     const notices = j.notices;
     if (!Array.isArray(notices)) {
       console.error("no notices array in", f);

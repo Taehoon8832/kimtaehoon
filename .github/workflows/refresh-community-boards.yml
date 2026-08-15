@@ -46,13 +46,29 @@ jobs:
         run: python scripts/build_edu_policy.py
 
       - name: Validate community JSON
+        id: validate
         run: |
-          node scripts/validate_board_json.mjs \
-            data/teacher-notices.json teacher-board-data.js \
-            data/suhui-notices.json suhui-board-data.js \
+          FILES=(
+            data/teacher-notices.json teacher-board-data.js
+            data/suhui-notices.json suhui-board-data.js
             data/edu-notices.json edu-board-data.js
+          )
+          if node scripts/validate_board_json.mjs "${FILES[@]}"; then
+            echo "validate=ok" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "Validation failed after scrape; restoring last committed board files"
+          git checkout -- "${FILES[@]}" || true
+          if node scripts/validate_board_json.mjs "${FILES[@]}"; then
+            echo "Restored committed board data; skipping broken scrape output"
+            echo "validate=restored" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "validate=fail" >> "$GITHUB_OUTPUT"
+          exit 1
 
       - name: Commit community board data
+        if: steps.validate.outputs.validate != 'fail'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -66,7 +82,7 @@ jobs:
           git commit -m "chore: refresh community boards"
           for i in 1 2 3 4 5; do
             if git pull --rebase --autostash origin main; then
-              if grep -R "<<<<<<<" -n teacher-board-data.js suhui-board-data.js edu-board-data.js data/teacher-notices.json data/suhui-notices.json data/edu-notices.json >/dev/null 2>&1; then
+              if grep -R "^<<<<<<<\|^>>>>>>>\|^=======" -n teacher-board-data.js suhui-board-data.js edu-board-data.js data/teacher-notices.json data/suhui-notices.json data/edu-notices.json >/dev/null 2>&1; then
                 echo "Conflict markers after rebase; aborting push"
                 git rebase --abort || true
                 exit 0
