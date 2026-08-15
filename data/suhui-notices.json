@@ -1,10 +1,28 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-15T21:10:40.577950Z",
-  "checkedAt": "2026-08-15T21:10:40.577945Z",
+  "updatedAt": "2026-08-15T21:32:46.123466Z",
+  "checkedAt": "2026-08-15T21:32:46.123461Z",
   "today": "2026-08-16",
   "count": 38,
   "notices": [
+    {
+      "id": "c0d435cb8cb0bc755f60",
+      "sourceName": "수만휘",
+      "title": "올해 놓치면 입시 확 바뀐다…올 수능 N수생·지역의사제가 가른다",
+      "preview": "[🔥학부모님 자유게시판] https://n.news.naver.com/article/016/0002682489?sid=102",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608332",
+      "dateISO": "2026-08-16",
+      "dateText": "2026.08.16"
+    },
+    {
+      "id": "57f0258b454816d5bfb8",
+      "sourceName": "수만휘",
+      "title": "육군사관학교 학교장/일반적성 우선선발 합격자 성적 분포",
+      "preview": "[광릉한샘 학원문의 및 진학상담] https://youtu.be/ILwwoHSRGzQ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608331",
+      "dateISO": "2026-08-16",
+      "dateText": "2026.08.16"
+    },
     {
       "id": "feed22aa82f238573f06",
       "sourceName": "수만휘",
@@ -326,24 +344,6 @@
       "title": "수시원서 고민입니다😭😭",
       "preview": "[🔥문과 수시 자유게시판] 미대입시를 하다가 공부를 하게 된 케이스라서 국영사는 1점대, 수학은 4등급으로 내신을 마치게 되었습니다 국영수사 최종 내신을 보니 1.8~9 정도가 나와서 국숭세단 라인 교과를 넣어볼려고",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608290",
-      "dateISO": "2026-08-16",
-      "dateText": "2026.08.16"
-    },
-    {
-      "id": "7242ab5dc0415d19e214",
-      "sourceName": "수만휘",
-      "title": "얼마 전에 구글에 5박사 4기술사 검색했었는데 이번에는 한동삼을 검색했는데 답변이 나오네요 ㅋㅋㅋㅋㅋ",
-      "preview": "[🔥이과 수능 자유게시판] 수만휘 카페 글",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608289",
-      "dateISO": "2026-08-16",
-      "dateText": "2026.08.16"
-    },
-    {
-      "id": "a435e0a9212ebddd5f1e",
-      "sourceName": "수만휘",
-      "title": "인문논술 공부법 알려주세요ㅠㅠ",
-      "preview": "[┏Team08 수험생 게시판] 논술 과외를 받고 있긴 하지만 혼자서도 공부하면서 논술 실력을 키우고 싶습니다 공부법 알 수 있을까요ㅠㅠ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608287",
       "dateISO": "2026-08-16",
       "dateText": "2026.08.16"
     }
