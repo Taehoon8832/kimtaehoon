@@ -1,10 +1,28 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-15T22:07:29.224248Z",
-  "checkedAt": "2026-08-15T22:07:29.224243Z",
+  "updatedAt": "2026-08-15T22:34:56.553093Z",
+  "checkedAt": "2026-08-15T22:34:56.553088Z",
   "today": "2026-08-16",
   "count": 38,
   "notices": [
+    {
+      "id": "added3f6f4e44cde054d",
+      "sourceName": "수만휘",
+      "title": "(수시 한정) 지금 다니는 대학교는 몇 지망이셨나요?",
+      "preview": "[😃수험생 일상글 게시판] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608337",
+      "dateISO": "2026-08-16",
+      "dateText": "2026.08.16"
+    },
+    {
+      "id": "e9581d4a3c6c788dce77",
+      "sourceName": "수만휘",
+      "title": "D-95",
+      "preview": "[🔥재/반/N수 자유게시판] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608336",
+      "dateISO": "2026-08-16",
+      "dateText": "2026.08.16"
+    },
     {
       "id": "b17f1a3ab07ef379cc70",
       "sourceName": "수만휘",
@@ -326,24 +344,6 @@
       "title": "메가스터디 윤성훈t 사회문화 문제집",
       "preview": "[교재/문구/자료 마켓] 판매 이유 : 원래 수능 사회문화 응시 예정이었으나 최저 과목이 변경되어 책 또한 필요없어짐. 정가: 35000 판매가: 25000 16강 중에 1강+ 2강 초반 필기 (약 6장) 외의 페이",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608295",
-      "dateISO": "2026-08-16",
-      "dateText": "2026.08.16"
-    },
-    {
-      "id": "6fe67329270e0f3705f8",
-      "sourceName": "수만휘",
-      "title": "28수능 재수 수시반영 🥹",
-      "preview": "[🔥문과 수능 자유게시판] 재수나 반수해서 28수능 응시하게 되면 3학년 2학기까지 내신이랑 출결 다 보나요? (수시반수 아니고 정시요)",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608294",
-      "dateISO": "2026-08-16",
-      "dateText": "2026.08.16"
-    },
-    {
-      "id": "2dc3566a80e025aaf7c6",
-      "sourceName": "수만휘",
-      "title": "일반고 2점 중반 수시 카드 조언 부탁드립니다 제발………..",
-      "preview": "[🔥문과 수시 자유게시판] 총내신은 이정도로 우상향이고 6모 24331입니다 생기부에서는 딱히 강점이 없는 거 같아요... 이대 미컴 (학종) 숭실대 언론홍보 (학종) 성신여대 미컴 (학종) 성신여대 경영/경제/법학",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29608293",
       "dateISO": "2026-08-16",
       "dateText": "2026.08.16"
     }
