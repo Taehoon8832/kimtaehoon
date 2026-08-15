@@ -67,11 +67,21 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-15T11:31:57.169409Z",
-  "checkedAt": "2026-08-15T11:31:57.169404Z",
+  "updatedAt": "2026-08-15T11:53:38.400541Z",
+  "checkedAt": "2026-08-15T11:53:38.400535Z",
   "today": "2026-08-15",
   "count": 80,
   "notices": [
+    {
+      "id": "4044cce54227a2f38fa3",
+      "sourceId": "edupress",
+      "sourceName": "에듀프레스",
+      "title": "최교진 “직을 걸겠다” .. 교육교부금 사수 배수진",
+      "preview": "에듀프레스 소식",
+      "url": "https://www.edupress.kr/news/articleView.html?idxno=30402",
+      "dateISO": "2026-08-15",
+      "dateText": "2026.08.15"
+    },
     {
       "id": "0cb653697aa50fe6df01",
       "sourceId": "veritas",
@@ -379,16 +389,6 @@
       "title": "국교위, ‘수업-내신-수능 일체화’ 대입개편 공론화 돌입",
       "preview": "에듀프레스 소식",
       "url": "https://www.edupress.kr/news/articleView.html?idxno=30395",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "1618e86832316712347e",
-      "sourceId": "edupress",
-      "sourceName": "에듀프레스",
-      "title": "[백승진 칼럼] 교육교부금 개편 논쟁 교착, 열쇠는 교육감이 쥐고있다",
-      "preview": "에듀프레스 소식",
-      "url": "https://www.edupress.kr/news/articleView.html?idxno=30394",
       "dateISO": "2026-08-11",
       "dateText": "2026.08.11"
     },
