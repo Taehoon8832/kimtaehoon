@@ -4113,6 +4113,42 @@
   </style>
 </head>
 <body>
+  <script>
+    /* 일반 사용자 대상: 소스보기·개발자도구 단축키/우클릭 제한 (완전 차단은 불가) */
+    (() => {
+      const isBlockedKey = (e) => {
+        const key = e.key || "";
+        const code = e.code || "";
+        const ctrl = e.ctrlKey || e.metaKey;
+        const shift = e.shiftKey;
+        if (key === "F12" || code === "F12") return true;
+        if (ctrl && shift && (["I", "J", "C", "i", "j", "c"].includes(key) || ["KeyI", "KeyJ", "KeyC"].includes(code))) {
+          return true;
+        }
+        if (ctrl && !shift && (key === "u" || key === "U" || code === "KeyU")) return true;
+        return false;
+      };
+      const stop = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+      };
+      document.addEventListener(
+        "keydown",
+        (e) => {
+          if (isBlockedKey(e)) stop(e);
+        },
+        true
+      );
+      document.addEventListener(
+        "contextmenu",
+        (e) => {
+          stop(e);
+        },
+        true
+      );
+    })();
+  </script>
   <div class="shell">
     <nav class="nav" aria-label="주요 메뉴" id="siteNav">
       <a class="nav-brand" href="http://www.김태훈.com" title="홈" aria-label="김태훈닷컴 홈">
@@ -4322,7 +4358,6 @@
           </span>
           <strong id="expandTitle">2027 수시 일정</strong>
           <div class="expand-actions">
-            <a class="expand-open" id="expandOpen" href="#" target="_blank" rel="noopener noreferrer">새 창</a>
             <button type="button" class="expand-close" id="expandClose">닫기</button>
           </div>
         </div>
@@ -6724,7 +6759,6 @@
       const expandPanel = document.getElementById("expandPanel");
       const expandFrame = document.getElementById("expandFrame");
       const expandTitle = document.getElementById("expandTitle");
-      const expandOpen = document.getElementById("expandOpen");
       const expandClose = document.getElementById("expandClose");
       const expandMarkSvg = document.getElementById("expandMarkSvg");
       const expandNavMap = {
@@ -6817,7 +6851,6 @@
         expandPanel.dataset.theme = app.theme;
         expandTitle.textContent = app.title;
         expandFrame.title = app.title;
-        if (expandOpen) expandOpen.href = app.url;
         if (expandMarkSvg) expandMarkSvg.innerHTML = app.mark;
         if (expandFrame.getAttribute("src") !== app.url) {
           expandFrame.src = app.url;
