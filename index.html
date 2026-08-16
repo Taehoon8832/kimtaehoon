@@ -496,6 +496,7 @@
     .card-j { --icon-bg: linear-gradient(145deg, #5AC8FA 0%, #0A84FF 48%, #003D99 100%); }
     .card-k { --icon-bg: linear-gradient(145deg, #FF9F6B 0%, #FF6B35 48%, #9A3412 100%); }
     .card-l { --icon-bg: linear-gradient(145deg, #7DD3FC 0%, #0EA5E9 48%, #0369A1 100%); }
+    .card-m { --icon-bg: linear-gradient(145deg, #FB923C 0%, #F97316 48%, #C2410C 100%); }
 
     button.nav-item {
       appearance: none;
@@ -1638,6 +1639,11 @@
     .expand-panel[data-theme="ipgyeol"] {
       --expand-accent: #007AFF;
       --expand-mark: linear-gradient(145deg, #5AC8FA 0%, #007AFF 55%, #003D7A 100%);
+    }
+
+    .expand-panel[data-theme="osy"] {
+      --expand-accent: #F97316;
+      --expand-mark: linear-gradient(145deg, #FB923C 0%, #F97316 55%, #C2410C 100%);
     }
 
     .expand-shell {
@@ -4310,6 +4316,18 @@
           <em>진학 인사이트<br>V1.1</em>
         </button>
         <span class="nav-sep" aria-hidden="true"></span>
+        <button type="button" class="nav-item card-m" id="osyNav" title="오승열공" aria-expanded="false" aria-controls="expandPanel">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 48 48" fill="none">
+              <rect x="10" y="10" width="28" height="28" rx="6" fill="rgba(255,255,255,.18)"/>
+              <path d="M16 18h16M16 24h16M16 30h10" stroke="#fff" stroke-width="2.4" stroke-linecap="round"/>
+              <circle cx="32" cy="30" r="4.4" fill="#fff"/>
+              <path d="M32 28.2v3.6M30.2 30h3.6" stroke="#C2410C" stroke-width="1.8" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <em>오승열공</em>
+        </button>
+        <span class="nav-sep" aria-hidden="true"></span>
         <button type="button" class="nav-item card-l" id="careerNav" title="커리어넷" aria-expanded="false" aria-controls="careerApi">
           <span class="ic" aria-hidden="true">
             <svg viewBox="0 0 48 48" fill="none">
@@ -4321,7 +4339,6 @@
           </span>
           <em>커리어넷</em>
         </button>
-        <span class="nav-sep" aria-hidden="true"></span>
       </div>
 
       <div class="nav-actions">
@@ -4908,6 +4925,12 @@
           title: "2026 입결 검색기",
           theme: "ipgyeol",
           mark: `<circle cx="11" cy="11" r="5.2" stroke="currentColor" stroke-width="1.8"/><path d="m15 15 4.2 4.2" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>`,
+        },
+        osy: {
+          url: "https://taehoon8832.github.io/osy/",
+          title: "오승열공",
+          theme: "osy",
+          mark: `<rect x="4" y="4.5" width="16" height="15" rx="2.5" stroke="currentColor" stroke-width="1.7"/><path d="M7.5 9h9M7.5 12.5h9M7.5 16h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>`,
         },
       };
 
@@ -6757,6 +6780,7 @@
       const expandNavMap = {
         susi: document.getElementById("susiNav"),
         ipgyeol: document.getElementById("ipgyeolNav"),
+        osy: document.getElementById("osyNav"),
       };
       let activeExpandKey = null;
       const careerApiEl = document.getElementById("careerApi");
@@ -6866,6 +6890,12 @@
         expandNavMap.susi.addEventListener("click", (e) => {
           e.preventDefault();
           openExpand("susi");
+        });
+      }
+      if (expandNavMap.osy) {
+        expandNavMap.osy.addEventListener("click", (e) => {
+          e.preventDefault();
+          openExpand("osy");
         });
       }
       if (careerNav) careerNav.addEventListener("click", openCareerExpand);
