@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-16T19:28:03.020Z",
-  "checkedAt": "2026-08-16T19:28:03.020Z",
+  "updatedAt": "2026-08-16T19:54:27.578Z",
+  "checkedAt": "2026-08-16T19:54:27.578Z",
   "today": "2026-08-17",
   "count": 24,
   "notices": [
@@ -20,7 +20,7 @@
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
       "popularRank": 2,
-      "popularScore": 3.130555
+      "popularScore": 3.122341
     },
     {
       "id": "021d7bb78614bd2c3457",
@@ -34,7 +34,7 @@
       "deadlineISO": "2026-09-13",
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
-      "popularRank": 21,
+      "popularRank": 20,
       "popularScore": 1.7294819
     },
     {
@@ -49,8 +49,8 @@
       "deadlineISO": "2026-08-19",
       "deadlineText": "2026.08.19",
       "alwaysHire": false,
-      "popularRank": 17,
-      "popularScore": 1.913574
+      "popularRank": 15,
+      "popularScore": 1.932523
     },
     {
       "id": "5c58602021c8343a372a",
@@ -64,8 +64,8 @@
       "deadlineISO": "2026-09-10",
       "deadlineText": "2026.09.10",
       "alwaysHire": false,
-      "popularRank": 19,
-      "popularScore": 1.774518
+      "popularRank": 18,
+      "popularScore": 1.7788299
     },
     {
       "id": "88a0735cd26b5ca6d82a",
@@ -80,7 +80,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 3.217613
+      "popularScore": 3.231818
     },
     {
       "id": "cfc1e393775a21db0610",
@@ -95,7 +95,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 4,
-      "popularScore": 2.536998
+      "popularScore": 2.509363
     },
     {
       "id": "68c4a721b6baf77b0337",
@@ -110,7 +110,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 11,
-      "popularScore": 2.232033
+      "popularScore": 2.231572
     },
     {
       "id": "4d49c686f19d67d20bdf",
@@ -124,8 +124,8 @@
       "deadlineISO": "2026-08-19",
       "deadlineText": "2026.08.19",
       "alwaysHire": false,
-      "popularRank": 15,
-      "popularScore": 2.151502
+      "popularRank": 14,
+      "popularScore": 2.148056
     },
     {
       "id": "251af343e88aa5aaaa5c",
@@ -139,8 +139,8 @@
       "deadlineISO": "2026-09-10",
       "deadlineText": "2026.09.10",
       "alwaysHire": false,
-      "popularRank": 18,
-      "popularScore": 1.888887
+      "popularRank": 17,
+      "popularScore": 1.8827829
     },
     {
       "id": "7ff497d619edbb2ccb79",
@@ -155,7 +155,7 @@
       "deadlineText": "2026.09.06",
       "alwaysHire": false,
       "popularRank": 12,
-      "popularScore": 2.230493
+      "popularScore": 2.225834
     },
     {
       "id": "a19b344837c8700e1a2e",
@@ -170,7 +170,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 3,
-      "popularScore": 3.000574
+      "popularScore": 3.012532
     },
     {
       "id": "c7fc0fb3d0784ba366ec",
@@ -184,8 +184,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 14,
-      "popularScore": 2.162705
+      "popularRank": 13,
+      "popularScore": 2.162204
     },
     {
       "id": "94be55d131a72c4b3e55",
@@ -200,22 +200,7 @@
       "deadlineText": "2026.09.05",
       "alwaysHire": false,
       "popularRank": 16,
-      "popularScore": 1.933584
-    },
-    {
-      "id": "6216a5e8a7b59a85d9de",
-      "jobId": "49706663",
-      "companyName": "디알텍",
-      "title": "2026년 신입 및 경력 채용",
-      "preview": "신입·경력 · 정규직 · 마감 D-14 · 접수마감 2026.08.31",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49706663",
-      "dateISO": "2026-08-04",
-      "dateText": "2026.08.04",
-      "deadlineISO": "2026-08-31",
-      "deadlineText": "2026.08.31",
-      "alwaysHire": false,
-      "popularRank": 13,
-      "popularScore": 2.211416
+      "popularScore": 1.9067119
     },
     {
       "id": "cdd3b46c07e0236116a7",
@@ -230,7 +215,7 @@
       "deadlineText": "2026.08.17",
       "alwaysHire": false,
       "popularRank": 5,
-      "popularScore": 2.491812
+      "popularScore": 2.487952
     },
     {
       "id": "36411c5580bf3a0a03ef",
@@ -245,7 +230,7 @@
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
       "popularRank": 7,
-      "popularScore": 2.41221
+      "popularScore": 2.375411
     },
     {
       "id": "621244133718cacd4b65",
@@ -260,7 +245,7 @@
       "deadlineText": "2026.08.18",
       "alwaysHire": false,
       "popularRank": 9,
-      "popularScore": 2.271748
+      "popularScore": 2.281284
     },
     {
       "id": "cac58faef283c6e518f7",
@@ -275,7 +260,7 @@
       "deadlineText": "2026.09.25",
       "alwaysHire": false,
       "popularRank": 10,
-      "popularScore": 2.240674
+      "popularScore": 2.235517
     },
     {
       "id": "b2daad0d3bdddc3e904b",
@@ -289,8 +274,23 @@
       "deadlineISO": "2026-08-22",
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
-      "popularRank": 20,
-      "popularScore": 1.737144
+      "popularRank": 19,
+      "popularScore": 1.736464
+    },
+    {
+      "id": "35c525bff4b482dc98fc",
+      "jobId": "49692385",
+      "companyName": "㈜한컴라이프케어",
+      "title": "[한컴자회사] 한컴라이프케어 경영지원본부장(CFO) 채용",
+      "preview": "경력 · 정규직·계약직 · 마감 D-13 · 접수마감 2026.08.30",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49692385",
+      "dateISO": "2026-07-31",
+      "dateText": "2026.07.31",
+      "deadlineISO": "2026-08-30",
+      "deadlineText": "2026.08.30",
+      "alwaysHire": false,
+      "popularRank": 24,
+      "popularScore": 1.669072
     },
     {
       "id": "a0122bbf1dd817b4e251",
@@ -305,7 +305,7 @@
       "deadlineText": "2026.08.29",
       "alwaysHire": false,
       "popularRank": 8,
-      "popularScore": 2.298256
+      "popularScore": 2.290039
     },
     {
       "id": "def56d1a40587609e504",
@@ -334,8 +334,8 @@
       "deadlineISO": "2026-08-26",
       "deadlineText": "2026.08.26",
       "alwaysHire": false,
-      "popularRank": 23,
-      "popularScore": 1.683023
+      "popularRank": 22,
+      "popularScore": 1.678753
     },
     {
       "id": "b2d647ba9dc240a68915",
@@ -349,8 +349,8 @@
       "deadlineISO": "2026-08-20",
       "deadlineText": "2026.08.20",
       "alwaysHire": false,
-      "popularRank": 22,
-      "popularScore": 1.724912
+      "popularRank": 21,
+      "popularScore": 1.724088
     },
     {
       "id": "51bae11410ca1bad97c7",
@@ -364,8 +364,8 @@
       "deadlineISO": "2026-08-19",
       "deadlineText": "2026.08.19",
       "alwaysHire": false,
-      "popularRank": 24,
-      "popularScore": 1.677457
+      "popularRank": 23,
+      "popularScore": 1.677421
     }
   ],
   "stale": false,
