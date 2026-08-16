@@ -1720,6 +1720,12 @@
       color: #fff;
     }
 
+    .expand-open svg {
+      width: 13px;
+      height: 13px;
+      flex: 0 0 auto;
+    }
+
     .expand-close {
       background: var(--color-neutral-100);
       color: var(--text-primary);
@@ -4316,7 +4322,7 @@
           <em>진학 인사이트<br>V1.1</em>
         </button>
         <span class="nav-sep" aria-hidden="true"></span>
-        <button type="button" class="nav-item card-m" id="osyNav" title="오승열공" aria-expanded="false" aria-controls="expandPanel">
+        <button type="button" class="nav-item card-m" id="osyNav" title="대입 뉴스" aria-expanded="false" aria-controls="expandPanel" aria-label="대입 뉴스">
           <span class="ic" aria-hidden="true">
             <svg viewBox="0 0 48 48" fill="none">
               <rect x="10" y="10" width="28" height="28" rx="6" fill="rgba(255,255,255,.18)"/>
@@ -4325,7 +4331,7 @@
               <path d="M32 28.2v3.6M30.2 30h3.6" stroke="#C2410C" stroke-width="1.8" stroke-linecap="round"/>
             </svg>
           </span>
-          <em>오승열공</em>
+          <em>대입 뉴스</em>
         </button>
         <span class="nav-sep" aria-hidden="true"></span>
         <button type="button" class="nav-item card-l" id="careerNav" title="커리어넷" aria-expanded="false" aria-controls="careerApi">
@@ -4368,6 +4374,14 @@
           </span>
           <strong id="expandTitle">2027 수시 일정</strong>
           <div class="expand-actions">
+            <a class="expand-open" id="expandOpen" href="#" target="_blank" rel="noopener noreferrer" title="새 창으로 보기" aria-label="새 창으로 보기">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M14 5h5v5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 14 19 5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+                <path d="M19 13.5V18a1.5 1.5 0 0 1-1.5 1.5H6.5A1.5 1.5 0 0 1 5 18V7.5A1.5 1.5 0 0 1 6.5 6H11" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              새 창
+            </a>
             <button type="button" class="expand-close" id="expandClose">닫기</button>
           </div>
         </div>
@@ -4928,7 +4942,7 @@
         },
         osy: {
           url: "https://taehoon8832.github.io/osy/",
-          title: "오승열공",
+          title: "대입 뉴스",
           theme: "osy",
           mark: `<rect x="4" y="4.5" width="16" height="15" rx="2.5" stroke="currentColor" stroke-width="1.7"/><path d="M7.5 9h9M7.5 12.5h9M7.5 16h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>`,
         },
@@ -6775,6 +6789,7 @@
       const expandPanel = document.getElementById("expandPanel");
       const expandFrame = document.getElementById("expandFrame");
       const expandTitle = document.getElementById("expandTitle");
+      const expandOpen = document.getElementById("expandOpen");
       const expandClose = document.getElementById("expandClose");
       const expandMarkSvg = document.getElementById("expandMarkSvg");
       const expandNavMap = {
@@ -6868,6 +6883,7 @@
         expandPanel.dataset.theme = app.theme;
         expandTitle.textContent = app.title;
         expandFrame.title = app.title;
+        if (expandOpen) expandOpen.href = app.url;
         if (expandMarkSvg) expandMarkSvg.innerHTML = app.mark;
         if (expandFrame.getAttribute("src") !== app.url) {
           expandFrame.src = app.url;
