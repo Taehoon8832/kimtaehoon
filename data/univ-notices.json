@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
-  "today": "2026-08-16",
-  "updatedAt": "2026-08-16T15:08:39.545Z",
-  "checkedAt": "2026-08-16T15:08:39.545Z",
+  "today": "2026-08-17",
+  "updatedAt": "2026-08-16T15:38:13.167Z",
+  "checkedAt": "2026-08-16T15:38:13.167Z",
   "sources": [
     {
       "id": "u001",
@@ -2799,7 +2799,7 @@
       "univId": "u005",
       "univName": "경기대(서울)",
       "title": "재외국민 2027학년도 재외국민 면접고사 유의사항 안내",
-      "preview": "2026.08.03 수시 2026년 온라인 모의논술 채점결과 조회",
+      "preview": "경기대(서울) 입학 공지사항 미리보기",
       "url": "https://enter.kyonggi.ac.kr/cms/CMN_CON/MainLink.do?GBN=BA&TEMP_CODE=IPSI_A&BASE_SITE_NO=2&CONFIG_CD=C1403&CONFIG_SEQ=2&SUB_SEQ=7&SITE_NO=2&BOARD_SEQ=1&BBS_SEQ=4371",
       "homeUrl": "https://enter.kyonggi.ac.kr/index.do",
       "dateISO": "2026-08-03",
@@ -2810,7 +2810,7 @@
       "univId": "u049",
       "univName": "경기대(수원)",
       "title": "재외국민 2027학년도 재외국민 면접고사 유의사항 안내",
-      "preview": "2026.08.03 수시 2026년 온라인 모의논술 채점결과 조회",
+      "preview": "경기대(서울) 입학 공지사항 미리보기",
       "url": "https://enter.kyonggi.ac.kr/cms/CMN_CON/MainLink.do?GBN=BA&TEMP_CODE=IPSI_A&BASE_SITE_NO=2&CONFIG_CD=C1403&CONFIG_SEQ=2&SUB_SEQ=7&SITE_NO=2&BOARD_SEQ=1&BBS_SEQ=4371",
       "homeUrl": "https://enter.kyonggi.ac.kr/index.do",
       "dateISO": "2026-08-03",
@@ -3107,5 +3107,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=24 empty=19 fail=173 fresh=122"
+  "statusReason": "ok=25 empty=30 fail=161 fresh=122"
 }
