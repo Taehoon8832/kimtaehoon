@@ -1,10 +1,19 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-16T21:53:10.310320Z",
-  "checkedAt": "2026-08-16T21:53:10.310316Z",
+  "updatedAt": "2026-08-16T22:07:08.546432Z",
+  "checkedAt": "2026-08-16T22:07:08.546427Z",
   "today": "2026-08-17",
   "count": 38,
   "notices": [
+    {
+      "id": "690e7caa265f134faf29",
+      "sourceName": "수만휘",
+      "title": "D-94",
+      "preview": "[🔥재/반/N수 자유게시판] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29609503",
+      "dateISO": "2026-08-17",
+      "dateText": "2026.08.17"
+    },
     {
       "id": "d60ed31ba8b4d86c6f1b",
       "sourceName": "수만휘",
@@ -335,15 +344,6 @@
       "title": "일반고 2.8 학종(화공) 고민으로 잠도 못자고 눈물만 납니다ㅠㅠ 아무말이나 괜찮으니 조언 부탁드립니다..(긴글주의)",
       "preview": "[🔥이과 수시 자유게시판] 안녕하십니까 먼저 제 소개를 간단히 하자면, 저는 대구지역 일반고에 재학중인 고3입니다. 나름 전교부회장, 회장까지 하면서 알차게 학교 생활을 보냈다고 생각합니다. 다만.. 2학년때 학생회",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29609464",
-      "dateISO": "2026-08-17",
-      "dateText": "2026.08.17"
-    },
-    {
-      "id": "f235ebe549ce80857c81",
-      "sourceName": "수만휘",
-      "title": "생명과학2 수능",
-      "preview": "[🔥이과 수능 자유게시판] 안녕하세요 수능때 생2를 보려고 하는데 아마 최저는 생1로 맞출것같은데 그냥 해보려고하는데요 1학기때 학교에서 유전파트는 안해서 그 부분만 모르는 상황인데 남은 기간 공부하면 3등급 정도는",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29609463",
       "dateISO": "2026-08-17",
       "dateText": "2026.08.17"
     }
