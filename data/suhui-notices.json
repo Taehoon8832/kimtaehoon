@@ -1,10 +1,55 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-16T23:07:40.086003Z",
-  "checkedAt": "2026-08-16T23:07:40.085999Z",
+  "updatedAt": "2026-08-16T23:31:45.499221Z",
+  "checkedAt": "2026-08-16T23:31:45.499216Z",
   "today": "2026-08-17",
-  "count": 36,
+  "count": 35,
   "notices": [
+    {
+      "id": "3ca63dfb25f68e8fea82",
+      "sourceName": "수만휘",
+      "title": "3.6 내신 수시지원",
+      "preview": "[┏Team08 수험생 게시판] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29609523",
+      "dateISO": "2026-08-17",
+      "dateText": "2026.08.17"
+    },
+    {
+      "id": "9b7a56b1593b1d85c82d",
+      "sourceName": "수만휘",
+      "title": "공동교육과정 실험과목 성적?",
+      "preview": "[😃수험생 일상글 게시판] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29609521",
+      "dateISO": "2026-08-17",
+      "dateText": "2026.08.17"
+    },
+    {
+      "id": "baa4c9cdd1c9f5728793",
+      "sourceName": "수만휘",
+      "title": "진학사 합격예측?",
+      "preview": "[┏의대 게시판] 대학원서 접수기간이 9.7.부터 9.11.까지던데 진학사 합격예측 참고자료로 볼때 9월초 까지는 기다리고 원서 써야겠죠 학종은 몰라도 교과는 참고하려구요",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29609520",
+      "dateISO": "2026-08-17",
+      "dateText": "2026.08.17"
+    },
+    {
+      "id": "d09f0d6ceedd495394ea",
+      "sourceName": "수만휘",
+      "title": "해군사관학교 학교장/일반적성 우선선발 합격자 성적 분포",
+      "preview": "[광릉한샘 학원문의 및 진학상담] https://youtu.be/PVCNJ4U2h6c",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29609519",
+      "dateISO": "2026-08-17",
+      "dateText": "2026.08.17"
+    },
+    {
+      "id": "6ab59a4398b8e7023a7b",
+      "sourceName": "수만휘",
+      "title": "성결대&동방예대",
+      "preview": "[┏Team08 수험생 게시판] 동방예대 영화연출이랑 성결대 영화영상이랑 둘다 합격했다면 어느쪽으로 가는게 더 나을까요?",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29609518",
+      "dateISO": "2026-08-17",
+      "dateText": "2026.08.17"
+    },
     {
       "id": "ae0fc1bfc89ab136abc8",
       "sourceName": "수만휘",
@@ -272,60 +317,6 @@
       "title": "상명대 사범대학",
       "preview": "[┃사범대 게시판] 상명대식 2.64인데 교과로 상명대 교육학과 써도 될까요..",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29609484",
-      "dateISO": "2026-08-17",
-      "dateText": "2026.08.17"
-    },
-    {
-      "id": "0ee101a1cfbb5244b0fb",
-      "sourceName": "수만휘",
-      "title": "대치동 컨설팅 믿을만 한가요?",
-      "preview": "[🔥문과 수시 자유게시판] 우선 제 평균등급은 3.4입니다. 저번주 토요일에 컨설팅을 받았었습니다. 성적, 생기부, 행특등 종합적으로 보시고 평가하셨는데 제생각보다 더 좋게 평가해주셨습니다. 엄청 감사하고, 기쁘지만",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29609483",
-      "dateISO": "2026-08-17",
-      "dateText": "2026.08.17"
-    },
-    {
-      "id": "43d077ef869a46851d46",
-      "sourceName": "수만휘",
-      "title": "안녕하세요",
-      "preview": "[😃가입인사+규정확인] 수만휘 카페 글",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29609482",
-      "dateISO": "2026-08-17",
-      "dateText": "2026.08.17"
-    },
-    {
-      "id": "aca3237a53d53fa4a010",
-      "sourceName": "수만휘",
-      "title": "학종 비슷한 과에 지원해도 되나요?",
-      "preview": "[┃Team09 수험생 게시판] 생기부를 신소재공학으로 써놨는데 중간중간 에너지나 배터리 얘기도 있는데 학종으로 배터리나 에너지 관련 학과를 쓰면 별로 안좋을까요?",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29609481",
-      "dateISO": "2026-08-17",
-      "dateText": "2026.08.17"
-    },
-    {
-      "id": "2398714887c22c2e3665",
-      "sourceName": "수만휘",
-      "title": "영어 내신 공부법 질문!",
-      "preview": "[┃Team09 수험생 게시판] 1. 본문 통암기는 많이 봤는데 1등급 애들은 모고도 통암기 하나요? 내신에 모고가 10개 이상 나오는데 다른 과목도 공부하면서 그걸 통암기 하는건가요? 2. 서술형에서 대폭 감점 되",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29609480",
-      "dateISO": "2026-08-17",
-      "dateText": "2026.08.17"
-    },
-    {
-      "id": "63f2a96094fccfe3ee33",
-      "sourceName": "수만휘",
-      "title": "출결로 인한 광탈 가능성🥹",
-      "preview": "[┏Team08 수험생 게시판] 학종으로 세종,단국,광운 쓸 예정인 학생입니다 출결이 이런 상태라……1차나 서류에서 불합격할 가능성이 높을까요? 1,2학년때 출결 상태가 좋지 않음을 인지하고 3학년때는 매일매일 나왔",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29609479",
-      "dateISO": "2026-08-17",
-      "dateText": "2026.08.17"
-    },
-    {
-      "id": "856f350db7402e70df54",
-      "sourceName": "수만휘",
-      "title": "인하대 체교과 학종 생기부 궁금증",
-      "preview": "[┃사범대 게시판] 인하대 체교과 희망중인데 생기부에 어떤 내용이 강조되거나 들어가면 좋을까요? 1학년 때부터 지금까지 2-1)) 체육교육으로 채웠고 물리나 확통 세지 <- 스포츠과학 관련으로 채웠어요! 올해 선택과",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29609478",
       "dateISO": "2026-08-17",
       "dateText": "2026.08.17"
     }
