@@ -670,9 +670,31 @@
       max-height: min(58vh, 620px);
     }
 
+    /* 수시 일정 등 확장 포커스: 하단·커리어넷 숨기고 패널을 넓게 */
+    body.expand-focus .lower-layout,
+    body.expand-focus .footer,
+    body.expand-focus .career-api-section {
+      display: none !important;
+    }
+
+    body.expand-focus .upper-stage {
+      width: min(1560px, 100%);
+      padding-top: clamp(10px, 1.8vw, 18px);
+      padding-bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+    }
+
+    body.expand-focus .expand-shell {
+      min-height: min(calc(100dvh - var(--nav-offset, 72px) - 36px), 980px);
+    }
+
+    body.expand-focus .expand-frame {
+      height: min(calc(100dvh - var(--nav-offset, 72px) - 110px), 900px);
+    }
+
     /* 모바일: 커리어넷 열면 상단 아이콘 그리드 접기 → 검색 공간 확보 */
     @media (max-width: 900px) {
-      body.career-focus .nav {
+      body.career-focus .nav,
+      body.expand-focus .nav {
         grid-template-columns: 1fr auto;
         grid-template-areas: "brand actions";
         gap: 8px;
@@ -681,23 +703,28 @@
         align-items: center;
       }
 
-      body.career-focus .nav-links {
+      body.career-focus .nav-links,
+      body.expand-focus .nav-links {
         display: none !important;
       }
 
-      body.career-focus .nav-brand {
+      body.career-focus .nav-brand,
+      body.expand-focus .nav-brand {
         grid-area: brand;
       }
 
-      body.career-focus .nav-actions {
+      body.career-focus .nav-actions,
+      body.expand-focus .nav-actions {
         grid-area: actions;
       }
 
-      body.career-focus .brand-name {
+      body.career-focus .brand-name,
+      body.expand-focus .brand-name {
         display: block;
       }
 
-      body.career-focus .upper-stage {
+      body.career-focus .upper-stage,
+      body.expand-focus .upper-stage {
         padding-top: 8px;
         padding-bottom: calc(16px + env(safe-area-inset-bottom, 0px));
         gap: 8px;
@@ -710,6 +737,15 @@
 
       body.career-focus .career-api-results {
         max-height: min(72dvh, 780px);
+      }
+
+      body.expand-focus .expand-shell {
+        min-height: min(calc(100dvh - var(--nav-offset, 52px) - 16px), 980px);
+        border-radius: 18px;
+      }
+
+      body.expand-focus .expand-frame {
+        height: min(calc(100dvh - var(--nav-offset, 52px) - 96px), 920px);
       }
     }
 
@@ -4120,7 +4156,7 @@
           <em>2028 학년도 대입정보시스템</em>
         </button>
         <span class="nav-sep" aria-hidden="true"></span>
-        <a class="nav-item card-h" href="https://taehoon8832.github.io/susi/" target="_blank" rel="noopener noreferrer" title="수시 일정" id="susiNav">
+        <button type="button" class="nav-item card-h" id="susiNav" title="수시 일정" aria-expanded="false" aria-controls="expandPanel">
           <span class="ic" aria-hidden="true">
             <svg viewBox="0 0 48 48" fill="none">
               <rect x="10" y="11" width="28" height="26" rx="5" fill="rgba(255,255,255,.2)"/>
@@ -4131,7 +4167,7 @@
             </svg>
           </span>
           <em>수시 일정</em>
-        </a>
+        </button>
         <a class="nav-item card-f" href="https://script.google.com/macros/s/AKfycbwIg3mpzLDxQ8eMlDmH2g-c_QqKpjXlE6K7EpnJ8TRxQjIVLSTfEOnAkW0vW4Y85EEf/exec" target="_blank" rel="noopener noreferrer" title="2026 입결 검색기" id="ipgyeolNav">
           <span class="ic" aria-hidden="true">
             <svg viewBox="0 0 48 48" fill="none">
@@ -6748,12 +6784,16 @@
       function closeExpand() {
         if (!expandPanel) return;
         expandPanel.classList.remove("is-open");
+        document.body.classList.remove("expand-focus");
         Object.values(expandNavMap).forEach((nav) => {
           if (!nav) return;
           nav.classList.remove("is-active");
           nav.setAttribute("aria-expanded", "false");
         });
         activeExpandKey = null;
+        requestAnimationFrame(() => {
+          if (typeof syncNavOffset === "function") syncNavOffset();
+        });
       }
 
       function openExpand(key) {
@@ -6777,23 +6817,31 @@
         expandPanel.dataset.theme = app.theme;
         expandTitle.textContent = app.title;
         expandFrame.title = app.title;
-        expandOpen.href = app.url;
+        if (expandOpen) expandOpen.href = app.url;
         if (expandMarkSvg) expandMarkSvg.innerHTML = app.mark;
         if (expandFrame.getAttribute("src") !== app.url) {
           expandFrame.src = app.url;
         }
 
         expandPanel.classList.add("is-open");
+        document.body.classList.add("expand-focus");
         nav.classList.add("is-active");
         nav.setAttribute("aria-expanded", "true");
         activeExpandKey = key;
 
         requestAnimationFrame(() => {
-          expandPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+          if (typeof syncNavOffset === "function") syncNavOffset();
+          window.scrollTo({ top: 0, behavior: "smooth" });
         });
       }
 
       if (expandClose) expandClose.addEventListener("click", closeExpand);
+      if (expandNavMap.susi) {
+        expandNavMap.susi.addEventListener("click", (e) => {
+          e.preventDefault();
+          openExpand("susi");
+        });
+      }
       if (careerNav) careerNav.addEventListener("click", openCareerExpand);
       if (careerApiClose) careerApiClose.addEventListener("click", closeCareerExpand);
 
@@ -6836,7 +6884,10 @@
       }
       document.addEventListener("click", () => closeKakaoMenu());
       document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") closeKakaoMenu();
+        if (e.key !== "Escape") return;
+        closeKakaoMenu();
+        closeExpand();
+        closeCareerExpand();
       });
 
       const brandHome = document.querySelector(".nav-brand");
