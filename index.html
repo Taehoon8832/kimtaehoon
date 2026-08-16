@@ -4114,7 +4114,7 @@
 </head>
 <body>
   <script>
-    /* 일반 사용자 대상: 소스보기·개발자도구 단축키/우클릭 제한 (완전 차단은 불가) */
+    /* 일반 사용자 대상: 소스보기·개발자도구 단축키 제한 (우클릭은 허용) */
     (() => {
       const isBlockedKey = (e) => {
         const key = e.key || "";
@@ -4137,13 +4137,6 @@
         "keydown",
         (e) => {
           if (isBlockedKey(e)) stop(e);
-        },
-        true
-      );
-      document.addEventListener(
-        "contextmenu",
-        (e) => {
-          stop(e);
         },
         true
       );
