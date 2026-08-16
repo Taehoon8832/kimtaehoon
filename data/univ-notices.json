@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-17",
-  "updatedAt": "2026-08-16T17:57:55.574Z",
-  "checkedAt": "2026-08-16T17:57:55.574Z",
+  "updatedAt": "2026-08-16T18:07:24.469Z",
+  "checkedAt": "2026-08-16T18:07:24.469Z",
   "sources": [
     {
       "id": "u001",
@@ -2311,6 +2311,28 @@
       "dateText": "2026.08.06"
     },
     {
+      "id": "32250b174beee86acfbd",
+      "univId": "u128",
+      "univName": "유원대",
+      "title": "취업공지 [고려사이버대학교] 매치업(Match業) 빅데이터실무전문가 심화과정 (~8/16)",
+      "preview": "취업공지 KT 에이블스쿨 10기 모집 (~8/10) 문의 : 02-720-0614 / KT 에이블스쿨 운영사무국 신민철 과장 2026-07-16",
+      "url": "https://ipsi.u1.ac.kr/u1/community/employment.do?mode=view&articleNo=77181",
+      "homeUrl": "https://ipsi.u1.ac.kr/html/ipsi/index.html",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
+      "id": "cf1a8cd2cb7f3a3d139b",
+      "univId": "u153",
+      "univName": "유원대(아산)",
+      "title": "취업공지 [고려사이버대학교] 매치업(Match業) 빅데이터실무전문가 심화과정 (~8/16)",
+      "preview": "취업공지 KT 에이블스쿨 10기 모집 (~8/10) 문의 : 02-720-0614 / KT 에이블스쿨 운영사무국 신민철 과장 2026-07-16",
+      "url": "https://ipsi.u1.ac.kr/u1/community/employment.do?mode=view&articleNo=77181",
+      "homeUrl": "https://ipsi.u1.ac.kr/html/ipsi/index.html",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
       "id": "0c55d5b4646630aa6a6f",
       "univId": "u128",
       "univName": "유원대",
@@ -3107,5 +3129,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=19 empty=20 fail=177 fresh=122"
+  "statusReason": "ok=28 empty=36 fail=152 fresh=124"
 }
