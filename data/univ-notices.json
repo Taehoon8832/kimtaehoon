@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-16",
-  "updatedAt": "2026-08-16T08:07:16.431Z",
-  "checkedAt": "2026-08-16T08:07:16.431Z",
+  "updatedAt": "2026-08-16T08:48:40.173Z",
+  "checkedAt": "2026-08-16T08:48:40.173Z",
   "sources": [
     {
       "id": "u001",
@@ -1529,6 +1529,17 @@
     }
   ],
   "notices": [
+    {
+      "id": "9cdfc740e9b2088f814b",
+      "univId": "u190",
+      "univName": "순천대",
+      "title": "2027학년도 대학입학전형 시행계획 변경 공고",
+      "preview": "공지 2026학년도 스마트안전관리학과 특별편입학(9월 입학) 전형 모집요강 면접고사 일정 변경 2026.08.03",
+      "url": "https://www.scnu.ac.kr/iphak/na/ntt/selectNttInfo.do?nttSn=281317852&mi=1676",
+      "homeUrl": "https://www.scnu.ac.kr/iphak/main.do",
+      "dateISO": "2026-08-16",
+      "dateText": "2026.08.16"
+    },
     {
       "id": "b51f760b58f394c60e5f",
       "univId": "u032",
@@ -3085,5 +3096,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=25 empty=29 fail=162 fresh=120"
+  "statusReason": "ok=21 empty=29 fail=166 fresh=121"
 }
