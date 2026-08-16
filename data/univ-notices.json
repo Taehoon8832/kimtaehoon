@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-16",
-  "updatedAt": "2026-08-16T11:56:05.245Z",
-  "checkedAt": "2026-08-16T11:56:05.245Z",
+  "updatedAt": "2026-08-16T12:17:35.304Z",
+  "checkedAt": "2026-08-16T12:17:35.304Z",
   "sources": [
     {
       "id": "u001",
@@ -1860,6 +1860,17 @@
       "dateText": "2026.08.12"
     },
     {
+      "id": "0ad19b2aa0a1f72ecc69",
+      "univId": "u176",
+      "univName": "우석대(전주)",
+      "title": "수시/정시 2027학년도 수시모집 안내자료",
+      "preview": "우석대(전주) 입학 공지사항 미리보기",
+      "url": "http://www.woosuk.ac.kr/?menu=42&mode=view&no=362227",
+      "homeUrl": "http://www.woosuk.ac.kr/WoosukEntrance.do",
+      "dateISO": "2026-08-12",
+      "dateText": "2026.08.12"
+    },
+    {
       "id": "61f91597641b667c74e4",
       "univId": "u232",
       "univName": "육군3사관학교",
@@ -3096,5 +3107,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=23 empty=34 fail=159 fresh=121"
+  "statusReason": "ok=29 empty=37 fail=150 fresh=122"
 }
