@@ -1,10 +1,28 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-17T21:57:01.557134Z",
-  "checkedAt": "2026-08-17T21:57:01.557129Z",
+  "updatedAt": "2026-08-17T22:15:19.176491Z",
+  "checkedAt": "2026-08-17T22:15:19.176486Z",
   "today": "2026-08-18",
   "count": 39,
   "notices": [
+    {
+      "id": "c04f7dcc023683632faa",
+      "sourceName": "수만휘",
+      "title": "D-93",
+      "preview": "[🔥재/반/N수 자유게시판] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610815",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "9600566b1561691e3c44",
+      "sourceName": "수만휘",
+      "title": "수시 안정 카드 판단 알려주세요",
+      "preview": "[🔥문과 수시 자유게시판] 최근 3개년치 입결을 확인했을 때 3년 내내 최초합권에 들어가는 성적이라면 혹시 안정 카드라고 봐도 되는걸까요? 최저가 있는 교과 전형이긴 하지만 2합9라서 웬만하면 맞출 수 있을 것 같은",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610814",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
     {
       "id": "8b6c6166cd92086592d0",
       "sourceName": "수만휘",
@@ -335,24 +353,6 @@
       "title": "수능 모고 등급 변동",
       "preview": "[┏Team08 수험생 게시판] 수만휘 카페 글",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610769",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "4da72c57728bd7bc16bb",
-      "sourceName": "수만휘",
-      "title": "남서울대식 2.1 응급구조",
-      "preview": "[┏Team08 수험생 게시판] 남서울대식으로 2.1인데 응급구조학과 최초합 가능할까요?",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610768",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "fb2eb1e9ca25715cc3ca",
-      "sourceName": "수만휘",
-      "title": "문이과 정원 관련 고민",
-      "preview": "[┃Team10 수험생 게시판] 사범대 목표인데 저희 학교가 문과가 50명 이과가 150명이 정원이라고 합니다.. 원래 문과로 갈려고 했는데 정원이 너무 적어서 이과로 가야하나 고민입니다 전 사범대면 아무 과나 상관",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610767",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     }
