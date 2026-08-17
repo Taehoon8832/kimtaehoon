@@ -1,10 +1,19 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-17T18:55:25.122382Z",
-  "checkedAt": "2026-08-17T18:55:25.122377Z",
+  "updatedAt": "2026-08-17T19:19:06.679430Z",
+  "checkedAt": "2026-08-17T19:19:06.679426Z",
   "today": "2026-08-18",
   "count": 38,
   "notices": [
+    {
+      "id": "f86360b331b6ea68ab91",
+      "sourceName": "수만휘",
+      "title": "고3들이 놓치고 있는 것들",
+      "preview": "[┏Team08 수험생 게시판] 1. 대학이 고민되면 서열순으로 서연고 서성한 중경외시 건동홍숙 국숭세단 광명상가. 20년 전에 만들어진 순서인데 고착화되어 현재까지 쓰이는 중. 2. 상승세, 하락세인 대학은 없음 ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610796",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
     {
       "id": "d14d35af91436f44e36b",
       "sourceName": "수만휘",
@@ -335,15 +344,6 @@
       "title": "단국대 모의논술 점수 공유 하실 분",
       "preview": "[논술구술Q&A] 잇나여~제곧내",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610754",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "ca4314fa53d66b202e0a",
-      "sourceName": "수만휘",
-      "title": "현역 최저 고민 도와주세요!!ㅠㅠ",
-      "preview": "[😃수험생 일상글 게시판] 안녕하세요 다른 일반고보다 내신 따기가 좀 어려운 일반고에서 3.3~3.4 정도 나오는 현역 고3입니다. 근데 제 학생부가 이례적으로 6학종을 질러보라고 하실 만큼 좋다고 하셔서 한국교원대",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610753",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     }
