@@ -67,8 +67,8 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-17T07:33:08.992856Z",
-  "checkedAt": "2026-08-17T07:33:08.992850Z",
+  "updatedAt": "2026-08-17T08:22:52.591911Z",
+  "checkedAt": "2026-08-17T08:22:52.591906Z",
   "today": "2026-08-17",
   "count": 72,
   "notices": [
@@ -79,6 +79,16 @@
       "title": "동화로 이어 온 20번째 만남, 한·중·일 어린이들의 우정이 한국에서 꽃피다",
       "preview": "교육부(장관 최교진)는 에이펙(APEC) 국제교육협력원(이사장 박동선)과 함께 8월 17일(월)부터 8월 23일(일)까지 서울 일원에서 「2026 한·중·일 어린이 동화교류대회」를 개최한다. 2002년부터 시작해 올",
       "url": "https://blog.naver.com/moeblog/224380085646",
+      "dateISO": "2026-08-17",
+      "dateText": "2026.08.17"
+    },
+    {
+      "id": "71f88b986973e71dc62d",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "[2027수시특집] 전북대 3152명(76.7%) ‘확대’.. 교과 지역의사선발 21명 ‘신설’",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623328",
       "dateISO": "2026-08-17",
       "dateText": "2026.08.17"
     },
@@ -219,16 +229,6 @@
       "title": "[김용완 칼럼] 우리 아이들의 교실에는 정의가 있는가?",
       "preview": "에듀프레스 소식",
       "url": "https://www.edupress.kr/news/articleView.html?idxno=30400",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
-      "id": "60bf27b42ede68ffa6f0",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "[2027수시특집] 성신여대 1342명(65.1%).. 교과 지균 312명 ‘72명 확대’",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=621504",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
     },
