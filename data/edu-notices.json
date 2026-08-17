@@ -67,10 +67,10 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-17T15:56:32.741508Z",
-  "checkedAt": "2026-08-17T15:56:32.741502Z",
+  "updatedAt": "2026-08-17T16:15:33.129533Z",
+  "checkedAt": "2026-08-17T16:15:33.129528Z",
   "today": "2026-08-18",
-  "count": 80,
+  "count": 72,
   "notices": [
     {
       "id": "d099754a40156b9a3f7f",
@@ -273,36 +273,6 @@
       "dateText": "2026.08.13"
     },
     {
-      "id": "8cde7995d2556b8362be",
-      "sourceId": "ebsi",
-      "sourceName": "EBSi",
-      "title": "[고3 필독] 2027학년도 9월 모의평가 대비 공부법 📚",
-      "preview": "EBSi 알림",
-      "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE&artclId=000000400498637",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13"
-    },
-    {
-      "id": "d620cefcf78f3b9ebca4",
-      "sourceId": "ebsi",
-      "sourceName": "EBSi",
-      "title": "EBS 사이트 시스템 점검 안내 (2026년 8월 18일)",
-      "preview": "EBSi 알림",
-      "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE&artclId=000000400498605",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13"
-    },
-    {
-      "id": "e479dac5228a8ed7ab69",
-      "sourceId": "ebsi",
-      "sourceName": "EBSi",
-      "title": "최신 정보를 바탕으로 체계적으로 준비하는 입시 전략 <고교학점제 가이드>",
-      "preview": "EBSi 알림",
-      "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE_01&artclId=000000400494555",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
       "id": "243de2f145b3407292af",
       "sourceId": "edupress",
       "sourceName": "에듀프레스",
@@ -323,62 +293,12 @@
       "dateText": "2026.08.12"
     },
     {
-      "id": "28d9c55bb57c82bb7a53",
-      "sourceId": "ebsi",
-      "sourceName": "EBSi",
-      "title": "단기간에 끝내는 실전 공략 <2027 약점공략>",
-      "preview": "EBSi 알림",
-      "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE_01&artclId=000000400494559",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "75863265d5578a26ddf2",
-      "sourceId": "ebsi",
-      "sourceName": "EBSi",
-      "title": "[교재 예판] 💯수능 만점을 위한 기초 다지기 <수능 빌드업>",
-      "preview": "EBSi 알림",
-      "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE_01&artclId=000000400498553",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
       "id": "5ad2ea0033509dfb2385",
       "sourceId": "edupress",
       "sourceName": "에듀프레스",
       "title": "[경기도교육청 교육전문직 인사] 학교교육국장 채열희-지역교육국장 오재길",
       "preview": "에듀프레스 소식",
       "url": "https://www.edupress.kr/news/articleView.html?idxno=30396",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "28113bbfb88f3ab4992b",
-      "sourceId": "ebsi",
-      "sourceName": "EBSi",
-      "title": "[강좌/교재오픈] 한발 앞서 준비하는 수능!<고2부터 모의고사>",
-      "preview": "EBSi 알림",
-      "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE_01&artclId=000000400494533",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "26777aecd3e4420a6ddb",
-      "sourceId": "ebsi",
-      "sourceName": "EBSi",
-      "title": "[강좌/교재 오픈] 👍️고난도 실전 대비 <2027 만점마무리 봉투모의고사 시즌2 고난도>",
-      "preview": "EBSi 알림",
-      "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE_01&artclId=000000400495843",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "32ed99cbba75d2d79437",
-      "sourceId": "ebsi",
-      "sourceName": "EBSi",
-      "title": "[eBook/강좌/교재오픈] 2027 수능연계 최종👍️완벽 완성💯<2027학년도 수능완성>",
-      "preview": "EBSi 알림",
-      "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE_01&artclId=000000400486950",
       "dateISO": "2026-08-12",
       "dateText": "2026.08.12"
     },
