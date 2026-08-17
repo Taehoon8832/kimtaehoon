@@ -67,11 +67,21 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-17T23:34:05.238297Z",
-  "checkedAt": "2026-08-17T23:34:05.238292Z",
+  "updatedAt": "2026-08-17T23:56:03.122498Z",
+  "checkedAt": "2026-08-17T23:56:03.122492Z",
   "today": "2026-08-18",
   "count": 80,
   "notices": [
+    {
+      "id": "3fd6c870bb31cf250135",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "한국에너지공대-고려대 공동연구팀 반도체 맹독성 폐수 잡는 친환경 광촉매 개발.. '저순도 흙으로 세계 최초 합성'",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623380",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
     {
       "id": "605050fce88ffe98a662",
       "sourceId": "veritas",
@@ -99,6 +109,16 @@
       "title": "한국공학대 정현학 교수팀 반도체 패키징 신뢰성 높인다.. '구리-구리 직접 접합' 원리 규명",
       "preview": "베리타스알파 소식",
       "url": "https://www.veritas-a.com/news/articleView.html?idxno=623376",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "c60dff5d64342a2ddd5b",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "인하대 김태원 교수팀 갯벌 먹이사슬별 미세플라스틱 축적 차이 세계 최초 규명",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623379",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
@@ -133,32 +153,12 @@
       "dateText": "2026.08.18"
     },
     {
-      "id": "eb5d07d816cc9c07553f",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "'2년차 맞은' 울산대 RISE(앵커)사업.. 산학연계 인재양성 본격화 '실전형 강의실 17개소, 3467명 참여'",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623164",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
       "id": "d099754a40156b9a3f7f",
       "sourceId": "moe_blog",
       "sourceName": "교육부블로그",
       "title": "동화로 이어 온 20번째 만남, 한·중·일 어린이들의 우정이 한국에서 꽃피다",
       "preview": "교육부(장관 최교진)는 에이펙(APEC) 국제교육협력원(이사장 박동선)과 함께 8월 17일(월)부터 8월 23일(일)까지 서울 일원에서 「2026 한·중·일 어린이 동화교류대회」를 개최한다. 2002년부터 시작해 올",
       "url": "https://blog.naver.com/moeblog/224380085646",
-      "dateISO": "2026-08-17",
-      "dateText": "2026.08.17"
-    },
-    {
-      "id": "71f88b986973e71dc62d",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "[2027수시특집] 전북대 3152명(76.7%) ‘확대’.. 교과 지역의사선발 21명 ‘신설’",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623328",
       "dateISO": "2026-08-17",
       "dateText": "2026.08.17"
     },

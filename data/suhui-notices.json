@@ -1,10 +1,109 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-17T23:33:59.816876Z",
-  "checkedAt": "2026-08-17T23:33:59.816870Z",
+  "updatedAt": "2026-08-17T23:55:58.127509Z",
+  "checkedAt": "2026-08-17T23:55:58.127505Z",
   "today": "2026-08-18",
-  "count": 39,
+  "count": 38,
   "notices": [
+    {
+      "id": "31ffccfbf9ff1ee1329f",
+      "sourceName": "수만휘",
+      "title": "​[05-5편. 고3·수험생] 문항 구조 분석과 킬러/준킬러 공략법 ​부제: 시험지라는 판 위에서 인지 전략을 실전 배치하는 법",
+      "preview": "[칼럼+수기+자료 기고] ​※ 본 글에서 다루는 '킬러·준킬러'는 특정 문항 번호나 공식적인 출제 분류를 의미하기보다, 높은 수준의 구조적 추론과 깊은 인지적 자원 투입을 요구하는 고난도 변별 문항을 통칭합니다. ​",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610856",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "26a8537c769298d31ba2",
+      "sourceName": "수만휘",
+      "title": "올해 입시 낭만",
+      "preview": "[┏Team08 수험생 게시판] 올해 입시에 낭만 챙기는 건 좀 그럴까요,, 1학년 때부터 1지망이던 학교가 있는데 성적이 좀 많이 모자라지만 농어촌으로 넣어보고 싶다고 엄마한테 얘기했는데 한 장 버리는거냐 하시더라",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610855",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "a154ac8ee2d6d9c53f5a",
+      "sourceName": "수만휘",
+      "title": "올해 삼성전자 하이닉스 계약학과 교과 컷 어느 정도 일거라 보세요?",
+      "preview": "[┏Team08 수험생 게시판] 올해 삼성전자 하이닉스 계약학과 교과 컷 어느정도일거라 보세요? 올해 교과로 한장정도 넣어보고 싶은데 컷이 올라갈까두렵네요",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610854",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "32b531b6f2b621e5a384",
+      "sourceName": "수만휘",
+      "title": "농어촌 전형과 일반전형의 바뀜",
+      "preview": "[┏Team08 수험생 게시판] 저희는 국수영과 3.33이고 전교과 3.26이에요 수학은 3.3등급(미적4포함) 과학은 2.6등급 정도입니다. 물리1은 2.5등급, 물2는100점a 화학1은 2등급(1등급포함) 지구1",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610853",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "3578b69cbdef019afca4",
+      "sourceName": "수만휘",
+      "title": "생기부 객관적으로 평가 부탁드립니다 ㅜㅜ",
+      "preview": "[┃Team09 수험생 게시판] 기계공 지망이고 유튜브 보고 세특 활동 하는데 어렵네요 ㅜㅜ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610851",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "156c7e1d1423530f0424",
+      "sourceName": "수만휘",
+      "title": "고3 2학기 수시러 내신6등급 공부 어떻게 할까요?",
+      "preview": "[┏Team08 수험생 게시판] 현재까지 내신은 6.33이고 모고치면 6에서7사이 나옵니다 그래도 요즘 수능 공부 하고 있긴한데 4년제 중에 수능 최저 없는곳이 잘 없더라고요ㅠㅠ 그래서 최저 없는 전문대 갈까 생각중",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610850",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "231256e4b5b4c892f7d7",
+      "sourceName": "수만휘",
+      "title": "충북대 국가보훈",
+      "preview": "[🔥이과 수시 자유게시판] 충북대 국가보훈전형 쓰실분 계신가여?! 학과 피해서 쓸려고요...",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610849",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "32dfe3781cf4c3c1102f",
+      "sourceName": "수만휘",
+      "title": "동방예대 광크 엔경",
+      "preview": "[😃수험생 일상글 게시판] 내신이 동방식으로 4.5인데 광고과 면접보다 엔경 일반전형이 나을까요? 광고과 가고 싶긴한데 면접 학원을 안 다녀서요",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610848",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "14bf1550bd2abba6b478",
+      "sourceName": "수만휘",
+      "title": "내신 4등급 초 경기대 글로벌어문학부",
+      "preview": "[┏Team08 수험생 게시판] 일반고 내신 4등급 초반인데 기회균형선발전형(농어촌전형) 으로 글로벌어문학부(프랑스어문전공)에 넣어도 될까요, 너무 버리는 카드가 되는건 아닌지 걱정이 되네요",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610847",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "090cf813c78f6093370a",
+      "sourceName": "수만휘",
+      "title": "수시 6등급대 대학",
+      "preview": "[😃수험생 일상글 게시판] 논술 3, 수시 3, 전문대 3 쓸 예정입니다. 수시 3장을 어디 쓸지 아직 고민인데.. 6등급대가 노려볼만한 경기, 인천권 대학 어디 있을까요? 과는 상관 없으니 추천 해주세요ㅠㅠ (전문",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610846",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "51066b3bf30cbd579903",
+      "sourceName": "수만휘",
+      "title": "개학했습니다",
+      "preview": "[┃Team10 수험생 게시판] 힘드네요",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610845",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
     {
       "id": "4034b3b3798e76c8c3bf",
       "sourceName": "수만휘",
@@ -245,114 +344,6 @@
       "title": "D-93",
       "preview": "[🔥재/반/N수 자유게시판] 수만휘 카페 글",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610815",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "9600566b1561691e3c44",
-      "sourceName": "수만휘",
-      "title": "수시 안정 카드 판단 알려주세요",
-      "preview": "[🔥문과 수시 자유게시판] 최근 3개년치 입결을 확인했을 때 3년 내내 최초합권에 들어가는 성적이라면 혹시 안정 카드라고 봐도 되는걸까요? 최저가 있는 교과 전형이긴 하지만 2합9라서 웬만하면 맞출 수 있을 것 같은",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610814",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "8b6c6166cd92086592d0",
-      "sourceName": "수만휘",
-      "title": "너무힘들어요",
-      "preview": "[┏Team08 수험생 게시판] 이제진짜 정신적으로도 지치는것같고... 그렇다고 쉼이 없었던 것도 아닌데 반나절 정도 쉬어도 될까요 그냥 그 시간도 너무 죄책감 들어요...",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610813",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "2b77e06b4935751c3f50",
-      "sourceName": "수만휘",
-      "title": "기디&비실기&면접 등 질문 받습니다",
-      "preview": "[┃미대 게시판] 안녕하세요! 홍세 디컨 재학중인 학생입니다..! 단국대 커뮤니케이션 디자인 인천대 디자인학부 홍대 세종 디자인컨버전스 계명대 텍스타일 디자인 위 학교들 위주로 질문 받아볼 수 있습니다! 그림 보내주",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610812",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "f1f57b8a99b9c55e6fc6",
-      "sourceName": "수만휘",
-      "title": "수능 vs 영양사",
-      "preview": "[🔥재/반/N수 자유게시판] 수만휘 카페 글",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610811",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "489b279bce6ef11530f1",
-      "sourceName": "수만휘",
-      "title": "해군사관학교 학교장/일반적성 우선선발 합격자 성적 분포",
-      "preview": "[광릉한샘 학원문의 및 진학상담] https://youtu.be/PVCNJ4U2h6c",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610810",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "0329ff6eceb3f4d6c9d8",
-      "sourceName": "수만휘",
-      "title": "다상다독",
-      "preview": "[┏Team08 수험생 게시판] 강민철쌤 들은적 없는데 다상다독하는거 어떤가용?..",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610809",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "ae131ef30dba56cccf07",
-      "sourceName": "수만휘",
-      "title": "심심해서 질문받음",
-      "preview": "[┃간호 게시판] 면접 위주로 감. 성적 2.5. ㅈ반고",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610808",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "48886e098b9dea28d3fb",
-      "sourceName": "수만휘",
-      "title": "아침부터 편지 썻네용",
-      "preview": "[😃수험생 일상글 게시판] 뭐 어떻게 보면 이번 한번만 믿어달라 사이버대 좀 가고 싶다 이런 내용인데 촤대한 저의 진심을 꾹꾹 눌러 담아서 썻어요 어머니가 화만 안내시면 좋겠네요..",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610807",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "ac89071a1d95d739d589",
-      "sourceName": "수만휘",
-      "title": "전문직 소득 순위표 (오피셜)",
-      "preview": "[┏의대 게시판] GOD 의사. 아무 재테크 없이도, 평균 소득으로만 모두가 한강뷰 아파트를 대출 없이 살 수 있는 대한민국 유일한 직업이네요",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610806",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "9412656a3513dc01b0a1",
-      "sourceName": "수만휘",
-      "title": "육군사관학교 학교장/일반적성 우선선발 합격자 성적 분포",
-      "preview": "[광릉한샘 학원문의 및 진학상담] https://youtu.be/ILwwoHSRGzQ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610805",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "0d79566a63cea958e65e",
-      "sourceName": "수만휘",
-      "title": "고2인데……수학 모고 작년꺼 풀어봤는데 조언좀여…",
-      "preview": "[┃Team09 수험생 게시판] 맨날 객관식은 19부터나 20부터 막히고 주관식은 27겨우 풀고 28 29 30 걍 버리는게 일상입니다 이대로 고3가면 깨질거같아요… 그리고 맨날 풀때 계산 날려먹거나 했던걸 또 쓰거",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610804",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "5b244c8e92b074a8e7b1",
-      "sourceName": "수만휘",
-      "title": "睡眠 記錄·起牀",
-      "preview": "[🔥재/반/N수 자유게시판] 수만휘 카페 글",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610803",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     }
