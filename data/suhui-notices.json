@@ -1,10 +1,19 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-17T19:19:06.679430Z",
-  "checkedAt": "2026-08-17T19:19:06.679426Z",
+  "updatedAt": "2026-08-17T19:47:34.058998Z",
+  "checkedAt": "2026-08-17T19:47:34.058993Z",
   "today": "2026-08-18",
   "count": 38,
   "notices": [
+    {
+      "id": "02dda0d62aa684072465",
+      "sourceName": "수만휘",
+      "title": "수시반수 고민상담 부탁드립니다!",
+      "preview": "[🔥재/반/N수 자유게시판] 현재 수시 최초합으로 본가와 거리가 먼 사립 대학에 재학 중입니다. (편도 4시간 이상, 기차 환승...) 가장 큰 문제는 학점도 문제고 본가가 멀어서 학교 다니는 게 너무 힘들어요. (",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610798",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
     {
       "id": "f86360b331b6ea68ab91",
       "sourceName": "수만휘",
@@ -335,15 +344,6 @@
       "title": "수능 수학 공부법 상담해드려요 — 등급별 전략 · 계획 짜기 환영",
       "preview": "[🔥문과 수능 자유게시판] 안녕하세요! 수능 수학 공부법에 대한 질문 받으려고 글 올려요. 문제 풀이보다는, \"어떻게 공부해야 하지?\" 하는 방향이나 방법에 대한 고민을 받아드리려고 해요. 지금 하는 방식이 맞는지 ",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610755",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "676918d134aff5464d7e",
-      "sourceName": "수만휘",
-      "title": "단국대 모의논술 점수 공유 하실 분",
-      "preview": "[논술구술Q&A] 잇나여~제곧내",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29610754",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     }
