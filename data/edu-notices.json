@@ -67,11 +67,41 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-17T23:10:41.963391Z",
-  "checkedAt": "2026-08-17T23:10:41.963386Z",
+  "updatedAt": "2026-08-17T23:34:05.238297Z",
+  "checkedAt": "2026-08-17T23:34:05.238292Z",
   "today": "2026-08-18",
   "count": 80,
   "notices": [
+    {
+      "id": "605050fce88ffe98a662",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "한국기술교육대 유길상 총장 학생들과 제주 올레길 국토대장정 동행.. '소통으로 다진 청춘'",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623378",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "ba5c9abe3ab07a0f79e7",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "한국기술교육대 능력개발교육원 'K-디지털분야 교직훈련과정' 2차 교육생 모집",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623377",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "fffd3f4a6239e86151b9",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "한국공학대 정현학 교수팀 반도체 패키징 신뢰성 높인다.. '구리-구리 직접 접합' 원리 규명",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623376",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
     {
       "id": "7d2410e2709add72867a",
       "sourceId": "veritas",
@@ -129,36 +159,6 @@
       "title": "[2027수시특집] 전북대 3152명(76.7%) ‘확대’.. 교과 지역의사선발 21명 ‘신설’",
       "preview": "베리타스알파 소식",
       "url": "https://www.veritas-a.com/news/articleView.html?idxno=623328",
-      "dateISO": "2026-08-17",
-      "dateText": "2026.08.17"
-    },
-    {
-      "id": "e682f9ab6f34751b21b5",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "[2027수시특집] 인천대 1763명(70%).. '수능최저 없는' 학종 이어 교과 '수능최저 기준완화'",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623198",
-      "dateISO": "2026-08-17",
-      "dateText": "2026.08.17"
-    },
-    {
-      "id": "7c98d1b7e003eae0fcbb",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "[2027수시특집] 연세대(미래) 1187명(79%) ‘확대’.. ‘신설’ 강원인재 지역의사 11명",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=621677",
-      "dateISO": "2026-08-17",
-      "dateText": "2026.08.17"
-    },
-    {
-      "id": "16044666a7b59ba4f2b7",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "[2027수시특집] 가톨릭관동대 1534명(94.3%).. '신설 학종 지역의사' 6명 모집",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=621971",
       "dateISO": "2026-08-17",
       "dateText": "2026.08.17"
     },
