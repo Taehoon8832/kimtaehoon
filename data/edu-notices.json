@@ -67,11 +67,51 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-17T22:46:06.150822Z",
-  "checkedAt": "2026-08-17T22:46:06.150817Z",
+  "updatedAt": "2026-08-17T23:10:41.963391Z",
+  "checkedAt": "2026-08-17T23:10:41.963386Z",
   "today": "2026-08-18",
   "count": 80,
   "notices": [
+    {
+      "id": "7d2410e2709add72867a",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "유아/초등 전 학년 대상 AI 교육 프로그램 '도전! AI 해결단' 2부작 방송",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623375",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "9fcb1da1bab96f48f427",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "빌리 '한국사 길잡이'에 도전... 교육부✕EBS '아이돌이 들려주는 수능 한국사' 여덟 번째 주자 나서",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623374",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "b2fb6f8a76550ca47b46",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "2027경찰대 편입 원서접수 개시.. 김영편입 합격 전략 설명회 22일 개최",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623082",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "eb5d07d816cc9c07553f",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "'2년차 맞은' 울산대 RISE(앵커)사업.. 산학연계 인재양성 본격화 '실전형 강의실 17개소, 3467명 참여'",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623164",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
     {
       "id": "d099754a40156b9a3f7f",
       "sourceId": "moe_blog",
@@ -133,16 +173,6 @@
       "dateText": "2026.08.15"
     },
     {
-      "id": "0cb653697aa50fe6df01",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "[단독] 2026 ARWU 국내톱 서울대 세계 87위 ‘하락’.. 연대 2위, 고대/성대/KAIST 공동3위",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623366",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
-    },
-    {
       "id": "0f3b895d5addb54925a1",
       "sourceId": "moe_blog",
       "sourceName": "교육부블로그",
@@ -173,42 +203,12 @@
       "dateText": "2026.08.14"
     },
     {
-      "id": "44d9ed14214cc94dfed0",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "이화여대 총장 미국 순방.. 'UKC 2026' 참가·USF와 교육연구협력 확대",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623371",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
       "id": "60ad0c9713f794ef1d9d",
       "sourceId": "moe_blog",
       "sourceName": "교육부블로그",
       "title": "교육부, 아셈-듀오 장학생 대상 수기 공모전 우수작 8개 선정",
       "preview": "교육부(장관 최교진)와 아셈-듀오(ASEM-DUO) 사무국*(사무국장 성극제, 이하 ‘사무국’)은 ‘제2회 수기 공모전’의 최종 우수작 8편을 선정하였다. * 아셈(ASEM) 회원국(아시아 21개국, 유럽 30개국)",
       "url": "https://blog.naver.com/moeblog/224377766710",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
-      "id": "a331bf3cc314dbb49439",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "경상국립대 글로컬대학사업단, 글로벌 항공우주기업 AIRBUS 현직 전문가 초청 진로 특강 개최",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623370",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14"
-    },
-    {
-      "id": "856e2536b94ff3dde8fc",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "경상국립대 글로컬대학사업단 2026학년도 하계 해외 단기연수 프로그램 성료",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623369",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
     },
