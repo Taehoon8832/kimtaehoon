@@ -67,8 +67,8 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-18T07:50:46.155465Z",
-  "checkedAt": "2026-08-18T07:50:46.155459Z",
+  "updatedAt": "2026-08-18T08:20:00.484020Z",
+  "checkedAt": "2026-08-18T08:20:00.484016Z",
   "today": "2026-08-18",
   "count": 80,
   "notices": [
@@ -93,12 +93,22 @@
       "dateText": "2026.08.18"
     },
     {
-      "id": "ca09baaea59a5577a6eb",
+      "id": "d34c3310981ce9b3d6bf",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "서울교대 'Google for Education Reference University' 선정",
+      "title": "전남광주통합특별시 이민외국인종합지원센터, 인도네시아 커뮤니티의 날 행사 성황리 개최",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623538",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623545",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "0ff67b38200b6d516ffc",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "성균관대-아주대-MIT 공동연구팀 LLM 활용 신소재 합성 플래닝 플랫폼 개발.. 국제학술지 게재",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623546",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
@@ -113,12 +123,12 @@
       "dateText": "2026.08.18"
     },
     {
-      "id": "eb0f1a0cb47ab8202ea5",
+      "id": "7bd56bede7c73b8f5de9",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "동의대 제14대 전경란 총장 취임",
+      "title": "국립한밭대 2026학년도 하계 교수법 집중워크숍 성료",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623537",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623544",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
@@ -133,16 +143,6 @@
       "dateText": "2026.08.18"
     },
     {
-      "id": "c56cfffb9bb075055d49",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국립순천대 전남 동부권 의과대학 및 교육(부속)병원 설립 추진 계획서 전남광주통합특별시에 제출",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623540",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
       "id": "91971b0b0cb93d58e845",
       "sourceId": "moe_blog",
       "sourceName": "교육부블로그",
@@ -153,22 +153,22 @@
       "dateText": "2026.08.18"
     },
     {
+      "id": "6bad60a9e5dfff060e74",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "경남대 다문화/탈북학생 대상 농어촌특별활동 캠프 운영… 3D프린팅 체험 등 창의교육 지원",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623547",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
       "id": "65bca54ef5ee33113087",
       "sourceId": "moe_blog",
       "sourceName": "교육부블로그",
       "title": "「학교급식법 시행령」 일부개정령안 국무회의 통과",
       "preview": "교육부(장관 최교진)는 8월 18일(화) 국무회의에서 「학교급식법 시행령」 일부개정령안이 심의·의결되었다고 밝혔다. 이번의 시행령 개정은 「학교급식법」의 개정(2026.2.19., 일부개정*, 2026.8.20.,",
       "url": "https://blog.naver.com/moeblog/224382031471",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "7c9e8bdfd6eacf21bff4",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "‘현 고1’ 2029수능 2028년 11월16일.. ‘통합형 수능 2년차’ 국수탐 선택과목 폐지, 탐구 영향력 주목",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623477",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
