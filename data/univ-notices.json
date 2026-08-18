@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-18",
-  "updatedAt": "2026-08-18T05:46:31.768Z",
-  "checkedAt": "2026-08-18T05:46:31.768Z",
+  "updatedAt": "2026-08-18T06:11:03.766Z",
+  "checkedAt": "2026-08-18T06:11:03.766Z",
   "sources": [
     {
       "id": "u001",
@@ -1581,6 +1581,17 @@
       "preview": "한경국립대 입학 공지사항 미리보기",
       "url": "https://ipsi.hknu.ac.kr/mojib/mojib.php?m_type=EGUK&m_year=2027_%EC%A0%84%EA%B8%B0",
       "homeUrl": "https://ipsi.hknu.ac.kr/",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "9f08f481fd1ac67c620c",
+      "univId": "u042",
+      "univName": "한양대(서울)",
+      "title": "2027학년도 한양대학교 정시 예체능 실기고사 안내사항",
+      "preview": "한양대(서울) 입학 공지사항 미리보기",
+      "url": "https://go.hanyang.ac.kr/web/notice/notice_view.do?bn=21674&m_type=IPSI",
+      "homeUrl": "https://go.hanyang.ac.kr/gate.do",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
@@ -3217,5 +3228,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=26 empty=25 fail=165 fresh=132"
+  "statusReason": "ok=26 empty=17 fail=173 fresh=133"
 }
