@@ -67,8 +67,8 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-18T04:22:18.945211Z",
-  "checkedAt": "2026-08-18T04:22:18.945205Z",
+  "updatedAt": "2026-08-18T04:58:07.302506Z",
+  "checkedAt": "2026-08-18T04:58:07.302501Z",
   "today": "2026-08-18",
   "count": 80,
   "notices": [
@@ -79,16 +79,6 @@
       "title": "안상욱 국립부경대 교수 EU 장 모네 석좌교수(Jean Monnet Chair) 선정",
       "preview": "베리타스알파 소식",
       "url": "https://www.veritas-a.com/news/articleView.html?idxno=623475",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "ba8739d4cad00ead4fab",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "안산대학교 응급구조학과 강릉에서 해변·수중 정화활동 실시",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623469",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
@@ -113,22 +103,22 @@
       "dateText": "2026.08.18"
     },
     {
-      "id": "e1ffb31602e7b4793c70",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "김천대 앵커사업단 자격교육/현장체험 연계 토탈케어 인재양성 프로그램 성료",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623471",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
       "id": "6dbcb33cea2d42ca2927",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
       "title": "국립한국해양대 AX스프린트300 참여…\"조선기자재 제조 AI, 1년 내 현장 상용화\"",
       "preview": "베리타스알파 소식",
       "url": "https://www.veritas-a.com/news/articleView.html?idxno=623472",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "02bdea3d8b9ba6e5da66",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "국립순천대 '당신의 영화를 만드세요!' AI 영화 교육 성료",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623479",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
@@ -143,22 +133,22 @@
       "dateText": "2026.08.18"
     },
     {
+      "id": "7985a0316e434f3d43f1",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "광주여대 앵커사업단 '성인학습자 AI 경력 재설계 진로취업캠프' 성공적 마무리",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623478",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
       "id": "e4b1a1f1666c66ad213b",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
       "title": "광주여대 상담심리학과 학생회 다양한 학과 행사로 소통/교류 활성화",
       "preview": "베리타스알파 소식",
       "url": "https://www.veritas-a.com/news/articleView.html?idxno=623474",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "689238cd863d6e983cb3",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "광주여대 대학일자리플러스센터.. 지역청년 취업역량 강화 위해 '광주청년일자리스테이션 광산'과 협약",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623470",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
@@ -179,6 +169,16 @@
       "title": "[당첨자 발표] 2027 수능완성 강의 수강 이벤트",
       "preview": "EBSi 알림",
       "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE_14&artclId=000000400499090",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "3e13d5b2da09db605728",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "[단독] 건국대가 전하는 2027논술 합격전략.. 인문 ‘정확한 독해’ 자연 ‘풀이과정 서술’",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623434",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
