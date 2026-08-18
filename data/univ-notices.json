@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-19",
-  "updatedAt": "2026-08-18T15:16:27.210Z",
-  "checkedAt": "2026-08-18T15:16:27.210Z",
+  "updatedAt": "2026-08-18T15:53:56.906Z",
+  "checkedAt": "2026-08-18T15:53:56.906Z",
   "sources": [
     {
       "id": "u001",
@@ -2344,17 +2344,6 @@
       "dateText": "2026.08.07"
     },
     {
-      "id": "ed3e6ee578f871dc4c08",
-      "univId": "u245",
-      "univName": "해군사관학교",
-      "title": "(공지) 2027학년도 제85기 해군사관생도 선발 1차 시험 성적확인 및 지원확정, 이의제기 절차 안내",
-      "preview": "해군사관학교 입학 공지사항 미리보기",
-      "url": "https://www.navy.ac.kr:4443/bbs/iphak/142/841485/artclView.do",
-      "homeUrl": "https://www.navy.ac.kr:4443/sites/iphak/index.do",
-      "dateISO": "2026-08-06",
-      "dateText": "2026.08.06"
-    },
-    {
       "id": "bfffdd1a8e7726f2de09",
       "univId": "u245",
       "univName": "해군사관학교",
@@ -3261,5 +3250,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=25 empty=24 fail=167 fresh=136"
+  "statusReason": "ok=26 empty=21 fail=169 fresh=135"
 }
