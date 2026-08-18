@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-18",
-  "updatedAt": "2026-08-18T13:10:37.339Z",
-  "checkedAt": "2026-08-18T13:10:37.339Z",
+  "updatedAt": "2026-08-18T14:05:47.627Z",
+  "checkedAt": "2026-08-18T14:05:47.627Z",
   "sources": [
     {
       "id": "u001",
@@ -2102,6 +2102,17 @@
       "dateText": "2026.08.12"
     },
     {
+      "id": "71eac5d013e8a5535d9d",
+      "univId": "u121",
+      "univName": "가톨릭꽃동네대",
+      "title": "2026학년도 후기 시간제등록생 모집요강 안내",
+      "preview": "가톨릭꽃동네대 입학 공지사항 미리보기",
+      "url": "https://www.kkot.ac.kr/ipsi/board/read?boardManagementNo=1143&boardNo=26299&searchCategory=&page=1&searchType=&searchWord=&menuLevel=2&menuNo=120",
+      "homeUrl": "https://www.kkot.ac.kr/ipsi/main/view/",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
       "id": "801015ac942e0edcc3d9",
       "univId": "u121",
       "univName": "가톨릭꽃동네대",
@@ -3261,5 +3272,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=27 empty=23 fail=166 fresh=136"
+  "statusReason": "ok=22 empty=19 fail=175 fresh=137"
 }
