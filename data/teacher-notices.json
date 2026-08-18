@@ -1,10 +1,19 @@
 {
   "source": "https://cafe.daum.net/applymate/Alvz",
-  "updatedAt": "2026-08-18T03:06:11.507223Z",
-  "checkedAt": "2026-08-18T03:06:11.507219Z",
+  "updatedAt": "2026-08-18T03:54:21.323343Z",
+  "checkedAt": "2026-08-18T03:54:21.323335Z",
   "today": "2026-08-18",
   "count": 40,
   "notices": [
+    {
+      "id": "fdf831f10999f590e220",
+      "sourceName": "사립학교 정교사",
+      "title": "[전남광주] 유당학원(서석중·고) - 국어,지구과학,역사",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
     {
       "id": "b776676215f5dc9bec52",
       "sourceName": "사립학교 정교사",
@@ -351,15 +360,6 @@
       "id": "af7a0e163206bd3cda2b",
       "sourceName": "사립학교 정교사",
       "title": "[서울] 단국대학(단대부고 外) - 수학 外",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "8c3da0f394c3ee8bdc5e",
-      "sourceName": "사립학교 정교사",
-      "title": "[전남광주] 삼육학원(호남삼육중) - 중국어 外",
       "preview": "",
       "url": "",
       "dateISO": "2026-08-18",
