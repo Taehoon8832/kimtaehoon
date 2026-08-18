@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-18",
-  "updatedAt": "2026-08-18T03:39:14.946Z",
-  "checkedAt": "2026-08-18T03:39:14.946Z",
+  "updatedAt": "2026-08-18T04:25:44.601Z",
+  "checkedAt": "2026-08-18T04:25:44.601Z",
   "sources": [
     {
       "id": "u001",
@@ -1537,6 +1537,17 @@
       "preview": "한예종 입학 공지사항 미리보기",
       "url": "https://www.karts.ac.kr/cop/bbs/selectBoardArticle.do?bbsId=BBSMSTR_000000000007&nttNo=70330",
       "homeUrl": "https://www.karts.ac.kr/main/appl.do",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "62b59d0505123f544821",
+      "univId": "u111",
+      "univName": "대전신대",
+      "title": "2026-2학기 수강신청 안내(일반대학원-석,박사…",
+      "preview": "대전신대 입학 공지사항 미리보기",
+      "url": "https://www.daejeon.ac.kr/bbs/board.php?bo_table=N01_02&wr_id=633",
+      "homeUrl": "https://www.daejeon.ac.kr/",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
@@ -3184,5 +3195,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=22 empty=38 fail=156 fresh=129"
+  "statusReason": "ok=25 empty=40 fail=151 fresh=130"
 }
