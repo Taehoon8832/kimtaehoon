@@ -67,88 +67,98 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-18T02:04:08.177727Z",
-  "checkedAt": "2026-08-18T02:04:08.177721Z",
+  "updatedAt": "2026-08-18T03:07:02.893533Z",
+  "checkedAt": "2026-08-18T03:07:02.893528Z",
   "today": "2026-08-18",
-  "count": 80,
+  "count": 72,
   "notices": [
     {
-      "id": "3046c632e09a34a3a136",
+      "id": "0e41f64261108bb834be",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "충북보건과학대 야구부 대통령기 전국대학야구대회 첫 승",
+      "title": "평택대 2025학년도 후기 대학원 학위수여식 개최",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623440",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623454",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
     {
-      "id": "9c6f690a0311ca96655f",
+      "id": "d26380303791a3bfaab5",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "전남대 여수캠퍼스 전남 앵커 사업단 '초광역 지/산/학/연 상생협력 포럼' 성료",
+      "title": "제주대-한화오션,'친환경 해양 MRO'미래 인재 양성 위해 맞손",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623433",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623451",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
     {
-      "id": "701a0fbd62c1bd7a9965",
+      "id": "236acc65766002a2bf57",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "비눗방울에서 찾은 '숨 쉬는 폐'의 해법",
+      "title": "제주대 WFK IT봉사단 베트남 동아대서 'AI 기술/한국어/K-Culture'봉사활동 펼쳐",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623438",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623453",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
     {
-      "id": "f2142cde7caa8cac2001",
+      "id": "a39da96dab6df5764348",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "동국대 WISE캠퍼스 전교생 생성형 AI 활용환경 구축… AI 교육혁신 본격화",
+      "title": "인제대 씨름부 대한체육회장기 메달 5개 쓸어담아… 청장급 1학년 정현담 우승 쾌거",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623435",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623458",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
     {
-      "id": "cb8b827d6756b3e4bf83",
+      "id": "eded6aec8bd1c7996587",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "KAIST 환자 대신'칩'이 먼저 항암제 맞아본다…뇌종양 맞춤치료 가능성 열어",
+      "title": "국립창원대 4개 캠퍼스 통합 순항…캠퍼스통합관리원 안정적 정착",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623439",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623459",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
     {
-      "id": "f02c25fd5dc86a9bed19",
+      "id": "d1706c3729bbdd439e29",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "KAIST '실리콘밸리 전설'제프 딘 초청 특별강연 /연구 교류",
+      "title": "국립공주대 일본 대학생 대상 '2026 KNU 한국어/한국문화 단기 연수' 운영",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623436",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623457",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
     {
-      "id": "24e925976acd9d7a4a61",
+      "id": "97fc1dcb4cd0fcccad8a",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "'영남이공대 간호학과 엄준식 졸업생, 육군 간호장교로 군 의료 현장 누빈다'",
+      "title": "국립공주대 교원창업기업 차세대 반도체용 유리기판 TGV 내부결함 비파괴 전수검사 장비 개발 추진",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623441",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623455",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
     {
-      "id": "50199f0cb889abbfbf71",
+      "id": "80b9d3b121691ac63bbd",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "\"14개 전문대학 입시정보 한자리에\"…8월 22일 킨텍스서 전문대학 공동 입시박람회",
+      "title": "국립공주대 RISE사업단 충남도민을 대상 탄소중립 전문 인재 탄소감축평가관리사 양성 추진",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623437",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623456",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "0b5d815389f2a9edc0c8",
+      "sourceId": "ebsi",
+      "sourceName": "EBSi",
+      "title": "[당첨자 발표] 2027 수능완성 강의 수강 이벤트",
+      "preview": "EBSi 알림",
+      "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE_14&artclId=000000400499090",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
@@ -293,16 +303,6 @@
       "dateText": "2026.08.13"
     },
     {
-      "id": "e479dac5228a8ed7ab69",
-      "sourceId": "ebsi",
-      "sourceName": "EBSi",
-      "title": "최신 정보를 바탕으로 체계적으로 준비하는 입시 전략 <고교학점제 가이드>",
-      "preview": "EBSi 알림",
-      "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE_01&artclId=000000400494555",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
       "id": "243de2f145b3407292af",
       "sourceId": "edupress",
       "sourceName": "에듀프레스",
@@ -433,16 +433,6 @@
       "dateText": "2026.08.05"
     },
     {
-      "id": "ad968dd9343977fac20f",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2027학년도 대학원 정원조정 및 설치·운영 세부기준",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106856&lev=0&m=0303&s=moe",
-      "dateISO": "2026-08-05",
-      "dateText": "2026.08.05"
-    },
-    {
       "id": "00801a3b0b64c5657ace",
       "sourceId": "sen",
       "sourceName": "서울시교육청",
@@ -461,36 +451,6 @@
       "url": "https://www.sen.go.kr/user/bbs/BD_selectBbsList.do?q_bbsSn=1036",
       "dateISO": "2026-07-28",
       "dateText": "2026.07.28"
-    },
-    {
-      "id": "7a51baeb19e84fa8436a",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2026년도 산업교육 및 산학연협력 시행계획",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106791&lev=0&m=0303&s=moe",
-      "dateISO": "2026-07-27",
-      "dateText": "2026.07.27"
-    },
-    {
-      "id": "90eef674cdaee188ca91",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2026년도 법학전문대학원 취약계층 장학금 지원사업 기본계획",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106779&lev=0&m=0303&s=moe",
-      "dateISO": "2026-07-27",
-      "dateText": "2026.07.27"
-    },
-    {
-      "id": "3193c29867d87fba9a8c",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2026 대학 창업 운영 가이드 발간 안내",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106786&lev=0&m=0303&s=moe",
-      "dateISO": "2026-07-27",
-      "dateText": "2026.07.27"
     },
     {
       "id": "55fd2008f91571880899",
@@ -593,16 +553,6 @@
       "dateText": "2026.07.09"
     },
     {
-      "id": "1a93bd0002bdc262c36e",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2026년 전문대학 혁신지원사업 기본계획",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106665&lev=0&m=0303&s=moe",
-      "dateISO": "2026-07-09",
-      "dateText": "2026.07.09"
-    },
-    {
       "id": "0a6d6c9a7e12c53b89c4",
       "sourceId": "jongro",
       "sourceName": "종로학원",
@@ -621,26 +571,6 @@
       "url": "https://www.jongro.co.kr/reports/examAnalysisView.asp?idx=7688&page=1&s_academicyear=&s_option1=&s_option2=&s_option3=&s_option4=&s_key=&s_value=&s_intPageSize=12",
       "dateISO": "2026-07-09",
       "dateText": "2026.07.09"
-    },
-    {
-      "id": "f1cb8fe6cd24bc39097c",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2026학년도 전국 전문대학 현황",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106664&lev=0&m=0303&s=moe",
-      "dateISO": "2026-07-08",
-      "dateText": "2026.07.08"
-    },
-    {
-      "id": "ab224be6ad030a2dd9d6",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2026학년도 등록금 통계조사분석시스템 자료 입력 안내",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106660&lev=0&m=0303&s=moe",
-      "dateISO": "2026-07-08",
-      "dateText": "2026.07.08"
     },
     {
       "id": "fda266d28d71bb171f39",
@@ -689,16 +619,6 @@
       "title": "2027학년도 대학수학능력시험 시행...",
       "preview": "평가원보도 공지",
       "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095611&lev=0&m=0302&s=suneung",
-      "dateISO": "2026-07-01",
-      "dateText": "2026.07.01"
-    },
-    {
-      "id": "a0aa87a1e4180dd8cc5f",
-      "sourceId": "moe",
-      "sourceName": "교육부",
-      "title": "2026학년도 2학기 학자금대출 기본계획",
-      "preview": "교육부 정책",
-      "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106606&lev=0&m=0303&s=moe",
       "dateISO": "2026-07-01",
       "dateText": "2026.07.01"
     },
