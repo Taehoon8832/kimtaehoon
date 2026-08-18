@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-18T23:41:54.636Z",
-  "checkedAt": "2026-08-18T23:41:54.636Z",
+  "updatedAt": "2026-08-18T23:57:14.667Z",
+  "checkedAt": "2026-08-18T23:57:14.667Z",
   "today": "2026-08-19",
   "count": 24,
   "notices": [
@@ -20,7 +20,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 12,
-      "popularScore": 2.222177
+      "popularScore": 2.226671
     },
     {
       "id": "5ec199c76abc0acdd08b",
@@ -34,8 +34,8 @@
       "deadlineISO": "2026-09-13",
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
-      "popularRank": 16,
-      "popularScore": 2.182807
+      "popularRank": 17,
+      "popularScore": 2.18413
     },
     {
       "id": "d2a5f641a20711825fa6",
@@ -50,7 +50,7 @@
       "deadlineText": "2026.10.16",
       "alwaysHire": false,
       "popularRank": 20,
-      "popularScore": 1.994274
+      "popularScore": 1.9900689
     },
     {
       "id": "f19cd489697422d474e6",
@@ -65,7 +65,7 @@
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
       "popularRank": 2,
-      "popularScore": 3.066342
+      "popularScore": 3.080658
     },
     {
       "id": "9135ba48be9d10365323",
@@ -80,7 +80,7 @@
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
       "popularRank": 6,
-      "popularScore": 2.356728
+      "popularScore": 2.3657238
     },
     {
       "id": "f4aebd6330a249f3a9f7",
@@ -94,8 +94,8 @@
       "deadlineISO": "2026-10-12",
       "deadlineText": "2026.10.12",
       "alwaysHire": false,
-      "popularRank": 18,
-      "popularScore": 2.175795
+      "popularRank": 16,
+      "popularScore": 2.187059
     },
     {
       "id": "94ba4f049464b0af21eb",
@@ -110,7 +110,7 @@
       "deadlineText": "2026.08.19",
       "alwaysHire": false,
       "popularRank": 22,
-      "popularScore": 1.8712499
+      "popularScore": 1.8627269
     },
     {
       "id": "ecbeaf7b86cc728ed0e1",
@@ -125,22 +125,7 @@
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
       "popularRank": 23,
-      "popularScore": 1.80303
-    },
-    {
-      "id": "5c58602021c8343a372a",
-      "jobId": "49734924",
-      "companyName": "라바웨이브",
-      "title": "[주 4일 근무] 2026년 하반기 채용 (경력)",
-      "preview": "경력 · 정규직 · 마감 D-22 · 접수마감 2026.09.10",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49734924",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11",
-      "deadlineISO": "2026-09-10",
-      "deadlineText": "2026.09.10",
-      "alwaysHire": false,
-      "popularRank": 24,
-      "popularScore": 1.802193
+      "popularScore": 1.8104919
     },
     {
       "id": "88a0735cd26b5ca6d82a",
@@ -155,7 +140,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 3.177302
+      "popularScore": 3.18802
     },
     {
       "id": "cfc1e393775a21db0610",
@@ -170,7 +155,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 4,
-      "popularScore": 2.536928
+      "popularScore": 2.536646
     },
     {
       "id": "dcb896a5cc33aea963d5",
@@ -185,7 +170,7 @@
       "deadlineText": "2026.09.30",
       "alwaysHire": false,
       "popularRank": 7,
-      "popularScore": 2.335521
+      "popularScore": 2.336639
     },
     {
       "id": "adce3b32741e3448d142",
@@ -200,7 +185,7 @@
       "deadlineText": "2026.08.24",
       "alwaysHire": false,
       "popularRank": 8,
-      "popularScore": 2.333666
+      "popularScore": 2.326436
     },
     {
       "id": "68c4a721b6baf77b0337",
@@ -215,7 +200,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 11,
-      "popularScore": 2.247098
+      "popularScore": 2.24799
     },
     {
       "id": "4d49c686f19d67d20bdf",
@@ -229,8 +214,8 @@
       "deadlineISO": "2026-08-19",
       "deadlineText": "2026.08.19",
       "alwaysHire": false,
-      "popularRank": 14,
-      "popularScore": 2.1994228
+      "popularRank": 15,
+      "popularScore": 2.1984
     },
     {
       "id": "c679883f7c5fb9db5264",
@@ -245,7 +230,7 @@
       "deadlineText": "2026.08.24",
       "alwaysHire": false,
       "popularRank": 21,
-      "popularScore": 1.9041729
+      "popularScore": 1.908873
     },
     {
       "id": "7ff497d619edbb2ccb79",
@@ -260,7 +245,7 @@
       "deadlineText": "2026.09.06",
       "alwaysHire": false,
       "popularRank": 9,
-      "popularScore": 2.280996
+      "popularScore": 2.321337
     },
     {
       "id": "5bdf117422a38ac42fd6",
@@ -275,7 +260,22 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 13,
-      "popularScore": 2.218771
+      "popularScore": 2.222889
+    },
+    {
+      "id": "94be55d131a72c4b3e55",
+      "jobId": "49730817",
+      "companyName": "㈜제너시스BBQ",
+      "title": "[제너시스BBQ] 자사 앱 서비스 기획 (PO/PM)",
+      "preview": "경력 · 정규직 · 마감 D-17 · 접수마감 2026.09.05",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49730817",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06",
+      "deadlineISO": "2026-09-05",
+      "deadlineText": "2026.09.05",
+      "alwaysHire": false,
+      "popularRank": 24,
+      "popularScore": 1.8018401
     },
     {
       "id": "52e3de0f3e258ff8c87a",
@@ -290,7 +290,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 3,
-      "popularScore": 2.988234
+      "popularScore": 2.9828281
     },
     {
       "id": "cac58faef283c6e518f7",
@@ -304,8 +304,8 @@
       "deadlineISO": "2026-09-25",
       "deadlineText": "2026.09.25",
       "alwaysHire": false,
-      "popularRank": 15,
-      "popularScore": 2.197599
+      "popularRank": 14,
+      "popularScore": 2.207758
     },
     {
       "id": "e5645d380f01e4db6d17",
@@ -320,7 +320,7 @@
       "deadlineText": "2026.08.29",
       "alwaysHire": false,
       "popularRank": 10,
-      "popularScore": 2.26495
+      "popularScore": 2.2757459
     },
     {
       "id": "c4b6e2d9e1ed5272120e",
@@ -335,7 +335,7 @@
       "deadlineText": "2026.09.27",
       "alwaysHire": false,
       "popularRank": 5,
-      "popularScore": 2.486409
+      "popularScore": 2.491428
     },
     {
       "id": "06003330fd71c9d64a96",
@@ -349,8 +349,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 17,
-      "popularScore": 2.182524
+      "popularRank": 18,
+      "popularScore": 2.184023
     },
     {
       "id": "b2d647ba9dc240a68915",
@@ -365,7 +365,7 @@
       "deadlineText": "2026.08.20",
       "alwaysHire": false,
       "popularRank": 19,
-      "popularScore": 2.148879
+      "popularScore": 2.150991
     }
   ],
   "stale": false,
