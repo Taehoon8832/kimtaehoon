@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-18T02:46:07.748Z",
-  "checkedAt": "2026-08-18T02:46:07.748Z",
+  "updatedAt": "2026-08-18T03:28:41.148Z",
+  "checkedAt": "2026-08-18T03:28:41.148Z",
   "today": "2026-08-18",
   "count": 24,
   "notices": [
@@ -19,8 +19,8 @@
       "deadlineISO": "2026-08-30",
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
-      "popularRank": 3,
-      "popularScore": 3.102936
+      "popularRank": 2,
+      "popularScore": 3.135621
     },
     {
       "id": "d32297f0bdf130b7578a",
@@ -35,22 +35,22 @@
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
       "popularRank": 15,
-      "popularScore": 2.115629
+      "popularScore": 2.113183
     },
     {
-      "id": "d5ab40d5709af5a35158",
-      "jobId": "49780983",
-      "companyName": "㈜이비엠",
-      "title": "[서울 / 교대역] (주)이비엠 헬스케어 PM 채용",
-      "preview": "신입·경력 · 정규직·계약직 · 마감 D-55 · 접수마감 2026.10.12",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49780983",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13",
-      "deadlineISO": "2026-10-12",
-      "deadlineText": "2026.10.12",
+      "id": "37198593f37cd21381af",
+      "jobId": "49789080",
+      "companyName": "㈜에프엑스아이피",
+      "title": "[fxIP/에프엑스아이피] 프로젝트 매니저(PM) 경력 팀원 채용",
+      "preview": "경력 · 정규직 · 마감 D-10 · 접수마감 2026.08.28",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49789080",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14",
+      "deadlineISO": "2026-08-28",
+      "deadlineText": "2026.08.28",
       "alwaysHire": false,
-      "popularRank": 11,
-      "popularScore": 2.212177
+      "popularRank": 22,
+      "popularScore": 1.684106
     },
     {
       "id": "94ba4f049464b0af21eb",
@@ -64,38 +64,8 @@
       "deadlineISO": "2026-08-19",
       "deadlineText": "2026.08.19",
       "alwaysHire": false,
-      "popularRank": 21,
-      "popularScore": 1.733952
-    },
-    {
-      "id": "1f89ddb8e103ed17b7c4",
-      "jobId": "49779534",
-      "companyName": "미스터픽",
-      "title": "[첫차]와 함께 할 프로덕트 매니저(PM)를 찾습니다.",
-      "preview": "경력 · 정규직 · 마감 D-26 · 접수마감 2026.09.13",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49779534",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13",
-      "deadlineISO": "2026-09-13",
-      "deadlineText": "2026.09.13",
-      "alwaysHire": false,
-      "popularRank": 23,
-      "popularScore": 1.6792741
-    },
-    {
-      "id": "b6e91a0cae9afb0618a9",
-      "jobId": "49780876",
-      "companyName": "㈜키메디",
-      "title": "플랫폼 서비스 기획 및 운영 담당자 채용",
-      "preview": "경력 · 정규직 · 마감 D-55 · 접수마감 2026.10.12",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49780876",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13",
-      "deadlineISO": "2026-10-12",
-      "deadlineText": "2026.10.12",
-      "alwaysHire": false,
-      "popularRank": 24,
-      "popularScore": 1.678064
+      "popularRank": 19,
+      "popularScore": 1.731116
     },
     {
       "id": "7f8ca886fffaf7d5d07e",
@@ -110,7 +80,7 @@
       "deadlineText": "2026.09.11",
       "alwaysHire": false,
       "popularRank": 16,
-      "popularScore": 1.902411
+      "popularScore": 1.898193
     },
     {
       "id": "5c58602021c8343a372a",
@@ -124,8 +94,8 @@
       "deadlineISO": "2026-09-10",
       "deadlineText": "2026.09.10",
       "alwaysHire": false,
-      "popularRank": 22,
-      "popularScore": 1.727791
+      "popularRank": 20,
+      "popularScore": 1.729534
     },
     {
       "id": "88a0735cd26b5ca6d82a",
@@ -140,7 +110,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 3.228565
+      "popularScore": 3.1948981
     },
     {
       "id": "cfc1e393775a21db0610",
@@ -155,7 +125,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 4,
-      "popularScore": 2.441225
+      "popularScore": 2.418256
     },
     {
       "id": "12bf98b40800dd3a7915",
@@ -169,8 +139,8 @@
       "deadlineISO": "2026-08-24",
       "deadlineText": "2026.08.24",
       "alwaysHire": false,
-      "popularRank": 6,
-      "popularScore": 2.404342
+      "popularRank": 7,
+      "popularScore": 2.369786
     },
     {
       "id": "68c4a721b6baf77b0337",
@@ -185,7 +155,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 10,
-      "popularScore": 2.224289
+      "popularScore": 2.242717
     },
     {
       "id": "4d49c686f19d67d20bdf",
@@ -199,8 +169,8 @@
       "deadlineISO": "2026-08-19",
       "deadlineText": "2026.08.19",
       "alwaysHire": false,
-      "popularRank": 13,
-      "popularScore": 2.162138
+      "popularRank": 12,
+      "popularScore": 2.158113
     },
     {
       "id": "7ff497d619edbb2ccb79",
@@ -214,8 +184,8 @@
       "deadlineISO": "2026-09-06",
       "deadlineText": "2026.09.06",
       "alwaysHire": false,
-      "popularRank": 7,
-      "popularScore": 2.354978
+      "popularRank": 6,
+      "popularScore": 2.397888
     },
     {
       "id": "c7fc0fb3d0784ba366ec",
@@ -230,7 +200,7 @@
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
       "popularRank": 14,
-      "popularScore": 2.122353
+      "popularScore": 2.133437
     },
     {
       "id": "94be55d131a72c4b3e55",
@@ -244,8 +214,8 @@
       "deadlineISO": "2026-09-05",
       "deadlineText": "2026.09.05",
       "alwaysHire": false,
-      "popularRank": 19,
-      "popularScore": 1.774729
+      "popularRank": 17,
+      "popularScore": 1.8267239
     },
     {
       "id": "52e3de0f3e258ff8c87a",
@@ -259,8 +229,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 2,
-      "popularScore": 3.1817439
+      "popularRank": 3,
+      "popularScore": 3.121248
     },
     {
       "id": "683c129a57bf387e0cbf",
@@ -274,8 +244,23 @@
       "deadlineISO": "2026-09-04",
       "deadlineText": "2026.09.04",
       "alwaysHire": false,
-      "popularRank": 12,
-      "popularScore": 2.175993
+      "popularRank": 11,
+      "popularScore": 2.163537
+    },
+    {
+      "id": "39ae2dd743e4cb55119a",
+      "jobId": "49725565",
+      "companyName": "㈜아이서포트",
+      "title": "AI 서비스 기획",
+      "preview": "신입·경력 · 정규직·계약직·프리랜서 · 마감 D-13 · 접수마감 2026.08.31",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49725565",
+      "dateISO": "2026-08-05",
+      "dateText": "2026.08.05",
+      "deadlineISO": "2026-08-31",
+      "deadlineText": "2026.08.31",
+      "alwaysHire": false,
+      "popularRank": 24,
+      "popularScore": 1.658808
     },
     {
       "id": "621244133718cacd4b65",
@@ -290,7 +275,22 @@
       "deadlineText": "2026.08.18",
       "alwaysHire": false,
       "popularRank": 5,
-      "popularScore": 2.425281
+      "popularScore": 2.417488
+    },
+    {
+      "id": "cac58faef283c6e518f7",
+      "jobId": "49707856",
+      "companyName": "펜타시큐리티㈜",
+      "title": "기획실 Product Manager 인재 모집 (신입/경력)",
+      "preview": "ANY · 정규직·계약직 · 마감 D-38 · 접수마감 2026.09.25",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49707856",
+      "dateISO": "2026-08-03",
+      "dateText": "2026.08.03",
+      "deadlineISO": "2026-09-25",
+      "deadlineText": "2026.09.25",
+      "alwaysHire": false,
+      "popularRank": 13,
+      "popularScore": 2.157322
     },
     {
       "id": "8c7b1b063c58f34fc010",
@@ -305,7 +305,7 @@
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
       "popularRank": 9,
-      "popularScore": 2.33163
+      "popularScore": 2.314364
     },
     {
       "id": "73bb15cd76d933bc580a",
@@ -319,23 +319,8 @@
       "deadlineISO": "2026-08-27",
       "deadlineText": "2026.08.27",
       "alwaysHire": false,
-      "popularRank": 20,
-      "popularScore": 1.742391
-    },
-    {
-      "id": "50681cf6ac76954ab4e8",
-      "jobId": "49622313",
-      "companyName": "(주)키투웨이",
-      "title": "경영 컨설팅 경력직 컨설턴트 채용",
-      "preview": "경력 · 정규직·계약직 · 마감 D-2 · 접수마감 2026.08.20",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49622313",
-      "dateISO": "2026-07-21",
-      "dateText": "2026.07.21",
-      "deadlineISO": "2026-08-20",
-      "deadlineText": "2026.08.20",
-      "alwaysHire": false,
-      "popularRank": 17,
-      "popularScore": 1.816267
+      "popularRank": 21,
+      "popularScore": 1.697508
     },
     {
       "id": "b2d647ba9dc240a68915",
@@ -350,7 +335,22 @@
       "deadlineText": "2026.08.20",
       "alwaysHire": false,
       "popularRank": 18,
-      "popularScore": 1.8106899
+      "popularScore": 1.820613
+    },
+    {
+      "id": "50681cf6ac76954ab4e8",
+      "jobId": "49622313",
+      "companyName": "(주)키투웨이",
+      "title": "경영 컨설팅 경력직 컨설턴트 채용",
+      "preview": "경력 · 정규직·계약직 · 마감 D-2 · 접수마감 2026.08.20",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49622313",
+      "dateISO": "2026-07-21",
+      "dateText": "2026.07.21",
+      "deadlineISO": "2026-08-20",
+      "deadlineText": "2026.08.20",
+      "alwaysHire": false,
+      "popularRank": 23,
+      "popularScore": 1.660676
     },
     {
       "id": "926e7ebc71963fe292b4",
@@ -365,7 +365,7 @@
       "deadlineText": "2026.08.19",
       "alwaysHire": false,
       "popularRank": 8,
-      "popularScore": 2.33515
+      "popularScore": 2.314936
     }
   ],
   "stale": false,
