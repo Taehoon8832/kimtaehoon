@@ -67,8 +67,8 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-18T11:01:41.439266Z",
-  "checkedAt": "2026-08-18T11:01:41.439260Z",
+  "updatedAt": "2026-08-18T11:36:24.159254Z",
+  "checkedAt": "2026-08-18T11:36:24.159247Z",
   "today": "2026-08-18",
   "count": 80,
   "notices": [
@@ -83,12 +83,12 @@
       "dateText": "2026.08.18"
     },
     {
-      "id": "58c64bb84efcf635d78e",
+      "id": "6aa3c9d55432a64a6a1c",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "호남대 패션디자인학과 지역 청소년 대상 '주니어패션스쿨' 운영",
+      "title": "전남대박물관 세계유산 문화강좌 개설",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623534",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623548",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
@@ -103,22 +103,12 @@
       "dateText": "2026.08.18"
     },
     {
-      "id": "6fa0879468bbf7682aef",
+      "id": "0ff67b38200b6d516ffc",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "인천대 GTEP 20기 송도 뷰티&헬스케어쇼 참가… 해외 바이어 상담/통역 실무 수행",
+      "title": "성균관대-아주대-MIT 공동연구팀 LLM 활용 신소재 합성 플래닝 플랫폼 개발.. 국제학술지 게재",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623532",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "ca09baaea59a5577a6eb",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "서울교대 'Google for Education Reference University' 선정",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623538",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623546",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
@@ -143,22 +133,22 @@
       "dateText": "2026.08.18"
     },
     {
-      "id": "d87855dff443c8f12e9b",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국립창원대 통합대학 출범 후 첫 통합 학위수여식 개최합니다!",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623541",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
       "id": "91971b0b0cb93d58e845",
       "sourceId": "moe_blog",
       "sourceName": "교육부블로그",
       "title": "교육부, 소방청과 함께 ‘119안심콜’로 신속한 대피 지원",
       "preview": "교육부(장관 최교진)와 소방청(청장직무대행 최용철)은 8월 20일부터 9월 30일까지 전국 유치원 유아와 초등학교 학생, 보호자를 대상으로 화재 대피 안내 기능이 추가된 「119안심콜」 가입을 집중 홍보한다. 이번",
       "url": "https://blog.naver.com/moeblog/224382039555",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "5f73862420e784543ba3",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "경상국립대 2027 수시 3729명 모집… 전체의 80%",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623549",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
@@ -209,6 +199,16 @@
       "title": "[당첨자 발표] 2027 수능완성 강의 수강 이벤트",
       "preview": "EBSi 알림",
       "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE_14&artclId=000000400499090",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "4cf5910424b7c8c6153d",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "[단독] 전북대 사정관이 말하는 2027학종.. '화려한 학생부보다 연계성/흐름이 핵심'",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623447",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
