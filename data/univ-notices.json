@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-18",
-  "updatedAt": "2026-08-18T00:07:29.239Z",
-  "checkedAt": "2026-08-18T00:07:29.239Z",
+  "updatedAt": "2026-08-18T01:47:38.169Z",
+  "checkedAt": "2026-08-18T01:47:38.169Z",
   "sources": [
     {
       "id": "u001",
@@ -1529,6 +1529,17 @@
     }
   ],
   "notices": [
+    {
+      "id": "498fe5a4629055488038",
+      "univId": "u111",
+      "univName": "대전신대",
+      "title": "2026년 상반기 인재육성(과학) 장학생 선발 안…",
+      "preview": "2026-05-06 등록 2026-2학기 재학생(학부 / 대학원 통합) 등… 2026-08-18",
+      "url": "https://www.daejeon.ac.kr/bbs/board.php?bo_table=N01_04&wr_id=500",
+      "homeUrl": "https://www.daejeon.ac.kr/",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
     {
       "id": "984bb757db9fb257ad63",
       "univId": "u245",
@@ -3140,5 +3151,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=23 empty=14 fail=179 fresh=125"
+  "statusReason": "ok=19 empty=28 fail=169 fresh=126"
 }
