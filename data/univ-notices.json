@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-18",
-  "updatedAt": "2026-08-18T07:11:52.674Z",
-  "checkedAt": "2026-08-18T07:11:52.674Z",
+  "updatedAt": "2026-08-18T07:58:14.785Z",
+  "checkedAt": "2026-08-18T07:58:14.785Z",
   "sources": [
     {
       "id": "u001",
@@ -1559,6 +1559,17 @@
       "preview": "2026-05-06 등록 2026-2학기 재학생(학부 / 대학원 통합) 등… 2026-08-18",
       "url": "https://www.daejeon.ac.kr/bbs/board.php?bo_table=N01_04&wr_id=500",
       "homeUrl": "https://www.daejeon.ac.kr/",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "940e1182df9fe5bc343a",
+      "univId": "u044",
+      "univName": "한예종",
+      "title": "2027학년도 8월입시 예술전문사과정 예비시험 합격자 명단 공지",
+      "preview": "한예종 입학 공지사항 미리보기",
+      "url": "https://www.karts.ac.kr/cop/bbs/selectBoardArticle.do?bbsId=BBSMSTR_000000000007&nttNo=70333",
+      "homeUrl": "https://www.karts.ac.kr/main/appl.do",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
@@ -3228,5 +3239,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=25 empty=24 fail=167 fresh=133"
+  "statusReason": "ok=24 empty=34 fail=158 fresh=134"
 }
