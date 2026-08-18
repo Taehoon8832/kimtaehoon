@@ -106,7 +106,7 @@ def add_days(iso: str, delta: int) -> str:
         return iso
 
 
-def http_get(url: str, accept: str, timeout: int = 45) -> str:
+def http_get(url: str, accept: str, timeout: int = 45, session=None) -> str:
     """GET with Chrome-impersonation fallback (Actions/Cloudflare 우회)."""
     headers = {
         "User-Agent": UA,
@@ -121,20 +121,37 @@ def http_get(url: str, accept: str, timeout: int = 45) -> str:
     try:
         from curl_cffi import requests as cf_requests  # type: ignore
 
-        res = cf_requests.get(
-            url,
-            headers=headers,
-            timeout=timeout,
-            impersonate="chrome124",
-            allow_redirects=True,
-        )
-        if res.status_code >= 400:
-            raise RuntimeError(f"http_{res.status_code}")
-        text = res.text or ""
-        if text:
-            return text
+        impersonations = ("chrome124", "chrome131", "chrome120", "safari17_0", "firefox133")
+        last_cf_err: Exception | None = None
+        for imp in impersonations:
+            try:
+                sess = session
+                if sess is None:
+                    sess = cf_requests.Session(impersonate=imp)
+                    # 목록 페이지로 쿠키 확보 후 API 호출
+                    warm = sess.get(LIST_URL, headers=headers, timeout=timeout, allow_redirects=True)
+                    print(f"curl_cffi warm {imp} status={getattr(warm, 'status_code', '?')}")
+                res = sess.get(
+                    url,
+                    headers=headers,
+                    timeout=timeout,
+                    allow_redirects=True,
+                )
+                if res.status_code >= 400:
+                    raise RuntimeError(f"http_{res.status_code}")
+                text = res.text or ""
+                if re.search(r"just a moment|cloudflare|cf-browser-verification", text, re.I):
+                    raise RuntimeError(f"cloudflare_challenge:{imp}")
+                if text:
+                    return text
+            except Exception as e:
+                last_cf_err = e
+                print(f"warn: curl_cffi {imp} failed: {e}")
+                session = None
+        if last_cf_err:
+            print(f"warn: curl_cffi all impersonations failed: {last_cf_err}")
     except Exception as e:
-        print(f"warn: curl_cffi fetch failed: {e}")
+        print(f"warn: curl_cffi unavailable: {e}")
 
     # 2) 표준 urllib
     from _board_io import CTX

@@ -5744,6 +5744,12 @@
         return true;
       }
 
+      function recruitLiveLabelText() {
+        const label = formatUpdatedLabel(recruitUpdatedAt);
+        const stale = Boolean(recruitBoardData?.stale || recruitBoardData?.status === "cached");
+        return stale ? `${label}·지연` : label;
+      }
+
       function hydrateRecruitFromCache() {
         if (recruitPool.length) return false;
         const cached = readRecruitCache();
@@ -5788,14 +5794,14 @@
         }
 
         if (!list.length) {
-          if (recruitPool.length) setRecruitLive(true, formatUpdatedLabel(recruitUpdatedAt));
+          if (recruitPool.length) setRecruitLive(true, recruitLiveLabelText());
           else setRecruitLive(false, "불러오는 중");
           recruitListEl.innerHTML =
             `<div class="univ-notice-empty">석·박사 채용 정보를 불러오는 중입니다…<br>잠시 후 자동으로 갱신됩니다.</div>`;
           return;
         }
 
-        setRecruitLive(true, formatUpdatedLabel(recruitUpdatedAt));
+        setRecruitLive(true, recruitLiveLabelText());
         let lastDate = null;
         recruitListEl.innerHTML = list.map((r) => {
           const title = escapeHtml(r.title);
@@ -5883,8 +5889,16 @@
 
       function recruitPayloadScore(payload) {
         if (!payload || !Array.isArray(payload.notices) || !payload.notices.length) return -1;
-        const t = Date.parse(payload.checkedAt || payload.updatedAt || 0);
-        return Number.isFinite(t) ? t : 0;
+        // checkedAt만 갱신된 stale 캐시가 최신 본문을 덮어쓰지 않게 updatedAt 우선
+        const content = Date.parse(payload.updatedAt || 0);
+        const checked = Date.parse(payload.checkedAt || 0);
+        let score = Number.isFinite(content) ? content : 0;
+        if (Number.isFinite(checked) && checked > score) {
+          // stale 심박은 약한 가산만 (본문 시각을 이기지 못함)
+          score += Math.min(60 * 1000, Math.max(0, checked - score) * 0.001);
+        }
+        if (payload.stale || payload.status === "cached") score -= 86_400_000;
+        return score;
       }
 
       async function pullRecruitPayload() {
