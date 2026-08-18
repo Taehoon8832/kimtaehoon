@@ -1,10 +1,82 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-18T22:57:49.448051Z",
-  "checkedAt": "2026-08-18T22:57:49.448047Z",
+  "updatedAt": "2026-08-18T23:16:23.086760Z",
+  "checkedAt": "2026-08-18T23:16:23.086755Z",
   "today": "2026-08-19",
   "count": 37,
   "notices": [
+    {
+      "id": "fa4280ad547db5481ad4",
+      "sourceName": "수만휘",
+      "title": "하 엄마랑 말이 안통하는데 제가 이상한건가요",
+      "preview": "[┃Team10 수험생 게시판] 영어학원을 다녔었는데 중간고사때 다니고 기말고사는 혼자했어요. 학원에서는 본문 수업 쭉 나가고 문장 배열부터해서 본문도 중간때 많이 자동으로 외워졌고 문제량도 많아서 대비가 되었는데 ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29612441",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
+      "id": "c9fab440f4ff59228404",
+      "sourceName": "수만휘",
+      "title": "검고수시로 가시는분들 애매한 90점대분들 수능접수 하시나요?",
+      "preview": "[🔥문과 수시 자유게시판] 90점 이하나 90점 초반분들 한경국립대 조선대 군산대 갈려는데 수능 접수하시나요? 군산대는 없는데 저 고민중인데 할지 말지 최저 없는 곳을 갈지..수능접수 할지 말지..",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29612440",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
+      "id": "e93fcbbf25b9c9acb67a",
+      "sourceName": "수만휘",
+      "title": "공군사관학교 학교장/일반적성 우선선발 합격자 성적 분포",
+      "preview": "[광릉한샘 학원문의 및 진학상담] https://youtu.be/NAPkSf1gTIk",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29612439",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
+      "id": "91973573bf51529c5270",
+      "sourceName": "수만휘",
+      "title": "원정의T 노베 역전 특강 후기",
+      "preview": "[🔥재/반/N수 자유게시판] 2026학년도 수능에서 찍맞으로 겨우 3등급을 맞고 2027학년도 6월 모의고사에서는 69점으로 4등급이 나오는, 운 좋으면 3등급 운 나쁘면 4등급을 왔다 갔다 하던 저에게 영어는 늘 ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29612438",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
+      "id": "5b2f9ab62af8a3de5e70",
+      "sourceName": "수만휘",
+      "title": "한대학에 3개과를 지원해도될까요?",
+      "preview": "[🔥학부모님 자유게시판] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29612437",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
+      "id": "2c3b4bbeb677f32b04b0",
+      "sourceName": "수만휘",
+      "title": "3점대 후반 수시지원 한번만 봐주세요",
+      "preview": "[🔥이과 수시 자유게시판] 전교과 3.66 국영수과 3.51 물리 화학 지구과학 미적 확통 기하 정보 프로그래밍 공학 이수했고 공통교육과정으로 고급수학 이수 수학은 총 2.9 정도 됩니다 공대 전기공학과 원해서 생기",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29612436",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
+      "id": "34ca494f52fcd917f345",
+      "sourceName": "수만휘",
+      "title": "출석합니다.",
+      "preview": "[😃사진공유+출석체크] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29612435",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
+      "id": "63d207cb885f59982c37",
+      "sourceName": "수만휘",
+      "title": "넘버원 봉투모의고사",
+      "preview": "[😃수험생 일상글 게시판] 이거 등급컷 없는건가요 ㅜㅜ 난이도는 어때요",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29612434",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
     {
       "id": "8d93e8e255841c8432a2",
       "sourceName": "수만휘",
@@ -27,7 +99,7 @@
       "id": "4894ff9dad75e549e11a",
       "sourceName": "수만휘",
       "title": "숭실대학교에 관심있는 분들만 보세요 (19)",
-      "preview": "[😃수험생 일상글 게시판] 이 자료는 올해5월 숭실대학교가 AI 중심대학에 선정되기전에 최고급 등급을 받은 SW 중심대학으로서 편제된 융합전공 자료입니다 이제 AI 중심대학으로 선정되어 이보다 더 다양하고 미래지향적",
+      "preview": "[😃수험생 일상글 게시판] 이 자료는 올해5월 숭실대학교가 AI 중심대학에 선정되기전에 최고급 등급을 받은 SW 중심대학으로서 편제된 융합전공 자료입니다 26년 대학알리미 공시결과 자연대학인 물리학과의 취업률이 80",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29612431",
       "dateISO": "2026-08-19",
       "dateText": "2026.08.19"
@@ -222,15 +294,6 @@
       "dateText": "2026.08.19"
     },
     {
-      "id": "98bfce0393036ec18ca0",
-      "sourceName": "수만휘",
-      "title": "원광대 vs 가천대",
-      "preview": "[┃간호 게시판] 원광대 안정카드를 쓸지.. 가천대 기균을 도전해볼지 고민이 되네요 ㅜㅜ 저는 원광대 안정으로 쓰고싶은데 부모님께서 가천대 우주상향으로 넣어보라고 하셔서 ㅜ 가천대식으로는 만점인데 동점자 처리기준에 ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29612406",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
       "id": "e93ea1ad723ecf3f6f7a",
       "sourceName": "수만휘",
       "title": "전자기와 양자 수강해야할까요?",
@@ -272,69 +335,6 @@
       "title": "2028 메디컬 과목 선택, 물리 대신 사탐? 가능하지만 권할 전략은 아니다/ 교육을 비추다",
       "preview": "[🔥학부모님 자유게시판] 출처:https://www.kyobit.com/news/articleView.html?idxno=6683 ■ 아래 자료에서 보듯이, 메디컬 중 한의대는 사탐 & 확통 허용 비율이 가장 높습니",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29612400",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
-      "id": "34145adcfb1505dc8097",
-      "sourceName": "수만휘",
-      "title": "사관학교 수시 우선선발 합격후기",
-      "preview": "[광릉한샘 학원문의 및 진학상담] 수능 5,6등급 사관학교 수시 우선선발 합격후기 https://blog.naver.com/kdhactive/223367752525",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29612399",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
-      "id": "aa1e043e0bcf6b24c0bc",
-      "sourceName": "수만휘",
-      "title": "睡眠 記錄·起牀",
-      "preview": "[🔥재/반/N수 자유게시판] 수만휘 카페 글",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29612398",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
-      "id": "77c5398a311aeaef17cc",
-      "sourceName": "수만휘",
-      "title": "중복 지원 여부 궁금합니다",
-      "preview": "[🔥이과 수시 자유게시판] 강원대 A과에 인재세움 서류 전형과 인재세움 면접 전형 동시 지원 가능한가요?",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29612397",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
-      "id": "6ab63a64511c7a1b65e3",
-      "sourceName": "수만휘",
-      "title": "내신 모고 점수 안되는 현재고2입니다.",
-      "preview": "[🔥학부모님 자유게시판] 부모로써 어떤게 최선인지... 어떤 도움을 줘야하는지... 고등입학 후 애가 현재까지 방황중이에요! 그냥 내신안나오니 스스로 포기상태에요 . 제가 한 일년 등 떠밀어 학원이든 과외든 시켜봐도",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29612396",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
-      "id": "90f80ec1dba57bd7a3d2",
-      "sourceName": "수만휘",
-      "title": "동아방송예술대학교 원서 도와주세요 ㅠㅠ",
-      "preview": "[┏Team08 수험생 게시판] 일반고 내신 4점대 중반에 동방예대 산출방식으론 4.07정도 나옵니다. 미디어쪽으로 관심 많아서 초등학생 때 부터 직접 영상 촬영부터 편집까지 해서 유튜브 영상 올려본 적 있고, 학교",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29612395",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
-      "id": "654b118d415b962a588e",
-      "sourceName": "수만휘",
-      "title": "저 좀 도와주세요…ㅠㅠ",
-      "preview": "[┏서울대학교(가나다순)] 지방 일반고 문과이고 1.4n으로 지균을 쓰기엔 내신이 많이 부족한 상황입니다 원래 희망하던 학과보다 낮은 과를 적어야 할 것 같은데, 이에 대해 어떻게 생각하시는지 여쭤보고 싶습니다ㅠㅠ ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29612394",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
-      "id": "4884e8bb2a9b2d13bd91",
-      "sourceName": "수만휘",
-      "title": "내신 2.6 사범대",
-      "preview": "[┃사범대 게시판] 내신 2.6이고 수도권 거주하는데요 교과로 사범대 쓰려고 하는데요 일단 수도권 소재의 4년제 사범대 수학교육과나 윤리 교육과 쓸 수 있는데 전 과학교육과가 가고 싶거든요 그중에서도 지구과학.. 지",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29612393",
       "dateISO": "2026-08-19",
       "dateText": "2026.08.19"
     }
