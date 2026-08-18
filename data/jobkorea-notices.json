@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-18T21:42:46.572Z",
-  "checkedAt": "2026-08-18T21:42:46.572Z",
+  "updatedAt": "2026-08-18T21:57:13.507Z",
+  "checkedAt": "2026-08-18T21:57:13.507Z",
   "today": "2026-08-19",
   "count": 24,
   "notices": [
@@ -35,7 +35,7 @@
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
       "popularRank": 16,
-      "popularScore": 2.182808
+      "popularScore": 2.182807
     },
     {
       "id": "d2a5f641a20711825fa6",
@@ -65,7 +65,7 @@
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
       "popularRank": 2,
-      "popularScore": 3.06437
+      "popularScore": 3.066342
     },
     {
       "id": "9135ba48be9d10365323",
@@ -110,22 +110,7 @@
       "deadlineText": "2026.08.19",
       "alwaysHire": false,
       "popularRank": 22,
-      "popularScore": 1.8693659
-    },
-    {
-      "id": "5c58602021c8343a372a",
-      "jobId": "49734924",
-      "companyName": "라바웨이브",
-      "title": "[주 4일 근무] 2026년 하반기 채용 (경력)",
-      "preview": "경력 · 정규직 · 마감 D-22 · 접수마감 2026.09.10",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49734924",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11",
-      "deadlineISO": "2026-09-10",
-      "deadlineText": "2026.09.10",
-      "alwaysHire": false,
-      "popularRank": 23,
-      "popularScore": 1.8050491
+      "popularScore": 1.8712499
     },
     {
       "id": "ecbeaf7b86cc728ed0e1",
@@ -139,8 +124,23 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 24,
+      "popularRank": 23,
       "popularScore": 1.80303
+    },
+    {
+      "id": "5c58602021c8343a372a",
+      "jobId": "49734924",
+      "companyName": "라바웨이브",
+      "title": "[주 4일 근무] 2026년 하반기 채용 (경력)",
+      "preview": "경력 · 정규직 · 마감 D-22 · 접수마감 2026.09.10",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49734924",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11",
+      "deadlineISO": "2026-09-10",
+      "deadlineText": "2026.09.10",
+      "alwaysHire": false,
+      "popularRank": 24,
+      "popularScore": 1.802193
     },
     {
       "id": "88a0735cd26b5ca6d82a",
@@ -155,7 +155,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 3.17689
+      "popularScore": 3.177302
     },
     {
       "id": "cfc1e393775a21db0610",
@@ -170,7 +170,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 4,
-      "popularScore": 2.533983
+      "popularScore": 2.536928
     },
     {
       "id": "dcb896a5cc33aea963d5",
@@ -185,7 +185,7 @@
       "deadlineText": "2026.09.30",
       "alwaysHire": false,
       "popularRank": 7,
-      "popularScore": 2.3345358
+      "popularScore": 2.335521
     },
     {
       "id": "adce3b32741e3448d142",
@@ -200,7 +200,7 @@
       "deadlineText": "2026.08.24",
       "alwaysHire": false,
       "popularRank": 8,
-      "popularScore": 2.333667
+      "popularScore": 2.333666
     },
     {
       "id": "68c4a721b6baf77b0337",
@@ -215,7 +215,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 11,
-      "popularScore": 2.244682
+      "popularScore": 2.247098
     },
     {
       "id": "4d49c686f19d67d20bdf",
@@ -229,8 +229,8 @@
       "deadlineISO": "2026-08-19",
       "deadlineText": "2026.08.19",
       "alwaysHire": false,
-      "popularRank": 15,
-      "popularScore": 2.196155
+      "popularRank": 14,
+      "popularScore": 2.1994228
     },
     {
       "id": "c679883f7c5fb9db5264",
@@ -245,7 +245,7 @@
       "deadlineText": "2026.08.24",
       "alwaysHire": false,
       "popularRank": 21,
-      "popularScore": 1.894308
+      "popularScore": 1.9041729
     },
     {
       "id": "7ff497d619edbb2ccb79",
@@ -304,7 +304,7 @@
       "deadlineISO": "2026-09-25",
       "deadlineText": "2026.09.25",
       "alwaysHire": false,
-      "popularRank": 14,
+      "popularRank": 15,
       "popularScore": 2.197599
     },
     {
@@ -320,7 +320,7 @@
       "deadlineText": "2026.08.29",
       "alwaysHire": false,
       "popularRank": 10,
-      "popularScore": 2.264951
+      "popularScore": 2.26495
     },
     {
       "id": "c4b6e2d9e1ed5272120e",
@@ -365,7 +365,7 @@
       "deadlineText": "2026.08.20",
       "alwaysHire": false,
       "popularRank": 19,
-      "popularScore": 2.14888
+      "popularScore": 2.148879
     }
   ],
   "stale": false,
