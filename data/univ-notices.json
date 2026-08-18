@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-18",
-  "updatedAt": "2026-08-18T01:47:38.169Z",
-  "checkedAt": "2026-08-18T01:47:38.169Z",
+  "updatedAt": "2026-08-18T02:49:09.988Z",
+  "checkedAt": "2026-08-18T02:49:09.988Z",
   "sources": [
     {
       "id": "u001",
@@ -1530,6 +1530,17 @@
   ],
   "notices": [
     {
+      "id": "6a4dda55005f40de2ca7",
+      "univId": "u044",
+      "univName": "한예종",
+      "title": "10월입시 예술사(대학)과정 정원내 전형 지원현황 안내",
+      "preview": "한예종 입학 공지사항 미리보기",
+      "url": "https://www.karts.ac.kr/cop/bbs/selectBoardArticle.do?bbsId=BBSMSTR_000000000007&nttNo=70330",
+      "homeUrl": "https://www.karts.ac.kr/main/appl.do",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
       "id": "498fe5a4629055488038",
       "univId": "u111",
       "univName": "대전신대",
@@ -1537,6 +1548,17 @@
       "preview": "2026-05-06 등록 2026-2학기 재학생(학부 / 대학원 통합) 등… 2026-08-18",
       "url": "https://www.daejeon.ac.kr/bbs/board.php?bo_table=N01_04&wr_id=500",
       "homeUrl": "https://www.daejeon.ac.kr/",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "a3b24a4cc3b98b552fc1",
+      "univId": "u078",
+      "univName": "한경국립대",
+      "title": "2027학년도 전기 신·편입학 외국인 특별전형 모집요강 후기외국인",
+      "preview": "한경국립대 입학 공지사항 미리보기",
+      "url": "https://ipsi.hknu.ac.kr/mojib/mojib.php?m_type=EGUK&m_year=2027_%EC%A0%84%EA%B8%B0",
+      "homeUrl": "https://ipsi.hknu.ac.kr/",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
@@ -2032,6 +2054,17 @@
       "preview": "한양대(에리카) 입학 공지사항 미리보기",
       "url": "https://goerica.hanyang.ac.kr/admission/html/counsel/all_notice_view.asp?idx=2203",
       "homeUrl": "https://goerica.hanyang.ac.kr/admission/intro.asp",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
+      "id": "95540d6ea1e074c6b154",
+      "univId": "u205",
+      "univName": "부산외대",
+      "title": "2027학년도 수시모집 학교폭력 조치사항 반영 방법 안내",
+      "preview": "부산외대 입학 공지사항 미리보기",
+      "url": "https://enter.bufs.ac.kr/bbs/board.php?bo_table=notice&wr_id=172",
+      "homeUrl": "http://enter.bufs.ac.kr/",
       "dateISO": "2026-08-11",
       "dateText": "2026.08.11"
     },
@@ -3151,5 +3184,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=19 empty=28 fail=169 fresh=126"
+  "statusReason": "ok=28 empty=34 fail=154 fresh=129"
 }
