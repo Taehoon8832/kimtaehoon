@@ -67,38 +67,58 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-18T05:23:42.739039Z",
-  "checkedAt": "2026-08-18T05:23:42.739032Z",
+  "updatedAt": "2026-08-18T05:52:19.526511Z",
+  "checkedAt": "2026-08-18T05:52:19.526506Z",
   "today": "2026-08-18",
   "count": 72,
   "notices": [
     {
-      "id": "5c4ef95954ec2ff756d1",
+      "id": "0bc5c5a5e3c88575b8c2",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "한세대 강의평가 우수 교원 표창장 수여.. 교수 20명 선정",
+      "title": "한경국립대 몽골 축산 연구 '성과로 답했다' … 논문 17편/산업체 취업 11명",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623486",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623505",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
     {
-      "id": "43f0a20604ae55441fe8",
+      "id": "3eb069c033eaea93bc57",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "조선대 '백학 아너스클럽 명예의전당' 제막... 고액기부자 한자리에",
+      "title": "한경국립대 대학원생 2명 한국식물생명공학회 우수 포스터 발표상 수상",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623490",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623501",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
     {
-      "id": "d301d8dd37baa74c4c4c",
+      "id": "f8687d7469df0626ccd4",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "국민대 미래차 차량용 보안반도체 핵심IP 원천기술 개발 국책과제 선정",
+      "title": "전주대 양성 식생활교육 강사 41명 전원 자격증 손에 쥐었다",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623489",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623503",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "cd7fbb2c507b0bc0e3b7",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "재능대 K-하이테크플랫폼, 인도 딥테크 기업 TuxSemi와 '3D프린팅 융합 기술' 협력 논의",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623504",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "ddfffa4b229dbe529096",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "국립금오공대 국방기술진흥연구소와 임무장비 사업화 연구 추진한다",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623502",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
@@ -113,52 +133,32 @@
       "dateText": "2026.08.18"
     },
     {
-      "id": "48893a000566f394f243",
+      "id": "c9cd5a7f38cc20500f29",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "광주여자대 대학일자리플러스센터 운영위원회 간담회 개최.. 학과 협력체계 강화 논의",
+      "title": "광주여대 물리치료학과 지역사회 장애인 맞춤형 운동교육 성료.. '2026년 찾아가는 마을 운동교육'",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623485",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623506",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
     {
-      "id": "b8b0bad72f7a9f5e4a1c",
+      "id": "de4e4fcac9fa4aba003f",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "광주여대 물리치료학과.. 재학생 주도 연구 국제학술지 게재",
+      "title": "광주여대 MAUM교육원 광주보훈청과 연계 보훈단체 대상 '찾아오는 마음교육' 운영",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623487",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623507",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
     {
-      "id": "eb9d66bdacf36e6698b9",
+      "id": "79e4c019092791cb2f56",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "광주여대 대학일자리플러스센터 여성취창업지원위원회 1차 간담회 개최",
+      "title": "광주대 앵커사업단 지역 재직자 반도체/AI 실무역량 증진",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623488",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "02e519325098205e33d2",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "경상국립대–한국섬유개발연구원, 친환경 첨단소재 기반 지/산/학/연 협력 강화",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623492",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "6ba4b420a3ac85867095",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "경상국립대 RISE사업단 동남권 5개大와 '앵커 5극 3특 공유대학(경남)' 첫 간담회",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623491",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623500",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
@@ -169,6 +169,16 @@
       "title": "「학교급식법 시행령」 일부개정령안 국무회의 통과",
       "preview": "교육부(장관 최교진)는 8월 18일(화) 국무회의에서 「학교급식법 시행령」 일부개정령안이 심의·의결되었다고 밝혔다. 이번의 시행령 개정은 「학교급식법」의 개정(2026.2.19., 일부개정*, 2026.8.20.,",
       "url": "https://blog.naver.com/moeblog/224382031471",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "6fc54b15f76a1a168b5b",
+      "sourceId": "moe_blog",
+      "sourceName": "교육부블로그",
+      "title": "[학생을 위한 정책의 온도] 기초학력 진단부터 맞춤형 학습까지! 국가기초학력지원포털",
+      "preview": "📢학생을 위한 정책의 온도🌡️ 기초학력 진단부터 맞춤형 학습까지 국가기초학력지원포털에서 확인하세요😉 국가기초학력지원포털이란?🧐 분산되어 있던 진단, 학습자료, 심리검사 서비스를 하나의 포털로 통합했습니다! 학생에게",
+      "url": "https://blog.naver.com/moeblog/224382204474",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
@@ -291,16 +301,6 @@
       "url": "https://www.edupress.kr/news/articleView.html?idxno=30400",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
-    },
-    {
-      "id": "ee530636fd158183273b",
-      "sourceId": "moe_blog",
-      "sourceName": "교육부블로그",
-      "title": "📅 2027학년도 대학수학능력평가시험 응시원서 접수 시작!",
-      "preview": "📅 2027학년도 대학수학능력평가시험 응시원서 접수 시작! ✅ 접수 일정 안내 ✔️ 온라인 사전입력 (www.mycsat.re.kr) 8월 20일(목) 09:00 ~ 9월 3일(목) 18:00 ✔️ 현장 접수 8월",
-      "url": "https://blog.naver.com/moeblog/224377592846",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13"
     },
     {
       "id": "3429552f8b1290342f6e",
