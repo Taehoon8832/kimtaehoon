@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-19",
-  "updatedAt": "2026-08-19T08:06:35.436Z",
-  "checkedAt": "2026-08-19T08:06:35.436Z",
+  "updatedAt": "2026-08-19T08:54:58.734Z",
+  "checkedAt": "2026-08-19T08:54:58.734Z",
   "sources": [
     {
       "id": "u001",
@@ -2579,7 +2579,7 @@
       "univId": "u128",
       "univName": "유원대",
       "title": "취업공지 [고려사이버대학교] 매치업(Match業) 빅데이터실무전문가 심화과정 (~8/16)",
-      "preview": "취업공지 KT 에이블스쿨 10기 모집 (~8/10) 문의 : 02-720-0614 / KT 에이블스쿨 운영사무국 신민철 과장 2026-07-16",
+      "preview": "취업공지 2026 취업준비콘서트 일자리톡톡 7~8월 일정 취업준비콘서트 일자리톡톡에서는 기업이념, 조직문화, 인재상, 채용트렌드, 직무설명 등 Q&A를 진행합니다. 모든 일정의 자세한 사항은 첨부된 포스터를 확인바",
       "url": "https://ipsi.u1.ac.kr/u1/community/employment.do?mode=view&articleNo=77181",
       "homeUrl": "https://ipsi.u1.ac.kr/html/ipsi/index.html",
       "dateISO": "2026-08-06",
@@ -2590,7 +2590,7 @@
       "univId": "u153",
       "univName": "유원대(아산)",
       "title": "취업공지 [고려사이버대학교] 매치업(Match業) 빅데이터실무전문가 심화과정 (~8/16)",
-      "preview": "취업공지 KT 에이블스쿨 10기 모집 (~8/10) 문의 : 02-720-0614 / KT 에이블스쿨 운영사무국 신민철 과장 2026-07-16",
+      "preview": "취업공지 2026 취업준비콘서트 일자리톡톡 7~8월 일정 취업준비콘서트 일자리톡톡에서는 기업이념, 조직문화, 인재상, 채용트렌드, 직무설명 등 Q&A를 진행합니다. 모든 일정의 자세한 사항은 첨부된 포스터를 확인바",
       "url": "https://ipsi.u1.ac.kr/u1/community/employment.do?mode=view&articleNo=77181",
       "homeUrl": "https://ipsi.u1.ac.kr/html/ipsi/index.html",
       "dateISO": "2026-08-06",
@@ -3382,5 +3382,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=26 empty=27 fail=163 fresh=147"
+  "statusReason": "ok=30 empty=36 fail=150 fresh=147"
 }
