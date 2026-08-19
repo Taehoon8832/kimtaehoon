@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-19T07:24:35.117Z",
-  "checkedAt": "2026-08-19T07:24:35.117Z",
+  "updatedAt": "2026-08-19T07:58:46.608Z",
+  "checkedAt": "2026-08-19T07:58:46.608Z",
   "today": "2026-08-19",
   "count": 24,
   "notices": [
@@ -19,8 +19,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 4,
-      "popularScore": 2.491154
+      "popularRank": 5,
+      "popularScore": 2.49577
     },
     {
       "id": "67b2ec849ee48852ee0c",
@@ -34,8 +34,8 @@
       "deadlineISO": "2026-09-17",
       "deadlineText": "2026.09.17",
       "alwaysHire": false,
-      "popularRank": 24,
-      "popularScore": 1.823609
+      "popularRank": 23,
+      "popularScore": 1.851711
     },
     {
       "id": "d2a5f641a20711825fa6",
@@ -49,8 +49,8 @@
       "deadlineISO": "2026-10-16",
       "deadlineText": "2026.10.16",
       "alwaysHire": false,
-      "popularRank": 20,
-      "popularScore": 1.898057
+      "popularRank": 24,
+      "popularScore": 1.842672
     },
     {
       "id": "f19cd489697422d474e6",
@@ -64,8 +64,8 @@
       "deadlineISO": "2026-08-30",
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
-      "popularRank": 2,
-      "popularScore": 3.035727
+      "popularRank": 3,
+      "popularScore": 3.042387
     },
     {
       "id": "9135ba48be9d10365323",
@@ -80,7 +80,7 @@
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
       "popularRank": 6,
-      "popularScore": 2.463618
+      "popularScore": 2.474364
     },
     {
       "id": "f4aebd6330a249f3a9f7",
@@ -94,23 +94,8 @@
       "deadlineISO": "2026-10-12",
       "deadlineText": "2026.10.12",
       "alwaysHire": false,
-      "popularRank": 16,
-      "popularScore": 2.169036
-    },
-    {
-      "id": "1f89ddb8e103ed17b7c4",
-      "jobId": "49779534",
-      "companyName": "미스터픽",
-      "title": "[첫차]와 함께 할 프로덕트 매니저(PM)를 찾습니다.",
-      "preview": "경력 · 정규직 · 마감 D-25 · 접수마감 2026.09.13",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49779534",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13",
-      "deadlineISO": "2026-09-13",
-      "deadlineText": "2026.09.13",
-      "alwaysHire": false,
-      "popularRank": 22,
-      "popularScore": 1.869261
+      "popularRank": 18,
+      "popularScore": 2.173729
     },
     {
       "id": "5e1cc9e61a7db7f87c3e",
@@ -125,22 +110,7 @@
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
       "popularRank": 8,
-      "popularScore": 2.360717
-    },
-    {
-      "id": "ecbeaf7b86cc728ed0e1",
-      "jobId": "49758531",
-      "companyName": "㈜메타엠",
-      "title": "[메타엠] IT 프로젝트 매니저(PM) 채용 (AICC/CRM/SaaS)",
-      "preview": "경력 · 정규직 · 마감 D-12 · 접수마감 2026.08.31",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49758531",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11",
-      "deadlineISO": "2026-08-31",
-      "deadlineText": "2026.08.31",
-      "alwaysHire": false,
-      "popularRank": 23,
-      "popularScore": 1.867124
+      "popularScore": 2.364262
     },
     {
       "id": "88a0735cd26b5ca6d82a",
@@ -155,7 +125,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 3.223503
+      "popularScore": 3.254239
     },
     {
       "id": "cfc1e393775a21db0610",
@@ -170,7 +140,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 7,
-      "popularScore": 2.458333
+      "popularScore": 2.44623
     },
     {
       "id": "adce3b32741e3448d142",
@@ -184,8 +154,23 @@
       "deadlineISO": "2026-08-24",
       "deadlineText": "2026.08.24",
       "alwaysHire": false,
-      "popularRank": 10,
-      "popularScore": 2.254749
+      "popularRank": 9,
+      "popularScore": 2.334917
+    },
+    {
+      "id": "efb0a4e54d0c058c1929",
+      "jobId": "49740384",
+      "companyName": "㈜판타지오",
+      "title": "[판타지오] 각 분야 신입 및 경력 채용",
+      "preview": "신입·경력 · 정규직 · 마감 D-49 · 접수마감 2026.10.07",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49740384",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10",
+      "deadlineISO": "2026-10-07",
+      "deadlineText": "2026.10.07",
+      "alwaysHire": false,
+      "popularRank": 13,
+      "popularScore": 2.25137
     },
     {
       "id": "68c4a721b6baf77b0337",
@@ -199,8 +184,8 @@
       "deadlineISO": "2026-08-23",
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
-      "popularRank": 14,
-      "popularScore": 2.193754
+      "popularRank": 16,
+      "popularScore": 2.186154
     },
     {
       "id": "94be55d131a72c4b3e55",
@@ -214,8 +199,8 @@
       "deadlineISO": "2026-09-05",
       "deadlineText": "2026.09.05",
       "alwaysHire": false,
-      "popularRank": 21,
-      "popularScore": 1.869993
+      "popularRank": 22,
+      "popularScore": 1.8705599
     },
     {
       "id": "52e3de0f3e258ff8c87a",
@@ -229,8 +214,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 3,
-      "popularScore": 2.98158
+      "popularRank": 4,
+      "popularScore": 2.96923
     },
     {
       "id": "6216a5e8a7b59a85d9de",
@@ -244,8 +229,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 17,
-      "popularScore": 2.146686
+      "popularRank": 19,
+      "popularScore": 2.138888
     },
     {
       "id": "cac58faef283c6e518f7",
@@ -259,8 +244,8 @@
       "deadlineISO": "2026-09-25",
       "deadlineText": "2026.09.25",
       "alwaysHire": false,
-      "popularRank": 13,
-      "popularScore": 2.195501
+      "popularRank": 15,
+      "popularScore": 2.189267
     },
     {
       "id": "8c7b1b063c58f34fc010",
@@ -274,8 +259,8 @@
       "deadlineISO": "2026-08-22",
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
-      "popularRank": 15,
-      "popularScore": 2.179636
+      "popularRank": 17,
+      "popularScore": 2.1800718
     },
     {
       "id": "b29f4aa66e9babdd2d0f",
@@ -289,8 +274,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 18,
-      "popularScore": 2.121567
+      "popularRank": 20,
+      "popularScore": 2.12335
     },
     {
       "id": "e5645d380f01e4db6d17",
@@ -304,8 +289,8 @@
       "deadlineISO": "2026-08-29",
       "deadlineText": "2026.08.29",
       "alwaysHire": false,
-      "popularRank": 11,
-      "popularScore": 2.216409
+      "popularRank": 12,
+      "popularScore": 2.258734
     },
     {
       "id": "c4b6e2d9e1ed5272120e",
@@ -319,8 +304,8 @@
       "deadlineISO": "2026-09-27",
       "deadlineText": "2026.09.27",
       "alwaysHire": false,
-      "popularRank": 5,
-      "popularScore": 2.470203
+      "popularRank": 2,
+      "popularScore": 3.208025
     },
     {
       "id": "def56d1a40587609e504",
@@ -334,8 +319,23 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 19,
-      "popularScore": 2.121478
+      "popularRank": 21,
+      "popularScore": 2.122124
+    },
+    {
+      "id": "ece21208d32d2683d912",
+      "jobId": "49640898",
+      "companyName": "올웨이즈",
+      "title": "보험사 UI/UX 중고급이상 프리랜서 기획자 채용",
+      "preview": "경력 · 계약직·프리랜서 · 마감 D-16 · 접수마감 2026.09.04",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49640898",
+      "dateISO": "2026-07-23",
+      "dateText": "2026.07.23",
+      "deadlineISO": "2026-09-04",
+      "deadlineText": "2026.09.04",
+      "alwaysHire": false,
+      "popularRank": 11,
+      "popularScore": 2.316197
     },
     {
       "id": "b2d647ba9dc240a68915",
@@ -349,8 +349,8 @@
       "deadlineISO": "2026-08-20",
       "deadlineText": "2026.08.20",
       "alwaysHire": false,
-      "popularRank": 9,
-      "popularScore": 2.344818
+      "popularRank": 10,
+      "popularScore": 2.320459
     },
     {
       "id": "093f8212d4703005bd11",
@@ -364,8 +364,8 @@
       "deadlineISO": "2026-09-19",
       "deadlineText": "2026.09.19",
       "alwaysHire": false,
-      "popularRank": 12,
-      "popularScore": 2.205703
+      "popularRank": 14,
+      "popularScore": 2.212185
     }
   ],
   "stale": false,
