@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-19",
-  "updatedAt": "2026-08-19T04:27:15.804Z",
-  "checkedAt": "2026-08-19T04:27:15.804Z",
+  "updatedAt": "2026-08-19T05:10:00.015Z",
+  "checkedAt": "2026-08-19T05:10:00.015Z",
   "sources": [
     {
       "id": "u001",
@@ -1541,21 +1541,10 @@
       "dateText": "2026.08.19"
     },
     {
-      "id": "9abe868adabe78dd302d",
-      "univId": "u085",
-      "univName": "한양대(에리카)",
-      "title": "2027학년도 수시모집 조기취업형계약학과 참여기업, 모집인원, 면접일정, 예비대학 안내",
-      "preview": "한양대(에리카) 입학 공지사항 미리보기",
-      "url": "https://goerica.hanyang.ac.kr/admission/html/counsel/all_notice_view.asp?idx=2247",
-      "homeUrl": "https://goerica.hanyang.ac.kr/admission/intro.asp",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
-      "id": "42e407557a7182207d6a",
+      "id": "735ff4733992520d5ab6",
       "univId": "u042",
       "univName": "한양대(서울)",
-      "title": "2027학년도 수시전형 [학생부, 검정고시] 온라인제공 신청 안내",
+      "title": "2027학년도 대입전형자료 [학생부, 검정고시] 온라인제공 신청 안내",
       "preview": "한양대(서울) 입학 공지사항 미리보기",
       "url": "https://go.hanyang.ac.kr/web/notice/notice_view.do?bn=21691&m_type=IPSI",
       "homeUrl": "https://go.hanyang.ac.kr/gate.do",
@@ -1563,13 +1552,24 @@
       "dateText": "2026.08.19"
     },
     {
-      "id": "8611cddf84989176391c",
+      "id": "dd299d0f5afc17638705",
       "univId": "u042",
       "univName": "한양대(서울)",
-      "title": "2027학년도 수시전형 [학생부, 검정고시] 온라인제공 신청 안내",
+      "title": "2027학년도 대입전형자료 [학생부, 검정고시] 온라인제공 신청 안내",
       "preview": "한양대(서울) 입학 공지사항 미리보기",
       "url": "https://go.hanyang.ac.kr/web/notice/notice_view.do?bn=21691&m_type=SUSI",
       "homeUrl": "https://go.hanyang.ac.kr/gate.do",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
+      "id": "9abe868adabe78dd302d",
+      "univId": "u085",
+      "univName": "한양대(에리카)",
+      "title": "2027학년도 수시모집 조기취업형계약학과 참여기업, 모집인원, 면접일정, 예비대학 안내",
+      "preview": "한양대(에리카) 입학 공지사항 미리보기",
+      "url": "https://goerica.hanyang.ac.kr/admission/html/counsel/all_notice_view.asp?idx=2247",
+      "homeUrl": "https://goerica.hanyang.ac.kr/admission/intro.asp",
       "dateISO": "2026-08-19",
       "dateText": "2026.08.19"
     },
@@ -3305,5 +3305,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=32 empty=38 fail=146 fresh=140"
+  "statusReason": "ok=33 empty=42 fail=141 fresh=140"
 }
