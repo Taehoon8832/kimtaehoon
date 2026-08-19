@@ -67,8 +67,8 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-19T05:53:58.185725Z",
-  "checkedAt": "2026-08-19T05:53:58.185719Z",
+  "updatedAt": "2026-08-19T06:21:26.938093Z",
+  "checkedAt": "2026-08-19T06:21:26.938087Z",
   "today": "2026-08-19",
   "count": 72,
   "notices": [
@@ -133,16 +133,6 @@
       "dateText": "2026.08.19"
     },
     {
-      "id": "95b049a0b573ac9d41e4",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국립목포대 7년 연속 '전남광주통합특별시 청년 해외취업 지원사업' 운영기관 선정",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623675",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
       "id": "3d28f58f87c9968708ea",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
@@ -159,6 +149,16 @@
       "title": "경기진협 2027대입 대비 ‘진학독립 교과등급대별 지원전략’ 연수 성료.. 교사 600여 명 참여",
       "preview": "베리타스알파 소식",
       "url": "https://www.veritas-a.com/news/articleView.html?idxno=623681",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
+      "id": "41b0467143ef67c6ad35",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "[2027수시특집] 대구한의대 수시 945명(90.9%) 모집.. 자율전공학부 식품산업학과 ‘신설’",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623373",
       "dateISO": "2026-08-19",
       "dateText": "2026.08.19"
     },
