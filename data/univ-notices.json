@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
-  "today": "2026-08-19",
-  "updatedAt": "2026-08-19T14:43:13.505Z",
-  "checkedAt": "2026-08-19T14:43:13.505Z",
+  "today": "2026-08-20",
+  "updatedAt": "2026-08-19T15:15:11.030Z",
+  "checkedAt": "2026-08-19T15:15:11.030Z",
   "sources": [
     {
       "id": "u001",
@@ -1529,6 +1529,28 @@
     }
   ],
   "notices": [
+    {
+      "id": "3c8697fcfdec4ba5108f",
+      "univId": "u043",
+      "univName": "홍익대(서울)",
+      "title": "하계방학 중 단축 근무 시행 안내 - .(목) ~ (목)까지 / 근무시간 : 10:00 ~ 16:30",
+      "preview": "홍익대(서울) 입학 공지사항 미리보기",
+      "url": "https://www.hongik.ac.kr/kr/newscenter/notice.do?mode=view&articleNo=153152",
+      "homeUrl": "https://www.hongik.ac.kr/kr/admission/undergraduate-admission.do",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "b87662d08c4a083bbc13",
+      "univId": "u161",
+      "univName": "홍익대(세종)",
+      "title": "하계방학 중 단축 근무 시행 안내 - .(목) ~ (목)까지 / 근무시간 : 10:00 ~ 16:30",
+      "preview": "홍익대(세종) 입학 공지사항 미리보기",
+      "url": "https://www.hongik.ac.kr/kr/newscenter/notice.do?mode=view&articleNo=153152",
+      "homeUrl": "https://www.hongik.ac.kr/kr/admission/undergraduate-admission.do",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
     {
       "id": "49620e103b5a700cbdbc",
       "univId": "u032",
@@ -3371,5 +3393,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=36 empty=37 fail=143 fresh=146"
+  "statusReason": "ok=33 empty=27 fail=156 fresh=148"
 }
