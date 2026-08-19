@@ -67,11 +67,21 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-19T23:11:13.072494Z",
-  "checkedAt": "2026-08-19T23:11:13.072489Z",
+  "updatedAt": "2026-08-19T23:34:11.224730Z",
+  "checkedAt": "2026-08-19T23:34:11.224724Z",
   "today": "2026-08-20",
   "count": 80,
   "notices": [
+    {
+      "id": "3efe153f953a4b615485",
+      "sourceId": "adiga",
+      "sourceName": "어디가",
+      "title": "2027학년도 대입전형자료 온라인 개인신청 서비스 안내",
+      "preview": "어디가 공지",
+      "url": "https://www.adiga.kr/cct/pbf/noticeDetail.do?menuId=PCCCTPBF1000&prtlBbsId=27511",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
     {
       "id": "cbfc2bf652f87cfd5b29",
       "sourceId": "veritas",
@@ -791,16 +801,6 @@
       "url": "https://www.adiga.kr/cct/pbf/noticeDetail.do?menuId=PCCCTPBF1000&prtlBbsId=27236",
       "dateISO": "2026-06-24",
       "dateText": "2026.06.24"
-    },
-    {
-      "id": "ab9455260f0d9a46fe04",
-      "sourceId": "adiga",
-      "sourceName": "어디가",
-      "title": "대입정보포털 서비스 점검 안내",
-      "preview": "어디가 공지",
-      "url": "https://www.adiga.kr/cct/pbf/noticeDetail.do?menuId=PCCCTPBF1000&prtlBbsId=27162",
-      "dateISO": "2026-06-19",
-      "dateText": "2026.06.19"
     },
     {
       "id": "4def09c640c82abcd550",
