@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-19",
-  "updatedAt": "2026-08-19T05:53:10.744Z",
-  "checkedAt": "2026-08-19T05:53:10.744Z",
+  "updatedAt": "2026-08-19T06:24:41.347Z",
+  "checkedAt": "2026-08-19T06:24:41.347Z",
   "sources": [
     {
       "id": "u001",
@@ -1552,6 +1552,17 @@
       "dateText": "2026.08.19"
     },
     {
+      "id": "7f3bc0f8692cd2f7c5d0",
+      "univId": "u044",
+      "univName": "한예종",
+      "title": "2027학년도 8월입시 예술사 무용원 2차시험 수험생 유의사항 및 시험시간표...",
+      "preview": "한예종 입학 공지사항 미리보기",
+      "url": "https://www.karts.ac.kr/cop/bbs/selectBoardArticle.do?bbsId=BBSMSTR_000000000007&nttNo=70334",
+      "homeUrl": "https://www.karts.ac.kr/main/appl.do",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
       "id": "735ff4733992520d5ab6",
       "univId": "u042",
       "univName": "한양대(서울)",
@@ -1585,6 +1596,28 @@
       "dateText": "2026.08.19"
     },
     {
+      "id": "b3fbf024c316ebd14fcd",
+      "univId": "u131",
+      "univName": "청주대",
+      "title": "2027학년도 청주대학교 수시모집 #청주대학교 #청주대 #청대 #청주대학교수시모집 #2027학년도수시 #2027학년도수시모집 #수시 #수시모집 #청주대학교수시 #청주대수시모집 #청주대수시",
+      "preview": "2026년 08월 19일 14:30 블로그",
+      "url": "https://blog.naver.com/cjuonline/224382241253?fromRss=true&trackingCode=rss",
+      "homeUrl": "http://www.cju.ac.kr/ipsi/index.do",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
+      "id": "cec1983eac16223727ff",
+      "univId": "u131",
+      "univName": "청주대",
+      "title": "2027학년도 청주대학교 수시모집 #청주대학교 #청주대 #청대 #청주대학교수시모집 #청주대수시모집 #청주대학교수시 #청주대수시 #수시모집 #수시 #대학교 #수시원서접수",
+      "preview": "2026년 08월 19일 14:30",
+      "url": "https://blog.naver.com/cjuonline/224382243782?fromRss=true&trackingCode=rss",
+      "homeUrl": "http://www.cju.ac.kr/ipsi/index.do",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
       "id": "e0ae81e9101797055ed4",
       "univId": "u214",
       "univName": "유니스트(UNIST)",
@@ -1611,6 +1644,17 @@
       "univId": "u245",
       "univName": "해군사관학교",
       "title": "(공지) 신원조사(인터넷 제출서류) 미비서류 추가 제출 안내",
+      "preview": "해군사관학교 입학 공지사항 미리보기",
+      "url": "https://www.navy.ac.kr:4443/bbs/iphak/142/841558/artclView.do",
+      "homeUrl": "https://www.navy.ac.kr:4443/sites/iphak/index.do",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18"
+    },
+    {
+      "id": "4eb26825ad7563c64780",
+      "univId": "u245",
+      "univName": "해군사관학교",
+      "title": "(공지) 신원조사(인터넷 제출서류) 미비서류 추가 제출 안내(수정)",
       "preview": "해군사관학교 입학 공지사항 미리보기",
       "url": "https://www.navy.ac.kr:4443/bbs/iphak/142/841558/artclView.do",
       "homeUrl": "https://www.navy.ac.kr:4443/sites/iphak/index.do",
@@ -3327,5 +3371,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=26 empty=27 fail=163 fresh=142"
+  "statusReason": "ok=34 empty=34 fail=148 fresh=146"
 }
