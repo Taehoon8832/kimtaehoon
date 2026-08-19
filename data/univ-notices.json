@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-19",
-  "updatedAt": "2026-08-19T06:24:41.347Z",
-  "checkedAt": "2026-08-19T06:24:41.347Z",
+  "updatedAt": "2026-08-19T07:20:41.600Z",
+  "checkedAt": "2026-08-19T07:20:41.600Z",
   "sources": [
     {
       "id": "u001",
@@ -1614,6 +1614,17 @@
       "preview": "2026년 08월 19일 14:30",
       "url": "https://blog.naver.com/cjuonline/224382243782?fromRss=true&trackingCode=rss",
       "homeUrl": "http://www.cju.ac.kr/ipsi/index.do",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
+      "id": "e1ca7d8d773b40f9f3b7",
+      "univId": "u044",
+      "univName": "한예종",
+      "title": "대입전형자료(학교생활기록부) 온라인 생성 신청 안내",
+      "preview": "한예종 입학 공지사항 미리보기",
+      "url": "https://www.karts.ac.kr/cop/bbs/selectBoardArticle.do?bbsId=BBSMSTR_000000000007&nttNo=70335",
+      "homeUrl": "https://www.karts.ac.kr/main/appl.do",
       "dateISO": "2026-08-19",
       "dateText": "2026.08.19"
     },
@@ -3371,5 +3382,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=34 empty=34 fail=148 fresh=146"
+  "statusReason": "ok=28 empty=21 fail=167 fresh=147"
 }
