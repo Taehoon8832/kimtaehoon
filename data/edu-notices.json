@@ -67,11 +67,41 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-19T23:34:11.224730Z",
-  "checkedAt": "2026-08-19T23:34:11.224724Z",
+  "updatedAt": "2026-08-19T23:55:52.325524Z",
+  "checkedAt": "2026-08-19T23:55:52.325517Z",
   "today": "2026-08-20",
   "count": 80,
   "notices": [
+    {
+      "id": "9dd91c42a8a25f97bd25",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "인천대 HUSS사업단 베트남 다낭서 '한-베 포용관광 글로벌 협력' 성료",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623718",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "7c1d7c2d0ced50198266",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "인천대 GTEP 20기 인천항/인천공항 현장 견학으로 무역 실무 역량 강화",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623720",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "f8937859ed146c2f95b3",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "인천대 '2026 일본 자매대학생 초청 한국문화체험' 성공적 마무리",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623719",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
     {
       "id": "3efe153f953a4b615485",
       "sourceId": "adiga",
@@ -103,32 +133,12 @@
       "dateText": "2026.08.19"
     },
     {
-      "id": "4735d259cfff2aaddb91",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "김천대 산학협력단(김천시 청년센터)-김천시-한국도로공사, 김천시 청년 취/창업 활성화 및 지역상생 협력을 위한 3자 업무협약(MOU) 체결",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623710",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
       "id": "2e600cc2e27ab05e9def",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
       "title": "국민대 대학일자리플러스센터 하계방학 '진로/취Up Day' 운영",
       "preview": "베리타스알파 소식",
       "url": "https://www.veritas-a.com/news/articleView.html?idxno=623715",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
-      "id": "15dd7c752611fac89bbb",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국립창원대 거창캠퍼스 구성원과 '통합 이후 발전방향' 머리 맞대",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623709",
       "dateISO": "2026-08-19",
       "dateText": "2026.08.19"
     },
@@ -169,16 +179,6 @@
       "title": "공주문예회관 '2026 공주아츠페스티벌' 창작무용극 '고마' 9월 3일 개최",
       "preview": "베리타스알파 소식",
       "url": "https://www.veritas-a.com/news/articleView.html?idxno=623711",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
-      "id": "69e3c63e1dd83669cd6c",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "[단독] [2027수시] 상위15개대 수능최저 미적용 '34개 전형 1만2788명'..' 재학생 촉각'",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623664",
       "dateISO": "2026-08-19",
       "dateText": "2026.08.19"
     },
