@@ -1,10 +1,55 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-19T21:36:40.025277Z",
-  "checkedAt": "2026-08-19T21:36:40.025272Z",
+  "updatedAt": "2026-08-19T21:57:22.166362Z",
+  "checkedAt": "2026-08-19T21:57:22.166357Z",
   "today": "2026-08-20",
-  "count": 40,
+  "count": 39,
   "notices": [
+    {
+      "id": "27967732e9cbcca2b00f",
+      "sourceName": "수만휘",
+      "title": "반갑습니다",
+      "preview": "[😃가입인사+규정확인] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29614045",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "8fb59c9e51a41cdb3ae6",
+      "sourceName": "수만휘",
+      "title": "금오공대 vs 경상국립 vs수원대",
+      "preview": "[🔥이과 수시 자유게시판] 전자나 기계쪽 어디가 나을까요? 이 세 학교에서 고민인데 아이는 수원대를 가고싶어해요 아님 3점중후반대 또 괜찮은 전자공학/기계 대학교가있을까요?",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29614044",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "584cbf6062b7e5ff550a",
+      "sourceName": "수만휘",
+      "title": "27학년도 사관학교 2차 면접 체력 대비 2가지 특강 프로그램 안내",
+      "preview": "[광릉한샘 1:6 재수반] 27학년도 사관학교 2차 면접 체력 대비 2가지 특강 프로그램 안내 광릉한샘기숙학원 사관반이 육·해·공군사관학교 및 국군간호사관학교 2차 시험을 대비하는 온·오프라인 교육 과정을 오는 8월",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29614042",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "9268225f89226885616f",
+      "sourceName": "수만휘",
+      "title": "수시컨설팅 조언부탁드려요ㅠㅠ",
+      "preview": "[🔥문과 수시 자유게시판] 부산 사는 고3학생입니다 곧 수시 지원을 해야해서 고민이 많습니다!!!😭😭 학종으로 지원을 하려고 하는데 제 생기부가 어떤지 판단하기가 너무어렵습니다....혹시 수시컨설팅이나 생기부관련상담",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29614041",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "1b433ae411a600e12ae2",
+      "sourceName": "수만휘",
+      "title": "백석대vs강원대",
+      "preview": "[┏Team08 수험생 게시판] 안정이고 유아교육과임. 둘다 대학안에 유치원 있고 사범대임.백석대는 통학가능 강원대는 기숙사나 자취해야 함.",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29614040",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
     {
       "id": "d1b815ebe8e5d050854f",
       "sourceName": "수만휘",
@@ -308,60 +353,6 @@
       "title": "영단어 암기와 영어공부법..",
       "preview": "[┏Team08 수험생 게시판] 고3 현재 영어 4등급 노베입니다.. 수능때 2등급이 목표에요 80점 간절히 원해요 ㅜㅜ 단어 독해 모두 부족한것같아요 단어장 붙들고 암기하는게 너무 안맞고 외워지지도 않아서 모고 1",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29614002",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "c7345eb1ae04c2c1ad67",
-      "sourceName": "수만휘",
-      "title": "대학 원서접수까지 얼마 안 남앗네요 도와주세요ㅠ",
-      "preview": "[┏Team08 수험생 게시판] 3,4는 몇개 없고5,6 다 섞여 있는데 치위생과나 의료공학이나 유아교육 생각중인데 대학교를 찾고 또 찾아봐도 어디를 써야항지 감이 안와서요 어디 써야할지 알려주실분 ㅠ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29614001",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "29a5b8c1ca5ab6399101",
-      "sourceName": "수만휘",
-      "title": "2.9 교과 카드 봐주세요",
-      "preview": "[🔥문과 수시 자유게시판] 안정~적정으로 경북대 교과 낼 생각이고 경북대 교과가 완전한 안정이 아니라서 서울권 교과를 안정으로 넣을까 생각 중 입니다 가천대(2.91) 명지대(2.73) 서울여대 덕성여대(2.72) ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29614000",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "4929e38dfb9095bf71c1",
-      "sourceName": "수만휘",
-      "title": "우주상향일까요..?",
-      "preview": "[┃사범대 게시판] 수만휘 카페 글",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29613999",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "2fcc5f6721b6443c1bad",
-      "sourceName": "수만휘",
-      "title": "고2 내신 3점 간호학과",
-      "preview": "[┃간호 게시판] 안녕하세요 저는 경북 시골에서 고등학교를 다니고 있는 고등학생입니다 제 내신이 순서대로 3.22 3.00 2.88로 9등급으로 환산하면 5초에서 4후반 정도 되는 내신인데 경북소재 간호학과에 가고 ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29613998",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "369bac7cc802215d2ab4",
-      "sourceName": "수만휘",
-      "title": "3학년때 등급 올리기?",
-      "preview": "[🔥이과 수시 자유게시판] 현 고2고 3학년 선택과목 신청 기간입니다 ㅠㅠ 화생지 미기확 듣는데 3학년 때 8과목 다 성적이 나오는 것으로 해서 성적을 올리는게 좋을지 아니면 7과목+절평1 해서 성적을 유지하는 것을",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29613997",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "9bc91c8d076d2c517acf",
-      "sourceName": "수만휘",
-      "title": "현실적으로 뭐가 나을까요",
-      "preview": "[😃수험생 일상글 게시판] 수만휘 카페 글",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29613996",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     }
