@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-19T14:16:18.102Z",
-  "checkedAt": "2026-08-19T14:16:18.102Z",
+  "updatedAt": "2026-08-19T14:54:17.311Z",
+  "checkedAt": "2026-08-19T14:54:17.311Z",
   "today": "2026-08-19",
   "count": 24,
   "notices": [
@@ -20,7 +20,7 @@
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
       "popularRank": 3,
-      "popularScore": 2.855717
+      "popularScore": 2.85831
     },
     {
       "id": "05287af0780fcee67a45",
@@ -34,8 +34,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 10,
-      "popularScore": 2.289402
+      "popularRank": 9,
+      "popularScore": 2.291028
     },
     {
       "id": "5ec199c76abc0acdd08b",
@@ -49,7 +49,7 @@
       "deadlineISO": "2026-09-13",
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
-      "popularRank": 23,
+      "popularRank": 22,
       "popularScore": 2.116308
     },
     {
@@ -65,7 +65,7 @@
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
       "popularRank": 2,
-      "popularScore": 3.054585
+      "popularScore": 3.064188
     },
     {
       "id": "9135ba48be9d10365323",
@@ -79,8 +79,8 @@
       "deadlineISO": "2026-09-13",
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
-      "popularRank": 21,
-      "popularScore": 2.13159
+      "popularRank": 23,
+      "popularScore": 2.112521
     },
     {
       "id": "f4aebd6330a249f3a9f7",
@@ -95,22 +95,7 @@
       "deadlineText": "2026.10.12",
       "alwaysHire": false,
       "popularRank": 15,
-      "popularScore": 2.1884701
-    },
-    {
-      "id": "e1e87ce35739315d63b3",
-      "jobId": "49778079",
-      "companyName": "주식회사 덴탈비서",
-      "title": "(주)덴탈비서 플랫폼 PM 경력채용",
-      "preview": "경력 · 정규직 · 마감 D-24 · 접수마감 2026.09.12",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49778079",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13",
-      "deadlineISO": "2026-09-12",
-      "deadlineText": "2026.09.12",
-      "alwaysHire": false,
-      "popularRank": 20,
-      "popularScore": 2.137534
+      "popularScore": 2.191181
     },
     {
       "id": "5e1cc9e61a7db7f87c3e",
@@ -125,7 +110,7 @@
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
       "popularRank": 7,
-      "popularScore": 2.387724
+      "popularScore": 2.39228
     },
     {
       "id": "88a0735cd26b5ca6d82a",
@@ -140,7 +125,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 3.258897
+      "popularScore": 3.255535
     },
     {
       "id": "cfc1e393775a21db0610",
@@ -154,23 +139,8 @@
       "deadlineISO": "2026-08-23",
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
-      "popularRank": 5,
-      "popularScore": 2.441958
-    },
-    {
-      "id": "adce3b32741e3448d142",
-      "jobId": "49740515",
-      "companyName": "㈜다우데이타",
-      "title": "[경력] IT 기획 담당자 채용",
-      "preview": "경력 · 정규직 · 마감 D-5 · 접수마감 2026.08.24",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49740515",
-      "dateISO": "2026-08-10",
-      "dateText": "2026.08.10",
-      "deadlineISO": "2026-08-24",
-      "deadlineText": "2026.08.24",
-      "alwaysHire": false,
-      "popularRank": 8,
-      "popularScore": 2.310183
+      "popularRank": 4,
+      "popularScore": 2.506467
     },
     {
       "id": "efb0a4e54d0c058c1929",
@@ -184,8 +154,8 @@
       "deadlineISO": "2026-10-07",
       "deadlineText": "2026.10.07",
       "alwaysHire": false,
-      "popularRank": 12,
-      "popularScore": 2.2615101
+      "popularRank": 11,
+      "popularScore": 2.2608302
     },
     {
       "id": "68c4a721b6baf77b0337",
@@ -199,8 +169,38 @@
       "deadlineISO": "2026-08-23",
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
-      "popularRank": 16,
-      "popularScore": 2.185595
+      "popularRank": 13,
+      "popularScore": 2.203589
+    },
+    {
+      "id": "adce3b32741e3448d142",
+      "jobId": "49740515",
+      "companyName": "㈜다우데이타",
+      "title": "[경력] IT 기획 담당자 채용",
+      "preview": "경력 · 정규직 · 마감 D-5 · 접수마감 2026.08.24",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49740515",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10",
+      "deadlineISO": "2026-08-24",
+      "deadlineText": "2026.08.24",
+      "alwaysHire": false,
+      "popularRank": 17,
+      "popularScore": 2.185128
+    },
+    {
+      "id": "7ff497d619edbb2ccb79",
+      "jobId": "49742182",
+      "companyName": "넥스터㈜",
+      "title": "[넥스터 주식회사]스마트 돌봄 서비스 사업기획 및 운영",
+      "preview": "ANY · 정규직 · 마감 D-18 · 접수마감 2026.09.06",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49742182",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07",
+      "deadlineISO": "2026-09-06",
+      "deadlineText": "2026.09.06",
+      "alwaysHire": false,
+      "popularRank": 20,
+      "popularScore": 2.155651
     },
     {
       "id": "c7fc0fb3d0784ba366ec",
@@ -215,7 +215,7 @@
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
       "popularRank": 6,
-      "popularScore": 2.405205
+      "popularScore": 2.406693
     },
     {
       "id": "52e3de0f3e258ff8c87a",
@@ -229,8 +229,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 14,
-      "popularScore": 2.214748
+      "popularRank": 12,
+      "popularScore": 2.241197
     },
     {
       "id": "cac58faef283c6e518f7",
@@ -244,8 +244,8 @@
       "deadlineISO": "2026-09-25",
       "deadlineText": "2026.09.25",
       "alwaysHire": false,
-      "popularRank": 13,
-      "popularScore": 2.224675
+      "popularRank": 14,
+      "popularScore": 2.20159
     },
     {
       "id": "8c7b1b063c58f34fc010",
@@ -259,8 +259,8 @@
       "deadlineISO": "2026-08-22",
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
-      "popularRank": 17,
-      "popularScore": 2.184881
+      "popularRank": 16,
+      "popularScore": 2.187625
     },
     {
       "id": "b29f4aa66e9babdd2d0f",
@@ -289,8 +289,8 @@
       "deadlineISO": "2026-09-10",
       "deadlineText": "2026.09.10",
       "alwaysHire": false,
-      "popularRank": 4,
-      "popularScore": 2.446713
+      "popularRank": 5,
+      "popularScore": 2.450968
     },
     {
       "id": "cb9a8f87ca6dfd53dfc4",
@@ -305,7 +305,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 18,
-      "popularScore": 2.170193
+      "popularScore": 2.17207
     },
     {
       "id": "5d72e3dd02179b6b3e3f",
@@ -319,23 +319,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 9,
-      "popularScore": 2.2935638
-    },
-    {
-      "id": "def56d1a40587609e504",
-      "jobId": "49660417",
-      "companyName": "㈜캐럿글로벌",
-      "title": "[캐럿글로벌] AI 확산센터 사업 PM (B2G)",
-      "preview": "경력 · 정규직 · 상시채용",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49660417",
-      "dateISO": "2026-07-27",
-      "dateText": "2026.07.27",
-      "deadlineISO": "",
-      "deadlineText": "",
-      "alwaysHire": true,
-      "popularRank": 22,
-      "popularScore": 2.120438
+      "popularRank": 8,
+      "popularScore": 2.298991
     },
     {
       "id": "ece21208d32d2683d912",
@@ -349,8 +334,8 @@
       "deadlineISO": "2026-09-04",
       "deadlineText": "2026.09.04",
       "alwaysHire": false,
-      "popularRank": 11,
-      "popularScore": 2.280394
+      "popularRank": 10,
+      "popularScore": 2.281645
     },
     {
       "id": "d5aa9dbc05ebb87dadde",
@@ -364,8 +349,23 @@
       "deadlineISO": "2026-08-23",
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
+      "popularRank": 21,
+      "popularScore": 2.152674
+    },
+    {
+      "id": "093f8212d4703005bd11",
+      "jobId": "49620956",
+      "companyName": "㈜비즈마켓",
+      "title": "[비즈마켓] 전략기획실 서비스기획자 채용",
+      "preview": "경력 · 정규직 · 마감 D-31 · 접수마감 2026.09.19",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49620956",
+      "dateISO": "2026-07-21",
+      "dateText": "2026.07.21",
+      "deadlineISO": "2026-09-19",
+      "deadlineText": "2026.09.19",
+      "alwaysHire": false,
       "popularRank": 19,
-      "popularScore": 2.151457
+      "popularScore": 2.171105
     }
   ],
   "stale": false,
