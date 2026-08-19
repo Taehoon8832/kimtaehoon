@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-19",
-  "updatedAt": "2026-08-19T05:10:00.015Z",
-  "checkedAt": "2026-08-19T05:10:00.015Z",
+  "updatedAt": "2026-08-19T05:53:10.744Z",
+  "checkedAt": "2026-08-19T05:53:10.744Z",
   "sources": [
     {
       "id": "u001",
@@ -1541,6 +1541,17 @@
       "dateText": "2026.08.19"
     },
     {
+      "id": "05b6dee0914124824950",
+      "univId": "u017",
+      "univName": "서경대",
+      "title": "2026학년도 9월 입학 특성화고 등을 졸업한 재직자전형 합격자 발표 및 등록금고지서 조회",
+      "preview": "서경대 입학 공지사항 미리보기",
+      "url": "https://go.skuniv.ac.kr/index.php?mid=notice&document_srl=228282",
+      "homeUrl": "https://go.skuniv.ac.kr/#main",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
       "id": "735ff4733992520d5ab6",
       "univId": "u042",
       "univName": "한양대(서울)",
@@ -1570,6 +1581,17 @@
       "preview": "한양대(에리카) 입학 공지사항 미리보기",
       "url": "https://goerica.hanyang.ac.kr/admission/html/counsel/all_notice_view.asp?idx=2247",
       "homeUrl": "https://goerica.hanyang.ac.kr/admission/intro.asp",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
+      "id": "e0ae81e9101797055ed4",
+      "univId": "u214",
+      "univName": "유니스트(UNIST)",
+      "title": "수시모집 2027학년도 그릿인재전형 포트폴리오 자료 작성 안내",
+      "preview": "수시모집 2027학년도 학부 신입생 모집 관련 서식 안내 2026.04.30 Prev Next </di",
+      "url": "https://adm-u.unist.ac.kr/admission/community/rolling-admissions.do?mode=view&articleNo=306792",
+      "homeUrl": "http://adm-u.unist.ac.kr/",
       "dateISO": "2026-08-19",
       "dateText": "2026.08.19"
     },
@@ -3305,5 +3327,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=33 empty=42 fail=141 fresh=140"
+  "statusReason": "ok=26 empty=27 fail=163 fresh=142"
 }
