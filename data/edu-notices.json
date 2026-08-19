@@ -67,8 +67,8 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-19T07:52:20.134084Z",
-  "checkedAt": "2026-08-19T07:52:20.134078Z",
+  "updatedAt": "2026-08-19T08:20:46.989951Z",
+  "checkedAt": "2026-08-19T08:20:46.989946Z",
   "today": "2026-08-19",
   "count": 80,
   "notices": [
@@ -103,46 +103,6 @@
       "dateText": "2026.08.19"
     },
     {
-      "id": "7df1603e3cf93bc805f4",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "대진대 건축공학과 전국대학생 CM/시공 경진대회 혁신상 수상",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623697",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
-      "id": "6527a01b3f38d3953715",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "김포대 AI 실습형 진로 교육으로 청소년 미래 역량 키운다",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623699",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
-      "id": "158a81f7d36bc2a67bf9",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국립한밭대 청년 취업 역량 강화를 위한 '2026 컴퓨터활용능력 향상과정' 성료",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623696",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
-      "id": "196ba20d518f35b41fb0",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국립순천대 '지역 강소기업 혁신성장 정책간담회' 개최…정진욱 국회의원 초청 특강",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623698",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
       "id": "fa9c3b688e19ef52802d",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
@@ -163,12 +123,52 @@
       "dateText": "2026.08.19"
     },
     {
+      "id": "3c1427e6ad7bbf45b4d2",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "[단독] [2027외고] 김해/전북 2027요강 ‘최초공개’.. 전북 160명, 김해 125명 ‘동일’",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623683",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
+      "id": "69e3c63e1dd83669cd6c",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "[단독] [2027수시] 상위15개대 수능최저 미적용 '34개 전형 1만2788명'..' 재학생 촉각'",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623664",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
       "id": "dc8a7bebf01bf001e008",
       "sourceId": "ebsi",
       "sourceName": "EBSi",
       "title": "[강좌/교재오픈] 💯수능 만점을 위한 기초 다지기 <수능 빌드업>",
       "preview": "EBSi 알림",
       "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE_01&artclId=000000400498553",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
+      "id": "90145b7dad1599be7d15",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "[2027전문대수시특집] 김영도 한국전문대학교육협의회 회장 “전문대학은 4년제 대안 아니라 실질적 직업교육 처음부터 다른 길”",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623706",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
+      "id": "db837e7f9c1e4baaf088",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "[2027전문대수시특집] ‘길어진 불황에 의대열풍 삼전닉스 흑백요리사로 급부상’ 2027전문대학 수시 15만2245명(91.5%) ‘확대’",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623705",
       "dateISO": "2026-08-19",
       "dateText": "2026.08.19"
     },
@@ -183,12 +183,12 @@
       "dateText": "2026.08.19"
     },
     {
-      "id": "c64718d9e8e49671e76e",
+      "id": "bb422936bd00be5ad4a5",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "2026학년도 글로컬 특화분야 글로벌 선진지 연수 인문/사회/예체능 분야 일본 탐방 '성료",
+      "title": "2026국제정보올림피아드 ‘4명 전원 메달 수상’.. 선덕/한국영재 금1, 경기과고 은1, 서울과고 동1",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623702",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623670",
       "dateISO": "2026-08-19",
       "dateText": "2026.08.19"
     },
