@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-19T10:38:28.651Z",
-  "checkedAt": "2026-08-19T10:38:28.651Z",
+  "updatedAt": "2026-08-19T10:59:04.764Z",
+  "checkedAt": "2026-08-19T10:59:04.764Z",
   "today": "2026-08-19",
   "count": 24,
   "notices": [
@@ -20,7 +20,22 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 4,
-      "popularScore": 2.502214
+      "popularScore": 2.499926
+    },
+    {
+      "id": "5ec199c76abc0acdd08b",
+      "jobId": "49777583",
+      "companyName": "리빌더에이아이",
+      "title": "Technical Project Manager/AI 엔지니어 채용",
+      "preview": "경력 · 정규직 · 마감 D-25 · 접수마감 2026.09.13",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49777583",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18",
+      "deadlineISO": "2026-09-13",
+      "deadlineText": "2026.09.13",
+      "alwaysHire": false,
+      "popularRank": 20,
+      "popularScore": 2.1422849
     },
     {
       "id": "67b2ec849ee48852ee0c",
@@ -34,8 +49,23 @@
       "deadlineISO": "2026-09-17",
       "deadlineText": "2026.09.17",
       "alwaysHire": false,
-      "popularRank": 22,
-      "popularScore": 1.9078599
+      "popularRank": 23,
+      "popularScore": 1.876383
+    },
+    {
+      "id": "d2a5f641a20711825fa6",
+      "jobId": "49794314",
+      "companyName": "㈜도리당",
+      "title": "프랜차이즈 가맹사업 본부장 채용",
+      "preview": "경력 · 정규직·계약직 · 마감 D-58 · 접수마감 2026.10.16",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49794314",
+      "dateISO": "2026-08-17",
+      "dateText": "2026.08.17",
+      "deadlineISO": "2026-10-16",
+      "deadlineText": "2026.10.16",
+      "alwaysHire": false,
+      "popularRank": 24,
+      "popularScore": 1.866397
     },
     {
       "id": "f19cd489697422d474e6",
@@ -50,7 +80,7 @@
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
       "popularRank": 3,
-      "popularScore": 3.06288
+      "popularScore": 3.063028
     },
     {
       "id": "9135ba48be9d10365323",
@@ -65,7 +95,22 @@
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
       "popularRank": 9,
-      "popularScore": 2.3758159
+      "popularScore": 2.324901
+    },
+    {
+      "id": "e1e87ce35739315d63b3",
+      "jobId": "49778079",
+      "companyName": "주식회사 덴탈비서",
+      "title": "(주)덴탈비서 플랫폼 PM 경력채용",
+      "preview": "경력 · 정규직 · 마감 D-24 · 접수마감 2026.09.12",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49778079",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13",
+      "deadlineISO": "2026-09-12",
+      "deadlineText": "2026.09.12",
+      "alwaysHire": false,
+      "popularRank": 18,
+      "popularScore": 2.183058
     },
     {
       "id": "f4aebd6330a249f3a9f7",
@@ -79,38 +124,8 @@
       "deadlineISO": "2026-10-12",
       "deadlineText": "2026.10.12",
       "alwaysHire": false,
-      "popularRank": 18,
-      "popularScore": 2.177145
-    },
-    {
-      "id": "57d895795df74dbe0caa",
-      "jobId": "49774224",
-      "companyName": "㈜심비즈코리아",
-      "title": "AI 개발 프로젝트 PM 경력직 채용",
-      "preview": "경력 · 정규직·계약직·프리랜서 · 마감 D-24 · 접수마감 2026.09.12",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49774224",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13",
-      "deadlineISO": "2026-09-12",
-      "deadlineText": "2026.09.12",
-      "alwaysHire": false,
-      "popularRank": 20,
-      "popularScore": 2.1139321
-    },
-    {
-      "id": "1f89ddb8e103ed17b7c4",
-      "jobId": "49779534",
-      "companyName": "미스터픽",
-      "title": "[첫차]와 함께 할 프로덕트 매니저(PM)를 찾습니다.",
-      "preview": "경력 · 정규직 · 마감 D-25 · 접수마감 2026.09.13",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49779534",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13",
-      "deadlineISO": "2026-09-13",
-      "deadlineText": "2026.09.13",
-      "alwaysHire": false,
-      "popularRank": 23,
-      "popularScore": 1.897707
+      "popularRank": 19,
+      "popularScore": 2.1507568
     },
     {
       "id": "5e1cc9e61a7db7f87c3e",
@@ -124,8 +139,8 @@
       "deadlineISO": "2026-09-13",
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
-      "popularRank": 8,
-      "popularScore": 2.389453
+      "popularRank": 7,
+      "popularScore": 2.394553
     },
     {
       "id": "88a0735cd26b5ca6d82a",
@@ -140,7 +155,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 3.272143
+      "popularScore": 3.275739
     },
     {
       "id": "cfc1e393775a21db0610",
@@ -154,8 +169,8 @@
       "deadlineISO": "2026-08-23",
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
-      "popularRank": 7,
-      "popularScore": 2.453735
+      "popularRank": 6,
+      "popularScore": 2.4610229
     },
     {
       "id": "adce3b32741e3448d142",
@@ -170,7 +185,7 @@
       "deadlineText": "2026.08.24",
       "alwaysHire": false,
       "popularRank": 10,
-      "popularScore": 2.336165
+      "popularScore": 2.3217711
     },
     {
       "id": "efb0a4e54d0c058c1929",
@@ -185,7 +200,7 @@
       "deadlineText": "2026.10.07",
       "alwaysHire": false,
       "popularRank": 13,
-      "popularScore": 2.260674
+      "popularScore": 2.2607439
     },
     {
       "id": "68c4a721b6baf77b0337",
@@ -199,8 +214,8 @@
       "deadlineISO": "2026-08-23",
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
-      "popularRank": 16,
-      "popularScore": 2.186243
+      "popularRank": 17,
+      "popularScore": 2.184772
     },
     {
       "id": "c7fc0fb3d0784ba366ec",
@@ -214,8 +229,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 5,
-      "popularScore": 2.48601
+      "popularRank": 8,
+      "popularScore": 2.393688
     },
     {
       "id": "52e3de0f3e258ff8c87a",
@@ -230,22 +245,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 12,
-      "popularScore": 2.2688541
-    },
-    {
-      "id": "073c9f6a29eae7da18cb",
-      "jobId": "49717218",
-      "companyName": "㈜파킹고",
-      "title": "개발 프로젝트 PM (Project Manager / 프로젝트 매니저) 채용",
-      "preview": "경력 · 정규직 · 마감 D-15 · 접수마감 2026.09.03",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49717218",
-      "dateISO": "2026-08-04",
-      "dateText": "2026.08.04",
-      "deadlineISO": "2026-09-03",
-      "deadlineText": "2026.09.03",
-      "alwaysHire": false,
-      "popularRank": 24,
-      "popularScore": 1.879158
+      "popularScore": 2.267953
     },
     {
       "id": "cac58faef283c6e518f7",
@@ -260,7 +260,7 @@
       "deadlineText": "2026.09.25",
       "alwaysHire": false,
       "popularRank": 14,
-      "popularScore": 2.22646
+      "popularScore": 2.226856
     },
     {
       "id": "8c7b1b063c58f34fc010",
@@ -274,8 +274,8 @@
       "deadlineISO": "2026-08-22",
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
-      "popularRank": 17,
-      "popularScore": 2.1840029
+      "popularRank": 16,
+      "popularScore": 2.184886
     },
     {
       "id": "b29f4aa66e9babdd2d0f",
@@ -289,8 +289,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 21,
-      "popularScore": 2.103985
+      "popularRank": 22,
+      "popularScore": 2.103637
     },
     {
       "id": "e5645d380f01e4db6d17",
@@ -304,8 +304,8 @@
       "deadlineISO": "2026-09-10",
       "deadlineText": "2026.09.10",
       "alwaysHire": false,
-      "popularRank": 6,
-      "popularScore": 2.47403
+      "popularRank": 5,
+      "popularScore": 2.4684331
     },
     {
       "id": "cb9a8f87ca6dfd53dfc4",
@@ -320,7 +320,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 15,
-      "popularScore": 2.201301
+      "popularScore": 2.1981559
     },
     {
       "id": "c4b6e2d9e1ed5272120e",
@@ -335,7 +335,7 @@
       "deadlineText": "2026.09.27",
       "alwaysHire": false,
       "popularRank": 2,
-      "popularScore": 3.250303
+      "popularScore": 3.252444
     },
     {
       "id": "def56d1a40587609e504",
@@ -349,8 +349,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 19,
-      "popularScore": 2.120444
+      "popularRank": 21,
+      "popularScore": 2.119924
     },
     {
       "id": "ece21208d32d2683d912",
@@ -365,7 +365,7 @@
       "deadlineText": "2026.09.04",
       "alwaysHire": false,
       "popularRank": 11,
-      "popularScore": 2.301517
+      "popularScore": 2.300513
     }
   ],
   "stale": false,
