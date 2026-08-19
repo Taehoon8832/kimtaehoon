@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-19",
-  "updatedAt": "2026-08-19T00:01:47.431Z",
-  "checkedAt": "2026-08-19T00:01:47.431Z",
+  "updatedAt": "2026-08-19T01:30:05.020Z",
+  "checkedAt": "2026-08-19T01:30:05.020Z",
   "sources": [
     {
       "id": "u001",
@@ -1871,6 +1871,28 @@
       "dateText": "2026.08.13"
     },
     {
+      "id": "fad730f6dd6b78ddfe18",
+      "univId": "u073",
+      "univName": "중부대(고양)",
+      "title": "포토뉴스 중부대학교 고양 앵커사업 「 AI 미디어마케터 과정(심.. 중부대학교(총장 이정열)는 지난 일 창의캠퍼스 세종관 816호에서 고양 앵커사업 「AI 미디어마케터 심화과정)」 수..",
+      "preview": "및 출연\" onerror=\"this.src='/error/img/noimage.jpg'\" /> 포토뉴스 중부대학교 경찰행정학전공 신소영 교수, 및 출연 중",
+      "url": "http://ipsi.joongbu.ac.kr/gallery.es?mid=a60702000000&bid=0002&list_no=18802&act=view",
+      "homeUrl": "http://ipsi.joongbu.ac.kr/",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13"
+    },
+    {
+      "id": "cbc5158c380fa053bcea",
+      "univId": "u154",
+      "univName": "중부대(충청)",
+      "title": "포토뉴스 중부대학교 고양 앵커사업 「 AI 미디어마케터 과정(심.. 중부대학교(총장 이정열)는 지난 일 창의캠퍼스 세종관 816호에서 고양 앵커사업 「AI 미디어마케터 심화과정)」 수..",
+      "preview": "및 출연\" onerror=\"this.src='/error/img/noimage.jpg'\" /> 포토뉴스 중부대학교 경찰행정학전공 신소영 교수, 및 출연 중",
+      "url": "http://ipsi.joongbu.ac.kr/gallery.es?mid=a60702000000&bid=0002&list_no=18802&act=view",
+      "homeUrl": "http://ipsi.joongbu.ac.kr/",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13"
+    },
+    {
       "id": "87667a44d04a17c0ae78",
       "univId": "u245",
       "univName": "해군사관학교",
@@ -3250,5 +3272,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=26 empty=18 fail=172 fresh=135"
+  "statusReason": "ok=30 empty=42 fail=144 fresh=137"
 }
