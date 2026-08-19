@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-19",
-  "updatedAt": "2026-08-19T10:00:57.813Z",
-  "checkedAt": "2026-08-19T10:00:57.813Z",
+  "updatedAt": "2026-08-19T10:37:47.873Z",
+  "checkedAt": "2026-08-19T10:37:47.873Z",
   "sources": [
     {
       "id": "u001",
@@ -1629,17 +1629,6 @@
       "dateText": "2026.08.19"
     },
     {
-      "id": "e0ae81e9101797055ed4",
-      "univId": "u214",
-      "univName": "유니스트(UNIST)",
-      "title": "수시모집 2027학년도 그릿인재전형 포트폴리오 자료 작성 안내",
-      "preview": "수시모집 2027학년도 학부 신입생 모집 관련 서식 안내 2026.04.30 Prev Next </di",
-      "url": "https://adm-u.unist.ac.kr/admission/community/rolling-admissions.do?mode=view&articleNo=306792",
-      "homeUrl": "http://adm-u.unist.ac.kr/",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
       "id": "40aab453b9bc814fa46a",
       "univId": "u214",
       "univName": "유니스트(UNIST)",
@@ -1651,15 +1640,15 @@
       "dateText": "2026.08.19"
     },
     {
-      "id": "d750614a34720631d763",
-      "univId": "u245",
-      "univName": "해군사관학교",
-      "title": "(공지) 신원조사(인터넷 제출서류) 미비서류 추가 제출 안내",
-      "preview": "해군사관학교 입학 공지사항 미리보기",
-      "url": "https://www.navy.ac.kr:4443/bbs/iphak/142/841558/artclView.do",
-      "homeUrl": "https://www.navy.ac.kr:4443/sites/iphak/index.do",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
+      "id": "e0ae81e9101797055ed4",
+      "univId": "u214",
+      "univName": "유니스트(UNIST)",
+      "title": "수시모집 2027학년도 그릿인재전형 포트폴리오 자료 작성 안내",
+      "preview": "수시모집 2027학년도 학부 신입생 모집 관련 서식 안내 2026.04.30 Prev Next </di",
+      "url": "https://adm-u.unist.ac.kr/admission/community/rolling-admissions.do?mode=view&articleNo=306792",
+      "homeUrl": "http://adm-u.unist.ac.kr/",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
     },
     {
       "id": "4eb26825ad7563c64780",
@@ -3382,5 +3371,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=28 empty=36 fail=152 fresh=147"
+  "statusReason": "ok=34 empty=42 fail=140 fresh=146"
 }
