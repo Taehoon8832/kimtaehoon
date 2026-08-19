@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-19",
-  "updatedAt": "2026-08-18T23:39:21.261Z",
-  "checkedAt": "2026-08-18T23:39:21.261Z",
+  "updatedAt": "2026-08-19T00:01:47.431Z",
+  "checkedAt": "2026-08-19T00:01:47.431Z",
   "sources": [
     {
       "id": "u001",
@@ -1530,6 +1530,17 @@
   ],
   "notices": [
     {
+      "id": "49620e103b5a700cbdbc",
+      "univId": "u032",
+      "univName": "육군사관학교",
+      "title": "★ 국방부 신원조사 미비서류 보완 관련 안내 ★",
+      "preview": "육군사관학교 입학 공지사항 미리보기",
+      "url": "https://www.kma.ac.kr:461/bbs/kma/160/29326/artclView.do",
+      "homeUrl": "https://www.kma.ac.kr:461/",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
       "id": "d750614a34720631d763",
       "univId": "u245",
       "univName": "해군사관학교",
@@ -1877,17 +1888,6 @@
       "title": "★ 2027학년도(제87기) 육군사관생도 선발 부대장 추천서 양식(현역 군인 대상) ★",
       "preview": "육군사관학교 입학 공지사항 미리보기",
       "url": "https://www.kma.ac.kr:461/bbs/kma/160/29254/artclView.do",
-      "homeUrl": "https://www.kma.ac.kr:461/",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "2d24e4d518de074d9185",
-      "univId": "u032",
-      "univName": "육군사관학교",
-      "title": "★ 2027학년도(제87기) 특별전형 제출 서류(농어촌 재학사실확인서) 양식 ★",
-      "preview": "육군사관학교 입학 공지사항 미리보기",
-      "url": "https://www.kma.ac.kr:461/bbs/kma/160/29253/artclView.do",
       "homeUrl": "https://www.kma.ac.kr:461/",
       "dateISO": "2026-08-12",
       "dateText": "2026.08.12"
@@ -3250,5 +3250,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=26 empty=25 fail=165 fresh=135"
+  "statusReason": "ok=26 empty=18 fail=172 fresh=135"
 }
