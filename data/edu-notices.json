@@ -67,20 +67,90 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-20T23:39:12.029997Z",
-  "checkedAt": "2026-08-20T23:39:12.029992Z",
+  "updatedAt": "2026-08-20T23:57:05.700258Z",
+  "checkedAt": "2026-08-20T23:57:05.700253Z",
   "today": "2026-08-21",
-  "count": 72,
+  "count": 80,
   "notices": [
     {
-      "id": "5fc1863537c106dba1d5",
+      "id": "6986745acb3aa6a09630",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "한국항공대 2025학년도 후기 학위수여식 개최…졸업생 394명 배출",
+      "title": "청운대 대학 미래비전/앵커사업 발전전략 워크숍 개최",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623904",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623919",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "0b167ec3f687af3bb7ff",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "인제대 생활과학교실 지역 과학문화 확산 및 AI/SW 교육 활성화 위한 협력체계 구축",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623921",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "e345e6eac047e721ee5b",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "서울대 현대한국종합연구단 2026 현대한국종합연구 국제학술대회 ‘방법으로서의 한국(Korea as Method)’ 개최",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623914",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "a21bbb108bb5befb10b2",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "동부경남 4개 대학, 'GOU컨소시엄' 공식 출범",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623920",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "3db9b120a2ff515d224b",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "KAIST 되돌아오지 못하는 세포의 비밀 풀었다",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623916",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "8c5d6e6c50a3d62b62aa",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "KAIST \"AI는 사람의 행동 넘어'의도'까지 이해할 수 있을까?\"…증강현실연구센터 10주년 심포지엄",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623915",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "3bb48d01b2533a8004d4",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "GIST 연구실 기술 창업으로 잇는다 '2026 텍스코어', 국내외 시장 검증",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623918",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "da6ea64d6ba48307657e",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "\"탄소를 잠깐 넣었다 빼니, 반도체 배선 저항 45% 뚝!\" GIST-삼성전자 SAIT-MIT, 차세대 반도체 배선 소재 제어 기술 '사이언스'에 발표",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623917",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
     },
     {
       "id": "c45c5f6c2702dabab03d",
@@ -113,16 +183,6 @@
       "dateText": "2026.08.20"
     },
     {
-      "id": "59be44e81842d188e3bc",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "서울과기대-KBIOHealth 양자기술/첨단바이오헬스 연구협력 업무협약 체결",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623905",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
       "id": "b608f8f1b8b7426e15d0",
       "sourceId": "moe_blog",
       "sourceName": "교육부블로그",
@@ -139,56 +199,6 @@
       "title": "모두의 미래를 위한 교육! 2026 하반기 교육부 업무보고",
       "preview": "모두의 미래를 위한 교육! 2026 하반기 교육부 업무보고 ✅지역과 청년의 동반 도약 총력 지원 - 5극 3특 중심의 지역 인재 신속 양성 - 지역 청년 우대 정책 확산 - 매력적인 지역 교육 기반 조성 ✅세계 최고",
       "url": "https://blog.naver.com/moeblog/224384183115",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "795866a9d1dba44ffc04",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "동명대 김숙현 씨 우수논문상 수상.. 어선 유체성능 연구로 산업 현장 기여",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623901",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "6df96e64731ec5c7c589",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "대구공업대 '국민체력100 파트너스/튼튼머니 적립시설' 지정",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623899",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "8060794fa111d2fc1dae",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국립창원대 학생들 우즈베키스탄에서 K-문화/교육 나눔 실천한다!",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623902",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "e6037be29158c270ea1e",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국립목포대 MNU메이커스페이스 '기술창업 아카데미' 2학기 수강생 모집",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623903",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "fbbdb25eda031646ce39",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국립목포대 2025학년도 후기 학위수여식 성료",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623898",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
@@ -239,16 +249,6 @@
       "title": "[EBSi LIVE] 2027학년도 9월 모의평가 경향분석🎙️ | 주요 문항 분석 & 실시간 Q/A",
       "preview": "EBSi 알림",
       "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE&artclId=000000400499895",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "152e6bcf4407f66d724f",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "[2027수시특집] '반도체특성화대학' 명지대 1650명(65.24%) 모집.. 학교장추천 지원자격 변경",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623906",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
@@ -421,6 +421,26 @@
       "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE&artclId=000000400498605",
       "dateISO": "2026-08-13",
       "dateText": "2026.08.13"
+    },
+    {
+      "id": "c170b734cd2c3f6144c2",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 응시원서 접수 실시 보도자료",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095891&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
+      "id": "e5f5cb614925be27c292",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 응시...",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095891&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
     },
     {
       "id": "71bea3947aac43cbd715",
@@ -663,6 +683,26 @@
       "dateText": "2026.07.08"
     },
     {
+      "id": "7dd0ca1bbf02af8ad52a",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 시행세부계획 공고문 및 보도자료",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095611&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-07-01",
+      "dateText": "2026.07.01"
+    },
+    {
+      "id": "cc4d1664e73360e239c0",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 시행...",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095611&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-07-01",
+      "dateText": "2026.07.01"
+    },
+    {
       "id": "a0aa87a1e4180dd8cc5f",
       "sourceId": "moe",
       "sourceName": "교육부",
@@ -671,6 +711,26 @@
       "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106606&lev=0&m=0303&s=moe",
       "dateISO": "2026-07-01",
       "dateText": "2026.07.01"
+    },
+    {
+      "id": "80a33a6ab6902a92dc55",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 6월 모의평가 채점 결과 보도자료",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095596&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-06-30",
+      "dateText": "2026.06.30"
+    },
+    {
+      "id": "9fce7ea1a078732c7f11",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 6월 ...",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095596&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-06-30",
+      "dateText": "2026.06.30"
     },
     {
       "id": "ebc9ec4d897a574f81cd",
@@ -741,6 +801,26 @@
       "url": "https://www.adiga.kr/cct/pbf/noticeDetail.do?menuId=PCCCTPBF1000&prtlBbsId=27236",
       "dateISO": "2026-06-24",
       "dateText": "2026.06.24"
+    },
+    {
+      "id": "4def09c640c82abcd550",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 9월 모의평가 시행계획 공고 보도자료",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095439&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-06-17",
+      "dateText": "2026.06.17"
+    },
+    {
+      "id": "506b1bfb204db49a3937",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 9월 ...",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095439&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-06-17",
+      "dateText": "2026.06.17"
     },
     {
       "id": "b6d40650a66f53bc6cfb",
