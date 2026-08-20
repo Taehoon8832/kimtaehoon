@@ -67,28 +67,18 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-20T08:01:47.806756Z",
-  "checkedAt": "2026-08-20T08:01:47.806750Z",
+  "updatedAt": "2026-08-20T08:53:20.453938Z",
+  "checkedAt": "2026-08-20T08:53:20.453932Z",
   "today": "2026-08-20",
   "count": 80,
   "notices": [
     {
-      "id": "f46793d53e0ee4933ad4",
+      "id": "5fc1863537c106dba1d5",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "충북대 창업중심대학 사업단, 창업기업 해외시장 '정조준'",
+      "title": "한국항공대 2025학년도 후기 학위수여식 개최…졸업생 394명 배출",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623894",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "e299bd70a1466564b8f2",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "충북대 창업중심대학 사업단 창업기업 해외시장 '정조준'",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623895",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623904",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
@@ -113,6 +103,16 @@
       "dateText": "2026.08.20"
     },
     {
+      "id": "59be44e81842d188e3bc",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "서울과기대-KBIOHealth 양자기술/첨단바이오헬스 연구협력 업무협약 체결",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623905",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
       "id": "b608f8f1b8b7426e15d0",
       "sourceId": "moe_blog",
       "sourceName": "교육부블로그",
@@ -133,22 +133,52 @@
       "dateText": "2026.08.20"
     },
     {
-      "id": "29b3987da0a00378b334",
+      "id": "795866a9d1dba44ffc04",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "김포대 'K-AID FLEX' 교육혁신으로 미래 인재 양성에 박차",
+      "title": "동명대 김숙현 씨 우수논문상 수상.. 어선 유체성능 연구로 산업 현장 기여",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623891",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623901",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
     {
-      "id": "e0708870a6b21cbf7f64",
+      "id": "6df96e64731ec5c7c589",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "국립순천대 순천시가족센터, 다문화가족자녀성장지원 '여름방학 프로그램'운영",
+      "title": "대구공업대 '국민체력100 파트너스/튼튼머니 적립시설' 지정",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623892",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623899",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "8060794fa111d2fc1dae",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "국립창원대 학생들 우즈베키스탄에서 K-문화/교육 나눔 실천한다!",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623902",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "e6037be29158c270ea1e",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "국립목포대 MNU메이커스페이스 '기술창업 아카데미' 2학기 수강생 모집",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623903",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "fbbdb25eda031646ce39",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "국립목포대 2025학년도 후기 학위수여식 성료",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623898",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
@@ -163,26 +193,6 @@
       "dateText": "2026.08.20"
     },
     {
-      "id": "1e2ffdcb699e121996e3",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "경북대 총여성동창회, 모교 인재 위해 발전기금 1억1500만원 쾌척",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623896",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "0ac61b242069c87a25b1",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "경기대 SW중심대학사업단 바이브코딩 집중교육 운영.. 14개 전공 학생 참여",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623893",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
       "id": "43eadd289697157fa0a8",
       "sourceId": "ebsi",
       "sourceName": "EBSi",
@@ -193,20 +203,10 @@
       "dateText": "2026.08.20"
     },
     {
-      "id": "e7d23743aa01b3076c3e",
+      "id": "450bd7246e49982a5634",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "[단독] [2027전국단위자율학교] 거창대성고 154명 ‘동일’.. 전국 92명, 지역 62명",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623872",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "d6ad0b9d43f725bfa9cc",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "[단독] [2027수시] 서울대 서강대등 상위대 학종 가이드북으로 보는 학생부 준비법.. ‘스펙보다 성장의 흐름’",
+      "title": "[단독] [2027수시] 서울대 서강대 등 상위대 학종 가이드북으로 보는 학생부 준비법.. ‘스펙보다 성장의 흐름’",
       "preview": "베리타스알파 소식",
       "url": "https://www.veritas-a.com/news/articleView.html?idxno=623818",
       "dateISO": "2026-08-20",
