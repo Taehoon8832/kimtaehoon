@@ -67,88 +67,128 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-20T00:32:53.302608Z",
-  "checkedAt": "2026-08-20T00:32:53.302603Z",
+  "updatedAt": "2026-08-20T02:05:31.414381Z",
+  "checkedAt": "2026-08-20T02:05:31.414337Z",
   "today": "2026-08-20",
   "count": 80,
   "notices": [
     {
-      "id": "a0b6467e5794f6ed8e1a",
+      "id": "d45e1112e3ee003568e2",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "한남대 자체 투자프로그램 'HIPS 2.0' 투자기관 연합 IR로 투자연계 강화",
+      "title": "한동대 포항 소상공인 대상 세계시민교육 지속가능 리더십 특강 5회 과정 마무리",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623736",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623769",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
     {
-      "id": "9cd2370137387d1f3261",
+      "id": "d2bdf57d6189d1d44bd1",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "원광대 앵커(RISE)사업단 임실 한국치즈과학고 대상 '찾아가는 로컬캠퍼스' 운영",
+      "title": "전북대-서울시립대 공동연구팀, 우주환경 반도체 성능저하 원인 규명.. 방사선 신뢰성 설계 요인 제시",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623733",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623763",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
     {
-      "id": "272621bf42b414849776",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "원광대 K-컬처 사업단, '2026 글로벌 K-컬처 매시업캠프' 대상/최우수상/우수상 수상",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623732",
+      "id": "cc7f4070287c716e988d",
+      "sourceId": "edupress",
+      "sourceName": "에듀프레스",
+      "title": "이일권 교장 \"교육은 기본이 중요 ... 교육정책은 '티처 퍼스트'가 핵심“",
+      "preview": "에듀프레스 소식",
+      "url": "https://www.edupress.kr/news/articleView.html?idxno=30406",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
     {
-      "id": "ba6a8fbaed59eac0cefc",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "영산대 드론/배리어프리 융합해 양산 원도심 살린다",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623734",
+      "id": "b608f8f1b8b7426e15d0",
+      "sourceId": "moe_blog",
+      "sourceName": "교육부블로그",
+      "title": "문해교육에 관심있는 국민 누구나! 대한민국 문해교육 정책전시회",
+      "preview": "\"문해와 AI로 연결하는 너와 나, 새로운 세상\" 대한민국 문해교육 정책전시회 📌일시 : 2026. 8. 27(목)~28(금) 📌장소 : 청주 오스코 컨벤션 센터(충북 청주시 오송읍) 문해교육 다큐멘터리 상영회 부터",
+      "url": "https://blog.naver.com/moeblog/224383170496",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
     {
-      "id": "22bd48d557aea53fbdd5",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국립한국해양대-한국조선해양기자재연구원, '해양 AX 혁신허브' 구축 위한 상호협력 강화",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623731",
+      "id": "cc8726d942353ae1409a",
+      "sourceId": "moe_blog",
+      "sourceName": "교육부블로그",
+      "title": "모두의 미래를 위한 교육! 2026 하반기 교육부 업무보고",
+      "preview": "모두의 미래를 위한 교육! 2026 하반기 교육부 업무보고 ✅지역과 청년의 동반 도약 총력 지원 - 5극 3특 중심의 지역 인재 신속 양성 - 지역 청년 우대 정책 확산 - 매력적인 지역 교육 기반 조성 ✅세계 최고",
+      "url": "https://blog.naver.com/moeblog/224384183115",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
     {
-      "id": "3ecfd6eec7f8c32a2c7c",
+      "id": "0586fee58a49960079fa",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "국립창원대 토목공학과 송채빈 학생 한국수자원학회 '우수학생 논문상' 수상!",
+      "title": "동아대 부동산학교육과정 부산시민 대상 '부동산 세미나' 성황리 개최",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623730",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623768",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
     {
-      "id": "0799ddeedbdb5de2e3c0",
+      "id": "248dde1dd76fea586288",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "국립부경대 2026년 8월 전임교원 정년퇴임식 개최",
+      "title": "동아대 경영대학원 2025학년도 후기 석사(MBA) 학위수여식 개최",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623737",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623767",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
     {
-      "id": "fa752d0256446a9329fa",
+      "id": "798ee8931be96bc4a3f5",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "UNIST/고등과학원 간섭계로 '시공간 양자 상태' 읽는 방법 제시",
+      "title": "국립한밭대 2026 하반기 화/목한 자소서/면접 프로그램 운영",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623735",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623764",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "a6e4fe877a79f050820a",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "국립한국교통대 충청북도 충주시 초등학생 대상 과학/창의교육 프로그램 '창의놀이터' 운영",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623765",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "ffd1cc69bd1ab8ae6250",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "국립한국교통대 스포츠의학과 소위영 교수 국제학술지 'BMC Public Health' 편집위원 임명",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623766",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "43eadd289697157fa0a8",
+      "sourceId": "ebsi",
+      "sourceName": "EBSi",
+      "title": "[특별생방송] 2027학년도 9월 모의평가 분석 📺 | 출제경향 및 연계 분석 브리핑",
+      "preview": "EBSi 알림",
+      "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE&artclId=000000400498623",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "03d4c972d791187fead7",
+      "sourceId": "ebsi",
+      "sourceName": "EBSi",
+      "title": "[EBSi LIVE] 2027학년도 9월 모의평가 경향분석🎙️ | 주요 문항 분석 & 실시간 Q/A",
+      "preview": "EBSi 알림",
+      "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE&artclId=000000400499895",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
@@ -159,6 +199,16 @@
       "title": "2027학년도 대입전형자료 온라인 개인신청 서비스 안내",
       "preview": "어디가 공지",
       "url": "https://www.adiga.kr/cct/pbf/noticeDetail.do?menuId=PCCCTPBF1000&prtlBbsId=27511",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "7668c758f68c5255cdb6",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "'제6기 원주 창업 메이커 스쿨' 성료",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623762",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
@@ -223,16 +273,6 @@
       "dateText": "2026.08.18"
     },
     {
-      "id": "65bca54ef5ee33113087",
-      "sourceId": "moe_blog",
-      "sourceName": "교육부블로그",
-      "title": "「학교급식법 시행령」 일부개정령안 국무회의 통과",
-      "preview": "교육부(장관 최교진)는 8월 18일(화) 국무회의에서 「학교급식법 시행령」 일부개정령안이 심의·의결되었다고 밝혔다. 이번의 시행령 개정은 「학교급식법」의 개정(2026.2.19., 일부개정*, 2026.8.20.,",
-      "url": "https://blog.naver.com/moeblog/224382031471",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
       "id": "6fc54b15f76a1a168b5b",
       "sourceId": "moe_blog",
       "sourceName": "교육부블로그",
@@ -293,16 +333,6 @@
       "dateText": "2026.08.18"
     },
     {
-      "id": "d099754a40156b9a3f7f",
-      "sourceId": "moe_blog",
-      "sourceName": "교육부블로그",
-      "title": "동화로 이어 온 20번째 만남, 한·중·일 어린이들의 우정이 한국에서 꽃피다",
-      "preview": "교육부(장관 최교진)는 에이펙(APEC) 국제교육협력원(이사장 박동선)과 함께 8월 17일(월)부터 8월 23일(일)까지 서울 일원에서 「2026 한·중·일 어린이 동화교류대회」를 개최한다. 2002년부터 시작해 올",
-      "url": "https://blog.naver.com/moeblog/224380085646",
-      "dateISO": "2026-08-17",
-      "dateText": "2026.08.17"
-    },
-    {
       "id": "4044cce54227a2f38fa3",
       "sourceId": "edupress",
       "sourceName": "에듀프레스",
@@ -343,16 +373,6 @@
       "dateText": "2026.08.14"
     },
     {
-      "id": "3429552f8b1290342f6e",
-      "sourceId": "edupress",
-      "sourceName": "에듀프레스",
-      "title": "“수학 어려울 땐 '서울셈'이 찾아가요”…서울시교육청, 난산 학생 지원 프로그램 운영",
-      "preview": "에듀프레스 소식",
-      "url": "https://www.edupress.kr/news/articleView.html?idxno=30398",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13"
-    },
-    {
       "id": "8cde7995d2556b8362be",
       "sourceId": "ebsi",
       "sourceName": "EBSi",
@@ -371,26 +391,6 @@
       "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE&artclId=000000400498605",
       "dateISO": "2026-08-13",
       "dateText": "2026.08.13"
-    },
-    {
-      "id": "28d9c55bb57c82bb7a53",
-      "sourceId": "ebsi",
-      "sourceName": "EBSi",
-      "title": "단기간에 끝내는 실전 공략 <2027 약점공략>",
-      "preview": "EBSi 알림",
-      "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE_01&artclId=000000400494559",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "26777aecd3e4420a6ddb",
-      "sourceId": "ebsi",
-      "sourceName": "EBSi",
-      "title": "[강좌/교재 오픈] 👍️고난도 실전 대비 <2027 만점마무리 봉투모의고사 시즌2 고난도>",
-      "preview": "EBSi 알림",
-      "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE_01&artclId=000000400495843",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
     },
     {
       "id": "32ed99cbba75d2d79437",
