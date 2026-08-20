@@ -67,18 +67,38 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-20T05:29:43.027364Z",
-  "checkedAt": "2026-08-20T05:29:43.027359Z",
+  "updatedAt": "2026-08-20T05:56:35.629002Z",
+  "checkedAt": "2026-08-20T05:56:35.628995Z",
   "today": "2026-08-20",
   "count": 80,
   "notices": [
     {
-      "id": "2075478cdd91ff45fb1d",
+      "id": "13c555a9ce8135aa0e72",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "호원대 앵커(RISE)사업단 로컬IP 창업 컨퍼런스 개최",
+      "title": "호남대 제주 올레길서 '함께 걷고, 함께 성장'…2026 국토순례 진행",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623838",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623865",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "e5f2d35488a1d5dc1019",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "충북대 박물관 '명작의 안목, 명품의 철학' 제29기 2학기 박물관대학 수강생 모집",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623861",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "b7fa4b050229d21e962b",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "충북대 AI튜터로 자기주도학습의 길을 열다",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623864",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
@@ -89,6 +109,16 @@
       "title": "이일권 교장 \"교육은 기본이 중요 ... 교육정책은 '티처 퍼스트'가 핵심“",
       "preview": "에듀프레스 소식",
       "url": "https://www.edupress.kr/news/articleView.html?idxno=30406",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "dbae657cb7ca37b8fed8",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "신라대 학생 주도 '마음건강 인식 개선 캠페인' 실시",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623860",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
@@ -113,62 +143,32 @@
       "dateText": "2026.08.20"
     },
     {
-      "id": "bec3e9c0f29de9467a0f",
+      "id": "64893ff60a7415ce4efd",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "대구한의대 동의한방촌 대구가톨릭대 도시농업관리사생 대상 한방웰니스 체험프로그램 운영.. '도시농업-한방웰니스 융복합 모색'",
+      "title": "김해/홍릉 강소특구, 싱가포르 'Co11ab Novena'와 3자 맞손… K-바이오 APAC 진출 뚫는다",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623836",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623866",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
     {
-      "id": "415a2aee4366c3e1115f",
+      "id": "5be2131cf14719e9e279",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "국립군산대 2025학년도 후기 학위수여식 개최",
+      "title": "국립순천대 앵커사업 'Beyond Jeonnam' 중국 항주서 전남 K-컬처 선보여",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623844",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623862",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
     {
-      "id": "2e28b85428831daeebdb",
+      "id": "1df16d6e29db4d1c6e16",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "국립공주대 보건행정학과 석사과정 양의준 학생 AI신뢰성 평가지표 연구로 의료정보분야 JCR 3.9% (IF=8.2) SCIE저널 1저자 논문 게재",
+      "title": "경북대 교수초빙 인재풀 시스템 구축… 상시 등록으로 우수 연구자 선점",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623843",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "c785503d7e213484cdc6",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "광주교대-5/18기념재단 민주시민교육 활성화를 위한 업무협약 체결",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623837",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "0081e274119d9cfe64c4",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "계원예대 '2026학년도 G5 대학 연합 AI 역량 강화 과정' 성료",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623839",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "525dc584fba76ce2bbf2",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "경남대 개교 80주년 학위수여식.. 688명 학위 받아",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623841",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623858",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
@@ -213,12 +213,12 @@
       "dateText": "2026.08.20"
     },
     {
-      "id": "f58a3aaa7c6d599231a2",
+      "id": "0bd131cd9ccc85433cf5",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "\"환자 치료하던 의사에서 질병 연구자로\" GIST 2026년 하반기 학위수여식 개최… 졸업생 198명 '각자의 질문' 품고 새로운 길로",
+      "title": "2026 CORE NEXT 포럼 개최… 국가 연구인프라의 미래 논해",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623842",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623859",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
