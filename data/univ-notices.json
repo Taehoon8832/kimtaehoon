@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-20",
-  "updatedAt": "2026-08-20T05:06:29.084Z",
-  "checkedAt": "2026-08-20T05:06:29.084Z",
+  "updatedAt": "2026-08-20T05:48:04.664Z",
+  "checkedAt": "2026-08-20T05:48:04.664Z",
   "sources": [
     {
       "id": "u001",
@@ -1541,6 +1541,17 @@
       "dateText": "2026.08.20"
     },
     {
+      "id": "6c9be02f65ecae86dc84",
+      "univId": "u032",
+      "univName": "육군사관학교",
+      "title": "★ 국방부 신원조사(최초합격자) 미비서류 재제출 관련 안내 ★",
+      "preview": "육군사관학교 입학 공지사항 미리보기",
+      "url": "https://www.kma.ac.kr:461/bbs/kma/160/29348/artclView.do",
+      "homeUrl": "https://www.kma.ac.kr:461/",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
       "id": "2de8ff772d154ca36252",
       "univId": "u109",
       "univName": "국군간호사관학교",
@@ -1548,6 +1559,28 @@
       "preview": "국군간호사관학교 입학 공지사항 미리보기",
       "url": "https://tapply.tonc.net/kafna/?doc=bbs/board.php&bo_table=notice&wr_id=376",
       "homeUrl": "https://tapply.tonc.net/kafna/",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "5f969918fc6c8711e6bb",
+      "univId": "u174",
+      "univName": "예수대",
+      "title": "2027학년도 신입학 재외국민 및 외국인 전형 모집요강 안내",
+      "preview": "예수대 입학 공지사항 미리보기",
+      "url": "https://jesus.ac.kr/enter/?menu=190&mode=view&no=693",
+      "homeUrl": "https://jesus.ac.kr/enter/?menu=183",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "714effec4a9525cf7ff7",
+      "univId": "u174",
+      "univName": "예수대",
+      "title": "2027학년도 신입학(정시) 모집 요강 안내",
+      "preview": "예수대 입학 공지사항 미리보기",
+      "url": "https://jesus.ac.kr/enter/?menu=190&mode=view&no=694",
+      "homeUrl": "https://jesus.ac.kr/enter/?menu=183",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
@@ -1684,23 +1717,23 @@
       "dateText": "2026.08.19"
     },
     {
-      "id": "40aab453b9bc814fa46a",
-      "univId": "u214",
-      "univName": "유니스트(UNIST)",
-      "title": "수시모집 2027학년도 그릿인재전형 포트폴리오 자료 작성 안내",
-      "preview": "수시모집 2027학년도 학부 신입생 모집 관련 서식 안내 2026.04.30 Prev Next </di",
-      "url": "http://adm-u.unist.ac.kr/admission/community/rolling-admissions.do?mode=view&articleNo=306792",
-      "homeUrl": "http://adm-u.unist.ac.kr/",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
       "id": "e0ae81e9101797055ed4",
       "univId": "u214",
       "univName": "유니스트(UNIST)",
       "title": "수시모집 2027학년도 그릿인재전형 포트폴리오 자료 작성 안내",
       "preview": "수시모집 2027학년도 학부 신입생 모집 관련 서식 안내 2026.04.30 Prev Next </di",
       "url": "https://adm-u.unist.ac.kr/admission/community/rolling-admissions.do?mode=view&articleNo=306792",
+      "homeUrl": "http://adm-u.unist.ac.kr/",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
+      "id": "40aab453b9bc814fa46a",
+      "univId": "u214",
+      "univName": "유니스트(UNIST)",
+      "title": "수시모집 2027학년도 그릿인재전형 포트폴리오 자료 작성 안내",
+      "preview": "수시모집 2027학년도 학부 신입생 모집 관련 서식 안내 2026.04.30 Prev Next </di",
+      "url": "http://adm-u.unist.ac.kr/admission/community/rolling-admissions.do?mode=view&articleNo=306792",
       "homeUrl": "http://adm-u.unist.ac.kr/",
       "dateISO": "2026-08-19",
       "dateText": "2026.08.19"
@@ -2087,17 +2120,6 @@
       "preview": "해군사관학교 입학 공지사항 미리보기",
       "url": "https://www.navy.ac.kr:4443/bbs/iphak/142/841509/artclView.do",
       "homeUrl": "https://www.navy.ac.kr:4443/sites/iphak/index.do",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12"
-    },
-    {
-      "id": "00006a66618be2464c37",
-      "univId": "u032",
-      "univName": "육군사관학교",
-      "title": "★ 2027학년도(제87기) 육군사관생도 선발 부대장 추천서 양식(현역 군인 대상) ★",
-      "preview": "육군사관학교 입학 공지사항 미리보기",
-      "url": "https://www.kma.ac.kr:461/bbs/kma/160/29254/artclView.do",
-      "homeUrl": "https://www.kma.ac.kr:461/",
       "dateISO": "2026-08-12",
       "dateText": "2026.08.12"
     },
@@ -3426,5 +3448,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=37 empty=41 fail=138 fresh=151"
+  "statusReason": "ok=35 empty=33 fail=148 fresh=153"
 }
