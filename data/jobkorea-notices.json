@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-20T04:34:08.946Z",
-  "checkedAt": "2026-08-20T04:34:08.946Z",
+  "updatedAt": "2026-08-20T05:06:33.921Z",
+  "checkedAt": "2026-08-20T05:06:33.921Z",
   "today": "2026-08-20",
   "count": 24,
   "notices": [
@@ -19,8 +19,8 @@
       "deadlineISO": "2026-08-30",
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
-      "popularRank": 3,
-      "popularScore": 3.027918
+      "popularRank": 2,
+      "popularScore": 3.0437338
     },
     {
       "id": "fdf94197aeadb3d2ea46",
@@ -34,8 +34,8 @@
       "deadlineISO": "2026-09-18",
       "deadlineText": "2026.09.18",
       "alwaysHire": false,
-      "popularRank": 18,
-      "popularScore": 1.888068
+      "popularRank": 19,
+      "popularScore": 1.86789
     },
     {
       "id": "05287af0780fcee67a45",
@@ -49,23 +49,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 7,
-      "popularScore": 2.348139
-    },
-    {
-      "id": "5ec199c76abc0acdd08b",
-      "jobId": "49777583",
-      "companyName": "리빌더에이아이",
-      "title": "Technical Project Manager/AI 엔지니어 채용",
-      "preview": "경력 · 정규직 · 마감 D-24 · 접수마감 2026.09.13",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49777583",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18",
-      "deadlineISO": "2026-09-13",
-      "deadlineText": "2026.09.13",
-      "alwaysHire": false,
-      "popularRank": 17,
-      "popularScore": 2.1131458
+      "popularRank": 8,
+      "popularScore": 2.342592
     },
     {
       "id": "12017eea0fc515d75a36",
@@ -79,23 +64,8 @@
       "deadlineISO": "2026-09-17",
       "deadlineText": "2026.09.17",
       "alwaysHire": false,
-      "popularRank": 19,
-      "popularScore": 1.838408
-    },
-    {
-      "id": "67b2ec849ee48852ee0c",
-      "jobId": "49800554",
-      "companyName": "㈜하우투약",
-      "title": "[하우투약] `26 하반기 서비스 기획 부문 채용",
-      "preview": "신입·경력 · 정규직 · 마감 D-28 · 접수마감 2026.09.17",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49800554",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18",
-      "deadlineISO": "2026-09-17",
-      "deadlineText": "2026.09.17",
-      "alwaysHire": false,
-      "popularRank": 24,
-      "popularScore": 1.767682
+      "popularRank": 21,
+      "popularScore": 1.8189269
     },
     {
       "id": "f19cd489697422d474e6",
@@ -109,8 +79,8 @@
       "deadlineISO": "2026-08-30",
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
-      "popularRank": 2,
-      "popularScore": 3.031856
+      "popularRank": 3,
+      "popularScore": 3.012556
     },
     {
       "id": "d32297f0bdf130b7578a",
@@ -124,8 +94,8 @@
       "deadlineISO": "2026-09-13",
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
-      "popularRank": 10,
-      "popularScore": 2.234168
+      "popularRank": 11,
+      "popularScore": 2.231627
     },
     {
       "id": "9135ba48be9d10365323",
@@ -139,8 +109,8 @@
       "deadlineISO": "2026-09-13",
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
-      "popularRank": 14,
-      "popularScore": 2.181315
+      "popularRank": 13,
+      "popularScore": 2.178132
     },
     {
       "id": "f4aebd6330a249f3a9f7",
@@ -154,8 +124,8 @@
       "deadlineISO": "2026-10-12",
       "deadlineText": "2026.10.12",
       "alwaysHire": false,
-      "popularRank": 12,
-      "popularScore": 2.21629
+      "popularRank": 15,
+      "popularScore": 2.16108
     },
     {
       "id": "ecbeaf7b86cc728ed0e1",
@@ -169,8 +139,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 20,
-      "popularScore": 1.833861
+      "popularRank": 18,
+      "popularScore": 1.877268
     },
     {
       "id": "88a0735cd26b5ca6d82a",
@@ -185,7 +155,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 3.207452
+      "popularScore": 3.164743
     },
     {
       "id": "cfc1e393775a21db0610",
@@ -200,7 +170,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 5,
-      "popularScore": 2.48837
+      "popularScore": 2.4859731
     },
     {
       "id": "68c4a721b6baf77b0337",
@@ -214,8 +184,8 @@
       "deadlineISO": "2026-08-23",
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
-      "popularRank": 11,
-      "popularScore": 2.222205
+      "popularRank": 10,
+      "popularScore": 2.241247
     },
     {
       "id": "efb0a4e54d0c058c1929",
@@ -230,7 +200,22 @@
       "deadlineText": "2026.10.07",
       "alwaysHire": false,
       "popularRank": 16,
-      "popularScore": 2.137229
+      "popularScore": 2.133209
+    },
+    {
+      "id": "c679883f7c5fb9db5264",
+      "jobId": "49745874",
+      "companyName": "㈜삼원페이퍼",
+      "title": "[㈜삼원페이퍼] 26년 하반기 정규직 채용",
+      "preview": "신입·경력 · 정규직 · 마감 D-11 · 접수마감 2026.08.31",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49745874",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10",
+      "deadlineISO": "2026-08-31",
+      "deadlineText": "2026.08.31",
+      "alwaysHire": false,
+      "popularRank": 20,
+      "popularScore": 1.819846
     },
     {
       "id": "251af343e88aa5aaaa5c",
@@ -245,7 +230,7 @@
       "deadlineText": "2026.09.10",
       "alwaysHire": false,
       "popularRank": 22,
-      "popularScore": 1.773047
+      "popularScore": 1.795834
     },
     {
       "id": "d21a4cd854575b5b9944",
@@ -259,8 +244,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 8,
-      "popularScore": 2.34327
+      "popularRank": 7,
+      "popularScore": 2.3521512
     },
     {
       "id": "073c9f6a29eae7da18cb",
@@ -274,8 +259,8 @@
       "deadlineISO": "2026-09-03",
       "deadlineText": "2026.09.03",
       "alwaysHire": false,
-      "popularRank": 23,
-      "popularScore": 1.77052
+      "popularRank": 24,
+      "popularScore": 1.761533
     },
     {
       "id": "b29f4aa66e9babdd2d0f",
@@ -290,7 +275,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 4,
-      "popularScore": 2.509578
+      "popularScore": 2.526748
     },
     {
       "id": "e5645d380f01e4db6d17",
@@ -305,7 +290,7 @@
       "deadlineText": "2026.09.10",
       "alwaysHire": false,
       "popularRank": 6,
-      "popularScore": 2.414486
+      "popularScore": 2.3993719
     },
     {
       "id": "cb9a8f87ca6dfd53dfc4",
@@ -319,8 +304,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 15,
-      "popularScore": 2.17215
+      "popularRank": 14,
+      "popularScore": 2.1702719
     },
     {
       "id": "5d72e3dd02179b6b3e3f",
@@ -334,8 +319,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 13,
-      "popularScore": 2.197699
+      "popularRank": 12,
+      "popularScore": 2.1881719
     },
     {
       "id": "73bb15cd76d933bc580a",
@@ -349,8 +334,23 @@
       "deadlineISO": "2026-08-27",
       "deadlineText": "2026.08.27",
       "alwaysHire": false,
-      "popularRank": 21,
-      "popularScore": 1.828026
+      "popularRank": 23,
+      "popularScore": 1.764316
+    },
+    {
+      "id": "def56d1a40587609e504",
+      "jobId": "49660417",
+      "companyName": "㈜캐럿글로벌",
+      "title": "[캐럿글로벌] AI 확산센터 사업 PM (B2G)",
+      "preview": "경력 · 정규직 · 상시채용",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49660417",
+      "dateISO": "2026-07-27",
+      "dateText": "2026.07.27",
+      "deadlineISO": "",
+      "deadlineText": "",
+      "alwaysHire": true,
+      "popularRank": 17,
+      "popularScore": 2.1013741
     },
     {
       "id": "ece21208d32d2683d912",
@@ -365,7 +365,7 @@
       "deadlineText": "2026.09.04",
       "alwaysHire": false,
       "popularRank": 9,
-      "popularScore": 2.258498
+      "popularScore": 2.2605932
     }
   ],
   "stale": false,
