@@ -67,28 +67,28 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-20T07:16:07.143473Z",
-  "checkedAt": "2026-08-20T07:16:07.143469Z",
+  "updatedAt": "2026-08-20T08:01:47.806756Z",
+  "checkedAt": "2026-08-20T08:01:47.806750Z",
   "today": "2026-08-20",
   "count": 80,
   "notices": [
     {
-      "id": "a3f0a32613c555877af3",
+      "id": "f46793d53e0ee4933ad4",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "충북대 2025학년도 후기 학위수여식 개최",
+      "title": "충북대 창업중심대학 사업단, 창업기업 해외시장 '정조준'",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623885",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623894",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
     {
-      "id": "e7b61567c33901db66f6",
+      "id": "e299bd70a1466564b8f2",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "충북대 '2027학년도 수시 파이널 입학설명회' 개최",
+      "title": "충북대 창업중심대학 사업단 창업기업 해외시장 '정조준'",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623886",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623895",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
@@ -113,26 +113,6 @@
       "dateText": "2026.08.20"
     },
     {
-      "id": "f9c592c43af3e662be96",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "울산대 간호학과 오이타현립간호과학대와 국제교류 10년.. 학술/문화 교류 이어가",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623889",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "5cbc14c631088318a622",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "연성대학교 응급구조과(응급재난교육센터), 2026 PHTLS 강사 업데이트 과정 운영",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623887",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
       "id": "b608f8f1b8b7426e15d0",
       "sourceId": "moe_blog",
       "sourceName": "교육부블로그",
@@ -153,32 +133,52 @@
       "dateText": "2026.08.20"
     },
     {
-      "id": "3852f1b85bd621504195",
+      "id": "29b3987da0a00378b334",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "국립목포대 인도네시아 파레파레서 지속가능한 해양환경 실천 이어간다",
+      "title": "김포대 'K-AID FLEX' 교육혁신으로 미래 인재 양성에 박차",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623881",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623891",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
     {
-      "id": "8e0af416e29340c56896",
+      "id": "e0708870a6b21cbf7f64",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "경남대 RISE사업단 '섬섬 프로젝트 in 여수' 개최.. 대상 등 5개팀 수상",
+      "title": "국립순천대 순천시가족센터, 다문화가족자녀성장지원 '여름방학 프로그램'운영",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623884",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623892",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
     {
-      "id": "0f33a47cd567e82a84cd",
+      "id": "9c0449f9aa3df106eb6b",
+      "sourceId": "moe_blog",
+      "sourceName": "교육부블로그",
+      "title": "교육부 소관 법안 「교육환경법」 국회 본회의 통과",
+      "preview": "교육부는 8월 20일(목) 국회 본회의에서 「교육환경법」 일부개정법률안이 의결되었다고 밝혔다. 통과한 법안의 주요 내용은 다음과 같다. 교육환경 보호에 관한 법률(시행: 공포 후 3개월) 교육부는 이번 법률 개정을",
+      "url": "https://blog.naver.com/moeblog/224384618776",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "1e2ffdcb699e121996e3",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "경남대 RISE사업단 'G-STAR 글로컬 대장정' 경진대회 개최.. 경남 컨소시엄 3개팀 수상",
+      "title": "경북대 총여성동창회, 모교 인재 위해 발전기금 1억1500만원 쾌척",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623883",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623896",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "0ac61b242069c87a25b1",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "경기대 SW중심대학사업단 바이브코딩 집중교육 운영.. 14개 전공 학생 참여",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623893",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
@@ -189,6 +189,26 @@
       "title": "[특별생방송] 2027학년도 9월 모의평가 분석 📺 | 출제경향 및 연계 분석 브리핑",
       "preview": "EBSi 알림",
       "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE&artclId=000000400498623",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "e7d23743aa01b3076c3e",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "[단독] [2027전국단위자율학교] 거창대성고 154명 ‘동일’.. 전국 92명, 지역 62명",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623872",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "d6ad0b9d43f725bfa9cc",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "[단독] [2027수시] 서울대 서강대등 상위대 학종 가이드북으로 보는 학생부 준비법.. ‘스펙보다 성장의 흐름’",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623818",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
@@ -209,16 +229,6 @@
       "title": "[EBSi LIVE] 2027학년도 9월 모의평가 경향분석🎙️ | 주요 문항 분석 & 실시간 Q/A",
       "preview": "EBSi 알림",
       "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE&artclId=000000400499895",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "cff1a1dc79e8a42b3d1d",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "[2027수시] 서강대 성균관대 한양대등 16개교 논술가이드북으로 본 합격전략.. ‘장황한 자기주장 감점’",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623740",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
@@ -309,16 +319,6 @@
       "title": "📢 ⌜학교급식법 시행령⌟ 일부개정령안 국무회의 통과",
       "preview": "📢 ⌜학교급식법 시행령⌟ 일부개정령안 국무회의 통과 📌 주요 내용 ✅ 입찰참가 제한 법적 근거 마련 ✅ 학생 건강보호 및 식재료 안전성 확보 교육부는 성장기 학생들의 건강을 지키기 위해 학교급식의 질을 높이는 데에",
       "url": "https://blog.naver.com/moeblog/224382254297",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "91971b0b0cb93d58e845",
-      "sourceId": "moe_blog",
-      "sourceName": "교육부블로그",
-      "title": "교육부, 소방청과 함께 ‘119안심콜’로 신속한 대피 지원",
-      "preview": "교육부(장관 최교진)와 소방청(청장직무대행 최용철)은 8월 20일부터 9월 30일까지 전국 유치원 유아와 초등학교 학생, 보호자를 대상으로 화재 대피 안내 기능이 추가된 「119안심콜」 가입을 집중 홍보한다. 이번",
-      "url": "https://blog.naver.com/moeblog/224382039555",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
     },
