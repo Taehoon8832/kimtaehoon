@@ -67,38 +67,88 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-19T23:55:52.325524Z",
-  "checkedAt": "2026-08-19T23:55:52.325517Z",
+  "updatedAt": "2026-08-20T00:32:53.302608Z",
+  "checkedAt": "2026-08-20T00:32:53.302603Z",
   "today": "2026-08-20",
   "count": 80,
   "notices": [
     {
-      "id": "9dd91c42a8a25f97bd25",
+      "id": "a0b6467e5794f6ed8e1a",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "인천대 HUSS사업단 베트남 다낭서 '한-베 포용관광 글로벌 협력' 성료",
+      "title": "한남대 자체 투자프로그램 'HIPS 2.0' 투자기관 연합 IR로 투자연계 강화",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623718",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623736",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
     {
-      "id": "7c1d7c2d0ced50198266",
+      "id": "9cd2370137387d1f3261",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "인천대 GTEP 20기 인천항/인천공항 현장 견학으로 무역 실무 역량 강화",
+      "title": "원광대 앵커(RISE)사업단 임실 한국치즈과학고 대상 '찾아가는 로컬캠퍼스' 운영",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623720",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623733",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
     {
-      "id": "f8937859ed146c2f95b3",
+      "id": "272621bf42b414849776",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "인천대 '2026 일본 자매대학생 초청 한국문화체험' 성공적 마무리",
+      "title": "원광대 K-컬처 사업단, '2026 글로벌 K-컬처 매시업캠프' 대상/최우수상/우수상 수상",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623719",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623732",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "ba6a8fbaed59eac0cefc",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "영산대 드론/배리어프리 융합해 양산 원도심 살린다",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623734",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "22bd48d557aea53fbdd5",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "국립한국해양대-한국조선해양기자재연구원, '해양 AX 혁신허브' 구축 위한 상호협력 강화",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623731",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "3ecfd6eec7f8c32a2c7c",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "국립창원대 토목공학과 송채빈 학생 한국수자원학회 '우수학생 논문상' 수상!",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623730",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "0799ddeedbdb5de2e3c0",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "국립부경대 2026년 8월 전임교원 정년퇴임식 개최",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623737",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "fa752d0256446a9329fa",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "UNIST/고등과학원 간섭계로 '시공간 양자 상태' 읽는 방법 제시",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623735",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
@@ -113,16 +163,6 @@
       "dateText": "2026.08.20"
     },
     {
-      "id": "cbfc2bf652f87cfd5b29",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "한신대 '2026 한신 ABC캠프 해커톤 시상식' 성료",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623712",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
       "id": "debf5b1381e503d7d2f8",
       "sourceId": "moe_blog",
       "sourceName": "교육부블로그",
@@ -133,52 +173,12 @@
       "dateText": "2026.08.19"
     },
     {
-      "id": "2e600cc2e27ab05e9def",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국민대 대학일자리플러스센터 하계방학 '진로/취Up Day' 운영",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623715",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
-      "id": "1975fff3c9c24c2734c0",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국립군산대 앵커사업단 군산 수산식품 로컬푸드 직매장 입점 본격화",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623714",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
-      "id": "a72cd96c810a5831a5a1",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국립공주대 동물자원학과 석사과정 정가현 학생, 2025년도 한국축산학회 종합심포지엄 및 학술발표회 장려상 수상",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623713",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
       "id": "3a1f80688718a1b4edc6",
       "sourceId": "edupress",
       "sourceName": "에듀프레스",
       "title": "교부금 개편 축소 땐 청와대 '큰 부담' .. 최교진 거취도 불투명",
       "preview": "에듀프레스 소식",
       "url": "https://www.edupress.kr/news/articleView.html?idxno=30405",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
-      "id": "dad375eeae432db2affc",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "공주문예회관 '2026 공주아츠페스티벌' 창작무용극 '고마' 9월 3일 개최",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623711",
       "dateISO": "2026-08-19",
       "dateText": "2026.08.19"
     },
