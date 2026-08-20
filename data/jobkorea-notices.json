@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-20T08:07:47.508Z",
-  "checkedAt": "2026-08-20T08:07:47.508Z",
+  "updatedAt": "2026-08-20T08:52:34.141Z",
+  "checkedAt": "2026-08-20T08:52:34.141Z",
   "today": "2026-08-20",
   "count": 24,
   "notices": [
@@ -20,7 +20,7 @@
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 3.21663
+      "popularScore": 3.213467
     },
     {
       "id": "fdf94197aeadb3d2ea46",
@@ -35,7 +35,7 @@
       "deadlineText": "2026.09.18",
       "alwaysHire": false,
       "popularRank": 16,
-      "popularScore": 1.919065
+      "popularScore": 1.9006749
     },
     {
       "id": "05287af0780fcee67a45",
@@ -50,7 +50,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 5,
-      "popularScore": 2.463553
+      "popularScore": 2.458132
     },
     {
       "id": "5ec199c76abc0acdd08b",
@@ -65,7 +65,7 @@
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
       "popularRank": 15,
-      "popularScore": 2.107177
+      "popularScore": 2.108823
     },
     {
       "id": "12017eea0fc515d75a36",
@@ -79,38 +79,8 @@
       "deadlineISO": "2026-09-17",
       "deadlineText": "2026.09.17",
       "alwaysHire": false,
-      "popularRank": 21,
-      "popularScore": 1.807739
-    },
-    {
-      "id": "67b2ec849ee48852ee0c",
-      "jobId": "49800554",
-      "companyName": "㈜하우투약",
-      "title": "[하우투약] `26 하반기 서비스 기획 부문 채용",
-      "preview": "신입·경력 · 정규직 · 마감 D-28 · 접수마감 2026.09.17",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49800554",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18",
-      "deadlineISO": "2026-09-17",
-      "deadlineText": "2026.09.17",
-      "alwaysHire": false,
       "popularRank": 22,
-      "popularScore": 1.7516611
-    },
-    {
-      "id": "d2a5f641a20711825fa6",
-      "jobId": "49794314",
-      "companyName": "㈜도리당",
-      "title": "프랜차이즈 가맹사업 본부장 채용",
-      "preview": "경력 · 정규직·계약직 · 마감 D-57 · 접수마감 2026.10.16",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49794314",
-      "dateISO": "2026-08-17",
-      "dateText": "2026.08.17",
-      "deadlineISO": "2026-10-16",
-      "deadlineText": "2026.10.16",
-      "alwaysHire": false,
-      "popularRank": 23,
-      "popularScore": 1.745234
+      "popularScore": 1.74581
     },
     {
       "id": "f19cd489697422d474e6",
@@ -125,7 +95,7 @@
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
       "popularRank": 3,
-      "popularScore": 2.9778519
+      "popularScore": 2.976522
     },
     {
       "id": "d32297f0bdf130b7578a",
@@ -139,8 +109,8 @@
       "deadlineISO": "2026-09-13",
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
-      "popularRank": 9,
-      "popularScore": 2.215471
+      "popularRank": 7,
+      "popularScore": 2.23768
     },
     {
       "id": "9135ba48be9d10365323",
@@ -155,22 +125,22 @@
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
       "popularRank": 10,
-      "popularScore": 2.187605
+      "popularScore": 2.1500711
     },
     {
-      "id": "f4aebd6330a249f3a9f7",
-      "jobId": "49779972",
-      "companyName": "㈜엠큐닉",
-      "title": "PM/PL 및 사업 기획 제안 경력직 채용",
-      "preview": "경력 · 정규직 · 마감 D-53 · 접수마감 2026.10.12",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49779972",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13",
-      "deadlineISO": "2026-10-12",
-      "deadlineText": "2026.10.12",
+      "id": "7d19209a304a909445b3",
+      "jobId": "49785916",
+      "companyName": "㈜뷰티피플인터내셔널",
+      "title": "[코스메틱 브랜드 뷰티피플]마케팅팀/웹디자인팀/제품디자인팀/국내외 영업팀 채용",
+      "preview": "신입·경력 · 정규직 · 마감 D-24 · 접수마감 2026.09.13",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49785916",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14",
+      "deadlineISO": "2026-09-13",
+      "deadlineText": "2026.09.13",
       "alwaysHire": false,
       "popularRank": 11,
-      "popularScore": 2.184147
+      "popularScore": 2.128393
     },
     {
       "id": "e5308253b039b344a92c",
@@ -184,8 +154,23 @@
       "deadlineISO": "2026-08-26",
       "deadlineText": "2026.08.26",
       "alwaysHire": false,
+      "popularRank": 9,
+      "popularScore": 2.16633
+    },
+    {
+      "id": "f4aebd6330a249f3a9f7",
+      "jobId": "49779972",
+      "companyName": "㈜엠큐닉",
+      "title": "PM/PL 및 사업 기획 제안 경력직 채용",
+      "preview": "경력 · 정규직 · 마감 D-53 · 접수마감 2026.10.12",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49779972",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13",
+      "deadlineISO": "2026-10-12",
+      "deadlineText": "2026.10.12",
+      "alwaysHire": false,
       "popularRank": 12,
-      "popularScore": 2.171692
+      "popularScore": 2.1247401
     },
     {
       "id": "ecbeaf7b86cc728ed0e1",
@@ -200,7 +185,7 @@
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
       "popularRank": 17,
-      "popularScore": 1.910955
+      "popularScore": 1.895852
     },
     {
       "id": "88a0735cd26b5ca6d82a",
@@ -215,7 +200,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 2,
-      "popularScore": 3.11784
+      "popularScore": 3.094212
     },
     {
       "id": "cfc1e393775a21db0610",
@@ -230,7 +215,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 4,
-      "popularScore": 2.494257
+      "popularScore": 2.509869
     },
     {
       "id": "68c4a721b6baf77b0337",
@@ -244,8 +229,8 @@
       "deadlineISO": "2026-08-23",
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
-      "popularRank": 8,
-      "popularScore": 2.2523751
+      "popularRank": 6,
+      "popularScore": 2.249701
     },
     {
       "id": "efb0a4e54d0c058c1929",
@@ -260,7 +245,7 @@
       "deadlineText": "2026.10.07",
       "alwaysHire": false,
       "popularRank": 14,
-      "popularScore": 2.13823
+      "popularScore": 2.11805
     },
     {
       "id": "c679883f7c5fb9db5264",
@@ -275,7 +260,7 @@
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
       "popularRank": 18,
-      "popularScore": 1.854326
+      "popularScore": 1.818744
     },
     {
       "id": "251af343e88aa5aaaa5c",
@@ -290,7 +275,7 @@
       "deadlineText": "2026.09.10",
       "alwaysHire": false,
       "popularRank": 20,
-      "popularScore": 1.818905
+      "popularScore": 1.7958319
     },
     {
       "id": "adce3b32741e3448d142",
@@ -304,23 +289,23 @@
       "deadlineISO": "2026-08-24",
       "deadlineText": "2026.08.24",
       "alwaysHire": false,
-      "popularRank": 24,
-      "popularScore": 1.685256
+      "popularRank": 23,
+      "popularScore": 1.732233
     },
     {
-      "id": "d21a4cd854575b5b9944",
-      "jobId": "49725055",
-      "companyName": "㈜모백스",
-      "title": "2026년 하반기 공개채용 [경영관리/프로젝트관리/디자이너/설계/연구소/공",
-      "preview": "신입·경력 · 정규직 · 마감 D-11 · 접수마감 2026.08.31",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49725055",
-      "dateISO": "2026-08-06",
-      "dateText": "2026.08.06",
-      "deadlineISO": "2026-08-31",
-      "deadlineText": "2026.08.31",
+      "id": "b2daad0d3bdddc3e904b",
+      "jobId": "49698144",
+      "companyName": "네이트커뮤니케이션즈㈜",
+      "title": "[네이트커뮤니케이션즈] COO (Chief Operating Officer) 모집",
+      "preview": "경력 · 정규직 · 마감 D-2 · 접수마감 2026.08.22",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49698144",
+      "dateISO": "2026-08-02",
+      "dateText": "2026.08.02",
+      "deadlineISO": "2026-08-22",
+      "deadlineText": "2026.08.22",
       "alwaysHire": false,
-      "popularRank": 7,
-      "popularScore": 2.3243139
+      "popularRank": 24,
+      "popularScore": 1.7210131
     },
     {
       "id": "b29f4aa66e9babdd2d0f",
@@ -334,8 +319,23 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 6,
-      "popularScore": 2.462168
+      "popularRank": 21,
+      "popularScore": 1.762421
+    },
+    {
+      "id": "a0122bbf1dd817b4e251",
+      "jobId": "49687690",
+      "companyName": "㈜컨포트랩",
+      "title": "[신입/경력] 프로덕트 매니저(PM/PO)",
+      "preview": "신입·경력 · 정규직 · 마감 D-9 · 접수마감 2026.08.29",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49687690",
+      "dateISO": "2026-07-30",
+      "dateText": "2026.07.30",
+      "deadlineISO": "2026-08-29",
+      "deadlineText": "2026.08.29",
+      "alwaysHire": false,
+      "popularRank": 8,
+      "popularScore": 2.2276719
     },
     {
       "id": "cb9a8f87ca6dfd53dfc4",
@@ -350,7 +350,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 13,
-      "popularScore": 2.149664
+      "popularScore": 2.121463
     },
     {
       "id": "7d52672496a4c3d5e7c4",
@@ -365,7 +365,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 19,
-      "popularScore": 1.84562
+      "popularScore": 1.80123
     }
   ],
   "stale": false,
