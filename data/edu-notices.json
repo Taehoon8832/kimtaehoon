@@ -67,28 +67,28 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-20T06:27:17.784638Z",
-  "checkedAt": "2026-08-20T06:27:17.784632Z",
+  "updatedAt": "2026-08-20T07:16:07.143473Z",
+  "checkedAt": "2026-08-20T07:16:07.143469Z",
   "today": "2026-08-20",
   "count": 80,
   "notices": [
     {
-      "id": "99c46117b20b03906d8b",
+      "id": "a3f0a32613c555877af3",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "충북보건과학대 하나병원 의료현장 찾아 ‘생성형 AI 실무교육’ 강화",
+      "title": "충북대 2025학년도 후기 학위수여식 개최",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623877",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623885",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
     {
-      "id": "805706daf8f7f0bfbad5",
+      "id": "e7b61567c33901db66f6",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "조선대 전북 김제 초처초서 AI+X 융합캠프 'AI 코딩여행' 성료",
+      "title": "충북대 '2027학년도 수시 파이널 입학설명회' 개최",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623878",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623886",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
@@ -113,12 +113,22 @@
       "dateText": "2026.08.20"
     },
     {
-      "id": "41d5133055a468411b72",
+      "id": "f9c592c43af3e662be96",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "연세대 미래캠퍼스 박인수 교수 공동연구팀, 퇴행성 뇌질환 관련 아밀로이드 응집 '30일 관찰/1시간 제작' 플랫폼 개발",
+      "title": "울산대 간호학과 오이타현립간호과학대와 국제교류 10년.. 학술/문화 교류 이어가",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623875",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623889",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "5cbc14c631088318a622",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "연성대학교 응급구조과(응급재난교육센터), 2026 PHTLS 강사 업데이트 과정 운영",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623887",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
@@ -143,52 +153,32 @@
       "dateText": "2026.08.20"
     },
     {
-      "id": "aed014fef4ba4790204a",
+      "id": "3852f1b85bd621504195",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "남서울대 일본 대학생 대상 K-Beauty/K-Pop 단기연수 성료",
+      "title": "국립목포대 인도네시아 파레파레서 지속가능한 해양환경 실천 이어간다",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623876",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623881",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
     {
-      "id": "9f57290baa8e57454536",
+      "id": "8e0af416e29340c56896",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "광주여자대학교 통합돌봄 우수 서포터즈 일본 해외연수 실시.. '선진 돌봄사례 벤치마킹'",
+      "title": "경남대 RISE사업단 '섬섬 프로젝트 in 여수' 개최.. 대상 등 5개팀 수상",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623871",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623884",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
     {
-      "id": "0c2eaf259298f0be73ac",
+      "id": "0f33a47cd567e82a84cd",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "광주여자대학교 뷰티산업 실무역량 교육 성과 공유.. '광주뷰티아카데미' 수료식",
+      "title": "경남대 RISE사업단 'G-STAR 글로컬 대장정' 경진대회 개최.. 경남 컨소시엄 3개팀 수상",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623873",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "a610fd9d1b74405795aa",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "경희사이버대 고정은 교수 한국상담학회 노인상담학회 제3대 회장 취임",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623874",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "7f1adc29688468b9014c",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "경상국립대 입학처 '2026 편입생 성공사례 공모전' 시상식 개최",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623870",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623883",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
@@ -219,6 +209,16 @@
       "title": "[EBSi LIVE] 2027학년도 9월 모의평가 경향분석🎙️ | 주요 문항 분석 & 실시간 Q/A",
       "preview": "EBSi 알림",
       "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE&artclId=000000400499895",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "cff1a1dc79e8a42b3d1d",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "[2027수시] 서강대 성균관대 한양대등 16개교 논술가이드북으로 본 합격전략.. ‘장황한 자기주장 감점’",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623740",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
