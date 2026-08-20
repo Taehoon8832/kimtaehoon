@@ -1,10 +1,19 @@
 {
   "source": "https://cafe.daum.net/applymate/Alvz",
-  "updatedAt": "2026-08-20T12:43:57.548529Z",
-  "checkedAt": "2026-08-20T12:43:57.548524Z",
+  "updatedAt": "2026-08-20T13:33:14.006420Z",
+  "checkedAt": "2026-08-20T13:33:14.006416Z",
   "today": "2026-08-20",
   "count": 40,
   "notices": [
+    {
+      "id": "bab899947a7a145b09dc",
+      "sourceName": "사립학교 정교사",
+      "title": "[경기] 백신학원(백영고) - 수학, 물리, 영어",
+      "preview": "",
+      "url": "",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
     {
       "id": "641173a8fd74063ef26f",
       "sourceName": "사립학교 정교사",
@@ -351,15 +360,6 @@
       "id": "280e69a2d7729c23db35",
       "sourceName": "사립학교 정교사",
       "title": "[서울] 중앙대학교(중대부고) - 국어 外",
-      "preview": "",
-      "url": "",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "df56b428c914e5fe57c9",
-      "sourceName": "사립학교 정교사",
-      "title": "[서울] 단국대학(단대부고 外) - 수학 外",
       "preview": "",
       "url": "",
       "dateISO": "2026-08-20",
