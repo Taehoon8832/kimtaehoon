@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-20",
-  "updatedAt": "2026-08-20T00:03:32.879Z",
-  "checkedAt": "2026-08-20T00:03:32.879Z",
+  "updatedAt": "2026-08-20T01:49:33.309Z",
+  "checkedAt": "2026-08-20T01:49:33.309Z",
   "sources": [
     {
       "id": "u001",
@@ -1541,6 +1541,17 @@
       "dateText": "2026.08.20"
     },
     {
+      "id": "2de8ff772d154ca36252",
+      "univId": "u109",
+      "univName": "국군간호사관학교",
+      "title": "★2027학년도 생도선발 2차 시험 안내문★",
+      "preview": "국군간호사관학교 입학 공지사항 미리보기",
+      "url": "https://tapply.tonc.net/kafna/?doc=bbs/board.php&bo_table=notice&wr_id=376",
+      "homeUrl": "https://tapply.tonc.net/kafna/",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
       "id": "60dc8f5df621abc7a671",
       "univId": "u123",
       "univName": "공군사관학교",
@@ -1944,6 +1955,17 @@
       "preview": "2026.08.14 공통 [2026년 고교교육 기여대학 지원사업] AI 대학어디가 안내",
       "url": "https://enter.kyonggi.ac.kr/cms/CMN_CON/MainLink.do?GBN=BA&TEMP_CODE=IPSI_A&BASE_SITE_NO=2&CONFIG_CD=C1403&CONFIG_SEQ=2&SUB_SEQ=7&SITE_NO=2&BOARD_SEQ=1&BBS_SEQ=4374",
       "homeUrl": "https://enter.kyonggi.ac.kr/index.do",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14"
+    },
+    {
+      "id": "6437be4f59ee15f148ae",
+      "univId": "u144",
+      "univName": "나사렛대",
+      "title": "시간제 시간제 등록생 합격자 발표 .(금)",
+      "preview": "공통 입학뉴스",
+      "url": "https://ipsi.kornu.ac.kr/ipsi/3158/subview.do?enc=Zm5jdDF8QEB8JTJGYmJzJTJGaXBzaSUyRjg5NiUyRjExNzQ1NSUyRmFydGNsVmlldy5kbyUzRnBhZ2UlM0QxJTI2c3JjaENvbHVtbiUzRCUyNnNyY2hXcmQlM0QlMjZiYnNDbFNlcSUzRCUyNmJic09wZW5XcmRTZXElM0QlMjZyZ3NCZ25kZVN0ciUzRCUyNnJnc0VuZGRlU3RyJTNEJTI2aXNWaWV3TWluZSUzRGZhbHNlJTI2cGFzc3dvcmQlM0QlMjY%3D",
+      "homeUrl": "https://cms.kornu.ac.kr/ipsi/index.do",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14"
     },
@@ -3393,5 +3415,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=36 empty=38 fail=142 fresh=148"
+  "statusReason": "ok=35 empty=23 fail=158 fresh=150"
 }
