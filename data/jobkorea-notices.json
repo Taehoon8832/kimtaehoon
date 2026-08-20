@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-20T07:33:08.154Z",
-  "checkedAt": "2026-08-20T07:33:08.154Z",
+  "updatedAt": "2026-08-20T08:07:47.508Z",
+  "checkedAt": "2026-08-20T08:07:47.508Z",
   "today": "2026-08-20",
   "count": 24,
   "notices": [
@@ -20,7 +20,7 @@
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 3.13966
+      "popularScore": 3.21663
     },
     {
       "id": "fdf94197aeadb3d2ea46",
@@ -34,8 +34,8 @@
       "deadlineISO": "2026-09-18",
       "deadlineText": "2026.09.18",
       "alwaysHire": false,
-      "popularRank": 20,
-      "popularScore": 1.88659
+      "popularRank": 16,
+      "popularScore": 1.919065
     },
     {
       "id": "05287af0780fcee67a45",
@@ -49,8 +49,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 6,
-      "popularScore": 2.458129
+      "popularRank": 5,
+      "popularScore": 2.463553
     },
     {
       "id": "5ec199c76abc0acdd08b",
@@ -64,8 +64,8 @@
       "deadlineISO": "2026-09-13",
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
-      "popularRank": 17,
-      "popularScore": 2.10672
+      "popularRank": 15,
+      "popularScore": 2.107177
     },
     {
       "id": "12017eea0fc515d75a36",
@@ -79,8 +79,38 @@
       "deadlineISO": "2026-09-17",
       "deadlineText": "2026.09.17",
       "alwaysHire": false,
+      "popularRank": 21,
+      "popularScore": 1.807739
+    },
+    {
+      "id": "67b2ec849ee48852ee0c",
+      "jobId": "49800554",
+      "companyName": "㈜하우투약",
+      "title": "[하우투약] `26 하반기 서비스 기획 부문 채용",
+      "preview": "신입·경력 · 정규직 · 마감 D-28 · 접수마감 2026.09.17",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49800554",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18",
+      "deadlineISO": "2026-09-17",
+      "deadlineText": "2026.09.17",
+      "alwaysHire": false,
       "popularRank": 22,
-      "popularScore": 1.801685
+      "popularScore": 1.7516611
+    },
+    {
+      "id": "d2a5f641a20711825fa6",
+      "jobId": "49794314",
+      "companyName": "㈜도리당",
+      "title": "프랜차이즈 가맹사업 본부장 채용",
+      "preview": "경력 · 정규직·계약직 · 마감 D-57 · 접수마감 2026.10.16",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49794314",
+      "dateISO": "2026-08-17",
+      "dateText": "2026.08.17",
+      "deadlineISO": "2026-10-16",
+      "deadlineText": "2026.10.16",
+      "alwaysHire": false,
+      "popularRank": 23,
+      "popularScore": 1.745234
     },
     {
       "id": "f19cd489697422d474e6",
@@ -95,7 +125,22 @@
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
       "popularRank": 3,
-      "popularScore": 2.980052
+      "popularScore": 2.9778519
+    },
+    {
+      "id": "d32297f0bdf130b7578a",
+      "jobId": "49786196",
+      "companyName": "㈜마초의사춘기",
+      "title": "사업 및 브랜드 전략 기획자 채용",
+      "preview": "경력 · 정규직 · 마감 D-24 · 접수마감 2026.09.13",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49786196",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14",
+      "deadlineISO": "2026-09-13",
+      "deadlineText": "2026.09.13",
+      "alwaysHire": false,
+      "popularRank": 9,
+      "popularScore": 2.215471
     },
     {
       "id": "9135ba48be9d10365323",
@@ -110,22 +155,7 @@
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
       "popularRank": 10,
-      "popularScore": 2.2083101
-    },
-    {
-      "id": "d32297f0bdf130b7578a",
-      "jobId": "49786196",
-      "companyName": "㈜마초의사춘기",
-      "title": "사업 및 브랜드 전략 기획자 채용",
-      "preview": "경력 · 정규직 · 마감 D-24 · 접수마감 2026.09.13",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49786196",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14",
-      "deadlineISO": "2026-09-13",
-      "deadlineText": "2026.09.13",
-      "alwaysHire": false,
-      "popularRank": 11,
-      "popularScore": 2.192981
+      "popularScore": 2.187605
     },
     {
       "id": "f4aebd6330a249f3a9f7",
@@ -139,8 +169,8 @@
       "deadlineISO": "2026-10-12",
       "deadlineText": "2026.10.12",
       "alwaysHire": false,
-      "popularRank": 12,
-      "popularScore": 2.180046
+      "popularRank": 11,
+      "popularScore": 2.184147
     },
     {
       "id": "e5308253b039b344a92c",
@@ -154,8 +184,8 @@
       "deadlineISO": "2026-08-26",
       "deadlineText": "2026.08.26",
       "alwaysHire": false,
-      "popularRank": 14,
-      "popularScore": 2.169089
+      "popularRank": 12,
+      "popularScore": 2.171692
     },
     {
       "id": "ecbeaf7b86cc728ed0e1",
@@ -169,8 +199,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 19,
-      "popularScore": 1.910189
+      "popularRank": 17,
+      "popularScore": 1.910955
     },
     {
       "id": "88a0735cd26b5ca6d82a",
@@ -185,7 +215,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 2,
-      "popularScore": 3.13199
+      "popularScore": 3.11784
     },
     {
       "id": "cfc1e393775a21db0610",
@@ -200,7 +230,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 4,
-      "popularScore": 2.482884
+      "popularScore": 2.494257
     },
     {
       "id": "68c4a721b6baf77b0337",
@@ -214,8 +244,8 @@
       "deadlineISO": "2026-08-23",
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
-      "popularRank": 9,
-      "popularScore": 2.24656
+      "popularRank": 8,
+      "popularScore": 2.2523751
     },
     {
       "id": "efb0a4e54d0c058c1929",
@@ -229,8 +259,8 @@
       "deadlineISO": "2026-10-07",
       "deadlineText": "2026.10.07",
       "alwaysHire": false,
-      "popularRank": 16,
-      "popularScore": 2.157368
+      "popularRank": 14,
+      "popularScore": 2.13823
     },
     {
       "id": "c679883f7c5fb9db5264",
@@ -244,8 +274,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 21,
-      "popularScore": 1.847948
+      "popularRank": 18,
+      "popularScore": 1.854326
     },
     {
       "id": "251af343e88aa5aaaa5c",
@@ -259,8 +289,8 @@
       "deadlineISO": "2026-09-10",
       "deadlineText": "2026.09.10",
       "alwaysHire": false,
-      "popularRank": 23,
-      "popularScore": 1.7957599
+      "popularRank": 20,
+      "popularScore": 1.818905
     },
     {
       "id": "adce3b32741e3448d142",
@@ -275,22 +305,7 @@
       "deadlineText": "2026.08.24",
       "alwaysHire": false,
       "popularRank": 24,
-      "popularScore": 1.7486919
-    },
-    {
-      "id": "e8edd83d0f5b54809dd6",
-      "jobId": "49741109",
-      "companyName": "㈜ 엠지알브이",
-      "title": "Business Performance & Planning 시니어 매니저",
-      "preview": "경력 · 정규직 · 마감 D-17 · 접수마감 2026.09.06",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49741109",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07",
-      "deadlineISO": "2026-09-06",
-      "deadlineText": "2026.09.06",
-      "alwaysHire": false,
-      "popularRank": 18,
-      "popularScore": 2.104609
+      "popularScore": 1.685256
     },
     {
       "id": "d21a4cd854575b5b9944",
@@ -304,8 +319,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 8,
-      "popularScore": 2.35066
+      "popularRank": 7,
+      "popularScore": 2.3243139
     },
     {
       "id": "b29f4aa66e9babdd2d0f",
@@ -319,23 +334,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 5,
-      "popularScore": 2.467511
-    },
-    {
-      "id": "e5645d380f01e4db6d17",
-      "jobId": "49685940",
-      "companyName": "링크투어스㈜",
-      "title": "IT 기획 / 스마트팩토리 PM(프로젝트 매니저) 채용 (서울 잠실 근무)",
-      "preview": "신입·경력 · 정규직 · 마감 D-21 · 접수마감 2026.09.10",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49685940",
-      "dateISO": "2026-07-30",
-      "dateText": "2026.07.30",
-      "deadlineISO": "2026-09-10",
-      "deadlineText": "2026.09.10",
-      "alwaysHire": false,
-      "popularRank": 7,
-      "popularScore": 2.419926
+      "popularRank": 6,
+      "popularScore": 2.462168
     },
     {
       "id": "cb9a8f87ca6dfd53dfc4",
@@ -349,23 +349,23 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 15,
-      "popularScore": 2.160645
+      "popularRank": 13,
+      "popularScore": 2.149664
     },
     {
-      "id": "5d72e3dd02179b6b3e3f",
-      "jobId": "49669691",
-      "companyName": "㈜위펀",
-      "title": "[위펀] 서비스기획/PO (플랫폼 Product Owner)",
+      "id": "7d52672496a4c3d5e7c4",
+      "jobId": "49643092",
+      "companyName": "스마트엔지니어링",
+      "title": "(광주/서울) 신재생 에너지 태양광시공사 부사장급(경영/사업총괄) 모집",
       "preview": "경력 · 정규직 · 상시채용",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49669691",
-      "dateISO": "2026-07-28",
-      "dateText": "2026.07.28",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49643092",
+      "dateISO": "2026-07-24",
+      "dateText": "2026.07.24",
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 13,
-      "popularScore": 2.174506
+      "popularRank": 19,
+      "popularScore": 1.84562
     }
   ],
   "stale": false,
