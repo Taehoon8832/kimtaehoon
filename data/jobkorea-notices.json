@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-20T13:33:47.522Z",
-  "checkedAt": "2026-08-20T13:33:47.522Z",
+  "updatedAt": "2026-08-20T14:10:45.338Z",
+  "checkedAt": "2026-08-20T14:10:45.338Z",
   "today": "2026-08-20",
   "count": 24,
   "notices": [
@@ -20,7 +20,7 @@
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 3.173832
+      "popularScore": 3.177126
     },
     {
       "id": "fdf94197aeadb3d2ea46",
@@ -35,7 +35,7 @@
       "deadlineText": "2026.09.18",
       "alwaysHire": false,
       "popularRank": 18,
-      "popularScore": 1.873642
+      "popularScore": 1.851553
     },
     {
       "id": "05287af0780fcee67a45",
@@ -50,7 +50,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 4,
-      "popularScore": 2.523254
+      "popularScore": 2.535398
     },
     {
       "id": "5ec199c76abc0acdd08b",
@@ -64,8 +64,8 @@
       "deadlineISO": "2026-09-13",
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
-      "popularRank": 12,
-      "popularScore": 2.141997
+      "popularRank": 13,
+      "popularScore": 2.143481
     },
     {
       "id": "67b2ec849ee48852ee0c",
@@ -79,8 +79,8 @@
       "deadlineISO": "2026-09-17",
       "deadlineText": "2026.09.17",
       "alwaysHire": false,
-      "popularRank": 21,
-      "popularScore": 1.730175
+      "popularRank": 19,
+      "popularScore": 1.773286
     },
     {
       "id": "d2a5f641a20711825fa6",
@@ -94,8 +94,8 @@
       "deadlineISO": "2026-10-16",
       "deadlineText": "2026.10.16",
       "alwaysHire": false,
-      "popularRank": 23,
-      "popularScore": 1.7009649
+      "popularRank": 24,
+      "popularScore": 1.681242
     },
     {
       "id": "f19cd489697422d474e6",
@@ -110,7 +110,7 @@
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
       "popularRank": 3,
-      "popularScore": 2.934736
+      "popularScore": 2.9399922
     },
     {
       "id": "d32297f0bdf130b7578a",
@@ -125,7 +125,7 @@
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
       "popularRank": 8,
-      "popularScore": 2.225281
+      "popularScore": 2.2206311
     },
     {
       "id": "9135ba48be9d10365323",
@@ -139,8 +139,8 @@
       "deadlineISO": "2026-09-13",
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
-      "popularRank": 10,
-      "popularScore": 2.161107
+      "popularRank": 11,
+      "popularScore": 2.160965
     },
     {
       "id": "e5308253b039b344a92c",
@@ -154,23 +154,8 @@
       "deadlineISO": "2026-08-26",
       "deadlineText": "2026.08.26",
       "alwaysHire": false,
-      "popularRank": 11,
-      "popularScore": 2.154149
-    },
-    {
-      "id": "f4aebd6330a249f3a9f7",
-      "jobId": "49779972",
-      "companyName": "㈜엠큐닉",
-      "title": "PM/PL 및 사업 기획 제안 경력직 채용",
-      "preview": "경력 · 정규직 · 마감 D-53 · 접수마감 2026.10.12",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49779972",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13",
-      "deadlineISO": "2026-10-12",
-      "deadlineText": "2026.10.12",
-      "alwaysHire": false,
-      "popularRank": 14,
-      "popularScore": 2.124577
+      "popularRank": 12,
+      "popularScore": 2.150352
     },
     {
       "id": "ecbeaf7b86cc728ed0e1",
@@ -185,7 +170,7 @@
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
       "popularRank": 16,
-      "popularScore": 1.953307
+      "popularScore": 1.969627
     },
     {
       "id": "88a0735cd26b5ca6d82a",
@@ -200,7 +185,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 2,
-      "popularScore": 3.043706
+      "popularScore": 3.035869
     },
     {
       "id": "cfc1e393775a21db0610",
@@ -215,7 +200,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 5,
-      "popularScore": 2.492891
+      "popularScore": 2.501238
     },
     {
       "id": "68c4a721b6baf77b0337",
@@ -230,7 +215,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 7,
-      "popularScore": 2.230507
+      "popularScore": 2.223219
     },
     {
       "id": "efb0a4e54d0c058c1929",
@@ -244,8 +229,8 @@
       "deadlineISO": "2026-10-07",
       "deadlineText": "2026.10.07",
       "alwaysHire": false,
-      "popularRank": 13,
-      "popularScore": 2.137512
+      "popularRank": 14,
+      "popularScore": 2.138915
     },
     {
       "id": "251af343e88aa5aaaa5c",
@@ -259,23 +244,8 @@
       "deadlineISO": "2026-09-10",
       "deadlineText": "2026.09.10",
       "alwaysHire": false,
-      "popularRank": 19,
-      "popularScore": 1.774325
-    },
-    {
-      "id": "1090c688b2c1d3f8cd5c",
-      "jobId": "49745031",
-      "companyName": "㈜고워드",
-      "title": "[고워드] Product Owner",
-      "preview": "신입·경력 · 정규직·계약직 · 마감 D-19 · 접수마감 2026.09.08",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49745031",
-      "dateISO": "2026-08-10",
-      "dateText": "2026.08.10",
-      "deadlineISO": "2026-09-08",
-      "deadlineText": "2026.09.08",
-      "alwaysHire": false,
       "popularRank": 20,
-      "popularScore": 1.733561
+      "popularScore": 1.772177
     },
     {
       "id": "c679883f7c5fb9db5264",
@@ -289,8 +259,23 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
+      "popularRank": 21,
+      "popularScore": 1.743656
+    },
+    {
+      "id": "1090c688b2c1d3f8cd5c",
+      "jobId": "49745031",
+      "companyName": "㈜고워드",
+      "title": "[고워드] Product Owner",
+      "preview": "신입·경력 · 정규직·계약직 · 마감 D-19 · 접수마감 2026.09.08",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49745031",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10",
+      "deadlineISO": "2026-09-08",
+      "deadlineText": "2026.09.08",
+      "alwaysHire": false,
       "popularRank": 22,
-      "popularScore": 1.708713
+      "popularScore": 1.731639
     },
     {
       "id": "5bdf117422a38ac42fd6",
@@ -305,7 +290,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 9,
-      "popularScore": 2.214622
+      "popularScore": 2.215654
     },
     {
       "id": "8c7b1b063c58f34fc010",
@@ -319,8 +304,8 @@
       "deadlineISO": "2026-08-22",
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
-      "popularRank": 24,
-      "popularScore": 1.697821
+      "popularRank": 23,
+      "popularScore": 1.699063
     },
     {
       "id": "b29f4aa66e9babdd2d0f",
@@ -335,7 +320,22 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 6,
-      "popularScore": 2.4463441
+      "popularScore": 2.445125
+    },
+    {
+      "id": "e5645d380f01e4db6d17",
+      "jobId": "49685940",
+      "companyName": "링크투어스㈜",
+      "title": "IT 기획 / 스마트팩토리 PM(프로젝트 매니저) 채용 (서울 잠실 근무)",
+      "preview": "신입·경력 · 정규직 · 마감 D-21 · 접수마감 2026.09.10",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49685940",
+      "dateISO": "2026-07-30",
+      "dateText": "2026.07.30",
+      "deadlineISO": "2026-09-10",
+      "deadlineText": "2026.09.10",
+      "alwaysHire": false,
+      "popularRank": 10,
+      "popularScore": 2.181278
     },
     {
       "id": "cb9a8f87ca6dfd53dfc4",
@@ -350,7 +350,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 15,
-      "popularScore": 2.1204839
+      "popularScore": 2.12508
     },
     {
       "id": "eb323452da7493f53431",
@@ -365,7 +365,7 @@
       "deadlineText": "2026.09.28",
       "alwaysHire": false,
       "popularRank": 17,
-      "popularScore": 1.895313
+      "popularScore": 1.893618
     }
   ],
   "stale": false,
