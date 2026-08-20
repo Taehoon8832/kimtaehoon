@@ -67,8 +67,8 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-20T08:53:20.453938Z",
-  "checkedAt": "2026-08-20T08:53:20.453932Z",
+  "updatedAt": "2026-08-20T09:21:15.924562Z",
+  "checkedAt": "2026-08-20T09:21:15.924556Z",
   "today": "2026-08-20",
   "count": 80,
   "notices": [
@@ -203,16 +203,6 @@
       "dateText": "2026.08.20"
     },
     {
-      "id": "450bd7246e49982a5634",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "[단독] [2027수시] 서울대 서강대 등 상위대 학종 가이드북으로 보는 학생부 준비법.. ‘스펙보다 성장의 흐름’",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623818",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
       "id": "3aba557f443d43af0ec2",
       "sourceId": "ebsi",
       "sourceName": "EBSi",
@@ -229,6 +219,16 @@
       "title": "[EBSi LIVE] 2027학년도 9월 모의평가 경향분석🎙️ | 주요 문항 분석 & 실시간 Q/A",
       "preview": "EBSi 알림",
       "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE&artclId=000000400499895",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
+      "id": "152e6bcf4407f66d724f",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "[2027수시특집] '반도체특성화대학' 명지대 1650명(65.24%) 모집.. 학교장추천 지원자격 변경",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623906",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
