@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-20",
-  "updatedAt": "2026-08-20T06:13:57.610Z",
-  "checkedAt": "2026-08-20T06:13:57.610Z",
+  "updatedAt": "2026-08-20T07:13:52.762Z",
+  "checkedAt": "2026-08-20T07:13:52.762Z",
   "sources": [
     {
       "id": "u001",
@@ -1585,6 +1585,17 @@
       "dateText": "2026.08.20"
     },
     {
+      "id": "a0116fb6964c7d681ae6",
+      "univId": "u033",
+      "univName": "이화여대",
+      "title": "2027학년도 재외국민 특별전형(3월 입학) 면접고사 수험생 유의사항",
+      "preview": "이화여대 입학 공지사항 미리보기",
+      "url": "https://admission.ewha.ac.kr/admission/html/ewharo/noticeView.asp?idx=15422",
+      "homeUrl": "https://admission.ewha.ac.kr/admission/html/main/intro.asp",
+      "dateISO": "2026-08-20",
+      "dateText": "2026.08.20"
+    },
+    {
       "id": "60dc8f5df621abc7a671",
       "univId": "u123",
       "univName": "공군사관학교",
@@ -2394,17 +2405,6 @@
       "title": "2027학년도 재외국민 특별전형(3월 입학) 면접고사 대상자 발표",
       "preview": "이화여대 입학 공지사항 미리보기",
       "url": "https://admission.ewha.ac.kr/admission/html/ewharo/noticeView.asp?idx=15417",
-      "homeUrl": "https://admission.ewha.ac.kr/admission/html/main/intro.asp",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "295cb97579885e460d0e",
-      "univId": "u033",
-      "univName": "이화여대",
-      "title": "2027학년도 재외국민 특별전형(3월 입학) 면접고사 수험생 유의사항",
-      "preview": "이화여대 입학 공지사항 미리보기",
-      "url": "https://admission.ewha.ac.kr/admission/html/ewharo/noticeView.asp?idx=15418",
       "homeUrl": "https://admission.ewha.ac.kr/admission/html/main/intro.asp",
       "dateISO": "2026-08-11",
       "dateText": "2026.08.11"
