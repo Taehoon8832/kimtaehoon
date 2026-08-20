@@ -1,10 +1,46 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-20T19:41:20.790574Z",
-  "checkedAt": "2026-08-20T19:41:20.790569Z",
+  "updatedAt": "2026-08-20T20:00:28.047669Z",
+  "checkedAt": "2026-08-20T20:00:28.047663Z",
   "today": "2026-08-21",
   "count": 38,
   "notices": [
+    {
+      "id": "8ebf5f67117f8e41c6c8",
+      "sourceName": "수만휘",
+      "title": "공부 친구가 필요해요 ㅜ",
+      "preview": "[┗늦깎이 수험생 게시판] 새벽 5시가 다 되어가는 시간이네요. 이 시간에 잠들지 못하고 공부 생각을 하고 계신 분이 저 말고 또 계실까요? 저는 요즘 공부를 다시 시작하면서 혼자 하는 공부가 생각보다 참 어렵다는 ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29615876",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "9879756b8effcf88a151",
+      "sourceName": "수만휘",
+      "title": "벌써 8월이네요",
+      "preview": "[티키타카페 게시판] 다들 힘내시고 남은 2026년도 화이팅입니다!",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29615875",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "075fff3c1a8fd267b721",
+      "sourceName": "수만휘",
+      "title": "일반고 4점대 수시..",
+      "preview": "[🔥문과 수시 자유게시판] 전교과 4.76→5.00→4.25 총 4.79 수시 어디 쓸지 감이 안 잡혀요 ㅜㅠ 학종(농어촌 포함) 법학과 쓸만한 곳 있을까요 생기부는 1학년 때부터 쭉 법으로 썼어요",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29615874",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "fd9772e2038988f620e5",
+      "sourceName": "수만휘",
+      "title": "거실 창밖 새벽 풍경 보면서 가끔 혼자 싱숭생숭해지는 밤",
+      "preview": "[🔥재/반/N수 자유게시판] 동기들은 동아리 가고 대학 생활 즐기는 사진 프로필에 올라올 때마다 마음이 묘하지만, 내 선택에 후회 남기지 않으려고 눈 딱 감고 책상 앞에 앉습니다. 다들 힘내서 원하는 결과 얻읍시다.",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29615873",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
     {
       "id": "631b1bc4486b4f0699c2",
       "sourceName": "수만휘",
@@ -308,42 +344,6 @@
       "title": "외대 글캠",
       "preview": "[┏Team08 수험생 게시판] 글캠에 환산점수 800점대는 펑크난 학과인가요? 교과 학추요 폴란드요!",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29615835",
-      "dateISO": "2026-08-21",
-      "dateText": "2026.08.21"
-    },
-    {
-      "id": "c974e45bc0d1e1a3fb66",
-      "sourceName": "수만휘",
-      "title": "국민대 공대 내신 3.3 최초합",
-      "preview": "[🔥이과 수시 자유게시판] 질문받아용 25학번이고 면접,최저없는 학종입니다 지방일반고",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29615833",
-      "dateISO": "2026-08-21",
-      "dateText": "2026.08.21"
-    },
-    {
-      "id": "ad0e69aab83d5f1e1ed3",
-      "sourceName": "수만휘",
-      "title": "6지망 무조건 붙을 대학 어떻게 해야할까요?",
-      "preview": "[┏Team08 수험생 게시판] 완전 하향으로 교과 환산 내신 1.5 나오는데 동아대 최초합 하고 장학금 받고 들어갈 성적이라고 하더라구요.. 그래서 동아대 써볼까 고민중이기도 하고 무조건 붙을 대학 생각하고 있는데",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29615832",
-      "dateISO": "2026-08-21",
-      "dateText": "2026.08.21"
-    },
-    {
-      "id": "6724dfe7de4cbea352bb",
-      "sourceName": "수만휘",
-      "title": "질병지각 이랑 질병결석",
-      "preview": "[┏Team08 수험생 게시판] 상위권대학에서 이 두개는 같은거라고 간주하나요..? 요즘 출결때문ㅇ에 고민이 많아 여러 글들좀 보는데 다들 질병결석 얘기만 있고 지각에 개해서는 언긎을 안하길레 궁금해서 여쭤봅니다ㅠㅠ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29615831",
-      "dateISO": "2026-08-21",
-      "dateText": "2026.08.21"
-    },
-    {
-      "id": "d12a4feb4bc8a34b6739",
-      "sourceName": "수만휘",
-      "title": "대학 매일 통학 2시간거리 가능하다 보나요?",
-      "preview": "[🔥학부모님 자유게시판] 후... 아이 컨설팅 받으니 될법한 학종, 교과 학교들이 편도 2시간거리네요 어휴어쩌나요ㅠㅠ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29615830",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
     }
