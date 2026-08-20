@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://김태훈.com/sitemap.xml
