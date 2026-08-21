@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-21",
-  "updatedAt": "2026-08-21T07:53:49.288Z",
-  "checkedAt": "2026-08-21T07:53:49.288Z",
+  "updatedAt": "2026-08-21T08:31:30.894Z",
+  "checkedAt": "2026-08-21T08:31:30.894Z",
   "sources": [
     {
       "id": "u001",
@@ -1596,6 +1596,17 @@
       "dateText": "2026.08.21"
     },
     {
+      "id": "3d165b2005f06642900b",
+      "univId": "u044",
+      "univName": "한예종",
+      "title": "2027학년도 전통예술원 예술사 음악과 타악기 1차 전공실기1 곡목 제시",
+      "preview": "한예종 입학 공지사항 미리보기",
+      "url": "https://www.karts.ac.kr/cop/bbs/selectBoardArticle.do?bbsId=BBSMSTR_000000000007&nttNo=70338",
+      "homeUrl": "https://www.karts.ac.kr/main/appl.do",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
       "id": "fd8c2dad16d88cda8c23",
       "univId": "u033",
       "univName": "이화여대",
@@ -1603,6 +1614,28 @@
       "preview": "이화여대 입학 공지사항 미리보기",
       "url": "https://admission.ewha.ac.kr/admission/html/ewharo/noticeView.asp?idx=15423",
       "homeUrl": "https://admission.ewha.ac.kr/admission/html/main/intro.asp",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "fbb38724a97db5d3cebc",
+      "univId": "u028",
+      "univName": "세종대",
+      "title": "수시 2027학년도 대입전형자료(학교생활기록부) 온라인 제공 신청 안내(2004~2022학년도 졸업자)",
+      "preview": "세종대 입학 공지사항 미리보기",
+      "url": "https://ipsi.sejong.ac.kr/ipsi/early/notice.do?mode=view&articleNo=2767",
+      "homeUrl": "http://ipsi.sejong.ac.kr/",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "06252c564ff2c36a4e14",
+      "univId": "u028",
+      "univName": "세종대",
+      "title": "수시 2027학년도 대입전형자료(학교생활기록부) 온라인 제공 신청 안내(2004~2022학년도 졸업자) 입학과",
+      "preview": "세종대 입학 공지사항 미리보기",
+      "url": "https://ipsi.sejong.ac.kr/ipsi/early/notice.do?mode=view&articleNo=2767",
+      "homeUrl": "http://ipsi.sejong.ac.kr/",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
     },
@@ -3591,5 +3624,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=31 empty=30 fail=155 fresh=166"
+  "statusReason": "ok=26 empty=18 fail=172 fresh=169"
 }
