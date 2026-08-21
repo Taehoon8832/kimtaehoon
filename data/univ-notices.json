@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-22",
-  "updatedAt": "2026-08-21T23:37:52.650Z",
-  "checkedAt": "2026-08-21T23:37:52.650Z",
+  "updatedAt": "2026-08-21T23:59:46.879Z",
+  "checkedAt": "2026-08-21T23:59:46.879Z",
   "sources": [
     {
       "id": "u001",
@@ -1563,17 +1563,6 @@
       "dateText": "2026.08.21"
     },
     {
-      "id": "da62f87fb72eb334af33",
-      "univId": "u157",
-      "univName": "한국전통문화대",
-      "title": "2026학년도 대학원 후기 2차 신입생 모집 최종합격자 발표",
-      "preview": "한국전통문화대 입학 공지사항 미리보기",
-      "url": "https://www.knuh.ac.kr/admission/brd/view.do?mnuBaseId=MNU0000210&topBaseId=MNU0000209&tplSer=29&atcSer=46895",
-      "homeUrl": "https://www.knuh.ac.kr/admission/main.do",
-      "dateISO": "2026-08-21",
-      "dateText": "2026.08.21"
-    },
-    {
       "id": "02de6feaee92fa798e67",
       "univId": "u078",
       "univName": "한경국립대",
@@ -1607,17 +1596,6 @@
       "dateText": "2026.08.21"
     },
     {
-      "id": "b194d268cf6973e43844",
-      "univId": "u157",
-      "univName": "한국전통문화대",
-      "title": "2027학년도 우선선발 1차 합격자 2차 서류제출 안내",
-      "preview": "한국전통문화대 입학 공지사항 미리보기",
-      "url": "https://www.knuh.ac.kr/admission/brd/view.do?mnuBaseId=MNU0000210&topBaseId=MNU0000209&tplSer=29&atcSer=46905",
-      "homeUrl": "https://www.knuh.ac.kr/admission/main.do",
-      "dateISO": "2026-08-21",
-      "dateText": "2026.08.21"
-    },
-    {
       "id": "3d165b2005f06642900b",
       "univId": "u044",
       "univName": "한예종",
@@ -1640,17 +1618,6 @@
       "dateText": "2026.08.21"
     },
     {
-      "id": "fbb38724a97db5d3cebc",
-      "univId": "u028",
-      "univName": "세종대",
-      "title": "수시 2027학년도 대입전형자료(학교생활기록부) 온라인 제공 신청 안내(2004~2022학년도 졸업자)",
-      "preview": "세종대 입학 공지사항 미리보기",
-      "url": "https://ipsi.sejong.ac.kr/ipsi/early/notice.do?mode=view&articleNo=2767",
-      "homeUrl": "http://ipsi.sejong.ac.kr/",
-      "dateISO": "2026-08-21",
-      "dateText": "2026.08.21"
-    },
-    {
       "id": "eef0bc6f86b9ced26625",
       "univId": "u028",
       "univName": "세종대",
@@ -1662,10 +1629,10 @@
       "dateText": "2026.08.21"
     },
     {
-      "id": "06252c564ff2c36a4e14",
+      "id": "fbb38724a97db5d3cebc",
       "univId": "u028",
       "univName": "세종대",
-      "title": "수시 2027학년도 대입전형자료(학교생활기록부) 온라인 제공 신청 안내(2004~2022학년도 졸업자) 입학과",
+      "title": "수시 2027학년도 대입전형자료(학교생활기록부) 온라인 제공 신청 안내(2004~2022학년도 졸업자)",
       "preview": "세종대 입학 공지사항 미리보기",
       "url": "https://ipsi.sejong.ac.kr/ipsi/early/notice.do?mode=view&articleNo=2767",
       "homeUrl": "http://ipsi.sejong.ac.kr/",
@@ -1679,6 +1646,17 @@
       "title": "수시 2027학년도 대입전형자료(학교생활기록부) 온라인 제공 신청 안내(2004~2022학년도 졸업자) 입학과",
       "preview": "세종대 입학 공지사항 미리보기",
       "url": "http://ipsi.sejong.ac.kr/ipsi/early/notice.do?mode=view&articleNo=2767",
+      "homeUrl": "http://ipsi.sejong.ac.kr/",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "06252c564ff2c36a4e14",
+      "univId": "u028",
+      "univName": "세종대",
+      "title": "수시 2027학년도 대입전형자료(학교생활기록부) 온라인 제공 신청 안내(2004~2022학년도 졸업자) 입학과",
+      "preview": "세종대 입학 공지사항 미리보기",
+      "url": "https://ipsi.sejong.ac.kr/ipsi/early/notice.do?mode=view&articleNo=2767",
       "homeUrl": "http://ipsi.sejong.ac.kr/",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
@@ -2597,17 +2575,6 @@
       "dateText": "2026.08.10"
     },
     {
-      "id": "e525d7b24fade9fe6add",
-      "univId": "u157",
-      "univName": "한국전통문화대",
-      "title": "2027학년도 우선선발 1차 합격자 발표 및 서류제출 안내",
-      "preview": "한국전통문화대 입학 공지사항 미리보기",
-      "url": "https://www.knuh.ac.kr/admission/brd/view.do?mnuBaseId=MNU0000210&topBaseId=MNU0000209&tplSer=29&atcSer=46596",
-      "homeUrl": "https://www.knuh.ac.kr/admission/main.do",
-      "dateISO": "2026-08-10",
-      "dateText": "2026.08.10"
-    },
-    {
       "id": "9303896772ed9f2c8684",
       "univId": "u209",
       "univName": "경북대(대구)",
@@ -2650,17 +2617,6 @@
       "homeUrl": "https://www.karts.ac.kr/main/appl.do",
       "dateISO": "2026-08-08",
       "dateText": "2026.08.08"
-    },
-    {
-      "id": "e7cd3ad884092a26a495",
-      "univId": "u157",
-      "univName": "한국전통문화대",
-      "title": "2026학년도 대학원 후기 2차 신입생 선발 면접 및 구술고사 안내",
-      "preview": "한국전통문화대 입학 공지사항 미리보기",
-      "url": "https://www.knuh.ac.kr/admission/brd/view.do?mnuBaseId=MNU0000210&topBaseId=MNU0000209&tplSer=29&atcSer=46569",
-      "homeUrl": "https://www.knuh.ac.kr/admission/main.do",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
     },
     {
       "id": "d47f2ce1b786d0a34ac3",
@@ -2714,17 +2670,6 @@
       "preview": "숙명여대 입학 공지사항 미리보기",
       "url": "https://admission.sookmyung.ac.kr/admission/html/counsel/noticeView.asp?p_board_idx=54316",
       "homeUrl": "https://admission.sookmyung.ac.kr/admission/html/main/main.asp",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
-      "id": "459e8823a8f750dbc6bb",
-      "univId": "u157",
-      "univName": "한국전통문화대",
-      "title": "2027학년도 우선선발 입학고사 최종정답 확정·공개",
-      "preview": "한국전통문화대 입학 공지사항 미리보기",
-      "url": "https://www.knuh.ac.kr/admission/brd/view.do?mnuBaseId=MNU0000210&topBaseId=MNU0000209&tplSer=29&atcSer=46553",
-      "homeUrl": "https://www.knuh.ac.kr/admission/main.do",
       "dateISO": "2026-08-07",
       "dateText": "2026.08.07"
     },
@@ -3646,5 +3591,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=28 empty=12 fail=176 fresh=171"
+  "statusReason": "ok=35 empty=25 fail=156 fresh=166"
 }
