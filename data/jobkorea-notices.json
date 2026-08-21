@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-21T01:24:16.933Z",
-  "checkedAt": "2026-08-21T01:24:16.933Z",
+  "updatedAt": "2026-08-21T02:38:43.806Z",
+  "checkedAt": "2026-08-21T02:38:43.806Z",
   "today": "2026-08-21",
   "count": 24,
   "notices": [
@@ -20,7 +20,7 @@
       "deadlineText": "2026.09.20",
       "alwaysHire": false,
       "popularRank": 24,
-      "popularScore": 1.627652
+      "popularScore": 1.644021
     },
     {
       "id": "182056d5981c154f4eb1",
@@ -35,7 +35,7 @@
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 3.144944
+      "popularScore": 3.18272
     },
     {
       "id": "fdf94197aeadb3d2ea46",
@@ -49,23 +49,8 @@
       "deadlineISO": "2026-09-18",
       "deadlineText": "2026.09.18",
       "alwaysHire": false,
-      "popularRank": 14,
-      "popularScore": 1.760301
-    },
-    {
-      "id": "b9f8e99f404c39b49b26",
-      "jobId": "49807043",
-      "companyName": "㈜리노커뮤니케이션즈",
-      "title": "[리노컴즈] 2026 AI 서비스 운영 기획자",
-      "preview": "경력 · 정규직·계약직 · 마감 D-28 · 접수마감 2026.09.18",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49807043",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19",
-      "deadlineISO": "2026-09-18",
-      "deadlineText": "2026.09.18",
-      "alwaysHire": false,
-      "popularRank": 21,
-      "popularScore": 1.686411
+      "popularRank": 15,
+      "popularScore": 1.767539
     },
     {
       "id": "05287af0780fcee67a45",
@@ -80,7 +65,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 4,
-      "popularScore": 2.517801
+      "popularScore": 2.52428
     },
     {
       "id": "5ec199c76abc0acdd08b",
@@ -95,7 +80,7 @@
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
       "popularRank": 11,
-      "popularScore": 2.1391811
+      "popularScore": 2.1393418
     },
     {
       "id": "67b2ec849ee48852ee0c",
@@ -110,7 +95,22 @@
       "deadlineText": "2026.09.17",
       "alwaysHire": false,
       "popularRank": 16,
-      "popularScore": 1.74837
+      "popularScore": 1.756408
+    },
+    {
+      "id": "12017eea0fc515d75a36",
+      "jobId": "49802770",
+      "companyName": "㈜인터엠디컴퍼니",
+      "title": "인터엠디컴퍼니 기획팀(서비스 기획 팀장/PM) 채용",
+      "preview": "경력 · 정규직 · 마감 D-27 · 접수마감 2026.09.17",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49802770",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18",
+      "deadlineISO": "2026-09-17",
+      "deadlineText": "2026.09.17",
+      "alwaysHire": false,
+      "popularRank": 23,
+      "popularScore": 1.646282
     },
     {
       "id": "d2a5f641a20711825fa6",
@@ -125,7 +125,7 @@
       "deadlineText": "2026.10.16",
       "alwaysHire": false,
       "popularRank": 22,
-      "popularScore": 1.6425359
+      "popularScore": 1.6689761
     },
     {
       "id": "f19cd489697422d474e6",
@@ -140,7 +140,7 @@
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
       "popularRank": 3,
-      "popularScore": 2.8914819
+      "popularScore": 2.886077
     },
     {
       "id": "d32297f0bdf130b7578a",
@@ -155,7 +155,22 @@
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
       "popularRank": 7,
-      "popularScore": 2.213601
+      "popularScore": 2.198144
+    },
+    {
+      "id": "e1e87ce35739315d63b3",
+      "jobId": "49778079",
+      "companyName": "주식회사 덴탈비서",
+      "title": "(주)덴탈비서 플랫폼 PM 경력채용",
+      "preview": "경력 · 정규직 · 마감 D-22 · 접수마감 2026.09.12",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49778079",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13",
+      "deadlineISO": "2026-09-12",
+      "deadlineText": "2026.09.12",
+      "alwaysHire": false,
+      "popularRank": 12,
+      "popularScore": 2.13518
     },
     {
       "id": "ecbeaf7b86cc728ed0e1",
@@ -169,8 +184,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 12,
-      "popularScore": 1.996327
+      "popularRank": 13,
+      "popularScore": 1.996184
     },
     {
       "id": "88a0735cd26b5ca6d82a",
@@ -185,7 +200,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 2,
-      "popularScore": 2.970079
+      "popularScore": 2.9770222
     },
     {
       "id": "cfc1e393775a21db0610",
@@ -200,7 +215,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 5,
-      "popularScore": 2.402362
+      "popularScore": 2.409576
     },
     {
       "id": "68c4a721b6baf77b0337",
@@ -215,7 +230,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 8,
-      "popularScore": 2.195849
+      "popularScore": 2.1919231
     },
     {
       "id": "efb0a4e54d0c058c1929",
@@ -229,23 +244,8 @@
       "deadlineISO": "2026-10-07",
       "deadlineText": "2026.10.07",
       "alwaysHire": false,
-      "popularRank": 10,
-      "popularScore": 2.14565
-    },
-    {
-      "id": "251af343e88aa5aaaa5c",
-      "jobId": "49748939",
-      "companyName": "㈜케이티앤지",
-      "title": "2026년 하반기 KT&G 신입/경력사원 채용",
-      "preview": "신입·경력 · 계약직·인턴 · 마감 D-20 · 접수마감 2026.09.10",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49748939",
-      "dateISO": "2026-08-10",
-      "dateText": "2026.08.10",
-      "deadlineISO": "2026-09-10",
-      "deadlineText": "2026.09.10",
-      "alwaysHire": false,
-      "popularRank": 15,
-      "popularScore": 1.748585
+      "popularRank": 9,
+      "popularScore": 2.146233
     },
     {
       "id": "c679883f7c5fb9db5264",
@@ -260,7 +260,22 @@
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
       "popularRank": 17,
-      "popularScore": 1.730922
+      "popularScore": 1.745127
+    },
+    {
+      "id": "251af343e88aa5aaaa5c",
+      "jobId": "49748939",
+      "companyName": "㈜케이티앤지",
+      "title": "2026년 하반기 KT&G 신입/경력사원 채용",
+      "preview": "신입·경력 · 계약직·인턴 · 마감 D-20 · 접수마감 2026.09.10",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49748939",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10",
+      "deadlineISO": "2026-09-10",
+      "deadlineText": "2026.09.10",
+      "alwaysHire": false,
+      "popularRank": 18,
+      "popularScore": 1.735238
     },
     {
       "id": "5bdf117422a38ac42fd6",
@@ -275,7 +290,7 @@
       "deadlineText": "",
       "alwaysHire": true,
       "popularRank": 6,
-      "popularScore": 2.220063
+      "popularScore": 2.255421
     },
     {
       "id": "b2daad0d3bdddc3e904b",
@@ -289,8 +304,8 @@
       "deadlineISO": "2026-08-22",
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
-      "popularRank": 18,
-      "popularScore": 1.712714
+      "popularRank": 19,
+      "popularScore": 1.71575
     },
     {
       "id": "8c7b1b063c58f34fc010",
@@ -304,8 +319,8 @@
       "deadlineISO": "2026-08-22",
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
-      "popularRank": 20,
-      "popularScore": 1.69194
+      "popularRank": 21,
+      "popularScore": 1.691485
     },
     {
       "id": "e5645d380f01e4db6d17",
@@ -319,8 +334,8 @@
       "deadlineISO": "2026-09-10",
       "deadlineText": "2026.09.10",
       "alwaysHire": false,
-      "popularRank": 9,
-      "popularScore": 2.147289
+      "popularRank": 10,
+      "popularScore": 2.1434832
     },
     {
       "id": "eb323452da7493f53431",
@@ -334,23 +349,8 @@
       "deadlineISO": "2026-09-28",
       "deadlineText": "2026.09.28",
       "alwaysHire": false,
-      "popularRank": 13,
-      "popularScore": 1.873644
-    },
-    {
-      "id": "c4b6e2d9e1ed5272120e",
-      "jobId": "49674594",
-      "companyName": "피크닉",
-      "title": "2026 피크닉 UX 기획 / UI 디자인 / PM 경력직 채용 (정규직)",
-      "preview": "경력 · 정규직 · 마감 D-37 · 접수마감 2026.09.27",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49674594",
-      "dateISO": "2026-07-29",
-      "dateText": "2026.07.29",
-      "deadlineISO": "2026-09-27",
-      "deadlineText": "2026.09.27",
-      "alwaysHire": false,
-      "popularRank": 23,
-      "popularScore": 1.634253
+      "popularRank": 14,
+      "popularScore": 1.8841139
     },
     {
       "id": "7d52672496a4c3d5e7c4",
@@ -364,8 +364,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 19,
-      "popularScore": 1.706907
+      "popularRank": 20,
+      "popularScore": 1.710786
     }
   ],
   "stale": false,
