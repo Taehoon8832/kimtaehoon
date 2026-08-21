@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-21T09:55:44.205Z",
-  "checkedAt": "2026-08-21T09:55:44.205Z",
+  "updatedAt": "2026-08-21T10:20:07.618Z",
+  "checkedAt": "2026-08-21T10:20:07.618Z",
   "today": "2026-08-21",
   "count": 24,
   "notices": [
@@ -338,10 +338,10 @@
       "popularScore": 1.727304
     },
     {
-      "id": "5d72e3dd02179b6b3e3f",
+      "id": "774d7fb214049a06d587",
       "jobId": "49669691",
       "companyName": "㈜위펀",
-      "title": "[위펀] 서비스기획/PO (플랫폼 Product Owner)",
+      "title": "B2B 플랫폼 서비스기획자 / PO (Product Owner)",
       "preview": "경력 · 정규직 · 상시채용",
       "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49669691",
       "dateISO": "2026-07-28",
