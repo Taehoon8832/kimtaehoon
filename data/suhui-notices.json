@@ -1,10 +1,37 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-21T21:44:19.496411Z",
-  "checkedAt": "2026-08-21T21:44:19.496406Z",
+  "updatedAt": "2026-08-21T21:59:00.777185Z",
+  "checkedAt": "2026-08-21T21:59:00.777180Z",
   "today": "2026-08-22",
   "count": 40,
   "notices": [
+    {
+      "id": "d3f5c7b5deef7ea068b0",
+      "sourceName": "수만휘",
+      "title": "실기가 같은 날인데 가능할까요?",
+      "preview": "[┏Team08 수험생 게시판] 이번에 세종 단국 국민 영화과 실기가 같은날이예요. 그런데 세종이랑 단국은 시간까지 겹쳐서 하나는 아예 포기했는데 국민은 시간 공지가 아직 안 떴어요. 국민이 오전에 하게 되면 셤 보",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617633",
+      "dateISO": "2026-08-22",
+      "dateText": "2026.08.22"
+    },
+    {
+      "id": "81417f8ad7695dce36de",
+      "sourceName": "수만휘",
+      "title": "육군사관학교 학교장/일반적성 우선선발 합격자 성적 분포",
+      "preview": "[광릉한샘 학원문의 및 진학상담] https://youtu.be/ILwwoHSRGzQ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617632",
+      "dateISO": "2026-08-22",
+      "dateText": "2026.08.22"
+    },
+    {
+      "id": "6d81768091f0ae4c5182",
+      "sourceName": "수만휘",
+      "title": "입시 컨설팅",
+      "preview": "[티키타카페 게시판] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617631",
+      "dateISO": "2026-08-22",
+      "dateText": "2026.08.22"
+    },
     {
       "id": "e5822cdd2d637e41a371",
       "sourceName": "수만휘",
@@ -335,33 +362,6 @@
       "title": "전남대 공과대학 교과",
       "preview": "[🔥이과 수시 자유게시판] 이번에 지거국 등록금 무료인가 그거랑 삼전이랑 하닉 들어온다하는데 작년 등급컷보다 높아질까요? 화공 희망하고 있습니다. 물론 전자 전기에 몰릴 가능성이 클 것 같긴 하지만요..",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617592",
-      "dateISO": "2026-08-22",
-      "dateText": "2026.08.22"
-    },
-    {
-      "id": "6c2510004596ccd65b96",
-      "sourceName": "수만휘",
-      "title": "모빌리티공vs컴공vs인공지능공",
-      "preview": "[🔥이과 수시 자유게시판] 다 안정이고 3개중 학과 생각중인데 뭐가 젤 나을까요? 취업시장도 고려해서.. 조언 부탁드립니다",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617591",
-      "dateISO": "2026-08-22",
-      "dateText": "2026.08.22"
-    },
-    {
-      "id": "2959e7a6094486d565ca",
-      "sourceName": "수만휘",
-      "title": "연성대 동물보건과",
-      "preview": "[┏Team08 수험생 게시판] 연성대 동물보건과를 쓸 건데 작년 최저가 3.7이더라고요...제가 우수학기 2개해서 계산하면 3.64 밖에 안 되는데 합격 가능할까요...? ㅜㅜ 그리고 완전인증을 작년에 받았던데 제",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617589",
-      "dateISO": "2026-08-22",
-      "dateText": "2026.08.22"
-    },
-    {
-      "id": "212d1c791a335a40326b",
-      "sourceName": "수만휘",
-      "title": "수시카드",
-      "preview": "[🔥이과 수시 자유게시판] 교육청 컨설팅 + 진학사 결제해서 수시카드 정하기 vs 교육청 컨설팅 + 대치동 컨설팅 해서 수시카드 정하기 둘 중 어느게 나을까요? 이유도 알려주세요 원서 접수가 얼마 남지 않아 고민됩니",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617588",
       "dateISO": "2026-08-22",
       "dateText": "2026.08.22"
     }
