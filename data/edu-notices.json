@@ -67,18 +67,38 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-21T10:17:51.955440Z",
-  "checkedAt": "2026-08-21T10:17:51.955437Z",
+  "updatedAt": "2026-08-21T10:54:40.946449Z",
+  "checkedAt": "2026-08-21T10:54:40.946443Z",
   "today": "2026-08-21",
   "count": 72,
   "notices": [
     {
-      "id": "538bb3bd3d647999d398",
+      "id": "b81b0b660fac00b5958f",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "충북대 김영조 교수팀 온도 하나로 고분자 '분자 배열' 바꾸는 기술 개발",
+      "title": "한밭대 2025학년도 후기 학위수여식 개최.. '391명 배출'",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=624072",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=624095",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "e52db355830d2c39c593",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "한국교원대 2025학년도 후기 학위수여식 개최… 425명 배출",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=624092",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "3e5f508c6bb263ab59c1",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "청암대 웹툰콘텐츠학과 '몰랑이' 윤혜지 작가·스튜디오 달고나와 캐릭터 IP·인스타툰 산학협력",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=624098",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
     },
@@ -93,6 +113,16 @@
       "dateText": "2026.08.21"
     },
     {
+      "id": "482e25a83bda6e880ed7",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "인천대 독립운동사연구소 제16차 독립유공자 포상신청설명회 개최",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=624089",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
       "id": "c113a3e10149c8f1b1bf",
       "sourceId": "moe_blog",
       "sourceName": "교육부블로그",
@@ -103,72 +133,42 @@
       "dateText": "2026.08.21"
     },
     {
-      "id": "3fdd8bbc6d01fc8b31bb",
+      "id": "d143d79af2c486e48862",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "서경대 진로취업처 대학일자리플러스본부, 2026학년도 진로동아리 운영…현직자 멘토링 연계",
+      "title": "서경대 대학일자리플러스본부 2026학년도 2학기 취업동아리 참가자 모집.. '13개 팀 선발'",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=624074",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=624093",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
     },
     {
-      "id": "a58961ec619b17082c10",
+      "id": "a2da983a54c6a231a5b4",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "동아대 '2025학년도 후기 외국인 유학생 졸업환송회' 개최",
+      "title": "대구보건대 평생교육원, 동구청 연계 평생학습 프로그램 운영",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=624073",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=624094",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
     },
     {
-      "id": "04e70023e314eddd07e0",
+      "id": "9f500d35266c2b5227b1",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "김포대 국제 교류 MOU 체결… 한국 태권도 세계화 본격 시동",
+      "title": "국립창원대 경남지역경제교육센터 특수교육 대상 학생과 '2026 도전 경제골든벨' 개최",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=624071",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=624090",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
     },
     {
-      "id": "5a9eb75b63f5a4b6b847",
+      "id": "1ad9c503a1948429be5e",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "국립군산대 앵커사업단 군산 수산물 활용 제품 로컬푸드 직매장 입점",
+      "title": "국립창원대 경남TP-인제대-한국실크연구원과 과학기술문화·AI/SW 교육 활성화 업무협약",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=624077",
-      "dateISO": "2026-08-21",
-      "dateText": "2026.08.21"
-    },
-    {
-      "id": "ab63207d395a500413ee",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국립군산대 생활과학교실 서천 학생 대상 '국립충남기상과학관 탐방' 진행",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=624076",
-      "dateISO": "2026-08-21",
-      "dateText": "2026.08.21"
-    },
-    {
-      "id": "ba55b1155d6b39819e96",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국립군산대 등 5개 대학 ‘2026 METAmobility AI활용 경진대회’성료",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=624075",
-      "dateISO": "2026-08-21",
-      "dateText": "2026.08.21"
-    },
-    {
-      "id": "e36afe973747d4d72e28",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "광주대 2025학년도 후기 학위수여식… 졸업생 173명 배출",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=624078",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=624097",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
     },
