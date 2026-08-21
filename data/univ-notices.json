@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-21",
-  "updatedAt": "2026-08-21T07:02:43.159Z",
-  "checkedAt": "2026-08-21T07:02:43.159Z",
+  "updatedAt": "2026-08-21T07:53:49.288Z",
+  "checkedAt": "2026-08-21T07:53:49.288Z",
   "sources": [
     {
       "id": "u001",
@@ -1537,6 +1537,17 @@
       "preview": "해군사관학교 입학 공지사항 미리보기",
       "url": "https://www.navy.ac.kr:4443/bbs/iphak/142/841583/artclView.do",
       "homeUrl": "https://www.navy.ac.kr:4443/sites/iphak/index.do",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "fbcb5b7252f9012735c1",
+      "univId": "u021",
+      "univName": "서울대",
+      "title": "2026학년도 농업생명과학대학 블루푸드테크학과(계약학과) 신입생 추가 모집 합격자 발표 및 등록금고지서 출력",
+      "preview": "2026.08.21. 계약학과 2026학",
+      "url": "http://admission.snu.ac.kr/graduate/vocational-contract-program/notice?md=v&bbsidx=174092",
+      "homeUrl": "http://admission.snu.ac.kr/",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
     },
@@ -3580,5 +3591,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=29 empty=20 fail=167 fresh=165"
+  "statusReason": "ok=31 empty=30 fail=155 fresh=166"
 }
