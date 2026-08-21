@@ -1,10 +1,73 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-21T22:20:32.264217Z",
-  "checkedAt": "2026-08-21T22:20:32.264210Z",
+  "updatedAt": "2026-08-21T22:46:34.248602Z",
+  "checkedAt": "2026-08-21T22:46:34.248597Z",
   "today": "2026-08-22",
-  "count": 40,
+  "count": 39,
   "notices": [
+    {
+      "id": "e9faeaa05bc46df08ff0",
+      "sourceName": "수만휘",
+      "title": "수시를 앞둔 학생분들께 (숭실대 AI 중심대학에 대하여)",
+      "preview": "[😃수험생 일상글 게시판] 숭실대는 올해5월 정부가 공인한 AI 중심대학입니다 인서울 대학중 단 6개 대학만 선정되었어요 사활을건 대학들간의 치열한 경쟁에서 선정됬어요 아마 정보를 잘 모르시는 분들이 많으실거예요 그",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617644",
+      "dateISO": "2026-08-22",
+      "dateText": "2026.08.22"
+    },
+    {
+      "id": "085d8d04171ddeb340d8",
+      "sourceName": "수만휘",
+      "title": "2027 경인교대 쓰시는분들 선댁과목 궁금해요?",
+      "preview": "[┏Team08 수험생 게시판] 선택과목 문이과 과목 골고루 들어야하나요? 올 사탐 불이익 있을까요?",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617643",
+      "dateISO": "2026-08-22",
+      "dateText": "2026.08.22"
+    },
+    {
+      "id": "63d3b6b17f7046011761",
+      "sourceName": "수만휘",
+      "title": "더위가 조금씩 사그러드니",
+      "preview": "[티키타카페 게시판] 정말 시간이 얼마 남지 않은 것 같네요 남은 기간 최선을 다해서 후회 없는 결과가 있었으면 좋겠습니다 모두들 화이팅!!!",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617642",
+      "dateISO": "2026-08-22",
+      "dateText": "2026.08.22"
+    },
+    {
+      "id": "ac7412594782ed0921f6",
+      "sourceName": "수만휘",
+      "title": "27학년도 사관학교 2차 면접 체력 대비 2가지 특강 프로그램 안내",
+      "preview": "[광릉한샘 1:6 재수반] 27학년도 사관학교 2차 면접 체력 대비 2가지 특강 프로그램 안내 광릉한샘기숙학원 사관반이 육·해·공군사관학교 및 국군간호사관학교 2차 시험을 대비하는 온·오프라인 교육 과정을 오는 8월",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617640",
+      "dateISO": "2026-08-22",
+      "dateText": "2026.08.22"
+    },
+    {
+      "id": "82ac6898289a01fc74fa",
+      "sourceName": "수만휘",
+      "title": "출쳌!!!",
+      "preview": "[😃사진공유+출석체크] 출석합니다.😁😄😃😀 수만휘는 대입을 주제로 최상위 0.001%부터 최하위 99.999%까지의 수험생, 대학생, 선생님 및 학부모님들이 모여 서로 돕고 격려하며 따뜻한 이야기를 나누는 대한민국 ",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617639",
+      "dateISO": "2026-08-22",
+      "dateText": "2026.08.22"
+    },
+    {
+      "id": "907b9ea1ae5e718f47e6",
+      "sourceName": "수만휘",
+      "title": "벌써 찬바람나는것 같네요",
+      "preview": "[티키타카페 게시판] 비가 와서 그런가 수능이 코앞으로 다가오는 느낌 후회없이 열심히 해보려구요",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617638",
+      "dateISO": "2026-08-22",
+      "dateText": "2026.08.22"
+    },
+    {
+      "id": "351312e7ee33b6d73b55",
+      "sourceName": "수만휘",
+      "title": "D-89",
+      "preview": "[🔥재/반/N수 자유게시판] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617637",
+      "dateISO": "2026-08-22",
+      "dateText": "2026.08.22"
+    },
     {
       "id": "18be50ce67d5d8724a2d",
       "sourceName": "수만휘",
@@ -20,15 +83,6 @@
       "title": "아이 수시카드 갈팡질팡",
       "preview": "[┏Team08 수험생 게시판] 1.과기 안전공 일반학종 2.인천대 농어촌안전공 3.공학대겜공 교과 4.한밭대전자 교과... 우리아이는 마음이불안하여 왔다갔다합니다 인하대 광운대 쓰려다가 불안한가봅니다 인천대 자추포",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617635",
-      "dateISO": "2026-08-22",
-      "dateText": "2026.08.22"
-    },
-    {
-      "id": "fa5d6c186d19162b36fc",
-      "sourceName": "수만휘",
-      "title": "애매한 4년제 vs 전문대",
-      "preview": "[🔥이과 수시 자유게시판] 수만휘 카페 글",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617634",
       "dateISO": "2026-08-22",
       "dateText": "2026.08.22"
     },
@@ -299,69 +353,6 @@
       "title": "2.9 정도면 하향 어디써야할까요?",
       "preview": "[🔥문과 수시 자유게시판] 제가 서울 살아서 지방대학이면 통학 힘들 것 같은데 이번에 재수도 어렵고 다들 안정적으로 쓸 거 같아서 하향을 쓰려고 합니다... 하향으로 어디를 쓸지모르겠어요",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617602",
-      "dateISO": "2026-08-22",
-      "dateText": "2026.08.22"
-    },
-    {
-      "id": "35ae8465071462b4c033",
-      "sourceName": "수만휘",
-      "title": "생기부>>>내신 대학 상향 카드",
-      "preview": "[┏Team08 수험생 게시판] 안녕하세요 일반고 5점대 중반 경영 지망합니다 수시 접수 기간 전인데 선생님들이 저같은 케이스는 본 적이 없다고 하셔서 여기에라도 남깁니다. 공부 방법을 매 시험 때마다 바꾸기도 했고",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617601",
-      "dateISO": "2026-08-22",
-      "dateText": "2026.08.22"
-    },
-    {
-      "id": "597fba6f682c27651293",
-      "sourceName": "수만휘",
-      "title": "중앙대 vs 건국대",
-      "preview": "[🔥문과 수시 자유게시판] 중앙대는 도시계획•부동산학과 , 건국대는 부동산학과를 희망하는데 부동산학과는 건국대가 문과간판이기도 하고 역사가 깊어서 1지망으로 작성하려고 하는데 대학네임만 봐선 중앙대가 더 좋고 나중에",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617600",
-      "dateISO": "2026-08-22",
-      "dateText": "2026.08.22"
-    },
-    {
-      "id": "eab4d5fd803b057d08f1",
-      "sourceName": "수만휘",
-      "title": "검정고시 수시원서 추천",
-      "preview": "[┏Team08 수험생 게시판] 성적은 국어 92 / 영어 84 / 수학100 / 사회 92 / 과학 80 / 한국사 80 / 도덕 84 입니다 가야대 간호 다니는중인데 딱히 하고싶다하는 전공은 없어서 학교 이름이 ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617599",
-      "dateISO": "2026-08-22",
-      "dateText": "2026.08.22"
-    },
-    {
-      "id": "4991dbf9cbc2742eedc5",
-      "sourceName": "수만휘",
-      "title": "3점대 수시카드 봐주세요",
-      "preview": "[┏Team08 수험생 게시판] 도저히 수원대 아래로는 못 쓰겠어서 6지망이 수원대입니다 재수 아예 못 하는데 카드 좀 더 낮게 써야할까요?",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617598",
-      "dateISO": "2026-08-22",
-      "dateText": "2026.08.22"
-    },
-    {
-      "id": "8fc56b64a8762f3391f2",
-      "sourceName": "수만휘",
-      "title": "검정고시 입시 컨설팅 추천",
-      "preview": "[┏Team08 수험생 게시판] 검정고시 입시컨설팅 꼼꼼히 바주실수있으면 좋깄고 온라인 채팅도 좋습니다!",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617597",
-      "dateISO": "2026-08-22",
-      "dateText": "2026.08.22"
-    },
-    {
-      "id": "b84576ca4966b0e3fa14",
-      "sourceName": "수만휘",
-      "title": "벌써 떨리네요",
-      "preview": "[티키타카페 게시판] 90일대에서 80일대로 내려오니까 급 떨리네요",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617596",
-      "dateISO": "2026-08-22",
-      "dateText": "2026.08.22"
-    },
-    {
-      "id": "e76b084e657cefbc6397",
-      "sourceName": "수만휘",
-      "title": "중앙대 학종 교육학과",
-      "preview": "[┃사범대 게시판] 내신 1.7~1.8인데 중앙대 교육학과 종합 어떤가요? 생기부는 교육,과학으로 채웠어요(과학교육과 희망해서요) 융합형은 최저 없는 전형이 맞나요...?! 잘 몰라서 조언주시면 너무 감사할거같아요 ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617595",
       "dateISO": "2026-08-22",
       "dateText": "2026.08.22"
     }
