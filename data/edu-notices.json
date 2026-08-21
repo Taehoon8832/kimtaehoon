@@ -67,11 +67,31 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-21T16:27:24.083715Z",
-  "checkedAt": "2026-08-21T16:27:24.083709Z",
+  "updatedAt": "2026-08-21T16:59:52.177403Z",
+  "checkedAt": "2026-08-21T16:59:52.177397Z",
   "today": "2026-08-22",
   "count": 80,
   "notices": [
+    {
+      "id": "2d47a0e58f76397eca3e",
+      "sourceId": "ebsi",
+      "sourceName": "EBSi",
+      "title": "🌟2025 목표달성 듀냐선배 인터뷰 🌟｜성신여대 경제학과 선배의 과목별 공부법",
+      "preview": "EBSi 알림",
+      "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE&artclId=000000400500490",
+      "dateISO": "2026-08-22",
+      "dateText": "2026.08.22"
+    },
+    {
+      "id": "26777aecd3e4420a6ddb",
+      "sourceId": "ebsi",
+      "sourceName": "EBSi",
+      "title": "[강좌/교재 오픈] 👍️고난도 실전 대비 <2027 만점마무리 봉투모의고사 시즌2 고난도>",
+      "preview": "EBSi 알림",
+      "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE_01&artclId=000000400495843",
+      "dateISO": "2026-08-22",
+      "dateText": "2026.08.22"
+    },
     {
       "id": "b81b0b660fac00b5958f",
       "sourceId": "veritas",
@@ -421,26 +441,6 @@
       "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE_01&artclId=000000400494533",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
-    },
-    {
-      "id": "8cde7995d2556b8362be",
-      "sourceId": "ebsi",
-      "sourceName": "EBSi",
-      "title": "[고3 필독] 2027학년도 9월 모의평가 대비 공부법 📚",
-      "preview": "EBSi 알림",
-      "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE&artclId=000000400498637",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13"
-    },
-    {
-      "id": "d620cefcf78f3b9ebca4",
-      "sourceId": "ebsi",
-      "sourceName": "EBSi",
-      "title": "EBS 사이트 시스템 점검 안내 (2026년 8월 18일)",
-      "preview": "EBSi 알림",
-      "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE&artclId=000000400498605",
-      "dateISO": "2026-08-13",
-      "dateText": "2026.08.13"
     },
     {
       "id": "c170b734cd2c3f6144c2",
