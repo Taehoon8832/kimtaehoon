@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-21T16:15:08.271Z",
-  "checkedAt": "2026-08-21T16:15:08.271Z",
+  "updatedAt": "2026-08-21T16:52:07.452Z",
+  "checkedAt": "2026-08-21T16:52:07.452Z",
   "today": "2026-08-22",
   "count": 24,
   "notices": [
@@ -19,8 +19,8 @@
       "deadlineISO": "2026-09-20",
       "deadlineText": "2026.09.20",
       "alwaysHire": false,
-      "popularRank": 11,
-      "popularScore": 2.157361
+      "popularRank": 12,
+      "popularScore": 2.155466
     },
     {
       "id": "ad2c729b1e51430662c6",
@@ -34,8 +34,8 @@
       "deadlineISO": "2026-09-20",
       "deadlineText": "2026.09.20",
       "alwaysHire": false,
-      "popularRank": 12,
-      "popularScore": 2.1306481
+      "popularRank": 13,
+      "popularScore": 2.1309772
     },
     {
       "id": "450b1f72e0343ed299cc",
@@ -49,8 +49,8 @@
       "deadlineISO": "2026-09-20",
       "deadlineText": "2026.09.20",
       "alwaysHire": false,
-      "popularRank": 15,
-      "popularScore": 1.868187
+      "popularRank": 17,
+      "popularScore": 1.856259
     },
     {
       "id": "b7d5ca0bf83730d1820d",
@@ -64,8 +64,8 @@
       "deadlineISO": "2026-09-20",
       "deadlineText": "2026.09.20",
       "alwaysHire": false,
-      "popularRank": 23,
-      "popularScore": 1.7203361
+      "popularRank": 22,
+      "popularScore": 1.738349
     },
     {
       "id": "182056d5981c154f4eb1",
@@ -80,22 +80,7 @@
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 3.308967
-    },
-    {
-      "id": "67b2ec849ee48852ee0c",
-      "jobId": "49800554",
-      "companyName": "㈜하우투약",
-      "title": "[하우투약] `26 하반기 서비스 기획 부문 채용",
-      "preview": "신입·경력 · 정규직 · 마감 D-26 · 접수마감 2026.09.17",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49800554",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18",
-      "deadlineISO": "2026-09-17",
-      "deadlineText": "2026.09.17",
-      "alwaysHire": false,
-      "popularRank": 14,
-      "popularScore": 1.958684
+      "popularScore": 3.3026721
     },
     {
       "id": "12017eea0fc515d75a36",
@@ -109,8 +94,23 @@
       "deadlineISO": "2026-09-17",
       "deadlineText": "2026.09.17",
       "alwaysHire": false,
+      "popularRank": 15,
+      "popularScore": 1.865607
+    },
+    {
+      "id": "67b2ec849ee48852ee0c",
+      "jobId": "49800554",
+      "companyName": "㈜하우투약",
+      "title": "[하우투약] `26 하반기 서비스 기획 부문 채용",
+      "preview": "신입·경력 · 정규직 · 마감 D-26 · 접수마감 2026.09.17",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49800554",
+      "dateISO": "2026-08-18",
+      "dateText": "2026.08.18",
+      "deadlineISO": "2026-09-17",
+      "deadlineText": "2026.09.17",
+      "alwaysHire": false,
       "popularRank": 16,
-      "popularScore": 1.846184
+      "popularScore": 1.863499
     },
     {
       "id": "cac52a505fd5969f0ff8",
@@ -124,38 +124,8 @@
       "deadlineISO": "2026-09-20",
       "deadlineText": "2026.09.20",
       "alwaysHire": false,
-      "popularRank": 17,
-      "popularScore": 1.829664
-    },
-    {
-      "id": "41f2ee2408b1ef859184",
-      "jobId": "49781362",
-      "companyName": "㈜아이엠비씨",
-      "title": "㈜아이엠비씨 각 부문별 신입/경력 채용",
-      "preview": "신입·경력 · 정규직·계약직 · 마감 D-6 · 접수마감 2026.08.28",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49781362",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18",
-      "deadlineISO": "2026-08-28",
-      "deadlineText": "2026.08.28",
-      "alwaysHire": false,
-      "popularRank": 24,
-      "popularScore": 1.7039781
-    },
-    {
-      "id": "f19cd489697422d474e6",
-      "jobId": "49785274",
-      "companyName": "㈜보령",
-      "title": "㈜보령 2026년 3분기 수시 채용(경력)",
-      "preview": "경력 · 정규직·계약직 · 마감 D-8 · 접수마감 2026.08.30",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49785274",
-      "dateISO": "2026-08-14",
-      "dateText": "2026.08.14",
-      "deadlineISO": "2026-08-30",
-      "deadlineText": "2026.08.30",
-      "alwaysHire": false,
-      "popularRank": 3,
-      "popularScore": 2.907541
+      "popularRank": 19,
+      "popularScore": 1.809426
     },
     {
       "id": "d32297f0bdf130b7578a",
@@ -169,8 +139,23 @@
       "deadlineISO": "2026-09-13",
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
+      "popularRank": 8,
+      "popularScore": 2.349679
+    },
+    {
+      "id": "f19cd489697422d474e6",
+      "jobId": "49785274",
+      "companyName": "㈜보령",
+      "title": "㈜보령 2026년 3분기 수시 채용(경력)",
+      "preview": "경력 · 정규직·계약직 · 마감 D-8 · 접수마감 2026.08.30",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49785274",
+      "dateISO": "2026-08-14",
+      "dateText": "2026.08.14",
+      "deadlineISO": "2026-08-30",
+      "deadlineText": "2026.08.30",
+      "alwaysHire": false,
       "popularRank": 9,
-      "popularScore": 2.313154
+      "popularScore": 2.2061229
     },
     {
       "id": "9135ba48be9d10365323",
@@ -185,7 +170,7 @@
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
       "popularRank": 10,
-      "popularScore": 2.179784
+      "popularScore": 2.176371
     },
     {
       "id": "e1e87ce35739315d63b3",
@@ -199,8 +184,23 @@
       "deadlineISO": "2026-09-12",
       "deadlineText": "2026.09.12",
       "alwaysHire": false,
-      "popularRank": 4,
-      "popularScore": 2.726815
+      "popularRank": 3,
+      "popularScore": 2.724714
+    },
+    {
+      "id": "f4aebd6330a249f3a9f7",
+      "jobId": "49779972",
+      "companyName": "㈜엠큐닉",
+      "title": "PM/PL 및 사업 기획 제안 경력직 채용",
+      "preview": "경력 · 정규직 · 마감 D-51 · 접수마감 2026.10.12",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49779972",
+      "dateISO": "2026-08-13",
+      "dateText": "2026.08.13",
+      "deadlineISO": "2026-10-12",
+      "deadlineText": "2026.10.12",
+      "alwaysHire": false,
+      "popularRank": 11,
+      "popularScore": 2.165312
     },
     {
       "id": "51066d1dd642abac1011",
@@ -214,8 +214,8 @@
       "deadlineISO": "2026-10-11",
       "deadlineText": "2026.10.11",
       "alwaysHire": false,
-      "popularRank": 8,
-      "popularScore": 2.371118
+      "popularRank": 7,
+      "popularScore": 2.3641062
     },
     {
       "id": "5e1cc9e61a7db7f87c3e",
@@ -229,23 +229,8 @@
       "deadlineISO": "2026-09-13",
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
-      "popularRank": 19,
-      "popularScore": 1.792547
-    },
-    {
-      "id": "7f8ca886fffaf7d5d07e",
-      "jobId": "49773237",
-      "companyName": "㈜소프트웍스",
-      "title": "서비스 시스템 Figma 화면기획",
-      "preview": "신입·경력 · 프리랜서 · 마감 D-20 · 접수마감 2026.09.11",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49773237",
-      "dateISO": "2026-08-12",
-      "dateText": "2026.08.12",
-      "deadlineISO": "2026-09-11",
-      "deadlineText": "2026.09.11",
-      "alwaysHire": false,
-      "popularRank": 22,
-      "popularScore": 1.720784
+      "popularRank": 18,
+      "popularScore": 1.817551
     },
     {
       "id": "ecbeaf7b86cc728ed0e1",
@@ -259,8 +244,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 13,
-      "popularScore": 1.981447
+      "popularRank": 14,
+      "popularScore": 1.964626
     },
     {
       "id": "88a0735cd26b5ca6d82a",
@@ -275,7 +260,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 2,
-      "popularScore": 3.0122929
+      "popularScore": 3.011208
     },
     {
       "id": "cfc1e393775a21db0610",
@@ -289,8 +274,23 @@
       "deadlineISO": "2026-08-23",
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
-      "popularRank": 7,
-      "popularScore": 2.405773
+      "popularRank": 6,
+      "popularScore": 2.427295
+    },
+    {
+      "id": "251af343e88aa5aaaa5c",
+      "jobId": "49748939",
+      "companyName": "㈜케이티앤지",
+      "title": "2026년 하반기 KT&G 신입/경력사원 채용",
+      "preview": "신입·경력 · 계약직·인턴 · 마감 D-19 · 접수마감 2026.09.10",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49748939",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10",
+      "deadlineISO": "2026-09-10",
+      "deadlineText": "2026.09.10",
+      "alwaysHire": false,
+      "popularRank": 24,
+      "popularScore": 1.7162609
     },
     {
       "id": "5bdf117422a38ac42fd6",
@@ -304,8 +304,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 5,
-      "popularScore": 2.54599
+      "popularRank": 4,
+      "popularScore": 2.520631
     },
     {
       "id": "073c9f6a29eae7da18cb",
@@ -319,8 +319,8 @@
       "deadlineISO": "2026-09-03",
       "deadlineText": "2026.09.03",
       "alwaysHire": false,
-      "popularRank": 18,
-      "popularScore": 1.8220559
+      "popularRank": 20,
+      "popularScore": 1.8022829
     },
     {
       "id": "b2daad0d3bdddc3e904b",
@@ -334,8 +334,8 @@
       "deadlineISO": "2026-08-22",
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
-      "popularRank": 20,
-      "popularScore": 1.7713771
+      "popularRank": 23,
+      "popularScore": 1.7302649
     },
     {
       "id": "774d7fb214049a06d587",
@@ -349,8 +349,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 6,
-      "popularScore": 2.501287
+      "popularRank": 5,
+      "popularScore": 2.495475
     },
     {
       "id": "73bb15cd76d933bc580a",
@@ -365,7 +365,7 @@
       "deadlineText": "2026.08.27",
       "alwaysHire": false,
       "popularRank": 21,
-      "popularScore": 1.758678
+      "popularScore": 1.752446
     }
   ],
   "stale": false,
