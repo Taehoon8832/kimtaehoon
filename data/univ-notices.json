@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-21",
-  "updatedAt": "2026-08-21T13:18:47.145Z",
-  "checkedAt": "2026-08-21T13:18:47.145Z",
+  "updatedAt": "2026-08-21T14:09:20.530Z",
+  "checkedAt": "2026-08-21T14:09:20.530Z",
   "sources": [
     {
       "id": "u001",
@@ -1591,6 +1591,17 @@
       "title": "2027학년도 검정고시 대입전형자료 온라인 제공 신청 안내 전체",
       "preview": "한경국립대 입학 공지사항 미리보기",
       "url": "https://ipsi.hknu.ac.kr/help/notice_view.php?bn=5193&nPage=1",
+      "homeUrl": "https://ipsi.hknu.ac.kr/",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "661c8476474b70f35a37",
+      "univId": "u078",
+      "univName": "한경국립대",
+      "title": "2027학년도 대입전형자료(학교생활기록부) 온라인 생성 신청 안내(2005년 ~ 2023년 국내고등학교 졸업자) 대입전형",
+      "preview": "2027학년도 검정고시 대입전형자료 온라인 제공 신청 안내 대입전형 2026",
+      "url": "https://ipsi.hknu.ac.kr/help/notice_view.php?bn=5192&m_type=&nPage=1&f=&s=",
       "homeUrl": "https://ipsi.hknu.ac.kr/",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
@@ -3613,5 +3624,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=23 empty=16 fail=177 fresh=168"
+  "statusReason": "ok=30 empty=19 fail=167 fresh=169"
 }
