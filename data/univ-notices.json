@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-22",
-  "updatedAt": "2026-08-21T21:37:05.748Z",
-  "checkedAt": "2026-08-21T21:37:05.748Z",
+  "updatedAt": "2026-08-21T22:00:56.825Z",
+  "checkedAt": "2026-08-21T22:00:56.825Z",
   "sources": [
     {
       "id": "u001",
@@ -1640,17 +1640,6 @@
       "dateText": "2026.08.21"
     },
     {
-      "id": "fbb38724a97db5d3cebc",
-      "univId": "u028",
-      "univName": "세종대",
-      "title": "수시 2027학년도 대입전형자료(학교생활기록부) 온라인 제공 신청 안내(2004~2022학년도 졸업자)",
-      "preview": "세종대 입학 공지사항 미리보기",
-      "url": "https://ipsi.sejong.ac.kr/ipsi/early/notice.do?mode=view&articleNo=2767",
-      "homeUrl": "http://ipsi.sejong.ac.kr/",
-      "dateISO": "2026-08-21",
-      "dateText": "2026.08.21"
-    },
-    {
       "id": "eef0bc6f86b9ced26625",
       "univId": "u028",
       "univName": "세종대",
@@ -1662,10 +1651,10 @@
       "dateText": "2026.08.21"
     },
     {
-      "id": "06252c564ff2c36a4e14",
+      "id": "fbb38724a97db5d3cebc",
       "univId": "u028",
       "univName": "세종대",
-      "title": "수시 2027학년도 대입전형자료(학교생활기록부) 온라인 제공 신청 안내(2004~2022학년도 졸업자) 입학과",
+      "title": "수시 2027학년도 대입전형자료(학교생활기록부) 온라인 제공 신청 안내(2004~2022학년도 졸업자)",
       "preview": "세종대 입학 공지사항 미리보기",
       "url": "https://ipsi.sejong.ac.kr/ipsi/early/notice.do?mode=view&articleNo=2767",
       "homeUrl": "http://ipsi.sejong.ac.kr/",
@@ -1679,6 +1668,17 @@
       "title": "수시 2027학년도 대입전형자료(학교생활기록부) 온라인 제공 신청 안내(2004~2022학년도 졸업자) 입학과",
       "preview": "세종대 입학 공지사항 미리보기",
       "url": "http://ipsi.sejong.ac.kr/ipsi/early/notice.do?mode=view&articleNo=2767",
+      "homeUrl": "http://ipsi.sejong.ac.kr/",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "06252c564ff2c36a4e14",
+      "univId": "u028",
+      "univName": "세종대",
+      "title": "수시 2027학년도 대입전형자료(학교생활기록부) 온라인 제공 신청 안내(2004~2022학년도 졸업자) 입학과",
+      "preview": "세종대 입학 공지사항 미리보기",
+      "url": "https://ipsi.sejong.ac.kr/ipsi/early/notice.do?mode=view&articleNo=2767",
       "homeUrl": "http://ipsi.sejong.ac.kr/",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
@@ -3646,5 +3646,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=33 empty=17 fail=166 fresh=171"
+  "statusReason": "ok=32 empty=30 fail=154 fresh=171"
 }
