@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-21",
-  "updatedAt": "2026-08-21T12:08:55.732Z",
-  "checkedAt": "2026-08-21T12:08:55.732Z",
+  "updatedAt": "2026-08-21T13:18:47.145Z",
+  "checkedAt": "2026-08-21T13:18:47.145Z",
   "sources": [
     {
       "id": "u001",
@@ -3613,5 +3613,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=33 empty=38 fail=145 fresh=168"
+  "statusReason": "ok=23 empty=16 fail=177 fresh=168"
 }
