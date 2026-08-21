@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-21",
-  "updatedAt": "2026-08-21T04:54:29.715Z",
-  "checkedAt": "2026-08-21T04:54:29.715Z",
+  "updatedAt": "2026-08-21T05:26:41.032Z",
+  "checkedAt": "2026-08-21T05:26:41.032Z",
   "sources": [
     {
       "id": "u001",
@@ -1559,6 +1559,17 @@
       "preview": "한경국립대 입학 공지사항 미리보기",
       "url": "https://ipsi.hknu.ac.kr/help/notice_view.php?bn=5193&nPage=1",
       "homeUrl": "https://ipsi.hknu.ac.kr/",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "b194d268cf6973e43844",
+      "univId": "u157",
+      "univName": "한국전통문화대",
+      "title": "2027학년도 우선선발 1차 합격자 2차 서류제출 안내",
+      "preview": "한국전통문화대 입학 공지사항 미리보기",
+      "url": "https://www.knuh.ac.kr/admission/brd/view.do?mnuBaseId=MNU0000210&topBaseId=MNU0000209&tplSer=29&atcSer=46905",
+      "homeUrl": "https://www.knuh.ac.kr/admission/main.do",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
     },
@@ -3536,5 +3547,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=37 empty=35 fail=144 fresh=161"
+  "statusReason": "ok=32 empty=34 fail=150 fresh=162"
 }
