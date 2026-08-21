@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-21",
-  "updatedAt": "2026-08-21T01:58:45.505Z",
-  "checkedAt": "2026-08-21T01:58:45.505Z",
+  "updatedAt": "2026-08-21T03:13:17.723Z",
+  "checkedAt": "2026-08-21T03:13:17.723Z",
   "sources": [
     {
       "id": "u001",
@@ -1537,6 +1537,17 @@
       "preview": "한국전통문화대 입학 공지사항 미리보기",
       "url": "https://www.knuh.ac.kr/admission/brd/view.do?mnuBaseId=MNU0000210&topBaseId=MNU0000209&tplSer=29&atcSer=46895",
       "homeUrl": "https://www.knuh.ac.kr/admission/main.do",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "bac6a0fbad6b0dee9178",
+      "univId": "u078",
+      "univName": "한경국립대",
+      "title": "2027학년도 검정고시 대입전형자료 온라인 제공 신청 안내 전체",
+      "preview": "한경국립대 입학 공지사항 미리보기",
+      "url": "https://ipsi.hknu.ac.kr/help/notice_view.php?bn=5193&nPage=1",
+      "homeUrl": "https://ipsi.hknu.ac.kr/",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
     },
@@ -3503,5 +3514,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=34 empty=27 fail=155 fresh=158"
+  "statusReason": "ok=31 empty=31 fail=154 fresh=159"
 }
