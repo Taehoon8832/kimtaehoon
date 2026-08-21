@@ -1,10 +1,28 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-21T19:34:11.963307Z",
-  "checkedAt": "2026-08-21T19:34:11.963301Z",
+  "updatedAt": "2026-08-21T19:53:55.631007Z",
+  "checkedAt": "2026-08-21T19:53:55.631002Z",
   "today": "2026-08-22",
   "count": 40,
   "notices": [
+    {
+      "id": "d51593c2ad4470eb5fd5",
+      "sourceName": "수만휘",
+      "title": "출석합니다",
+      "preview": "[😃사진공유+출석체크] 출석합니다 수만휘는 대입을 주제로 최상위 0.001%부터 최하위 99.999%까지의 수험생, 대학생, 선생님 및 학부모님들이 모여 서로 돕고 격려하며 따뜻한 이야기를 나누는 대한민국 최대의 수",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617622",
+      "dateISO": "2026-08-22",
+      "dateText": "2026.08.22"
+    },
+    {
+      "id": "d528e8c579d5707b0575",
+      "sourceName": "수만휘",
+      "title": "남은 기간 후회없이 하다가 수능봅시다",
+      "preview": "[티키타카페 게시판] 우리 다같이 후회없이 공부합시다!",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617621",
+      "dateISO": "2026-08-22",
+      "dateText": "2026.08.22"
+    },
     {
       "id": "795df91070eac6db5b1c",
       "sourceName": "수만휘",
@@ -92,15 +110,6 @@
       "title": "일반고 4.1, 수시카드 도와주세요! 부탁드립니다.",
       "preview": "[🔥학부모님 자유게시판] 수만휘 카페 글",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617611",
-      "dateISO": "2026-08-22",
-      "dateText": "2026.08.22"
-    },
-    {
-      "id": "59d54da8a384d57e4bfd",
-      "sourceName": "수만휘",
-      "title": "하향의 기준을 잘모르겠어요",
-      "preview": "[🔥이과 수시 자유게시판] 교과로 3년간 최초합보다 제 성적이 살짝 높으면(0.1정도) 제가 그 학교를 하향이라고 생각해도 될까요? 아니면 안정이라고 생각해야할까요? 과는 물리학과입니다.",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617610",
       "dateISO": "2026-08-22",
       "dateText": "2026.08.22"
     },
@@ -353,15 +362,6 @@
       "title": "상향 하향 기준",
       "preview": "[🔥재/반/N수 자유게시판] 보통 본인 내신에서 얼마정도 차이가 나야 우주상향 상향 소신 하향인건가요? 기준이 따로 있나요?",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617579",
-      "dateISO": "2026-08-22",
-      "dateText": "2026.08.22"
-    },
-    {
-      "id": "fea1e97ce971cb7c9bab",
-      "sourceName": "수만휘",
-      "title": "올해 의대간 신입생들 반수 많이 하나요?",
-      "preview": "[┏의대 게시판] 작년에 아이가 수시납치처럼 조금 아쉽게(?) 합격한 면이 있어서, 엄마인 저는 혹시 방학쯤 되면 반수한다고 하지 않을까 살짝 기대아닌 기대도 했었는데요ㅎㅎ 그런데 학교생활 열심히 하면서 뒤도 돌아보",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617578",
       "dateISO": "2026-08-22",
       "dateText": "2026.08.22"
     }
