@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-21T18:04:56.731Z",
-  "checkedAt": "2026-08-21T18:04:56.731Z",
+  "updatedAt": "2026-08-21T18:50:39.697Z",
+  "checkedAt": "2026-08-21T18:50:39.697Z",
   "today": "2026-08-22",
   "count": 24,
   "notices": [
