@@ -67,18 +67,18 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-21T02:15:59.242877Z",
-  "checkedAt": "2026-08-21T02:15:59.242871Z",
+  "updatedAt": "2026-08-21T03:16:57.886379Z",
+  "checkedAt": "2026-08-21T03:16:57.886374Z",
   "today": "2026-08-21",
   "count": 72,
   "notices": [
     {
-      "id": "2629975a8ebc9896d36f",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "한동대 \"배워서 남 주자\" 몽골까지… 학생들의 섬김으로 열흘의 국제 나눔 실천",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623964",
+      "id": "13c34bed779702d30f8f",
+      "sourceId": "edupress",
+      "sourceName": "에듀프레스",
+      "title": "전국교육감들 교육교부금 개편 중단 요구",
+      "preview": "에듀프레스 소식",
+      "url": "https://www.edupress.kr/news/articleView.html?idxno=30410",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
     },
@@ -89,6 +89,16 @@
       "title": "우석대 여자배구팀 대한항공배 전국대학배구대회 '우승'",
       "preview": "베리타스알파 소식",
       "url": "https://www.veritas-a.com/news/articleView.html?idxno=623970",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "0748473d67f6dcd342d7",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "영진전문대 공군 부사관학군단 하계입영훈련 성료",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623972",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
     },
@@ -143,12 +153,22 @@
       "dateText": "2026.08.21"
     },
     {
-      "id": "5a5c9aad0c6941803003",
+      "id": "84ef1a9c2761771e35b1",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "대구보건대 일본 구마모토 보건과학대와 글로벌 통합돌봄 시뮬레이션 교육",
+      "title": "국립군산대 탄소중립 실험실 인턴십 성과 워크숍 및 현장견학 개최",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623963",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623971",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "e8dedddef4073cfb2dff",
+      "sourceId": "edupress",
+      "sourceName": "에듀프레스",
+      "title": "20.79% 연동제 깨졌다 .. 교육재정 곳간 내준 교부금 개편",
+      "preview": "에듀프레스 소식",
+      "url": "https://www.edupress.kr/news/articleView.html?idxno=30411",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
     },
@@ -381,26 +401,6 @@
       "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE_01&artclId=000000400494533",
       "dateISO": "2026-08-18",
       "dateText": "2026.08.18"
-    },
-    {
-      "id": "92ec04355543dfc88b66",
-      "sourceId": "edupress",
-      "sourceName": "에듀프레스",
-      "title": "2029학년도 수능 2028년 11월 16일 실시 .. 국어·수학·탐구 선택과목 폐지",
-      "preview": "에듀프레스 소식",
-      "url": "https://www.edupress.kr/news/articleView.html?idxno=30404",
-      "dateISO": "2026-08-18",
-      "dateText": "2026.08.18"
-    },
-    {
-      "id": "4044cce54227a2f38fa3",
-      "sourceId": "edupress",
-      "sourceName": "에듀프레스",
-      "title": "최교진 “직을 걸겠다” .. 교육교부금 사수 배수진",
-      "preview": "에듀프레스 소식",
-      "url": "https://www.edupress.kr/news/articleView.html?idxno=30402",
-      "dateISO": "2026-08-15",
-      "dateText": "2026.08.15"
     },
     {
       "id": "8cde7995d2556b8362be",
