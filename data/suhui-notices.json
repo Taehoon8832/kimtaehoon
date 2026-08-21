@@ -1,10 +1,19 @@
 {
   "source": "https://cafe.naver.com/f-e/cafes/10197921/menus/0?viewType=L",
-  "updatedAt": "2026-08-21T20:37:29.568188Z",
-  "checkedAt": "2026-08-21T20:37:29.568183Z",
+  "updatedAt": "2026-08-21T20:57:23.289860Z",
+  "checkedAt": "2026-08-21T20:57:23.289856Z",
   "today": "2026-08-22",
   "count": 40,
   "notices": [
+    {
+      "id": "ee5e77225473d6fa97af",
+      "sourceName": "수만휘",
+      "title": "日日 新聞讀解",
+      "preview": "[🔥재/반/N수 자유게시판] 수만휘 카페 글",
+      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617625",
+      "dateISO": "2026-08-22",
+      "dateText": "2026.08.22"
+    },
     {
       "id": "c52cce33be4826892b15",
       "sourceName": "수만휘",
@@ -353,15 +362,6 @@
       "title": "한국해양대 지역인재전형",
       "preview": "[┏Team08 수험생 게시판] 1단계에서 5배수로 뽑잖아요 그럼 대충 몇등급정도까지 붙을수았나요??",
       "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617583",
-      "dateISO": "2026-08-22",
-      "dateText": "2026.08.22"
-    },
-    {
-      "id": "f5c16e1e4a4810a07357",
-      "sourceName": "수만휘",
-      "title": "경일대 검정고시 수시 면접 도와주세요!ㅠㅜ",
-      "preview": "[🔥이과 수시 자유게시판] 경일대 응급구조학과 면접 질문 예상지를 봤는데 거의 다 학교생활, 생기부에 관한 질문들이에요.. 예를 들어 고교 생활 중으로 시작하는 질문이라던가, 수행평가나 논술형 평가 등에서 비판적인 ",
-      "url": "https://cafe.naver.com/f-e/cafes/10197921/articles/29617582",
       "dateISO": "2026-08-22",
       "dateText": "2026.08.22"
     }
