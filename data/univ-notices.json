@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-21",
-  "updatedAt": "2026-08-21T00:08:23.554Z",
-  "checkedAt": "2026-08-21T00:08:23.554Z",
+  "updatedAt": "2026-08-21T01:58:45.505Z",
+  "checkedAt": "2026-08-21T01:58:45.505Z",
   "sources": [
     {
       "id": "u001",
@@ -1530,6 +1530,39 @@
   ],
   "notices": [
     {
+      "id": "da62f87fb72eb334af33",
+      "univId": "u157",
+      "univName": "한국전통문화대",
+      "title": "2026학년도 대학원 후기 2차 신입생 모집 최종합격자 발표",
+      "preview": "한국전통문화대 입학 공지사항 미리보기",
+      "url": "https://www.knuh.ac.kr/admission/brd/view.do?mnuBaseId=MNU0000210&topBaseId=MNU0000209&tplSer=29&atcSer=46895",
+      "homeUrl": "https://www.knuh.ac.kr/admission/main.do",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "fd8c2dad16d88cda8c23",
+      "univId": "u033",
+      "univName": "이화여대",
+      "title": "2027학년도 학생부 별도 제출자(온라인 미제공) 블라인드 처리 관련 제출서류 안내",
+      "preview": "이화여대 입학 공지사항 미리보기",
+      "url": "https://admission.ewha.ac.kr/admission/html/ewharo/noticeView.asp?idx=15423",
+      "homeUrl": "https://admission.ewha.ac.kr/admission/html/main/intro.asp",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "d327d98fe36735ff7c5c",
+      "univId": "u188",
+      "univName": "목포해양대",
+      "title": "전국대학 체육특기자 대입전형요강 발간 안내",
+      "preview": "목포해양대 입학 공지사항 미리보기",
+      "url": "https://www.mmu.ac.kr/admission/board/245/1/read/89031",
+      "homeUrl": "https://www.mmu.ac.kr/admission",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
       "id": "4c40e35e5f71e8b512d1",
       "univId": "u245",
       "univName": "해군사관학교",
@@ -1629,6 +1662,17 @@
       "dateText": "2026.08.20"
     },
     {
+      "id": "b8b14cf6f6280322c2e1",
+      "univId": "u044",
+      "univName": "한예종",
+      "title": "(수정)2027학년도 8월입시 예술사 무용원 2차시험 수험생 유의사항 및 시...",
+      "preview": "한예종 입학 공지사항 미리보기",
+      "url": "https://www.karts.ac.kr/cop/bbs/selectBoardArticle.do?bbsId=BBSMSTR_000000000007&nttNo=70334",
+      "homeUrl": "https://www.karts.ac.kr/main/appl.do",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
       "id": "49620e103b5a700cbdbc",
       "univId": "u032",
       "univName": "육군사관학교",
@@ -1647,17 +1691,6 @@
       "preview": "서경대 입학 공지사항 미리보기",
       "url": "https://go.skuniv.ac.kr/index.php?mid=notice&document_srl=228282",
       "homeUrl": "https://go.skuniv.ac.kr/#main",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
-      "id": "7f3bc0f8692cd2f7c5d0",
-      "univId": "u044",
-      "univName": "한예종",
-      "title": "2027학년도 8월입시 예술사 무용원 2차시험 수험생 유의사항 및 시험시간표...",
-      "preview": "한예종 입학 공지사항 미리보기",
-      "url": "https://www.karts.ac.kr/cop/bbs/selectBoardArticle.do?bbsId=BBSMSTR_000000000007&nttNo=70334",
-      "homeUrl": "https://www.karts.ac.kr/main/appl.do",
       "dateISO": "2026-08-19",
       "dateText": "2026.08.19"
     },
@@ -3470,5 +3503,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=28 empty=23 fail=165 fresh=155"
+  "statusReason": "ok=34 empty=27 fail=155 fresh=158"
 }
