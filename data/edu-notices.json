@@ -67,11 +67,31 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-21T03:16:57.886379Z",
-  "checkedAt": "2026-08-21T03:16:57.886374Z",
+  "updatedAt": "2026-08-21T04:07:28.636948Z",
+  "checkedAt": "2026-08-21T04:07:28.636942Z",
   "today": "2026-08-21",
   "count": 72,
   "notices": [
+    {
+      "id": "be82d62240c4a10f70da",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "제주대 간호대학 학생 연구부터 초고령/디지털 간호까지… 학술교류의 장 열어",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623994",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "d10888880a30eca2fce7",
+      "sourceId": "veritas",
+      "sourceName": "베리타스알파",
+      "title": "전북대 G-램프사업단 성장경험 공유 특강.. 램프포닥 출신 금오공대 교수 초청",
+      "preview": "베리타스알파 소식",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623990",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
     {
       "id": "13c34bed779702d30f8f",
       "sourceId": "edupress",
@@ -83,82 +103,62 @@
       "dateText": "2026.08.21"
     },
     {
-      "id": "4e50d2a52349fcedc8b4",
+      "id": "f59c8eb3ad8360acf94f",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "우석대 여자배구팀 대한항공배 전국대학배구대회 '우승'",
+      "title": "재능대 대학일자리플러스센터, 전담인력 실무역량 강화 워크숍 개최",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623970",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623988",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
     },
     {
-      "id": "0748473d67f6dcd342d7",
+      "id": "dd4edde3d31ef9b9a703",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "영진전문대 공군 부사관학군단 하계입영훈련 성료",
+      "title": "국립한국해양대 구성원 아이디어로 대학 혁신 이끈다!",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623972",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623991",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
     },
     {
-      "id": "2e0d26af3e9a1b21a113",
+      "id": "46431e5dc4388f149418",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "신라대 도서관 2026 부산 세계도서관정보대회(WLIC) 도서관 방문 프로그램 성료",
+      "title": "경상국립대 최명룡 교수 연구팀, 폐PET 고부가가치 자원화를 위한 'NiMo 이중원자 촉매' 개발",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623967",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623986",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
     },
     {
-      "id": "2f79e5fb89042ab88a08",
+      "id": "22dc36e60f7c84cfd070",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "세종사이버대 호텔관광경영학과 '점프업' 동아리 파란수도 부산 탐방",
+      "title": "경상국립대 RISE사업단 지역교육혁신센터, USG공유대학2.0 'G-로컬 탐험대' 아이디어 공모전 성료",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623965",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623987",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
     },
     {
-      "id": "2cc36065d6d7af461274",
+      "id": "d3432846c63e2a718f7c",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "세종사이버대 바리스타/소믈리에학과 김은진 학생, '2026 카누 바리스타 챔피언십' 예선 100인 선정",
+      "title": "iM뱅크 장학문화재단 DGIST 미래 과학인재에 장학금 1천만원 쾌척",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623968",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623992",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
     },
     {
-      "id": "95220f66c039724f7756",
+      "id": "1987f998f6b363b502b3",
       "sourceId": "veritas",
       "sourceName": "베리타스알파",
-      "title": "사이버한국외국어대-네팔 카트만두대, 국제교류 협약 체결",
+      "title": "[포토] 한양대 후기 학위수여식.. 박사/석사/학사 2547명 학위 취득",
       "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623969",
-      "dateISO": "2026-08-21",
-      "dateText": "2026.08.21"
-    },
-    {
-      "id": "d881ae114409cca916bc",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "명지대 '2025학년도 후기 학사 및 석/박사 학위수여식' 개최",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623966",
-      "dateISO": "2026-08-21",
-      "dateText": "2026.08.21"
-    },
-    {
-      "id": "84ef1a9c2761771e35b1",
-      "sourceId": "veritas",
-      "sourceName": "베리타스알파",
-      "title": "국립군산대 탄소중립 실험실 인턴십 성과 워크숍 및 현장견학 개최",
-      "preview": "베리타스알파 소식",
-      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623971",
+      "url": "https://www.veritas-a.com/news/articleView.html?idxno=623989",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
     },
