@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-21",
-  "updatedAt": "2026-08-21T06:03:04.243Z",
-  "checkedAt": "2026-08-21T06:03:04.243Z",
+  "updatedAt": "2026-08-21T07:02:43.159Z",
+  "checkedAt": "2026-08-21T07:02:43.159Z",
   "sources": [
     {
       "id": "u001",
@@ -1541,50 +1541,6 @@
       "dateText": "2026.08.21"
     },
     {
-      "id": "07414377a8dd085c890c",
-      "univId": "u188",
-      "univName": "목포해양대",
-      "title": "[현장승선실습]아이엠에스코리아 사전선발 공고",
-      "preview": "목포해양대 입학 공지사항 미리보기",
-      "url": "https://www.mmu.ac.kr/admission/board/245/1/read/89035",
-      "homeUrl": "https://www.mmu.ac.kr/admission",
-      "dateISO": "2026-08-21",
-      "dateText": "2026.08.21"
-    },
-    {
-      "id": "e274337c1b5f075aa3a1",
-      "univId": "u188",
-      "univName": "목포해양대",
-      "title": "[현장승선실습]팬오션 사전선발 공고",
-      "preview": "목포해양대 입학 공지사항 미리보기",
-      "url": "https://www.mmu.ac.kr/admission/board/245/1/read/89038",
-      "homeUrl": "https://www.mmu.ac.kr/admission",
-      "dateISO": "2026-08-21",
-      "dateText": "2026.08.21"
-    },
-    {
-      "id": "99a3edd1361865830428",
-      "univId": "u188",
-      "univName": "목포해양대",
-      "title": "[현장승선실습]KMC해운 사전선발 공고",
-      "preview": "목포해양대 입학 공지사항 미리보기",
-      "url": "https://www.mmu.ac.kr/admission/board/245/1/read/89036",
-      "homeUrl": "https://www.mmu.ac.kr/admission",
-      "dateISO": "2026-08-21",
-      "dateText": "2026.08.21"
-    },
-    {
-      "id": "ab7da3b88cea290a1a14",
-      "univId": "u188",
-      "univName": "목포해양대",
-      "title": "[현장승선실습]SM그룹 사전선발 공고",
-      "preview": "목포해양대 입학 공지사항 미리보기",
-      "url": "https://www.mmu.ac.kr/admission/board/245/1/read/89037",
-      "homeUrl": "https://www.mmu.ac.kr/admission",
-      "dateISO": "2026-08-21",
-      "dateText": "2026.08.21"
-    },
-    {
       "id": "da62f87fb72eb334af33",
       "univId": "u157",
       "univName": "한국전통문화대",
@@ -1592,6 +1548,17 @@
       "preview": "한국전통문화대 입학 공지사항 미리보기",
       "url": "https://www.knuh.ac.kr/admission/brd/view.do?mnuBaseId=MNU0000210&topBaseId=MNU0000209&tplSer=29&atcSer=46895",
       "homeUrl": "https://www.knuh.ac.kr/admission/main.do",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "02de6feaee92fa798e67",
+      "univId": "u078",
+      "univName": "한경국립대",
+      "title": "2027학년도 검정고시 대입전형자료 온라인 제공 신청 안내 대입전형",
+      "preview": "2027학년도 대입전형자료(학교생활기록부) 온라인 생성 신청 안내(2005년 ~ 2023년 국내고등학교 졸업자) 대입전형",
+      "url": "https://ipsi.hknu.ac.kr/help/notice_view.php?bn=5193&m_type=&nPage=1&f=&s=",
+      "homeUrl": "https://ipsi.hknu.ac.kr/",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
     },
@@ -1625,6 +1592,17 @@
       "preview": "이화여대 입학 공지사항 미리보기",
       "url": "https://admission.ewha.ac.kr/admission/html/ewharo/noticeView.asp?idx=15423",
       "homeUrl": "https://admission.ewha.ac.kr/admission/html/main/intro.asp",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "d327d98fe36735ff7c5c",
+      "univId": "u188",
+      "univName": "목포해양대",
+      "title": "전국대학 체육특기자 대입전형요강 발간 안내",
+      "preview": "목포해양대 입학 공지사항 미리보기",
+      "url": "https://www.mmu.ac.kr/admission/board/245/1/read/89031",
+      "homeUrl": "https://www.mmu.ac.kr/admission",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
     },
@@ -2619,17 +2597,6 @@
       "dateText": "2026.08.07"
     },
     {
-      "id": "b5f49aad208b61c4eae9",
-      "univId": "u188",
-      "univName": "목포해양대",
-      "title": "2026학년도 해사대학 기초안전교육 도우미 모집",
-      "preview": "목포해양대 입학 공지사항 미리보기",
-      "url": "https://www.mmu.ac.kr/admission/board/245/1/read/88911",
-      "homeUrl": "https://www.mmu.ac.kr/admission",
-      "dateISO": "2026-08-07",
-      "dateText": "2026.08.07"
-    },
-    {
       "id": "d47f2ce1b786d0a34ac3",
       "univId": "u059",
       "univName": "서울장신대",
@@ -3613,5 +3580,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=31 empty=25 fail=160 fresh=168"
+  "statusReason": "ok=29 empty=20 fail=167 fresh=165"
 }
