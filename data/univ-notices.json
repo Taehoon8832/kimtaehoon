@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-21",
-  "updatedAt": "2026-08-20T23:43:45.084Z",
-  "checkedAt": "2026-08-20T23:43:45.084Z",
+  "updatedAt": "2026-08-21T00:08:23.554Z",
+  "checkedAt": "2026-08-21T00:08:23.554Z",
   "sources": [
     {
       "id": "u001",
@@ -2718,6 +2718,28 @@
       "dateText": "2026.08.06"
     },
     {
+      "id": "b10612eb8824cc045a88",
+      "univId": "u073",
+      "univName": "중부대(고양)",
+      "title": "포토뉴스 G3 글로벌 매력 분과 이애리(호텔비지니스 전공 교수).. 일 목요일 G3 글로벌 매력분과 이애리 위원(중부대 호텔 비지니스 전공 교수)과 오세훈 서울시장과 차담을 갖고 서울..",
+      "preview": "포토뉴스 중부대학교 고양 앵커사업 「 AI 미디어마케터 과정(심.. 중부대학교(총장 이정열)는 지난 202",
+      "url": "http://ipsi.joongbu.ac.kr/gallery.es?mid=a60702000000&bid=0002&list_no=18807&act=view",
+      "homeUrl": "http://ipsi.joongbu.ac.kr/",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
+      "id": "245091ff406edc6e9f59",
+      "univId": "u154",
+      "univName": "중부대(충청)",
+      "title": "포토뉴스 G3 글로벌 매력 분과 이애리(호텔비지니스 전공 교수).. 일 목요일 G3 글로벌 매력분과 이애리 위원(중부대 호텔 비지니스 전공 교수)과 오세훈 서울시장과 차담을 갖고 서울..",
+      "preview": "포토뉴스 중부대학교 고양 앵커사업 「 AI 미디어마케터 과정(심.. 중부대학교(총장 이정열)는 지난 202",
+      "url": "http://ipsi.joongbu.ac.kr/gallery.es?mid=a60702000000&bid=0002&list_no=18807&act=view",
+      "homeUrl": "http://ipsi.joongbu.ac.kr/",
+      "dateISO": "2026-08-06",
+      "dateText": "2026.08.06"
+    },
+    {
       "id": "16fdce45155e092562a0",
       "univId": "u130",
       "univName": "청주교대",
@@ -3448,5 +3470,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=35 empty=40 fail=141 fresh=153"
+  "statusReason": "ok=28 empty=23 fail=165 fresh=155"
 }
