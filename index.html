@@ -3166,6 +3166,190 @@
       text-decoration-color: rgba(211, 47, 47, 0.8);
     }
 
+    .sagwan-result-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: auto;
+      padding: 5px 13px 5px 6px;
+      border: 1.5px solid #1d4f8a;
+      border-radius: 999px;
+      background:
+        linear-gradient(135deg, #f4f9ff 0%, #d7e9fc 48%, #c5def8 100%);
+      color: #12345c;
+      box-shadow:
+        0 4px 12px rgba(24, 80, 150, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.85);
+      cursor: pointer;
+      flex: 0 0 auto;
+      font: inherit;
+      position: relative;
+      overflow: hidden;
+      transition:
+        transform var(--duration-fast) var(--ease-spring),
+        box-shadow var(--duration-fast) var(--ease-out),
+        border-color var(--duration-fast) var(--ease-out);
+    }
+
+    .sagwan-result-btn::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(110deg, transparent 35%, rgba(255, 255, 255, 0.55) 50%, transparent 65%);
+      transform: translateX(-120%);
+      pointer-events: none;
+    }
+
+    .sagwan-result-btn:hover,
+    .sagwan-result-btn:focus-visible {
+      transform: translateY(-2px);
+      border-color: #0b3d78;
+      box-shadow: 0 10px 20px rgba(24, 80, 150, 0.2);
+      outline: none;
+    }
+
+    .sagwan-result-btn:hover::after,
+    .sagwan-result-btn:focus-visible::after {
+      animation: sagwan-result-shine 0.85s var(--ease-out);
+    }
+
+    .sagwan-result-btn:active {
+      transform: translateY(0) scale(0.97);
+    }
+
+    .sagwan-result-btn.is-done {
+      border-color: #8b6914;
+      background: linear-gradient(135deg, #fffaf0 0%, #f4e7c8 100%);
+      color: #5c4030;
+      box-shadow: 0 4px 12px rgba(80, 50, 20, 0.12);
+    }
+
+    .sagwan-result-btn .ic {
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #2f6db5 0%, #154a8c 100%);
+      color: #eef6ff;
+      flex-shrink: 0;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    }
+
+    .sagwan-result-btn.is-done .ic {
+      background: linear-gradient(145deg, #8b6914 0%, #5c4030 100%);
+      color: #f5e6c8;
+    }
+
+    .sagwan-result-btn .ic svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .sagwan-result-btn strong {
+      font-size: 12.5px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+
+    @keyframes sagwan-result-shine {
+      to { transform: translateX(120%); }
+    }
+
+    .sagwan-result-modal .sagwan-modal-card {
+      width: min(420px, 100%);
+      max-height: none;
+      grid-template-rows: auto auto;
+    }
+
+    .sagwan-result-form,
+    .sagwan-result-ready {
+      display: grid;
+      gap: 12px;
+      padding: 18px 18px 16px;
+    }
+
+    .sagwan-result-form label {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #2a1c12;
+    }
+
+    .sagwan-result-form input[type="email"] {
+      width: 100%;
+      height: 42px;
+      border: 1.5px solid rgba(29, 79, 138, 0.28);
+      border-radius: 11px;
+      padding: 0 12px;
+      font: inherit;
+      font-size: 14px;
+      color: #1b2430;
+      background: #f8fbff;
+    }
+
+    .sagwan-result-form input[type="email"]:focus {
+      outline: none;
+      border-color: #1d4f8a;
+      box-shadow: 0 0 0 3px rgba(29, 79, 138, 0.12);
+    }
+
+    .sagwan-result-form .err {
+      margin: -4px 0 0;
+      font-size: 12px;
+      font-weight: 700;
+      color: #c62828;
+    }
+
+    .sagwan-result-actions {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .sagwan-result-confirm {
+      width: 46px;
+      height: 46px;
+      border: 0;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(145deg, #2f6db5 0%, #154a8c 100%);
+      box-shadow: 0 8px 16px rgba(21, 74, 140, 0.28);
+      transition: transform var(--duration-fast) var(--ease-spring), box-shadow var(--duration-fast) var(--ease-out);
+    }
+
+    .sagwan-result-confirm:hover,
+    .sagwan-result-confirm:focus-visible {
+      transform: translateY(-1px) scale(1.04);
+      box-shadow: 0 10px 20px rgba(21, 74, 140, 0.34);
+      outline: none;
+    }
+
+    .sagwan-result-confirm:active {
+      transform: scale(0.95);
+    }
+
+    .sagwan-result-confirm svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .sagwan-result-ready {
+      text-align: center;
+      padding: 28px 18px 26px;
+    }
+
+    .sagwan-result-ready strong {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #5c4030;
+    }
+
     .sagwan-main-row {
       display: grid;
       grid-template-columns: minmax(0, 1fr) 14px minmax(148px, 168px);
@@ -3481,7 +3665,9 @@
       .sagwan-vote.is-live .vote-ic,
       .sagwan-vote.is-bump,
       .sagwan-vote.is-bump::before,
-      .sagwan-vote.is-bump .vote-ic {
+      .sagwan-vote.is-bump .vote-ic,
+      .sagwan-result-btn:hover::after,
+      .sagwan-result-btn:focus-visible::after {
         animation: none;
       }
     }
@@ -3721,8 +3907,17 @@
         gap: 8px;
       }
 
-      .sagwan-schedule-btn {
+      .sagwan-schedule-btn,
+      .sagwan-result-btn {
         align-self: flex-start;
+      }
+
+      .sagwan-result-btn {
+        margin-left: 0;
+      }
+
+      .sagwan-result-btn strong {
+        white-space: normal;
       }
 
       .sagwan-score-note {
@@ -4574,6 +4769,15 @@
             점수를 인증해 주신 분들께는 인증 시 남겨주신 <span class="u">이메일 주소를 통해 추후 관련 자료를 우선 공유</span>드릴 예정입니다.
           </p>
         </aside>
+        <button type="button" class="sagwan-result-btn" id="sagwanResultBtn" aria-haspopup="dialog" aria-controls="sagwanResultModal">
+          <span class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M5 7.5h14v11H5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M5 8.2l7 5.2 7-5.2" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <strong id="sagwanResultBtnLabel">필기 점수공유 결과</strong>
+        </button>
       </div>
 
       <div class="sagwan-main-row">
@@ -4864,6 +5068,38 @@
             loading="lazy"
           />
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sagwan-modal sagwan-result-modal" id="sagwanResultModal" hidden>
+    <div class="sagwan-modal-card" role="dialog" aria-modal="true" aria-labelledby="sagwanResultTitle">
+      <div class="sagwan-modal-head">
+        <strong id="sagwanResultTitle">필기 점수공유 결과</strong>
+        <button type="button" class="sagwan-modal-close" id="sagwanResultClose" aria-label="닫기">×</button>
+      </div>
+      <form class="sagwan-result-form" id="sagwanResultForm">
+        <label for="sagwanResultEmail">점공 참여 이메일 주소</label>
+        <input
+          type="email"
+          id="sagwanResultEmail"
+          name="email"
+          placeholder="name@example.com"
+          autocomplete="email"
+          inputmode="email"
+          required
+        />
+        <p class="err" id="sagwanResultEmailError" hidden>올바른 이메일 주소를 입력해 주세요.</p>
+        <div class="sagwan-result-actions">
+          <button type="submit" class="sagwan-result-confirm" id="sagwanResultConfirm" aria-label="확인" title="확인">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 12.2l4.1 4.2L18 8.6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </form>
+      <div class="sagwan-result-ready" id="sagwanResultReady" hidden>
+        <strong>준비중(8/30까지 수합중)</strong>
       </div>
     </div>
   </div>
@@ -7668,6 +7904,57 @@
         const zoomOutBtn = document.getElementById("sagwanZoomOut");
         const zoomResetBtn = document.getElementById("sagwanZoomReset");
         const modalBody = document.getElementById("sagwanModalBody");
+        const resultBtn = document.getElementById("sagwanResultBtn");
+        const resultBtnLabel = document.getElementById("sagwanResultBtnLabel");
+        const resultModal = document.getElementById("sagwanResultModal");
+        const resultClose = document.getElementById("sagwanResultClose");
+        const resultForm = document.getElementById("sagwanResultForm");
+        const resultEmail = document.getElementById("sagwanResultEmail");
+        const resultEmailError = document.getElementById("sagwanResultEmailError");
+        const resultReady = document.getElementById("sagwanResultReady");
+        const RESULT_KEY = "kimtaehoon_sagwan_result_v1";
+        const RESULT_READY_TEXT = "준비중(8/30까지 수합중)";
+
+        function readResultState() {
+          try {
+            const raw = localStorage.getItem(RESULT_KEY);
+            if (!raw) return null;
+            const data = JSON.parse(raw);
+            return data && data.ready ? data : null;
+          } catch {
+            return null;
+          }
+        }
+
+        function applyResultReadyView(ready) {
+          if (resultBtn) resultBtn.classList.toggle("is-done", ready);
+          if (resultBtnLabel) resultBtnLabel.textContent = ready ? RESULT_READY_TEXT : "필기 점수공유 결과";
+          if (resultForm) resultForm.hidden = ready;
+          if (resultReady) resultReady.hidden = !ready;
+        }
+
+        function openResultModal() {
+          if (!resultModal) return;
+          const ready = Boolean(readResultState());
+          applyResultReadyView(ready);
+          if (resultEmailError) resultEmailError.hidden = true;
+          resultModal.hidden = false;
+          resultModal.classList.add("is-open");
+          document.body.style.overflow = "hidden";
+          if (!ready && resultEmail) {
+            resultEmail.value = "";
+            resultEmail.focus();
+          }
+        }
+
+        function closeResultModal() {
+          if (!resultModal) return;
+          resultModal.classList.remove("is-open");
+          resultModal.hidden = true;
+          if (!document.querySelector(".sagwan-modal.is-open")) {
+            document.body.style.overflow = "";
+          }
+        }
         const ZOOM_MIN = 0.75;
         const ZOOM_MAX = 2.5;
         const ZOOM_STEP = 0.25;
@@ -7733,9 +8020,35 @@
             showToast("2027학년도 면접 후기집(교사) URL이 곧 공개됩니다");
           });
         }
+        if (resultBtn) resultBtn.addEventListener("click", openResultModal);
+        if (resultClose) resultClose.addEventListener("click", closeResultModal);
+        if (resultModal) {
+          resultModal.addEventListener("click", (e) => {
+            if (e.target === resultModal) closeResultModal();
+          });
+        }
+        if (resultForm) {
+          resultForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const email = String(resultEmail?.value || "").trim();
+            const ok = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            if (!ok) {
+              if (resultEmailError) resultEmailError.hidden = false;
+              if (resultEmail) resultEmail.focus();
+              return;
+            }
+            if (resultEmailError) resultEmailError.hidden = true;
+            try {
+              localStorage.setItem(RESULT_KEY, JSON.stringify({ ready: true, email, at: Date.now() }));
+            } catch (_) {}
+            applyResultReadyView(true);
+          });
+        }
+        applyResultReadyView(Boolean(readResultState()));
         document.addEventListener("keydown", (e) => {
           if (e.key !== "Escape") return;
           closeScheduleModal();
+          closeResultModal();
           closeVisitStats();
         });
 
