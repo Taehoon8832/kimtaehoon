@@ -86,6 +86,7 @@
 
       --container: 1080px;
       --font: "Noto Sans KR", "Noto Sans", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+      --nav-inquiry-col: 96px;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -166,7 +167,7 @@
       width: 100%;
       z-index: 50;
       min-height: 64px;
-      padding: 8px max(clamp(12px, 3vw, 24px), env(safe-area-inset-right, 0px)) 8px max(clamp(12px, 3vw, 24px), env(safe-area-inset-left, 0px));
+      padding: 8px max(12px, env(safe-area-inset-right, 0px)) 8px max(10px, env(safe-area-inset-left, 0px));
       display: flex;
       flex-direction: row;
       flex-wrap: nowrap;
@@ -191,9 +192,11 @@
       gap: 10px;
       min-width: 0;
       flex: 0 0 auto;
+      margin-right: 0;
       color: inherit;
       text-decoration: none;
       cursor: pointer;
+      z-index: 2;
     }
 
     .nav-brand:hover .brand-name {
@@ -231,16 +234,20 @@
       flex: 1 1 auto;
       align-items: stretch;
       justify-content: center;
-      gap: clamp(3px, 0.8vw, 8px);
+      gap: clamp(4px, 0.7vw, 10px);
       min-width: 0;
-      width: 100%;
-      max-width: none;
+      width: auto;
+      max-width: 100%;
+    }
+
+    .nav-links > .nav-sep:first-child {
+      display: none;
     }
 
     .nav-sep {
       width: 1px;
       align-self: stretch;
-      margin: 4px 4px;
+      margin: 4px 6px;
       flex: 0 0 1px;
       background: linear-gradient(
         180deg,
@@ -557,8 +564,9 @@
       flex-direction: row;
       flex-wrap: nowrap;
       align-items: center;
+      justify-content: flex-end;
       gap: 8px;
-      margin-left: auto;
+      margin-left: 0;
       min-width: 0;
     }
 
@@ -673,31 +681,31 @@
 
       .nav-item,
       .nav-kakao {
-        flex: 0 1 auto;
+        flex: 0 0 auto;
       }
     }
 
-    /* 노트북: 한 줄 유지, 아이콘이 가운데에서 폭을 나눠 가짐 */
+    /* 노트북: 한 줄 유지, 아이콘은 가운데 묶음 */
     @media (min-width: 1100px) and (max-width: 1399px) {
       .nav {
-        gap: 6px;
-        padding: 6px max(12px, env(safe-area-inset-right, 0px)) 6px max(12px, env(safe-area-inset-left, 0px));
+        gap: 8px;
+        padding: 6px max(12px, env(safe-area-inset-right, 0px)) 6px max(10px, env(safe-area-inset-left, 0px));
       }
 
       .brand-name {
-        display: none;
+        display: block;
       }
 
       .nav-links {
-        gap: 2px;
+        gap: 4px;
         justify-content: center;
       }
 
       .nav-item,
       .nav-kakao {
-        flex: 1 1 0;
+        flex: 0 1 auto;
         min-width: 0;
-        padding: 3px 2px 4px;
+        padding: 3px 4px 4px;
       }
 
       .nav-item em {
@@ -706,7 +714,7 @@
       }
 
       .nav-sep {
-        margin: 6px 2px;
+        margin: 6px 4px;
       }
 
       .suneung-dday {
@@ -730,6 +738,12 @@
       }
     }
 
+    @media (min-width: 1100px) and (max-width: 1199px) {
+      .brand-name {
+        display: none;
+      }
+    }
+
     /* 휴대폰·태블릿·작은 노트북: 위줄(로고+D-day+문의) / 아래줄(아이콘) */
     @media (max-width: 1099px) {
       .nav {
@@ -739,7 +753,7 @@
           "brand actions"
           "links links";
         gap: 8px 10px;
-        padding: 8px max(12px, env(safe-area-inset-right, 0px)) 10px max(12px, env(safe-area-inset-left, 0px));
+        padding: 8px max(12px, env(safe-area-inset-right, 0px)) 10px max(10px, env(safe-area-inset-left, 0px));
         align-items: center;
       }
 
@@ -778,10 +792,12 @@
         grid-area: links;
         display: grid;
         grid-template-columns: repeat(6, minmax(0, 1fr));
+        justify-content: center;
         justify-items: center;
-        gap: 8px 4px;
-        max-width: 100%;
+        gap: 8px 6px;
+        max-width: min(100%, 840px);
         width: 100%;
+        margin-inline: auto;
         padding: 2px 0 0;
       }
 
@@ -829,11 +845,15 @@
       }
     }
 
-    /* PC: D-day만 사이드바 [접기]와 왼쪽 테두리 정렬, 문의는 같은 행 맨 오른쪽 */
+    /* PC: 브랜드 왼쪽 / 아이콘 가운데 / D-day는 접기 레일과 정렬 / 문의는 D-day 오른쪽 */
     @media (min-width: 1280px) {
+      .nav,
+      .lower-layout {
+        grid-template-columns: minmax(0, 1560px) 128px var(--nav-inquiry-col, 96px);
+      }
+
       .nav {
         display: grid;
-        grid-template-columns: minmax(0, 1560px) 128px;
         justify-content: center;
         align-items: center;
         column-gap: 0;
@@ -855,15 +875,15 @@
         grid-column: 1;
         grid-row: 1;
         justify-self: center;
-        width: auto;
-        max-width: calc(100% - 96px);
+        justify-content: center;
+        width: max-content;
+        max-width: 100%;
+        padding-inline: 118px;
       }
 
-      .inquiry-btn {
-        grid-column: 1;
-        grid-row: 1;
-        justify-self: end;
-        align-self: center;
+      .nav-item,
+      .nav-kakao {
+        flex: 0 0 auto;
       }
 
       .suneung-dday {
@@ -876,8 +896,23 @@
         padding: 4px 8px 4px 5px;
       }
 
+      .inquiry-btn {
+        grid-column: 3;
+        grid-row: 1;
+        justify-self: start;
+        align-self: center;
+        margin-left: 8px;
+      }
+
       .suneung-dday-date {
         display: none;
+      }
+    }
+
+    @media (min-width: 1280px) and (max-width: 1399px) {
+      .nav-links {
+        padding-inline: 96px;
+        gap: 3px;
       }
     }
 
@@ -1959,7 +1994,7 @@
 
     @media (min-width: 1280px) {
       .lower-layout {
-        grid-template-columns: minmax(0, 1560px) 128px;
+        grid-template-columns: minmax(0, 1560px) 128px var(--nav-inquiry-col, 96px);
         justify-content: center;
         align-items: start;
       }
@@ -3642,7 +3677,7 @@
       position: relative;
       display: flex;
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
       justify-content: center;
       gap: 5px;
       min-width: 0;
@@ -3653,7 +3688,7 @@
       background: linear-gradient(180deg, #ffffff 0%, #f4f4f5 100%);
       color: #262626;
       font: inherit;
-      text-align: left;
+      text-align: center;
       cursor: pointer;
       touch-action: manipulation;
       box-shadow:
@@ -3714,9 +3749,11 @@
     .suneung-print-txt {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 1px;
       min-width: 0;
       line-height: 1.15;
+      text-align: center;
     }
 
     .suneung-print-txt em {
@@ -3854,29 +3891,49 @@
     }
 
     .suneung-sheet-stage {
-      min-height: min(78vh, 980px);
-      padding: 12px;
-      background: #1c1916;
-      display: grid;
-      place-items: center;
+      position: relative;
+      min-height: 240px;
+      padding: 16px 16px 20px;
+      background: #ece7df;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
     }
 
-    .suneung-sheet-stage img,
-    .suneung-sheet-stage iframe {
+    .suneung-sheet-stage.is-loading::after {
+      content: "미리보기를 불러오는 중…";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: #6b645b;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      background: #ece7df;
+    }
+
+    .suneung-sheet-stage img {
       display: block;
-      width: 100%;
-      max-width: 1400px;
+      width: min(100%, 1080px);
+      max-width: 100%;
       height: auto;
-      max-height: min(78vh, 980px);
+      max-height: none;
       object-fit: contain;
       background: #fff;
       border: 0;
+      border-radius: 4px;
+      box-shadow: 0 10px 28px rgba(28, 25, 22, 0.12);
     }
 
     .suneung-sheet-stage iframe {
-      height: min(82vh, 1040px);
-      max-height: none;
+      display: block;
+      width: 100%;
       max-width: none;
+      height: min(86vh, 1100px);
+      min-height: 640px;
+      background: #fff;
+      border: 0;
     }
 
     .suneung-btn[aria-expanded="true"] {
@@ -4328,8 +4385,12 @@
         min-height: 44px;
       }
       .suneung-sheet-stage {
-        min-height: min(70vh, 860px);
-        padding: 8px;
+        min-height: 180px;
+        padding: 10px;
+      }
+      .suneung-sheet-stage iframe {
+        min-height: 520px;
+        height: min(78vh, 860px);
       }
     }
 
@@ -4375,6 +4436,13 @@
       .suneung-sheet-bar {
         background: #1c1916;
         border-color: #3a322b;
+      }
+      .suneung-sheet-stage {
+        background: #141210;
+      }
+      .suneung-sheet-stage.is-loading::after {
+        background: #141210;
+        color: #c4b8aa;
       }
       .suneung-sheet-bar strong {
         color: #f6f1ea;
@@ -5456,7 +5524,10 @@
 
       .nav-links {
         grid-template-columns: repeat(5, minmax(0, 1fr));
-        gap: 10px 4px;
+        justify-content: center;
+        gap: 10px 6px;
+        max-width: min(100%, 560px);
+        margin-inline: auto;
         padding: 4px 0 2px;
       }
 
@@ -5573,7 +5644,10 @@
     @media (max-width: 420px) {
       .nav-links {
         grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 8px 2px;
+        justify-content: center;
+        gap: 8px 4px;
+        max-width: min(100%, 420px);
+        margin-inline: auto;
       }
 
       .suneung-print-txt em {
@@ -5614,7 +5688,7 @@
       }
 
       .nav-links {
-        gap: 8px 2px;
+        gap: 8px 4px;
       }
 
       .nav-item {
@@ -9619,18 +9693,60 @@
             sheetFrame.removeAttribute("src");
           }
           if (sheetOpen) sheetOpen.setAttribute("href", "#");
+          setStageLoading(false);
           syncPrintButtons();
         }
 
-        function bindImageFallbacks(img, id) {
-          const chain = [thumbUrl(id, 2400), lhUrl(id, 2400), viewUrl(id), thumbUrl(id, 1600)];
+        function stageEl() {
+          return sheet && sheet.querySelector(".suneung-sheet-stage");
+        }
+
+        function setStageLoading(on) {
+          const stage = stageEl();
+          if (stage) stage.classList.toggle("is-loading", !!on);
+        }
+
+        function showDriveFrame(id, title) {
+          if (!sheetFrame) return;
+          if (sheetImg) {
+            sheetImg.hidden = true;
+            sheetImg.removeAttribute("src");
+          }
+          activePrintMode = "doc";
+          sheetFrame.hidden = false;
+          sheetFrame.title = title || "수능 문서 보기";
+          sheetFrame.src = previewUrl(id);
+          setStageLoading(false);
+        }
+
+        function bindImageFallbacks(img, id, title) {
+          const chain = [
+            lhUrl(id, 4000),
+            `https://lh3.googleusercontent.com/d/${id}=s0`,
+            thumbUrl(id, 3600),
+            viewUrl(id),
+            thumbUrl(id, 2000)
+          ];
           let i = 0;
+          setStageLoading(true);
+          img.onload = () => {
+            const wide = img.naturalWidth || 0;
+            if (wide > 0 && wide < 420 && i < chain.length - 1) {
+              i += 1;
+              img.src = chain[i];
+              return;
+            }
+            if (wide > 0 && wide < 420) {
+              showDriveFrame(id, title);
+              return;
+            }
+            img.dataset.printSrc = img.currentSrc || img.src;
+            setStageLoading(false);
+          };
           img.onerror = () => {
             i += 1;
             if (i < chain.length) img.src = chain[i];
-          };
-          img.onload = () => {
-            img.dataset.printSrc = img.currentSrc || img.src;
+            else showDriveFrame(id, title);
           };
           img.src = chain[0];
         }
@@ -9644,13 +9760,7 @@
           if (sheetTitle) sheetTitle.textContent = title;
           if (sheetOpen) sheetOpen.href = `https://drive.google.com/file/d/${id}/view`;
           if (activePrintMode === "doc" && sheetFrame) {
-            if (sheetImg) {
-              sheetImg.hidden = true;
-              sheetImg.removeAttribute("src");
-            }
-            sheetFrame.hidden = false;
-            sheetFrame.title = title;
-            sheetFrame.src = previewUrl(id);
+            showDriveFrame(id, title);
           } else if (sheetImg) {
             if (sheetFrame) {
               sheetFrame.hidden = true;
@@ -9658,7 +9768,7 @@
             }
             sheetImg.hidden = false;
             sheetImg.alt = title;
-            bindImageFallbacks(sheetImg, id);
+            bindImageFallbacks(sheetImg, id, title);
           }
           syncPrintButtons();
           const offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--nav-offset")) || 72;
