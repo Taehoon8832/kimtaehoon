@@ -1724,7 +1724,7 @@
 
     @media (min-width: 1280px) {
       .lower-layout {
-        grid-template-columns: minmax(0, 1560px) 118px;
+        grid-template-columns: minmax(0, 1560px) 128px;
         justify-content: center;
         align-items: start;
       }
@@ -3565,8 +3565,8 @@
       z-index: 36;
       display: none;
       flex-direction: column;
-      gap: 8px;
-      width: 104px;
+      gap: 6px;
+      width: 118px;
       margin: 0 0 16px auto;
       padding: 0;
       border: 0;
@@ -3577,11 +3577,13 @@
     .fold-rail-btn {
       position: relative;
       display: flex;
-      align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
       justify-content: center;
+      gap: 3px;
       width: 100%;
-      min-height: 44px;
-      padding: 11px 10px;
+      min-height: 52px;
+      padding: 10px 12px;
       border: 1px solid #1c1916;
       border-radius: 4px;
       background: #1c1916;
@@ -3590,23 +3592,35 @@
       font-size: 12px;
       font-weight: 700;
       letter-spacing: -0.03em;
-      line-height: 1.25;
+      line-height: 1.2;
       cursor: pointer;
       word-break: keep-all;
-      text-align: center;
+      text-align: left;
       touch-action: manipulation;
-      box-shadow: none;
+      box-shadow: inset 0 1px 0 rgba(232, 213, 181, 0.2);
       transition: background var(--duration-fast) var(--ease-out), color var(--duration-fast) var(--ease-out);
     }
 
     .fold-rail-btn.is-collapsed {
       background: #fffdf9;
       color: #1c1916;
+      box-shadow: none;
+    }
+
+    .fold-rail-state {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      color: #d8c7ae;
+    }
+
+    .fold-rail-btn.is-collapsed .fold-rail-state {
+      color: #8a7a66;
     }
 
     .fold-rail-title {
       font-weight: 700;
-      font-size: 12px;
+      font-size: 13px;
       color: inherit;
     }
 
@@ -4031,10 +4045,26 @@
     }
 
     .sagwan-result-btn.is-done {
-      border-color: #8b6914;
-      background: linear-gradient(135deg, #fffaf0 0%, #f4e7c8 100%);
-      color: #5c4030;
-      box-shadow: 0 4px 12px rgba(80, 50, 20, 0.12);
+      border-color: #ff2d6a;
+      background: linear-gradient(120deg, #ff6b9d 0%, #ff2d6a 48%, #e0115f 100%);
+      color: #fff;
+      box-shadow: 0 8px 20px rgba(255, 45, 106, 0.32);
+      animation: sagwanReadyPulse 1.7s ease-in-out infinite;
+    }
+
+    .sagwan-result-btn.is-done::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+      animation: sagwanReadyDot 1.3s ease-out infinite;
+      flex-shrink: 0;
+    }
+
+    .sagwan-result-btn.is-done::after {
+      animation: sagwan-result-shine 2s ease-in-out infinite;
     }
 
     .sagwan-result-btn .ic {
@@ -4050,8 +4080,9 @@
     }
 
     .sagwan-result-btn.is-done .ic {
-      background: linear-gradient(145deg, #8b6914 0%, #5c4030 100%);
-      color: #f5e6c8;
+      background: #fff;
+      color: #ff2d6a;
+      box-shadow: none;
     }
 
     .sagwan-result-btn .ic svg {
@@ -4069,6 +4100,17 @@
 
     @keyframes sagwan-result-shine {
       to { transform: translateX(120%); }
+    }
+
+    @keyframes sagwanReadyPulse {
+      0%, 100% { box-shadow: 0 8px 18px rgba(255, 45, 106, 0.28); transform: translateY(0); }
+      50% { box-shadow: 0 12px 26px rgba(255, 45, 106, 0.42); transform: translateY(-1px); }
+    }
+
+    @keyframes sagwanReadyDot {
+      0% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
+      70% { box-shadow: 0 0 0 8px rgba(255, 255, 255, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
     }
 
     .sagwan-result-modal .sagwan-modal-card {
@@ -4157,7 +4199,12 @@
     }
 
     .sagwan-result-ready strong {
-      font-size: 16px;
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: linear-gradient(120deg, #ff6b9d, #ff2d6a);
+      color: #fff;
+      font-size: 15px;
       font-weight: 800;
       letter-spacing: -0.03em;
       color: #5c4030;
@@ -5723,7 +5770,7 @@
       </div>
     </div>
 
-    <div class="fold-block" data-fold="sagwan" data-fold-title="사관학교 일정" data-fold-short="사관">
+    <div class="fold-block" data-fold="sagwan" data-fold-title="사관학교 일정" data-fold-short="사관학교">
       <div class="fold-rule">
         <button type="button" class="fold-toggle" aria-expanded="true" aria-controls="foldBody-sagwan">
           <span class="chev" aria-hidden="true">
@@ -5786,7 +5833,7 @@
       </div>
     </div>
 
-    <div class="fold-block" data-fold="boards" data-fold-title="채용·석박·대학" data-fold-short="채용">
+    <div class="fold-block" data-fold="boards" data-fold-title="채용·석박·대학" data-fold-short="게시판1">
       <div class="fold-rule">
         <button type="button" class="fold-toggle" aria-expanded="true" aria-controls="foldBody-boards">
           <span class="chev" aria-hidden="true">
@@ -5899,7 +5946,7 @@
       </div>
     </div>
 
-    <div class="fold-block" data-fold="cafes" data-fold-title="교사·수만휘·정책" data-fold-short="게시판">
+    <div class="fold-block" data-fold="cafes" data-fold-title="교사·수만휘·정책" data-fold-short="게시판2">
       <div class="fold-rule">
         <button type="button" class="fold-toggle" aria-expanded="true" aria-controls="foldBody-cafes">
           <span class="chev" aria-hidden="true">
@@ -8930,9 +8977,12 @@
           if (action) action.textContent = open ? "접기" : "펼치기";
           const railBtn = rail && rail.querySelector('[data-fold-target="' + id + '"]');
           if (railBtn) {
+            const shortTitle = block.getAttribute("data-fold-short") || title;
+            const state = railBtn.querySelector(".fold-rail-state");
             railBtn.classList.toggle("is-collapsed", !open);
             railBtn.setAttribute("aria-expanded", open ? "true" : "false");
-            railBtn.setAttribute("aria-label", (title + " " + (open ? "접기" : "펼치기")).trim());
+            railBtn.setAttribute("aria-label", (open ? "접기" : "펼치기") + " " + shortTitle);
+            if (state) state.textContent = open ? "[접기]" : "[펼치기]";
           }
           if (persist !== false) {
             saved[id] = open;
@@ -8954,7 +9004,8 @@
             const title = block.getAttribute("data-fold-title") || id;
             const shortTitle = block.getAttribute("data-fold-short") || title;
             return (
-              '<button type="button" class="fold-rail-btn" data-fold-target="' + id + '" aria-expanded="true" aria-label="' + title + ' 접기">' +
+              '<button type="button" class="fold-rail-btn" data-fold-target="' + id + '" aria-expanded="true" aria-label="접기 ' + shortTitle + '">' +
+              '<span class="fold-rail-state">[접기]</span>' +
               '<span class="fold-rail-title">' + shortTitle + "</span>" +
               "</button>"
             );
