@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-22",
-  "updatedAt": "2026-08-22T14:44:50.807Z",
-  "checkedAt": "2026-08-22T14:44:50.807Z",
+  "updatedAt": "2026-08-22T15:08:30.848Z",
+  "checkedAt": "2026-08-22T15:08:30.848Z",
   "sources": [
     {
       "id": "u001",
@@ -1651,17 +1651,6 @@
       "dateText": "2026.08.21"
     },
     {
-      "id": "eef0bc6f86b9ced26625",
-      "univId": "u028",
-      "univName": "세종대",
-      "title": "수시 2027학년도 대입전형자료(학교생활기록부) 온라인 제공 신청 안내(2004~2022학년도 졸업자)",
-      "preview": "세종대 입학 공지사항 미리보기",
-      "url": "http://ipsi.sejong.ac.kr/ipsi/early/notice.do?mode=view&articleNo=2767",
-      "homeUrl": "http://ipsi.sejong.ac.kr/",
-      "dateISO": "2026-08-21",
-      "dateText": "2026.08.21"
-    },
-    {
       "id": "fbb38724a97db5d3cebc",
       "univId": "u028",
       "univName": "세종대",
@@ -1673,10 +1662,10 @@
       "dateText": "2026.08.21"
     },
     {
-      "id": "9092e621c7f263b6536d",
+      "id": "eef0bc6f86b9ced26625",
       "univId": "u028",
       "univName": "세종대",
-      "title": "수시 2027학년도 대입전형자료(학교생활기록부) 온라인 제공 신청 안내(2004~2022학년도 졸업자) 입학과",
+      "title": "수시 2027학년도 대입전형자료(학교생활기록부) 온라인 제공 신청 안내(2004~2022학년도 졸업자)",
       "preview": "세종대 입학 공지사항 미리보기",
       "url": "http://ipsi.sejong.ac.kr/ipsi/early/notice.do?mode=view&articleNo=2767",
       "homeUrl": "http://ipsi.sejong.ac.kr/",
@@ -1690,6 +1679,17 @@
       "title": "수시 2027학년도 대입전형자료(학교생활기록부) 온라인 제공 신청 안내(2004~2022학년도 졸업자) 입학과",
       "preview": "세종대 입학 공지사항 미리보기",
       "url": "https://ipsi.sejong.ac.kr/ipsi/early/notice.do?mode=view&articleNo=2767",
+      "homeUrl": "http://ipsi.sejong.ac.kr/",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "9092e621c7f263b6536d",
+      "univId": "u028",
+      "univName": "세종대",
+      "title": "수시 2027학년도 대입전형자료(학교생활기록부) 온라인 제공 신청 안내(2004~2022학년도 졸업자) 입학과",
+      "preview": "세종대 입학 공지사항 미리보기",
+      "url": "http://ipsi.sejong.ac.kr/ipsi/early/notice.do?mode=view&articleNo=2767",
       "homeUrl": "http://ipsi.sejong.ac.kr/",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
@@ -1757,17 +1757,6 @@
       "preview": "예수대 입학 공지사항 미리보기",
       "url": "https://jesus.ac.kr/enter/?menu=190&mode=view&no=694",
       "homeUrl": "https://jesus.ac.kr/enter/?menu=183",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "a0116fb6964c7d681ae6",
-      "univId": "u033",
-      "univName": "이화여대",
-      "title": "2027학년도 재외국민 특별전형(3월 입학) 면접고사 수험생 유의사항",
-      "preview": "이화여대 입학 공지사항 미리보기",
-      "url": "https://admission.ewha.ac.kr/admission/html/ewharo/noticeView.asp?idx=15422",
-      "homeUrl": "https://admission.ewha.ac.kr/admission/html/main/intro.asp",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
@@ -2571,17 +2560,6 @@
       "preview": "한경국립대 입학 공지사항 미리보기",
       "url": "https://ipsi.hknu.ac.kr/help/notice_view.php?bn=5169&m_type=&nPage=1&f=&s=",
       "homeUrl": "https://ipsi.hknu.ac.kr/",
-      "dateISO": "2026-08-11",
-      "dateText": "2026.08.11"
-    },
-    {
-      "id": "4db75e388b7c6880fa9e",
-      "univId": "u033",
-      "univName": "이화여대",
-      "title": "2027학년도 재외국민 특별전형(3월 입학) 면접고사 대상자 발표",
-      "preview": "이화여대 입학 공지사항 미리보기",
-      "url": "https://admission.ewha.ac.kr/admission/html/ewharo/noticeView.asp?idx=15417",
-      "homeUrl": "https://admission.ewha.ac.kr/admission/html/main/intro.asp",
       "dateISO": "2026-08-11",
       "dateText": "2026.08.11"
     },
@@ -3657,5 +3635,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=30 empty=27 fail=159 fresh=172"
+  "statusReason": "ok=28 empty=10 fail=178 fresh=170"
 }
