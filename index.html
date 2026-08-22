@@ -11,13 +11,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;800&family=Space+Grotesk:wght@700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Space+Grotesk:wght@700&display=swap"
     rel="stylesheet"
     media="print"
     onload="this.media='all'"
   />
   <noscript>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet" />
   </noscript>
   <style>
     :root {
@@ -113,6 +113,8 @@
     html {
       scroll-behavior: smooth;
       -webkit-text-size-adjust: 100%;
+      overflow-x: hidden;
+      overflow-x: clip;
     }
 
     body {
@@ -125,6 +127,8 @@
       line-height: 1.6;
       word-break: keep-all;
       overflow-wrap: break-word;
+      overflow-x: hidden;
+      overflow-x: clip;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -162,9 +166,10 @@
       width: 100%;
       z-index: 50;
       min-height: 64px;
-      padding: 8px clamp(12px, 3vw, 24px);
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      padding: 8px max(clamp(12px, 3vw, 24px), env(safe-area-inset-right, 0px)) 8px max(clamp(12px, 3vw, 24px), env(safe-area-inset-left, 0px));
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
       align-items: center;
       gap: 10px;
       background: color-mix(in srgb, var(--bg-base) 92%, transparent);
@@ -185,7 +190,7 @@
       align-items: center;
       gap: 10px;
       min-width: 0;
-      justify-self: start;
+      flex: 0 0 auto;
       color: inherit;
       text-decoration: none;
       cursor: pointer;
@@ -205,7 +210,7 @@
       color: #fff;
       background: linear-gradient(145deg, #FF6482 0%, #FA2D48 55%, #D60035 100%);
       box-shadow: 0 5px 15px rgba(250, 45, 72, 0.25);
-      animation: markPulse 3.6s var(--ease-out) infinite;
+      animation: none;
     }
 
     .brand-mark svg {
@@ -222,11 +227,13 @@
     }
 
     .nav-links {
-      justify-self: center;
       display: flex;
+      flex: 1 1 auto;
       align-items: stretch;
+      justify-content: center;
       gap: clamp(3px, 0.8vw, 8px);
-      max-width: min(980px, 78vw);
+      min-width: 0;
+      max-width: min(1100px, 100%);
     }
 
     .nav-sep {
@@ -339,14 +346,12 @@
       inset: -3px;
       filter: blur(8px);
       opacity: 0.5;
-      animation:
-        rainbowOrbit 4s linear infinite,
-        rainbowBreath 2.8s ease-in-out infinite;
+      animation: none;
     }
 
     .nav-item.card-a .ic-aura::after,
     .nav-item.card-a28 .ic-aura::after {
-      animation: rainbowOrbit 4s linear infinite;
+      animation: none;
     }
 
     .nav-item.card-a .ic,
@@ -544,11 +549,19 @@
     }
 
     .nav-actions {
-      justify-self: end;
       display: flex;
+      flex: 0 0 auto;
+      flex-direction: row;
+      flex-wrap: nowrap;
       align-items: center;
       gap: 8px;
+      margin-left: auto;
       min-width: 0;
+    }
+
+    .suneung-dday,
+    .inquiry-btn {
+      flex-shrink: 0;
     }
 
     .suneung-dday {
@@ -646,51 +659,151 @@
       }
     }
 
-    @media (min-width: 860px) {
+    @media (min-width: 1400px) {
       .suneung-dday-date {
         display: inline-flex;
       }
     }
 
-    /* PC: D-day 왼쪽 테두리 = 사이드바 [접기] 대수능 왼쪽 테두리 */
-    @media (min-width: 1280px) {
+    /* 노트북: 한 줄 유지, 폭이 부족하면 라벨·날짜만 줄임 */
+    @media (min-width: 1024px) and (max-width: 1399px) {
       .nav {
-        padding-left: env(safe-area-inset-left, 0px);
-        padding-right: env(safe-area-inset-right, 0px);
-        grid-template-columns: minmax(0, 1560px) 128px;
-        justify-content: center;
-        column-gap: 0;
+        gap: 6px;
+        padding: 6px max(12px, env(safe-area-inset-right, 0px)) 6px max(12px, env(safe-area-inset-left, 0px));
       }
 
-      .nav-actions {
-        display: contents;
-      }
-
-      .nav-brand {
-        grid-column: 1;
-        justify-self: start;
+      .brand-name {
+        display: none;
       }
 
       .nav-links {
-        grid-column: 1;
-        justify-self: center;
+        gap: 2px;
       }
 
-      .inquiry-btn {
-        grid-column: 1;
-        justify-self: end;
-        align-self: center;
+      .nav-item {
+        padding: 3px 2px 4px;
+        min-height: 44px;
+      }
+
+      .nav-item em {
+        font-size: 10.5px;
+        line-height: 1.25;
+      }
+
+      .nav-sep {
+        margin: 6px 2px;
       }
 
       .suneung-dday {
-        grid-column: 2;
-        width: 118px;
-        justify-self: end;
-        align-self: center;
+        min-height: 36px;
+        padding: 3px 8px 3px 4px;
+        gap: 6px;
       }
 
-      .suneung-dday-date {
+      .suneung-dday-kicker {
+        font-size: 9px;
+      }
+
+      .suneung-dday-count {
+        font-size: 14px;
+      }
+
+      .inquiry-btn {
+        padding: 6px 10px 6px 7px;
+        gap: 6px;
+        font-size: 12.5px;
+      }
+    }
+
+    /* 휴대폰·태블릿: 위줄(로고+D-day+문의) / 아래줄(아이콘) */
+    @media (max-width: 1023px) {
+      .nav {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-areas:
+          "brand actions"
+          "links links";
+        gap: 8px 10px;
+        padding: 8px max(12px, env(safe-area-inset-right, 0px)) 10px max(12px, env(safe-area-inset-left, 0px));
+        align-items: center;
+      }
+
+      .nav-brand {
+        grid-area: brand;
+        justify-self: start;
+      }
+
+      .brand-name {
+        display: block;
+      }
+
+      .nav-actions {
+        grid-area: actions;
+        justify-self: end;
+        margin-left: 0;
+        gap: 6px;
+        max-width: calc(100vw - 88px);
+      }
+
+      .suneung-dday {
+        min-height: 36px;
+        padding: 3px 8px 3px 4px;
+        gap: 6px;
+      }
+
+      .suneung-dday-kicker {
+        font-size: 9px;
+      }
+
+      .suneung-dday-count {
+        font-size: 14px;
+      }
+
+      .nav-links {
+        grid-area: links;
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+        gap: 8px 4px;
+        max-width: 100%;
+        width: 100%;
+        padding: 2px 0 0;
+      }
+
+      .nav-sep {
         display: none;
+      }
+
+      .nav-item {
+        width: 100%;
+        max-width: none;
+        flex: none;
+        padding: 4px 2px 2px;
+        gap: 5px;
+      }
+
+      .nav-kakao {
+        width: 100%;
+        flex: none;
+      }
+
+      .nav-item em {
+        font-size: 11px;
+        line-height: 1.3;
+        min-height: 2.4em;
+      }
+
+      .nav-kakao-menu {
+        left: 0;
+        right: auto;
+        transform: none;
+        min-width: min(340px, calc(100vw - 24px));
+        max-width: calc(100vw - 24px);
+        animation: kakaoMenuInMobile 0.22s var(--ease-out) both;
+      }
+
+      .nav-kakao-menu::before {
+        left: 18px;
+        transform: rotate(45deg);
       }
     }
 
@@ -841,6 +954,7 @@
     @media (max-width: 900px) {
       body.career-focus .nav,
       body.expand-focus .nav {
+        display: grid;
         grid-template-columns: 1fr auto;
         grid-template-areas: "brand actions";
         gap: 8px;
@@ -3438,8 +3552,22 @@
       gap: 8px;
     }
 
-    .suneung-col-a { grid-template-rows: repeat(3, minmax(52px, 1fr)); }
+    .suneung-col-a { grid-template-rows: auto minmax(0, 1fr); }
     .suneung-col-b { grid-template-rows: repeat(4, minmax(40px, 1fr)); }
+
+    .suneung-prints {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 8px;
+      min-height: 0;
+    }
+
+    .suneung-prints .suneung-btn {
+      min-height: 52px;
+      padding: 8px 8px;
+      font-size: 12px;
+    }
 
     .suneung-btn {
       display: flex;
@@ -3447,6 +3575,7 @@
       justify-content: center;
       gap: 0.5em;
       min-width: 0;
+      min-height: 44px;
       padding: 10px 12px;
       border-radius: 6px;
       border: 1px solid #c9b8a4;
@@ -3455,7 +3584,7 @@
       text-decoration: none;
       text-align: center;
       font: inherit;
-      font-size: 13px;
+      font-size: clamp(11.5px, 1.05vw, 13px);
       font-weight: 700;
       letter-spacing: -0.03em;
       line-height: 1.3;
@@ -3480,7 +3609,85 @@
     }
 
     .suneung-btn.is-print[aria-expanded="true"] {
+      background: #1c1916;
+      border-color: #9a7b4f;
       box-shadow: 0 0 0 1px #9a7b4f;
+    }
+
+    .suneung-sheet {
+      display: none;
+      margin-top: 10px;
+      border-radius: 10px;
+      border: 1px solid #d8cbbd;
+      background: #fffdf9;
+      overflow: hidden;
+    }
+
+    .suneung-sheet.is-open {
+      display: block;
+    }
+
+    .suneung-sheet-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      min-height: 52px;
+      padding: 8px 12px;
+      border-bottom: 1px solid #d8cbbd;
+      background: #f6f1ea;
+    }
+
+    .suneung-sheet-bar strong {
+      font-size: 14px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #2b261f;
+    }
+
+    .suneung-sheet-actions {
+      margin-left: auto;
+      display: flex;
+      gap: 8px;
+    }
+
+    .suneung-sheet-actions button {
+      appearance: none;
+      border: 1px solid #c9b8a4;
+      border-radius: 8px;
+      min-height: 38px;
+      padding: 6px 12px;
+      background: #fffdf9;
+      color: #2b261f;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      cursor: pointer;
+    }
+
+    .suneung-sheet-actions .is-print {
+      background: #1c1916;
+      border-color: #1c1916;
+      color: #f6f1ea;
+    }
+
+    .suneung-sheet-stage {
+      min-height: min(78vh, 980px);
+      padding: 12px;
+      background: #1c1916;
+      display: grid;
+      place-items: center;
+    }
+
+    .suneung-sheet-stage img {
+      display: block;
+      width: 100%;
+      max-width: 1400px;
+      height: auto;
+      max-height: min(78vh, 980px);
+      object-fit: contain;
+      background: #fff;
     }
 
     .suneung-btn.is-blocked,
@@ -3507,12 +3714,20 @@
 
     .suneung-ext span {
       min-width: 0;
+      text-align: left;
+      line-height: 1.25;
     }
 
     /* 경계선 접기: 선 아래 ~ 다음 선 위만 접힘 */
     .fold-block {
       min-width: 0;
       overflow: visible;
+    }
+
+    .fold-block[data-fold="boards"],
+    .fold-block[data-fold="cafes"] {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 900px;
     }
 
     .fold-body > .chat-section {
@@ -3866,6 +4081,10 @@
       .suneung-col-b {
         grid-template-rows: none;
       }
+      .suneung-btn {
+        font-size: 12px;
+        padding: 9px 10px;
+      }
     }
 
     @media (max-width: 720px) {
@@ -3885,12 +4104,22 @@
       .suneung-col-b {
         grid-template-columns: 1fr;
       }
-      .suneung-drawer {
-        top: auto;
-        bottom: max(12px, env(safe-area-inset-bottom));
-        right: 12px;
-        left: 12px;
-        width: auto;
+      .suneung-btn {
+        font-size: 13px;
+        justify-content: flex-start;
+        text-align: left;
+        min-height: 46px;
+        padding: 10px 12px;
+      }
+      .suneung-prints .suneung-btn {
+        justify-content: center;
+        text-align: center;
+        font-size: 12.5px;
+        min-height: 48px;
+      }
+      .suneung-sheet-stage {
+        min-height: min(70vh, 860px);
+        padding: 8px;
       }
     }
 
@@ -3918,17 +4147,45 @@
       .fold-rail-title {
         color: #f5f5f7;
       }
-      .suneung-drawer {
+      .suneung-sheet,
+      .suneung-sheet-bar {
         background: #1c1916;
         border-color: #3a322b;
       }
-      .suneung-drawer strong,
-      .suneung-print-item {
+      .suneung-sheet-bar strong,
+      .suneung-sheet-actions button:not(.is-print) {
         color: #f6f1ea;
       }
-      .suneung-print-item {
+      .suneung-sheet-actions button:not(.is-print) {
         background: #2a241e;
         border-color: #4a4238;
+      }
+    }
+
+    @media print {
+      html.is-suneung-print,
+      html.is-suneung-print body {
+        background: #fff !important;
+      }
+      html.is-suneung-print body > * {
+        display: none !important;
+      }
+      html.is-suneung-print .suneung-print-root {
+        display: block !important;
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fff !important;
+      }
+      html.is-suneung-print .suneung-print-root img {
+        display: block;
+        width: 100%;
+        height: 100vh;
+        max-height: 100%;
+        object-fit: contain;
+        page-break-inside: avoid;
       }
     }
 
@@ -4910,18 +5167,6 @@
     }
 
     @media (max-width: 980px) {
-      .nav {
-        grid-template-columns: auto 1fr auto;
-      }
-
-      .nav-links {
-        max-width: none;
-        width: 100%;
-      }
-
-      .brand-name {
-        display: none;
-      }
 
       .chat-shell {
         grid-template-columns: minmax(0, 1fr);
@@ -4974,73 +5219,18 @@
 
     @media (max-width: 720px) {
       .nav {
-        grid-template-columns: 1fr auto;
-        grid-template-areas:
-          "brand actions"
-          "links links";
         gap: 10px 8px;
-        padding: 8px 12px 10px;
-        align-items: center;
-      }
-
-      .nav-brand {
-        grid-area: brand;
-        justify-self: start;
-        order: unset;
-      }
-
-      .brand-name {
-        display: block;
+        padding: 8px max(12px, env(safe-area-inset-right, 0px)) 10px max(12px, env(safe-area-inset-left, 0px));
       }
 
       .nav-actions {
-        grid-area: actions;
-        justify-self: end;
-        order: unset;
-        gap: 6px;
         max-width: calc(100vw - 72px);
       }
 
-      .suneung-dday,
-      .inquiry-btn {
-        flex-shrink: 0;
-      }
-
-      .suneung-dday {
-        min-height: 36px;
-        padding: 3px 8px 3px 4px;
-        gap: 6px;
-      }
-
-      .suneung-dday-kicker {
-        font-size: 9px;
-      }
-
-      .suneung-dday-count {
-        font-size: 14px;
-      }
-
       .nav-links {
-        grid-area: links;
-        order: unset;
-        display: grid;
         grid-template-columns: repeat(5, minmax(0, 1fr));
         gap: 10px 4px;
-        max-width: 100%;
-        width: 100%;
         padding: 4px 0 2px;
-      }
-
-      .nav-sep {
-        display: none;
-      }
-
-      .nav-item {
-        width: 100%;
-        max-width: none;
-        flex: none;
-        padding: 4px 2px 2px;
-        gap: 5px;
       }
 
       .nav-kakao {
@@ -5289,6 +5479,12 @@
       }
     }
   </style>
+  <script src="univ-board-data.js" defer></script>
+  <script src="recruit-board-data.js" defer></script>
+  <script src="jobkorea-board-data.js" defer></script>
+  <script src="teacher-board-data.js" defer></script>
+  <script src="suhui-board-data.js" defer></script>
+  <script src="edu-board-data.js" defer></script>
 </head>
 <body>
   <script>
@@ -5754,7 +5950,7 @@
       <div class="suneung-panel" id="suneungPanel">
         <div class="suneung-grid">
           <article class="suneung-player" data-slot="1" data-drive="1cRACtOhhVN67Z4GSbuZ0ncwu-FT1LOXy">
-            <img class="suneung-poster" alt="" width="640" height="360" loading="lazy" decoding="async" src="https://drive.google.com/thumbnail?id=1cRACtOhhVN67Z4GSbuZ0ncwu-FT1LOXy&sz=w1280" />
+            <img class="suneung-poster" alt="" width="640" height="360" loading="lazy" decoding="async" src="https://drive.google.com/thumbnail?id=1cRACtOhhVN67Z4GSbuZ0ncwu-FT1LOXy&sz=w640" />
             <div class="suneung-stage" hidden></div>
             <button type="button" class="suneung-player-hit" aria-pressed="false" aria-label="2027 대수능 원서접수 안내 영상 재생">
               <span class="suneung-play" aria-hidden="true">
@@ -5770,7 +5966,7 @@
             </button>
           </article>
           <article class="suneung-player" data-slot="2" data-drive="1wsAiwVnYPmfHjIHRk-NrRNVvm8dT9L7D">
-            <img class="suneung-poster" alt="" width="640" height="360" loading="lazy" decoding="async" src="https://drive.google.com/thumbnail?id=1wsAiwVnYPmfHjIHRk-NrRNVvm8dT9L7D&sz=w1280" />
+            <img class="suneung-poster" alt="" width="640" height="360" loading="lazy" decoding="async" src="https://drive.google.com/thumbnail?id=1wsAiwVnYPmfHjIHRk-NrRNVvm8dT9L7D&sz=w640" />
             <div class="suneung-stage" hidden></div>
             <button type="button" class="suneung-player-hit" aria-pressed="false" aria-label="2027 대수능 원서접수 안내 쇼츠 재생">
               <span class="suneung-play" aria-hidden="true">
@@ -5787,46 +5983,45 @@
           </article>
           <div class="suneung-col-a">
             <a class="suneung-btn" href="https://drive.google.com/file/d/1bh5T87lBNVDhchWSOLAKgqg9-oosuUX_/view?usp=drive_link" target="_blank" rel="noopener noreferrer">2027 대수능 실시요강</a>
-            <button type="button" class="suneung-btn is-blocked" disabled aria-disabled="true" title="준비 중">2027 대수능 원서접수 안내</button>
-            <button type="button" class="suneung-btn is-print is-blocked" id="suneungPrintBtn" disabled aria-disabled="true" title="준비 중">2027 대수능 사전입력(출력물)</button>
+            <div class="suneung-prints" role="group" aria-label="수능 출력물">
+              <button type="button" class="suneung-btn is-print" data-print-id="1idT_en7sK03YRiELlWsGLwmbqKVUpdMw" aria-expanded="false">[사전 입력] 출력물</button>
+              <button type="button" class="suneung-btn is-print" data-print-id="1MGqGfsn8fErnoN1lezbxd5SHEn_WLqx5" aria-expanded="false">[접수 안내] 출력물</button>
+              <button type="button" class="suneung-btn is-print" data-print-id="1fQT4lkHiN-998SIzV1DT9YtQzxNTBZQJ" aria-expanded="false">[접수 절차1] 출력물</button>
+              <button type="button" class="suneung-btn is-print" data-print-id="1fMcMAUkgVg2b_s5Uwzchdjb2kPI4WKNG" aria-expanded="false">[접수 절차2] 출력물</button>
+            </div>
           </div>
           <div class="suneung-col-b">
             <a class="suneung-btn suneung-ext" href="https://www.suneung.re.kr/boardCnts/list.do?boardID=1500229&amp;m=0301&amp;s=suneung&amp;searchStr=" target="_blank" rel="noopener noreferrer">
               <img src="assets/suneung/kice.png" alt="" width="22" height="22" />
-              <span>교육과정 평가원</span>
+              <span>현장 수능 접수(8/24~9/4일, 17시)</span>
             </a>
             <a class="suneung-btn suneung-ext" href="https://www.mycsat.re.kr/index.do" target="_blank" rel="noopener noreferrer">
               <img src="assets/suneung/kice.png" alt="" width="22" height="22" />
-              <span>온라인 입력 홈피</span>
+              <span>온라인 입력 홈피(8/20~9/3, 18시)</span>
             </a>
             <a class="suneung-btn suneung-ext" href="https://apply.jinhakapply.com/" target="_blank" rel="noopener noreferrer">
               <img src="assets/suneung/jinhak.png" alt="" width="22" height="22" />
-              <span>진학사 어플라이</span>
+              <span>진학사 어플라이(9/7~9/11) 3일 이상</span>
             </a>
             <a class="suneung-btn suneung-ext" href="https://www.uwayapply.com/" target="_blank" rel="noopener noreferrer">
               <img src="assets/suneung/uway.png" alt="" width="22" height="22" />
-              <span>유웨이 어플라이</span>
+              <span>유웨이 어플라이(9/7~9/11) 3일 이상</span>
             </a>
           </div>
         </div>
+        <section class="suneung-sheet" id="suneungSheet" hidden>
+          <div class="suneung-sheet-bar">
+            <strong id="suneungSheetTitle">출력물</strong>
+            <div class="suneung-sheet-actions">
+              <button type="button" class="is-print" id="suneungSheetPrint">출력</button>
+              <button type="button" id="suneungSheetClose">닫기</button>
+            </div>
+          </div>
+          <div class="suneung-sheet-stage">
+            <img id="suneungSheetImg" alt="수능 출력물" />
+          </div>
+        </section>
       </div>
-      <aside class="suneung-drawer" id="suneungPrintDrawer" hidden>
-        <strong>사전입력 출력물</strong>
-        <div class="suneung-drawer-grid">
-          <a class="suneung-print-item" href="https://drive.google.com/drive/folders/1FWeX5uVNqMRH8nTPR37uz5TlC6MfoUlA" target="_blank" rel="noopener noreferrer">
-            <span class="num">1</span>접수 안내
-          </a>
-          <a class="suneung-print-item" href="https://drive.google.com/drive/folders/1FWeX5uVNqMRH8nTPR37uz5TlC6MfoUlA" target="_blank" rel="noopener noreferrer">
-            <span class="num">2</span>사전 입력
-          </a>
-          <a class="suneung-print-item" href="https://drive.google.com/drive/folders/1FWeX5uVNqMRH8nTPR37uz5TlC6MfoUlA" target="_blank" rel="noopener noreferrer">
-            <span class="num">3</span>한눈에 보기
-          </a>
-          <a class="suneung-print-item" href="https://drive.google.com/drive/folders/1FWeX5uVNqMRH8nTPR37uz5TlC6MfoUlA" target="_blank" rel="noopener noreferrer">
-            <span class="num">4</span>접수 절차 6단계
-          </a>
-        </div>
-      </aside>
     </section>
       </div>
     </div>
@@ -6274,15 +6469,24 @@
     </div>
   </div>
 
-  <script src="univ-board-data.js"></script>
-  <script src="recruit-board-data.js"></script>
-  <script src="jobkorea-board-data.js"></script>
-  <script src="teacher-board-data.js"></script>
-  <script src="suhui-board-data.js"></script>
-  <script src="edu-board-data.js"></script>
   <script>
+    document.addEventListener("DOMContentLoaded", () => {
     (() => {
       "use strict";
+
+      function scheduleIdle(fn, delay) {
+        const start = () => setTimeout(fn, delay);
+        if (typeof requestIdleCallback === "function") {
+          requestIdleCallback(start, { timeout: Math.max(2500, delay) });
+        } else {
+          start();
+        }
+      }
+
+      function isRecentlyUpdated(iso) {
+        const t = Date.parse(String(iso || ""));
+        return Number.isFinite(t) && Date.now() - t < 45 * 60 * 1000;
+      }
 
       const EXPAND_APPS = {
         susi: {
@@ -6349,7 +6553,7 @@
         },
       ];
       const SAGWAN_SHEET_ID = "1u7sJWO0-ItaTWl_xwgkNPmMyYxgvOYDtuKn_RXlNTCE";
-      const SAGWAN_VOTE_POLL_MS = 10000;
+      const SAGWAN_VOTE_POLL_MS = 45000;
       const SAGWAN_VOTE_CACHE_KEY = "kimtaehoon_sagwan_votes_v1";
       let sagwanVoteCounts = Object.fromEntries(SAGWAN_POINTS.map((p) => [p.sheetGid, 0]));
       let sagwanVoteReady = false;
@@ -6366,7 +6570,7 @@
       const univSearch = document.getElementById("univNoticeSearch");
 
       const UNIV_DATA_URL = "data/univ-notices.json";
-      const UNIV_POLL_MS = 30000;
+      const UNIV_POLL_MS = 180000;
       /** 입시 시즌 창: 매년 8/1 ~ 다음 해 7/31 (서버 minDate 우선) */
       function admissionMinDate(todayISO) {
         const today = String(todayISO || seoulTodayISO());
@@ -6921,7 +7125,7 @@
         const silent = Boolean(opts && opts.silent);
         try {
           const prevFp = noticeFingerprint(univNoticePool, ["univId", "title", "dateISO"]);
-          const res = await fetch(`${UNIV_DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
+          const res = await fetch(UNIV_DATA_URL, { cache: "default" });
           if (!res.ok) throw new Error(`http_${res.status}`);
           const payload = await res.json();
           applyUnivPayload(payload);
@@ -6969,7 +7173,9 @@
           setUnivLive(true, formatUpdatedLabel(univUpdatedAt));
           renderUnivBoard(univSearch ? univSearch.value : "");
         }
-        setTimeout(() => refreshUnivFromGithub({ silent: true }), 400);
+        if (!isRecentlyUpdated(univUpdatedAt)) {
+          scheduleIdle(() => refreshUnivFromGithub({ silent: true }), 12000);
+        }
         setInterval(() => {
           ensureBoardDay();
           refreshUnivFromGithub();
@@ -6987,7 +7193,7 @@
       const recruitLive = document.getElementById("recruitLive");
       const recruitLiveLabel = document.getElementById("recruitLiveLabel");
       const recruitSearch = document.getElementById("recruitSearch");
-      const RECRUIT_POLL_MS = 60000;
+      const RECRUIT_POLL_MS = 180000;
       const RECRUIT_CACHE_KEY = "kimtaehoon_recruit_v1";
       const RECRUIT_DATA_URLS = [
         "data/recruit-notices.json",
@@ -7208,8 +7414,7 @@
       }
 
       async function fetchRecruitPayloadOnce(url) {
-        const sep = url.includes("?") ? "&" : "?";
-        const res = await fetch(`${url}${sep}t=${Date.now()}`, { cache: "no-store", mode: "cors" });
+        const res = await fetch(url, { cache: "default", mode: "cors" });
         if (!res.ok) throw new Error(`http_${res.status}`);
         const ct = String(res.headers.get("content-type") || "");
         const text = await res.text();
@@ -7340,10 +7545,11 @@
           recruitListEl.innerHTML =
             `<div class="univ-notice-empty">석·박사 채용 정보를 불러오는 중입니다…</div>`;
         }
-        refreshRecruitFromGithub({ silent: true });
-        setTimeout(() => {
-          if (!recruitPool.length) refreshRecruitFromGithub({ silent: true });
-        }, 2500);
+        if (!recruitPool.length) {
+          scheduleIdle(() => refreshRecruitFromGithub({ silent: true }), 800);
+        } else if (!isRecentlyUpdated(window.RECRUIT_BOARD_DATA && window.RECRUIT_BOARD_DATA.updatedAt)) {
+          scheduleIdle(() => refreshRecruitFromGithub({ silent: true }), 14000);
+        }
         setInterval(() => {
           ensureBoardDay();
           refreshRecruitFromGithub();
@@ -7361,7 +7567,7 @@
       const jobkoreaLive = document.getElementById("jobkoreaLive");
       const jobkoreaLiveLabel = document.getElementById("jobkoreaLiveLabel");
       const jobkoreaSearch = document.getElementById("jobkoreaSearch");
-      const JOBKOREA_POLL_MS = 60000;
+      const JOBKOREA_POLL_MS = 180000;
       const JOBKOREA_CACHE_KEY = "kimtaehoon_jobkorea_v1";
       const JOBKOREA_DATA_URLS = [
         "data/jobkorea-notices.json",
@@ -7585,8 +7791,7 @@
       }
 
       async function fetchJobkoreaPayloadOnce(url) {
-        const sep = url.includes("?") ? "&" : "?";
-        const res = await fetch(`${url}${sep}t=${Date.now()}`, { cache: "no-store", mode: "cors" });
+        const res = await fetch(url, { cache: "default", mode: "cors" });
         if (!res.ok) throw new Error(`http_${res.status}`);
         const ct = String(res.headers.get("content-type") || "");
         const text = await res.text();
@@ -7700,11 +7905,11 @@
           jobkoreaListEl.innerHTML =
             `<div class="univ-notice-empty">인기 채용 공고를 불러오는 중입니다…</div>`;
         }
-        // 즉시 1회 + 빈 목록일 때만 짧은 재시도
-        refreshJobkoreaFromGithub({ silent: true });
-        setTimeout(() => {
-          if (!jobkoreaPool.length) refreshJobkoreaFromGithub({ silent: true });
-        }, 2500);
+        if (!jobkoreaPool.length) {
+          scheduleIdle(() => refreshJobkoreaFromGithub({ silent: true }), 800);
+        } else if (!isRecentlyUpdated(window.JOBKOREA_BOARD_DATA && window.JOBKOREA_BOARD_DATA.updatedAt)) {
+          scheduleIdle(() => refreshJobkoreaFromGithub({ silent: true }), 16000);
+        }
         setInterval(() => {
           ensureBoardDay();
           refreshJobkoreaFromGithub();
@@ -7717,7 +7922,7 @@
       }
 
       /* —— 사립학교 정교사 / 수만휘 / 교육 정책·정보 —— */
-      const COMMUNITY_POLL_MS = 60000;
+      const COMMUNITY_POLL_MS = 180000;
       const teacherListEl = document.getElementById("teacherList");
       const teacherCountEl = document.getElementById("teacherCount");
       const teacherLive = document.getElementById("teacherLive");
@@ -7930,7 +8135,7 @@
         const silent = Boolean(opts && opts.silent);
         try {
           const prevFp = noticeFingerprint(teacherPool, ["title", "dateISO"]);
-          const res = await fetch(`${TEACHER_DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
+          const res = await fetch(TEACHER_DATA_URL, { cache: "default" });
           if (!res.ok) throw new Error(`http_${res.status}`);
           applyTeacherPayload(await res.json());
           renderTeacherBoard(teacherQuery);
@@ -7992,7 +8197,7 @@
         const silent = Boolean(opts && opts.silent);
         try {
           const prevFp = noticeFingerprint(suhuiPool, ["url", "title", "dateISO"]);
-          const res = await fetch(`${SUHUI_DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
+          const res = await fetch(SUHUI_DATA_URL, { cache: "default" });
           if (!res.ok) throw new Error(`http_${res.status}`);
           applySuhuiPayload(await res.json());
           renderSuhuiBoard(suhuiQuery);
@@ -8054,7 +8259,7 @@
         const silent = Boolean(opts && opts.silent);
         try {
           const prevFp = noticeFingerprint(eduPool, ["url", "title", "dateISO", "sourceId"]);
-          const res = await fetch(`${EDU_DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
+          const res = await fetch(EDU_DATA_URL, { cache: "default" });
           if (!res.ok) throw new Error(`http_${res.status}`);
           applyEduPayload(await res.json());
           renderEduBoard(eduQuery);
@@ -8109,7 +8314,9 @@
           cfg.setLive(true, formatUpdatedLabel(cfg.updatedAt));
           cfg.render(cfg.search ? cfg.search.value : "");
         }
-        setTimeout(() => cfg.refresh({ silent: true }), 600);
+        if (!cfg.pool.length || !isRecentlyUpdated(cfg.updatedAt)) {
+          scheduleIdle(() => cfg.refresh({ silent: true }), cfg.pool.length ? 18000 : 900);
+        }
         setInterval(() => {
           ensureBoardDay();
           cfg.refresh();
@@ -9094,18 +9301,124 @@
       function bootSuneungPanel() {
         const strip = document.getElementById("suneungStrip");
         const panel = document.getElementById("suneungPanel");
-        const printBtn = document.getElementById("suneungPrintBtn");
-        const drawer = document.getElementById("suneungPrintDrawer");
+        const sheet = document.getElementById("suneungSheet");
+        const sheetTitle = document.getElementById("suneungSheetTitle");
+        const sheetImg = document.getElementById("suneungSheetImg");
+        const sheetPrint = document.getElementById("suneungSheetPrint");
+        const sheetClose = document.getElementById("suneungSheetClose");
+        const printBtns = panel ? panel.querySelectorAll(".suneung-prints [data-print-id]") : [];
         if (!strip || !panel) return;
 
         const previewUrl = (id) => `https://drive.google.com/file/d/${id}/preview`;
         const directUrl = (id) => `https://drive.google.com/uc?export=download&id=${id}`;
+        const thumbUrl = (id, size) => `https://drive.google.com/thumbnail?id=${id}&sz=w${size}`;
+        const lhUrl = (id, size) => `https://lh3.googleusercontent.com/d/${id}=w${size}`;
+        const viewUrl = (id) => `https://drive.google.com/uc?export=view&id=${id}`;
 
-        function setDrawer(open) {
-          if (!drawer || !printBtn) return;
-          drawer.classList.toggle("is-open", open);
-          drawer.hidden = !open;
-          printBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        let activePrintId = "";
+
+        function syncPrintButtons() {
+          printBtns.forEach((btn) => {
+            btn.setAttribute("aria-expanded", btn.getAttribute("data-print-id") === activePrintId ? "true" : "false");
+          });
+        }
+
+        function closeSheet() {
+          activePrintId = "";
+          if (sheet) {
+            sheet.hidden = true;
+            sheet.classList.remove("is-open");
+          }
+          if (sheetImg) {
+            sheetImg.removeAttribute("src");
+            sheetImg.removeAttribute("data-print-src");
+          }
+          syncPrintButtons();
+        }
+
+        function bindImageFallbacks(img, id) {
+          const chain = [thumbUrl(id, 2400), lhUrl(id, 2400), viewUrl(id), thumbUrl(id, 1600)];
+          let i = 0;
+          img.onerror = () => {
+            i += 1;
+            if (i < chain.length) img.src = chain[i];
+          };
+          img.onload = () => {
+            img.dataset.printSrc = img.currentSrc || img.src;
+          };
+          img.src = chain[0];
+        }
+
+        function openSheet(id, title) {
+          if (!sheet || !sheetImg) return;
+          activePrintId = id;
+          sheet.hidden = false;
+          sheet.classList.add("is-open");
+          if (sheetTitle) sheetTitle.textContent = title;
+          sheetImg.alt = title;
+          bindImageFallbacks(sheetImg, id);
+          syncPrintButtons();
+          const offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--nav-offset")) || 72;
+          const top = sheet.getBoundingClientRect().top + window.scrollY - offset - 12;
+          window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+        }
+
+        function printSheet() {
+          const src = (sheetImg && (sheetImg.dataset.printSrc || sheetImg.currentSrc || sheetImg.src)) || "";
+          const title = (sheetTitle && sheetTitle.textContent) || "출력물";
+          if (!src) return;
+          const w = window.open("", "suneungPrint");
+          if (!w) {
+            document.documentElement.classList.add("is-suneung-print");
+            const root = document.createElement("div");
+            root.className = "suneung-print-root";
+            const clone = document.createElement("img");
+            clone.src = src;
+            clone.alt = title;
+            root.appendChild(clone);
+            document.body.appendChild(root);
+            const done = () => {
+              window.print();
+              root.remove();
+              document.documentElement.classList.remove("is-suneung-print");
+            };
+            if (clone.complete) done();
+            else clone.onload = done;
+            return;
+          }
+          const safeTitle = title.replace(/[<>&"]/g, "");
+          const hi = activePrintId ? thumbUrl(activePrintId, 4000) : src;
+          w.document.open();
+          w.document.write(`<!DOCTYPE html><html lang="ko"><head><meta charset="UTF-8"/><title>${safeTitle}</title><style>
+@page { size: A4; margin: 0; }
+html, body { margin: 0; padding: 0; width: 100%; height: 100%; background: #fff; }
+img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain; page-break-inside: avoid; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+</style></head><body><img id="p" src="${hi}" alt="${safeTitle}"/></body></html>`);
+          w.document.close();
+          const runPrint = () => {
+            const pic = w.document.getElementById("p");
+            if (pic && pic.naturalWidth > pic.naturalHeight) {
+              const style = w.document.createElement("style");
+              style.textContent = "@page { size: A4 landscape; margin: 0; }";
+              w.document.head.appendChild(style);
+            }
+            try {
+              w.focus();
+              w.print();
+            } catch {
+              /* ignore */
+            }
+          };
+          const img = w.document.getElementById("p");
+          if (img && !img.complete) {
+            img.onload = runPrint;
+            img.onerror = () => {
+              img.src = src;
+              img.onload = runPrint;
+            };
+          } else {
+            setTimeout(runPrint, 250);
+          }
         }
 
         function stopPlayer(player) {
@@ -9210,25 +9523,26 @@
           });
         });
 
-        if (printBtn && drawer && !printBtn.disabled) {
-          printBtn.addEventListener("click", (e) => {
-            e.stopPropagation();
-            setDrawer(drawer.hidden);
+        printBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const id = btn.getAttribute("data-print-id");
+            const title = (btn.textContent || "출력물").trim();
+            if (!id) return;
+            if (activePrintId === id) closeSheet();
+            else openSheet(id, title);
           });
-          document.addEventListener("click", (e) => {
-            if (drawer.hidden) return;
-            if (drawer.contains(e.target) || printBtn.contains(e.target)) return;
-            setDrawer(false);
-          });
-        }
+        });
+
+        if (sheetPrint) sheetPrint.addEventListener("click", printSheet);
+        if (sheetClose) sheetClose.addEventListener("click", closeSheet);
 
         document.addEventListener("keydown", (e) => {
-          if (e.key === "Escape") setDrawer(false);
+          if (e.key === "Escape") closeSheet();
         });
 
         document.addEventListener("suneung-collapse", () => {
           strip.querySelectorAll(".suneung-player").forEach(stopPlayer);
-          setDrawer(false);
+          closeSheet();
         });
       }
 
@@ -10374,10 +10688,10 @@
           ? requestIdleCallback
           : (fn) => setTimeout(fn, 1);
       idle(() => bootRecruitBoard());
-      setTimeout(() => bootJobkoreaBoard(), 120);
-      setTimeout(() => bootTeacherBoard(), 220);
-      setTimeout(() => bootSuhuiBoard(), 320);
-      setTimeout(() => bootEduBoard(), 420);
+      setTimeout(() => bootJobkoreaBoard(), 400);
+      setTimeout(() => bootTeacherBoard(), 900);
+      setTimeout(() => bootSuhuiBoard(), 1400);
+      setTimeout(() => bootEduBoard(), 1900);
       // 커리어넷은 아이콘 클릭 시 최초 1회만 boot
       boardDayISO = seoulTodayISO();
       scheduleSeoulMidnightRollover();
@@ -10386,6 +10700,7 @@
       });
       idle(() => bootVisits());
     })();
+    });
   </script>
 </body>
 </html>
