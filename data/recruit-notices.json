@@ -2,7 +2,7 @@
   "source": "https://www.jinhakpro.com/recruit/list",
   "api": "https://www.jinhakpro.com/api/applicant/recruit/sub-list?isOnlyOnlineApply=false&bookmarkSortType=1&majorCategoryCode=&sortType=1",
   "updatedAt": "2026-08-22T00:04:36.104Z",
-  "checkedAt": "2026-08-22T11:54:59.814635Z",
+  "checkedAt": "2026-08-22T12:23:12.178897Z",
   "today": "2026-08-22",
   "count": 48,
   "notices": [
@@ -631,7 +631,7 @@
       "deadlineText": "2026.08.27"
     }
   ],
-  "stale": false,
-  "status": "fresh",
-  "statusReason": "keep_prev_recent:11.8h"
+  "stale": true,
+  "status": "cached",
+  "statusReason": "keep_prev_actions_blocked"
 }
