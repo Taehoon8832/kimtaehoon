@@ -67,8 +67,8 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-22T05:16:03.915091Z",
-  "checkedAt": "2026-08-22T05:16:03.915086Z",
+  "updatedAt": "2026-08-22T05:48:58.299987Z",
+  "checkedAt": "2026-08-22T05:48:58.299981Z",
   "today": "2026-08-22",
   "count": 80,
   "notices": [
@@ -79,6 +79,16 @@
       "title": "🌟2025 목표달성 듀냐선배 인터뷰 🌟｜성신여대 경제학과 선배의 과목별 공부법",
       "preview": "EBSi 알림",
       "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE&artclId=000000400500490",
+      "dateISO": "2026-08-22",
+      "dateText": "2026.08.22"
+    },
+    {
+      "id": "3f055a45f134e209cd97",
+      "sourceId": "edupress",
+      "sourceName": "에듀프레스",
+      "title": "교육개혁은 왜 실패하는 걸까? .. 이문수 신간 ‘교육 돌파구...’ 해법 제시",
+      "preview": "에듀프레스 소식",
+      "url": "https://www.edupress.kr/news/articleView.html?idxno=30413",
       "dateISO": "2026-08-22",
       "dateText": "2026.08.22"
     },
@@ -379,16 +389,6 @@
       "title": "인공지능(AI) 온이음, 인공지능(AI)과 이어지는 첫 연결고리",
       "preview": "교육부(장관 최교진)와 한국장학재단(이사장 박창달)은 취약계층·취약지역의 고등학생에게 인공지능(AI) 서비스와 인공지능(AI) 교육 프로그램을 제공하는‘2026년 인공지능(AI) 온이음 사업’을 추가경정예산으로 신규",
       "url": "https://blog.naver.com/moeblog/224383157199",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
-      "id": "3a1f80688718a1b4edc6",
-      "sourceId": "edupress",
-      "sourceName": "에듀프레스",
-      "title": "교부금 개편 축소 땐 청와대 '큰 부담' .. 최교진 거취도 불투명",
-      "preview": "에듀프레스 소식",
-      "url": "https://www.edupress.kr/news/articleView.html?idxno=30405",
       "dateISO": "2026-08-19",
       "dateText": "2026.08.19"
     },
