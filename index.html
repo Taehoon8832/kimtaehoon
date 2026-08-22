@@ -581,6 +581,7 @@
     }
 
     .suneung-dday {
+      appearance: none;
       display: inline-flex;
       align-items: center;
       gap: 7px;
@@ -590,7 +591,11 @@
       border-radius: 12px;
       background: linear-gradient(180deg, #ffffff 0%, #f4f4f5 100%);
       color: #262626;
+      font: inherit;
       text-decoration: none;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
       box-shadow:
         inset 0 1px 0 #fff,
         0 3px 8px rgba(0, 0, 0, 0.06),
@@ -662,6 +667,76 @@
     .suneung-dday:active {
       transform: translateY(1px);
       box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.08);
+    }
+
+    .bookmark-sheet {
+      position: fixed;
+      inset: 0;
+      z-index: 96;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px 16px calc(20px + env(safe-area-inset-bottom, 0px));
+      background: rgba(0, 0, 0, 0.36);
+    }
+
+    .bookmark-sheet.is-open {
+      display: flex;
+    }
+
+    .bookmark-sheet[hidden] {
+      display: none !important;
+    }
+
+    .bookmark-sheet-card {
+      width: min(360px, 100%);
+      padding: 22px 18px 16px;
+      border-radius: 16px;
+      background: #fff;
+      border: 1px solid #efefef;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+    }
+
+    .bookmark-sheet-ask {
+      margin: 0 0 18px;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.45;
+      color: #1c1c1e;
+      word-break: keep-all;
+      text-align: center;
+    }
+
+    .bookmark-sheet-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .bookmark-sheet-no,
+    .bookmark-sheet-yes {
+      min-height: 46px;
+      border-radius: 12px;
+      font: inherit;
+      font-size: 15px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      cursor: pointer;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .bookmark-sheet-no {
+      border: 1px solid #efefef;
+      background: #f4f4f5;
+      color: #262626;
+    }
+
+    .bookmark-sheet-yes {
+      border: 1px solid #191919;
+      background: linear-gradient(180deg, #3a3a3c 0%, #191919 100%);
+      color: #fff;
     }
 
     @media (hover: hover) and (pointer: fine) {
@@ -2019,6 +2094,7 @@
       background:
         radial-gradient(70% 55% at 50% -8%, rgba(250, 45, 72, 0.1), transparent 62%),
         linear-gradient(180deg, var(--bg-subtle) 0%, color-mix(in srgb, var(--bg-subtle) 88%, var(--color-primary-50)) 100%);
+      padding-top: 1.5cm;
       padding-bottom: 28px;
       padding-left: env(safe-area-inset-left, 0px);
       padding-right: env(safe-area-inset-right, 0px);
@@ -4151,41 +4227,23 @@
       left: clamp(12px, 3vw, 24px);
       right: 108px;
       top: 50%;
-      height: 2px;
+      height: 1px;
       transform: translateY(-50%);
-      border-radius: 999px;
+      border-radius: 0;
       background: linear-gradient(
         90deg,
         transparent 0%,
-        #6b4f3a 8%,
-        #a67c52 38%,
-        #e4c997 50%,
-        #a67c52 62%,
-        #6b4f3a 92%,
+        rgba(92, 74, 58, 0.22) 12%,
+        rgba(92, 74, 58, 0.38) 50%,
+        rgba(92, 74, 58, 0.22) 88%,
         transparent 100%
       );
-      box-shadow:
-        0 1px 0 rgba(255, 248, 236, 0.8),
-        0 1px 3px rgba(61, 43, 31, 0.16);
+      box-shadow: none;
       border: 0;
     }
 
     .fold-rule::after {
-      content: "";
-      position: absolute;
-      left: calc((100% - 108px) / 2);
-      top: 50%;
-      z-index: 1;
-      width: 8px;
-      height: 8px;
-      transform: translate(-50%, -50%) rotate(45deg);
-      border-radius: 1.5px;
-      background: linear-gradient(180deg, #f7edd8 0%, #c4a06a 100%);
-      border: 1px solid rgba(90, 64, 36, 0.42);
-      box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.78),
-        0 1px 2px rgba(61, 43, 31, 0.2);
-      pointer-events: none;
+      content: none;
     }
 
     .fold-toggle {
@@ -4363,10 +4421,6 @@
       .fold-rule::before {
         right: 124px;
       }
-
-      .fold-rule::after {
-        left: calc((100% - 124px) / 2);
-      }
     }
 
     @media (max-width: 720px) {
@@ -4378,10 +4432,6 @@
       .fold-rule::before {
         left: 10px;
         right: 118px;
-      }
-
-      .fold-rule::after {
-        left: calc((100% - 118px) / 2);
       }
 
       .fold-toggle {
@@ -4402,10 +4452,6 @@
       .fold-rule::before {
         left: 8px;
         right: 108px;
-      }
-
-      .fold-rule::after {
-        left: calc((100% - 108px) / 2);
       }
 
       .fold-toggle {
@@ -4439,10 +4485,6 @@
         right: 0;
         top: 50%;
         transform: translateY(-50%);
-      }
-
-      .fold-rule::after {
-        left: 50%;
       }
 
       .fold-block[data-fold="suneung"] .fold-rule {
@@ -4682,18 +4724,12 @@
         background: linear-gradient(
           90deg,
           transparent 0%,
-          #6b5340 8%,
-          #c4a06a 50%,
-          #6b5340 92%,
+          rgba(232, 213, 181, 0.18) 12%,
+          rgba(232, 213, 181, 0.32) 50%,
+          rgba(232, 213, 181, 0.18) 88%,
           transparent 100%
         );
-        box-shadow:
-          0 1px 0 rgba(255, 255, 255, 0.08),
-          0 1px 3px rgba(0, 0, 0, 0.28);
-      }
-      .fold-rule::after {
-        background: linear-gradient(180deg, #e6d3a8 0%, #8a6a40 100%);
-        border-color: rgba(232, 213, 181, 0.4);
+        box-shadow: none;
       }
       .fold-toggle,
       .fold-rail-btn,
@@ -6368,7 +6404,7 @@
       </div>
 
       <div class="nav-actions">
-        <a class="suneung-dday" id="suneungDdayBtn" href="#suneungStrip" aria-label="2027 대수능 D-day">
+        <button type="button" class="suneung-dday" id="suneungDdayBtn" aria-haspopup="dialog" aria-controls="bookmarkSheet" aria-label="2027 대수능 D-day, 즐겨찾기 추가">
           <span class="suneung-dday-ic" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
               <rect x="3.5" y="5" width="17" height="15" rx="3" stroke="currentColor" stroke-width="1.8"/>
@@ -6381,7 +6417,7 @@
             <strong class="suneung-dday-count" id="suneungDdayCount">D-—</strong>
           </span>
           <span class="suneung-dday-date">11.19</span>
-        </a>
+        </button>
         <a class="inquiry-btn" href="https://open.kakao.com/me/8832" target="_blank" rel="noopener noreferrer" aria-label="문의 오픈채팅">
           <span class="ic" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
@@ -7132,6 +7168,16 @@
         </div>
         <p class="err" id="sagwanResultEmailError" hidden>올바른 이메일 주소를 입력해 주세요.</p>
       </form>
+    </div>
+  </div>
+
+  <div class="bookmark-sheet" id="bookmarkSheet" hidden>
+    <div class="bookmark-sheet-card" role="dialog" aria-modal="true" aria-labelledby="bookmarkSheetTitle">
+      <p class="bookmark-sheet-ask" id="bookmarkSheetTitle">김태훈닷컴을 즐겨찾기로 추가하시겠습니까?</p>
+      <div class="bookmark-sheet-actions">
+        <button type="button" class="bookmark-sheet-no" id="bookmarkSheetNo">아니오</button>
+        <button type="button" class="bookmark-sheet-yes" id="bookmarkSheetYes">예</button>
+      </div>
     </div>
   </div>
 
@@ -11724,26 +11770,79 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
               : info.kind === "elapsed"
                 ? "2027 대수능 " + info.text
                 : "2027 대수능까지 " + (info.days != null ? info.days + "일" : info.text);
-          btn.setAttribute("aria-label", label);
-          btn.setAttribute("title", label + " · 2026.11.19");
+          btn.setAttribute("aria-label", label + ", 즐겨찾기 추가");
+          btn.setAttribute("title", label + " · 눌러서 즐겨찾기");
         }
 
-        function revealSuneung() {
-          const block = document.querySelector('.fold-block[data-fold="suneung"]');
-          if (block && block.classList.contains("is-collapsed")) {
-            const toggle = block.querySelector(".fold-toggle");
-            if (toggle) toggle.click();
-          }
-          const target = document.getElementById("suneungStrip") || block;
-          if (!target) return;
-          const offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--nav-offset")) || 72;
-          const top = target.getBoundingClientRect().top + window.scrollY - offset - 8;
-          window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+        const sheet = document.getElementById("bookmarkSheet");
+        const sheetNo = document.getElementById("bookmarkSheetNo");
+        const sheetYes = document.getElementById("bookmarkSheetYes");
+        const BOOKMARK_NAME = "김태훈닷컴";
+
+        function pageUrl() {
+          return location.href.split("#")[0];
         }
+
+        function closeBookmarkSheet() {
+          if (!sheet) return;
+          sheet.classList.remove("is-open");
+          sheet.hidden = true;
+        }
+
+        function openBookmarkSheet() {
+          if (!sheet) return;
+          sheet.hidden = false;
+          sheet.classList.add("is-open");
+        }
+
+        function saveFavorite() {
+          const url = pageUrl();
+          try {
+            if (window.external && typeof window.external.AddFavorite === "function") {
+              window.external.AddFavorite(url, BOOKMARK_NAME);
+            }
+          } catch (_) {}
+          try {
+            if (window.sidebar && typeof window.sidebar.addPanel === "function") {
+              window.sidebar.addPanel(BOOKMARK_NAME, url, "");
+            }
+          } catch (_) {}
+          try {
+            const blob = new Blob(["[InternetShortcut]\r\nURL=" + url + "\r\n"], { type: "application/octet-stream" });
+            const href = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = href;
+            a.download = BOOKMARK_NAME + ".url";
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            setTimeout(() => URL.revokeObjectURL(href), 1500);
+          } catch (_) {}
+          try {
+            localStorage.setItem("kimtaehoon_favorite_v1", JSON.stringify({ name: BOOKMARK_NAME, url, at: Date.now() }));
+          } catch (_) {}
+          showToast(BOOKMARK_NAME + "을 즐겨찾기에 추가했습니다");
+        }
+
+        if (sheet) {
+          sheet.addEventListener("click", (e) => {
+            if (e.target === sheet) closeBookmarkSheet();
+          });
+        }
+        if (sheetNo) sheetNo.addEventListener("click", closeBookmarkSheet);
+        if (sheetYes) {
+          sheetYes.addEventListener("click", () => {
+            saveFavorite();
+            closeBookmarkSheet();
+          });
+        }
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") closeBookmarkSheet();
+        });
 
         btn.addEventListener("click", (e) => {
           e.preventDefault();
-          revealSuneung();
+          openBookmarkSheet();
         });
 
         paint();
