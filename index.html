@@ -652,6 +652,48 @@
       }
     }
 
+    /* PC: D-day 왼쪽 테두리 = 사이드바 [접기] 대수능 왼쪽 테두리 */
+    @media (min-width: 1280px) {
+      .nav {
+        padding-left: env(safe-area-inset-left, 0px);
+        padding-right: env(safe-area-inset-right, 0px);
+        grid-template-columns: minmax(0, 1560px) 128px;
+        justify-content: center;
+        column-gap: 0;
+      }
+
+      .nav-actions {
+        display: contents;
+      }
+
+      .nav-brand {
+        grid-column: 1;
+        justify-self: start;
+      }
+
+      .nav-links {
+        grid-column: 1;
+        justify-self: center;
+      }
+
+      .inquiry-btn {
+        grid-column: 1;
+        justify-self: end;
+        align-self: center;
+      }
+
+      .suneung-dday {
+        grid-column: 2;
+        width: 118px;
+        justify-self: end;
+        align-self: center;
+      }
+
+      .suneung-dday-date {
+        display: none;
+      }
+    }
+
     .inquiry-btn {
       display: inline-flex;
       align-items: center;
@@ -4062,24 +4104,19 @@
     }
 
     .sagwan-result-btn.is-done {
-      border-color: rgba(225, 48, 108, 0.28);
-      background: linear-gradient(180deg, #ff8ab8 0%, #e1306c 52%, #c13584 100%);
+      border: 1px solid #185c37;
+      border-radius: 6px;
+      background:
+        linear-gradient(180deg, #2e8b57 0%, #217346 62%, #185c37 100%);
       color: #fff;
       box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.4),
-        0 6px 16px rgba(225, 48, 108, 0.28);
-      animation: sagwanReadyPulse 2.4s ease-in-out infinite;
+        inset 0 1px 0 rgba(255, 255, 255, 0.28),
+        0 3px 8px rgba(24, 92, 55, 0.22);
+      animation: none;
     }
 
     .sagwan-result-btn.is-done::before {
-      content: "";
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #fff;
-      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.55);
-      animation: sagwanReadyDot 1.6s ease-out infinite;
-      flex-shrink: 0;
+      display: none;
     }
 
     .sagwan-result-btn .ic {
@@ -4095,9 +4132,10 @@
     }
 
     .sagwan-result-btn.is-done .ic {
+      border-radius: 4px;
       background: #fff;
-      color: #e1306c;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      color: #217346;
+      box-shadow: inset 0 0 0 1px #185c37;
     }
 
     .sagwan-result-btn .ic svg {
@@ -4224,8 +4262,8 @@
     .sagwan-result-ready strong {
       display: inline-block;
       padding: 8px 14px;
-      border-radius: 999px;
-      background: linear-gradient(180deg, #ff8ab8 0%, #e1306c 100%);
+      border-radius: 6px;
+      background: linear-gradient(180deg, #2e8b57 0%, #217346 100%);
       color: #fff;
       font-size: 15px;
       font-weight: 800;
@@ -9230,6 +9268,12 @@
         function applyResultReadyView(ready) {
           if (resultBtn) resultBtn.classList.toggle("is-done", ready);
           if (resultBtnLabel) resultBtnLabel.textContent = ready ? RESULT_READY_TEXT : "필기 점수공유 결과";
+          const ic = resultBtn && resultBtn.querySelector(".ic");
+          if (ic) {
+            ic.innerHTML = ready
+              ? '<svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="14" rx="1.6" stroke="currentColor" stroke-width="1.7"/><path d="M4 10h16M4 14.2h16M10 5v14" stroke="currentColor" stroke-width="1.55"/><path d="M13.2 8.4 16.4 15M16.4 8.4 13.2 15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>'
+              : '<svg viewBox="0 0 24 24" fill="none"><path d="M5 7.5h14v11H5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5 8.2l7 5.2 7-5.2" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>';
+          }
           if (resultForm) resultForm.hidden = ready;
           if (resultReady) resultReady.hidden = !ready;
         }
