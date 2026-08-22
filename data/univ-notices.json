@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-22",
-  "updatedAt": "2026-08-22T04:55:55.348Z",
-  "checkedAt": "2026-08-22T04:55:55.348Z",
+  "updatedAt": "2026-08-22T05:21:47.847Z",
+  "checkedAt": "2026-08-22T05:21:47.847Z",
   "sources": [
     {
       "id": "u001",
@@ -1529,6 +1529,17 @@
     }
   ],
   "notices": [
+    {
+      "id": "d4c1c3753af04007e2cd",
+      "univId": "u033",
+      "univName": "이화여대",
+      "title": "2027학년도 재외국민 특별전형(3월 입학) 면접고사 신분증 미지참자의 신분확인 절차 안내",
+      "preview": "이화여대 입학 공지사항 미리보기",
+      "url": "https://admission.ewha.ac.kr/admission/html/ewharo/noticeView.asp?idx=15419",
+      "homeUrl": "https://admission.ewha.ac.kr/admission/html/main/intro.asp",
+      "dateISO": "2026-08-22",
+      "dateText": "2026.08.22"
+    },
     {
       "id": "d015577d8ea981453bc3",
       "univId": "u245",
@@ -3591,5 +3602,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=35 empty=26 fail=155 fresh=166"
+  "statusReason": "ok=36 empty=36 fail=144 fresh=167"
 }
