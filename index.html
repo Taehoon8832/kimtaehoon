@@ -4249,6 +4249,11 @@
       min-width: 2.5em;
     }
 
+    .fold-block[data-fold="suneung"] .fold-rule::before,
+    .fold-block[data-fold="suneung"] .fold-rule::after {
+      display: none;
+    }
+
     .fold-rail {
       position: sticky;
       top: calc(var(--nav-offset, 72px) + 12px);
@@ -4339,6 +4344,12 @@
     }
 
     @media (max-width: 1279px) {
+      .fold-block[data-fold="suneung"] .fold-rule {
+        min-height: 0;
+        margin: 8px auto 4px;
+        justify-content: flex-end;
+      }
+
       .fold-toggle {
         display: inline-flex;
         flex-shrink: 0;
@@ -4435,7 +4446,10 @@
       }
 
       .fold-block[data-fold="suneung"] .fold-rule {
-        margin: 12px auto 8px;
+        display: none;
+        min-height: 0;
+        height: 0;
+        margin: 0;
       }
 
       .fold-block[data-fold="suneung"] .suneung-strip {
@@ -4445,6 +4459,7 @@
       .fold-rail {
         display: flex;
         margin-top: 0;
+        align-self: start;
       }
     }
 
@@ -7096,8 +7111,13 @@
         <strong id="sagwanResultTitle">필기 점수공유 결과</strong>
         <button type="button" class="sagwan-modal-close" id="sagwanResultClose" aria-label="닫기">×</button>
       </div>
+      <div class="sagwan-result-ready" id="sagwanResultReady">
+        <span class="sagwan-result-badge" id="sagwanResultBadge">수합 중</span>
+        <strong id="sagwanResultReadyTitle">8/30까지 점수를 모으고 있습니다</strong>
+        <p id="sagwanResultReadyText">참여하신 이메일로 결과가 안내됩니다.</p>
+      </div>
       <form class="sagwan-result-form" id="sagwanResultForm">
-        <label for="sagwanResultEmail">점공 참여 이메일</label>
+        <label for="sagwanResultEmail">이메일 주소</label>
         <div class="sagwan-result-row">
           <input
             type="email"
@@ -7111,13 +7131,7 @@
           <button type="submit" class="sagwan-result-confirm" id="sagwanResultConfirm">확인</button>
         </div>
         <p class="err" id="sagwanResultEmailError" hidden>올바른 이메일 주소를 입력해 주세요.</p>
-        <p class="sagwan-result-hint">8/30까지 수합한 뒤, 입력한 주소로 결과를 안내합니다.</p>
       </form>
-      <div class="sagwan-result-ready" id="sagwanResultReady" hidden>
-        <span class="sagwan-result-badge">수합 중</span>
-        <strong>8/30까지 점수를 모으고 있습니다</strong>
-        <p>참여하신 이메일로 결과가 안내됩니다.</p>
-      </div>
     </div>
   </div>
 
@@ -10012,8 +10026,6 @@
           return;
         }
         const candidates = [
-          document.querySelector(".suneung-player"),
-          document.querySelector(".suneung-col-a"),
           document.querySelector(".suneung-panel"),
           document.querySelector(".sagwan-strip"),
           document.querySelector(".chat-section")
@@ -10286,7 +10298,7 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
 
         function applyFastRate(yt) {
           if (!ytReady(yt)) return;
-          try { yt.setPlaybackRate(1); } catch (_) {}
+          try { yt.setPlaybackRate(1.25); } catch (_) {}
         }
 
         function ytDuration(yt) {
@@ -10619,6 +10631,9 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
         const resultEmail = document.getElementById("sagwanResultEmail");
         const resultEmailError = document.getElementById("sagwanResultEmailError");
         const resultReady = document.getElementById("sagwanResultReady");
+        const resultBadge = document.getElementById("sagwanResultBadge");
+        const resultReadyTitle = document.getElementById("sagwanResultReadyTitle");
+        const resultReadyText = document.getElementById("sagwanResultReadyText");
         const RESULT_KEY = "kimtaehoon_sagwan_result_v1";
         const RESULT_READY_TEXT = "준비중(8/30까지 수합중)";
 
@@ -10642,8 +10657,11 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
               ? '<svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="14" rx="1.6" stroke="currentColor" stroke-width="1.7"/><path d="M4 10h16M4 14.2h16M10 5v14" stroke="currentColor" stroke-width="1.55"/><path d="M13.2 8.4 16.4 15M16.4 8.4 13.2 15" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>'
               : '<svg viewBox="0 0 24 24" fill="none"><path d="M5 7.5h14v11H5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M5 8.2l7 5.2 7-5.2" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>';
           }
-          if (resultForm) resultForm.hidden = ready;
-          if (resultReady) resultReady.hidden = !ready;
+          if (resultForm) resultForm.hidden = false;
+          if (resultReady) resultReady.hidden = false;
+          if (resultBadge) resultBadge.textContent = ready ? "준비중" : "수합 중";
+          if (resultReadyTitle) resultReadyTitle.textContent = ready ? "준비중입니다" : "8/30까지 점수를 모으고 있습니다";
+          if (resultReadyText) resultReadyText.textContent = ready ? "입력하신 이메일로 결과가 안내됩니다." : "참여하신 이메일로 결과가 안내됩니다.";
         }
 
         function openResultModal() {
@@ -10654,8 +10672,8 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
           resultModal.hidden = false;
           resultModal.classList.add("is-open");
           document.body.style.overflow = "hidden";
-          if (!ready && resultEmail) {
-            resultEmail.value = "";
+          if (resultEmail) {
+            resultEmail.value = ready && readResultState()?.email ? readResultState().email : "";
             resultEmail.focus();
           }
         }
