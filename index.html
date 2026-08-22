@@ -3507,7 +3507,7 @@
       grid-template-columns: minmax(0, 1.22fr) minmax(0, 1.22fr) minmax(168px, 0.74fr) minmax(176px, 0.8fr);
       grid-template-areas: "v1 v2 a b";
       gap: 10px;
-      align-items: stretch;
+      align-items: start;
       min-height: 0;
     }
 
@@ -4141,7 +4141,7 @@
       box-sizing: border-box;
       min-height: 56px;
       width: min(1560px, 100%);
-      margin: 16px auto;
+      margin: 18px auto;
       padding: 8px clamp(10px, 3vw, 20px);
     }
 
@@ -4151,18 +4151,41 @@
       left: clamp(12px, 3vw, 24px);
       right: 108px;
       top: 50%;
-      height: 1px;
+      height: 2px;
       transform: translateY(-50%);
+      border-radius: 999px;
       background: linear-gradient(
         90deg,
         transparent 0%,
-        #efefef 8%,
-        #dbdbdb 50%,
-        #efefef 92%,
+        #6b4f3a 8%,
+        #a67c52 38%,
+        #e4c997 50%,
+        #a67c52 62%,
+        #6b4f3a 92%,
         transparent 100%
       );
-      box-shadow: none;
+      box-shadow:
+        0 1px 0 rgba(255, 248, 236, 0.8),
+        0 1px 3px rgba(61, 43, 31, 0.16);
       border: 0;
+    }
+
+    .fold-rule::after {
+      content: "";
+      position: absolute;
+      left: calc((100% - 108px) / 2);
+      top: 50%;
+      z-index: 1;
+      width: 8px;
+      height: 8px;
+      transform: translate(-50%, -50%) rotate(45deg);
+      border-radius: 1.5px;
+      background: linear-gradient(180deg, #f7edd8 0%, #c4a06a 100%);
+      border: 1px solid rgba(90, 64, 36, 0.42);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.78),
+        0 1px 2px rgba(61, 43, 31, 0.2);
+      pointer-events: none;
     }
 
     .fold-toggle {
@@ -4329,6 +4352,10 @@
       .fold-rule::before {
         right: 124px;
       }
+
+      .fold-rule::after {
+        left: calc((100% - 124px) / 2);
+      }
     }
 
     @media (max-width: 720px) {
@@ -4340,6 +4367,10 @@
       .fold-rule::before {
         left: 10px;
         right: 118px;
+      }
+
+      .fold-rule::after {
+        left: calc((100% - 118px) / 2);
       }
 
       .fold-toggle {
@@ -4362,6 +4393,10 @@
         right: 108px;
       }
 
+      .fold-rule::after {
+        left: calc((100% - 108px) / 2);
+      }
+
       .fold-toggle {
         min-height: 44px;
         font-size: 12.5px;
@@ -4382,26 +4417,34 @@
       }
 
       .fold-rule {
-        min-height: 0;
-        height: 0;
-        margin: 22px auto;
+        min-height: 24px;
+        height: auto;
+        margin: 20px auto;
         padding: 0;
       }
 
       .fold-rule::before {
         left: 0;
         right: 0;
-        top: 0;
-        transform: none;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .fold-rule::after {
+        left: 50%;
+      }
+
+      .fold-block[data-fold="suneung"] .fold-rule {
+        margin: 12px auto 8px;
       }
 
       .fold-block[data-fold="suneung"] .suneung-strip {
-        padding-top: 12px;
+        padding-top: 0;
       }
 
       .fold-rail {
         display: flex;
-        margin-top: 25px;
+        margin-top: 0;
       }
     }
 
@@ -4624,11 +4667,18 @@
         background: linear-gradient(
           90deg,
           transparent 0%,
-          #2c2c2e 8%,
-          #3a3a3c 50%,
-          #2c2c2e 92%,
+          #6b5340 8%,
+          #c4a06a 50%,
+          #6b5340 92%,
           transparent 100%
         );
+        box-shadow:
+          0 1px 0 rgba(255, 255, 255, 0.08),
+          0 1px 3px rgba(0, 0, 0, 0.28);
+      }
+      .fold-rule::after {
+        background: linear-gradient(180deg, #e6d3a8 0%, #8a6a40 100%);
+        border-color: rgba(232, 213, 181, 0.4);
       }
       .fold-toggle,
       .fold-rail-btn,
@@ -9910,6 +9960,7 @@
           if (!open && id === "suneung") {
             document.dispatchEvent(new CustomEvent("suneung-collapse"));
           }
+          syncFoldRailTop();
           if (persist !== false && !open) {
             requestAnimationFrame(() => {
               try { block.scrollIntoView({ block: "nearest", behavior: "smooth" }); } catch (_) {}
@@ -9947,6 +9998,42 @@
           const id = block.getAttribute("data-fold");
           setOpen(block, saved[id] === false ? false : true, false);
         });
+        syncFoldRailTop();
+        requestAnimationFrame(syncFoldRailTop);
+        window.addEventListener("resize", syncFoldRailTop);
+      }
+
+      function syncFoldRailTop() {
+        const rail = document.getElementById("foldRail");
+        const main = document.querySelector(".lower-main");
+        if (!rail || !main) return;
+        if (window.innerWidth < 1280) {
+          rail.style.marginTop = "";
+          return;
+        }
+        const candidates = [
+          document.querySelector(".suneung-player"),
+          document.querySelector(".suneung-col-a"),
+          document.querySelector(".suneung-panel"),
+          document.querySelector(".sagwan-strip"),
+          document.querySelector(".chat-section")
+        ];
+        let target = null;
+        for (let i = 0; i < candidates.length; i++) {
+          const el = candidates[i];
+          if (!el) continue;
+          const block = el.closest(".fold-block");
+          if (block && block.classList.contains("is-collapsed")) continue;
+          if (el.offsetParent === null) continue;
+          target = el;
+          break;
+        }
+        if (!target) {
+          rail.style.marginTop = "";
+          return;
+        }
+        const top = Math.round(target.getBoundingClientRect().top - main.getBoundingClientRect().top);
+        rail.style.marginTop = Math.max(0, top) + "px";
       }
 
       function bootSuneungPanel() {
@@ -9974,9 +10061,9 @@
 
         let activePrintId = "";
         let activePrintMode = "image";
-        const SHEET_ZOOM_MIN = 0.75;
+        const SHEET_ZOOM_MIN = 0.25;
         const SHEET_ZOOM_MAX = 2;
-        const SHEET_ZOOM_STEP = 0.25;
+        const SHEET_ZOOM_STEP = 0.1;
         let sheetZoom = 1;
 
         function applySheetZoom() {
@@ -10197,17 +10284,9 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
           }
         }
 
-        function fastestRate(yt) {
-          try {
-            const rates = yt.getAvailablePlaybackRates() || [];
-            if (rates.length) return rates[rates.length - 1];
-          } catch (_) {}
-          return 2;
-        }
-
         function applyFastRate(yt) {
           if (!ytReady(yt)) return;
-          try { yt.setPlaybackRate(fastestRate(yt)); } catch (_) {}
+          try { yt.setPlaybackRate(1); } catch (_) {}
         }
 
         function ytDuration(yt) {
