@@ -3552,6 +3552,11 @@
       font: inherit;
     }
 
+    .suneung-player.has-media .suneung-player-hit {
+      bottom: 52px;
+      height: auto;
+    }
+
     .suneung-player.is-on .suneung-player-hit {
       background: transparent;
     }
@@ -3639,12 +3644,13 @@
       left: 0;
       right: 0;
       bottom: 0;
-      z-index: 5;
+      z-index: 8;
       display: none;
       align-items: center;
-      padding: 14px 10px 6px;
+      padding: 16px 10px 8px;
       background: linear-gradient(180deg, transparent 0%, rgba(12, 10, 8, 0.55) 70%);
       pointer-events: auto;
+      touch-action: none;
     }
 
     .suneung-player.has-media .suneung-seek {
@@ -4114,8 +4120,12 @@
       contain-intrinsic-size: auto 900px;
     }
 
-    .fold-body > .chat-section {
+    .fold-body {
       padding-top: 4px;
+    }
+
+    .fold-body > .chat-section {
+      padding-top: 8px;
       padding-bottom: 10px;
     }
 
@@ -4129,21 +4139,30 @@
       align-items: center;
       justify-content: flex-end;
       box-sizing: border-box;
-      min-height: 48px;
+      min-height: 56px;
       width: min(1560px, 100%);
-      margin: 4px auto;
-      padding: 4px clamp(10px, 3vw, 20px);
+      margin: 16px auto;
+      padding: 8px clamp(10px, 3vw, 20px);
     }
 
     .fold-rule::before {
       content: "";
       position: absolute;
-      left: clamp(10px, 3vw, 20px);
+      left: clamp(12px, 3vw, 24px);
       right: 108px;
       top: 50%;
       height: 1px;
-      background: #dbdbdb;
+      transform: translateY(-50%);
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        #efefef 8%,
+        #dbdbdb 50%,
+        #efefef 92%,
+        transparent 100%
+      );
       box-shadow: none;
+      border: 0;
     }
 
     .fold-toggle {
@@ -4363,15 +4382,17 @@
       }
 
       .fold-rule {
-        min-height: 1px;
-        height: 1px;
-        margin: 0 auto;
+        min-height: 0;
+        height: 0;
+        margin: 22px auto;
         padding: 0;
       }
 
       .fold-rule::before {
         left: 0;
         right: 0;
+        top: 0;
+        transform: none;
       }
 
       .fold-block[data-fold="suneung"] .suneung-strip {
@@ -4598,6 +4619,16 @@
       }
       .suneung-print-txt strong {
         color: #f5f5f7;
+      }
+      .fold-rule::before {
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          #2c2c2e 8%,
+          #3a3a3c 50%,
+          #2c2c2e 92%,
+          transparent 100%
+        );
       }
       .fold-toggle,
       .fold-rail-btn,
@@ -9936,7 +9967,7 @@
         if (!strip || !panel) return;
 
         const previewUrl = (id) => `https://drive.google.com/file/d/${id}/preview`;
-        const directUrl = (id) => `https://drive.google.com/uc?export=download&id=${id}`;
+        const directUrl = (id) => `https://drive.usercontent.google.com/download?id=${id}&export=download&confirm=t`;
         const thumbUrl = (id, size) => `https://drive.google.com/thumbnail?id=${id}&sz=w${size}`;
         const lhUrl = (id, size) => `https://lh3.googleusercontent.com/d/${id}=w${size}`;
         const viewUrl = (id) => `https://drive.google.com/uc?export=view&id=${id}`;
@@ -10131,7 +10162,7 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
           }
         }
 
-        const PLAY_RATE = 2.5;
+        const PLAY_RATE = 3;
 
         function playerVideo(player) {
           return player.querySelector(".suneung-stage video");
@@ -10150,46 +10181,133 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
           if (chip) chip.textContent = playing ? "클릭하면 중지" : "클릭하면 재생";
         }
 
+        function mediaLength(video) {
+          const d = video.duration;
+          if (Number.isFinite(d) && d > 0) return d;
+          try {
+            if (video.seekable && video.seekable.length) {
+              return video.seekable.end(video.seekable.length - 1);
+            }
+          } catch (_) {}
+          const saved = Number(video.dataset.mediaLen);
+          return Number.isFinite(saved) && saved > 0 ? saved : 0;
+        }
+
+        function rememberLength(video) {
+          const len = mediaLength(video);
+          if (len > 0) video.dataset.mediaLen = String(len);
+          return len;
+        }
+
+        function jumpVideo(video, ratio) {
+          const len = rememberLength(video);
+          if (len <= 0) {
+            video.dataset.pendingSeek = String(ratio);
+            return false;
+          }
+          delete video.dataset.pendingSeek;
+          const t = Math.max(0, Math.min(len * 0.999, ratio * len));
+          try {
+            if (typeof video.fastSeek === "function") video.fastSeek(t);
+            else video.currentTime = t;
+          } catch {
+            video.currentTime = t;
+          }
+          video.playbackRate = PLAY_RATE;
+          video.defaultPlaybackRate = PLAY_RATE;
+          return true;
+        }
+
+        function playFast(video) {
+          video.playbackRate = PLAY_RATE;
+          video.defaultPlaybackRate = PLAY_RATE;
+          const playTry = video.play();
+          if (playTry && typeof playTry.catch === "function") playTry.catch(() => {});
+        }
+
         function bindSeek(player, video) {
           const seek = player.querySelector(".suneung-seek");
           const range = player.querySelector(".suneung-seek-range");
-          if (!seek || !range || range.dataset.bound === "1") return;
-          range.dataset.bound = "1";
+          if (!seek || !range) return;
           seek.hidden = false;
           player.classList.add("has-media");
+          if (range.dataset.bound === "1") {
+            rememberLength(video);
+            return;
+          }
+          range.dataset.bound = "1";
           let dragging = false;
-          const seekTo = () => {
-            if (!Number.isFinite(video.duration) || video.duration <= 0) return;
-            video.currentTime = (Number(range.value) / 1000) * video.duration;
+
+          const applyRatio = (ratio) => {
+            range.value = String(Math.round(ratio * 1000));
+            jumpVideo(video, ratio);
           };
-          const finishSeek = () => {
-            if (!dragging) return;
-            dragging = false;
-            seekTo();
-            video.playbackRate = PLAY_RATE;
-            const playTry = video.play();
-            if (playTry && typeof playTry.catch === "function") playTry.catch(() => {});
-            setPlayerUi(player, true);
+
+          const ratioFromClientX = (clientX) => {
+            const rect = seek.getBoundingClientRect();
+            if (!rect.width) return 0;
+            return Math.max(0, Math.min(1, (clientX - rect.left) / rect.width));
           };
+
           const startDrag = (e) => {
+            e.preventDefault();
             e.stopPropagation();
             dragging = true;
+            const x = e.clientX ?? (e.touches && e.touches[0] && e.touches[0].clientX);
+            if (typeof x === "number") applyRatio(ratioFromClientX(x));
           };
-          range.addEventListener("pointerdown", startDrag);
-          range.addEventListener("touchstart", startDrag, { passive: true });
-          range.addEventListener("click", (e) => e.stopPropagation());
+
+          const moveDrag = (e) => {
+            if (!dragging) return;
+            e.preventDefault();
+            const x = e.clientX ?? (e.touches && e.touches[0] && e.touches[0].clientX);
+            if (typeof x === "number") applyRatio(ratioFromClientX(x));
+          };
+
+          const endDrag = (e) => {
+            if (!dragging) return;
+            if (e) e.stopPropagation();
+            dragging = false;
+            const x = e && (e.clientX ?? (e.changedTouches && e.changedTouches[0] && e.changedTouches[0].clientX));
+            if (typeof x === "number") applyRatio(ratioFromClientX(x));
+            else jumpVideo(video, Number(range.value) / 1000);
+            const resume = () => {
+              playFast(video);
+              setPlayerUi(player, true);
+            };
+            if (video.seeking) video.addEventListener("seeked", resume, { once: true });
+            resume();
+          };
+
+          seek.addEventListener("pointerdown", (e) => {
+            startDrag(e);
+            if (seek.setPointerCapture && e.pointerId != null) {
+              try { seek.setPointerCapture(e.pointerId); } catch (_) {}
+            }
+          });
+          seek.addEventListener("pointermove", moveDrag);
+          seek.addEventListener("pointerup", endDrag);
+          seek.addEventListener("pointercancel", endDrag);
+          seek.addEventListener("click", (e) => e.stopPropagation());
           range.addEventListener("input", (e) => {
             e.stopPropagation();
             dragging = true;
-            seekTo();
+            jumpVideo(video, Number(range.value) / 1000);
           });
-          range.addEventListener("pointerup", finishSeek);
-          range.addEventListener("pointercancel", finishSeek);
-          range.addEventListener("change", finishSeek);
-          range.addEventListener("touchend", finishSeek);
+          range.addEventListener("change", endDrag);
+          const flushPending = () => {
+            rememberLength(video);
+            const pending = Number(video.dataset.pendingSeek);
+            if (Number.isFinite(pending) && pending >= 0) jumpVideo(video, pending);
+          };
+          video.addEventListener("loadedmetadata", flushPending);
+          video.addEventListener("durationchange", flushPending);
+          video.addEventListener("progress", () => rememberLength(video));
           video.addEventListener("timeupdate", () => {
-            if (dragging || !Number.isFinite(video.duration) || video.duration <= 0) return;
-            range.value = String(Math.round((video.currentTime / video.duration) * 1000));
+            if (dragging) return;
+            const len = rememberLength(video);
+            if (len <= 0) return;
+            range.value = String(Math.round((video.currentTime / len) * 1000));
           });
         }
 
@@ -10239,9 +10357,7 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
           });
           const existing = playerVideo(player);
           if (existing) {
-            existing.playbackRate = PLAY_RATE;
-            const playTry = existing.play();
-            if (playTry && typeof playTry.catch === "function") playTry.catch(() => {});
+            playFast(existing);
             setPlayerUi(player, true);
             return;
           }
@@ -10258,6 +10374,9 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
           video.src = directUrl(id);
           const fallback = () => {
             if (playerVideo(player) !== video) return;
+            const seek = player.querySelector(".suneung-seek");
+            if (seek) seek.hidden = true;
+            player.classList.remove("has-media");
             stage.innerHTML = "";
             const iframe = document.createElement("iframe");
             iframe.src = `${previewUrl(id)}?autoplay=1`;
@@ -10278,10 +10397,7 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
           stage.innerHTML = "";
           stage.appendChild(video);
           bindSeek(player, video);
-          const playTry = video.play();
-          if (playTry && typeof playTry.catch === "function") {
-            playTry.catch(fallback);
-          }
+          playFast(video);
           setPlayerUi(player, true);
         }
 
