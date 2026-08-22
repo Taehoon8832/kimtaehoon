@@ -3045,6 +3045,442 @@
       100% { background-position: -40% 0; opacity: 0.35; }
     }
 
+    /* —— 2027 대수능 안내 (사관학교 일정 위) —— */
+    .suneung-strip {
+      width: min(1560px, 100%);
+      margin: 0 auto;
+      padding: 10px clamp(12px, 3vw, 20px) 0;
+      display: grid;
+      gap: 0;
+    }
+
+    .suneung-panel {
+      display: grid;
+      min-width: 0;
+      overflow: hidden;
+      border-radius: 16px 16px 0 0;
+      padding: 10px 10px 8px;
+      background:
+        radial-gradient(80% 90% at 8% 0%, rgba(166, 124, 82, 0.16), transparent 48%),
+        linear-gradient(180deg, #f7f1e8 0%, #efe6d8 100%);
+      border: 1.5px solid rgba(61, 43, 31, 0.18);
+      border-bottom: 0;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    }
+
+    .suneung-strip.is-collapsed .suneung-panel {
+      display: none;
+    }
+
+    .suneung-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.22fr) minmax(0, 1.22fr) minmax(168px, 0.74fr) minmax(176px, 0.8fr);
+      grid-template-areas: "v1 v2 a b";
+      gap: 10px;
+      align-items: stretch;
+      min-height: 0;
+    }
+
+    .suneung-player[data-slot="1"] { grid-area: v1; }
+    .suneung-player[data-slot="2"] { grid-area: v2; }
+    .suneung-col-a { grid-area: a; }
+    .suneung-col-b { grid-area: b; }
+
+    .suneung-player {
+      position: relative;
+      min-width: 0;
+      min-height: 180px;
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #161210;
+      border: 1.5px solid #3d2b1f;
+      box-shadow: 0 8px 18px rgba(40, 28, 16, 0.16);
+      isolation: isolate;
+    }
+
+    .suneung-player.is-on {
+      box-shadow: 0 0 0 2px #8b6914, 0 10px 22px rgba(40, 28, 16, 0.22);
+    }
+
+    .suneung-player-hit,
+    .suneung-stage {
+      position: absolute;
+      inset: 0;
+    }
+
+    .suneung-player-hit {
+      z-index: 2;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      cursor: pointer;
+      color: inherit;
+      font: inherit;
+    }
+
+    .suneung-player.is-on .suneung-player-hit {
+      background: transparent;
+    }
+
+    .suneung-poster,
+    .suneung-stage iframe,
+    .suneung-stage video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: 0;
+      background: #111;
+    }
+
+    .suneung-stage iframe,
+    .suneung-stage video {
+      pointer-events: none;
+    }
+
+    .suneung-player.is-on .suneung-poster,
+    .suneung-player.is-on .suneung-play {
+      opacity: 0;
+    }
+
+    .suneung-play {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 56px;
+      height: 56px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(160deg, #f7e7b0 0%, #e0c46a 42%, #8b6914 100%);
+      color: #14110c;
+      border: 2px solid #111;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+      transition: transform var(--duration-fast) var(--ease-spring);
+    }
+
+    .suneung-player-hit:hover .suneung-play,
+    .suneung-player-hit:focus-visible .suneung-play {
+      transform: translate(-50%, -50%) scale(1.06);
+    }
+
+    .suneung-play svg {
+      width: 22px;
+      height: 22px;
+      margin-left: 2px;
+    }
+
+    .suneung-player.is-on .suneung-pause-chip {
+      opacity: 1;
+      transform: none;
+    }
+
+    .suneung-pause-chip {
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      z-index: 3;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(20, 14, 10, 0.72);
+      color: #f8efd8;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .suneung-caption {
+      position: absolute;
+      left: 8px;
+      bottom: 8px;
+      z-index: 3;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: rgba(20, 14, 10, 0.7);
+      color: #f8efd8;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .suneung-col-a,
+    .suneung-col-b {
+      min-width: 0;
+      display: grid;
+      gap: 8px;
+    }
+
+    .suneung-col-a { grid-template-rows: repeat(3, minmax(52px, 1fr)); }
+    .suneung-col-b { grid-template-rows: repeat(4, minmax(40px, 1fr)); }
+
+    .suneung-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5em;
+      min-width: 0;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1.5px solid #3d2b1f;
+      background: linear-gradient(165deg, #fffdf8 0%, #f3ebe0 100%);
+      color: #2a1c12;
+      text-decoration: none;
+      text-align: center;
+      font: inherit;
+      font-size: 12.5px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      word-break: keep-all;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(80, 50, 20, 0.1);
+      transition: transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
+    }
+
+    .suneung-btn:hover,
+    .suneung-btn:focus-visible {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 16px rgba(80, 50, 20, 0.16);
+      outline: none;
+    }
+
+    .suneung-btn.is-print {
+      background:
+        radial-gradient(80% 80% at 50% 0%, rgba(255, 236, 190, 0.55), transparent 60%),
+        linear-gradient(165deg, #2a1c12 0%, #4a3424 45%, #8b6914 100%);
+      color: #fff9ec;
+      border-color: #1a120c;
+    }
+
+    .suneung-btn.is-print[aria-expanded="true"] {
+      box-shadow: 0 0 0 2px #c9a227, 0 8px 16px rgba(80, 50, 20, 0.2);
+    }
+
+    .suneung-btn.suneung-ext {
+      justify-content: flex-start;
+      padding-left: 12px;
+    }
+
+    .suneung-ext img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+      flex: 0 0 auto;
+      border-radius: 4px;
+    }
+
+    .suneung-ext span {
+      min-width: 0;
+    }
+
+    .suneung-fold {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 28px;
+      margin: 0;
+    }
+
+    .suneung-fold::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent 0%, #6b4f3a 10%, #a67c52 50%, #6b4f3a 90%, transparent 100%);
+      box-shadow: 0 1px 0 rgba(245, 230, 200, 0.35);
+    }
+
+    .suneung-fold-btn {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border: 1.5px solid #3d2b1f;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #fffdf8, #f3ebe0);
+      color: #2a1c12;
+      font: inherit;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(80, 50, 20, 0.12);
+    }
+
+    .suneung-fold-btn:hover,
+    .suneung-fold-btn:focus-visible {
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .suneung-fold-btn .chev {
+      width: 14px;
+      height: 14px;
+      display: grid;
+      place-items: center;
+      transition: transform var(--duration-fast) var(--ease-out);
+    }
+
+    .suneung-strip.is-collapsed .suneung-fold-btn .chev {
+      transform: rotate(180deg);
+    }
+
+    .suneung-drawer {
+      position: fixed;
+      top: 18vh;
+      right: max(12px, env(safe-area-inset-right));
+      z-index: 88;
+      width: min(280px, calc(100vw - 24px));
+      display: none;
+      gap: 8px;
+      padding: 12px;
+      border-radius: 16px;
+      border: 1.5px solid #3d2b1f;
+      background: linear-gradient(180deg, #fffdf8 0%, #f4ebe0 100%);
+      box-shadow: 0 16px 36px rgba(40, 28, 16, 0.28);
+    }
+
+    .suneung-drawer.is-open {
+      display: grid;
+    }
+
+    .suneung-drawer strong {
+      font-size: 12.5px;
+      letter-spacing: -0.03em;
+      color: #2a1c12;
+    }
+
+    .suneung-drawer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .suneung-print-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 6px;
+      border-radius: 12px;
+      border: 1.5px solid rgba(61, 43, 31, 0.2);
+      background: #fff;
+      color: #2a1c12;
+      text-decoration: none;
+      font: inherit;
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      text-align: center;
+      word-break: keep-all;
+    }
+
+    .suneung-print-item:hover,
+    .suneung-print-item:focus-visible {
+      border-color: #8b6914;
+      outline: none;
+    }
+
+    .suneung-print-item .num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(145deg, #6b4f3a, #3d2b1f);
+      color: #f5e6c8;
+      font-size: 13px;
+    }
+
+    @media (max-width: 1100px) {
+      .suneung-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+          "v1 v2"
+          "a b";
+      }
+      .suneung-player {
+        min-height: 0;
+      }
+      .suneung-col-a,
+      .suneung-col-b {
+        grid-template-rows: none;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .suneung-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "v1"
+          "v2"
+          "a"
+          "b";
+      }
+      .suneung-player {
+        aspect-ratio: 16 / 9;
+        min-height: 0;
+      }
+      .suneung-col-a,
+      .suneung-col-b {
+        grid-template-columns: 1fr;
+      }
+      .suneung-drawer {
+        top: auto;
+        bottom: max(12px, env(safe-area-inset-bottom));
+        right: 12px;
+        left: 12px;
+        width: auto;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .suneung-panel {
+        background:
+          radial-gradient(80% 90% at 8% 0%, rgba(166, 124, 82, 0.18), transparent 48%),
+          linear-gradient(180deg, #2a241e 0%, #1c1814 100%);
+        border-color: rgba(245, 230, 200, 0.16);
+      }
+      .suneung-btn:not(.is-print) {
+        background: linear-gradient(165deg, #3a3128 0%, #2a241e 100%);
+        color: #f5ead6;
+        border-color: rgba(245, 230, 200, 0.28);
+      }
+      .suneung-fold-btn {
+        background: linear-gradient(180deg, #3a3128, #2a241e);
+        color: #f5ead6;
+        border-color: rgba(245, 230, 200, 0.28);
+      }
+      .suneung-drawer {
+        background: linear-gradient(180deg, #2a241e, #1c1814);
+        border-color: rgba(245, 230, 200, 0.28);
+      }
+      .suneung-drawer strong,
+      .suneung-print-item {
+        color: #f5ead6;
+      }
+      .suneung-print-item {
+        background: #241f1a;
+        border-color: rgba(245, 230, 200, 0.2);
+      }
+    }
+
     /* —— 사관학교 일정 · 점공 D-day —— */
     .sagwan-strip {
       width: min(1560px, 100%);
@@ -4751,6 +5187,85 @@
     </div>
 
     <div class="lower-layout">
+    <section class="suneung-strip" id="suneungStrip" aria-label="2027 대수능 안내">
+      <div class="suneung-panel" id="suneungPanel">
+        <div class="suneung-grid">
+          <article class="suneung-player" data-slot="1" data-drive="1cRACtOhhVN67Z4GSbuZ0ncwu-FT1LOXy">
+            <img class="suneung-poster" alt="" width="640" height="360" loading="lazy" decoding="async" src="https://drive.google.com/thumbnail?id=1cRACtOhhVN67Z4GSbuZ0ncwu-FT1LOXy&sz=w1280" />
+            <div class="suneung-stage" hidden></div>
+            <button type="button" class="suneung-player-hit" aria-pressed="false" aria-label="2027 대수능 원서접수 안내 영상 재생">
+              <span class="suneung-play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.4 6.8v10.4L18 12 8.4 6.8Z"/></svg>
+              </span>
+              <span class="suneung-caption">원서접수 안내</span>
+              <span class="suneung-pause-chip">클릭하면 중지</span>
+            </button>
+          </article>
+          <article class="suneung-player" data-slot="2" data-drive="1wsAiwVnYPmfHjIHRk-NrRNVvm8dT9L7D">
+            <img class="suneung-poster" alt="" width="640" height="360" loading="lazy" decoding="async" src="https://drive.google.com/thumbnail?id=1wsAiwVnYPmfHjIHRk-NrRNVvm8dT9L7D&sz=w1280" />
+            <div class="suneung-stage" hidden></div>
+            <button type="button" class="suneung-player-hit" aria-pressed="false" aria-label="2027 대수능 원서접수 안내 쇼츠 재생">
+              <span class="suneung-play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8.4 6.8v10.4L18 12 8.4 6.8Z"/></svg>
+              </span>
+              <span class="suneung-caption">원서접수 안내(쇼츠)</span>
+              <span class="suneung-pause-chip">클릭하면 중지</span>
+            </button>
+          </article>
+          <div class="suneung-col-a">
+            <a class="suneung-btn" href="https://drive.google.com/file/d/1bh5T87lBNVDhchWSOLAKgqg9-oosuUX_/view?usp=drive_link" target="_blank" rel="noopener noreferrer">2027 대수능 실시요강</a>
+            <a class="suneung-btn" href="https://drive.google.com/file/d/1cRACtOhhVN67Z4GSbuZ0ncwu-FT1LOXy/view?usp=drive_link" target="_blank" rel="noopener noreferrer">2027 대수능 원서접수 안내</a>
+            <button type="button" class="suneung-btn is-print" id="suneungPrintBtn" aria-expanded="false" aria-controls="suneungPrintDrawer">2027 대수능 사전입력(출력물)</button>
+          </div>
+          <div class="suneung-col-b">
+            <a class="suneung-btn suneung-ext" href="https://www.suneung.re.kr/boardCnts/list.do?boardID=1500229&amp;m=0301&amp;s=suneung&amp;searchStr=" target="_blank" rel="noopener noreferrer">
+              <img src="assets/suneung/kice.png" alt="" width="22" height="22" />
+              <span>교육과정 평가원</span>
+            </a>
+            <a class="suneung-btn suneung-ext" href="https://www.mycsat.re.kr/index.do" target="_blank" rel="noopener noreferrer">
+              <img src="assets/suneung/kice.png" alt="" width="22" height="22" />
+              <span>온라인 입력 홈피</span>
+            </a>
+            <a class="suneung-btn suneung-ext" href="https://apply.jinhakapply.com/" target="_blank" rel="noopener noreferrer">
+              <img src="assets/suneung/jinhak.png" alt="" width="22" height="22" />
+              <span>진학사 어플라이</span>
+            </a>
+            <a class="suneung-btn suneung-ext" href="https://www.uwayapply.com/" target="_blank" rel="noopener noreferrer">
+              <img src="assets/suneung/uway.png" alt="" width="22" height="22" />
+              <span>유웨이 어플라이</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="suneung-fold">
+        <button type="button" class="suneung-fold-btn" id="suneungFoldBtn" aria-expanded="true" aria-controls="suneungPanel">
+          <span class="chev" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
+              <path d="M6 14.5L12 8.5l6 6" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span id="suneungFoldLabel">2027 대수능 안내 접기</span>
+        </button>
+      </div>
+      <aside class="suneung-drawer" id="suneungPrintDrawer" hidden>
+        <strong>사전입력 출력물</strong>
+        <div class="suneung-drawer-grid">
+          <a class="suneung-print-item" href="https://drive.google.com/drive/folders/1FWeX5uVNqMRH8nTPR37uz5TlC6MfoUlA" target="_blank" rel="noopener noreferrer">
+            <span class="num">1</span>접수 안내
+          </a>
+          <a class="suneung-print-item" href="https://drive.google.com/drive/folders/1FWeX5uVNqMRH8nTPR37uz5TlC6MfoUlA" target="_blank" rel="noopener noreferrer">
+            <span class="num">2</span>사전 입력
+          </a>
+          <a class="suneung-print-item" href="https://drive.google.com/drive/folders/1FWeX5uVNqMRH8nTPR37uz5TlC6MfoUlA" target="_blank" rel="noopener noreferrer">
+            <span class="num">3</span>한눈에 보기
+          </a>
+          <a class="suneung-print-item" href="https://drive.google.com/drive/folders/1FWeX5uVNqMRH8nTPR37uz5TlC6MfoUlA" target="_blank" rel="noopener noreferrer">
+            <span class="num">4</span>접수 절차 6단계
+          </a>
+        </div>
+      </aside>
+    </section>
+
     <section class="sagwan-strip" aria-label="2027 사관학교 일정 및 점공">
       <div class="sagwan-schedule-row">
         <button type="button" class="sagwan-schedule-btn" id="sagwanScheduleBtn" aria-haspopup="dialog">
@@ -7893,6 +8408,122 @@
         updateSagwanVoteDom();
       }
 
+      function bootSuneungPanel() {
+        const strip = document.getElementById("suneungStrip");
+        const panel = document.getElementById("suneungPanel");
+        const foldBtn = document.getElementById("suneungFoldBtn");
+        const foldLabel = document.getElementById("suneungFoldLabel");
+        const printBtn = document.getElementById("suneungPrintBtn");
+        const drawer = document.getElementById("suneungPrintDrawer");
+        const FOLD_KEY = "kimtaehoon_suneung_open_v1";
+        if (!strip || !panel || !foldBtn) return;
+
+        const previewUrl = (id) => `https://drive.google.com/file/d/${id}/preview`;
+        const directUrl = (id) => `https://drive.google.com/uc?export=download&id=${id}`;
+
+        function setFold(open) {
+          strip.classList.toggle("is-collapsed", !open);
+          foldBtn.setAttribute("aria-expanded", open ? "true" : "false");
+          if (foldLabel) foldLabel.textContent = open ? "2027 대수능 안내 접기" : "2027 대수능 안내 펼치기";
+          try { localStorage.setItem(FOLD_KEY, open ? "1" : "0"); } catch (_) {}
+          if (!open) setDrawer(false);
+        }
+
+        function setDrawer(open) {
+          if (!drawer || !printBtn) return;
+          drawer.classList.toggle("is-open", open);
+          drawer.hidden = !open;
+          printBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        }
+
+        function stopPlayer(player) {
+          const stage = player.querySelector(".suneung-stage");
+          const hit = player.querySelector(".suneung-player-hit");
+          if (stage) {
+            stage.innerHTML = "";
+            stage.hidden = true;
+          }
+          player.classList.remove("is-on");
+          if (hit) {
+            hit.setAttribute("aria-pressed", "false");
+            const label = hit.getAttribute("aria-label") || "";
+            hit.setAttribute("aria-label", label.replace("중지", "재생"));
+          }
+        }
+
+        function playPlayer(player) {
+          const id = player.getAttribute("data-drive");
+          const stage = player.querySelector(".suneung-stage");
+          const hit = player.querySelector(".suneung-player-hit");
+          if (!id || !stage) return;
+          stage.hidden = false;
+          const video = document.createElement("video");
+          video.playsInline = true;
+          video.preload = "metadata";
+          video.src = directUrl(id);
+          const fallback = () => {
+            stage.innerHTML = "";
+            const iframe = document.createElement("iframe");
+            iframe.src = `${previewUrl(id)}?autoplay=1`;
+            iframe.allow = "autoplay; encrypted-media; fullscreen; picture-in-picture";
+            iframe.title = hit?.getAttribute("aria-label") || "대수능 안내 영상";
+            iframe.setAttribute("allowfullscreen", "");
+            stage.appendChild(iframe);
+          };
+          video.addEventListener("error", fallback, { once: true });
+          video.addEventListener("playing", () => player.classList.add("is-on"), { once: true });
+          stage.innerHTML = "";
+          stage.appendChild(video);
+          const playTry = video.play();
+          if (playTry && typeof playTry.catch === "function") {
+            playTry.catch(fallback);
+          }
+          player.classList.add("is-on");
+          if (hit) {
+            hit.setAttribute("aria-pressed", "true");
+            const label = hit.getAttribute("aria-label") || "";
+            hit.setAttribute("aria-label", label.replace("재생", "중지"));
+          }
+        }
+
+        strip.querySelectorAll(".suneung-player").forEach((player) => {
+          const hit = player.querySelector(".suneung-player-hit");
+          if (!hit) return;
+          hit.addEventListener("click", () => {
+            if (player.classList.contains("is-on")) stopPlayer(player);
+            else playPlayer(player);
+          });
+        });
+
+        foldBtn.addEventListener("click", () => {
+          setFold(strip.classList.contains("is-collapsed"));
+        });
+
+        if (printBtn && drawer) {
+          printBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            setDrawer(drawer.hidden);
+          });
+          document.addEventListener("click", (e) => {
+            if (drawer.hidden) return;
+            if (drawer.contains(e.target) || printBtn.contains(e.target)) return;
+            setDrawer(false);
+          });
+        }
+
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") setDrawer(false);
+        });
+
+        let saved = null;
+        try { saved = localStorage.getItem(FOLD_KEY); } catch (_) {}
+        if (saved === "0" || saved === "1") {
+          setFold(saved === "1");
+        } else {
+          setFold(window.matchMedia("(min-width: 860px)").matches);
+        }
+      }
+
       function bootSagwanStrip() {
         const scheduleBtn = document.getElementById("sagwanScheduleBtn");
         const modal = document.getElementById("sagwanScheduleModal");
@@ -8975,6 +9606,7 @@
         );
       }
 
+      bootSuneungPanel();
       bootSagwanStrip();
       bootUnivNotices();
       const idle =
