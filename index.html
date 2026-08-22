@@ -6542,8 +6542,8 @@
     <section class="suneung-strip" id="suneungStrip" aria-label="2027 대수능 안내">
       <div class="suneung-panel" id="suneungPanel">
         <div class="suneung-grid">
-          <article class="suneung-player" data-slot="1" data-drive="1cRACtOhhVN67Z4GSbuZ0ncwu-FT1LOXy">
-            <img class="suneung-poster" alt="" width="640" height="360" loading="lazy" decoding="async" src="https://drive.google.com/thumbnail?id=1cRACtOhhVN67Z4GSbuZ0ncwu-FT1LOXy&sz=w640" />
+          <article class="suneung-player" data-slot="1" data-yt="AXldwM5GqNg">
+            <img class="suneung-poster" alt="" width="640" height="360" loading="lazy" decoding="async" src="https://i.ytimg.com/vi/AXldwM5GqNg/hqdefault.jpg" />
             <div class="suneung-stage" hidden></div>
             <button type="button" class="suneung-player-hit" aria-pressed="false" aria-label="2027 대수능 원서접수 안내 영상 재생">
               <span class="suneung-play" aria-hidden="true">
@@ -6561,8 +6561,8 @@
               </svg>
             </button>
           </article>
-          <article class="suneung-player" data-slot="2" data-drive="1wsAiwVnYPmfHjIHRk-NrRNVvm8dT9L7D">
-            <img class="suneung-poster" alt="" width="640" height="360" loading="lazy" decoding="async" src="https://drive.google.com/thumbnail?id=1wsAiwVnYPmfHjIHRk-NrRNVvm8dT9L7D&sz=w640" />
+          <article class="suneung-player" data-slot="2" data-yt="-PQR0DFYlSE">
+            <img class="suneung-poster" alt="" width="640" height="360" loading="lazy" decoding="async" src="https://i.ytimg.com/vi/-PQR0DFYlSE/hqdefault.jpg" />
             <div class="suneung-stage" hidden></div>
             <button type="button" class="suneung-player-hit" aria-pressed="false" aria-label="2027 대수능 원서접수 안내 쇼츠 재생">
               <span class="suneung-play" aria-hidden="true">
@@ -10162,10 +10162,79 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
           }
         }
 
-        const PLAY_RATE = 3;
+        const ytMap = new WeakMap();
 
-        function playerVideo(player) {
-          return player.querySelector(".suneung-stage video");
+        function loadYtApi() {
+          if (window.YT && window.YT.Player) return Promise.resolve(window.YT);
+          if (window.__ytApiReady) return window.__ytApiReady;
+          window.__ytApiReady = new Promise((resolve) => {
+            const prev = window.onYouTubeIframeAPIReady;
+            window.onYouTubeIframeAPIReady = function () {
+              if (typeof prev === "function") prev();
+              resolve(window.YT);
+            };
+            const tag = document.createElement("script");
+            tag.src = "https://www.youtube.com/iframe_api";
+            tag.async = true;
+            document.head.appendChild(tag);
+          });
+          return window.__ytApiReady;
+        }
+
+        function getYt(player) {
+          return ytMap.get(player) || null;
+        }
+
+        function ytReady(yt) {
+          return !!(yt && typeof yt.getPlayerState === "function" && typeof yt.playVideo === "function");
+        }
+
+        function ytPlaying(yt) {
+          try {
+            return ytReady(yt) && window.YT && yt.getPlayerState() === window.YT.PlayerState.PLAYING;
+          } catch (_) {
+            return false;
+          }
+        }
+
+        function fastestRate(yt) {
+          try {
+            const rates = yt.getAvailablePlaybackRates() || [];
+            if (rates.length) return rates[rates.length - 1];
+          } catch (_) {}
+          return 2;
+        }
+
+        function applyFastRate(yt) {
+          if (!ytReady(yt)) return;
+          try { yt.setPlaybackRate(fastestRate(yt)); } catch (_) {}
+        }
+
+        function ytDuration(yt) {
+          try {
+            const d = yt.getDuration();
+            if (Number.isFinite(d) && d > 0) {
+              yt.__len = d;
+              return d;
+            }
+          } catch (_) {}
+          return Number(yt && yt.__len) || 0;
+        }
+
+        function jumpYt(yt, ratio) {
+          const len = ytDuration(yt);
+          if (len <= 0) {
+            yt.__pending = ratio;
+            return false;
+          }
+          yt.__pending = null;
+          const t = Math.max(0, Math.min(len * 0.999, ratio * len));
+          try {
+            yt.seekTo(t, true);
+            applyFastRate(yt);
+            yt.playVideo();
+          } catch (_) {}
+          return true;
         }
 
         function setPlayerUi(player, playing) {
@@ -10181,58 +10250,14 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
           if (chip) chip.textContent = playing ? "클릭하면 중지" : "클릭하면 재생";
         }
 
-        function mediaLength(video) {
-          const d = video.duration;
-          if (Number.isFinite(d) && d > 0) return d;
-          try {
-            if (video.seekable && video.seekable.length) {
-              return video.seekable.end(video.seekable.length - 1);
-            }
-          } catch (_) {}
-          const saved = Number(video.dataset.mediaLen);
-          return Number.isFinite(saved) && saved > 0 ? saved : 0;
-        }
-
-        function rememberLength(video) {
-          const len = mediaLength(video);
-          if (len > 0) video.dataset.mediaLen = String(len);
-          return len;
-        }
-
-        function jumpVideo(video, ratio) {
-          const len = rememberLength(video);
-          if (len <= 0) {
-            video.dataset.pendingSeek = String(ratio);
-            return false;
-          }
-          delete video.dataset.pendingSeek;
-          const t = Math.max(0, Math.min(len * 0.999, ratio * len));
-          try {
-            if (typeof video.fastSeek === "function") video.fastSeek(t);
-            else video.currentTime = t;
-          } catch {
-            video.currentTime = t;
-          }
-          video.playbackRate = PLAY_RATE;
-          video.defaultPlaybackRate = PLAY_RATE;
-          return true;
-        }
-
-        function playFast(video) {
-          video.playbackRate = PLAY_RATE;
-          video.defaultPlaybackRate = PLAY_RATE;
-          const playTry = video.play();
-          if (playTry && typeof playTry.catch === "function") playTry.catch(() => {});
-        }
-
-        function bindSeek(player, video) {
+        function bindSeek(player, yt) {
           const seek = player.querySelector(".suneung-seek");
           const range = player.querySelector(".suneung-seek-range");
           if (!seek || !range) return;
           seek.hidden = false;
           player.classList.add("has-media");
           if (range.dataset.bound === "1") {
-            rememberLength(video);
+            ytDuration(yt);
             return;
           }
           range.dataset.bound = "1";
@@ -10240,7 +10265,7 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
 
           const applyRatio = (ratio) => {
             range.value = String(Math.round(ratio * 1000));
-            jumpVideo(video, ratio);
+            jumpYt(yt, ratio);
           };
 
           const ratioFromClientX = (clientX) => {
@@ -10270,13 +10295,10 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
             dragging = false;
             const x = e && (e.clientX ?? (e.changedTouches && e.changedTouches[0] && e.changedTouches[0].clientX));
             if (typeof x === "number") applyRatio(ratioFromClientX(x));
-            else jumpVideo(video, Number(range.value) / 1000);
-            const resume = () => {
-              playFast(video);
-              setPlayerUi(player, true);
-            };
-            if (video.seeking) video.addEventListener("seeked", resume, { once: true });
-            resume();
+            else jumpYt(yt, Number(range.value) / 1000);
+            applyFastRate(yt);
+            try { yt.playVideo(); } catch (_) {}
+            setPlayerUi(player, true);
           };
 
           seek.addEventListener("pointerdown", (e) => {
@@ -10292,23 +10314,18 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
           range.addEventListener("input", (e) => {
             e.stopPropagation();
             dragging = true;
-            jumpVideo(video, Number(range.value) / 1000);
+            jumpYt(yt, Number(range.value) / 1000);
           });
           range.addEventListener("change", endDrag);
-          const flushPending = () => {
-            rememberLength(video);
-            const pending = Number(video.dataset.pendingSeek);
-            if (Number.isFinite(pending) && pending >= 0) jumpVideo(video, pending);
-          };
-          video.addEventListener("loadedmetadata", flushPending);
-          video.addEventListener("durationchange", flushPending);
-          video.addEventListener("progress", () => rememberLength(video));
-          video.addEventListener("timeupdate", () => {
-            if (dragging) return;
-            const len = rememberLength(video);
+          if (player._seekTick) clearInterval(player._seekTick);
+          player._seekTick = setInterval(() => {
+            if (dragging || !ytReady(yt)) return;
+            const len = ytDuration(yt);
             if (len <= 0) return;
-            range.value = String(Math.round((video.currentTime / len) * 1000));
-          });
+            try {
+              range.value = String(Math.round((yt.getCurrentTime() / len) * 1000));
+            } catch (_) {}
+          }, 250);
         }
 
         function stopPlayer(player) {
@@ -10316,6 +10333,15 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
           const hit = player.querySelector(".suneung-player-hit");
           const seek = player.querySelector(".suneung-seek");
           const range = player.querySelector(".suneung-seek-range");
+          const yt = getYt(player);
+          if (player._seekTick) {
+            clearInterval(player._seekTick);
+            player._seekTick = 0;
+          }
+          if (yt) {
+            try { yt.destroy(); } catch (_) {}
+            ytMap.delete(player);
+          }
           if (stage) {
             stage.innerHTML = "";
             stage.hidden = true;
@@ -10336,17 +10362,17 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
         }
 
         function pausePlayer(player) {
-          const video = playerVideo(player);
-          if (!video) {
+          const yt = getYt(player);
+          if (!ytReady(yt)) {
             stopPlayer(player);
             return;
           }
-          video.pause();
+          try { yt.pauseVideo(); } catch (_) {}
           setPlayerUi(player, false);
         }
 
         function playPlayer(player) {
-          const id = player.getAttribute("data-drive");
+          const id = player.getAttribute("data-yt");
           const stage = player.querySelector(".suneung-stage");
           const hit = player.querySelector(".suneung-player-hit");
           if (!id || !stage) return;
@@ -10355,50 +10381,59 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
               pausePlayer(other);
             }
           });
-          const existing = playerVideo(player);
-          if (existing) {
-            playFast(existing);
+          const existing = getYt(player);
+          if (existing && ytReady(existing)) {
+            applyFastRate(existing);
+            existing.playVideo();
             setPlayerUi(player, true);
             return;
           }
           stage.hidden = false;
-          const video = document.createElement("video");
-          video.playsInline = true;
-          video.preload = "auto";
-          video.controls = false;
-          video.playbackRate = PLAY_RATE;
-          video.defaultPlaybackRate = PLAY_RATE;
-          video.setAttribute("playsinline", "");
-          video.setAttribute("webkit-playsinline", "");
-          video.style.objectFit = "contain";
-          video.src = directUrl(id);
-          const fallback = () => {
-            if (playerVideo(player) !== video) return;
-            const seek = player.querySelector(".suneung-seek");
-            if (seek) seek.hidden = true;
-            player.classList.remove("has-media");
-            stage.innerHTML = "";
-            const iframe = document.createElement("iframe");
-            iframe.src = `${previewUrl(id)}?autoplay=1`;
-            iframe.allow = "autoplay; encrypted-media; fullscreen; picture-in-picture";
-            iframe.title = hit?.getAttribute("aria-label") || "대수능 안내 영상";
-            iframe.setAttribute("allowfullscreen", "");
-            stage.appendChild(iframe);
-          };
-          video.addEventListener("error", fallback, { once: true });
-          video.addEventListener("loadedmetadata", () => {
-            video.playbackRate = PLAY_RATE;
-            bindSeek(player, video);
-          });
-          video.addEventListener("playing", () => {
-            video.playbackRate = PLAY_RATE;
-            setPlayerUi(player, true);
-          });
           stage.innerHTML = "";
-          stage.appendChild(video);
-          bindSeek(player, video);
-          playFast(video);
+          const mount = document.createElement("div");
+          stage.appendChild(mount);
           setPlayerUi(player, true);
+          loadYtApi().then((YT) => {
+            if (player.getAttribute("data-yt") !== id || !stage.contains(mount)) return;
+            const yt = new YT.Player(mount, {
+              videoId: id,
+              width: "100%",
+              height: "100%",
+              playerVars: {
+                autoplay: 1,
+                controls: 0,
+                disablekb: 1,
+                fs: 0,
+                modestbranding: 1,
+                rel: 0,
+                playsinline: 1,
+                iv_load_policy: 3,
+                origin: location.origin
+              },
+              events: {
+                onReady(e) {
+                  ytMap.set(player, e.target);
+                  applyFastRate(e.target);
+                  e.target.playVideo();
+                  bindSeek(player, e.target);
+                  if (e.target.__pending != null) jumpYt(e.target, e.target.__pending);
+                },
+                onStateChange(e) {
+                  applyFastRate(e.target);
+                  if (e.data === YT.PlayerState.PLAYING) setPlayerUi(player, true);
+                  if (e.data === YT.PlayerState.PAUSED || e.data === YT.PlayerState.ENDED) {
+                    if (!player.classList.contains("is-on")) return;
+                    if (e.data === YT.PlayerState.PAUSED) setPlayerUi(player, false);
+                  }
+                }
+              }
+            });
+            ytMap.set(player, yt);
+            if (hit) {
+              const iframe = stage.querySelector("iframe");
+              if (iframe) iframe.title = hit.getAttribute("aria-label") || "대수능 안내 영상";
+            }
+          });
         }
 
         function isPlayerFullscreen(player) {
@@ -10416,11 +10451,6 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
             req.call(player).catch(() => {});
             return;
           }
-          const video = player.querySelector("video");
-          if (video && video.webkitEnterFullscreen) {
-            video.webkitEnterFullscreen();
-            return;
-          }
           if (!player.classList.contains("is-on")) playPlayer(player);
         }
 
@@ -10429,8 +10459,7 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
           const fsBtn = player.querySelector(".suneung-fs-btn");
           if (hit) {
             hit.addEventListener("click", () => {
-              const video = playerVideo(player);
-              if (video && !video.paused && player.classList.contains("is-on") && !player.classList.contains("is-paused")) {
+              if (ytPlaying(getYt(player)) && player.classList.contains("is-on") && !player.classList.contains("is-paused")) {
                 pausePlayer(player);
               } else {
                 playPlayer(player);
