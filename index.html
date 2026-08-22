@@ -547,6 +547,133 @@
       justify-self: end;
       display: flex;
       align-items: center;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .suneung-dday {
+      --hack: #1cff8a;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      min-height: 36px;
+      padding: 4px 10px 4px 5px;
+      border: 1px solid rgba(28, 255, 138, 0.55);
+      border-radius: 3px;
+      background:
+        linear-gradient(180deg, rgba(28, 255, 138, 0.08), transparent 40%),
+        #07110c;
+      color: #c8ffdf;
+      text-decoration: none;
+      font-family: "Space Grotesk", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      box-shadow:
+        0 0 0 1px rgba(28, 255, 138, 0.08),
+        0 0 16px rgba(28, 255, 138, 0.18);
+      animation: hackGlow 2.6s ease-in-out infinite;
+      transition: transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
+    }
+
+    .suneung-dday-ic {
+      width: 26px;
+      height: 26px;
+      flex-shrink: 0;
+      border-radius: 3px;
+      display: grid;
+      place-items: center;
+      background: #0a1a12;
+      color: var(--hack);
+      border: 1px solid rgba(28, 255, 138, 0.35);
+    }
+
+    .suneung-dday-ic svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .suneung-dday-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 0;
+      line-height: 1.05;
+    }
+
+    .suneung-dday-kicker {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #7dffc3;
+    }
+
+    .suneung-dday-count {
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #1cff8a;
+      text-shadow: 0 0 8px rgba(28, 255, 138, 0.45);
+    }
+
+    .suneung-dday-date {
+      display: none;
+      padding: 3px 6px;
+      border-radius: 2px;
+      border: 1px solid rgba(28, 255, 138, 0.28);
+      background: rgba(28, 255, 138, 0.08);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: #9fffd4;
+    }
+
+    .suneung-dday.is-today {
+      --hack: #ff3b58;
+      border-color: rgba(255, 59, 88, 0.7);
+      animation-duration: 1.1s;
+    }
+
+    .suneung-dday.is-today .suneung-dday-count {
+      color: #ff6d82;
+      text-shadow: 0 0 8px rgba(255, 59, 88, 0.5);
+    }
+
+    .suneung-dday.is-elapsed {
+      animation: none;
+      border-color: rgba(127, 158, 138, 0.4);
+      color: #9bb5a6;
+    }
+
+    .suneung-dday.is-elapsed .suneung-dday-count {
+      color: #c5d7cc;
+      text-shadow: none;
+    }
+
+    @keyframes hackGlow {
+      0%, 100% {
+        box-shadow:
+          0 0 0 1px rgba(28, 255, 138, 0.08),
+          0 0 14px rgba(28, 255, 138, 0.16);
+      }
+      50% {
+        box-shadow:
+          0 0 0 1px rgba(28, 255, 138, 0.2),
+          0 0 22px rgba(28, 255, 138, 0.32);
+      }
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .suneung-dday:hover,
+      .suneung-dday:focus-visible {
+        transform: translateY(-1px);
+        border-color: #1cff8a;
+        outline: none;
+      }
+    }
+
+    @media (min-width: 860px) {
+      .suneung-dday-date {
+        display: inline-flex;
+      }
     }
 
     .inquiry-btn {
@@ -1614,9 +1741,17 @@
         radial-gradient(70% 55% at 50% -8%, rgba(250, 45, 72, 0.1), transparent 62%),
         linear-gradient(180deg, var(--bg-subtle) 0%, color-mix(in srgb, var(--bg-subtle) 88%, var(--color-primary-50)) 100%);
       padding-bottom: 28px;
+      padding-left: env(safe-area-inset-left, 0px);
+      padding-right: env(safe-area-inset-right, 0px);
+      overflow-x: hidden;
+      overflow-x: clip;
     }
 
-    @media (min-width: 981px) {
+    .lower-main {
+      min-width: 0;
+    }
+
+    @media (min-width: 1280px) {
       .lower-layout {
         grid-template-columns: minmax(0, 1560px) 118px;
         justify-content: center;
@@ -1625,7 +1760,6 @@
 
       .lower-main {
         grid-column: 1;
-        min-width: 0;
       }
 
       .fold-rail {
@@ -3370,6 +3504,7 @@
     /* 경계선 접기: 선 아래 ~ 다음 선 위만 접힘 */
     .fold-block {
       min-width: 0;
+      overflow: visible;
     }
 
     .fold-body > .chat-section {
@@ -3386,62 +3521,88 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      min-height: 30px;
-      width: min(1560px, calc(100% - 24px));
-      margin: 4px auto 2px;
+      box-sizing: border-box;
+      min-height: 48px;
+      width: min(1560px, 100%);
+      margin: 4px auto;
+      padding: 4px clamp(10px, 3vw, 20px);
     }
 
     .fold-rule::before {
       content: "";
       position: absolute;
-      left: 0;
-      right: 0;
+      left: clamp(10px, 3vw, 20px);
+      right: 108px;
       top: 50%;
       height: 2px;
-      background: linear-gradient(90deg, transparent 0%, #6b4f3a 10%, #a67c52 50%, #6b4f3a 90%, transparent 100%);
-      box-shadow: 0 1px 0 rgba(245, 230, 200, 0.35);
+      background: linear-gradient(90deg, transparent 0%, rgba(28, 255, 138, 0.25) 8%, #1cff8a 50%, rgba(28, 255, 138, 0.25) 92%, transparent 100%);
+      box-shadow: 0 0 10px rgba(28, 255, 138, 0.45);
     }
 
     .fold-toggle {
+      --hack: #1cff8a;
       position: relative;
       z-index: 2;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
-      margin-right: -2px;
-      padding: 5px 11px 5px 9px;
-      border: 1px solid rgba(92, 64, 48, 0.28);
-      border-radius: 10px 0 0 10px;
-      background: linear-gradient(180deg, #fffaf4, #f3e6d4);
-      color: #3d2b1f;
-      font: inherit;
-      font-size: 12px;
-      font-weight: 780;
-      letter-spacing: -0.03em;
+      justify-content: center;
+      gap: 7px;
+      min-height: 44px;
+      min-width: 44px;
+      margin: 0;
+      padding: 8px 12px 8px 8px;
+      border: 3px solid #1cff8a;
+      border-radius: 2px;
+      background: #050a07;
+      color: #1cff8a;
+      font-family: "Space Grotesk", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 12.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1;
       cursor: pointer;
-      box-shadow: -4px 4px 12px rgba(70, 48, 28, 0.1);
-    }
-
-    .fold-toggle:hover,
-    .fold-toggle:focus-visible {
-      background: linear-gradient(180deg, #fff, #ead9c2);
-      outline: none;
+      touch-action: manipulation;
+      -webkit-tap-highlight-color: transparent;
+      box-shadow:
+        0 0 0 2px #050a07,
+        0 0 0 4px rgba(28, 255, 138, 0.45),
+        0 0 18px rgba(28, 255, 138, 0.28);
+      transition: transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
     }
 
     .fold-toggle .chev {
-      width: 14px;
-      height: 14px;
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
       display: grid;
       place-items: center;
+      border-radius: 1px;
+      border: 1.5px solid #1cff8a;
+      background: #07110c;
       transition: transform var(--duration-fast) var(--ease-out);
+    }
+
+    .fold-toggle .chev svg {
+      width: 12px;
+      height: 12px;
+    }
+
+    .fold-block.is-collapsed .fold-toggle {
+      color: #9fffd4;
+      border-color: #7dffc3;
+      animation: none;
+      box-shadow:
+        0 0 0 2px #050a07,
+        0 0 0 4px rgba(28, 255, 138, 0.22);
     }
 
     .fold-block.is-collapsed .fold-toggle .chev {
       transform: rotate(180deg);
+      color: #1cff8a;
     }
 
     .fold-toggle .fold-action {
-      min-width: 2.4em;
+      min-width: 2.5em;
     }
 
     .fold-rail {
@@ -3450,60 +3611,175 @@
       z-index: 36;
       display: none;
       flex-direction: column;
-      gap: 6px;
-      width: 86px;
-      margin: 12px 8px 12px 0;
-      padding: 8px 6px;
-      border-radius: 14px;
-      border: 1px solid rgba(92, 64, 48, 0.2);
-      background: linear-gradient(180deg, rgba(255, 252, 247, 0.96), rgba(244, 232, 214, 0.94));
-      box-shadow: 0 10px 24px rgba(60, 40, 24, 0.12);
-    }
-
-    @media (min-width: 981px) {
-      .fold-rail {
-        display: flex;
-      }
+      gap: 8px;
+      width: 110px;
+      margin: 16px 0 16px auto;
+      padding: 0;
+      border: 0;
+      background: none;
+      box-shadow: none;
     }
 
     .fold-rail-btn {
+      --hack: #1cff8a;
+      position: relative;
       display: flex;
-      flex-direction: column;
       align-items: center;
-      gap: 2px;
+      justify-content: center;
       width: 100%;
-      padding: 7px 4px;
-      border: 1px solid rgba(92, 64, 48, 0.2);
-      border-radius: 10px;
-      background: #fff;
-      color: #3d2b1f;
-      font: inherit;
-      font-size: 10.5px;
-      font-weight: 750;
-      letter-spacing: -0.04em;
+      min-height: 44px;
+      padding: 12px 8px 12px 12px;
+      border: 1px solid rgba(28, 255, 138, 0.45);
+      border-right: 0;
+      border-radius: 3px 0 0 3px;
+      background:
+        linear-gradient(180deg, rgba(28, 255, 138, 0.1), transparent 40%),
+        #07110c;
+      color: #c8ffdf;
+      font-family: "Space Grotesk", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
       line-height: 1.25;
       cursor: pointer;
       word-break: keep-all;
-      text-align: center;
+      text-align: left;
+      touch-action: manipulation;
+      box-shadow:
+        -6px 0 18px rgba(28, 255, 138, 0.16),
+        0 0 0 1px rgba(28, 255, 138, 0.06);
+      animation: hackGlow 2.6s ease-in-out infinite;
+      transition: transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
     }
 
-    .fold-rail-btn:hover,
-    .fold-rail-btn:focus-visible {
-      border-color: #a67c52;
-      outline: none;
+    .fold-rail-btn::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 10px;
+      bottom: 10px;
+      width: 2px;
+      background: #1cff8a;
+      box-shadow: 0 0 8px rgba(28, 255, 138, 0.7);
     }
 
     .fold-rail-btn.is-collapsed {
-      background: #f4ebe0;
-      color: #6b4f3a;
+      color: #8fb9a3;
+      border-color: rgba(127, 158, 138, 0.35);
+      animation: none;
+      box-shadow: none;
     }
 
     .fold-rail-title {
-      font-weight: 800;
+      font-weight: 700;
+      font-size: 12px;
+      color: #1cff8a;
     }
 
-    .fold-rail-action {
-      color: #8a5a32;
+    @media (hover: hover) and (pointer: fine) {
+      .fold-toggle:hover,
+      .fold-toggle:focus-visible {
+        transform: translateX(-3px);
+        border-color: #6dffb0;
+        outline: none;
+        box-shadow:
+          0 0 0 2px #050a07,
+          0 0 0 4px rgba(28, 255, 138, 0.7),
+          0 0 22px rgba(28, 255, 138, 0.4);
+      }
+
+      .fold-rail-btn:hover,
+      .fold-rail-btn:focus-visible {
+        transform: translateX(-6px);
+        border-color: #1cff8a;
+        outline: none;
+        box-shadow:
+          -10px 0 22px rgba(28, 255, 138, 0.28),
+          0 0 0 1px rgba(28, 255, 138, 0.16);
+      }
+    }
+
+    @media (max-width: 1279px) {
+      .fold-toggle {
+        display: inline-flex;
+        flex-shrink: 0;
+      }
+
+      .fold-rule {
+        min-height: 52px;
+        padding: 10px max(14px, env(safe-area-inset-right, 0px)) 10px 12px;
+      }
+
+      .fold-rule::before {
+        right: 124px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .fold-rule {
+        min-height: 52px;
+        padding: 10px max(12px, env(safe-area-inset-right, 0px)) 10px 10px;
+      }
+
+      .fold-rule::before {
+        left: 10px;
+        right: 118px;
+      }
+
+      .fold-toggle {
+        min-height: 46px;
+        font-size: 13px;
+        padding: 8px 12px 8px 8px;
+        border-width: 2.5px;
+        box-shadow:
+          0 0 0 2px #050a07,
+          0 0 0 3px rgba(28, 255, 138, 0.55),
+          0 0 12px rgba(28, 255, 138, 0.22);
+      }
+    }
+
+    @media (max-width: 420px) {
+      .fold-rule {
+        min-height: 50px;
+        padding: 8px max(10px, env(safe-area-inset-right, 0px)) 8px 8px;
+      }
+
+      .fold-rule::before {
+        left: 8px;
+        right: 108px;
+      }
+
+      .fold-toggle {
+        min-height: 44px;
+        font-size: 12.5px;
+        gap: 6px;
+        padding: 7px 11px 7px 7px;
+        border-width: 2.5px;
+      }
+
+      .fold-toggle .chev {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .fold-toggle {
+        display: none;
+      }
+
+      .fold-rule {
+        min-height: 28px;
+        padding-block: 2px;
+      }
+
+      .fold-rule::before {
+        right: clamp(10px, 3vw, 20px);
+      }
+
+      .fold-rail {
+        display: flex;
+      }
     }
 
     .suneung-drawer {
@@ -3627,16 +3903,16 @@
         color: #d7eef9;
         border-color: rgba(120, 186, 220, 0.28);
       }
-      .fold-toggle,
-      .fold-rail {
-        background: linear-gradient(180deg, #2a2118, #1c1610);
-        color: #f0e2d0;
-        border-color: rgba(196, 160, 110, 0.28);
+      .fold-toggle {
+        background: #050a07;
+        color: #1cff8a;
+        border-color: #1cff8a;
       }
-      .fold-rail-btn {
-        background: #241c14;
-        color: #f0e2d0;
-        border-color: rgba(196, 160, 110, 0.22);
+      .fold-rail-btn,
+      .suneung-dday {
+        background: #07110c;
+        color: #1cff8a;
+        border-color: rgba(28, 255, 138, 0.5);
       }
       .suneung-drawer {
         background: linear-gradient(180deg, #163044, #102533);
@@ -4683,6 +4959,27 @@
         grid-area: actions;
         justify-self: end;
         order: unset;
+        gap: 6px;
+        max-width: calc(100vw - 72px);
+      }
+
+      .suneung-dday,
+      .inquiry-btn {
+        flex-shrink: 0;
+      }
+
+      .suneung-dday {
+        min-height: 36px;
+        padding: 3px 8px 3px 4px;
+        gap: 6px;
+      }
+
+      .suneung-dday-kicker {
+        font-size: 9px;
+      }
+
+      .suneung-dday-count {
+        font-size: 14px;
       }
 
       .nav-links {
@@ -4819,6 +5116,35 @@
     }
 
     @media (max-width: 420px) {
+      .suneung-dday-kicker {
+        display: none;
+      }
+
+      .suneung-dday {
+        min-height: 36px;
+        padding: 4px 8px 4px 4px;
+      }
+
+      .suneung-dday-count {
+        font-size: 13.5px;
+      }
+
+      .inquiry-btn {
+        padding: 6px 8px 6px 6px;
+        gap: 5px;
+        font-size: 12px;
+      }
+
+      @media (max-width: 360px) {
+        .inquiry-label {
+          display: none;
+        }
+
+        .inquiry-btn {
+          padding: 6px;
+        }
+      }
+
       .nav-links {
         gap: 8px 2px;
       }
@@ -5150,6 +5476,20 @@
       </div>
 
       <div class="nav-actions">
+        <a class="suneung-dday" id="suneungDdayBtn" href="#suneungStrip" aria-label="2027 대수능 D-day">
+          <span class="suneung-dday-ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
+              <rect x="3.5" y="5" width="17" height="15" rx="3" stroke="currentColor" stroke-width="1.8"/>
+              <path d="M8 3.6v3.4M16 3.6v3.4M4 10h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M8.2 14.2h3.2M14.4 14.2h1.6M8.2 17.2h7.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="suneung-dday-text">
+            <span class="suneung-dday-kicker">2027 대수능</span>
+            <strong class="suneung-dday-count" id="suneungDdayCount">D-—</strong>
+          </span>
+          <span class="suneung-dday-date">11.19</span>
+        </a>
         <a class="inquiry-btn" href="https://open.kakao.com/me/8832" target="_blank" rel="noopener noreferrer" aria-label="문의 오픈채팅">
           <span class="ic" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none">
@@ -5157,7 +5497,7 @@
               <path d="M8.6 10.6h6.8M8.6 13.2h4.6" stroke="#FEE500" stroke-width="1.7" stroke-linecap="round"/>
             </svg>
           </span>
-          문의
+          <span class="inquiry-label">문의</span>
         </a>
       </div>
     </nav>
@@ -5360,7 +5700,7 @@
     <div class="lower-layout">
     <aside class="fold-rail" id="foldRail" aria-label="구간 접기·펼치기"></aside>
     <div class="lower-main">
-    <div class="fold-block" data-fold="suneung" data-fold-title="대수능 안내">
+    <div class="fold-block" data-fold="suneung" data-fold-title="대수능 안내" data-fold-short="대수능">
       <div class="fold-rule">
         <button type="button" class="fold-toggle" aria-expanded="true" aria-controls="foldBody-suneung">
           <span class="chev" aria-hidden="true">
@@ -5453,7 +5793,7 @@
       </div>
     </div>
 
-    <div class="fold-block" data-fold="sagwan" data-fold-title="사관학교 일정">
+    <div class="fold-block" data-fold="sagwan" data-fold-title="사관학교 일정" data-fold-short="사관">
       <div class="fold-rule">
         <button type="button" class="fold-toggle" aria-expanded="true" aria-controls="foldBody-sagwan">
           <span class="chev" aria-hidden="true">
@@ -5516,7 +5856,7 @@
       </div>
     </div>
 
-    <div class="fold-block" data-fold="boards" data-fold-title="채용·석박·대학">
+    <div class="fold-block" data-fold="boards" data-fold-title="채용·석박·대학" data-fold-short="채용">
       <div class="fold-rule">
         <button type="button" class="fold-toggle" aria-expanded="true" aria-controls="foldBody-boards">
           <span class="chev" aria-hidden="true">
@@ -5629,7 +5969,7 @@
       </div>
     </div>
 
-    <div class="fold-block" data-fold="cafes" data-fold-title="교사·수만휘·정책">
+    <div class="fold-block" data-fold="cafes" data-fold-title="교사·수만휘·정책" data-fold-short="게시판">
       <div class="fold-rule">
         <button type="button" class="fold-toggle" aria-expanded="true" aria-controls="foldBody-cafes">
           <span class="chev" aria-hidden="true">
@@ -8662,8 +9002,7 @@
           if (railBtn) {
             railBtn.classList.toggle("is-collapsed", !open);
             railBtn.setAttribute("aria-expanded", open ? "true" : "false");
-            const railAction = railBtn.querySelector(".fold-rail-action");
-            if (railAction) railAction.textContent = open ? "접기" : "펼치기";
+            railBtn.setAttribute("aria-label", (title + " " + (open ? "접기" : "펼치기")).trim());
           }
           if (persist !== false) {
             saved[id] = open;
@@ -8683,10 +9022,10 @@
           rail.innerHTML = blocks.map((block) => {
             const id = block.getAttribute("data-fold");
             const title = block.getAttribute("data-fold-title") || id;
+            const shortTitle = block.getAttribute("data-fold-short") || title;
             return (
-              '<button type="button" class="fold-rail-btn" data-fold-target="' + id + '" aria-expanded="true">' +
-              '<span class="fold-rail-title">' + title + "</span>" +
-              '<span class="fold-rail-action">접기</span>' +
+              '<button type="button" class="fold-rail-btn" data-fold-target="' + id + '" aria-expanded="true" aria-label="' + title + ' 접기">' +
+              '<span class="fold-rail-title">' + shortTitle + "</span>" +
               "</button>"
             );
           }).join("");
@@ -9933,7 +10272,52 @@
         );
       }
 
+      function bootSuneungNavDday() {
+        const btn = document.getElementById("suneungDdayBtn");
+        const count = document.getElementById("suneungDdayCount");
+        if (!btn || !count) return;
+        const EXAM = "2026-11-19";
+
+        function paint() {
+          const today = typeof seoulTodayISO === "function" ? seoulTodayISO() : "2026-08-22";
+          const info = sagwanDdayLabel(EXAM, today);
+          count.textContent = info.text;
+          btn.classList.toggle("is-today", info.kind === "today");
+          btn.classList.toggle("is-elapsed", info.kind === "elapsed");
+          const label =
+            info.kind === "today"
+              ? "2027 대수능 당일"
+              : info.kind === "elapsed"
+                ? "2027 대수능 " + info.text
+                : "2027 대수능까지 " + (info.days != null ? info.days + "일" : info.text);
+          btn.setAttribute("aria-label", label);
+          btn.setAttribute("title", label + " · 2026.11.19");
+        }
+
+        function revealSuneung() {
+          const block = document.querySelector('.fold-block[data-fold="suneung"]');
+          if (block && block.classList.contains("is-collapsed")) {
+            const toggle = block.querySelector(".fold-toggle");
+            if (toggle) toggle.click();
+          }
+          const target = document.getElementById("suneungStrip") || block;
+          if (!target) return;
+          const offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--nav-offset")) || 72;
+          const top = target.getBoundingClientRect().top + window.scrollY - offset - 8;
+          window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+        }
+
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          revealSuneung();
+        });
+
+        paint();
+        setInterval(paint, 60 * 1000);
+      }
+
       bootSectionFolds();
+      bootSuneungNavDday();
       bootSuneungPanel();
       bootSagwanStrip();
       bootUnivNotices();
