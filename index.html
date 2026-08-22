@@ -6715,7 +6715,7 @@
               <img src="assets/suneung/kice.png" alt="" width="22" height="22" />
               <span>(학생용) 사전입력(8/20~9/3, 18시)</span>
             </a>
-            <a class="suneung-btn suneung-ext" href="https://www.suneung.re.kr/boardCnts/list.do?boardID=1500229&amp;m=0301&amp;s=suneung&amp;searchStr=" target="_blank" rel="noopener noreferrer">
+            <a class="suneung-btn suneung-ext" href="https://www.csat.re.kr/index.do" target="_blank" rel="noopener noreferrer">
               <img src="assets/suneung/kice.png" alt="" width="22" height="22" />
               <span>(교사용) 현장 접수(8/24~9/4일, 17시)</span>
             </a>
@@ -6740,7 +6740,7 @@
                     <path d="M14.6 14.6 20 20M8.2 10.5h4.6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
                   </svg>
                 </button>
-                <span class="suneung-sheet-zoom-label" id="suneungZoomLabel">100%</span>
+                <span class="suneung-sheet-zoom-label" id="suneungZoomLabel">60%</span>
                 <button type="button" class="suneung-sheet-btn" id="suneungZoomIn" title="확대" aria-label="확대">
                   <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                     <circle cx="10.5" cy="10.5" r="5.6" stroke="currentColor" stroke-width="1.8"/>
@@ -10122,7 +10122,7 @@
         const SHEET_ZOOM_MIN = 0.25;
         const SHEET_ZOOM_MAX = 2;
         const SHEET_ZOOM_STEP = 0.1;
-        let sheetZoom = 1;
+        let sheetZoom = 0.6;
 
         function applySheetZoom() {
           sheetZoom = Math.min(SHEET_ZOOM_MAX, Math.max(SHEET_ZOOM_MIN, Math.round(sheetZoom * 100) / 100));
@@ -10133,7 +10133,7 @@
         }
 
         function resetSheetZoom() {
-          sheetZoom = 1;
+          sheetZoom = 0.6;
           applySheetZoom();
         }
 
