@@ -1,8 +1,8 @@
 {
   "minDate": "2026-08-01",
   "today": "2026-08-22",
-  "updatedAt": "2026-08-22T13:18:53.772Z",
-  "checkedAt": "2026-08-22T13:18:53.772Z",
+  "updatedAt": "2026-08-22T13:50:23.126Z",
+  "checkedAt": "2026-08-22T13:50:23.126Z",
   "sources": [
     {
       "id": "u001",
@@ -1651,17 +1651,6 @@
       "dateText": "2026.08.21"
     },
     {
-      "id": "fbb38724a97db5d3cebc",
-      "univId": "u028",
-      "univName": "세종대",
-      "title": "수시 2027학년도 대입전형자료(학교생활기록부) 온라인 제공 신청 안내(2004~2022학년도 졸업자)",
-      "preview": "세종대 입학 공지사항 미리보기",
-      "url": "https://ipsi.sejong.ac.kr/ipsi/early/notice.do?mode=view&articleNo=2767",
-      "homeUrl": "http://ipsi.sejong.ac.kr/",
-      "dateISO": "2026-08-21",
-      "dateText": "2026.08.21"
-    },
-    {
       "id": "eef0bc6f86b9ced26625",
       "univId": "u028",
       "univName": "세종대",
@@ -1673,10 +1662,10 @@
       "dateText": "2026.08.21"
     },
     {
-      "id": "06252c564ff2c36a4e14",
+      "id": "fbb38724a97db5d3cebc",
       "univId": "u028",
       "univName": "세종대",
-      "title": "수시 2027학년도 대입전형자료(학교생활기록부) 온라인 제공 신청 안내(2004~2022학년도 졸업자) 입학과",
+      "title": "수시 2027학년도 대입전형자료(학교생활기록부) 온라인 제공 신청 안내(2004~2022학년도 졸업자)",
       "preview": "세종대 입학 공지사항 미리보기",
       "url": "https://ipsi.sejong.ac.kr/ipsi/early/notice.do?mode=view&articleNo=2767",
       "homeUrl": "http://ipsi.sejong.ac.kr/",
@@ -1690,6 +1679,17 @@
       "title": "수시 2027학년도 대입전형자료(학교생활기록부) 온라인 제공 신청 안내(2004~2022학년도 졸업자) 입학과",
       "preview": "세종대 입학 공지사항 미리보기",
       "url": "http://ipsi.sejong.ac.kr/ipsi/early/notice.do?mode=view&articleNo=2767",
+      "homeUrl": "http://ipsi.sejong.ac.kr/",
+      "dateISO": "2026-08-21",
+      "dateText": "2026.08.21"
+    },
+    {
+      "id": "06252c564ff2c36a4e14",
+      "univId": "u028",
+      "univName": "세종대",
+      "title": "수시 2027학년도 대입전형자료(학교생활기록부) 온라인 제공 신청 안내(2004~2022학년도 졸업자) 입학과",
+      "preview": "세종대 입학 공지사항 미리보기",
+      "url": "https://ipsi.sejong.ac.kr/ipsi/early/notice.do?mode=view&articleNo=2767",
       "homeUrl": "http://ipsi.sejong.ac.kr/",
       "dateISO": "2026-08-21",
       "dateText": "2026.08.21"
@@ -1904,23 +1904,23 @@
       "dateText": "2026.08.19"
     },
     {
-      "id": "e0ae81e9101797055ed4",
-      "univId": "u214",
-      "univName": "유니스트(UNIST)",
-      "title": "수시모집 2027학년도 그릿인재전형 포트폴리오 자료 작성 안내",
-      "preview": "수시모집 2027학년도 학부 신입생 모집 관련 서식 안내 2026.04.30 Prev Next </di",
-      "url": "https://adm-u.unist.ac.kr/admission/community/rolling-admissions.do?mode=view&articleNo=306792",
-      "homeUrl": "http://adm-u.unist.ac.kr/",
-      "dateISO": "2026-08-19",
-      "dateText": "2026.08.19"
-    },
-    {
       "id": "40aab453b9bc814fa46a",
       "univId": "u214",
       "univName": "유니스트(UNIST)",
       "title": "수시모집 2027학년도 그릿인재전형 포트폴리오 자료 작성 안내",
       "preview": "수시모집 2027학년도 학부 신입생 모집 관련 서식 안내 2026.04.30 Prev Next </di",
       "url": "http://adm-u.unist.ac.kr/admission/community/rolling-admissions.do?mode=view&articleNo=306792",
+      "homeUrl": "http://adm-u.unist.ac.kr/",
+      "dateISO": "2026-08-19",
+      "dateText": "2026.08.19"
+    },
+    {
+      "id": "e0ae81e9101797055ed4",
+      "univId": "u214",
+      "univName": "유니스트(UNIST)",
+      "title": "수시모집 2027학년도 그릿인재전형 포트폴리오 자료 작성 안내",
+      "preview": "수시모집 2027학년도 학부 신입생 모집 관련 서식 안내 2026.04.30 Prev Next </di",
+      "url": "https://adm-u.unist.ac.kr/admission/community/rolling-admissions.do?mode=view&articleNo=306792",
       "homeUrl": "http://adm-u.unist.ac.kr/",
       "dateISO": "2026-08-19",
       "dateText": "2026.08.19"
@@ -3657,5 +3657,5 @@
   ],
   "stale": false,
   "status": "fresh",
-  "statusReason": "ok=30 empty=7 fail=179 fresh=172"
+  "statusReason": "ok=36 empty=34 fail=146 fresh=172"
 }
