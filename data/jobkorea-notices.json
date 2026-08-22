@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-22T11:44:15.816Z",
-  "checkedAt": "2026-08-22T11:44:15.816Z",
+  "updatedAt": "2026-08-22T11:58:02.615Z",
+  "checkedAt": "2026-08-22T11:58:02.615Z",
   "today": "2026-08-22",
   "count": 24,
   "notices": [
@@ -19,8 +19,8 @@
       "deadlineISO": "2026-09-20",
       "deadlineText": "2026.09.20",
       "alwaysHire": false,
-      "popularRank": 5,
-      "popularScore": 2.191348
+      "popularRank": 7,
+      "popularScore": 2.188432
     },
     {
       "id": "d7975cba63495f5d17a9",
@@ -34,23 +34,8 @@
       "deadlineISO": "2026-08-30",
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
-      "popularRank": 14,
-      "popularScore": 1.8218371
-    },
-    {
-      "id": "450b1f72e0343ed299cc",
-      "jobId": "49824525",
-      "companyName": "엔에이치엔커머스㈜",
-      "title": "NHN COMMERCE 플랫폼/솔루션 기획자 채용",
-      "preview": "경력 · 정규직 · 마감 D-29 · 접수마감 2026.09.20",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49824525",
-      "dateISO": "2026-08-21",
-      "dateText": "2026.08.21",
-      "deadlineISO": "2026-09-20",
-      "deadlineText": "2026.09.20",
-      "alwaysHire": false,
-      "popularRank": 21,
-      "popularScore": 1.626173
+      "popularRank": 13,
+      "popularScore": 1.841421
     },
     {
       "id": "945a9f68edd224496878",
@@ -64,8 +49,8 @@
       "deadlineISO": "2026-09-20",
       "deadlineText": "2026.09.20",
       "alwaysHire": false,
-      "popularRank": 24,
-      "popularScore": 1.58957
+      "popularRank": 22,
+      "popularScore": 1.609031
     },
     {
       "id": "a503d60967b2200c61bb",
@@ -80,7 +65,7 @@
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
       "popularRank": 11,
-      "popularScore": 2.153275
+      "popularScore": 2.154903
     },
     {
       "id": "b7d5ca0bf83730d1820d",
@@ -95,7 +80,7 @@
       "deadlineText": "2026.09.20",
       "alwaysHire": false,
       "popularRank": 17,
-      "popularScore": 1.7063589
+      "popularScore": 1.6965071
     },
     {
       "id": "182056d5981c154f4eb1",
@@ -110,7 +95,7 @@
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 3.089477
+      "popularScore": 3.112123
     },
     {
       "id": "1ce9dfc2270f59b1a76c",
@@ -124,8 +109,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 10,
-      "popularScore": 2.157722
+      "popularRank": 8,
+      "popularScore": 2.165293
     },
     {
       "id": "12017eea0fc515d75a36",
@@ -139,8 +124,8 @@
       "deadlineISO": "2026-09-17",
       "deadlineText": "2026.09.17",
       "alwaysHire": false,
-      "popularRank": 15,
-      "popularScore": 1.772944
+      "popularRank": 14,
+      "popularScore": 1.742363
     },
     {
       "id": "841a617225abe28d06a7",
@@ -155,7 +140,7 @@
       "deadlineText": "2026.08.27",
       "alwaysHire": false,
       "popularRank": 20,
-      "popularScore": 1.63516
+      "popularScore": 1.64489
     },
     {
       "id": "0166c239ccde9e457ceb",
@@ -169,8 +154,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 22,
-      "popularScore": 1.6183159
+      "popularRank": 21,
+      "popularScore": 1.6212469
     },
     {
       "id": "f19cd489697422d474e6",
@@ -184,8 +169,8 @@
       "deadlineISO": "2026-08-30",
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
-      "popularRank": 12,
-      "popularScore": 2.13257
+      "popularRank": 3,
+      "popularScore": 2.838593
     },
     {
       "id": "51066d1dd642abac1011",
@@ -199,8 +184,8 @@
       "deadlineISO": "2026-10-11",
       "deadlineText": "2026.10.11",
       "alwaysHire": false,
-      "popularRank": 9,
-      "popularScore": 2.16179
+      "popularRank": 10,
+      "popularScore": 2.158578
     },
     {
       "id": "ecbeaf7b86cc728ed0e1",
@@ -214,8 +199,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 13,
-      "popularScore": 1.84983
+      "popularRank": 12,
+      "popularScore": 1.883359
     },
     {
       "id": "2dabcc85b748afcffb82",
@@ -229,8 +214,8 @@
       "deadlineISO": "2026-10-10",
       "deadlineText": "2026.10.10",
       "alwaysHire": false,
-      "popularRank": 16,
-      "popularScore": 1.711999
+      "popularRank": 15,
+      "popularScore": 1.720652
     },
     {
       "id": "88a0735cd26b5ca6d82a",
@@ -245,7 +230,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 2,
-      "popularScore": 3.011238
+      "popularScore": 3.0409992
     },
     {
       "id": "cfc1e393775a21db0610",
@@ -259,8 +244,23 @@
       "deadlineISO": "2026-08-23",
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
-      "popularRank": 3,
-      "popularScore": 2.4058
+      "popularRank": 4,
+      "popularScore": 2.373305
+    },
+    {
+      "id": "adce3b32741e3448d142",
+      "jobId": "49740515",
+      "companyName": "㈜다우데이타",
+      "title": "[경력] IT 기획 담당자 채용",
+      "preview": "경력 · 정규직 · 마감 D-2 · 접수마감 2026.08.24",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49740515",
+      "dateISO": "2026-08-10",
+      "dateText": "2026.08.10",
+      "deadlineISO": "2026-08-24",
+      "deadlineText": "2026.08.24",
+      "alwaysHire": false,
+      "popularRank": 24,
+      "popularScore": 1.570168
     },
     {
       "id": "e8edd83d0f5b54809dd6",
@@ -274,8 +274,8 @@
       "deadlineISO": "2026-09-06",
       "deadlineText": "2026.09.06",
       "alwaysHire": false,
-      "popularRank": 19,
-      "popularScore": 1.674768
+      "popularRank": 18,
+      "popularScore": 1.671273
     },
     {
       "id": "1aa8c0230dacd1a4220b",
@@ -289,23 +289,23 @@
       "deadlineISO": "2026-10-05",
       "deadlineText": "2026.10.05",
       "alwaysHire": false,
-      "popularRank": 8,
-      "popularScore": 2.169102
+      "popularRank": 9,
+      "popularScore": 2.162589
     },
     {
-      "id": "6216a5e8a7b59a85d9de",
-      "jobId": "49706663",
-      "companyName": "디알텍",
-      "title": "2026년 신입 및 경력 채용",
-      "preview": "신입·경력 · 정규직 · 마감 D-9 · 접수마감 2026.08.31",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49706663",
+      "id": "073c9f6a29eae7da18cb",
+      "jobId": "49717218",
+      "companyName": "㈜파킹고",
+      "title": "개발 프로젝트 PM (Project Manager / 프로젝트 매니저) 채용",
+      "preview": "경력 · 정규직 · 마감 D-12 · 접수마감 2026.09.03",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49717218",
       "dateISO": "2026-08-04",
       "dateText": "2026.08.04",
-      "deadlineISO": "2026-08-31",
-      "deadlineText": "2026.08.31",
+      "deadlineISO": "2026-09-03",
+      "deadlineText": "2026.09.03",
       "alwaysHire": false,
-      "popularRank": 6,
-      "popularScore": 2.191025
+      "popularRank": 19,
+      "popularScore": 1.669284
     },
     {
       "id": "4352e8d6ee149c8515e7",
@@ -319,8 +319,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 7,
-      "popularScore": 2.179183
+      "popularRank": 5,
+      "popularScore": 2.290426
     },
     {
       "id": "b2daad0d3bdddc3e904b",
@@ -335,7 +335,7 @@
       "deadlineText": "2026.08.22",
       "alwaysHire": false,
       "popularRank": 23,
-      "popularScore": 1.611944
+      "popularScore": 1.606364
     },
     {
       "id": "cb9a8f87ca6dfd53dfc4",
@@ -349,8 +349,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 4,
-      "popularScore": 2.241381
+      "popularRank": 6,
+      "popularScore": 2.237669
     },
     {
       "id": "7d52672496a4c3d5e7c4",
@@ -364,8 +364,8 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 18,
-      "popularScore": 1.691856
+      "popularRank": 16,
+      "popularScore": 1.708067
     }
   ],
   "stale": false,
