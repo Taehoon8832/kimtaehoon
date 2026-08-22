@@ -233,7 +233,8 @@
       justify-content: center;
       gap: clamp(3px, 0.8vw, 8px);
       min-width: 0;
-      max-width: min(1100px, 100%);
+      width: 100%;
+      max-width: none;
     }
 
     .nav-sep {
@@ -258,8 +259,8 @@
       gap: 4px;
       min-width: 0;
       min-height: 44px;
-      flex: 1 1 0;
-      padding: 4px 4px 5px;
+      flex: 0 1 auto;
+      padding: 4px 6px 5px;
       border-radius: 12px;
       text-align: center;
       transition:
@@ -346,12 +347,14 @@
       inset: -3px;
       filter: blur(8px);
       opacity: 0.5;
-      animation: none;
+      animation:
+        rainbowOrbit 4s linear infinite,
+        rainbowBreath 2.8s ease-in-out infinite;
     }
 
     .nav-item.card-a .ic-aura::after,
     .nav-item.card-a28 .ic-aura::after {
-      animation: none;
+      animation: rainbowOrbit 4s linear infinite;
     }
 
     .nav-item.card-a .ic,
@@ -387,7 +390,7 @@
 
     .nav-kakao {
       position: relative;
-      flex: 1 1 0;
+      flex: 0 1 auto;
       min-width: 0;
       display: flex;
       align-items: stretch;
@@ -663,10 +666,19 @@
       .suneung-dday-date {
         display: inline-flex;
       }
+
+      .nav-links {
+        justify-content: center;
+      }
+
+      .nav-item,
+      .nav-kakao {
+        flex: 0 1 auto;
+      }
     }
 
-    /* 노트북: 한 줄 유지, 폭이 부족하면 라벨·날짜만 줄임 */
-    @media (min-width: 1024px) and (max-width: 1399px) {
+    /* 노트북: 한 줄 유지, 아이콘이 가운데에서 폭을 나눠 가짐 */
+    @media (min-width: 1100px) and (max-width: 1399px) {
       .nav {
         gap: 6px;
         padding: 6px max(12px, env(safe-area-inset-right, 0px)) 6px max(12px, env(safe-area-inset-left, 0px));
@@ -678,11 +690,14 @@
 
       .nav-links {
         gap: 2px;
+        justify-content: center;
       }
 
-      .nav-item {
+      .nav-item,
+      .nav-kakao {
+        flex: 1 1 0;
+        min-width: 0;
         padding: 3px 2px 4px;
-        min-height: 44px;
       }
 
       .nav-item em {
@@ -715,8 +730,8 @@
       }
     }
 
-    /* 휴대폰·태블릿: 위줄(로고+D-day+문의) / 아래줄(아이콘) */
-    @media (max-width: 1023px) {
+    /* 휴대폰·태블릿·작은 노트북: 위줄(로고+D-day+문의) / 아래줄(아이콘) */
+    @media (max-width: 1099px) {
       .nav {
         display: grid;
         grid-template-columns: minmax(0, 1fr) auto;
@@ -763,10 +778,17 @@
         grid-area: links;
         display: grid;
         grid-template-columns: repeat(6, minmax(0, 1fr));
+        justify-items: center;
         gap: 8px 4px;
         max-width: 100%;
         width: 100%;
         padding: 2px 0 0;
+      }
+
+      .nav-item.card-a .ic-aura::before,
+      .nav-item.card-a28 .ic-aura::before {
+        inset: -2px;
+        filter: blur(5px);
       }
 
       .nav-sep {
@@ -804,6 +826,58 @@
       .nav-kakao-menu::before {
         left: 18px;
         transform: rotate(45deg);
+      }
+    }
+
+    /* PC: D-day만 사이드바 [접기]와 왼쪽 테두리 정렬, 문의는 같은 행 맨 오른쪽 */
+    @media (min-width: 1280px) {
+      .nav {
+        display: grid;
+        grid-template-columns: minmax(0, 1560px) 128px;
+        justify-content: center;
+        align-items: center;
+        column-gap: 0;
+        padding-left: env(safe-area-inset-left, 0px);
+        padding-right: env(safe-area-inset-right, 0px);
+      }
+
+      .nav-actions {
+        display: contents;
+      }
+
+      .nav-brand {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: start;
+      }
+
+      .nav-links {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: center;
+        width: auto;
+        max-width: calc(100% - 96px);
+      }
+
+      .inquiry-btn {
+        grid-column: 1;
+        grid-row: 1;
+        justify-self: end;
+        align-self: center;
+      }
+
+      .suneung-dday {
+        grid-column: 2;
+        grid-row: 1;
+        width: 118px;
+        justify-self: end;
+        align-self: center;
+        box-sizing: border-box;
+        padding: 4px 8px 4px 5px;
+      }
+
+      .suneung-dday-date {
+        display: none;
       }
     }
 
@@ -3563,10 +3637,101 @@
       min-height: 0;
     }
 
-    .suneung-prints .suneung-btn {
-      min-height: 52px;
-      padding: 8px 8px;
-      font-size: 12px;
+    .suneung-print-btn {
+      appearance: none;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 5px;
+      min-width: 0;
+      min-height: 58px;
+      padding: 8px 10px;
+      border: 1px solid #efefef;
+      border-radius: 12px;
+      background: linear-gradient(180deg, #ffffff 0%, #f4f4f5 100%);
+      color: #262626;
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+      touch-action: manipulation;
+      box-shadow:
+        inset 0 1px 0 #fff,
+        0 3px 8px rgba(0, 0, 0, 0.06),
+        0 1px 2px rgba(0, 0, 0, 0.04);
+      transition: transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
+    }
+
+    .suneung-print-btn:hover,
+    .suneung-print-btn:focus-visible {
+      transform: translateY(-1px);
+      box-shadow:
+        inset 0 1px 0 #fff,
+        0 8px 16px rgba(0, 0, 0, 0.1);
+      outline: none;
+    }
+
+    .suneung-print-btn:active {
+      transform: translateY(1px);
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.08);
+    }
+
+    .suneung-print-btn[aria-expanded="true"] {
+      box-shadow:
+        inset 0 2px 5px rgba(0, 0, 0, 0.08),
+        0 0 0 1.5px #e1306c;
+    }
+
+    .suneung-print-ic {
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
+
+    .suneung-print-ic svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .suneung-print-btn[data-tone="a"] .suneung-print-ic {
+      background: linear-gradient(135deg, #833ab4 0%, #e1306c 55%, #f77737 100%);
+    }
+    .suneung-print-btn[data-tone="b"] .suneung-print-ic {
+      background: linear-gradient(135deg, #0ea5e9 0%, #2563eb 55%, #1d4ed8 100%);
+    }
+    .suneung-print-btn[data-tone="c"] .suneung-print-ic {
+      background: linear-gradient(135deg, #f59e0b 0%, #f97316 55%, #c2410c 100%);
+    }
+    .suneung-print-btn[data-tone="d"] .suneung-print-ic {
+      background: linear-gradient(135deg, #10b981 0%, #059669 55%, #065f46 100%);
+    }
+
+    .suneung-print-txt {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      min-width: 0;
+      line-height: 1.15;
+    }
+
+    .suneung-print-txt em {
+      font-style: normal;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #8e8e8e;
+    }
+
+    .suneung-print-txt strong {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: #262626;
     }
 
     .suneung-btn {
@@ -3602,16 +3767,53 @@
       outline: none;
     }
 
-    .suneung-btn.is-print {
-      background: #2b261f;
-      color: #f6f1ea;
-      border-color: #2b261f;
+    .suneung-sheet-actions .suneung-sheet-btn {
+      appearance: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 38px;
+      padding: 6px 12px 6px 8px;
+      border: 1px solid #efefef;
+      border-radius: 12px;
+      background: linear-gradient(180deg, #ffffff 0%, #f4f4f5 100%);
+      color: #262626;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow:
+        inset 0 1px 0 #fff,
+        0 3px 8px rgba(0, 0, 0, 0.06);
+      transition: transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
     }
 
-    .suneung-btn.is-print[aria-expanded="true"] {
-      background: #1c1916;
-      border-color: #9a7b4f;
-      box-shadow: 0 0 0 1px #9a7b4f;
+    .suneung-sheet-actions .suneung-sheet-btn svg {
+      width: 15px;
+      height: 15px;
+      flex: 0 0 auto;
+    }
+
+    .suneung-sheet-actions .suneung-sheet-btn.is-dark {
+      background: linear-gradient(180deg, #3a3a3c 0%, #191919 100%);
+      border-color: #191919;
+      color: #fff;
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.18),
+        0 3px 8px rgba(0, 0, 0, 0.16);
+    }
+
+    .suneung-sheet-actions .suneung-sheet-btn:hover,
+    .suneung-sheet-actions .suneung-sheet-btn:focus-visible {
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .suneung-sheet-actions .suneung-sheet-btn:active {
+      transform: translateY(1px);
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.12);
     }
 
     .suneung-sheet {
@@ -3651,27 +3853,6 @@
       gap: 8px;
     }
 
-    .suneung-sheet-actions button {
-      appearance: none;
-      border: 1px solid #c9b8a4;
-      border-radius: 8px;
-      min-height: 38px;
-      padding: 6px 12px;
-      background: #fffdf9;
-      color: #2b261f;
-      font: inherit;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      cursor: pointer;
-    }
-
-    .suneung-sheet-actions .is-print {
-      background: #1c1916;
-      border-color: #1c1916;
-      color: #f6f1ea;
-    }
-
     .suneung-sheet-stage {
       min-height: min(78vh, 980px);
       padding: 12px;
@@ -3680,7 +3861,8 @@
       place-items: center;
     }
 
-    .suneung-sheet-stage img {
+    .suneung-sheet-stage img,
+    .suneung-sheet-stage iframe {
       display: block;
       width: 100%;
       max-width: 1400px;
@@ -3688,6 +3870,19 @@
       max-height: min(78vh, 980px);
       object-fit: contain;
       background: #fff;
+      border: 0;
+    }
+
+    .suneung-sheet-stage iframe {
+      height: min(82vh, 1040px);
+      max-height: none;
+      max-width: none;
+    }
+
+    .suneung-btn[aria-expanded="true"] {
+      background: #1c1916;
+      border-color: #1c1916;
+      color: #f6f1ea;
     }
 
     .suneung-btn.is-blocked,
@@ -4111,11 +4306,26 @@
         min-height: 46px;
         padding: 10px 12px;
       }
-      .suneung-prints .suneung-btn {
-        justify-content: center;
-        text-align: center;
+      .suneung-print-btn {
+        min-height: 54px;
+        padding: 8px 9px;
+      }
+      .suneung-print-txt strong {
         font-size: 12.5px;
-        min-height: 48px;
+      }
+      .suneung-sheet-bar {
+        padding: 8px 10px;
+      }
+      .suneung-sheet-bar strong {
+        flex: 1 1 100%;
+      }
+      .suneung-sheet-actions {
+        width: 100%;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+      }
+      .suneung-sheet-actions .suneung-sheet-btn {
+        min-height: 44px;
       }
       .suneung-sheet-stage {
         min-height: min(70vh, 860px);
@@ -4128,10 +4338,24 @@
         background: #1c1916;
         border-color: #3a322b;
       }
-      .suneung-btn:not(.is-print) {
+      .suneung-btn:not(.suneung-print-btn) {
         background: #2a241e;
         color: #f6f1ea;
         border-color: #4a4238;
+      }
+      .suneung-print-btn {
+        background: linear-gradient(180deg, #2a2a2c 0%, #1c1c1e 100%);
+        color: #f5f5f7;
+        border-color: #3a3a3c;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.08),
+          0 3px 8px rgba(0, 0, 0, 0.28);
+      }
+      .suneung-print-txt em {
+        color: #a1a1aa;
+      }
+      .suneung-print-txt strong {
+        color: #f5f5f7;
       }
       .fold-toggle,
       .fold-rail-btn,
@@ -4152,13 +4376,16 @@
         background: #1c1916;
         border-color: #3a322b;
       }
-      .suneung-sheet-bar strong,
-      .suneung-sheet-actions button:not(.is-print) {
+      .suneung-sheet-bar strong {
         color: #f6f1ea;
       }
-      .suneung-sheet-actions button:not(.is-print) {
-        background: #2a241e;
-        border-color: #4a4238;
+      .suneung-sheet-actions .suneung-sheet-btn:not(.is-dark) {
+        background: linear-gradient(180deg, #2a2a2c 0%, #1c1c1e 100%);
+        color: #f5f5f7;
+        border-color: #3a3a3c;
+        box-shadow:
+          inset 0 1px 0 rgba(255, 255, 255, 0.08),
+          0 3px 8px rgba(0, 0, 0, 0.28);
       }
     }
 
@@ -5344,6 +5571,19 @@
     }
 
     @media (max-width: 420px) {
+      .nav-links {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px 2px;
+      }
+
+      .suneung-print-txt em {
+        font-size: 9px;
+      }
+
+      .suneung-print-txt strong {
+        font-size: 12px;
+      }
+
       .suneung-dday-kicker {
         display: none;
       }
@@ -5982,12 +6222,32 @@
             </button>
           </article>
           <div class="suneung-col-a">
-            <a class="suneung-btn" href="https://drive.google.com/file/d/1bh5T87lBNVDhchWSOLAKgqg9-oosuUX_/view?usp=drive_link" target="_blank" rel="noopener noreferrer">2027 대수능 실시요강</a>
+            <button type="button" class="suneung-btn" data-print-id="1bh5T87lBNVDhchWSOLAKgqg9-oosuUX_" data-print-mode="doc" data-title="2027 대수능 실시요강" aria-expanded="false">2027 대수능 실시요강</button>
             <div class="suneung-prints" role="group" aria-label="수능 출력물">
-              <button type="button" class="suneung-btn is-print" data-print-id="1idT_en7sK03YRiELlWsGLwmbqKVUpdMw" aria-expanded="false">[사전 입력] 출력물</button>
-              <button type="button" class="suneung-btn is-print" data-print-id="1MGqGfsn8fErnoN1lezbxd5SHEn_WLqx5" aria-expanded="false">[접수 안내] 출력물</button>
-              <button type="button" class="suneung-btn is-print" data-print-id="1fQT4lkHiN-998SIzV1DT9YtQzxNTBZQJ" aria-expanded="false">[접수 절차1] 출력물</button>
-              <button type="button" class="suneung-btn is-print" data-print-id="1fMcMAUkgVg2b_s5Uwzchdjb2kPI4WKNG" aria-expanded="false">[접수 절차2] 출력물</button>
+              <button type="button" class="suneung-print-btn" data-tone="a" data-print-id="1idT_en7sK03YRiELlWsGLwmbqKVUpdMw" data-title="[사전 입력] 출력물" aria-expanded="false">
+                <span class="suneung-print-ic" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><rect x="5" y="3.5" width="14" height="17" rx="2.2" stroke="currentColor" stroke-width="1.7"/><path d="M8 8.2h8M8 12h8M8 15.8h5.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+                </span>
+                <span class="suneung-print-txt"><em>[사전 입력]</em><strong>출력물</strong></span>
+              </button>
+              <button type="button" class="suneung-print-btn" data-tone="b" data-print-id="1MGqGfsn8fErnoN1lezbxd5SHEn_WLqx5" data-title="[접수 안내] 출력물" aria-expanded="false">
+                <span class="suneung-print-ic" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.2" stroke="currentColor" stroke-width="1.7"/><path d="M12 8.2v.4M12 11v5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                </span>
+                <span class="suneung-print-txt"><em>[접수 안내]</em><strong>출력물</strong></span>
+              </button>
+              <button type="button" class="suneung-print-btn" data-tone="c" data-print-id="1fQT4lkHiN-998SIzV1DT9YtQzxNTBZQJ" data-title="[접수 절차1] 출력물" aria-expanded="false">
+                <span class="suneung-print-ic" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><path d="M7 7h10M7 12h10M7 17h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="4.6" cy="7" r="1.15" fill="currentColor"/><circle cx="4.6" cy="12" r="1.15" fill="currentColor"/><circle cx="4.6" cy="17" r="1.15" fill="currentColor"/></svg>
+                </span>
+                <span class="suneung-print-txt"><em>[접수 절차1]</em><strong>출력물</strong></span>
+              </button>
+              <button type="button" class="suneung-print-btn" data-tone="d" data-print-id="1fMcMAUkgVg2b_s5Uwzchdjb2kPI4WKNG" data-title="[접수 절차2] 출력물" aria-expanded="false">
+                <span class="suneung-print-ic" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none"><rect x="4.5" y="5" width="15" height="14" rx="2.2" stroke="currentColor" stroke-width="1.7"/><path d="M8 9.2h8M8 12.4h8M8 15.6h5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </span>
+                <span class="suneung-print-txt"><em>[접수 절차2]</em><strong>출력물</strong></span>
+              </button>
             </div>
           </div>
           <div class="suneung-col-b">
@@ -6013,12 +6273,28 @@
           <div class="suneung-sheet-bar">
             <strong id="suneungSheetTitle">출력물</strong>
             <div class="suneung-sheet-actions">
-              <button type="button" class="is-print" id="suneungSheetPrint">출력</button>
-              <button type="button" id="suneungSheetClose">닫기</button>
+              <a class="suneung-sheet-btn" id="suneungSheetOpen" href="#" target="_blank" rel="noopener noreferrer" title="새 창으로 보기" aria-label="새 창으로 보기">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M14 5h5v5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M10 14 19 5" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/>
+                  <path d="M19 13.5V18a1.5 1.5 0 0 1-1.5 1.5H6.5A1.5 1.5 0 0 1 5 18V7.5A1.5 1.5 0 0 1 6.5 6H11" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                새 창
+              </a>
+              <button type="button" class="suneung-sheet-btn is-dark" id="suneungSheetPrint">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M7 9V5.8A1.3 1.3 0 0 1 8.3 4.5h7.4A1.3 1.3 0 0 1 17 5.8V9" stroke="currentColor" stroke-width="1.7"/>
+                  <rect x="6" y="9" width="12" height="7.5" rx="1.6" stroke="currentColor" stroke-width="1.7"/>
+                  <path d="M8 16.5h8V20H8z" stroke="currentColor" stroke-width="1.7"/>
+                </svg>
+                출력
+              </button>
+              <button type="button" class="suneung-sheet-btn" id="suneungSheetClose">닫기</button>
             </div>
           </div>
           <div class="suneung-sheet-stage">
-            <img id="suneungSheetImg" alt="수능 출력물" />
+            <img id="suneungSheetImg" alt="수능 출력물" hidden />
+            <iframe id="suneungSheetFrame" title="수능 문서 보기" hidden></iframe>
           </div>
         </section>
       </div>
@@ -9304,9 +9580,11 @@
         const sheet = document.getElementById("suneungSheet");
         const sheetTitle = document.getElementById("suneungSheetTitle");
         const sheetImg = document.getElementById("suneungSheetImg");
+        const sheetFrame = document.getElementById("suneungSheetFrame");
         const sheetPrint = document.getElementById("suneungSheetPrint");
+        const sheetOpen = document.getElementById("suneungSheetOpen");
         const sheetClose = document.getElementById("suneungSheetClose");
-        const printBtns = panel ? panel.querySelectorAll(".suneung-prints [data-print-id]") : [];
+        const printBtns = panel ? panel.querySelectorAll("[data-print-id]") : [];
         if (!strip || !panel) return;
 
         const previewUrl = (id) => `https://drive.google.com/file/d/${id}/preview`;
@@ -9316,6 +9594,7 @@
         const viewUrl = (id) => `https://drive.google.com/uc?export=view&id=${id}`;
 
         let activePrintId = "";
+        let activePrintMode = "image";
 
         function syncPrintButtons() {
           printBtns.forEach((btn) => {
@@ -9325,14 +9604,21 @@
 
         function closeSheet() {
           activePrintId = "";
+          activePrintMode = "image";
           if (sheet) {
             sheet.hidden = true;
             sheet.classList.remove("is-open");
           }
           if (sheetImg) {
+            sheetImg.hidden = true;
             sheetImg.removeAttribute("src");
             sheetImg.removeAttribute("data-print-src");
           }
+          if (sheetFrame) {
+            sheetFrame.hidden = true;
+            sheetFrame.removeAttribute("src");
+          }
+          if (sheetOpen) sheetOpen.setAttribute("href", "#");
           syncPrintButtons();
         }
 
@@ -9349,14 +9635,31 @@
           img.src = chain[0];
         }
 
-        function openSheet(id, title) {
-          if (!sheet || !sheetImg) return;
+        function openSheet(id, title, mode) {
+          if (!sheet) return;
           activePrintId = id;
+          activePrintMode = mode === "doc" ? "doc" : "image";
           sheet.hidden = false;
           sheet.classList.add("is-open");
           if (sheetTitle) sheetTitle.textContent = title;
-          sheetImg.alt = title;
-          bindImageFallbacks(sheetImg, id);
+          if (sheetOpen) sheetOpen.href = `https://drive.google.com/file/d/${id}/view`;
+          if (activePrintMode === "doc" && sheetFrame) {
+            if (sheetImg) {
+              sheetImg.hidden = true;
+              sheetImg.removeAttribute("src");
+            }
+            sheetFrame.hidden = false;
+            sheetFrame.title = title;
+            sheetFrame.src = previewUrl(id);
+          } else if (sheetImg) {
+            if (sheetFrame) {
+              sheetFrame.hidden = true;
+              sheetFrame.removeAttribute("src");
+            }
+            sheetImg.hidden = false;
+            sheetImg.alt = title;
+            bindImageFallbacks(sheetImg, id);
+          }
           syncPrintButtons();
           const offset = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--nav-offset")) || 72;
           const top = sheet.getBoundingClientRect().top + window.scrollY - offset - 12;
@@ -9364,8 +9667,15 @@
         }
 
         function printSheet() {
-          const src = (sheetImg && (sheetImg.dataset.printSrc || sheetImg.currentSrc || sheetImg.src)) || "";
           const title = (sheetTitle && sheetTitle.textContent) || "출력물";
+          if (activePrintMode === "doc" && activePrintId) {
+            const w = window.open(previewUrl(activePrintId), "suneungDocPrint");
+            if (w) {
+              try { w.focus(); } catch (_) {}
+            }
+            return;
+          }
+          const src = (sheetImg && (sheetImg.dataset.printSrc || sheetImg.currentSrc || sheetImg.src)) || "";
           if (!src) return;
           const w = window.open("", "suneungPrint");
           if (!w) {
@@ -9526,10 +9836,11 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
         printBtns.forEach((btn) => {
           btn.addEventListener("click", () => {
             const id = btn.getAttribute("data-print-id");
-            const title = (btn.textContent || "출력물").trim();
+            const title = (btn.getAttribute("data-title") || btn.textContent || "출력물").trim();
+            const mode = btn.getAttribute("data-print-mode") || "image";
             if (!id) return;
             if (activePrintId === id) closeSheet();
-            else openSheet(id, title);
+            else openSheet(id, title, mode);
           });
         });
 
