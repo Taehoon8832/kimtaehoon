@@ -3626,8 +3626,45 @@
     }
 
     .suneung-player.is-on .suneung-poster,
-    .suneung-player.is-on .suneung-play {
+    .suneung-player.is-on:not(.is-paused) .suneung-play {
       opacity: 0;
+    }
+
+    .suneung-player.is-paused .suneung-play {
+      opacity: 1;
+    }
+
+    .suneung-seek {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 5;
+      display: none;
+      align-items: center;
+      padding: 14px 10px 6px;
+      background: linear-gradient(180deg, transparent 0%, rgba(12, 10, 8, 0.55) 70%);
+      pointer-events: auto;
+    }
+
+    .suneung-player.has-media .suneung-seek {
+      display: flex;
+    }
+
+    .suneung-seek-range {
+      width: 100%;
+      height: 28px;
+      margin: 0;
+      padding: 0;
+      cursor: pointer;
+      accent-color: #f6f1ea;
+      background: transparent;
+      touch-action: none;
+    }
+
+    .suneung-player.has-media .suneung-caption,
+    .suneung-player.has-media .suneung-pause-chip {
+      bottom: 34px;
     }
 
     .suneung-play {
@@ -6484,6 +6521,9 @@
               <span class="suneung-caption">원서접수 안내</span>
               <span class="suneung-pause-chip">클릭하면 중지</span>
             </button>
+            <div class="suneung-seek" hidden>
+              <input class="suneung-seek-range" type="range" min="0" max="1000" value="0" step="1" aria-label="재생 위치" />
+            </div>
             <button type="button" class="suneung-fs-btn" aria-label="전체화면">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M8 4H4v4M16 4h4v4M8 20H4v-4M16 20h4v-4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
@@ -6500,6 +6540,9 @@
               <span class="suneung-caption">원서접수 안내(쇼츠)</span>
               <span class="suneung-pause-chip">클릭하면 중지</span>
             </button>
+            <div class="suneung-seek" hidden>
+              <input class="suneung-seek-range" type="range" min="0" max="1000" value="0" step="1" aria-label="재생 위치" />
+            </div>
             <button type="button" class="suneung-fs-btn" aria-label="전체화면">
               <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path d="M8 4H4v4M16 4h4v4M8 20H4v-4M16 20h4v-4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
@@ -10088,19 +10131,100 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
           }
         }
 
+        const PLAY_RATE = 2.5;
+
+        function playerVideo(player) {
+          return player.querySelector(".suneung-stage video");
+        }
+
+        function setPlayerUi(player, playing) {
+          const hit = player.querySelector(".suneung-player-hit");
+          const chip = player.querySelector(".suneung-pause-chip");
+          player.classList.toggle("is-on", true);
+          player.classList.toggle("is-paused", !playing);
+          if (hit) {
+            hit.setAttribute("aria-pressed", playing ? "true" : "false");
+            const label = hit.getAttribute("aria-label") || "";
+            hit.setAttribute("aria-label", playing ? label.replace("재생", "중지") : label.replace("중지", "재생"));
+          }
+          if (chip) chip.textContent = playing ? "클릭하면 중지" : "클릭하면 재생";
+        }
+
+        function bindSeek(player, video) {
+          const seek = player.querySelector(".suneung-seek");
+          const range = player.querySelector(".suneung-seek-range");
+          if (!seek || !range || range.dataset.bound === "1") return;
+          range.dataset.bound = "1";
+          seek.hidden = false;
+          player.classList.add("has-media");
+          let dragging = false;
+          const seekTo = () => {
+            if (!Number.isFinite(video.duration) || video.duration <= 0) return;
+            video.currentTime = (Number(range.value) / 1000) * video.duration;
+          };
+          const finishSeek = () => {
+            if (!dragging) return;
+            dragging = false;
+            seekTo();
+            video.playbackRate = PLAY_RATE;
+            const playTry = video.play();
+            if (playTry && typeof playTry.catch === "function") playTry.catch(() => {});
+            setPlayerUi(player, true);
+          };
+          const startDrag = (e) => {
+            e.stopPropagation();
+            dragging = true;
+          };
+          range.addEventListener("pointerdown", startDrag);
+          range.addEventListener("touchstart", startDrag, { passive: true });
+          range.addEventListener("click", (e) => e.stopPropagation());
+          range.addEventListener("input", (e) => {
+            e.stopPropagation();
+            dragging = true;
+            seekTo();
+          });
+          range.addEventListener("pointerup", finishSeek);
+          range.addEventListener("pointercancel", finishSeek);
+          range.addEventListener("change", finishSeek);
+          range.addEventListener("touchend", finishSeek);
+          video.addEventListener("timeupdate", () => {
+            if (dragging || !Number.isFinite(video.duration) || video.duration <= 0) return;
+            range.value = String(Math.round((video.currentTime / video.duration) * 1000));
+          });
+        }
+
         function stopPlayer(player) {
           const stage = player.querySelector(".suneung-stage");
           const hit = player.querySelector(".suneung-player-hit");
+          const seek = player.querySelector(".suneung-seek");
+          const range = player.querySelector(".suneung-seek-range");
           if (stage) {
             stage.innerHTML = "";
             stage.hidden = true;
           }
-          player.classList.remove("is-on");
+          if (seek) seek.hidden = true;
+          if (range) {
+            range.value = "0";
+            range.dataset.bound = "";
+          }
+          player.classList.remove("is-on", "is-paused", "has-media");
           if (hit) {
             hit.setAttribute("aria-pressed", "false");
             const label = hit.getAttribute("aria-label") || "";
             hit.setAttribute("aria-label", label.replace("중지", "재생"));
           }
+          const chip = player.querySelector(".suneung-pause-chip");
+          if (chip) chip.textContent = "클릭하면 중지";
+        }
+
+        function pausePlayer(player) {
+          const video = playerVideo(player);
+          if (!video) {
+            stopPlayer(player);
+            return;
+          }
+          video.pause();
+          setPlayerUi(player, false);
         }
 
         function playPlayer(player) {
@@ -10108,15 +10232,32 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
           const stage = player.querySelector(".suneung-stage");
           const hit = player.querySelector(".suneung-player-hit");
           if (!id || !stage) return;
+          strip.querySelectorAll(".suneung-player").forEach((other) => {
+            if (other !== player && other.classList.contains("is-on") && !other.classList.contains("is-paused")) {
+              pausePlayer(other);
+            }
+          });
+          const existing = playerVideo(player);
+          if (existing) {
+            existing.playbackRate = PLAY_RATE;
+            const playTry = existing.play();
+            if (playTry && typeof playTry.catch === "function") playTry.catch(() => {});
+            setPlayerUi(player, true);
+            return;
+          }
           stage.hidden = false;
           const video = document.createElement("video");
           video.playsInline = true;
-          video.preload = "metadata";
+          video.preload = "auto";
           video.controls = false;
+          video.playbackRate = PLAY_RATE;
+          video.defaultPlaybackRate = PLAY_RATE;
           video.setAttribute("playsinline", "");
+          video.setAttribute("webkit-playsinline", "");
           video.style.objectFit = "contain";
           video.src = directUrl(id);
           const fallback = () => {
+            if (playerVideo(player) !== video) return;
             stage.innerHTML = "";
             const iframe = document.createElement("iframe");
             iframe.src = `${previewUrl(id)}?autoplay=1`;
@@ -10126,19 +10267,22 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
             stage.appendChild(iframe);
           };
           video.addEventListener("error", fallback, { once: true });
-          video.addEventListener("playing", () => player.classList.add("is-on"), { once: true });
+          video.addEventListener("loadedmetadata", () => {
+            video.playbackRate = PLAY_RATE;
+            bindSeek(player, video);
+          });
+          video.addEventListener("playing", () => {
+            video.playbackRate = PLAY_RATE;
+            setPlayerUi(player, true);
+          });
           stage.innerHTML = "";
           stage.appendChild(video);
+          bindSeek(player, video);
           const playTry = video.play();
           if (playTry && typeof playTry.catch === "function") {
             playTry.catch(fallback);
           }
-          player.classList.add("is-on");
-          if (hit) {
-            hit.setAttribute("aria-pressed", "true");
-            const label = hit.getAttribute("aria-label") || "";
-            hit.setAttribute("aria-label", label.replace("재생", "중지"));
-          }
+          setPlayerUi(player, true);
         }
 
         function isPlayerFullscreen(player) {
@@ -10169,9 +10313,18 @@ img { position: fixed; inset: 0; width: 100%; height: 100%; object-fit: contain;
           const fsBtn = player.querySelector(".suneung-fs-btn");
           if (hit) {
             hit.addEventListener("click", () => {
-              if (player.classList.contains("is-on")) stopPlayer(player);
-              else playPlayer(player);
+              const video = playerVideo(player);
+              if (video && !video.paused && player.classList.contains("is-on") && !player.classList.contains("is-paused")) {
+                pausePlayer(player);
+              } else {
+                playPlayer(player);
+              }
             });
+          }
+          const seek = player.querySelector(".suneung-seek");
+          if (seek) {
+            seek.addEventListener("click", (e) => e.stopPropagation());
+            seek.addEventListener("pointerdown", (e) => e.stopPropagation());
           }
           if (fsBtn) {
             fsBtn.addEventListener("click", (e) => {
