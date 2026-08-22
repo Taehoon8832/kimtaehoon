@@ -86,7 +86,8 @@
 
       --container: 1080px;
       --font: "Noto Sans KR", "Noto Sans", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", sans-serif;
-      --nav-inquiry-col: 96px;
+      --nav-side-left: 7.5rem;
+      --nav-side-right: 5.75rem;
     }
 
     @media (prefers-color-scheme: dark) {
@@ -689,7 +690,7 @@
     @media (min-width: 1100px) and (max-width: 1399px) {
       .nav {
         gap: 8px;
-        padding: 6px max(12px, env(safe-area-inset-right, 0px)) 6px max(10px, env(safe-area-inset-left, 0px));
+        padding: 6px max(10px, env(safe-area-inset-right, 0px)) 6px max(8px, env(safe-area-inset-left, 0px));
       }
 
       .brand-name {
@@ -753,13 +754,17 @@
           "brand actions"
           "links links";
         gap: 8px 10px;
-        padding: 8px max(12px, env(safe-area-inset-right, 0px)) 10px max(10px, env(safe-area-inset-left, 0px));
+        padding: 8px max(10px, env(safe-area-inset-right, 0px)) 10px max(8px, env(safe-area-inset-left, 0px));
         align-items: center;
       }
 
       .nav-brand {
         grid-area: brand;
         justify-self: start;
+      }
+
+      .inquiry-btn {
+        margin-left: 0;
       }
 
       .brand-name {
@@ -845,16 +850,20 @@
       }
     }
 
-    /* PC: 브랜드 왼쪽 / 아이콘 가운데 / D-day는 접기 레일과 정렬 / 문의는 D-day 오른쪽 */
+    /* PC 한 줄: 브랜드 맨왼쪽 / 아이콘 가운데 / D-day는 접기 레일 / 문의 맨오른쪽 */
     @media (min-width: 1280px) {
       .nav,
       .lower-layout {
-        grid-template-columns: minmax(0, 1560px) 128px var(--nav-inquiry-col, 96px);
+        grid-template-columns:
+          minmax(var(--nav-side-left), 1fr)
+          minmax(0, 1560px)
+          128px
+          minmax(var(--nav-side-right), 1fr);
       }
 
       .nav {
         display: grid;
-        justify-content: center;
+        justify-content: stretch;
         align-items: center;
         column-gap: 0;
         padding-left: env(safe-area-inset-left, 0px);
@@ -869,16 +878,17 @@
         grid-column: 1;
         grid-row: 1;
         justify-self: start;
+        padding-left: 10px;
       }
 
       .nav-links {
-        grid-column: 1;
+        grid-column: 2;
         grid-row: 1;
         justify-self: center;
         justify-content: center;
         width: max-content;
         max-width: 100%;
-        padding-inline: 118px;
+        padding-inline: 0;
       }
 
       .nav-item,
@@ -887,7 +897,7 @@
       }
 
       .suneung-dday {
-        grid-column: 2;
+        grid-column: 3;
         grid-row: 1;
         width: 118px;
         justify-self: end;
@@ -897,11 +907,12 @@
       }
 
       .inquiry-btn {
-        grid-column: 3;
+        grid-column: 4;
         grid-row: 1;
-        justify-self: start;
+        justify-self: end;
         align-self: center;
-        margin-left: 8px;
+        margin-left: 0;
+        margin-right: 10px;
       }
 
       .suneung-dday-date {
@@ -911,7 +922,6 @@
 
     @media (min-width: 1280px) and (max-width: 1399px) {
       .nav-links {
-        padding-inline: 96px;
         gap: 3px;
       }
     }
@@ -1994,17 +2004,21 @@
 
     @media (min-width: 1280px) {
       .lower-layout {
-        grid-template-columns: minmax(0, 1560px) 128px var(--nav-inquiry-col, 96px);
-        justify-content: center;
+        grid-template-columns:
+          minmax(var(--nav-side-left), 1fr)
+          minmax(0, 1560px)
+          128px
+          minmax(var(--nav-side-right), 1fr);
+        justify-content: stretch;
         align-items: start;
       }
 
       .lower-main {
-        grid-column: 1;
+        grid-column: 2;
       }
 
       .fold-rail {
-        grid-column: 2;
+        grid-column: 3;
         grid-row: 1;
       }
     }
@@ -4727,100 +4741,141 @@
     }
 
     .sagwan-result-modal .sagwan-modal-card {
-      width: min(420px, 100%);
+      width: min(400px, 100%);
       max-height: none;
       grid-template-rows: auto auto;
+    }
+
+    .sagwan-result-form[hidden],
+    .sagwan-result-ready[hidden] {
+      display: none !important;
     }
 
     .sagwan-result-form,
     .sagwan-result-ready {
       display: grid;
-      gap: 12px;
-      padding: 18px 18px 16px;
+      gap: 8px;
+      padding: 12px 14px 14px;
     }
 
     .sagwan-result-form label {
-      font-size: 13px;
+      font-size: 12px;
       font-weight: 800;
       letter-spacing: -0.02em;
-      color: #2a1c12;
+      color: #3a3a3c;
+    }
+
+    .sagwan-result-row {
+      display: flex;
+      align-items: stretch;
+      gap: 8px;
+      min-width: 0;
     }
 
     .sagwan-result-form input[type="email"] {
-      width: 100%;
-      height: 42px;
-      border: 1.5px solid rgba(29, 79, 138, 0.28);
-      border-radius: 11px;
+      flex: 1 1 auto;
+      min-width: 0;
+      height: 40px;
+      border: 1px solid #e5e5ea;
+      border-radius: 10px;
       padding: 0 12px;
       font: inherit;
       font-size: 14px;
-      color: #1b2430;
-      background: #f8fbff;
+      color: #1c1c1e;
+      background: #fafafa;
     }
 
     .sagwan-result-form input[type="email"]:focus {
       outline: none;
-      border-color: #1d4f8a;
-      box-shadow: 0 0 0 3px rgba(29, 79, 138, 0.12);
+      border-color: #262626;
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(38, 38, 38, 0.08);
     }
 
     .sagwan-result-form .err {
-      margin: -4px 0 0;
+      margin: 0;
       font-size: 12px;
       font-weight: 700;
-      color: #c62828;
+      color: #e1306c;
     }
 
-    .sagwan-result-actions {
-      display: flex;
-      justify-content: flex-end;
+    .sagwan-result-hint {
+      margin: 0;
+      font-size: 12px;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      line-height: 1.4;
+      color: #8e8e93;
+      word-break: keep-all;
     }
 
     .sagwan-result-confirm {
-      width: 46px;
-      height: 46px;
-      border: 0;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
+      flex: 0 0 auto;
+      min-width: 64px;
+      height: 40px;
+      padding: 0 14px;
+      border: 1px solid #191919;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       cursor: pointer;
       color: #fff;
-      background: linear-gradient(145deg, #2f6db5 0%, #154a8c 100%);
-      box-shadow: 0 8px 16px rgba(21, 74, 140, 0.28);
-      transition: transform var(--duration-fast) var(--ease-spring), box-shadow var(--duration-fast) var(--ease-out);
+      background: linear-gradient(180deg, #3a3a3c 0%, #191919 100%);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.16),
+        0 3px 8px rgba(0, 0, 0, 0.16);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      transition: transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
     }
 
     .sagwan-result-confirm:hover,
     .sagwan-result-confirm:focus-visible {
-      transform: translateY(-1px) scale(1.04);
-      box-shadow: 0 10px 20px rgba(21, 74, 140, 0.34);
+      transform: translateY(-1px);
       outline: none;
     }
 
     .sagwan-result-confirm:active {
-      transform: scale(0.95);
-    }
-
-    .sagwan-result-confirm svg {
-      width: 22px;
-      height: 22px;
+      transform: translateY(1px);
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
     .sagwan-result-ready {
-      text-align: center;
-      padding: 28px 18px 26px;
+      justify-items: start;
+      text-align: left;
+    }
+
+    .sagwan-result-badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 22px;
+      padding: 0 8px;
+      border-radius: 999px;
+      border: 1px solid #e5e5ea;
+      background: #f4f4f5;
+      color: #262626;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
     }
 
     .sagwan-result-ready strong {
-      display: inline-block;
-      padding: 8px 14px;
-      border-radius: 6px;
-      background: linear-gradient(180deg, #2e8b57 0%, #217346 100%);
-      color: #fff;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 800;
       letter-spacing: -0.03em;
-      color: #5c4030;
+      color: #1c1c1e;
+    }
+
+    .sagwan-result-ready p {
+      margin: 0;
+      font-size: 12.5px;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      line-height: 1.4;
+      color: #636366;
     }
 
     .sagwan-main-row {
@@ -5515,7 +5570,7 @@
     @media (max-width: 720px) {
       .nav {
         gap: 10px 8px;
-        padding: 8px max(12px, env(safe-area-inset-right, 0px)) 10px max(12px, env(safe-area-inset-left, 0px));
+        padding: 8px max(8px, env(safe-area-inset-right, 0px)) 10px max(8px, env(safe-area-inset-left, 0px));
       }
 
       .nav-actions {
@@ -6745,27 +6800,26 @@
         <button type="button" class="sagwan-modal-close" id="sagwanResultClose" aria-label="닫기">×</button>
       </div>
       <form class="sagwan-result-form" id="sagwanResultForm">
-        <label for="sagwanResultEmail">점공 참여 이메일 주소</label>
-        <input
-          type="email"
-          id="sagwanResultEmail"
-          name="email"
-          placeholder="name@example.com"
-          autocomplete="email"
-          inputmode="email"
-          required
-        />
-        <p class="err" id="sagwanResultEmailError" hidden>올바른 이메일 주소를 입력해 주세요.</p>
-        <div class="sagwan-result-actions">
-          <button type="submit" class="sagwan-result-confirm" id="sagwanResultConfirm" aria-label="확인" title="확인">
-            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M6 12.2l4.1 4.2L18 8.6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </button>
+        <label for="sagwanResultEmail">점공 참여 이메일</label>
+        <div class="sagwan-result-row">
+          <input
+            type="email"
+            id="sagwanResultEmail"
+            name="email"
+            placeholder="name@example.com"
+            autocomplete="email"
+            inputmode="email"
+            required
+          />
+          <button type="submit" class="sagwan-result-confirm" id="sagwanResultConfirm">확인</button>
         </div>
+        <p class="err" id="sagwanResultEmailError" hidden>올바른 이메일 주소를 입력해 주세요.</p>
+        <p class="sagwan-result-hint">8/30까지 수합한 뒤, 입력한 주소로 결과를 안내합니다.</p>
       </form>
       <div class="sagwan-result-ready" id="sagwanResultReady" hidden>
-        <strong>준비중(8/30까지 수합중)</strong>
+        <span class="sagwan-result-badge">수합 중</span>
+        <strong>8/30까지 점수를 모으고 있습니다</strong>
+        <p>참여하신 이메일로 결과가 안내됩니다.</p>
       </div>
     </div>
   </div>
