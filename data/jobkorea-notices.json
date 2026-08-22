@@ -2,8 +2,8 @@
   "source": "https://www.jobkorea.co.kr/",
   "api": "https://jk-bff-display-api.jobkorea.co.kr/v1/home/jobs/curated?sc=729",
   "section": "인기 JOB",
-  "updatedAt": "2026-08-22T04:36:40.988Z",
-  "checkedAt": "2026-08-22T04:36:40.988Z",
+  "updatedAt": "2026-08-22T05:02:31.041Z",
+  "checkedAt": "2026-08-22T05:02:31.041Z",
   "today": "2026-08-22",
   "count": 24,
   "notices": [
@@ -19,8 +19,8 @@
       "deadlineISO": "2026-09-20",
       "deadlineText": "2026.09.20",
       "alwaysHire": false,
-      "popularRank": 3,
-      "popularScore": 2.859318
+      "popularRank": 4,
+      "popularScore": 2.853311
     },
     {
       "id": "450b1f72e0343ed299cc",
@@ -34,8 +34,8 @@
       "deadlineISO": "2026-09-20",
       "deadlineText": "2026.09.20",
       "alwaysHire": false,
-      "popularRank": 15,
-      "popularScore": 1.871196
+      "popularRank": 13,
+      "popularScore": 1.8565229
     },
     {
       "id": "d7975cba63495f5d17a9",
@@ -50,22 +50,7 @@
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
       "popularRank": 20,
-      "popularScore": 1.757645
-    },
-    {
-      "id": "a503d60967b2200c61bb",
-      "jobId": "49816956",
-      "companyName": "비테스코테크놀로지스코리아(유)",
-      "title": "셰플러코리아 이천사업장 (구. 비테스코테크놀로지스코리아) 8월 수시 채용",
-      "preview": "신입·경력 · 정규직·계약직 · 마감 D-9 · 접수마감 2026.08.31",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49816956",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20",
-      "deadlineISO": "2026-08-31",
-      "deadlineText": "2026.08.31",
-      "alwaysHire": false,
-      "popularRank": 13,
-      "popularScore": 2.107529
+      "popularScore": 1.755138
     },
     {
       "id": "b7d5ca0bf83730d1820d",
@@ -79,8 +64,8 @@
       "deadlineISO": "2026-09-20",
       "deadlineText": "2026.09.20",
       "alwaysHire": false,
-      "popularRank": 21,
-      "popularScore": 1.747611
+      "popularRank": 19,
+      "popularScore": 1.7655871
     },
     {
       "id": "182056d5981c154f4eb1",
@@ -95,7 +80,7 @@
       "deadlineText": "2026.08.30",
       "alwaysHire": false,
       "popularRank": 1,
-      "popularScore": 3.27432
+      "popularScore": 3.269947
     },
     {
       "id": "12017eea0fc515d75a36",
@@ -109,8 +94,8 @@
       "deadlineISO": "2026-09-17",
       "deadlineText": "2026.09.17",
       "alwaysHire": false,
-      "popularRank": 16,
-      "popularScore": 1.836874
+      "popularRank": 15,
+      "popularScore": 1.816016
     },
     {
       "id": "cac52a505fd5969f0ff8",
@@ -124,8 +109,8 @@
       "deadlineISO": "2026-09-20",
       "deadlineText": "2026.09.20",
       "alwaysHire": false,
-      "popularRank": 19,
-      "popularScore": 1.795541
+      "popularRank": 16,
+      "popularScore": 1.802727
     },
     {
       "id": "41f2ee2408b1ef859184",
@@ -139,8 +124,8 @@
       "deadlineISO": "2026-08-28",
       "deadlineText": "2026.08.28",
       "alwaysHire": false,
-      "popularRank": 22,
-      "popularScore": 1.715937
+      "popularRank": 21,
+      "popularScore": 1.7144339
     },
     {
       "id": "0166c239ccde9e457ceb",
@@ -155,22 +140,22 @@
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
       "popularRank": 23,
-      "popularScore": 1.712317
+      "popularScore": 1.679605
     },
     {
-      "id": "d32297f0bdf130b7578a",
-      "jobId": "49786196",
-      "companyName": "㈜마초의사춘기",
-      "title": "사업 및 브랜드 전략 기획자 채용",
-      "preview": "경력 · 정규직 · 마감 D-22 · 접수마감 2026.09.13",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49786196",
+      "id": "f19cd489697422d474e6",
+      "jobId": "49785274",
+      "companyName": "㈜보령",
+      "title": "㈜보령 2026년 3분기 수시 채용(경력)",
+      "preview": "경력 · 정규직·계약직 · 마감 D-8 · 접수마감 2026.08.30",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49785274",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14",
-      "deadlineISO": "2026-09-13",
-      "deadlineText": "2026.09.13",
+      "deadlineISO": "2026-08-30",
+      "deadlineText": "2026.08.30",
       "alwaysHire": false,
-      "popularRank": 8,
-      "popularScore": 2.298173
+      "popularRank": 3,
+      "popularScore": 2.878184
     },
     {
       "id": "9135ba48be9d10365323",
@@ -185,22 +170,22 @@
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
       "popularRank": 10,
-      "popularScore": 2.214296
+      "popularScore": 2.2376509
     },
     {
-      "id": "f19cd489697422d474e6",
-      "jobId": "49785274",
-      "companyName": "㈜보령",
-      "title": "㈜보령 2026년 3분기 수시 채용(경력)",
-      "preview": "경력 · 정규직·계약직 · 마감 D-8 · 접수마감 2026.08.30",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49785274",
+      "id": "d32297f0bdf130b7578a",
+      "jobId": "49786196",
+      "companyName": "㈜마초의사춘기",
+      "title": "사업 및 브랜드 전략 기획자 채용",
+      "preview": "경력 · 정규직 · 마감 D-22 · 접수마감 2026.09.13",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49786196",
       "dateISO": "2026-08-14",
       "dateText": "2026.08.14",
-      "deadlineISO": "2026-08-30",
-      "deadlineText": "2026.08.30",
+      "deadlineISO": "2026-09-13",
+      "deadlineText": "2026.09.13",
       "alwaysHire": false,
       "popularRank": 12,
-      "popularScore": 2.180885
+      "popularScore": 2.1549048
     },
     {
       "id": "e1e87ce35739315d63b3",
@@ -214,8 +199,8 @@
       "deadlineISO": "2026-09-12",
       "deadlineText": "2026.09.12",
       "alwaysHire": false,
-      "popularRank": 5,
-      "popularScore": 2.4696798
+      "popularRank": 6,
+      "popularScore": 2.520859
     },
     {
       "id": "f4aebd6330a249f3a9f7",
@@ -230,7 +215,7 @@
       "deadlineText": "2026.10.12",
       "alwaysHire": false,
       "popularRank": 11,
-      "popularScore": 2.20736
+      "popularScore": 2.223454
     },
     {
       "id": "51066d1dd642abac1011",
@@ -244,8 +229,8 @@
       "deadlineISO": "2026-10-11",
       "deadlineText": "2026.10.11",
       "alwaysHire": false,
-      "popularRank": 9,
-      "popularScore": 2.28335
+      "popularRank": 8,
+      "popularScore": 2.315139
     },
     {
       "id": "5e1cc9e61a7db7f87c3e",
@@ -260,7 +245,7 @@
       "deadlineText": "2026.09.13",
       "alwaysHire": false,
       "popularRank": 18,
-      "popularScore": 1.803748
+      "popularScore": 1.76928
     },
     {
       "id": "ecbeaf7b86cc728ed0e1",
@@ -274,8 +259,8 @@
       "deadlineISO": "2026-08-31",
       "deadlineText": "2026.08.31",
       "alwaysHire": false,
-      "popularRank": 14,
-      "popularScore": 1.8859489
+      "popularRank": 17,
+      "popularScore": 1.787688
     },
     {
       "id": "88a0735cd26b5ca6d82a",
@@ -290,7 +275,7 @@
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
       "popularRank": 2,
-      "popularScore": 3.0314689
+      "popularScore": 3.050276
     },
     {
       "id": "cfc1e393775a21db0610",
@@ -304,8 +289,8 @@
       "deadlineISO": "2026-08-23",
       "deadlineText": "2026.08.23",
       "alwaysHire": false,
-      "popularRank": 4,
-      "popularScore": 2.481953
+      "popularRank": 5,
+      "popularScore": 2.522343
     },
     {
       "id": "5bdf117422a38ac42fd6",
@@ -319,8 +304,23 @@
       "deadlineISO": "",
       "deadlineText": "",
       "alwaysHire": true,
-      "popularRank": 6,
-      "popularScore": 2.462719
+      "popularRank": 7,
+      "popularScore": 2.489764
+    },
+    {
+      "id": "7ff497d619edbb2ccb79",
+      "jobId": "49742182",
+      "companyName": "넥스터㈜",
+      "title": "[넥스터 주식회사]스마트 돌봄 서비스 사업기획 및 운영",
+      "preview": "ANY · 정규직 · 마감 D-15 · 접수마감 2026.09.06",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49742182",
+      "dateISO": "2026-08-07",
+      "dateText": "2026.08.07",
+      "deadlineISO": "2026-09-06",
+      "deadlineText": "2026.09.06",
+      "alwaysHire": false,
+      "popularRank": 9,
+      "popularScore": 2.261312
     },
     {
       "id": "073c9f6a29eae7da18cb",
@@ -334,8 +334,8 @@
       "deadlineISO": "2026-09-03",
       "deadlineText": "2026.09.03",
       "alwaysHire": false,
-      "popularRank": 17,
-      "popularScore": 1.819756
+      "popularRank": 14,
+      "popularScore": 1.846516
     },
     {
       "id": "d1a9223c1e33bfbdf53b",
@@ -349,23 +349,23 @@
       "deadlineISO": "2026-10-02",
       "deadlineText": "2026.10.02",
       "alwaysHire": false,
-      "popularRank": 24,
-      "popularScore": 1.672997
+      "popularRank": 22,
+      "popularScore": 1.710253
     },
     {
-      "id": "774d7fb214049a06d587",
-      "jobId": "49669691",
-      "companyName": "㈜위펀",
-      "title": "B2B 플랫폼 서비스기획자 / PO (Product Owner)",
-      "preview": "경력 · 정규직 · 상시채용",
-      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49669691",
+      "id": "73bb15cd76d933bc580a",
+      "jobId": "49666858",
+      "companyName": "엔에이치엔커머스㈜",
+      "title": "NHN COMMERCE 서비스 운영기획 담당자 채용",
+      "preview": "경력 · 정규직 · 마감 D-5 · 접수마감 2026.08.27",
+      "url": "https://www.jobkorea.co.kr/Recruit/GI_Read/49666858",
       "dateISO": "2026-07-28",
       "dateText": "2026.07.28",
-      "deadlineISO": "",
-      "deadlineText": "",
-      "alwaysHire": true,
-      "popularRank": 7,
-      "popularScore": 2.39539
+      "deadlineISO": "2026-08-27",
+      "deadlineText": "2026.08.27",
+      "alwaysHire": false,
+      "popularRank": 24,
+      "popularScore": 1.663557
     }
   ],
   "stale": false,
