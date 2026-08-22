@@ -67,10 +67,10 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-22T09:14:58.663694Z",
-  "checkedAt": "2026-08-22T09:14:58.663689Z",
+  "updatedAt": "2026-08-22T09:42:15.315101Z",
+  "checkedAt": "2026-08-22T09:42:15.315096Z",
   "today": "2026-08-22",
-  "count": 72,
+  "count": 80,
   "notices": [
     {
       "id": "2d47a0e58f76397eca3e",
@@ -443,6 +443,26 @@
       "dateText": "2026.08.18"
     },
     {
+      "id": "c170b734cd2c3f6144c2",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 응시원서 접수 실시 보도자료",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095891&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
+      "id": "e5f5cb614925be27c292",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 응시...",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095891&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-08-11",
+      "dateText": "2026.08.11"
+    },
+    {
       "id": "71bea3947aac43cbd715",
       "sourceId": "adiga",
       "sourceName": "어디가",
@@ -663,6 +683,26 @@
       "dateText": "2026.07.08"
     },
     {
+      "id": "7dd0ca1bbf02af8ad52a",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 시행세부계획 공고문 및 보도자료",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095611&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-07-01",
+      "dateText": "2026.07.01"
+    },
+    {
+      "id": "cc4d1664e73360e239c0",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 시행...",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095611&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-07-01",
+      "dateText": "2026.07.01"
+    },
+    {
       "id": "a0aa87a1e4180dd8cc5f",
       "sourceId": "moe",
       "sourceName": "교육부",
@@ -671,6 +711,26 @@
       "url": "https://www.moe.go.kr/boardCnts/viewRenew.do?boardID=337&boardSeq=106606&lev=0&m=0303&s=moe",
       "dateISO": "2026-07-01",
       "dateText": "2026.07.01"
+    },
+    {
+      "id": "80a33a6ab6902a92dc55",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 6월 모의평가 채점 결과 보도자료",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095596&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-06-30",
+      "dateText": "2026.06.30"
+    },
+    {
+      "id": "9fce7ea1a078732c7f11",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 6월 ...",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095596&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-06-30",
+      "dateText": "2026.06.30"
     },
     {
       "id": "ebc9ec4d897a574f81cd",
@@ -741,6 +801,26 @@
       "url": "https://www.adiga.kr/cct/pbf/noticeDetail.do?menuId=PCCCTPBF1000&prtlBbsId=27236",
       "dateISO": "2026-06-24",
       "dateText": "2026.06.24"
+    },
+    {
+      "id": "4def09c640c82abcd550",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 9월 모의평가 시행계획 공고 보도자료",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095439&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-06-17",
+      "dateText": "2026.06.17"
+    },
+    {
+      "id": "506b1bfb204db49a3937",
+      "sourceId": "kice_press",
+      "sourceName": "평가원보도",
+      "title": "2027학년도 대학수학능력시험 9월 ...",
+      "preview": "평가원보도 공지",
+      "url": "https://www.suneung.re.kr/boardCnts/view.do?boardID=1500230&boardSeq=5095439&lev=0&m=0302&s=suneung",
+      "dateISO": "2026-06-17",
+      "dateText": "2026.06.17"
     },
     {
       "id": "b6d40650a66f53bc6cfb",
