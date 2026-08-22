@@ -67,8 +67,8 @@
       "url": "https://www.moe.go.kr/boardCnts/listRenew.do?boardID=337&m=0303&s=moe"
     }
   ],
-  "updatedAt": "2026-08-22T05:48:58.299987Z",
-  "checkedAt": "2026-08-22T05:48:58.299981Z",
+  "updatedAt": "2026-08-22T06:16:53.083502Z",
+  "checkedAt": "2026-08-22T06:16:53.083496Z",
   "today": "2026-08-22",
   "count": 80,
   "notices": [
@@ -79,6 +79,16 @@
       "title": "🌟2025 목표달성 듀냐선배 인터뷰 🌟｜성신여대 경제학과 선배의 과목별 공부법",
       "preview": "EBSi 알림",
       "url": "https://www.ebsi.co.kr/ebs/pot/poth/retrieveNotcRmTotArtcl.ebs?bbsId=CZ_NOTICE&artclId=000000400500490",
+      "dateISO": "2026-08-22",
+      "dateText": "2026.08.22"
+    },
+    {
+      "id": "8c3ca497e2cb450836f4",
+      "sourceId": "edupress",
+      "sourceName": "에듀프레스",
+      "title": "한국교원교육학회, 9월 19일 추계학술대회 개최",
+      "preview": "에듀프레스 소식",
+      "url": "https://www.edupress.kr/news/articleView.html?idxno=30414",
       "dateISO": "2026-08-22",
       "dateText": "2026.08.22"
     },
@@ -249,16 +259,6 @@
       "title": "초·중등교육의 젖줄, 지방교육재정교부금 54년의 기록",
       "preview": "에듀프레스 소식",
       "url": "https://www.edupress.kr/news/articleView.html?idxno=30409",
-      "dateISO": "2026-08-20",
-      "dateText": "2026.08.20"
-    },
-    {
-      "id": "cc7f4070287c716e988d",
-      "sourceId": "edupress",
-      "sourceName": "에듀프레스",
-      "title": "이일권 교장 \"교육은 기본이 중요 ... 교육정책은 '티처 퍼스트'가 핵심“",
-      "preview": "에듀프레스 소식",
-      "url": "https://www.edupress.kr/news/articleView.html?idxno=30406",
       "dateISO": "2026-08-20",
       "dateText": "2026.08.20"
     },
