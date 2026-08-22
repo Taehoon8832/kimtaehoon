@@ -14,8 +14,8 @@ Apps Script 없이 동작합니다.
 
 | 게시판 | 수집 주기 (Actions) | 워크플로 |
 |--------|---------------------|----------|
-| 채용 공고 (잡코리아) | **15분** (순차) | `refresh-boards.yml` |
-| 석박 채용 (진학프로) | **15분** (순차) | `refresh-boards.yml` |
+| 채용 공고 (잡코리아) | **5분** | `refresh-boards.yml` |
+| 석박 채용 (진학프로) | **10분** + 2시간 Windows 재시도 | `recruit-notices.yml` |
 | 대학별 공지 | **1시간** | `univ-notices.yml` |
 
 ## 대학별 공지 안내 게시판

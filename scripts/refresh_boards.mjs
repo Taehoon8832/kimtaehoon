@@ -470,8 +470,12 @@ async function fetchRecruitHtmlFallback() {
     headers: { "User-Agent": UA, Accept: "text/plain,*/*" },
     redirect: "follow",
   });
+  if (mirror.status === 401 || mirror.status === 403) {
+    throw new Error(`recruit jina http_${mirror.status}`);
+  }
   if (!mirror.ok) throw new Error(`recruit jina http_${mirror.status}`);
   const text = await mirror.text();
+  if (/unauthorized/i.test(text.slice(0, 200))) throw new Error("recruit jina unauthorized");
   if (text.length < 400) throw new Error("recruit jina empty");
   return text;
 }

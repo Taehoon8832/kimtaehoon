@@ -191,7 +191,12 @@ def fetch_list_html() -> str:
         print("warn: thin/blocked direct html, trying jina")
     except Exception as e:
         print(f"warn: direct html failed: {e}")
-    mirror = http_get(url="https://r.jina.ai/" + LIST_URL, accept="text/plain,*/*", timeout=60)
+    try:
+        mirror = http_get(url="https://r.jina.ai/" + LIST_URL, accept="text/plain,*/*", timeout=60)
+    except Exception as e:
+        raise RuntimeError(f"jina failed: {e}") from e
+    if "401" in str(mirror[:80]) or "unauthorized" in mirror[:200].lower():
+        raise RuntimeError("jina unauthorized")
     if len(mirror) < 400:
         raise RuntimeError("jina empty")
     if "just a moment" in mirror.lower():
