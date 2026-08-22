@@ -1608,10 +1608,30 @@
     }
 
     .lower-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
       background:
         radial-gradient(70% 55% at 50% -8%, rgba(250, 45, 72, 0.1), transparent 62%),
         linear-gradient(180deg, var(--bg-subtle) 0%, color-mix(in srgb, var(--bg-subtle) 88%, var(--color-primary-50)) 100%);
       padding-bottom: 28px;
+    }
+
+    @media (min-width: 981px) {
+      .lower-layout {
+        grid-template-columns: minmax(0, 1560px) 118px;
+        justify-content: center;
+        align-items: start;
+      }
+
+      .lower-main {
+        grid-column: 1;
+        min-width: 0;
+      }
+
+      .fold-rail {
+        grid-column: 2;
+        grid-row: 1;
+      }
     }
 
     .chat-section {
@@ -3049,7 +3069,7 @@
     .suneung-strip {
       width: min(1560px, 100%);
       margin: 0 auto;
-      padding: 10px clamp(12px, 3vw, 20px) 0;
+      padding: 8px clamp(12px, 3vw, 20px);
       display: grid;
       gap: 0;
     }
@@ -3058,18 +3078,13 @@
       display: grid;
       min-width: 0;
       overflow: hidden;
-      border-radius: 16px 16px 0 0;
+      border-radius: 16px;
       padding: 10px 10px 8px;
       background:
-        radial-gradient(80% 90% at 8% 0%, rgba(166, 124, 82, 0.16), transparent 48%),
-        linear-gradient(180deg, #f7f1e8 0%, #efe6d8 100%);
-      border: 1.5px solid rgba(61, 43, 31, 0.18);
-      border-bottom: 0;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
-    }
-
-    .suneung-strip.is-collapsed .suneung-panel {
-      display: none;
+        radial-gradient(70% 80% at 12% 0%, rgba(186, 226, 255, 0.55), transparent 52%),
+        linear-gradient(180deg, #f5fbff 0%, #e7f4fc 100%);
+      border: 1px solid rgba(120, 180, 214, 0.35);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.85);
     }
 
     .suneung-grid {
@@ -3091,16 +3106,16 @@
       min-width: 0;
       min-height: 180px;
       aspect-ratio: 16 / 9;
-      border-radius: 12px;
+      border-radius: 14px;
       overflow: hidden;
-      background: #161210;
-      border: 1.5px solid #3d2b1f;
-      box-shadow: 0 8px 18px rgba(40, 28, 16, 0.16);
+      background: #0d1a24;
+      border: 1px solid rgba(110, 176, 210, 0.4);
+      box-shadow: 0 8px 18px rgba(36, 90, 130, 0.12);
       isolation: isolate;
     }
 
     .suneung-player.is-on {
-      box-shadow: 0 0 0 2px #8b6914, 0 10px 22px rgba(40, 28, 16, 0.22);
+      box-shadow: 0 0 0 2px #7ec8ea, 0 10px 22px rgba(36, 90, 130, 0.18);
     }
 
     .suneung-player-hit,
@@ -3133,7 +3148,8 @@
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
+      object-position: center;
       border: 0;
       background: #111;
     }
@@ -3141,6 +3157,57 @@
     .suneung-stage iframe,
     .suneung-stage video {
       pointer-events: none;
+    }
+
+    .suneung-fs-btn {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      z-index: 4;
+      width: 36px;
+      height: 36px;
+      border: 0;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      color: #f8efd8;
+      background: rgba(20, 14, 10, 0.72);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.28);
+      transition: transform var(--duration-fast) var(--ease-out), background var(--duration-fast) var(--ease-out);
+    }
+
+    .suneung-fs-btn:hover,
+    .suneung-fs-btn:focus-visible {
+      background: rgba(20, 14, 10, 0.9);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .suneung-fs-btn svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .suneung-player:fullscreen,
+    .suneung-player:-webkit-full-screen {
+      aspect-ratio: auto;
+      width: 100%;
+      height: 100%;
+      min-height: 100%;
+      border: 0;
+      border-radius: 0;
+      background: #000;
+    }
+
+    .suneung-player:fullscreen .suneung-poster,
+    .suneung-player:fullscreen .suneung-stage iframe,
+    .suneung-player:fullscreen .suneung-stage video,
+    .suneung-player:-webkit-full-screen .suneung-poster,
+    .suneung-player:-webkit-full-screen .suneung-stage iframe,
+    .suneung-player:-webkit-full-screen .suneung-stage video {
+      object-fit: contain;
+      background: #000;
     }
 
     .suneung-player.is-on .suneung-poster,
@@ -3158,10 +3225,10 @@
       border-radius: 50%;
       display: grid;
       place-items: center;
-      background: linear-gradient(160deg, #f7e7b0 0%, #e0c46a 42%, #8b6914 100%);
-      color: #14110c;
-      border: 2px solid #111;
-      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+      background: linear-gradient(160deg, #ffffff 0%, #d8f0ff 45%, #8fd0f0 100%);
+      color: #1a4d6e;
+      border: 0;
+      box-shadow: 0 8px 18px rgba(20, 80, 120, 0.28);
       transition: transform var(--duration-fast) var(--ease-spring);
     }
 
@@ -3230,41 +3297,57 @@
       justify-content: center;
       gap: 0.5em;
       min-width: 0;
-      padding: 8px 10px;
-      border-radius: 12px;
-      border: 1.5px solid #3d2b1f;
-      background: linear-gradient(165deg, #fffdf8 0%, #f3ebe0 100%);
-      color: #2a1c12;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 1px solid rgba(120, 186, 220, 0.45);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(232, 246, 255, 0.55) 48%, rgba(196, 230, 250, 0.9) 100%);
+      color: #16324a;
       text-decoration: none;
       text-align: center;
       font: inherit;
-      font-size: 12.5px;
-      font-weight: 800;
+      font-size: 13px;
+      font-weight: 750;
       letter-spacing: -0.03em;
-      line-height: 1.25;
+      line-height: 1.3;
       word-break: keep-all;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(80, 50, 20, 0.1);
-      transition: transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 6px 14px rgba(70, 150, 190, 0.12);
+      transition: transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
     }
 
     .suneung-btn:hover,
     .suneung-btn:focus-visible {
       transform: translateY(-1px);
-      box-shadow: 0 8px 16px rgba(80, 50, 20, 0.16);
+      border-color: rgba(70, 168, 214, 0.7);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.95),
+        0 10px 18px rgba(70, 150, 190, 0.18);
       outline: none;
     }
 
     .suneung-btn.is-print {
       background:
-        radial-gradient(80% 80% at 50% 0%, rgba(255, 236, 190, 0.55), transparent 60%),
-        linear-gradient(165deg, #2a1c12 0%, #4a3424 45%, #8b6914 100%);
-      color: #fff9ec;
-      border-color: #1a120c;
+        radial-gradient(90% 80% at 50% 0%, rgba(255, 255, 255, 0.45), transparent 58%),
+        linear-gradient(165deg, #8fd4f2 0%, #4eb0dd 52%, #2b8fc4 100%);
+      color: #ffffff;
+      border-color: rgba(43, 143, 196, 0.45);
+      text-shadow: 0 1px 0 rgba(16, 70, 100, 0.18);
     }
 
     .suneung-btn.is-print[aria-expanded="true"] {
-      box-shadow: 0 0 0 2px #c9a227, 0 8px 16px rgba(80, 50, 20, 0.2);
+      box-shadow: 0 0 0 2px #9ad8f4, 0 8px 16px rgba(43, 143, 196, 0.24);
+    }
+
+    .suneung-btn.is-blocked,
+    .suneung-btn:disabled {
+      cursor: not-allowed;
+      opacity: 0.55;
+      pointer-events: none;
+      box-shadow: none;
+      transform: none;
     }
 
     .suneung-btn.suneung-ext {
@@ -3284,16 +3367,31 @@
       min-width: 0;
     }
 
-    .suneung-fold {
+    /* 경계선 접기: 선 아래 ~ 다음 선 위만 접힘 */
+    .fold-block {
+      min-width: 0;
+    }
+
+    .fold-body > .chat-section {
+      padding-top: 4px;
+      padding-bottom: 10px;
+    }
+
+    .fold-block.is-collapsed .fold-body {
+      display: none;
+    }
+
+    .fold-rule {
       position: relative;
       display: flex;
       align-items: center;
-      justify-content: center;
-      min-height: 28px;
-      margin: 0;
+      justify-content: flex-end;
+      min-height: 30px;
+      width: min(1560px, calc(100% - 24px));
+      margin: 4px auto 2px;
     }
 
-    .suneung-fold::before {
+    .fold-rule::before {
       content: "";
       position: absolute;
       left: 0;
@@ -3304,32 +3402,33 @@
       box-shadow: 0 1px 0 rgba(245, 230, 200, 0.35);
     }
 
-    .suneung-fold-btn {
+    .fold-toggle {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 4px 12px;
-      border: 1.5px solid #3d2b1f;
-      border-radius: 999px;
-      background: linear-gradient(180deg, #fffdf8, #f3ebe0);
-      color: #2a1c12;
+      gap: 5px;
+      margin-right: -2px;
+      padding: 5px 11px 5px 9px;
+      border: 1px solid rgba(92, 64, 48, 0.28);
+      border-radius: 10px 0 0 10px;
+      background: linear-gradient(180deg, #fffaf4, #f3e6d4);
+      color: #3d2b1f;
       font: inherit;
       font-size: 12px;
-      font-weight: 800;
+      font-weight: 780;
       letter-spacing: -0.03em;
       cursor: pointer;
-      box-shadow: 0 4px 10px rgba(80, 50, 20, 0.12);
+      box-shadow: -4px 4px 12px rgba(70, 48, 28, 0.1);
     }
 
-    .suneung-fold-btn:hover,
-    .suneung-fold-btn:focus-visible {
-      transform: translateY(-1px);
+    .fold-toggle:hover,
+    .fold-toggle:focus-visible {
+      background: linear-gradient(180deg, #fff, #ead9c2);
       outline: none;
     }
 
-    .suneung-fold-btn .chev {
+    .fold-toggle .chev {
       width: 14px;
       height: 14px;
       display: grid;
@@ -3337,8 +3436,74 @@
       transition: transform var(--duration-fast) var(--ease-out);
     }
 
-    .suneung-strip.is-collapsed .suneung-fold-btn .chev {
+    .fold-block.is-collapsed .fold-toggle .chev {
       transform: rotate(180deg);
+    }
+
+    .fold-toggle .fold-action {
+      min-width: 2.4em;
+    }
+
+    .fold-rail {
+      position: sticky;
+      top: calc(var(--nav-offset, 72px) + 12px);
+      z-index: 36;
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      width: 86px;
+      margin: 12px 8px 12px 0;
+      padding: 8px 6px;
+      border-radius: 14px;
+      border: 1px solid rgba(92, 64, 48, 0.2);
+      background: linear-gradient(180deg, rgba(255, 252, 247, 0.96), rgba(244, 232, 214, 0.94));
+      box-shadow: 0 10px 24px rgba(60, 40, 24, 0.12);
+    }
+
+    @media (min-width: 981px) {
+      .fold-rail {
+        display: flex;
+      }
+    }
+
+    .fold-rail-btn {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      width: 100%;
+      padding: 7px 4px;
+      border: 1px solid rgba(92, 64, 48, 0.2);
+      border-radius: 10px;
+      background: #fff;
+      color: #3d2b1f;
+      font: inherit;
+      font-size: 10.5px;
+      font-weight: 750;
+      letter-spacing: -0.04em;
+      line-height: 1.25;
+      cursor: pointer;
+      word-break: keep-all;
+      text-align: center;
+    }
+
+    .fold-rail-btn:hover,
+    .fold-rail-btn:focus-visible {
+      border-color: #a67c52;
+      outline: none;
+    }
+
+    .fold-rail-btn.is-collapsed {
+      background: #f4ebe0;
+      color: #6b4f3a;
+    }
+
+    .fold-rail-title {
+      font-weight: 800;
+    }
+
+    .fold-rail-action {
+      color: #8a5a32;
     }
 
     .suneung-drawer {
@@ -3351,9 +3516,9 @@
       gap: 8px;
       padding: 12px;
       border-radius: 16px;
-      border: 1.5px solid #3d2b1f;
-      background: linear-gradient(180deg, #fffdf8 0%, #f4ebe0 100%);
-      box-shadow: 0 16px 36px rgba(40, 28, 16, 0.28);
+      border: 1px solid rgba(120, 186, 220, 0.45);
+      background: linear-gradient(180deg, #ffffff 0%, #eaf6fd 100%);
+      box-shadow: 0 16px 36px rgba(40, 110, 150, 0.18);
     }
 
     .suneung-drawer.is-open {
@@ -3363,7 +3528,7 @@
     .suneung-drawer strong {
       font-size: 12.5px;
       letter-spacing: -0.03em;
-      color: #2a1c12;
+      color: #16324a;
     }
 
     .suneung-drawer-grid {
@@ -3379,13 +3544,13 @@
       gap: 6px;
       padding: 10px 6px;
       border-radius: 12px;
-      border: 1.5px solid rgba(61, 43, 31, 0.2);
-      background: #fff;
-      color: #2a1c12;
+      border: 1px solid rgba(140, 196, 226, 0.45);
+      background: linear-gradient(180deg, #ffffff, #eef8ff);
+      color: #16324a;
       text-decoration: none;
       font: inherit;
       font-size: 11.5px;
-      font-weight: 800;
+      font-weight: 750;
       letter-spacing: -0.03em;
       text-align: center;
       word-break: keep-all;
@@ -3393,7 +3558,7 @@
 
     .suneung-print-item:hover,
     .suneung-print-item:focus-visible {
-      border-color: #8b6914;
+      border-color: #5eb6de;
       outline: none;
     }
 
@@ -3403,8 +3568,8 @@
       border-radius: 50%;
       display: grid;
       place-items: center;
-      background: linear-gradient(145deg, #6b4f3a, #3d2b1f);
-      color: #f5e6c8;
+      background: linear-gradient(145deg, #7ec8ea, #3aa0d0);
+      color: #fff;
       font-size: 13px;
     }
 
@@ -3453,31 +3618,37 @@
     @media (prefers-color-scheme: dark) {
       .suneung-panel {
         background:
-          radial-gradient(80% 90% at 8% 0%, rgba(166, 124, 82, 0.18), transparent 48%),
-          linear-gradient(180deg, #2a241e 0%, #1c1814 100%);
-        border-color: rgba(245, 230, 200, 0.16);
+          radial-gradient(70% 80% at 12% 0%, rgba(50, 120, 170, 0.28), transparent 52%),
+          linear-gradient(180deg, #12202b 0%, #0d1821 100%);
+        border-color: rgba(120, 186, 220, 0.22);
       }
       .suneung-btn:not(.is-print) {
-        background: linear-gradient(165deg, #3a3128 0%, #2a241e 100%);
-        color: #f5ead6;
-        border-color: rgba(245, 230, 200, 0.28);
+        background: linear-gradient(180deg, #1c3344 0%, #153040 100%);
+        color: #d7eef9;
+        border-color: rgba(120, 186, 220, 0.28);
       }
-      .suneung-fold-btn {
-        background: linear-gradient(180deg, #3a3128, #2a241e);
-        color: #f5ead6;
-        border-color: rgba(245, 230, 200, 0.28);
+      .fold-toggle,
+      .fold-rail {
+        background: linear-gradient(180deg, #2a2118, #1c1610);
+        color: #f0e2d0;
+        border-color: rgba(196, 160, 110, 0.28);
+      }
+      .fold-rail-btn {
+        background: #241c14;
+        color: #f0e2d0;
+        border-color: rgba(196, 160, 110, 0.22);
       }
       .suneung-drawer {
-        background: linear-gradient(180deg, #2a241e, #1c1814);
-        border-color: rgba(245, 230, 200, 0.28);
+        background: linear-gradient(180deg, #163044, #102533);
+        border-color: rgba(120, 186, 220, 0.28);
       }
       .suneung-drawer strong,
       .suneung-print-item {
-        color: #f5ead6;
+        color: #d7eef9;
       }
       .suneung-print-item {
-        background: #241f1a;
-        border-color: rgba(245, 230, 200, 0.2);
+        background: #153040;
+        border-color: rgba(120, 186, 220, 0.22);
       }
     }
 
@@ -5187,6 +5358,20 @@
     </div>
 
     <div class="lower-layout">
+    <aside class="fold-rail" id="foldRail" aria-label="구간 접기·펼치기"></aside>
+    <div class="lower-main">
+    <div class="fold-block" data-fold="suneung" data-fold-title="대수능 안내">
+      <div class="fold-rule">
+        <button type="button" class="fold-toggle" aria-expanded="true" aria-controls="foldBody-suneung">
+          <span class="chev" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
+              <path d="M6 9.5L12 15.5l6-6" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="fold-action">접기</span>
+        </button>
+      </div>
+      <div class="fold-body" id="foldBody-suneung">
     <section class="suneung-strip" id="suneungStrip" aria-label="2027 대수능 안내">
       <div class="suneung-panel" id="suneungPanel">
         <div class="suneung-grid">
@@ -5200,6 +5385,11 @@
               <span class="suneung-caption">원서접수 안내</span>
               <span class="suneung-pause-chip">클릭하면 중지</span>
             </button>
+            <button type="button" class="suneung-fs-btn" aria-label="전체화면">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M8 4H4v4M16 4h4v4M8 20H4v-4M16 20h4v-4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
           </article>
           <article class="suneung-player" data-slot="2" data-drive="1wsAiwVnYPmfHjIHRk-NrRNVvm8dT9L7D">
             <img class="suneung-poster" alt="" width="640" height="360" loading="lazy" decoding="async" src="https://drive.google.com/thumbnail?id=1wsAiwVnYPmfHjIHRk-NrRNVvm8dT9L7D&sz=w1280" />
@@ -5211,11 +5401,16 @@
               <span class="suneung-caption">원서접수 안내(쇼츠)</span>
               <span class="suneung-pause-chip">클릭하면 중지</span>
             </button>
+            <button type="button" class="suneung-fs-btn" aria-label="전체화면">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M8 4H4v4M16 4h4v4M8 20H4v-4M16 20h4v-4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
           </article>
           <div class="suneung-col-a">
             <a class="suneung-btn" href="https://drive.google.com/file/d/1bh5T87lBNVDhchWSOLAKgqg9-oosuUX_/view?usp=drive_link" target="_blank" rel="noopener noreferrer">2027 대수능 실시요강</a>
-            <a class="suneung-btn" href="https://drive.google.com/file/d/1cRACtOhhVN67Z4GSbuZ0ncwu-FT1LOXy/view?usp=drive_link" target="_blank" rel="noopener noreferrer">2027 대수능 원서접수 안내</a>
-            <button type="button" class="suneung-btn is-print" id="suneungPrintBtn" aria-expanded="false" aria-controls="suneungPrintDrawer">2027 대수능 사전입력(출력물)</button>
+            <button type="button" class="suneung-btn is-blocked" disabled aria-disabled="true" title="준비 중">2027 대수능 원서접수 안내</button>
+            <button type="button" class="suneung-btn is-print is-blocked" id="suneungPrintBtn" disabled aria-disabled="true" title="준비 중">2027 대수능 사전입력(출력물)</button>
           </div>
           <div class="suneung-col-b">
             <a class="suneung-btn suneung-ext" href="https://www.suneung.re.kr/boardCnts/list.do?boardID=1500229&amp;m=0301&amp;s=suneung&amp;searchStr=" target="_blank" rel="noopener noreferrer">
@@ -5237,16 +5432,6 @@
           </div>
         </div>
       </div>
-      <div class="suneung-fold">
-        <button type="button" class="suneung-fold-btn" id="suneungFoldBtn" aria-expanded="true" aria-controls="suneungPanel">
-          <span class="chev" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
-              <path d="M6 14.5L12 8.5l6 6" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-          <span id="suneungFoldLabel">2027 대수능 안내 접기</span>
-        </button>
-      </div>
       <aside class="suneung-drawer" id="suneungPrintDrawer" hidden>
         <strong>사전입력 출력물</strong>
         <div class="suneung-drawer-grid">
@@ -5265,7 +5450,21 @@
         </div>
       </aside>
     </section>
+      </div>
+    </div>
 
+    <div class="fold-block" data-fold="sagwan" data-fold-title="사관학교 일정">
+      <div class="fold-rule">
+        <button type="button" class="fold-toggle" aria-expanded="true" aria-controls="foldBody-sagwan">
+          <span class="chev" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
+              <path d="M6 9.5L12 15.5l6-6" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="fold-action">접기</span>
+        </button>
+      </div>
+      <div class="fold-body" id="foldBody-sagwan">
     <section class="sagwan-strip" aria-label="2027 사관학교 일정 및 점공">
       <div class="sagwan-schedule-row">
         <button type="button" class="sagwan-schedule-btn" id="sagwanScheduleBtn" aria-haspopup="dialog">
@@ -5314,10 +5513,22 @@
         </button>
       </div>
     </section>
+      </div>
+    </div>
 
-    <hr class="stage-rule sagwan-board-rule" aria-hidden="true" />
-
-    <section class="chat-section" id="chat" aria-label="채용·석박·대학·카페·교육정책 게시판">
+    <div class="fold-block" data-fold="boards" data-fold-title="채용·석박·대학">
+      <div class="fold-rule">
+        <button type="button" class="fold-toggle" aria-expanded="true" aria-controls="foldBody-boards">
+          <span class="chev" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
+              <path d="M6 9.5L12 15.5l6-6" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="fold-action">접기</span>
+        </button>
+      </div>
+      <div class="fold-body" id="foldBody-boards">
+    <section class="chat-section" id="chat" aria-label="채용·석박·대학 게시판">
       <div class="chat-shell">
         <aside class="jobkorea-panel" aria-label="채용 공고 게시판">
           <div class="univ-notice-bar">
@@ -5414,9 +5625,23 @@
           </div>
         </aside>
       </div>
+    </section>
+      </div>
+    </div>
 
-      <hr class="stage-rule sagwan-board-rule" aria-hidden="true" />
-
+    <div class="fold-block" data-fold="cafes" data-fold-title="교사·수만휘·정책">
+      <div class="fold-rule">
+        <button type="button" class="fold-toggle" aria-expanded="true" aria-controls="foldBody-cafes">
+          <span class="chev" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" width="14" height="14">
+              <path d="M6 9.5L12 15.5l6-6" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <span class="fold-action">접기</span>
+        </button>
+      </div>
+      <div class="fold-body" id="foldBody-cafes">
+    <section class="chat-section" aria-label="교사·수만휘·교육정책 게시판">
       <div class="chat-shell">
         <aside class="teacher-panel" aria-label="사립학교 정교사 게시판">
           <div class="univ-notice-bar">
@@ -5514,6 +5739,8 @@
         </aside>
       </div>
     </section>
+      </div>
+    </div>
 
     <footer class="footer">
       <div class="footer-inner">
@@ -5557,6 +5784,7 @@
         </div>
       </div>
     </footer>
+    </div>
     </div>
   </div>
 
@@ -8408,26 +8636,89 @@
         updateSagwanVoteDom();
       }
 
+      function bootSectionFolds() {
+        const KEY = "kimtaehoon_section_fold_v1";
+        const rail = document.getElementById("foldRail");
+        const blocks = Array.from(document.querySelectorAll(".fold-block[data-fold]"));
+        if (!blocks.length) return;
+
+        let saved = {};
+        try { saved = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (_) {}
+
+        function setOpen(block, open, persist) {
+          const id = block.getAttribute("data-fold");
+          const title = block.getAttribute("data-fold-title") || "";
+          const body = block.querySelector(".fold-body");
+          const btn = block.querySelector(".fold-toggle");
+          const action = btn && btn.querySelector(".fold-action");
+          block.classList.toggle("is-collapsed", !open);
+          if (body) body.hidden = !open;
+          if (btn) {
+            btn.setAttribute("aria-expanded", open ? "true" : "false");
+            btn.setAttribute("aria-label", (title + " " + (open ? "접기" : "펼치기")).trim());
+          }
+          if (action) action.textContent = open ? "접기" : "펼치기";
+          const railBtn = rail && rail.querySelector('[data-fold-target="' + id + '"]');
+          if (railBtn) {
+            railBtn.classList.toggle("is-collapsed", !open);
+            railBtn.setAttribute("aria-expanded", open ? "true" : "false");
+            const railAction = railBtn.querySelector(".fold-rail-action");
+            if (railAction) railAction.textContent = open ? "접기" : "펼치기";
+          }
+          if (persist !== false) {
+            saved[id] = open;
+            try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (_) {}
+          }
+          if (!open && id === "suneung") {
+            document.dispatchEvent(new CustomEvent("suneung-collapse"));
+          }
+          if (persist !== false && !open) {
+            requestAnimationFrame(() => {
+              try { block.scrollIntoView({ block: "nearest", behavior: "smooth" }); } catch (_) {}
+            });
+          }
+        }
+
+        if (rail) {
+          rail.innerHTML = blocks.map((block) => {
+            const id = block.getAttribute("data-fold");
+            const title = block.getAttribute("data-fold-title") || id;
+            return (
+              '<button type="button" class="fold-rail-btn" data-fold-target="' + id + '" aria-expanded="true">' +
+              '<span class="fold-rail-title">' + title + "</span>" +
+              '<span class="fold-rail-action">접기</span>' +
+              "</button>"
+            );
+          }).join("");
+          rail.addEventListener("click", (e) => {
+            const railBtn = e.target.closest("[data-fold-target]");
+            if (!railBtn) return;
+            const block = blocks.find((b) => b.getAttribute("data-fold") === railBtn.getAttribute("data-fold-target"));
+            if (block) setOpen(block, block.classList.contains("is-collapsed"));
+          });
+        }
+
+        blocks.forEach((block) => {
+          const btn = block.querySelector(".fold-toggle");
+          if (btn) {
+            btn.addEventListener("click", () => {
+              setOpen(block, block.classList.contains("is-collapsed"));
+            });
+          }
+          const id = block.getAttribute("data-fold");
+          setOpen(block, saved[id] === false ? false : true, false);
+        });
+      }
+
       function bootSuneungPanel() {
         const strip = document.getElementById("suneungStrip");
         const panel = document.getElementById("suneungPanel");
-        const foldBtn = document.getElementById("suneungFoldBtn");
-        const foldLabel = document.getElementById("suneungFoldLabel");
         const printBtn = document.getElementById("suneungPrintBtn");
         const drawer = document.getElementById("suneungPrintDrawer");
-        const FOLD_KEY = "kimtaehoon_suneung_open_v1";
-        if (!strip || !panel || !foldBtn) return;
+        if (!strip || !panel) return;
 
         const previewUrl = (id) => `https://drive.google.com/file/d/${id}/preview`;
         const directUrl = (id) => `https://drive.google.com/uc?export=download&id=${id}`;
-
-        function setFold(open) {
-          strip.classList.toggle("is-collapsed", !open);
-          foldBtn.setAttribute("aria-expanded", open ? "true" : "false");
-          if (foldLabel) foldLabel.textContent = open ? "2027 대수능 안내 접기" : "2027 대수능 안내 펼치기";
-          try { localStorage.setItem(FOLD_KEY, open ? "1" : "0"); } catch (_) {}
-          if (!open) setDrawer(false);
-        }
 
         function setDrawer(open) {
           if (!drawer || !printBtn) return;
@@ -8460,6 +8751,9 @@
           const video = document.createElement("video");
           video.playsInline = true;
           video.preload = "metadata";
+          video.controls = false;
+          video.setAttribute("playsinline", "");
+          video.style.objectFit = "contain";
           video.src = directUrl(id);
           const fallback = () => {
             stage.innerHTML = "";
@@ -8486,20 +8780,56 @@
           }
         }
 
+        function isPlayerFullscreen(player) {
+          return document.fullscreenElement === player || document.webkitFullscreenElement === player;
+        }
+
+        function toggleFullscreen(player) {
+          if (isPlayerFullscreen(player)) {
+            const exit = document.exitFullscreen || document.webkitExitFullscreen;
+            if (exit) exit.call(document);
+            return;
+          }
+          const req = player.requestFullscreen || player.webkitRequestFullscreen;
+          if (req) {
+            req.call(player).catch(() => {});
+            return;
+          }
+          const video = player.querySelector("video");
+          if (video && video.webkitEnterFullscreen) {
+            video.webkitEnterFullscreen();
+            return;
+          }
+          if (!player.classList.contains("is-on")) playPlayer(player);
+        }
+
         strip.querySelectorAll(".suneung-player").forEach((player) => {
           const hit = player.querySelector(".suneung-player-hit");
-          if (!hit) return;
-          hit.addEventListener("click", () => {
-            if (player.classList.contains("is-on")) stopPlayer(player);
-            else playPlayer(player);
+          const fsBtn = player.querySelector(".suneung-fs-btn");
+          if (hit) {
+            hit.addEventListener("click", () => {
+              if (player.classList.contains("is-on")) stopPlayer(player);
+              else playPlayer(player);
+            });
+          }
+          if (fsBtn) {
+            fsBtn.addEventListener("click", (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleFullscreen(player);
+            });
+          }
+        });
+
+        document.addEventListener("fullscreenchange", () => {
+          strip.querySelectorAll(".suneung-player").forEach((player) => {
+            const on = isPlayerFullscreen(player);
+            const fsBtn = player.querySelector(".suneung-fs-btn");
+            if (fsBtn) fsBtn.setAttribute("aria-label", on ? "전체화면 종료" : "전체화면");
           });
         });
 
-        foldBtn.addEventListener("click", () => {
-          setFold(strip.classList.contains("is-collapsed"));
-        });
-
-        if (printBtn && drawer) {
+        if (printBtn && drawer && !printBtn.disabled) {
           printBtn.addEventListener("click", (e) => {
             e.stopPropagation();
             setDrawer(drawer.hidden);
@@ -8515,13 +8845,10 @@
           if (e.key === "Escape") setDrawer(false);
         });
 
-        let saved = null;
-        try { saved = localStorage.getItem(FOLD_KEY); } catch (_) {}
-        if (saved === "0" || saved === "1") {
-          setFold(saved === "1");
-        } else {
-          setFold(window.matchMedia("(min-width: 860px)").matches);
-        }
+        document.addEventListener("suneung-collapse", () => {
+          strip.querySelectorAll(".suneung-player").forEach(stopPlayer);
+          setDrawer(false);
+        });
       }
 
       function bootSagwanStrip() {
@@ -9606,6 +9933,7 @@
         );
       }
 
+      bootSectionFolds();
       bootSuneungPanel();
       bootSagwanStrip();
       bootUnivNotices();
